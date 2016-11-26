@@ -1,0 +1,13 @@
+/* app css stylesheet */
+
+a:focus {
+    outline: none;
+}
+
+* {
+    outline: none;
+}
+
+body{
+    /*background:pink*/
+}
