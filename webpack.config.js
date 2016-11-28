@@ -2,7 +2,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require('webpack');
 module.exports = {
         context: __dirname + '/app',
-        entry: './index.js',
+        entry: './index.ts',
         output: {
                 path: __dirname + '/app',
                 filename: 'bundle.js'
@@ -12,32 +12,17 @@ module.exports = {
                 port: 3000,
                 contentBase: __dirname + '/app'
         },
-        resolve: {
-                alias: {
-                        jquery: "jquery/src/jquery"
-                }
-        },
         module: {
                 loaders: [
 
                         {
                                 test: /\.ts$/,
-                                loader: 'ts-loader',
+                                loader: 'ts-loader'
                         },
 
                         {
-                                test: /\.js$/,
-                                exclude: /(node_modules|bower_components)/,
-                                loader: 'babel',
-                                query: {
-                                        presets: ['es2015'],
-                                        plugins: ['transform-runtime']
-                                }
-                        },
-                        {
                                 test: /\.css$/,
-                                loader: ExtractTextPlugin.extract("style-loader", "css-loader"),
-//                                exclude: /node_modules/
+                                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
                         },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
