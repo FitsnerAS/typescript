@@ -40,6 +40,6 @@ module.exports = {
                 new webpack.optimize.UglifyJsPlugin(),
                 new HtmlWebpackPlugin({
                         template: 'index.html'
-                }),
+                })
         ]
 };
