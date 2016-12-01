@@ -35,9 +35,12 @@ module.exports = {
                         }
                 ]
         },
+        resolve: {
+                extensions:['','.js','.ts']
+        },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),
-                new webpack.optimize.UglifyJsPlugin(),
+//                new webpack.optimize.UglifyJsPlugin(),
                 new HtmlWebpackPlugin({
                         template: 'index.html'
                 })

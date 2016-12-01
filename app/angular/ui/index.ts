@@ -1,0 +1,2 @@
+export { CityTable } from './table'
+
