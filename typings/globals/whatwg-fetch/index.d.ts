@@ -89,7 +89,7 @@ declare class Response {
     ok: boolean;
     statusText: string;
     headers: Headers;
-    body: null;
+    body: ReadableStream; // | null;
     trailer: Promise<Headers>;
 
     clone(): Response;

@@ -10454,7 +10454,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -10622,7 +10622,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -25091,7 +25091,7 @@
 	              return normalizedDirMeta;
 	          };
 	          if (nonNormalizedMetadata.isComponent) {
-	              var templateMeta = this._directiveNormalizer.normalizeTemplate({
+	              var templateMeta_1 = this._directiveNormalizer.normalizeTemplate({
 	                  componentType: directiveType,
 	                  moduleUrl: nonNormalizedMetadata.type.moduleUrl,
 	                  encapsulation: nonNormalizedMetadata.template.encapsulation,
@@ -25102,15 +25102,15 @@
 	                  animations: nonNormalizedMetadata.template.animations,
 	                  interpolation: nonNormalizedMetadata.template.interpolation
 	              });
-	              if (templateMeta.syncResult) {
-	                  createDirectiveMetadata(templateMeta.syncResult);
+	              if (templateMeta_1.syncResult) {
+	                  createDirectiveMetadata(templateMeta_1.syncResult);
 	                  return null;
 	              }
 	              else {
 	                  if (isSync) {
 	                      throw new ComponentStillLoadingError(directiveType);
 	                  }
-	                  return templateMeta.asyncResult.then(createDirectiveMetadata);
+	                  return function () { return templateMeta_1.asyncResult.then(createDirectiveMetadata); };
 	              }
 	          }
 	          else {
@@ -25332,7 +25332,10 @@
 	                      transitiveModule.directives.push(declaredIdentifier);
 	                      declaredDirectives.push(declaredIdentifier);
 	                      _this._addTypeToModule(declaredType, moduleType);
-	                      transitiveModule.directiveLoaders.push(function () { return _this._loadDirectiveMetadata(declaredType, isSync); });
+	                      var loader = _this._loadDirectiveMetadata(declaredType, isSync);
+	                      if (loader) {
+	                          transitiveModule.directiveLoaders.push(loader);
+	                      }
 	                  }
 	                  else if (_this._pipeResolver.isPipe(declaredType)) {
 	                      transitiveModule.pipesSet.add(declaredType);
@@ -29079,7 +29082,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -29155,6 +29158,7 @@
 	        return o !== null && (typeof o === 'function' || typeof o === 'object');
 	    }
 	    function print(obj) {
+	        // tslint:disable-next-line:no-console
 	        console.log(obj);
 	    }
 	    function warn(obj) {
@@ -39851,7 +39855,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -40365,6 +40369,7 @@
 	        };
 	        BrowserDomAdapter.prototype.log = function (error) {
 	            if (window.console) {
+	                // tslint:disable-next-line:no-console
 	                window.console.log && window.console.log(error);
 	            }
 	        };
@@ -42320,6 +42325,7 @@
 	        function AngularProfiler(ref) {
 	            this.appRef = ref.injector.get(_angular_core.ApplicationRef);
 	        }
+	        // tslint:disable:no-console
 	        /**
 	         * Exercises change detection in a loop and then prints the average amount of
 	         * time in milliseconds how long a single round of change detection takes for
@@ -42489,7 +42495,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -44527,7 +44533,7 @@
 	     * {@example common/pipes/ts/async_pipe.ts region='AsyncPipePromise'}
 	     *
 	     * It's also possible to use `async` with Observables. The example below binds the `time` Observable
-	     * to the view. The Observable continuesly updates the view with the current time.
+	     * to the view. The Observable continuously updates the view with the current time.
 	     *
 	     * {@example common/pipes/ts/async_pipe.ts region='AsyncPipeObservable'}
 	     *
@@ -44637,6 +44643,7 @@
 	    }());
 	    var DATE_FORMATS_SPLIT = /((?:[^yMLdHhmsazZEwGjJ']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+|L+|d+|H+|h+|J+|j+|m+|s+|a|z|Z|G+|w+))(.*)/;
 	    var PATTERN_ALIASES = {
+	        // Keys are quoted so they do not get renamed during closure compilation.
 	        'yMMMdjms': datePartGetterFactory(combine([
 	            digitCondition('year', 1),
 	            nameCondition('month', 3),
@@ -44660,46 +44667,47 @@
 	        'jm': datePartGetterFactory(combine([digitCondition('hour', 1), digitCondition('minute', 1)]))
 	    };
 	    var DATE_FORMATS = {
-	        yyyy: datePartGetterFactory(digitCondition('year', 4)),
-	        yy: datePartGetterFactory(digitCondition('year', 2)),
-	        y: datePartGetterFactory(digitCondition('year', 1)),
-	        MMMM: datePartGetterFactory(nameCondition('month', 4)),
-	        MMM: datePartGetterFactory(nameCondition('month', 3)),
-	        MM: datePartGetterFactory(digitCondition('month', 2)),
-	        M: datePartGetterFactory(digitCondition('month', 1)),
-	        LLLL: datePartGetterFactory(nameCondition('month', 4)),
-	        L: datePartGetterFactory(nameCondition('month', 1)),
-	        dd: datePartGetterFactory(digitCondition('day', 2)),
-	        d: datePartGetterFactory(digitCondition('day', 1)),
-	        HH: digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), false)))),
-	        H: hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), false))),
-	        hh: digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), true)))),
-	        h: hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
-	        jj: datePartGetterFactory(digitCondition('hour', 2)),
-	        j: datePartGetterFactory(digitCondition('hour', 1)),
-	        mm: digitModifier(datePartGetterFactory(digitCondition('minute', 2))),
-	        m: datePartGetterFactory(digitCondition('minute', 1)),
-	        ss: digitModifier(datePartGetterFactory(digitCondition('second', 2))),
-	        s: datePartGetterFactory(digitCondition('second', 1)),
+	        // Keys are quoted so they do not get renamed.
+	        'yyyy': datePartGetterFactory(digitCondition('year', 4)),
+	        'yy': datePartGetterFactory(digitCondition('year', 2)),
+	        'y': datePartGetterFactory(digitCondition('year', 1)),
+	        'MMMM': datePartGetterFactory(nameCondition('month', 4)),
+	        'MMM': datePartGetterFactory(nameCondition('month', 3)),
+	        'MM': datePartGetterFactory(digitCondition('month', 2)),
+	        'M': datePartGetterFactory(digitCondition('month', 1)),
+	        'LLLL': datePartGetterFactory(nameCondition('month', 4)),
+	        'L': datePartGetterFactory(nameCondition('month', 1)),
+	        'dd': datePartGetterFactory(digitCondition('day', 2)),
+	        'd': datePartGetterFactory(digitCondition('day', 1)),
+	        'HH': digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), false)))),
+	        'H': hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), false))),
+	        'hh': digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), true)))),
+	        'h': hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
+	        'jj': datePartGetterFactory(digitCondition('hour', 2)),
+	        'j': datePartGetterFactory(digitCondition('hour', 1)),
+	        'mm': digitModifier(datePartGetterFactory(digitCondition('minute', 2))),
+	        'm': datePartGetterFactory(digitCondition('minute', 1)),
+	        'ss': digitModifier(datePartGetterFactory(digitCondition('second', 2))),
+	        's': datePartGetterFactory(digitCondition('second', 1)),
 	        // while ISO 8601 requires fractions to be prefixed with `.` or `,`
 	        // we can be just safely rely on using `sss` since we currently don't support single or two digit
 	        // fractions
-	        sss: datePartGetterFactory(digitCondition('second', 3)),
-	        EEEE: datePartGetterFactory(nameCondition('weekday', 4)),
-	        EEE: datePartGetterFactory(nameCondition('weekday', 3)),
-	        EE: datePartGetterFactory(nameCondition('weekday', 2)),
-	        E: datePartGetterFactory(nameCondition('weekday', 1)),
-	        a: hourClockExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
-	        Z: timeZoneGetter('short'),
-	        z: timeZoneGetter('long'),
-	        ww: datePartGetterFactory({}),
+	        'sss': datePartGetterFactory(digitCondition('second', 3)),
+	        'EEEE': datePartGetterFactory(nameCondition('weekday', 4)),
+	        'EEE': datePartGetterFactory(nameCondition('weekday', 3)),
+	        'EE': datePartGetterFactory(nameCondition('weekday', 2)),
+	        'E': datePartGetterFactory(nameCondition('weekday', 1)),
+	        'a': hourClockExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
+	        'Z': timeZoneGetter('short'),
+	        'z': timeZoneGetter('long'),
+	        'ww': datePartGetterFactory({}),
 	        // first Thursday of the year. not support ?
-	        w: datePartGetterFactory({}),
+	        'w': datePartGetterFactory({}),
 	        // of the year not support ?
-	        G: datePartGetterFactory(nameCondition('era', 1)),
-	        GG: datePartGetterFactory(nameCondition('era', 2)),
-	        GGG: datePartGetterFactory(nameCondition('era', 3)),
-	        GGGG: datePartGetterFactory(nameCondition('era', 4))
+	        'G': datePartGetterFactory(nameCondition('era', 1)),
+	        'GG': datePartGetterFactory(nameCondition('era', 2)),
+	        'GGG': datePartGetterFactory(nameCondition('era', 3)),
+	        'GGGG': datePartGetterFactory(nameCondition('era', 4))
 	    };
 	    function digitModifier(inner) {
 	        return function (date, locale) {
@@ -45421,13 +45429,14 @@
 	var platform_browser_1 = __webpack_require__(344);
 	var app_component_1 = __webpack_require__(347);
 	var ui_1 = __webpack_require__(348);
+	var ui_2 = __webpack_require__(348);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
 	    AppModule = __decorate([
 	        core_1.NgModule({
 	            imports: [platform_browser_1.BrowserModule],
-	            declarations: [app_component_1.AppComponent, ui_1.CityTable],
+	            declarations: [app_component_1.AppComponent, ui_1.CityTable, ui_2.GoogleMap],
 	            bootstrap: [app_component_1.AppComponent]
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -45453,6 +45462,7 @@
 	};
 	var core_1 = __webpack_require__(326);
 	var ui_1 = __webpack_require__(348);
+	var ui_2 = __webpack_require__(348);
 	var AppComponent = (function () {
 	    function AppComponent() {
 	    }
@@ -45460,9 +45470,10 @@
 	        core_1.Component({
 	            selector: 'my-app',
 	            directives: [
+	                ui_2.GoogleMap,
 	                ui_1.CityTable
 	            ],
-	            template: "\n    <city-table></city-table>\n    "
+	            template: "\n    <city-table></city-table>\n    <google-map></google-map>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);
@@ -45478,6 +45489,8 @@
 	"use strict";
 	var table_1 = __webpack_require__(349);
 	exports.CityTable = table_1.CityTable;
+	var map_1 = __webpack_require__(351);
+	exports.GoogleMap = map_1.GoogleMap;
 
 
 /***/ },
@@ -45510,13 +45523,52 @@
 	    CityTable = __decorate([
 	        core_1.Component({
 	            selector: 'city-table',
-	            templateUrl: './templates/table.html'
+	            template: "\n    <table class=\"table table-model-2 table-hover\">\n        <thead>\n            <tr>\n                <th>#</th>\n                <th>City</th>\n                <th>temperature</th>\n                <th>Pressure</th>\n                <th>Wind speed</th>\n            </tr>\n        </thead>\n        <tbody>\n            \n        </tbody>\n    </table>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], CityTable);
 	    return CityTable;
 	}());
 	exports.CityTable = CityTable;
+
+
+/***/ },
+/* 351 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var map_1 = __webpack_require__(352);
+	exports.GoogleMap = map_1.GoogleMap;
+
+
+/***/ },
+/* 352 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(326);
+	var GoogleMap = (function () {
+	    function GoogleMap() {
+	    }
+	    GoogleMap = __decorate([
+	        core_1.Component({
+	            selector: 'google-map',
+	            template: "\n    <div id=\"map\" style=\"height: 500px\"></div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], GoogleMap);
+	    return GoogleMap;
+	}());
+	exports.GoogleMap = GoogleMap;
 
 
 /***/ }

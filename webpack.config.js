@@ -1,18 +1,18 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-        context: __dirname + '/app',
+        context: __dirname + '/src',
         entry: './index.ts',
         output: {
                 path: __dirname + '/dist',
                 filename: 'bundle.js'
         },
-        devServer: {
-                host: 'localhost',
-                port: 3000,
-                contentBase: __dirname + '/app'
-        },
+//        devServer: {
+//                host: 'localhost',
+//                port: 3000,
+//                contentBase: __dirname + '/dist'
+//        },
         module: {
                 loaders: [
 
