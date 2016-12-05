@@ -28,6 +28,7 @@ export class DataService implements OnInit {
         this.lon = vv;
     }
     getLat(){
+        alert('get')
         return this.lat
     }
     getLon(){
@@ -55,7 +56,7 @@ export class DataService implements OnInit {
         return new Observable(observer=> {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
-                    alert('beforeres')
+                    alert('beforeres..')
                     observer.next(position.coords);
                 }, function() {
                     alert('bad');
