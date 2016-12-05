@@ -31,6 +31,7 @@
     "@types/core-js": "^0.9.34",
     "@types/google-maps": "^3.1.28",
     "@types/whatwg-fetch": "0.0.32",
+    "angular2-google-maps": "^0.16.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "extract-text-webpack-plugin": "^1.0.1",

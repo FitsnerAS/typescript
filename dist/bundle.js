@@ -10411,7 +10411,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -10579,7 +10579,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -25048,7 +25048,7 @@
 	              return normalizedDirMeta;
 	          };
 	          if (nonNormalizedMetadata.isComponent) {
-	              var templateMeta = this._directiveNormalizer.normalizeTemplate({
+	              var templateMeta_1 = this._directiveNormalizer.normalizeTemplate({
 	                  componentType: directiveType,
 	                  moduleUrl: nonNormalizedMetadata.type.moduleUrl,
 	                  encapsulation: nonNormalizedMetadata.template.encapsulation,
@@ -25059,15 +25059,15 @@
 	                  animations: nonNormalizedMetadata.template.animations,
 	                  interpolation: nonNormalizedMetadata.template.interpolation
 	              });
-	              if (templateMeta.syncResult) {
-	                  createDirectiveMetadata(templateMeta.syncResult);
+	              if (templateMeta_1.syncResult) {
+	                  createDirectiveMetadata(templateMeta_1.syncResult);
 	                  return null;
 	              }
 	              else {
 	                  if (isSync) {
 	                      throw new ComponentStillLoadingError(directiveType);
 	                  }
-	                  return templateMeta.asyncResult.then(createDirectiveMetadata);
+	                  return function () { return templateMeta_1.asyncResult.then(createDirectiveMetadata); };
 	              }
 	          }
 	          else {
@@ -25289,7 +25289,10 @@
 	                      transitiveModule.directives.push(declaredIdentifier);
 	                      declaredDirectives.push(declaredIdentifier);
 	                      _this._addTypeToModule(declaredType, moduleType);
-	                      transitiveModule.directiveLoaders.push(function () { return _this._loadDirectiveMetadata(declaredType, isSync); });
+	                      var loader = _this._loadDirectiveMetadata(declaredType, isSync);
+	                      if (loader) {
+	                          transitiveModule.directiveLoaders.push(loader);
+	                      }
 	                  }
 	                  else if (_this._pipeResolver.isPipe(declaredType)) {
 	                      transitiveModule.pipesSet.add(declaredType);
@@ -29036,7 +29039,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -29112,6 +29115,7 @@
 	        return o !== null && (typeof o === 'function' || typeof o === 'object');
 	    }
 	    function print(obj) {
+	        // tslint:disable-next-line:no-console
 	        console.log(obj);
 	    }
 	    function warn(obj) {
@@ -39808,7 +39812,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -40322,6 +40326,7 @@
 	        };
 	        BrowserDomAdapter.prototype.log = function (error) {
 	            if (window.console) {
+	                // tslint:disable-next-line:no-console
 	                window.console.log && window.console.log(error);
 	            }
 	        };
@@ -42277,6 +42282,7 @@
 	        function AngularProfiler(ref) {
 	            this.appRef = ref.injector.get(_angular_core.ApplicationRef);
 	        }
+	        // tslint:disable:no-console
 	        /**
 	         * Exercises change detection in a loop and then prints the average amount of
 	         * time in milliseconds how long a single round of change detection takes for
@@ -42446,7 +42452,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * @license Angular v2.2.3
+	 * @license Angular v2.2.4
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
@@ -44484,7 +44490,7 @@
 	     * {@example common/pipes/ts/async_pipe.ts region='AsyncPipePromise'}
 	     *
 	     * It's also possible to use `async` with Observables. The example below binds the `time` Observable
-	     * to the view. The Observable continuesly updates the view with the current time.
+	     * to the view. The Observable continuously updates the view with the current time.
 	     *
 	     * {@example common/pipes/ts/async_pipe.ts region='AsyncPipeObservable'}
 	     *
@@ -44594,6 +44600,7 @@
 	    }());
 	    var DATE_FORMATS_SPLIT = /((?:[^yMLdHhmsazZEwGjJ']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+|L+|d+|H+|h+|J+|j+|m+|s+|a|z|Z|G+|w+))(.*)/;
 	    var PATTERN_ALIASES = {
+	        // Keys are quoted so they do not get renamed during closure compilation.
 	        'yMMMdjms': datePartGetterFactory(combine([
 	            digitCondition('year', 1),
 	            nameCondition('month', 3),
@@ -44617,46 +44624,47 @@
 	        'jm': datePartGetterFactory(combine([digitCondition('hour', 1), digitCondition('minute', 1)]))
 	    };
 	    var DATE_FORMATS = {
-	        yyyy: datePartGetterFactory(digitCondition('year', 4)),
-	        yy: datePartGetterFactory(digitCondition('year', 2)),
-	        y: datePartGetterFactory(digitCondition('year', 1)),
-	        MMMM: datePartGetterFactory(nameCondition('month', 4)),
-	        MMM: datePartGetterFactory(nameCondition('month', 3)),
-	        MM: datePartGetterFactory(digitCondition('month', 2)),
-	        M: datePartGetterFactory(digitCondition('month', 1)),
-	        LLLL: datePartGetterFactory(nameCondition('month', 4)),
-	        L: datePartGetterFactory(nameCondition('month', 1)),
-	        dd: datePartGetterFactory(digitCondition('day', 2)),
-	        d: datePartGetterFactory(digitCondition('day', 1)),
-	        HH: digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), false)))),
-	        H: hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), false))),
-	        hh: digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), true)))),
-	        h: hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
-	        jj: datePartGetterFactory(digitCondition('hour', 2)),
-	        j: datePartGetterFactory(digitCondition('hour', 1)),
-	        mm: digitModifier(datePartGetterFactory(digitCondition('minute', 2))),
-	        m: datePartGetterFactory(digitCondition('minute', 1)),
-	        ss: digitModifier(datePartGetterFactory(digitCondition('second', 2))),
-	        s: datePartGetterFactory(digitCondition('second', 1)),
+	        // Keys are quoted so they do not get renamed.
+	        'yyyy': datePartGetterFactory(digitCondition('year', 4)),
+	        'yy': datePartGetterFactory(digitCondition('year', 2)),
+	        'y': datePartGetterFactory(digitCondition('year', 1)),
+	        'MMMM': datePartGetterFactory(nameCondition('month', 4)),
+	        'MMM': datePartGetterFactory(nameCondition('month', 3)),
+	        'MM': datePartGetterFactory(digitCondition('month', 2)),
+	        'M': datePartGetterFactory(digitCondition('month', 1)),
+	        'LLLL': datePartGetterFactory(nameCondition('month', 4)),
+	        'L': datePartGetterFactory(nameCondition('month', 1)),
+	        'dd': datePartGetterFactory(digitCondition('day', 2)),
+	        'd': datePartGetterFactory(digitCondition('day', 1)),
+	        'HH': digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), false)))),
+	        'H': hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), false))),
+	        'hh': digitModifier(hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 2), true)))),
+	        'h': hourExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
+	        'jj': datePartGetterFactory(digitCondition('hour', 2)),
+	        'j': datePartGetterFactory(digitCondition('hour', 1)),
+	        'mm': digitModifier(datePartGetterFactory(digitCondition('minute', 2))),
+	        'm': datePartGetterFactory(digitCondition('minute', 1)),
+	        'ss': digitModifier(datePartGetterFactory(digitCondition('second', 2))),
+	        's': datePartGetterFactory(digitCondition('second', 1)),
 	        // while ISO 8601 requires fractions to be prefixed with `.` or `,`
 	        // we can be just safely rely on using `sss` since we currently don't support single or two digit
 	        // fractions
-	        sss: datePartGetterFactory(digitCondition('second', 3)),
-	        EEEE: datePartGetterFactory(nameCondition('weekday', 4)),
-	        EEE: datePartGetterFactory(nameCondition('weekday', 3)),
-	        EE: datePartGetterFactory(nameCondition('weekday', 2)),
-	        E: datePartGetterFactory(nameCondition('weekday', 1)),
-	        a: hourClockExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
-	        Z: timeZoneGetter('short'),
-	        z: timeZoneGetter('long'),
-	        ww: datePartGetterFactory({}),
+	        'sss': datePartGetterFactory(digitCondition('second', 3)),
+	        'EEEE': datePartGetterFactory(nameCondition('weekday', 4)),
+	        'EEE': datePartGetterFactory(nameCondition('weekday', 3)),
+	        'EE': datePartGetterFactory(nameCondition('weekday', 2)),
+	        'E': datePartGetterFactory(nameCondition('weekday', 1)),
+	        'a': hourClockExtractor(datePartGetterFactory(hour12Modify(digitCondition('hour', 1), true))),
+	        'Z': timeZoneGetter('short'),
+	        'z': timeZoneGetter('long'),
+	        'ww': datePartGetterFactory({}),
 	        // first Thursday of the year. not support ?
-	        w: datePartGetterFactory({}),
+	        'w': datePartGetterFactory({}),
 	        // of the year not support ?
-	        G: datePartGetterFactory(nameCondition('era', 1)),
-	        GG: datePartGetterFactory(nameCondition('era', 2)),
-	        GGG: datePartGetterFactory(nameCondition('era', 3)),
-	        GGGG: datePartGetterFactory(nameCondition('era', 4))
+	        'G': datePartGetterFactory(nameCondition('era', 1)),
+	        'GG': datePartGetterFactory(nameCondition('era', 2)),
+	        'GGG': datePartGetterFactory(nameCondition('era', 3)),
+	        'GGGG': datePartGetterFactory(nameCondition('era', 4))
 	    };
 	    function digitModifier(inner) {
 	        return function (date, locale) {
@@ -45379,6 +45387,9 @@
 	var app_component_1 = __webpack_require__(347);
 	var ui_1 = __webpack_require__(348);
 	var ui_2 = __webpack_require__(348);
+	//import { FormsModule } from '@angular/forms';
+	var http_1 = __webpack_require__(352);
+	var core_2 = __webpack_require__(357);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -45386,6 +45397,11 @@
 	        core_1.NgModule({
 	            imports: [
 	                platform_browser_1.BrowserModule,
+	                http_1.HttpModule,
+	                http_1.JsonpModule,
+	                core_2.AgmCoreModule.forRoot({
+	                    apiKey: 'AIzaSyAaFWg1Jpix-Krmge62_UDT3Nuf_0Sht6Y'
+	                })
 	            ],
 	            declarations: [app_component_1.AppComponent, ui_1.CityTable, ui_2.GoogleMap],
 	            bootstrap: [app_component_1.AppComponent]
@@ -45417,6 +45433,11 @@
 	var AppComponent = (function () {
 	    function AppComponent() {
 	    }
+	    //    public lat:number;
+	    //    public lon:number;
+	    //    contructor(public lat: number, public lon: number) { }
+	    AppComponent.prototype.ngOnInit = function () {
+	    };
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
@@ -45440,7 +45461,7 @@
 	"use strict";
 	var table_1 = __webpack_require__(349);
 	exports.CityTable = table_1.CityTable;
-	var map_1 = __webpack_require__(351);
+	var map_1 = __webpack_require__(355);
 	exports.GoogleMap = map_1.GoogleMap;
 
 
@@ -45468,72 +45489,31 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(326);
+	var data_service_1 = __webpack_require__(351);
 	var CityTable = (function () {
-	    function CityTable() {
+	    function CityTable(dataService) {
+	        this.dataService = dataService;
+	        this.citiesArray = [];
 	    }
+	    CityTable.prototype.ngOnInit = function () {
+	        var _this = this;
+	        this.dataService.fetchData().subscribe(function (data) { return _this.citiesArray = data.list; });
+	    };
 	    CityTable = __decorate([
 	        core_1.Component({
 	            selector: 'city-table',
-	            templateUrl: "\n    <table class=\"table table-model-2 table-hover\">\n        <thead>\n            <tr>\n                <th>#</th>\n                <th>City</th>\n                <th>temperature</th>\n                <th>Pressure</th>\n                <th>Wind speed</th>\n            </tr>\n        </thead>\n        <tbody>\n            \n        </tbody>\n    </table>\n    "
+	            template: "\n    <table class=\"table table-model-2 table-hover\">\n        <thead>\n            <tr>\n                <th>#</th>\n                <th>City</th>\n                <th>temperature</th>\n                <th>Pressure</th>\n                <th>Wind speed</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor='let item of citiesArray;let i = index;'>\n                    <td>{{i}}</td>\n                    <td>{{item.name}}</td>\n                    <td>{{item.main.temp}}</td>\n                    <td>{{item.main.pressure}}</td>\n                    <td>{{item.wind.speed}}</td>\n            </tr>\n        </tbody>\n    </table>\n    ",
+	            providers: [data_service_1.DataService]
 	        }), 
-	        __metadata('design:paramtypes', [])
+	        __metadata('design:paramtypes', [data_service_1.DataService])
 	    ], CityTable);
 	    return CityTable;
 	}());
 	exports.CityTable = CityTable;
-	var lat;
-	var lon;
-	if (navigator.geolocation) {
-	    navigator.geolocation.getCurrentPosition(function (position) {
-	        lat = position.coords.latitude;
-	        lon = position.coords.longitude;
-	        fetch('http://api.openweathermap.org/data/2.5/find?&lat=' + lat + '&lon='
-	            + lon + '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6').then(function (data) {
-	            return data.json();
-	        }).then(function (data) {
-	            template(data.list);
-	        });
-	        initMap();
-	    }, function (error) {
-	        console.log(error);
-	        fetch('http://api.openweathermap.org/data/2.5/find?&lat=' + lat + '&lon='
-	            + lon + '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6').then(function (data) {
-	            return data.json();
-	        }).then(function (data) {
-	            template(data.list);
-	        });
-	        function initMap() {
-	            new google.maps.Map(document.getElementById('map'), {
-	                center: new google.maps.LatLng(53.904539799999995, 27.5615244),
-	                zoom: 8
-	            });
-	        }
-	    });
-	}
-	function initMap() {
-	    new google.maps.Map(document.getElementById('map'), {
-	        center: new google.maps.LatLng(lat, lon),
-	        zoom: 8
-	    });
-	}
-	function template(arr) {
-	    for (var i = 0; i < arr.length; i++) {
-	        document.getElementsByTagName('tbody')[0].insertAdjacentHTML("afterbegin", "<tr>\n                <td>" + (i + 1) + "</td>\n                <td>" + arr[i].name + "</td>\n                <td>" + arr[i].main.temp + "</td>\n                <td>" + arr[i].main.pressure + "</td>\n                <td>" + arr[i].wind.speed + "</td>\n            </tr>");
-	    }
-	}
 
 
 /***/ },
 /* 351 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var map_1 = __webpack_require__(352);
-	exports.GoogleMap = map_1.GoogleMap;
-
-
-/***/ },
-/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45547,20 +45527,4138 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(326);
+	var http_1 = __webpack_require__(352);
+	__webpack_require__(353);
+	var DataService = (function () {
+	    function DataService(http) {
+	        this.http = http;
+	        //    public lng:number;
+	        this.dataUrl = 'http://api.openweathermap.org/data/2.5/find?&lat=53.904539799999995&lon=27.5615244&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6';
+	    }
+	    DataService.prototype.fetchData = function () {
+	        return this.http.get(this.dataUrl).map(function (response) { return response.json(); });
+	    };
+	    DataService.prototype.nav = function () {
+	        var x;
+	        if (navigator.geolocation) {
+	            navigator.geolocation.getCurrentPosition(function (position) {
+	                //                this.lat = position.coords.latitude;
+	                x = position.coords.latitude;
+	                //                return position.coords;
+	            }, function () {
+	                return { latitude: 53.904539799999995, longitude: 27.5615244 };
+	            });
+	        }
+	        ;
+	        alert(x);
+	        return x;
+	    };
+	    DataService.prototype.ngOnInit = function () {
+	        alert(this.nav());
+	        this.coords = this.nav();
+	    };
+	    DataService = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [http_1.Http])
+	    ], DataService);
+	    return DataService;
+	}());
+	exports.DataService = DataService;
+
+
+/***/ },
+/* 352 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @license Angular v2.2.4
+	 * (c) 2010-2016 Google, Inc. https://angular.io/
+	 * License: MIT
+	 */
+	(function (global, factory) {
+	     true ? factory(exports, __webpack_require__(326), __webpack_require__(328), __webpack_require__(344)) :
+	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Observable', '@angular/platform-browser'], factory) :
+	    (factory((global.ng = global.ng || {}, global.ng.http = global.ng.http || {}),global.ng.core,global.Rx,global.ng.platformBrowser));
+	}(this, function (exports,_angular_core,rxjs_Observable,_angular_platformBrowser) { 'use strict';
+
+	    /**
+	     * A backend for http that uses the `XMLHttpRequest` browser API.
+	     *
+	     * Take care not to evaluate this in non-browser contexts.
+	     *
+	     * @experimental
+	     */
+	    var BrowserXhr = (function () {
+	        function BrowserXhr() {
+	        }
+	        BrowserXhr.prototype.build = function () { return (new XMLHttpRequest()); };
+	        BrowserXhr.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        BrowserXhr.ctorParameters = [];
+	        return BrowserXhr;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    /**
+	     * Supported http methods.
+	     * @experimental
+	     */
+	    exports.RequestMethod;
+	    (function (RequestMethod) {
+	        RequestMethod[RequestMethod["Get"] = 0] = "Get";
+	        RequestMethod[RequestMethod["Post"] = 1] = "Post";
+	        RequestMethod[RequestMethod["Put"] = 2] = "Put";
+	        RequestMethod[RequestMethod["Delete"] = 3] = "Delete";
+	        RequestMethod[RequestMethod["Options"] = 4] = "Options";
+	        RequestMethod[RequestMethod["Head"] = 5] = "Head";
+	        RequestMethod[RequestMethod["Patch"] = 6] = "Patch";
+	    })(exports.RequestMethod || (exports.RequestMethod = {}));
+	    /**
+	     * All possible states in which a connection can be, based on
+	     * [States](http://www.w3.org/TR/XMLHttpRequest/#states) from the `XMLHttpRequest` spec, but with an
+	     * additional "CANCELLED" state.
+	     * @experimental
+	     */
+	    exports.ReadyState;
+	    (function (ReadyState) {
+	        ReadyState[ReadyState["Unsent"] = 0] = "Unsent";
+	        ReadyState[ReadyState["Open"] = 1] = "Open";
+	        ReadyState[ReadyState["HeadersReceived"] = 2] = "HeadersReceived";
+	        ReadyState[ReadyState["Loading"] = 3] = "Loading";
+	        ReadyState[ReadyState["Done"] = 4] = "Done";
+	        ReadyState[ReadyState["Cancelled"] = 5] = "Cancelled";
+	    })(exports.ReadyState || (exports.ReadyState = {}));
+	    /**
+	     * Acceptable response types to be associated with a {@link Response}, based on
+	     * [ResponseType](https://fetch.spec.whatwg.org/#responsetype) from the Fetch spec.
+	     * @experimental
+	     */
+	    exports.ResponseType;
+	    (function (ResponseType) {
+	        ResponseType[ResponseType["Basic"] = 0] = "Basic";
+	        ResponseType[ResponseType["Cors"] = 1] = "Cors";
+	        ResponseType[ResponseType["Default"] = 2] = "Default";
+	        ResponseType[ResponseType["Error"] = 3] = "Error";
+	        ResponseType[ResponseType["Opaque"] = 4] = "Opaque";
+	    })(exports.ResponseType || (exports.ResponseType = {}));
+	    /**
+	     * Supported content type to be automatically associated with a {@link Request}.
+	     * @experimental
+	     */
+	    var ContentType;
+	    (function (ContentType) {
+	        ContentType[ContentType["NONE"] = 0] = "NONE";
+	        ContentType[ContentType["JSON"] = 1] = "JSON";
+	        ContentType[ContentType["FORM"] = 2] = "FORM";
+	        ContentType[ContentType["FORM_DATA"] = 3] = "FORM_DATA";
+	        ContentType[ContentType["TEXT"] = 4] = "TEXT";
+	        ContentType[ContentType["BLOB"] = 5] = "BLOB";
+	        ContentType[ContentType["ARRAY_BUFFER"] = 6] = "ARRAY_BUFFER";
+	    })(ContentType || (ContentType = {}));
+	    /**
+	     * Define which buffer to use to store the response
+	     * @experimental
+	     */
+	    exports.ResponseContentType;
+	    (function (ResponseContentType) {
+	        ResponseContentType[ResponseContentType["Text"] = 0] = "Text";
+	        ResponseContentType[ResponseContentType["Json"] = 1] = "Json";
+	        ResponseContentType[ResponseContentType["ArrayBuffer"] = 2] = "ArrayBuffer";
+	        ResponseContentType[ResponseContentType["Blob"] = 3] = "Blob";
+	    })(exports.ResponseContentType || (exports.ResponseContentType = {}));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    /**
+	     * Polyfill for [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers), as
+	     * specified in the [Fetch Spec](https://fetch.spec.whatwg.org/#headers-class).
+	     *
+	     * The only known difference between this `Headers` implementation and the spec is the
+	     * lack of an `entries` method.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * import {Headers} from '@angular/http';
+	     *
+	     * var firstHeaders = new Headers();
+	     * firstHeaders.append('Content-Type', 'image/jpeg');
+	     * console.log(firstHeaders.get('Content-Type')) //'image/jpeg'
+	     *
+	     * // Create headers from Plain Old JavaScript Object
+	     * var secondHeaders = new Headers({
+	     *   'X-My-Custom-Header': 'Angular'
+	     * });
+	     * console.log(secondHeaders.get('X-My-Custom-Header')); //'Angular'
+	     *
+	     * var thirdHeaders = new Headers(secondHeaders);
+	     * console.log(thirdHeaders.get('X-My-Custom-Header')); //'Angular'
+	     * ```
+	     *
+	     * @experimental
+	     */
+	    var Headers = (function () {
+	        // TODO(vicb): any -> string|string[]
+	        function Headers(headers) {
+	            var _this = this;
+	            /** @internal header names are lower case */
+	            this._headers = new Map();
+	            /** @internal map lower case names to actual names */
+	            this._normalizedNames = new Map();
+	            if (!headers) {
+	                return;
+	            }
+	            if (headers instanceof Headers) {
+	                headers.forEach(function (values, name) {
+	                    values.forEach(function (value) { return _this.append(name, value); });
+	                });
+	                return;
+	            }
+	            Object.keys(headers).forEach(function (name) {
+	                var values = Array.isArray(headers[name]) ? headers[name] : [headers[name]];
+	                _this.delete(name);
+	                values.forEach(function (value) { return _this.append(name, value); });
+	            });
+	        }
+	        /**
+	         * Returns a new Headers instance from the given DOMString of Response Headers
+	         */
+	        Headers.fromResponseHeaderString = function (headersString) {
+	            var headers = new Headers();
+	            headersString.split('\n').forEach(function (line) {
+	                var index = line.indexOf(':');
+	                if (index > 0) {
+	                    var name_1 = line.slice(0, index);
+	                    var value = line.slice(index + 1).trim();
+	                    headers.set(name_1, value);
+	                }
+	            });
+	            return headers;
+	        };
+	        /**
+	         * Appends a header to existing list of header values for a given header name.
+	         */
+	        Headers.prototype.append = function (name, value) {
+	            var values = this.getAll(name);
+	            if (values === null) {
+	                this.set(name, value);
+	            }
+	            else {
+	                values.push(value);
+	            }
+	        };
+	        /**
+	         * Deletes all header values for the given name.
+	         */
+	        Headers.prototype.delete = function (name) {
+	            var lcName = name.toLowerCase();
+	            this._normalizedNames.delete(lcName);
+	            this._headers.delete(lcName);
+	        };
+	        Headers.prototype.forEach = function (fn) {
+	            var _this = this;
+	            this._headers.forEach(function (values, lcName) { return fn(values, _this._normalizedNames.get(lcName), _this._headers); });
+	        };
+	        /**
+	         * Returns first header that matches given name.
+	         */
+	        Headers.prototype.get = function (name) {
+	            var values = this.getAll(name);
+	            if (values === null) {
+	                return null;
+	            }
+	            return values.length > 0 ? values[0] : null;
+	        };
+	        /**
+	         * Checks for existence of header by given name.
+	         */
+	        Headers.prototype.has = function (name) { return this._headers.has(name.toLowerCase()); };
+	        /**
+	         * Returns the names of the headers
+	         */
+	        Headers.prototype.keys = function () { return Array.from(this._normalizedNames.values()); };
+	        /**
+	         * Sets or overrides header value for given name.
+	         */
+	        Headers.prototype.set = function (name, value) {
+	            if (Array.isArray(value)) {
+	                if (value.length) {
+	                    this._headers.set(name.toLowerCase(), [value.join(',')]);
+	                }
+	            }
+	            else {
+	                this._headers.set(name.toLowerCase(), [value]);
+	            }
+	            this.mayBeSetNormalizedName(name);
+	        };
+	        /**
+	         * Returns values of all headers.
+	         */
+	        Headers.prototype.values = function () { return Array.from(this._headers.values()); };
+	        /**
+	         * Returns string of all headers.
+	         */
+	        // TODO(vicb): returns {[name: string]: string[]}
+	        Headers.prototype.toJSON = function () {
+	            var _this = this;
+	            var serialized = {};
+	            this._headers.forEach(function (values, name) {
+	                var split = [];
+	                values.forEach(function (v) { return split.push.apply(split, v.split(',')); });
+	                serialized[_this._normalizedNames.get(name)] = split;
+	            });
+	            return serialized;
+	        };
+	        /**
+	         * Returns list of header values for a given name.
+	         */
+	        Headers.prototype.getAll = function (name) {
+	            return this.has(name) ? this._headers.get(name.toLowerCase()) : null;
+	        };
+	        /**
+	         * This method is not implemented.
+	         */
+	        Headers.prototype.entries = function () { throw new Error('"entries" method is not implemented on Headers class'); };
+	        Headers.prototype.mayBeSetNormalizedName = function (name) {
+	            var lcName = name.toLowerCase();
+	            if (!this._normalizedNames.has(lcName)) {
+	                this._normalizedNames.set(lcName, name);
+	            }
+	        };
+	        return Headers;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$1 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * Creates a response options object to be optionally provided when instantiating a
+	     * {@link Response}.
+	     *
+	     * This class is based on the `ResponseInit` description in the [Fetch
+	     * Spec](https://fetch.spec.whatwg.org/#responseinit).
+	     *
+	     * All values are null by default. Typical defaults can be found in the
+	     * {@link BaseResponseOptions} class, which sub-classes `ResponseOptions`.
+	     *
+	     * This class may be used in tests to build {@link Response Responses} for
+	     * mock responses (see {@link MockBackend}).
+	     *
+	     * ### Example ([live demo](http://plnkr.co/edit/P9Jkk8e8cz6NVzbcxEsD?p=preview))
+	     *
+	     * ```typescript
+	     * import {ResponseOptions, Response} from '@angular/http';
+	     *
+	     * var options = new ResponseOptions({
+	     *   body: '{"name":"Jeff"}'
+	     * });
+	     * var res = new Response(options);
+	     *
+	     * console.log('res.json():', res.json()); // Object {name: "Jeff"}
+	     * ```
+	     *
+	     * @experimental
+	     */
+	    var ResponseOptions = (function () {
+	        function ResponseOptions(_a) {
+	            var _b = _a === void 0 ? {} : _a, body = _b.body, status = _b.status, headers = _b.headers, statusText = _b.statusText, type = _b.type, url = _b.url;
+	            this.body = body != null ? body : null;
+	            this.status = status != null ? status : null;
+	            this.headers = headers != null ? headers : null;
+	            this.statusText = statusText != null ? statusText : null;
+	            this.type = type != null ? type : null;
+	            this.url = url != null ? url : null;
+	        }
+	        /**
+	         * Creates a copy of the `ResponseOptions` instance, using the optional input as values to
+	         * override
+	         * existing values. This method will not change the values of the instance on which it is being
+	         * called.
+	         *
+	         * This may be useful when sharing a base `ResponseOptions` object inside tests,
+	         * where certain properties may change from test to test.
+	         *
+	         * ### Example ([live demo](http://plnkr.co/edit/1lXquqFfgduTFBWjNoRE?p=preview))
+	         *
+	         * ```typescript
+	         * import {ResponseOptions, Response} from '@angular/http';
+	         *
+	         * var options = new ResponseOptions({
+	         *   body: {name: 'Jeff'}
+	         * });
+	         * var res = new Response(options.merge({
+	         *   url: 'https://google.com'
+	         * }));
+	         * console.log('options.url:', options.url); // null
+	         * console.log('res.json():', res.json()); // Object {name: "Jeff"}
+	         * console.log('res.url:', res.url); // https://google.com
+	         * ```
+	         */
+	        ResponseOptions.prototype.merge = function (options) {
+	            return new ResponseOptions({
+	                body: options && options.body != null ? options.body : this.body,
+	                status: options && options.status != null ? options.status : this.status,
+	                headers: options && options.headers != null ? options.headers : this.headers,
+	                statusText: options && options.statusText != null ? options.statusText : this.statusText,
+	                type: options && options.type != null ? options.type : this.type,
+	                url: options && options.url != null ? options.url : this.url,
+	            });
+	        };
+	        return ResponseOptions;
+	    }());
+	    /**
+	     * Subclass of {@link ResponseOptions}, with default values.
+	     *
+	     * Default values:
+	     *  * status: 200
+	     *  * headers: empty {@link Headers} object
+	     *
+	     * This class could be extended and bound to the {@link ResponseOptions} class
+	     * when configuring an {@link Injector}, in order to override the default options
+	     * used by {@link Http} to create {@link Response Responses}.
+	     *
+	     * ### Example ([live demo](http://plnkr.co/edit/qv8DLT?p=preview))
+	     *
+	     * ```typescript
+	     * import {provide} from '@angular/core';
+	     * import {bootstrap} from '@angular/platform-browser/browser';
+	     * import {HTTP_PROVIDERS, Headers, Http, BaseResponseOptions, ResponseOptions} from
+	     * '@angular/http';
+	     * import {App} from './myapp';
+	     *
+	     * class MyOptions extends BaseResponseOptions {
+	     *   headers:Headers = new Headers({network: 'github'});
+	     * }
+	     *
+	     * bootstrap(App, [HTTP_PROVIDERS, {provide: ResponseOptions, useClass: MyOptions}]);
+	     * ```
+	     *
+	     * The options could also be extended when manually creating a {@link Response}
+	     * object.
+	     *
+	     * ### Example ([live demo](http://plnkr.co/edit/VngosOWiaExEtbstDoix?p=preview))
+	     *
+	     * ```
+	     * import {BaseResponseOptions, Response} from '@angular/http';
+	     *
+	     * var options = new BaseResponseOptions();
+	     * var res = new Response(options.merge({
+	     *   body: 'Angular',
+	     *   headers: new Headers({framework: 'angular'})
+	     * }));
+	     * console.log('res.headers.get("framework"):', res.headers.get('framework')); // angular
+	     * console.log('res.text():', res.text()); // Angular;
+	     * ```
+	     *
+	     * @experimental
+	     */
+	    var BaseResponseOptions = (function (_super) {
+	        __extends$1(BaseResponseOptions, _super);
+	        function BaseResponseOptions() {
+	            _super.call(this, { status: 200, statusText: 'Ok', type: exports.ResponseType.Default, headers: new Headers() });
+	        }
+	        BaseResponseOptions.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        BaseResponseOptions.ctorParameters = [];
+	        return BaseResponseOptions;
+	    }(ResponseOptions));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    /**
+	     * Abstract class from which real backends are derived.
+	     *
+	     * The primary purpose of a `ConnectionBackend` is to create new connections to fulfill a given
+	     * {@link Request}.
+	     *
+	     * @experimental
+	     */
+	    var ConnectionBackend = (function () {
+	        function ConnectionBackend() {
+	        }
+	        return ConnectionBackend;
+	    }());
+	    /**
+	     * Abstract class from which real connections are derived.
+	     *
+	     * @experimental
+	     */
+	    var Connection = (function () {
+	        function Connection() {
+	        }
+	        return Connection;
+	    }());
+	    /**
+	     * An XSRFStrategy configures XSRF protection (e.g. via headers) on an HTTP request.
+	     *
+	     * @experimental
+	     */
+	    var XSRFStrategy = (function () {
+	        function XSRFStrategy() {
+	        }
+	        return XSRFStrategy;
+	    }());
+
+	    function normalizeMethodName(method) {
+	        if (typeof method !== 'string')
+	            return method;
+	        switch (method.toUpperCase()) {
+	            case 'GET':
+	                return exports.RequestMethod.Get;
+	            case 'POST':
+	                return exports.RequestMethod.Post;
+	            case 'PUT':
+	                return exports.RequestMethod.Put;
+	            case 'DELETE':
+	                return exports.RequestMethod.Delete;
+	            case 'OPTIONS':
+	                return exports.RequestMethod.Options;
+	            case 'HEAD':
+	                return exports.RequestMethod.Head;
+	            case 'PATCH':
+	                return exports.RequestMethod.Patch;
+	        }
+	        throw new Error("Invalid request method. The method \"" + method + "\" is not supported.");
+	    }
+	    var isSuccess = function (status) { return (status >= 200 && status < 300); };
+	    function getResponseURL(xhr) {
+	        if ('responseURL' in xhr) {
+	            return xhr.responseURL;
+	        }
+	        if (/^X-Request-URL:/m.test(xhr.getAllResponseHeaders())) {
+	            return xhr.getResponseHeader('X-Request-URL');
+	        }
+	        return;
+	    }
+	    function stringToArrayBuffer(input) {
+	        var view = new Uint16Array(input.length);
+	        for (var i = 0, strLen = input.length; i < strLen; i++) {
+	            view[i] = input.charCodeAt(i);
+	        }
+	        return view.buffer;
+	    }
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    function paramParser(rawParams) {
+	        if (rawParams === void 0) { rawParams = ''; }
+	        var map = new Map();
+	        if (rawParams.length > 0) {
+	            var params = rawParams.split('&');
+	            params.forEach(function (param) {
+	                var eqIdx = param.indexOf('=');
+	                var _a = eqIdx == -1 ? [param, ''] : [param.slice(0, eqIdx), param.slice(eqIdx + 1)], key = _a[0], val = _a[1];
+	                var list = map.get(key) || [];
+	                list.push(val);
+	                map.set(key, list);
+	            });
+	        }
+	        return map;
+	    }
+	    /**
+	     * @experimental
+	     **/
+	    var QueryEncoder = (function () {
+	        function QueryEncoder() {
+	        }
+	        QueryEncoder.prototype.encodeKey = function (k) { return standardEncoding(k); };
+	        QueryEncoder.prototype.encodeValue = function (v) { return standardEncoding(v); };
+	        return QueryEncoder;
+	    }());
+	    function standardEncoding(v) {
+	        return encodeURIComponent(v)
+	            .replace(/%40/gi, '@')
+	            .replace(/%3A/gi, ':')
+	            .replace(/%24/gi, '$')
+	            .replace(/%2C/gi, ',')
+	            .replace(/%3B/gi, ';')
+	            .replace(/%2B/gi, '+')
+	            .replace(/%3D/gi, '=')
+	            .replace(/%3F/gi, '?')
+	            .replace(/%2F/gi, '/');
+	    }
+	    /**
+	     * Map-like representation of url search parameters, based on
+	     * [URLSearchParams](https://url.spec.whatwg.org/#urlsearchparams) in the url living standard,
+	     * with several extensions for merging URLSearchParams objects:
+	     *   - setAll()
+	     *   - appendAll()
+	     *   - replaceAll()
+	     *
+	     * This class accepts an optional second parameter of ${@link QueryEncoder},
+	     * which is used to serialize parameters before making a request. By default,
+	     * `QueryEncoder` encodes keys and values of parameters using `encodeURIComponent`,
+	     * and then un-encodes certain characters that are allowed to be part of the query
+	     * according to IETF RFC 3986: https://tools.ietf.org/html/rfc3986.
+	     *
+	     * These are the characters that are not encoded: `! $ \' ( ) * + , ; A 9 - . _ ~ ? /`
+	     *
+	     * If the set of allowed query characters is not acceptable for a particular backend,
+	     * `QueryEncoder` can be subclassed and provided as the 2nd argument to URLSearchParams.
+	     *
+	     * ```
+	     * import {URLSearchParams, QueryEncoder} from '@angular/http';
+	     * class MyQueryEncoder extends QueryEncoder {
+	     *   encodeKey(k: string): string {
+	     *     return myEncodingFunction(k);
+	     *   }
+	     *
+	     *   encodeValue(v: string): string {
+	     *     return myEncodingFunction(v);
+	     *   }
+	     * }
+	     *
+	     * let params = new URLSearchParams('', new MyQueryEncoder());
+	     * ```
+	     * @experimental
+	     */
+	    var URLSearchParams = (function () {
+	        function URLSearchParams(rawParams, queryEncoder) {
+	            if (rawParams === void 0) { rawParams = ''; }
+	            if (queryEncoder === void 0) { queryEncoder = new QueryEncoder(); }
+	            this.rawParams = rawParams;
+	            this.queryEncoder = queryEncoder;
+	            this.paramsMap = paramParser(rawParams);
+	        }
+	        URLSearchParams.prototype.clone = function () {
+	            var clone = new URLSearchParams('', this.queryEncoder);
+	            clone.appendAll(this);
+	            return clone;
+	        };
+	        URLSearchParams.prototype.has = function (param) { return this.paramsMap.has(param); };
+	        URLSearchParams.prototype.get = function (param) {
+	            var storedParam = this.paramsMap.get(param);
+	            return Array.isArray(storedParam) ? storedParam[0] : null;
+	        };
+	        URLSearchParams.prototype.getAll = function (param) { return this.paramsMap.get(param) || []; };
+	        URLSearchParams.prototype.set = function (param, val) {
+	            if (val === void 0 || val === null) {
+	                this.delete(param);
+	                return;
+	            }
+	            var list = this.paramsMap.get(param) || [];
+	            list.length = 0;
+	            list.push(val);
+	            this.paramsMap.set(param, list);
+	        };
+	        // A merge operation
+	        // For each name-values pair in `searchParams`, perform `set(name, values[0])`
+	        //
+	        // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4], c=[8], b=[7]"
+	        //
+	        // TODO(@caitp): document this better
+	        URLSearchParams.prototype.setAll = function (searchParams) {
+	            var _this = this;
+	            searchParams.paramsMap.forEach(function (value, param) {
+	                var list = _this.paramsMap.get(param) || [];
+	                list.length = 0;
+	                list.push(value[0]);
+	                _this.paramsMap.set(param, list);
+	            });
+	        };
+	        URLSearchParams.prototype.append = function (param, val) {
+	            if (val === void 0 || val === null)
+	                return;
+	            var list = this.paramsMap.get(param) || [];
+	            list.push(val);
+	            this.paramsMap.set(param, list);
+	        };
+	        // A merge operation
+	        // For each name-values pair in `searchParams`, perform `append(name, value)`
+	        // for each value in `values`.
+	        //
+	        // E.g: "a=[1,2], c=[8]" + "a=[3,4], b=[7]" = "a=[1,2,3,4], c=[8], b=[7]"
+	        //
+	        // TODO(@caitp): document this better
+	        URLSearchParams.prototype.appendAll = function (searchParams) {
+	            var _this = this;
+	            searchParams.paramsMap.forEach(function (value, param) {
+	                var list = _this.paramsMap.get(param) || [];
+	                for (var i = 0; i < value.length; ++i) {
+	                    list.push(value[i]);
+	                }
+	                _this.paramsMap.set(param, list);
+	            });
+	        };
+	        // A merge operation
+	        // For each name-values pair in `searchParams`, perform `delete(name)`,
+	        // followed by `set(name, values)`
+	        //
+	        // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4,5,6], c=[8], b=[7]"
+	        //
+	        // TODO(@caitp): document this better
+	        URLSearchParams.prototype.replaceAll = function (searchParams) {
+	            var _this = this;
+	            searchParams.paramsMap.forEach(function (value, param) {
+	                var list = _this.paramsMap.get(param) || [];
+	                list.length = 0;
+	                for (var i = 0; i < value.length; ++i) {
+	                    list.push(value[i]);
+	                }
+	                _this.paramsMap.set(param, list);
+	            });
+	        };
+	        URLSearchParams.prototype.toString = function () {
+	            var _this = this;
+	            var paramsList = [];
+	            this.paramsMap.forEach(function (values, k) {
+	                values.forEach(function (v) { return paramsList.push(_this.queryEncoder.encodeKey(k) + '=' + _this.queryEncoder.encodeValue(v)); });
+	            });
+	            return paramsList.join('&');
+	        };
+	        URLSearchParams.prototype.delete = function (param) { this.paramsMap.delete(param); };
+	        return URLSearchParams;
+	    }());
+
+	    /**
+	     * HTTP request body used by both {@link Request} and {@link Response}
+	     * https://fetch.spec.whatwg.org/#body
+	     */
+	    var Body = (function () {
+	        function Body() {
+	        }
+	        /**
+	         * Attempts to return body as parsed `JSON` object, or raises an exception.
+	         */
+	        Body.prototype.json = function () {
+	            if (typeof this._body === 'string') {
+	                return JSON.parse(this._body);
+	            }
+	            if (this._body instanceof ArrayBuffer) {
+	                return JSON.parse(this.text());
+	            }
+	            return this._body;
+	        };
+	        /**
+	         * Returns the body as a string, presuming `toString()` can be called on the response body.
+	         */
+	        Body.prototype.text = function () {
+	            if (this._body instanceof URLSearchParams) {
+	                return this._body.toString();
+	            }
+	            if (this._body instanceof ArrayBuffer) {
+	                return String.fromCharCode.apply(null, new Uint16Array(this._body));
+	            }
+	            if (this._body === null) {
+	                return '';
+	            }
+	            if (typeof this._body === 'object') {
+	                return JSON.stringify(this._body, null, 2);
+	            }
+	            return this._body.toString();
+	        };
+	        /**
+	         * Return the body as an ArrayBuffer
+	         */
+	        Body.prototype.arrayBuffer = function () {
+	            if (this._body instanceof ArrayBuffer) {
+	                return this._body;
+	            }
+	            return stringToArrayBuffer(this.text());
+	        };
+	        /**
+	          * Returns the request's body as a Blob, assuming that body exists.
+	          */
+	        Body.prototype.blob = function () {
+	            if (this._body instanceof Blob) {
+	                return this._body;
+	            }
+	            if (this._body instanceof ArrayBuffer) {
+	                return new Blob([this._body]);
+	            }
+	            throw new Error('The request body isn\'t either a blob or an array buffer');
+	        };
+	        return Body;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$2 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * Creates `Response` instances from provided values.
+	     *
+	     * Though this object isn't
+	     * usually instantiated by end-users, it is the primary object interacted with when it comes time to
+	     * add data to a view.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * http.request('my-friends.txt').subscribe(response => this.friends = response.text());
+	     * ```
+	     *
+	     * The Response's interface is inspired by the Response constructor defined in the [Fetch
+	     * Spec](https://fetch.spec.whatwg.org/#response-class), but is considered a static value whose body
+	     * can be accessed many times. There are other differences in the implementation, but this is the
+	     * most significant.
+	     *
+	     * @experimental
+	     */
+	    var Response = (function (_super) {
+	        __extends$2(Response, _super);
+	        function Response(responseOptions) {
+	            _super.call(this);
+	            this._body = responseOptions.body;
+	            this.status = responseOptions.status;
+	            this.ok = (this.status >= 200 && this.status <= 299);
+	            this.statusText = responseOptions.statusText;
+	            this.headers = responseOptions.headers;
+	            this.type = responseOptions.type;
+	            this.url = responseOptions.url;
+	        }
+	        Response.prototype.toString = function () {
+	            return "Response with status: " + this.status + " " + this.statusText + " for URL: " + this.url;
+	        };
+	        return Response;
+	    }(Body));
+
+	    var _nextRequestId = 0;
+	    var JSONP_HOME = '__ng_jsonp__';
+	    var _jsonpConnections = null;
+	    function _getJsonpConnections() {
+	        var w = typeof window == 'object' ? window : {};
+	        if (_jsonpConnections === null) {
+	            _jsonpConnections = w[JSONP_HOME] = {};
+	        }
+	        return _jsonpConnections;
+	    }
+	    // Make sure not to evaluate this in a non-browser environment!
+	    var BrowserJsonp = (function () {
+	        function BrowserJsonp() {
+	        }
+	        // Construct a <script> element with the specified URL
+	        BrowserJsonp.prototype.build = function (url) {
+	            var node = document.createElement('script');
+	            node.src = url;
+	            return node;
+	        };
+	        BrowserJsonp.prototype.nextRequestID = function () { return "__req" + _nextRequestId++; };
+	        BrowserJsonp.prototype.requestCallback = function (id) { return JSONP_HOME + "." + id + ".finished"; };
+	        BrowserJsonp.prototype.exposeConnection = function (id, connection) {
+	            var connections = _getJsonpConnections();
+	            connections[id] = connection;
+	        };
+	        BrowserJsonp.prototype.removeConnection = function (id) {
+	            var connections = _getJsonpConnections();
+	            connections[id] = null;
+	        };
+	        // Attach the <script> element to the DOM
+	        BrowserJsonp.prototype.send = function (node) { document.body.appendChild((node)); };
+	        // Remove <script> element from the DOM
+	        BrowserJsonp.prototype.cleanup = function (node) {
+	            if (node.parentNode) {
+	                node.parentNode.removeChild((node));
+	            }
+	        };
+	        BrowserJsonp.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        BrowserJsonp.ctorParameters = [];
+	        return BrowserJsonp;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var JSONP_ERR_NO_CALLBACK = 'JSONP injected script did not invoke callback.';
+	    var JSONP_ERR_WRONG_METHOD = 'JSONP requests must use GET request method.';
+	    /**
+	     * Abstract base class for an in-flight JSONP request.
+	     *
+	     * @experimental
+	     */
+	    var JSONPConnection = (function () {
+	        function JSONPConnection() {
+	        }
+	        return JSONPConnection;
+	    }());
+	    var JSONPConnection_ = (function (_super) {
+	        __extends(JSONPConnection_, _super);
+	        function JSONPConnection_(req, _dom, baseResponseOptions) {
+	            var _this = this;
+	            _super.call(this);
+	            this._dom = _dom;
+	            this.baseResponseOptions = baseResponseOptions;
+	            this._finished = false;
+	            if (req.method !== exports.RequestMethod.Get) {
+	                throw new TypeError(JSONP_ERR_WRONG_METHOD);
+	            }
+	            this.request = req;
+	            this.response = new rxjs_Observable.Observable(function (responseObserver) {
+	                _this.readyState = exports.ReadyState.Loading;
+	                var id = _this._id = _dom.nextRequestID();
+	                _dom.exposeConnection(id, _this);
+	                // Workaround Dart
+	                // url = url.replace(/=JSONP_CALLBACK(&|$)/, `generated method`);
+	                var callback = _dom.requestCallback(_this._id);
+	                var url = req.url;
+	                if (url.indexOf('=JSONP_CALLBACK&') > -1) {
+	                    url = url.replace('=JSONP_CALLBACK&', "=" + callback + "&");
+	                }
+	                else if (url.lastIndexOf('=JSONP_CALLBACK') === url.length - '=JSONP_CALLBACK'.length) {
+	                    url = url.substring(0, url.length - '=JSONP_CALLBACK'.length) + ("=" + callback);
+	                }
+	                var script = _this._script = _dom.build(url);
+	                var onLoad = function (event) {
+	                    if (_this.readyState === exports.ReadyState.Cancelled)
+	                        return;
+	                    _this.readyState = exports.ReadyState.Done;
+	                    _dom.cleanup(script);
+	                    if (!_this._finished) {
+	                        var responseOptions_1 = new ResponseOptions({ body: JSONP_ERR_NO_CALLBACK, type: exports.ResponseType.Error, url: url });
+	                        if (baseResponseOptions) {
+	                            responseOptions_1 = baseResponseOptions.merge(responseOptions_1);
+	                        }
+	                        responseObserver.error(new Response(responseOptions_1));
+	                        return;
+	                    }
+	                    var responseOptions = new ResponseOptions({ body: _this._responseData, url: url });
+	                    if (_this.baseResponseOptions) {
+	                        responseOptions = _this.baseResponseOptions.merge(responseOptions);
+	                    }
+	                    responseObserver.next(new Response(responseOptions));
+	                    responseObserver.complete();
+	                };
+	                var onError = function (error) {
+	                    if (_this.readyState === exports.ReadyState.Cancelled)
+	                        return;
+	                    _this.readyState = exports.ReadyState.Done;
+	                    _dom.cleanup(script);
+	                    var responseOptions = new ResponseOptions({ body: error.message, type: exports.ResponseType.Error });
+	                    if (baseResponseOptions) {
+	                        responseOptions = baseResponseOptions.merge(responseOptions);
+	                    }
+	                    responseObserver.error(new Response(responseOptions));
+	                };
+	                script.addEventListener('load', onLoad);
+	                script.addEventListener('error', onError);
+	                _dom.send(script);
+	                return function () {
+	                    _this.readyState = exports.ReadyState.Cancelled;
+	                    script.removeEventListener('load', onLoad);
+	                    script.removeEventListener('error', onError);
+	                    _this._dom.cleanup(script);
+	                };
+	            });
+	        }
+	        JSONPConnection_.prototype.finished = function (data) {
+	            // Don't leak connections
+	            this._finished = true;
+	            this._dom.removeConnection(this._id);
+	            if (this.readyState === exports.ReadyState.Cancelled)
+	                return;
+	            this._responseData = data;
+	        };
+	        return JSONPConnection_;
+	    }(JSONPConnection));
+	    /**
+	     * A {@link ConnectionBackend} that uses the JSONP strategy of making requests.
+	     *
+	     * @experimental
+	     */
+	    var JSONPBackend = (function (_super) {
+	        __extends(JSONPBackend, _super);
+	        function JSONPBackend() {
+	            _super.apply(this, arguments);
+	        }
+	        return JSONPBackend;
+	    }(ConnectionBackend));
+	    var JSONPBackend_ = (function (_super) {
+	        __extends(JSONPBackend_, _super);
+	        function JSONPBackend_(_browserJSONP, _baseResponseOptions) {
+	            _super.call(this);
+	            this._browserJSONP = _browserJSONP;
+	            this._baseResponseOptions = _baseResponseOptions;
+	        }
+	        JSONPBackend_.prototype.createConnection = function (request) {
+	            return new JSONPConnection_(request, this._browserJSONP, this._baseResponseOptions);
+	        };
+	        JSONPBackend_.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        JSONPBackend_.ctorParameters = [
+	            { type: BrowserJsonp, },
+	            { type: ResponseOptions, },
+	        ];
+	        return JSONPBackend_;
+	    }(JSONPBackend));
+
+	    var XSSI_PREFIX = /^\)\]\}',?\n/;
+	    /**
+	     * Creates connections using `XMLHttpRequest`. Given a fully-qualified
+	     * request, an `XHRConnection` will immediately create an `XMLHttpRequest` object and send the
+	     * request.
+	     *
+	     * This class would typically not be created or interacted with directly inside applications, though
+	     * the {@link MockConnection} may be interacted with in tests.
+	     *
+	     * @experimental
+	     */
+	    var XHRConnection = (function () {
+	        function XHRConnection(req, browserXHR, baseResponseOptions) {
+	            var _this = this;
+	            this.request = req;
+	            this.response = new rxjs_Observable.Observable(function (responseObserver) {
+	                var _xhr = browserXHR.build();
+	                _xhr.open(exports.RequestMethod[req.method].toUpperCase(), req.url);
+	                if (req.withCredentials != null) {
+	                    _xhr.withCredentials = req.withCredentials;
+	                }
+	                // load event handler
+	                var onLoad = function () {
+	                    // normalize IE9 bug (http://bugs.jquery.com/ticket/1450)
+	                    var status = _xhr.status === 1223 ? 204 : _xhr.status;
+	                    var body = null;
+	                    // HTTP 204 means no content
+	                    if (status !== 204) {
+	                        // responseText is the old-school way of retrieving response (supported by IE8 & 9)
+	                        // response/responseType properties were introduced in ResourceLoader Level2 spec
+	                        // (supported by IE10)
+	                        body = (typeof _xhr.response === 'undefined') ? _xhr.responseText : _xhr.response;
+	                        // Implicitly strip a potential XSSI prefix.
+	                        if (typeof body === 'string') {
+	                            body = body.replace(XSSI_PREFIX, '');
+	                        }
+	                    }
+	                    // fix status code when it is 0 (0 status is undocumented).
+	                    // Occurs when accessing file resources or on Android 4.1 stock browser
+	                    // while retrieving files from application cache.
+	                    if (status === 0) {
+	                        status = body ? 200 : 0;
+	                    }
+	                    var headers = Headers.fromResponseHeaderString(_xhr.getAllResponseHeaders());
+	                    // IE 9 does not provide the way to get URL of response
+	                    var url = getResponseURL(_xhr) || req.url;
+	                    var statusText = _xhr.statusText || 'OK';
+	                    var responseOptions = new ResponseOptions({ body: body, status: status, headers: headers, statusText: statusText, url: url });
+	                    if (baseResponseOptions != null) {
+	                        responseOptions = baseResponseOptions.merge(responseOptions);
+	                    }
+	                    var response = new Response(responseOptions);
+	                    response.ok = isSuccess(status);
+	                    if (response.ok) {
+	                        responseObserver.next(response);
+	                        // TODO(gdi2290): defer complete if array buffer until done
+	                        responseObserver.complete();
+	                        return;
+	                    }
+	                    responseObserver.error(response);
+	                };
+	                // error event handler
+	                var onError = function (err) {
+	                    var responseOptions = new ResponseOptions({
+	                        body: err,
+	                        type: exports.ResponseType.Error,
+	                        status: _xhr.status,
+	                        statusText: _xhr.statusText,
+	                    });
+	                    if (baseResponseOptions != null) {
+	                        responseOptions = baseResponseOptions.merge(responseOptions);
+	                    }
+	                    responseObserver.error(new Response(responseOptions));
+	                };
+	                _this.setDetectedContentType(req, _xhr);
+	                if (req.headers != null) {
+	                    req.headers.forEach(function (values, name) { return _xhr.setRequestHeader(name, values.join(',')); });
+	                }
+	                // Select the correct buffer type to store the response
+	                if (req.responseType != null && _xhr.responseType != null) {
+	                    switch (req.responseType) {
+	                        case exports.ResponseContentType.ArrayBuffer:
+	                            _xhr.responseType = 'arraybuffer';
+	                            break;
+	                        case exports.ResponseContentType.Json:
+	                            _xhr.responseType = 'json';
+	                            break;
+	                        case exports.ResponseContentType.Text:
+	                            _xhr.responseType = 'text';
+	                            break;
+	                        case exports.ResponseContentType.Blob:
+	                            _xhr.responseType = 'blob';
+	                            break;
+	                        default:
+	                            throw new Error('The selected responseType is not supported');
+	                    }
+	                }
+	                _xhr.addEventListener('load', onLoad);
+	                _xhr.addEventListener('error', onError);
+	                _xhr.send(_this.request.getBody());
+	                return function () {
+	                    _xhr.removeEventListener('load', onLoad);
+	                    _xhr.removeEventListener('error', onError);
+	                    _xhr.abort();
+	                };
+	            });
+	        }
+	        XHRConnection.prototype.setDetectedContentType = function (req /** TODO Request */, _xhr /** XMLHttpRequest */) {
+	            // Skip if a custom Content-Type header is provided
+	            if (req.headers != null && req.headers.get('Content-Type') != null) {
+	                return;
+	            }
+	            // Set the detected content type
+	            switch (req.contentType) {
+	                case ContentType.NONE:
+	                    break;
+	                case ContentType.JSON:
+	                    _xhr.setRequestHeader('content-type', 'application/json');
+	                    break;
+	                case ContentType.FORM:
+	                    _xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+	                    break;
+	                case ContentType.TEXT:
+	                    _xhr.setRequestHeader('content-type', 'text/plain');
+	                    break;
+	                case ContentType.BLOB:
+	                    var blob = req.blob();
+	                    if (blob.type) {
+	                        _xhr.setRequestHeader('content-type', blob.type);
+	                    }
+	                    break;
+	            }
+	        };
+	        return XHRConnection;
+	    }());
+	    /**
+	     * `XSRFConfiguration` sets up Cross Site Request Forgery (XSRF) protection for the application
+	     * using a cookie. See {@link https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)}
+	     * for more information on XSRF.
+	     *
+	     * Applications can configure custom cookie and header names by binding an instance of this class
+	     * with different `cookieName` and `headerName` values. See the main HTTP documentation for more
+	     * details.
+	     *
+	     * @experimental
+	     */
+	    var CookieXSRFStrategy = (function () {
+	        function CookieXSRFStrategy(_cookieName, _headerName) {
+	            if (_cookieName === void 0) { _cookieName = 'XSRF-TOKEN'; }
+	            if (_headerName === void 0) { _headerName = 'X-XSRF-TOKEN'; }
+	            this._cookieName = _cookieName;
+	            this._headerName = _headerName;
+	        }
+	        CookieXSRFStrategy.prototype.configureRequest = function (req) {
+	            var xsrfToken = _angular_platformBrowser.__platform_browser_private__.getDOM().getCookie(this._cookieName);
+	            if (xsrfToken) {
+	                req.headers.set(this._headerName, xsrfToken);
+	            }
+	        };
+	        return CookieXSRFStrategy;
+	    }());
+	    /**
+	     * Creates {@link XHRConnection} instances.
+	     *
+	     * This class would typically not be used by end users, but could be
+	     * overridden if a different backend implementation should be used,
+	     * such as in a node backend.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * import {Http, MyNodeBackend, HTTP_PROVIDERS, BaseRequestOptions} from '@angular/http';
+	     * @Component({
+	     *   viewProviders: [
+	     *     HTTP_PROVIDERS,
+	     *     {provide: Http, useFactory: (backend, options) => {
+	     *       return new Http(backend, options);
+	     *     }, deps: [MyNodeBackend, BaseRequestOptions]}]
+	     * })
+	     * class MyComponent {
+	     *   constructor(http:Http) {
+	     *     http.request('people.json').subscribe(res => this.people = res.json());
+	     *   }
+	     * }
+	     * ```
+	     * @experimental
+	     */
+	    var XHRBackend = (function () {
+	        function XHRBackend(_browserXHR, _baseResponseOptions, _xsrfStrategy) {
+	            this._browserXHR = _browserXHR;
+	            this._baseResponseOptions = _baseResponseOptions;
+	            this._xsrfStrategy = _xsrfStrategy;
+	        }
+	        XHRBackend.prototype.createConnection = function (request) {
+	            this._xsrfStrategy.configureRequest(request);
+	            return new XHRConnection(request, this._browserXHR, this._baseResponseOptions);
+	        };
+	        XHRBackend.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        XHRBackend.ctorParameters = [
+	            { type: BrowserXhr, },
+	            { type: ResponseOptions, },
+	            { type: XSRFStrategy, },
+	        ];
+	        return XHRBackend;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$3 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * Creates a request options object to be optionally provided when instantiating a
+	     * {@link Request}.
+	     *
+	     * This class is based on the `RequestInit` description in the [Fetch
+	     * Spec](https://fetch.spec.whatwg.org/#requestinit).
+	     *
+	     * All values are null by default. Typical defaults can be found in the {@link BaseRequestOptions}
+	     * class, which sub-classes `RequestOptions`.
+	     *
+	     * ### Example ([live demo](http://plnkr.co/edit/7Wvi3lfLq41aQPKlxB4O?p=preview))
+	     *
+	     * ```typescript
+	     * import {RequestOptions, Request, RequestMethod} from '@angular/http';
+	     *
+	     * var options = new RequestOptions({
+	     *   method: RequestMethod.Post,
+	     *   url: 'https://google.com'
+	     * });
+	     * var req = new Request(options);
+	     * console.log('req.method:', RequestMethod[req.method]); // Post
+	     * console.log('options.url:', options.url); // https://google.com
+	     * ```
+	     *
+	     * @experimental
+	     */
+	    var RequestOptions = (function () {
+	        function RequestOptions(_a) {
+	            var _b = _a === void 0 ? {} : _a, method = _b.method, headers = _b.headers, body = _b.body, url = _b.url, search = _b.search, withCredentials = _b.withCredentials, responseType = _b.responseType;
+	            this.method = method != null ? normalizeMethodName(method) : null;
+	            this.headers = headers != null ? headers : null;
+	            this.body = body != null ? body : null;
+	            this.url = url != null ? url : null;
+	            this.search =
+	                search != null ? (typeof search === 'string' ? new URLSearchParams(search) : search) : null;
+	            this.withCredentials = withCredentials != null ? withCredentials : null;
+	            this.responseType = responseType != null ? responseType : null;
+	        }
+	        /**
+	         * Creates a copy of the `RequestOptions` instance, using the optional input as values to override
+	         * existing values. This method will not change the values of the instance on which it is being
+	         * called.
+	         *
+	         * Note that `headers` and `search` will override existing values completely if present in
+	         * the `options` object. If these values should be merged, it should be done prior to calling
+	         * `merge` on the `RequestOptions` instance.
+	         *
+	         * ### Example ([live demo](http://plnkr.co/edit/6w8XA8YTkDRcPYpdB9dk?p=preview))
+	         *
+	         * ```typescript
+	         * import {RequestOptions, Request, RequestMethod} from '@angular/http';
+	         *
+	         * var options = new RequestOptions({
+	         *   method: RequestMethod.Post
+	         * });
+	         * var req = new Request(options.merge({
+	         *   url: 'https://google.com'
+	         * }));
+	         * console.log('req.method:', RequestMethod[req.method]); // Post
+	         * console.log('options.url:', options.url); // null
+	         * console.log('req.url:', req.url); // https://google.com
+	         * ```
+	         */
+	        RequestOptions.prototype.merge = function (options) {
+	            return new RequestOptions({
+	                method: options && options.method != null ? options.method : this.method,
+	                headers: options && options.headers != null ? options.headers : this.headers,
+	                body: options && options.body != null ? options.body : this.body,
+	                url: options && options.url != null ? options.url : this.url,
+	                search: options && options.search != null ?
+	                    (typeof options.search === 'string' ? new URLSearchParams(options.search) :
+	                        options.search.clone()) :
+	                    this.search,
+	                withCredentials: options && options.withCredentials != null ? options.withCredentials :
+	                    this.withCredentials,
+	                responseType: options && options.responseType != null ? options.responseType :
+	                    this.responseType
+	            });
+	        };
+	        return RequestOptions;
+	    }());
+	    /**
+	     * Subclass of {@link RequestOptions}, with default values.
+	     *
+	     * Default values:
+	     *  * method: {@link RequestMethod RequestMethod.Get}
+	     *  * headers: empty {@link Headers} object
+	     *
+	     * This class could be extended and bound to the {@link RequestOptions} class
+	     * when configuring an {@link Injector}, in order to override the default options
+	     * used by {@link Http} to create and send {@link Request Requests}.
+	     *
+	     * ### Example ([live demo](http://plnkr.co/edit/LEKVSx?p=preview))
+	     *
+	     * ```typescript
+	     * import {provide} from '@angular/core';
+	     * import {bootstrap} from '@angular/platform-browser/browser';
+	     * import {HTTP_PROVIDERS, Http, BaseRequestOptions, RequestOptions} from '@angular/http';
+	     * import {App} from './myapp';
+	     *
+	     * class MyOptions extends BaseRequestOptions {
+	     *   search: string = 'coreTeam=true';
+	     * }
+	     *
+	     * bootstrap(App, [HTTP_PROVIDERS, {provide: RequestOptions, useClass: MyOptions}]);
+	     * ```
+	     *
+	     * The options could also be extended when manually creating a {@link Request}
+	     * object.
+	     *
+	     * ### Example ([live demo](http://plnkr.co/edit/oyBoEvNtDhOSfi9YxaVb?p=preview))
+	     *
+	     * ```
+	     * import {BaseRequestOptions, Request, RequestMethod} from '@angular/http';
+	     *
+	     * var options = new BaseRequestOptions();
+	     * var req = new Request(options.merge({
+	     *   method: RequestMethod.Post,
+	     *   url: 'https://google.com'
+	     * }));
+	     * console.log('req.method:', RequestMethod[req.method]); // Post
+	     * console.log('options.url:', options.url); // null
+	     * console.log('req.url:', req.url); // https://google.com
+	     * ```
+	     *
+	     * @experimental
+	     */
+	    var BaseRequestOptions = (function (_super) {
+	        __extends$3(BaseRequestOptions, _super);
+	        function BaseRequestOptions() {
+	            _super.call(this, { method: exports.RequestMethod.Get, headers: new Headers() });
+	        }
+	        BaseRequestOptions.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        BaseRequestOptions.ctorParameters = [];
+	        return BaseRequestOptions;
+	    }(RequestOptions));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$5 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    // TODO(jeffbcross): properly implement body accessors
+	    /**
+	     * Creates `Request` instances from provided values.
+	     *
+	     * The Request's interface is inspired by the Request constructor defined in the [Fetch
+	     * Spec](https://fetch.spec.whatwg.org/#request-class),
+	     * but is considered a static value whose body can be accessed many times. There are other
+	     * differences in the implementation, but this is the most significant.
+	     *
+	     * `Request` instances are typically created by higher-level classes, like {@link Http} and
+	     * {@link Jsonp}, but it may occasionally be useful to explicitly create `Request` instances.
+	     * One such example is when creating services that wrap higher-level services, like {@link Http},
+	     * where it may be useful to generate a `Request` with arbitrary headers and search params.
+	     *
+	     * ```typescript
+	     * import {Injectable, Injector} from '@angular/core';
+	     * import {HTTP_PROVIDERS, Http, Request, RequestMethod} from '@angular/http';
+	     *
+	     * @Injectable()
+	     * class AutoAuthenticator {
+	     *   constructor(public http:Http) {}
+	     *   request(url:string) {
+	     *     return this.http.request(new Request({
+	     *       method: RequestMethod.Get,
+	     *       url: url,
+	     *       search: 'password=123'
+	     *     }));
+	     *   }
+	     * }
+	     *
+	     * var injector = Injector.resolveAndCreate([HTTP_PROVIDERS, AutoAuthenticator]);
+	     * var authenticator = injector.get(AutoAuthenticator);
+	     * authenticator.request('people.json').subscribe(res => {
+	     *   //URL should have included '?password=123'
+	     *   console.log('people', res.json());
+	     * });
+	     * ```
+	     *
+	     * @experimental
+	     */
+	    var Request = (function (_super) {
+	        __extends$5(Request, _super);
+	        function Request(requestOptions) {
+	            _super.call(this);
+	            // TODO: assert that url is present
+	            var url = requestOptions.url;
+	            this.url = requestOptions.url;
+	            if (requestOptions.search) {
+	                var search = requestOptions.search.toString();
+	                if (search.length > 0) {
+	                    var prefix = '?';
+	                    if (this.url.indexOf('?') != -1) {
+	                        prefix = (this.url[this.url.length - 1] == '&') ? '' : '&';
+	                    }
+	                    // TODO: just delete search-query-looking string in url?
+	                    this.url = url + prefix + search;
+	                }
+	            }
+	            this._body = requestOptions.body;
+	            this.method = normalizeMethodName(requestOptions.method);
+	            // TODO(jeffbcross): implement behavior
+	            // Defaults to 'omit', consistent with browser
+	            this.headers = new Headers(requestOptions.headers);
+	            this.contentType = this.detectContentType();
+	            this.withCredentials = requestOptions.withCredentials;
+	            this.responseType = requestOptions.responseType;
+	        }
+	        /**
+	         * Returns the content type enum based on header options.
+	         */
+	        Request.prototype.detectContentType = function () {
+	            switch (this.headers.get('content-type')) {
+	                case 'application/json':
+	                    return ContentType.JSON;
+	                case 'application/x-www-form-urlencoded':
+	                    return ContentType.FORM;
+	                case 'multipart/form-data':
+	                    return ContentType.FORM_DATA;
+	                case 'text/plain':
+	                case 'text/html':
+	                    return ContentType.TEXT;
+	                case 'application/octet-stream':
+	                    return ContentType.BLOB;
+	                default:
+	                    return this.detectContentTypeFromBody();
+	            }
+	        };
+	        /**
+	         * Returns the content type of request's body based on its type.
+	         */
+	        Request.prototype.detectContentTypeFromBody = function () {
+	            if (this._body == null) {
+	                return ContentType.NONE;
+	            }
+	            else if (this._body instanceof URLSearchParams) {
+	                return ContentType.FORM;
+	            }
+	            else if (this._body instanceof FormData) {
+	                return ContentType.FORM_DATA;
+	            }
+	            else if (this._body instanceof Blob$1) {
+	                return ContentType.BLOB;
+	            }
+	            else if (this._body instanceof ArrayBuffer$1) {
+	                return ContentType.ARRAY_BUFFER;
+	            }
+	            else if (this._body && typeof this._body == 'object') {
+	                return ContentType.JSON;
+	            }
+	            else {
+	                return ContentType.TEXT;
+	            }
+	        };
+	        /**
+	         * Returns the request's body according to its type. If body is undefined, return
+	         * null.
+	         */
+	        Request.prototype.getBody = function () {
+	            switch (this.contentType) {
+	                case ContentType.JSON:
+	                    return this.text();
+	                case ContentType.FORM:
+	                    return this.text();
+	                case ContentType.FORM_DATA:
+	                    return this._body;
+	                case ContentType.TEXT:
+	                    return this.text();
+	                case ContentType.BLOB:
+	                    return this.blob();
+	                case ContentType.ARRAY_BUFFER:
+	                    return this.arrayBuffer();
+	                default:
+	                    return null;
+	            }
+	        };
+	        return Request;
+	    }(Body));
+	    var noop = function () { };
+	    var w = typeof window == 'object' ? window : noop;
+	    var FormData = w['FormData'] || noop;
+	    var Blob$1 = w['Blob'] || noop;
+	    var ArrayBuffer$1 = w['ArrayBuffer'] || noop;
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$4 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    function httpRequest(backend, request) {
+	        return backend.createConnection(request).response;
+	    }
+	    function mergeOptions(defaultOpts, providedOpts, method, url) {
+	        var newOptions = defaultOpts;
+	        if (providedOpts) {
+	            // Hack so Dart can used named parameters
+	            return newOptions.merge(new RequestOptions({
+	                method: providedOpts.method || method,
+	                url: providedOpts.url || url,
+	                search: providedOpts.search,
+	                headers: providedOpts.headers,
+	                body: providedOpts.body,
+	                withCredentials: providedOpts.withCredentials,
+	                responseType: providedOpts.responseType
+	            }));
+	        }
+	        return newOptions.merge(new RequestOptions({ method: method, url: url }));
+	    }
+	    /**
+	     * Performs http requests using `XMLHttpRequest` as the default backend.
+	     *
+	     * `Http` is available as an injectable class, with methods to perform http requests. Calling
+	     * `request` returns an `Observable` which will emit a single {@link Response} when a
+	     * response is received.
+	     *
+	     * ### Example
+	     *
+	     * ```typescript
+	     * import {Http, HTTP_PROVIDERS} from '@angular/http';
+	     * import 'rxjs/add/operator/map'
+	     * @Component({
+	     *   selector: 'http-app',
+	     *   viewProviders: [HTTP_PROVIDERS],
+	     *   templateUrl: 'people.html'
+	     * })
+	     * class PeopleComponent {
+	     *   constructor(http: Http) {
+	     *     http.get('people.json')
+	     *       // Call map on the response observable to get the parsed people object
+	     *       .map(res => res.json())
+	     *       // Subscribe to the observable to get the parsed people object and attach it to the
+	     *       // component
+	     *       .subscribe(people => this.people = people);
+	     *   }
+	     * }
+	     * ```
+	     *
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * http.get('people.json').subscribe((res:Response) => this.people = res.json());
+	     * ```
+	     *
+	     * The default construct used to perform requests, `XMLHttpRequest`, is abstracted as a "Backend" (
+	     * {@link XHRBackend} in this case), which could be mocked with dependency injection by replacing
+	     * the {@link XHRBackend} provider, as in the following example:
+	     *
+	     * ### Example
+	     *
+	     * ```typescript
+	     * import {BaseRequestOptions, Http} from '@angular/http';
+	     * import {MockBackend} from '@angular/http/testing';
+	     * var injector = Injector.resolveAndCreate([
+	     *   BaseRequestOptions,
+	     *   MockBackend,
+	     *   {provide: Http, useFactory:
+	     *       function(backend, defaultOptions) {
+	     *         return new Http(backend, defaultOptions);
+	     *       },
+	     *       deps: [MockBackend, BaseRequestOptions]}
+	     * ]);
+	     * var http = injector.get(Http);
+	     * http.get('request-from-mock-backend.json').subscribe((res:Response) => doSomething(res));
+	     * ```
+	     *
+	     * @experimental
+	     */
+	    var Http = (function () {
+	        function Http(_backend, _defaultOptions) {
+	            this._backend = _backend;
+	            this._defaultOptions = _defaultOptions;
+	        }
+	        /**
+	         * Performs any type of http request. First argument is required, and can either be a url or
+	         * a {@link Request} instance. If the first argument is a url, an optional {@link RequestOptions}
+	         * object can be provided as the 2nd argument. The options object will be merged with the values
+	         * of {@link BaseRequestOptions} before performing the request.
+	         */
+	        Http.prototype.request = function (url, options) {
+	            var responseObservable;
+	            if (typeof url === 'string') {
+	                responseObservable = httpRequest(this._backend, new Request(mergeOptions(this._defaultOptions, options, exports.RequestMethod.Get, url)));
+	            }
+	            else if (url instanceof Request) {
+	                responseObservable = httpRequest(this._backend, url);
+	            }
+	            else {
+	                throw new Error('First argument must be a url string or Request instance.');
+	            }
+	            return responseObservable;
+	        };
+	        /**
+	         * Performs a request with `get` http method.
+	         */
+	        Http.prototype.get = function (url, options) {
+	            return this.request(new Request(mergeOptions(this._defaultOptions, options, exports.RequestMethod.Get, url)));
+	        };
+	        /**
+	         * Performs a request with `post` http method.
+	         */
+	        Http.prototype.post = function (url, body, options) {
+	            return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, exports.RequestMethod.Post, url)));
+	        };
+	        /**
+	         * Performs a request with `put` http method.
+	         */
+	        Http.prototype.put = function (url, body, options) {
+	            return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, exports.RequestMethod.Put, url)));
+	        };
+	        /**
+	         * Performs a request with `delete` http method.
+	         */
+	        Http.prototype.delete = function (url, options) {
+	            return this.request(new Request(mergeOptions(this._defaultOptions, options, exports.RequestMethod.Delete, url)));
+	        };
+	        /**
+	         * Performs a request with `patch` http method.
+	         */
+	        Http.prototype.patch = function (url, body, options) {
+	            return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, exports.RequestMethod.Patch, url)));
+	        };
+	        /**
+	         * Performs a request with `head` http method.
+	         */
+	        Http.prototype.head = function (url, options) {
+	            return this.request(new Request(mergeOptions(this._defaultOptions, options, exports.RequestMethod.Head, url)));
+	        };
+	        /**
+	         * Performs a request with `options` http method.
+	         */
+	        Http.prototype.options = function (url, options) {
+	            return this.request(new Request(mergeOptions(this._defaultOptions, options, exports.RequestMethod.Options, url)));
+	        };
+	        Http.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        Http.ctorParameters = [
+	            { type: ConnectionBackend, },
+	            { type: RequestOptions, },
+	        ];
+	        return Http;
+	    }());
+	    /**
+	     * @experimental
+	     */
+	    var Jsonp = (function (_super) {
+	        __extends$4(Jsonp, _super);
+	        function Jsonp(backend, defaultOptions) {
+	            _super.call(this, backend, defaultOptions);
+	        }
+	        /**
+	         * Performs any type of http request. First argument is required, and can either be a url or
+	         * a {@link Request} instance. If the first argument is a url, an optional {@link RequestOptions}
+	         * object can be provided as the 2nd argument. The options object will be merged with the values
+	         * of {@link BaseRequestOptions} before performing the request.
+	         *
+	         * @security Regular XHR is the safest alternative to JSONP for most applications, and is
+	         * supported by all current browsers. Because JSONP creates a `<script>` element with
+	         * contents retrieved from a remote source, attacker-controlled data introduced by an untrusted
+	         * source could expose your application to XSS risks. Data exposed by JSONP may also be
+	         * readable by malicious third-party websites. In addition, JSONP introduces potential risk for
+	         * future security issues (e.g. content sniffing).  For more detail, see the
+	         * [Security Guide](http://g.co/ng/security).
+	         */
+	        Jsonp.prototype.request = function (url, options) {
+	            var responseObservable;
+	            if (typeof url === 'string') {
+	                url =
+	                    new Request(mergeOptions(this._defaultOptions, options, exports.RequestMethod.Get, url));
+	            }
+	            if (url instanceof Request) {
+	                if (url.method !== exports.RequestMethod.Get) {
+	                    throw new Error('JSONP requests must use GET request method.');
+	                }
+	                responseObservable = httpRequest(this._backend, url);
+	            }
+	            else {
+	                throw new Error('First argument must be a url string or Request instance.');
+	            }
+	            return responseObservable;
+	        };
+	        Jsonp.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        Jsonp.ctorParameters = [
+	            { type: ConnectionBackend, },
+	            { type: RequestOptions, },
+	        ];
+	        return Jsonp;
+	    }(Http));
+
+	    function _createDefaultCookieXSRFStrategy() {
+	        return new CookieXSRFStrategy();
+	    }
+	    function httpFactory(xhrBackend, requestOptions) {
+	        return new Http(xhrBackend, requestOptions);
+	    }
+	    function jsonpFactory(jsonpBackend, requestOptions) {
+	        return new Jsonp(jsonpBackend, requestOptions);
+	    }
+	    /**
+	     * The module that includes http's providers
+	     *
+	     * @experimental
+	     */
+	    var HttpModule = (function () {
+	        function HttpModule() {
+	        }
+	        HttpModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        providers: [
+	                            // TODO(pascal): use factory type annotations once supported in DI
+	                            // issue: https://github.com/angular/angular/issues/3183
+	                            { provide: Http, useFactory: httpFactory, deps: [XHRBackend, RequestOptions] },
+	                            BrowserXhr,
+	                            { provide: RequestOptions, useClass: BaseRequestOptions },
+	                            { provide: ResponseOptions, useClass: BaseResponseOptions },
+	                            XHRBackend,
+	                            { provide: XSRFStrategy, useFactory: _createDefaultCookieXSRFStrategy },
+	                        ],
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        HttpModule.ctorParameters = [];
+	        return HttpModule;
+	    }());
+	    /**
+	     * The module that includes jsonp's providers
+	     *
+	     * @experimental
+	     */
+	    var JsonpModule = (function () {
+	        function JsonpModule() {
+	        }
+	        JsonpModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        providers: [
+	                            // TODO(pascal): use factory type annotations once supported in DI
+	                            // issue: https://github.com/angular/angular/issues/3183
+	                            { provide: Jsonp, useFactory: jsonpFactory, deps: [JSONPBackend, RequestOptions] },
+	                            BrowserJsonp,
+	                            { provide: RequestOptions, useClass: BaseRequestOptions },
+	                            { provide: ResponseOptions, useClass: BaseResponseOptions },
+	                            { provide: JSONPBackend, useClass: JSONPBackend_ },
+	                        ],
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        JsonpModule.ctorParameters = [];
+	        return JsonpModule;
+	    }());
+
+	    exports.BrowserXhr = BrowserXhr;
+	    exports.JSONPBackend = JSONPBackend;
+	    exports.JSONPConnection = JSONPConnection;
+	    exports.CookieXSRFStrategy = CookieXSRFStrategy;
+	    exports.XHRBackend = XHRBackend;
+	    exports.XHRConnection = XHRConnection;
+	    exports.BaseRequestOptions = BaseRequestOptions;
+	    exports.RequestOptions = RequestOptions;
+	    exports.BaseResponseOptions = BaseResponseOptions;
+	    exports.ResponseOptions = ResponseOptions;
+	    exports.Headers = Headers;
+	    exports.Http = Http;
+	    exports.Jsonp = Jsonp;
+	    exports.HttpModule = HttpModule;
+	    exports.JsonpModule = JsonpModule;
+	    exports.Connection = Connection;
+	    exports.ConnectionBackend = ConnectionBackend;
+	    exports.XSRFStrategy = XSRFStrategy;
+	    exports.Request = Request;
+	    exports.Response = Response;
+	    exports.QueryEncoder = QueryEncoder;
+	    exports.URLSearchParams = URLSearchParams;
+
+	}));
+
+/***/ },
+/* 353 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Observable_1 = __webpack_require__(328);
+	var map_1 = __webpack_require__(354);
+	Observable_1.Observable.prototype.map = map_1.map;
+	//# sourceMappingURL=map.js.map
+
+/***/ },
+/* 354 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var Subscriber_1 = __webpack_require__(331);
+	/**
+	 * Applies a given `project` function to each value emitted by the source
+	 * Observable, and emits the resulting values as an Observable.
+	 *
+	 * <span class="informal">Like [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map),
+	 * it passes each source value through a transformation function to get
+	 * corresponding output values.</span>
+	 *
+	 * <img src="./img/map.png" width="100%">
+	 *
+	 * Similar to the well known `Array.prototype.map` function, this operator
+	 * applies a projection to each value and emits that projection in the output
+	 * Observable.
+	 *
+	 * @example <caption>Map every every click to the clientX position of that click</caption>
+	 * var clicks = Rx.Observable.fromEvent(document, 'click');
+	 * var positions = clicks.map(ev => ev.clientX);
+	 * positions.subscribe(x => console.log(x));
+	 *
+	 * @see {@link mapTo}
+	 * @see {@link pluck}
+	 *
+	 * @param {function(value: T, index: number): R} project The function to apply
+	 * to each `value` emitted by the source Observable. The `index` parameter is
+	 * the number `i` for the i-th emission that has happened since the
+	 * subscription, starting from the number `0`.
+	 * @param {any} [thisArg] An optional argument to define what `this` is in the
+	 * `project` function.
+	 * @return {Observable<R>} An Observable that emits the values from the source
+	 * Observable transformed by the given `project` function.
+	 * @method map
+	 * @owner Observable
+	 */
+	function map(project, thisArg) {
+	    if (typeof project !== 'function') {
+	        throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
+	    }
+	    return this.lift(new MapOperator(project, thisArg));
+	}
+	exports.map = map;
+	var MapOperator = (function () {
+	    function MapOperator(project, thisArg) {
+	        this.project = project;
+	        this.thisArg = thisArg;
+	    }
+	    MapOperator.prototype.call = function (subscriber, source) {
+	        return source._subscribe(new MapSubscriber(subscriber, this.project, this.thisArg));
+	    };
+	    return MapOperator;
+	}());
+	exports.MapOperator = MapOperator;
+	/**
+	 * We need this JSDoc comment for affecting ESDoc.
+	 * @ignore
+	 * @extends {Ignored}
+	 */
+	var MapSubscriber = (function (_super) {
+	    __extends(MapSubscriber, _super);
+	    function MapSubscriber(destination, project, thisArg) {
+	        _super.call(this, destination);
+	        this.project = project;
+	        this.count = 0;
+	        this.thisArg = thisArg || this;
+	    }
+	    // NOTE: This looks unoptimized, but it's actually purposefully NOT
+	    // using try/catch optimizations.
+	    MapSubscriber.prototype._next = function (value) {
+	        var result;
+	        try {
+	            result = this.project.call(this.thisArg, value, this.count++);
+	        }
+	        catch (err) {
+	            this.destination.error(err);
+	            return;
+	        }
+	        this.destination.next(result);
+	    };
+	    return MapSubscriber;
+	}(Subscriber_1.Subscriber));
+	//# sourceMappingURL=map.js.map
+
+/***/ },
+/* 355 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var map_1 = __webpack_require__(356);
+	exports.GoogleMap = map_1.GoogleMap;
+
+
+/***/ },
+/* 356 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(326);
+	var data_service_1 = __webpack_require__(351);
 	var GoogleMap = (function () {
-	    function GoogleMap() {
+	    function GoogleMap(dataService) {
+	        this.dataService = dataService;
+	        this.lat = this.dataService.coords;
+	        this.lng = 27.5615244;
 	    }
 	    GoogleMap = __decorate([
 	        core_1.Component({
 	            selector: 'google-map',
-	            template: "\n    <div id=\"map\" style=\"height: 500px\"></div>\n    "
+	            styles: ["\n\t\t.sebm-google-map-container {\n\t\t\theight: 300px;\n\t\t}\n\t"],
+	            template: "\n    <sebm-google-map [latitude]=\"lat\" [longitude]=\"lng\"></sebm-google-map>\n    ",
+	            providers: [data_service_1.DataService]
 	        }), 
-	        __metadata('design:paramtypes', [])
+	        __metadata('design:paramtypes', [data_service_1.DataService])
 	    ], GoogleMap);
 	    return GoogleMap;
 	}());
 	exports.GoogleMap = GoogleMap;
 
+
+/***/ },
+/* 357 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	function __export(m) {
+	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+	}
+	// main modules
+	__export(__webpack_require__(358));
+	__export(__webpack_require__(373));
+	// Google Maps types
+	// core module
+	// we explicitly export the module here to prevent this Ionic 2 bug:
+	// http://stevemichelotti.com/integrate-angular-2-google-maps-into-ionic-2/
+	var core_module_1 = __webpack_require__(377);
+	exports.AgmCoreModule = core_module_1.AgmCoreModule;
+	//# sourceMappingURL=index.js.map
+
+/***/ },
+/* 358 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var google_map_1 = __webpack_require__(359);
+	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
+	var google_map_circle_1 = __webpack_require__(367);
+	exports.SebmGoogleMapCircle = google_map_circle_1.SebmGoogleMapCircle;
+	var google_map_info_window_1 = __webpack_require__(368);
+	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
+	var google_map_marker_1 = __webpack_require__(369);
+	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
+	var google_map_polygon_1 = __webpack_require__(370);
+	exports.SebmGoogleMapPolygon = google_map_polygon_1.SebmGoogleMapPolygon;
+	var google_map_polyline_1 = __webpack_require__(371);
+	exports.SebmGoogleMapPolyline = google_map_polyline_1.SebmGoogleMapPolyline;
+	var google_map_polyline_point_1 = __webpack_require__(372);
+	exports.SebmGoogleMapPolylinePoint = google_map_polyline_point_1.SebmGoogleMapPolylinePoint;
+	//# sourceMappingURL=directives.js.map
+
+/***/ },
+/* 359 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var google_maps_api_wrapper_1 = __webpack_require__(360);
+	var circle_manager_1 = __webpack_require__(362);
+	var info_window_manager_1 = __webpack_require__(363);
+	var marker_manager_1 = __webpack_require__(364);
+	var polygon_manager_1 = __webpack_require__(365);
+	var polyline_manager_1 = __webpack_require__(366);
+	/**
+	 * SebMGoogleMap renders a Google Map.
+	 * **Important note**: To be able see a map in the browser, you have to define a height for the CSS
+	 * class `sebm-google-map-container`.
+	 *
+	 * ### Example
+	 * ```typescript
+	 * import { Component } from '@angular/core';
+	 * import { SebmGoogleMap } from 'angular2-google-maps/core';
+	 *
+	 * @Component({
+	 *  selector: 'my-map-cmp',
+	 *  directives: [SebmGoogleMap],
+	 *  styles: [`
+	 *    .sebm-google-map-container {
+	 *      height: 300px;
+	 *    }
+	 * `],
+	 *  template: `
+	 *    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+	 *    </sebm-google-map>
+	 *  `
+	 * })
+	 * ```
+	 */
+	var SebmGoogleMap = (function () {
+	    function SebmGoogleMap(_elem, _mapsWrapper) {
+	        this._elem = _elem;
+	        this._mapsWrapper = _mapsWrapper;
+	        /**
+	         * The longitude that defines the center of the map.
+	         */
+	        this.longitude = 0;
+	        /**
+	         * The latitude that defines the center of the map.
+	         */
+	        this.latitude = 0;
+	        /**
+	         * The zoom level of the map. The default zoom level is 8.
+	         */
+	        this.zoom = 8;
+	        /**
+	         * Enables/disables if map is draggable.
+	         */
+	        this.draggable = true;
+	        /**
+	         * Enables/disables zoom and center on double click. Enabled by default.
+	         */
+	        this.disableDoubleClickZoom = false;
+	        /**
+	         * Enables/disables all default UI of the Google map. Please note: When the map is created, this
+	         * value cannot get updated.
+	         */
+	        this.disableDefaultUI = false;
+	        /**
+	         * If false, disables scrollwheel zooming on the map. The scrollwheel is enabled by default.
+	         */
+	        this.scrollwheel = true;
+	        /**
+	         * If false, prevents the map from being controlled by the keyboard. Keyboard shortcuts are
+	         * enabled by default.
+	         */
+	        this.keyboardShortcuts = true;
+	        /**
+	         * The enabled/disabled state of the Zoom control.
+	         */
+	        this.zoomControl = true;
+	        /**
+	         * Styles to apply to each of the default map types. Note that for Satellite/Hybrid and Terrain
+	         * modes, these styles will only apply to labels and geometry.
+	         */
+	        this.styles = [];
+	        /**
+	         * When true and the latitude and/or longitude values changes, the Google Maps panTo method is
+	         * used to
+	         * center the map. See: https://developers.google.com/maps/documentation/javascript/reference#Map
+	         */
+	        this.usePanning = false;
+	        /**
+	         * The initial enabled/disabled state of the Street View Pegman control.
+	         * This control is part of the default UI, and should be set to false when displaying a map type
+	         * on which the Street View road overlay should not appear (e.g. a non-Earth map type).
+	         */
+	        this.streetViewControl = true;
+	        /**
+	         * Sets the viewport to contain the given bounds.
+	         */
+	        this.fitBounds = null;
+	        /**
+	         * The initial enabled/disabled state of the Scale control. This is disabled by default.
+	         */
+	        this.scaleControl = false;
+	        /**
+	         * The initial enabled/disabled state of the Map type control.
+	         */
+	        this.mapTypeControl = false;
+	        this._observableSubscriptions = [];
+	        /**
+	         * This event emitter gets emitted when the user clicks on the map (but not when they click on a
+	         * marker or infoWindow).
+	         */
+	        this.mapClick = new core_1.EventEmitter();
+	        /**
+	         * This event emitter gets emitted when the user right-clicks on the map (but not when they click
+	         * on a marker or infoWindow).
+	         */
+	        this.mapRightClick = new core_1.EventEmitter();
+	        /**
+	         * This event emitter gets emitted when the user double-clicks on the map (but not when they click
+	         * on a marker or infoWindow).
+	         */
+	        this.mapDblClick = new core_1.EventEmitter();
+	        /**
+	         * This event emitter is fired when the map center changes.
+	         */
+	        this.centerChange = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the viewport bounds have changed.
+	         */
+	        this.boundsChange = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the map becomes idle after panning or zooming.
+	         */
+	        this.idle = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the zoom level has changed.
+	         */
+	        this.zoomChange = new core_1.EventEmitter();
+	    }
+	    /** @internal */
+	    SebmGoogleMap.prototype.ngOnInit = function () {
+	        // todo: this should be solved with a new component and a viewChild decorator
+	        var container = this._elem.nativeElement.querySelector('.sebm-google-map-container-inner');
+	        this._initMapInstance(container);
+	    };
+	    SebmGoogleMap.prototype._initMapInstance = function (el) {
+	        this._mapsWrapper.createMap(el, {
+	            center: { lat: this.latitude || 0, lng: this.longitude || 0 },
+	            zoom: this.zoom,
+	            disableDefaultUI: this.disableDefaultUI,
+	            backgroundColor: this.backgroundColor,
+	            draggable: this.draggable,
+	            draggableCursor: this.draggableCursor,
+	            draggingCursor: this.draggingCursor,
+	            keyboardShortcuts: this.keyboardShortcuts,
+	            zoomControl: this.zoomControl,
+	            styles: this.styles,
+	            streetViewControl: this.streetViewControl,
+	            scaleControl: this.scaleControl,
+	            mapTypeControl: this.mapTypeControl
+	        });
+	        // register event listeners
+	        this._handleMapCenterChange();
+	        this._handleMapZoomChange();
+	        this._handleMapMouseEvents();
+	        this._handleBoundsChange();
+	        this._handleIdleEvent();
+	    };
+	    /** @internal */
+	    SebmGoogleMap.prototype.ngOnDestroy = function () {
+	        // unsubscribe all registered observable subscriptions
+	        this._observableSubscriptions.forEach(function (s) { return s.unsubscribe(); });
+	    };
+	    /* @internal */
+	    SebmGoogleMap.prototype.ngOnChanges = function (changes) {
+	        this._updateMapOptionsChanges(changes);
+	        this._updatePosition(changes);
+	    };
+	    SebmGoogleMap.prototype._updateMapOptionsChanges = function (changes) {
+	        var options = {};
+	        var optionKeys = Object.keys(changes).filter(function (k) { return SebmGoogleMap._mapOptionsAttributes.indexOf(k) !== -1; });
+	        optionKeys.forEach(function (k) { options[k] = changes[k].currentValue; });
+	        this._mapsWrapper.setMapOptions(options);
+	    };
+	    /**
+	     * Triggers a resize event on the google map instance.
+	     * Returns a promise that gets resolved after the event was triggered.
+	     */
+	    SebmGoogleMap.prototype.triggerResize = function () {
+	        var _this = this;
+	        // Note: When we would trigger the resize event and show the map in the same turn (which is a
+	        // common case for triggering a resize event), then the resize event would not
+	        // work (to show the map), so we trigger the event in a timeout.
+	        return new Promise(function (resolve) {
+	            setTimeout(function () { return _this._mapsWrapper.triggerMapEvent('resize').then(function () { return resolve(); }); });
+	        });
+	    };
+	    SebmGoogleMap.prototype._updatePosition = function (changes) {
+	        if (changes['latitude'] == null && changes['longitude'] == null &&
+	            changes['fitBounds'] == null) {
+	            // no position update needed
+	            return;
+	        }
+	        // we prefer fitBounds in changes
+	        if (changes['fitBounds'] && this.fitBounds != null) {
+	            this._fitBounds();
+	            return;
+	        }
+	        if (typeof this.latitude !== 'number' || typeof this.longitude !== 'number') {
+	            return;
+	        }
+	        var newCenter = {
+	            lat: this.latitude,
+	            lng: this.longitude,
+	        };
+	        if (this.usePanning) {
+	            this._mapsWrapper.panTo(newCenter);
+	        }
+	        else {
+	            this._mapsWrapper.setCenter(newCenter);
+	        }
+	    };
+	    SebmGoogleMap.prototype._fitBounds = function () {
+	        if (this.usePanning) {
+	            this._mapsWrapper.panToBounds(this.fitBounds);
+	            return;
+	        }
+	        this._mapsWrapper.fitBounds(this.fitBounds);
+	    };
+	    SebmGoogleMap.prototype._handleMapCenterChange = function () {
+	        var _this = this;
+	        var s = this._mapsWrapper.subscribeToMapEvent('center_changed').subscribe(function () {
+	            _this._mapsWrapper.getCenter().then(function (center) {
+	                _this.latitude = center.lat();
+	                _this.longitude = center.lng();
+	                _this.centerChange.emit({ lat: _this.latitude, lng: _this.longitude });
+	            });
+	        });
+	        this._observableSubscriptions.push(s);
+	    };
+	    SebmGoogleMap.prototype._handleBoundsChange = function () {
+	        var _this = this;
+	        var s = this._mapsWrapper.subscribeToMapEvent('bounds_changed').subscribe(function () {
+	            _this._mapsWrapper.getBounds().then(function (bounds) { _this.boundsChange.emit(bounds); });
+	        });
+	        this._observableSubscriptions.push(s);
+	    };
+	    SebmGoogleMap.prototype._handleMapZoomChange = function () {
+	        var _this = this;
+	        var s = this._mapsWrapper.subscribeToMapEvent('zoom_changed').subscribe(function () {
+	            _this._mapsWrapper.getZoom().then(function (z) {
+	                _this.zoom = z;
+	                _this.zoomChange.emit(z);
+	            });
+	        });
+	        this._observableSubscriptions.push(s);
+	    };
+	    SebmGoogleMap.prototype._handleIdleEvent = function () {
+	        var _this = this;
+	        var s = this._mapsWrapper.subscribeToMapEvent('idle').subscribe(function () { _this.idle.emit(void 0); });
+	        this._observableSubscriptions.push(s);
+	    };
+	    SebmGoogleMap.prototype._handleMapMouseEvents = function () {
+	        var _this = this;
+	        var events = [
+	            { name: 'click', emitter: this.mapClick },
+	            { name: 'rightclick', emitter: this.mapRightClick },
+	        ];
+	        events.forEach(function (e) {
+	            var s = _this._mapsWrapper.subscribeToMapEvent(e.name).subscribe(function (event) {
+	                var value = { coords: { lat: event.latLng.lat(), lng: event.latLng.lng() } };
+	                e.emitter.emit(value);
+	            });
+	            _this._observableSubscriptions.push(s);
+	        });
+	    };
+	    /**
+	     * Map option attributes that can change over time
+	     */
+	    SebmGoogleMap._mapOptionsAttributes = [
+	        'disableDoubleClickZoom', 'scrollwheel', 'draggable', 'draggableCursor', 'draggingCursor',
+	        'keyboardShortcuts', 'zoomControl', 'styles', 'streetViewControl', 'zoom', 'mapTypeControl'
+	    ];
+	    SebmGoogleMap.decorators = [
+	        { type: core_1.Component, args: [{
+	                    selector: 'sebm-google-map',
+	                    providers: [
+	                        google_maps_api_wrapper_1.GoogleMapsAPIWrapper, marker_manager_1.MarkerManager, info_window_manager_1.InfoWindowManager, circle_manager_1.CircleManager, polyline_manager_1.PolylineManager,
+	                        polygon_manager_1.PolygonManager
+	                    ],
+	                    inputs: [
+	                        'longitude', 'latitude', 'zoom', 'draggable: mapDraggable', 'disableDoubleClickZoom',
+	                        'disableDefaultUI', 'scrollwheel', 'backgroundColor', 'draggableCursor', 'draggingCursor',
+	                        'keyboardShortcuts', 'zoomControl', 'styles', 'usePanning', 'streetViewControl', 'fitBounds',
+	                        'scaleControl', 'mapTypeControl'
+	                    ],
+	                    outputs: [
+	                        'mapClick', 'mapRightClick', 'mapDblClick', 'centerChange', 'idle', 'boundsChange', 'zoomChange'
+	                    ],
+	                    host: { '[class.sebm-google-map-container]': 'true' },
+	                    styles: ["\n    .sebm-google-map-container-inner {\n      width: inherit;\n      height: inherit;\n    }\n    .sebm-google-map-content {\n      display:none;\n    }\n  "],
+	                    template: "\n    <div class='sebm-google-map-container-inner'></div>\n    <div class='sebm-google-map-content'>\n      <ng-content></ng-content>\n    </div>\n  "
+	                },] },
+	    ];
+	    /** @nocollapse */
+	    SebmGoogleMap.ctorParameters = [
+	        { type: core_1.ElementRef, },
+	        { type: google_maps_api_wrapper_1.GoogleMapsAPIWrapper, },
+	    ];
+	    return SebmGoogleMap;
+	}());
+	exports.SebmGoogleMap = SebmGoogleMap;
+	//# sourceMappingURL=google-map.js.map
+
+/***/ },
+/* 360 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var Observable_1 = __webpack_require__(328);
+	var maps_api_loader_1 = __webpack_require__(361);
+	/**
+	 * Wrapper class that handles the communication with the Google Maps Javascript
+	 * API v3
+	 */
+	var GoogleMapsAPIWrapper = (function () {
+	    function GoogleMapsAPIWrapper(_loader, _zone) {
+	        var _this = this;
+	        this._loader = _loader;
+	        this._zone = _zone;
+	        this._map =
+	            new Promise(function (resolve) { _this._mapResolver = resolve; });
+	    }
+	    GoogleMapsAPIWrapper.prototype.createMap = function (el, mapOptions) {
+	        var _this = this;
+	        return this._loader.load().then(function () {
+	            var map = new google.maps.Map(el, mapOptions);
+	            _this._mapResolver(map);
+	            return;
+	        });
+	    };
+	    GoogleMapsAPIWrapper.prototype.setMapOptions = function (options) {
+	        this._map.then(function (m) { m.setOptions(options); });
+	    };
+	    /**
+	     * Creates a google map marker with the map context
+	     */
+	    GoogleMapsAPIWrapper.prototype.createMarker = function (options) {
+	        if (options === void 0) { options = {}; }
+	        return this._map.then(function (map) {
+	            options.map = map;
+	            return new google.maps.Marker(options);
+	        });
+	    };
+	    GoogleMapsAPIWrapper.prototype.createInfoWindow = function (options) {
+	        return this._map.then(function () { return new google.maps.InfoWindow(options); });
+	    };
+	    /**
+	     * Creates a google.map.Circle for the current map.
+	     */
+	    GoogleMapsAPIWrapper.prototype.createCircle = function (options) {
+	        return this._map.then(function (map) {
+	            options.map = map;
+	            return new google.maps.Circle(options);
+	        });
+	    };
+	    GoogleMapsAPIWrapper.prototype.createPolyline = function (options) {
+	        return this.getNativeMap().then(function (map) {
+	            var line = new google.maps.Polyline(options);
+	            line.setMap(map);
+	            return line;
+	        });
+	    };
+	    GoogleMapsAPIWrapper.prototype.createPolygon = function (options) {
+	        return this.getNativeMap().then(function (map) {
+	            var polygon = new google.maps.Polygon(options);
+	            polygon.setMap(map);
+	            return polygon;
+	        });
+	    };
+	    /**
+	     * Determines if given coordinates are insite a Polygon path.
+	     */
+	    GoogleMapsAPIWrapper.prototype.containsLocation = function (latLng, polygon) {
+	        return google.maps.geometry.poly.containsLocation(latLng, polygon);
+	    };
+	    GoogleMapsAPIWrapper.prototype.subscribeToMapEvent = function (eventName) {
+	        var _this = this;
+	        return Observable_1.Observable.create(function (observer) {
+	            _this._map.then(function (m) {
+	                m.addListener(eventName, function (arg) { _this._zone.run(function () { return observer.next(arg); }); });
+	            });
+	        });
+	    };
+	    GoogleMapsAPIWrapper.prototype.setCenter = function (latLng) {
+	        return this._map.then(function (map) { return map.setCenter(latLng); });
+	    };
+	    GoogleMapsAPIWrapper.prototype.getZoom = function () { return this._map.then(function (map) { return map.getZoom(); }); };
+	    GoogleMapsAPIWrapper.prototype.getBounds = function () {
+	        return this._map.then(function (map) { return map.getBounds(); });
+	    };
+	    GoogleMapsAPIWrapper.prototype.setZoom = function (zoom) {
+	        return this._map.then(function (map) { return map.setZoom(zoom); });
+	    };
+	    GoogleMapsAPIWrapper.prototype.getCenter = function () {
+	        return this._map.then(function (map) { return map.getCenter(); });
+	    };
+	    GoogleMapsAPIWrapper.prototype.panTo = function (latLng) {
+	        return this._map.then(function (map) { return map.panTo(latLng); });
+	    };
+	    GoogleMapsAPIWrapper.prototype.fitBounds = function (latLng) {
+	        return this._map.then(function (map) { return map.fitBounds(latLng); });
+	    };
+	    GoogleMapsAPIWrapper.prototype.panToBounds = function (latLng) {
+	        return this._map.then(function (map) { return map.panToBounds(latLng); });
+	    };
+	    /**
+	     * Returns the native Google Maps Map instance. Be careful when using this instance directly.
+	     */
+	    GoogleMapsAPIWrapper.prototype.getNativeMap = function () { return this._map; };
+	    /**
+	     * Triggers the given event name on the map instance.
+	     */
+	    GoogleMapsAPIWrapper.prototype.triggerMapEvent = function (eventName) {
+	        return this._map.then(function (m) { return google.maps.event.trigger(m, eventName); });
+	    };
+	    GoogleMapsAPIWrapper.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    GoogleMapsAPIWrapper.ctorParameters = [
+	        { type: maps_api_loader_1.MapsAPILoader, },
+	        { type: core_1.NgZone, },
+	    ];
+	    return GoogleMapsAPIWrapper;
+	}());
+	exports.GoogleMapsAPIWrapper = GoogleMapsAPIWrapper;
+	//# sourceMappingURL=google-maps-api-wrapper.js.map
+
+/***/ },
+/* 361 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var MapsAPILoader = (function () {
+	    function MapsAPILoader() {
+	    }
+	    MapsAPILoader.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    MapsAPILoader.ctorParameters = [];
+	    return MapsAPILoader;
+	}());
+	exports.MapsAPILoader = MapsAPILoader;
+	//# sourceMappingURL=maps-api-loader.js.map
+
+/***/ },
+/* 362 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var Observable_1 = __webpack_require__(328);
+	var google_maps_api_wrapper_1 = __webpack_require__(360);
+	var CircleManager = (function () {
+	    function CircleManager(_apiWrapper, _zone) {
+	        this._apiWrapper = _apiWrapper;
+	        this._zone = _zone;
+	        this._circles = new Map();
+	    }
+	    CircleManager.prototype.addCircle = function (circle) {
+	        this._circles.set(circle, this._apiWrapper.createCircle({
+	            center: { lat: circle.latitude, lng: circle.longitude },
+	            clickable: circle.clickable,
+	            draggable: circle.draggable,
+	            editable: circle.editable,
+	            fillColor: circle.fillColor,
+	            fillOpacity: circle.fillOpacity,
+	            radius: circle.radius,
+	            strokeColor: circle.strokeColor,
+	            strokeOpacity: circle.strokeOpacity,
+	            strokePosition: circle.strokePosition,
+	            strokeWeight: circle.strokeWeight,
+	            visible: circle.visible,
+	            zIndex: circle.zIndex
+	        }));
+	    };
+	    ;
+	    /**
+	     * Removes the given circle from the map.
+	     */
+	    CircleManager.prototype.removeCircle = function (circle) {
+	        var _this = this;
+	        return this._circles.get(circle).then(function (c) {
+	            c.setMap(null);
+	            _this._circles.delete(circle);
+	        });
+	    };
+	    CircleManager.prototype.setOptions = function (circle, options) {
+	        return this._circles.get(circle).then(function (c) { return c.setOptions(options); });
+	    };
+	    ;
+	    CircleManager.prototype.getBounds = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.getBounds(); });
+	    };
+	    ;
+	    CircleManager.prototype.getCenter = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.getCenter(); });
+	    };
+	    ;
+	    CircleManager.prototype.getRadius = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.getRadius(); });
+	    };
+	    CircleManager.prototype.setCenter = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.setCenter({ lat: circle.latitude, lng: circle.longitude }); });
+	    };
+	    ;
+	    CircleManager.prototype.setEditable = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.setEditable(circle.editable); });
+	    };
+	    ;
+	    CircleManager.prototype.setDraggable = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.setDraggable(circle.draggable); });
+	    };
+	    ;
+	    CircleManager.prototype.setVisible = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.setVisible(circle.visible); });
+	    };
+	    ;
+	    CircleManager.prototype.setRadius = function (circle) {
+	        return this._circles.get(circle).then(function (c) { return c.setRadius(circle.radius); });
+	    };
+	    ;
+	    CircleManager.prototype.createEventObservable = function (eventName, circle) {
+	        var _this = this;
+	        return Observable_1.Observable.create(function (observer) {
+	            var listener = null;
+	            _this._circles.get(circle).then(function (c) {
+	                listener = c.addListener(eventName, function (e) { return _this._zone.run(function () { return observer.next(e); }); });
+	            });
+	            return function () {
+	                if (listener !== null) {
+	                    listener.remove();
+	                }
+	            };
+	        });
+	    };
+	    CircleManager.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    CircleManager.ctorParameters = [
+	        { type: google_maps_api_wrapper_1.GoogleMapsAPIWrapper, },
+	        { type: core_1.NgZone, },
+	    ];
+	    return CircleManager;
+	}());
+	exports.CircleManager = CircleManager;
+	//# sourceMappingURL=circle-manager.js.map
+
+/***/ },
+/* 363 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var google_maps_api_wrapper_1 = __webpack_require__(360);
+	var marker_manager_1 = __webpack_require__(364);
+	var InfoWindowManager = (function () {
+	    function InfoWindowManager(_mapsWrapper, _zone, _markerManager) {
+	        this._mapsWrapper = _mapsWrapper;
+	        this._zone = _zone;
+	        this._markerManager = _markerManager;
+	        this._infoWindows = new Map();
+	    }
+	    InfoWindowManager.prototype.deleteInfoWindow = function (infoWindow) {
+	        var _this = this;
+	        var iWindow = this._infoWindows.get(infoWindow);
+	        if (iWindow == null) {
+	            // info window already deleted
+	            return Promise.resolve();
+	        }
+	        return iWindow.then(function (i) {
+	            return _this._zone.run(function () {
+	                i.close();
+	                _this._infoWindows.delete(infoWindow);
+	            });
+	        });
+	    };
+	    InfoWindowManager.prototype.setPosition = function (infoWindow) {
+	        return this._infoWindows.get(infoWindow).then(function (i) { return i.setPosition({
+	            lat: infoWindow.latitude,
+	            lng: infoWindow.longitude
+	        }); });
+	    };
+	    InfoWindowManager.prototype.setZIndex = function (infoWindow) {
+	        return this._infoWindows.get(infoWindow)
+	            .then(function (i) { return i.setZIndex(infoWindow.zIndex); });
+	    };
+	    InfoWindowManager.prototype.open = function (infoWindow) {
+	        var _this = this;
+	        return this._infoWindows.get(infoWindow).then(function (w) {
+	            if (infoWindow.hostMarker != null) {
+	                return _this._markerManager.getNativeMarker(infoWindow.hostMarker).then(function (marker) {
+	                    return _this._mapsWrapper.getNativeMap().then(function (map) { return w.open(map, marker); });
+	                });
+	            }
+	            return _this._mapsWrapper.getNativeMap().then(function (map) { return w.open(map); });
+	        });
+	    };
+	    InfoWindowManager.prototype.close = function (infoWindow) {
+	        return this._infoWindows.get(infoWindow).then(function (w) { return w.close(); });
+	    };
+	    InfoWindowManager.prototype.setOptions = function (infoWindow, options) {
+	        return this._infoWindows.get(infoWindow).then(function (i) { return i.setOptions(options); });
+	    };
+	    InfoWindowManager.prototype.addInfoWindow = function (infoWindow) {
+	        var options = {
+	            content: infoWindow.content,
+	            maxWidth: infoWindow.maxWidth,
+	            zIndex: infoWindow.zIndex,
+	        };
+	        if (typeof infoWindow.latitude === 'number' && typeof infoWindow.longitude === 'number') {
+	            options.position = { lat: infoWindow.latitude, lng: infoWindow.longitude };
+	        }
+	        var infoWindowPromise = this._mapsWrapper.createInfoWindow(options);
+	        this._infoWindows.set(infoWindow, infoWindowPromise);
+	    };
+	    InfoWindowManager.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    InfoWindowManager.ctorParameters = [
+	        { type: google_maps_api_wrapper_1.GoogleMapsAPIWrapper, },
+	        { type: core_1.NgZone, },
+	        { type: marker_manager_1.MarkerManager, },
+	    ];
+	    return InfoWindowManager;
+	}());
+	exports.InfoWindowManager = InfoWindowManager;
+	//# sourceMappingURL=info-window-manager.js.map
+
+/***/ },
+/* 364 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var Observable_1 = __webpack_require__(328);
+	var google_maps_api_wrapper_1 = __webpack_require__(360);
+	var MarkerManager = (function () {
+	    function MarkerManager(_mapsWrapper, _zone) {
+	        this._mapsWrapper = _mapsWrapper;
+	        this._zone = _zone;
+	        this._markers = new Map();
+	    }
+	    MarkerManager.prototype.deleteMarker = function (marker) {
+	        var _this = this;
+	        var m = this._markers.get(marker);
+	        if (m == null) {
+	            // marker already deleted
+	            return Promise.resolve();
+	        }
+	        return m.then(function (m) {
+	            return _this._zone.run(function () {
+	                m.setMap(null);
+	                _this._markers.delete(marker);
+	            });
+	        });
+	    };
+	    MarkerManager.prototype.updateMarkerPosition = function (marker) {
+	        return this._markers.get(marker).then(function (m) { return m.setPosition({ lat: marker.latitude, lng: marker.longitude }); });
+	    };
+	    MarkerManager.prototype.updateTitle = function (marker) {
+	        return this._markers.get(marker).then(function (m) { return m.setTitle(marker.title); });
+	    };
+	    MarkerManager.prototype.updateLabel = function (marker) {
+	        return this._markers.get(marker).then(function (m) { m.setLabel(marker.label); });
+	    };
+	    MarkerManager.prototype.updateDraggable = function (marker) {
+	        return this._markers.get(marker).then(function (m) { return m.setDraggable(marker.draggable); });
+	    };
+	    MarkerManager.prototype.updateIcon = function (marker) {
+	        return this._markers.get(marker).then(function (m) { return m.setIcon(marker.iconUrl); });
+	    };
+	    MarkerManager.prototype.updateOpacity = function (marker) {
+	        return this._markers.get(marker).then(function (m) { return m.setOpacity(marker.opacity); });
+	    };
+	    MarkerManager.prototype.updateVisible = function (marker) {
+	        return this._markers.get(marker).then(function (m) { return m.setVisible(marker.visible); });
+	    };
+	    MarkerManager.prototype.updateZIndex = function (marker) {
+	        return this._markers.get(marker).then(function (m) { return m.setZIndex(marker.zIndex); });
+	    };
+	    MarkerManager.prototype.addMarker = function (marker) {
+	        var markerPromise = this._mapsWrapper.createMarker({
+	            position: { lat: marker.latitude, lng: marker.longitude },
+	            label: marker.label,
+	            draggable: marker.draggable,
+	            icon: marker.iconUrl,
+	            opacity: marker.opacity,
+	            visible: marker.visible,
+	            zIndex: marker.zIndex,
+	            title: marker.title
+	        });
+	        this._markers.set(marker, markerPromise);
+	    };
+	    MarkerManager.prototype.getNativeMarker = function (marker) {
+	        return this._markers.get(marker);
+	    };
+	    MarkerManager.prototype.createEventObservable = function (eventName, marker) {
+	        var _this = this;
+	        return Observable_1.Observable.create(function (observer) {
+	            _this._markers.get(marker).then(function (m) {
+	                m.addListener(eventName, function (e) { return _this._zone.run(function () { return observer.next(e); }); });
+	            });
+	        });
+	    };
+	    MarkerManager.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    MarkerManager.ctorParameters = [
+	        { type: google_maps_api_wrapper_1.GoogleMapsAPIWrapper, },
+	        { type: core_1.NgZone, },
+	    ];
+	    return MarkerManager;
+	}());
+	exports.MarkerManager = MarkerManager;
+	//# sourceMappingURL=marker-manager.js.map
+
+/***/ },
+/* 365 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var Observable_1 = __webpack_require__(328);
+	var google_maps_api_wrapper_1 = __webpack_require__(360);
+	var PolygonManager = (function () {
+	    function PolygonManager(_mapsWrapper, _zone) {
+	        this._mapsWrapper = _mapsWrapper;
+	        this._zone = _zone;
+	        this._polygons = new Map();
+	    }
+	    PolygonManager.prototype.addPolygon = function (path) {
+	        var polygonPromise = this._mapsWrapper.createPolygon({
+	            clickable: path.clickable,
+	            draggable: path.draggable,
+	            editable: path.editable,
+	            fillColor: path.fillColor,
+	            fillOpacity: path.fillOpacity,
+	            geodesic: path.geodesic,
+	            paths: path.paths,
+	            strokeColor: path.strokeColor,
+	            strokeOpacity: path.strokeOpacity,
+	            strokeWeight: path.strokeWeight,
+	            visible: path.visible,
+	            zIndex: path.zIndex,
+	        });
+	        this._polygons.set(path, polygonPromise);
+	    };
+	    PolygonManager.prototype.updatePolygon = function (polygon) {
+	        var _this = this;
+	        var m = this._polygons.get(polygon);
+	        if (m == null) {
+	            return Promise.resolve();
+	        }
+	        return m.then(function (l) { return _this._zone.run(function () { l.setPaths(polygon.paths); }); });
+	    };
+	    PolygonManager.prototype.setPolygonOptions = function (path, options) {
+	        return this._polygons.get(path).then(function (l) { l.setOptions(options); });
+	    };
+	    PolygonManager.prototype.deletePolygon = function (paths) {
+	        var _this = this;
+	        var m = this._polygons.get(paths);
+	        if (m == null) {
+	            return Promise.resolve();
+	        }
+	        return m.then(function (l) {
+	            return _this._zone.run(function () {
+	                l.setMap(null);
+	                _this._polygons.delete(paths);
+	            });
+	        });
+	    };
+	    PolygonManager.prototype.createEventObservable = function (eventName, path) {
+	        var _this = this;
+	        return Observable_1.Observable.create(function (observer) {
+	            _this._polygons.get(path).then(function (l) {
+	                l.addListener(eventName, function (e) { return _this._zone.run(function () { return observer.next(e); }); });
+	            });
+	        });
+	    };
+	    PolygonManager.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    PolygonManager.ctorParameters = [
+	        { type: google_maps_api_wrapper_1.GoogleMapsAPIWrapper, },
+	        { type: core_1.NgZone, },
+	    ];
+	    return PolygonManager;
+	}());
+	exports.PolygonManager = PolygonManager;
+	//# sourceMappingURL=polygon-manager.js.map
+
+/***/ },
+/* 366 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var Observable_1 = __webpack_require__(328);
+	var google_maps_api_wrapper_1 = __webpack_require__(360);
+	var PolylineManager = (function () {
+	    function PolylineManager(_mapsWrapper, _zone) {
+	        this._mapsWrapper = _mapsWrapper;
+	        this._zone = _zone;
+	        this._polylines = new Map();
+	    }
+	    PolylineManager._convertPoints = function (line) {
+	        var path = line._getPoints().map(function (point) {
+	            return { lat: point.latitude, lng: point.longitude };
+	        });
+	        return path;
+	    };
+	    PolylineManager.prototype.addPolyline = function (line) {
+	        var path = PolylineManager._convertPoints(line);
+	        var polylinePromise = this._mapsWrapper.createPolyline({
+	            clickable: line.clickable,
+	            draggable: line.draggable,
+	            editable: line.editable,
+	            geodesic: line.geodesic,
+	            strokeColor: line.strokeColor,
+	            strokeOpacity: line.strokeOpacity,
+	            strokeWeight: line.strokeWeight,
+	            visible: line.visible,
+	            zIndex: line.zIndex,
+	            path: path
+	        });
+	        this._polylines.set(line, polylinePromise);
+	    };
+	    PolylineManager.prototype.updatePolylinePoints = function (line) {
+	        var _this = this;
+	        var path = PolylineManager._convertPoints(line);
+	        var m = this._polylines.get(line);
+	        if (m == null) {
+	            return Promise.resolve();
+	        }
+	        return m.then(function (l) { return _this._zone.run(function () { l.setPath(path); }); });
+	    };
+	    PolylineManager.prototype.setPolylineOptions = function (line, options) {
+	        return this._polylines.get(line).then(function (l) { l.setOptions(options); });
+	    };
+	    PolylineManager.prototype.deletePolyline = function (line) {
+	        var _this = this;
+	        var m = this._polylines.get(line);
+	        if (m == null) {
+	            return Promise.resolve();
+	        }
+	        return m.then(function (l) {
+	            return _this._zone.run(function () {
+	                l.setMap(null);
+	                _this._polylines.delete(line);
+	            });
+	        });
+	    };
+	    PolylineManager.prototype.createEventObservable = function (eventName, line) {
+	        var _this = this;
+	        return Observable_1.Observable.create(function (observer) {
+	            _this._polylines.get(line).then(function (l) {
+	                l.addListener(eventName, function (e) { return _this._zone.run(function () { return observer.next(e); }); });
+	            });
+	        });
+	    };
+	    PolylineManager.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    PolylineManager.ctorParameters = [
+	        { type: google_maps_api_wrapper_1.GoogleMapsAPIWrapper, },
+	        { type: core_1.NgZone, },
+	    ];
+	    return PolylineManager;
+	}());
+	exports.PolylineManager = PolylineManager;
+	//# sourceMappingURL=polyline-manager.js.map
+
+/***/ },
+/* 367 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var circle_manager_1 = __webpack_require__(362);
+	var SebmGoogleMapCircle = (function () {
+	    function SebmGoogleMapCircle(_manager) {
+	        this._manager = _manager;
+	        /**
+	         * Indicates whether this Circle handles mouse events. Defaults to true.
+	         */
+	        this.clickable = true;
+	        /**
+	         * If set to true, the user can drag this circle over the map. Defaults to false.
+	         */
+	        this.draggable = false;
+	        /**
+	         * If set to true, the user can edit this circle by dragging the control points shown at
+	         * the center and around the circumference of the circle. Defaults to false.
+	         */
+	        this.editable = false;
+	        /**
+	         * The radius in meters on the Earth's surface.
+	         */
+	        this.radius = 0;
+	        /**
+	         * The stroke position. Defaults to CENTER.
+	         * This property is not supported on Internet Explorer 8 and earlier.
+	         */
+	        this.strokePosition = 'CENTER';
+	        /**
+	         * The stroke width in pixels.
+	         */
+	        this.strokeWeight = 0;
+	        /**
+	         * Whether this circle is visible on the map. Defaults to true.
+	         */
+	        this.visible = true;
+	        /**
+	         * This event is fired when the circle's center is changed.
+	         */
+	        this.centerChange = new core_1.EventEmitter();
+	        /**
+	         * This event emitter gets emitted when the user clicks on the circle.
+	         */
+	        this.circleClick = new core_1.EventEmitter();
+	        /**
+	         * This event emitter gets emitted when the user clicks on the circle.
+	         */
+	        this.circleDblClick = new core_1.EventEmitter();
+	        /**
+	         * This event is repeatedly fired while the user drags the circle.
+	         */
+	        this.drag = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user stops dragging the circle.
+	         */
+	        this.dragEnd = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user starts dragging the circle.
+	         */
+	        this.dragStart = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM mousedown event is fired on the circle.
+	         */
+	        this.mouseDown = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM mousemove event is fired on the circle.
+	         */
+	        this.mouseMove = new core_1.EventEmitter();
+	        /**
+	         * This event is fired on circle mouseout.
+	         */
+	        this.mouseOut = new core_1.EventEmitter();
+	        /**
+	         * This event is fired on circle mouseover.
+	         */
+	        this.mouseOver = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM mouseup event is fired on the circle.
+	         */
+	        this.mouseUp = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the circle's radius is changed.
+	         */
+	        this.radiusChange = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the circle is right-clicked on.
+	         */
+	        this.rightClick = new core_1.EventEmitter();
+	        this._circleAddedToManager = false;
+	        this._eventSubscriptions = [];
+	    }
+	    /** @internal */
+	    SebmGoogleMapCircle.prototype.ngOnInit = function () {
+	        this._manager.addCircle(this);
+	        this._circleAddedToManager = true;
+	        this._registerEventListeners();
+	    };
+	    /** @internal */
+	    SebmGoogleMapCircle.prototype.ngOnChanges = function (changes) {
+	        if (!this._circleAddedToManager) {
+	            return;
+	        }
+	        if (changes['latitude'] || changes['longitude']) {
+	            this._manager.setCenter(this);
+	        }
+	        if (changes['editable']) {
+	            this._manager.setEditable(this);
+	        }
+	        if (changes['draggable']) {
+	            this._manager.setDraggable(this);
+	        }
+	        if (changes['visible']) {
+	            this._manager.setVisible(this);
+	        }
+	        if (changes['radius']) {
+	            this._manager.setRadius(this);
+	        }
+	        this._updateCircleOptionsChanges(changes);
+	    };
+	    SebmGoogleMapCircle.prototype._updateCircleOptionsChanges = function (changes) {
+	        var options = {};
+	        var optionKeys = Object.keys(changes).filter(function (k) { return SebmGoogleMapCircle._mapOptions.indexOf(k) !== -1; });
+	        optionKeys.forEach(function (k) { options[k] = changes[k].currentValue; });
+	        if (optionKeys.length > 0) {
+	            this._manager.setOptions(this, options);
+	        }
+	    };
+	    SebmGoogleMapCircle.prototype._registerEventListeners = function () {
+	        var _this = this;
+	        var events = new Map();
+	        events.set('center_changed', this.centerChange);
+	        events.set('click', this.circleClick);
+	        events.set('dblclick', this.circleDblClick);
+	        events.set('drag', this.drag);
+	        events.set('dragend', this.dragEnd);
+	        events.set('dragStart', this.dragStart);
+	        events.set('mousedown', this.mouseDown);
+	        events.set('mousemove', this.mouseMove);
+	        events.set('mouseout', this.mouseOut);
+	        events.set('mouseover', this.mouseOver);
+	        events.set('mouseup', this.mouseUp);
+	        events.set('radius_changed', this.radiusChange);
+	        events.set('rightclick', this.rightClick);
+	        events.forEach(function (eventEmitter, eventName) {
+	            _this._eventSubscriptions.push(_this._manager.createEventObservable(eventName, _this).subscribe(function (value) {
+	                switch (eventName) {
+	                    case 'radius_changed':
+	                        _this._manager.getRadius(_this).then(function (radius) { return eventEmitter.emit(radius); });
+	                        break;
+	                    case 'center_changed':
+	                        _this._manager.getCenter(_this).then(function (center) {
+	                            return eventEmitter.emit({ lat: center.lat(), lng: center.lng() });
+	                        });
+	                        break;
+	                    default:
+	                        eventEmitter.emit({ coords: { lat: value.latLng.lat(), lng: value.latLng.lng() } });
+	                }
+	            }));
+	        });
+	    };
+	    /** @internal */
+	    SebmGoogleMapCircle.prototype.ngOnDestroy = function () {
+	        this._eventSubscriptions.forEach(function (s) { s.unsubscribe(); });
+	        this._eventSubscriptions = null;
+	        this._manager.removeCircle(this);
+	    };
+	    /**
+	     * Gets the LatLngBounds of this Circle.
+	     */
+	    SebmGoogleMapCircle.prototype.getBounds = function () { return this._manager.getBounds(this); };
+	    SebmGoogleMapCircle.prototype.getCenter = function () { return this._manager.getCenter(this); };
+	    SebmGoogleMapCircle._mapOptions = [
+	        'fillColor', 'fillOpacity', 'strokeColor', 'strokeOpacity', 'strokePosition', 'strokeWeight',
+	        'visible', 'zIndex'
+	    ];
+	    SebmGoogleMapCircle.decorators = [
+	        { type: core_1.Directive, args: [{
+	                    selector: 'sebm-google-map-circle',
+	                    inputs: [
+	                        'latitude', 'longitude', 'clickable', 'draggable: circleDraggable', 'editable', 'fillColor',
+	                        'fillOpacity', 'radius', 'strokeColor', 'strokeOpacity', 'strokePosition', 'strokeWeight',
+	                        'visible', 'zIndex'
+	                    ],
+	                    outputs: [
+	                        'centerChange', 'circleClick', 'circleDblClick', 'drag', 'dragEnd', 'dragStart', 'mouseDown',
+	                        'mouseMove', 'mouseOut', 'mouseOver', 'mouseUp', 'radiusChange', 'rightClick'
+	                    ]
+	                },] },
+	    ];
+	    /** @nocollapse */
+	    SebmGoogleMapCircle.ctorParameters = [
+	        { type: circle_manager_1.CircleManager, },
+	    ];
+	    return SebmGoogleMapCircle;
+	}());
+	exports.SebmGoogleMapCircle = SebmGoogleMapCircle;
+	//# sourceMappingURL=google-map-circle.js.map
+
+/***/ },
+/* 368 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var info_window_manager_1 = __webpack_require__(363);
+	var infoWindowId = 0;
+	/**
+	 * SebmGoogleMapInfoWindow renders a info window inside a {@link SebmGoogleMapMarker} or standalone.
+	 *
+	 * ### Example
+	 * ```typescript
+	 * import { Component } from 'angular2/core';
+	 * import { SebmGoogleMap, SebmGoogleMapMarker, SebmGoogleMapInfoWindow } from
+	 * 'angular2-google-maps/core';
+	 *
+	 * @Component({
+	 *  selector: 'my-map-cmp',
+	 *  directives: [SebmGoogleMap, SebmGoogleMapMarker, SebmGoogleMapInfoWindow],
+	 *  styles: [`
+	 *    .sebm-google-map-container {
+	 *      height: 300px;
+	 *    }
+	 * `],
+	 *  template: `
+	 *    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+	 *      <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [label]="'M'">
+	 *        <sebm-google-map-info-window [disableAutoPan]="true">
+	 *          Hi, this is the content of the <strong>info window</strong>
+	 *        </sebm-google-map-info-window>
+	 *      </sebm-google-map-marker>
+	 *    </sebm-google-map>
+	 *  `
+	 * })
+	 * ```
+	 */
+	var SebmGoogleMapInfoWindow = (function () {
+	    function SebmGoogleMapInfoWindow(_infoWindowManager, _el) {
+	        this._infoWindowManager = _infoWindowManager;
+	        this._el = _el;
+	        /**
+	         * Sets the open state for the InfoWindow. You can also call the open() and close() methods.
+	         */
+	        this.isOpen = false;
+	        /**
+	         * Emits an event when the info window is closed.
+	         */
+	        this.infoWindowClose = new core_1.EventEmitter();
+	        this._infoWindowAddedToManager = false;
+	        this._id = (infoWindowId++).toString();
+	    }
+	    SebmGoogleMapInfoWindow.prototype.ngOnInit = function () {
+	        this.content = this._el.nativeElement.querySelector('.sebm-google-map-info-window-content');
+	        this._infoWindowManager.addInfoWindow(this);
+	        this._infoWindowAddedToManager = true;
+	        this._updateOpenState();
+	    };
+	    /** @internal */
+	    SebmGoogleMapInfoWindow.prototype.ngOnChanges = function (changes) {
+	        if (!this._infoWindowAddedToManager) {
+	            return;
+	        }
+	        if ((changes['latitude'] || changes['longitude']) && typeof this.latitude === 'number' &&
+	            typeof this.longitude === 'number') {
+	            this._infoWindowManager.setPosition(this);
+	        }
+	        if (changes['zIndex']) {
+	            this._infoWindowManager.setZIndex(this);
+	        }
+	        if (changes['isOpen']) {
+	            this._updateOpenState();
+	        }
+	        this._setInfoWindowOptions(changes);
+	    };
+	    SebmGoogleMapInfoWindow.prototype._updateOpenState = function () {
+	        this.isOpen ? this._infoWindowManager.open(this) : this._infoWindowManager.close(this);
+	    };
+	    SebmGoogleMapInfoWindow.prototype._setInfoWindowOptions = function (changes) {
+	        var options = {};
+	        var optionKeys = Object.keys(changes).filter(function (k) { return SebmGoogleMapInfoWindow._infoWindowOptionsInputs.indexOf(k) !== -1; });
+	        optionKeys.forEach(function (k) { options[k] = changes[k].currentValue; });
+	        this._infoWindowManager.setOptions(this, options);
+	    };
+	    /**
+	     * Opens the info window.
+	     */
+	    SebmGoogleMapInfoWindow.prototype.open = function () { return this._infoWindowManager.open(this); };
+	    /**
+	     * Closes the info window.
+	     */
+	    SebmGoogleMapInfoWindow.prototype.close = function () {
+	        var _this = this;
+	        return this._infoWindowManager.close(this).then(function () { _this.infoWindowClose.emit(void 0); });
+	    };
+	    /** @internal */
+	    SebmGoogleMapInfoWindow.prototype.id = function () { return this._id; };
+	    /** @internal */
+	    SebmGoogleMapInfoWindow.prototype.toString = function () { return 'SebmGoogleMapInfoWindow-' + this._id.toString(); };
+	    /** @internal */
+	    SebmGoogleMapInfoWindow.prototype.ngOnDestroy = function () { this._infoWindowManager.deleteInfoWindow(this); };
+	    SebmGoogleMapInfoWindow._infoWindowOptionsInputs = ['disableAutoPan', 'maxWidth'];
+	    SebmGoogleMapInfoWindow.decorators = [
+	        { type: core_1.Component, args: [{
+	                    selector: 'sebm-google-map-info-window',
+	                    inputs: ['latitude', 'longitude', 'disableAutoPan', 'isOpen', 'zIndex', 'maxWidth'],
+	                    outputs: ['infoWindowClose'],
+	                    template: "<div class='sebm-google-map-info-window-content'>\n      <ng-content></ng-content>\n    </div>\n  "
+	                },] },
+	    ];
+	    /** @nocollapse */
+	    SebmGoogleMapInfoWindow.ctorParameters = [
+	        { type: info_window_manager_1.InfoWindowManager, },
+	        { type: core_1.ElementRef, },
+	    ];
+	    return SebmGoogleMapInfoWindow;
+	}());
+	exports.SebmGoogleMapInfoWindow = SebmGoogleMapInfoWindow;
+	//# sourceMappingURL=google-map-info-window.js.map
+
+/***/ },
+/* 369 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var marker_manager_1 = __webpack_require__(364);
+	var google_map_info_window_1 = __webpack_require__(368);
+	var markerId = 0;
+	/**
+	 * SebmGoogleMapMarker renders a map marker inside a {@link SebmGoogleMap}.
+	 *
+	 * ### Example
+	 * ```typescript
+	 * import { Component } from 'angular2/core';
+	 * import { SebmGoogleMap, SebmGoogleMapMarker } from 'angular2-google-maps/core';
+	 *
+	 * @Component({
+	 *  selector: 'my-map-cmp',
+	 *  directives: [SebmGoogleMap, SebmGoogleMapMarker],
+	 *  styles: [`
+	 *    .sebm-google-map-container {
+	 *      height: 300px;
+	 *    }
+	 * `],
+	 *  template: `
+	 *    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+	 *      <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [label]="'M'">
+	 *      </sebm-google-map-marker>
+	 *    </sebm-google-map>
+	 *  `
+	 * })
+	 * ```
+	 */
+	var SebmGoogleMapMarker = (function () {
+	    function SebmGoogleMapMarker(_markerManager) {
+	        this._markerManager = _markerManager;
+	        /**
+	         * If true, the marker can be dragged. Default value is false.
+	         */
+	        this.draggable = false;
+	        /**
+	         * If true, the marker is visible
+	         */
+	        this.visible = true;
+	        /**
+	         * Whether to automatically open the child info window when the marker is clicked.
+	         */
+	        this.openInfoWindow = true;
+	        /**
+	         * The marker's opacity between 0.0 and 1.0.
+	         */
+	        this.opacity = 1;
+	        /**
+	         * All markers are displayed on the map in order of their zIndex, with higher values displaying in
+	         * front of markers with lower values. By default, markers are displayed according to their
+	         * vertical position on screen, with lower markers appearing in front of markers further up the
+	         * screen.
+	         */
+	        this.zIndex = 1;
+	        /**
+	         * This event emitter gets emitted when the user clicks on the marker.
+	         */
+	        this.markerClick = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user stops dragging the marker.
+	         */
+	        this.dragEnd = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user mouses over the marker.
+	         */
+	        this.mouseOver = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user mouses outside the marker.
+	         */
+	        this.mouseOut = new core_1.EventEmitter();
+	        this._markerAddedToManger = false;
+	        this._observableSubscriptions = [];
+	        this._id = (markerId++).toString();
+	    }
+	    /* @internal */
+	    SebmGoogleMapMarker.prototype.ngAfterContentInit = function () {
+	        if (this.infoWindow != null) {
+	            this.infoWindow.hostMarker = this;
+	        }
+	    };
+	    /** @internal */
+	    SebmGoogleMapMarker.prototype.ngOnChanges = function (changes) {
+	        if (typeof this.latitude !== 'number' || typeof this.longitude !== 'number') {
+	            return;
+	        }
+	        if (!this._markerAddedToManger) {
+	            this._markerManager.addMarker(this);
+	            this._markerAddedToManger = true;
+	            this._addEventListeners();
+	            return;
+	        }
+	        if (changes['latitude'] || changes['longitude']) {
+	            this._markerManager.updateMarkerPosition(this);
+	        }
+	        if (changes['title']) {
+	            this._markerManager.updateTitle(this);
+	        }
+	        if (changes['label']) {
+	            this._markerManager.updateLabel(this);
+	        }
+	        if (changes['draggable']) {
+	            this._markerManager.updateDraggable(this);
+	        }
+	        if (changes['iconUrl']) {
+	            this._markerManager.updateIcon(this);
+	        }
+	        if (changes['opacity']) {
+	            this._markerManager.updateOpacity(this);
+	        }
+	        if (changes['visible']) {
+	            this._markerManager.updateVisible(this);
+	        }
+	        if (changes['zIndex']) {
+	            this._markerManager.updateZIndex(this);
+	        }
+	    };
+	    SebmGoogleMapMarker.prototype._addEventListeners = function () {
+	        var _this = this;
+	        var cs = this._markerManager.createEventObservable('click', this).subscribe(function () {
+	            if (_this.openInfoWindow && _this.infoWindow != null) {
+	                _this.infoWindow.open();
+	            }
+	            _this.markerClick.emit(null);
+	        });
+	        this._observableSubscriptions.push(cs);
+	        var ds = this._markerManager.createEventObservable('dragend', this)
+	            .subscribe(function (e) {
+	            _this.dragEnd.emit({ coords: { lat: e.latLng.lat(), lng: e.latLng.lng() } });
+	        });
+	        this._observableSubscriptions.push(ds);
+	        var mover = this._markerManager.createEventObservable('mouseover', this)
+	            .subscribe(function (e) {
+	            _this.mouseOver.emit({ coords: { lat: e.latLng.lat(), lng: e.latLng.lng() } });
+	        });
+	        this._observableSubscriptions.push(mover);
+	        var mout = this._markerManager.createEventObservable('mouseout', this)
+	            .subscribe(function (e) {
+	            _this.mouseOut.emit({ coords: { lat: e.latLng.lat(), lng: e.latLng.lng() } });
+	        });
+	        this._observableSubscriptions.push(mout);
+	    };
+	    /** @internal */
+	    SebmGoogleMapMarker.prototype.id = function () { return this._id; };
+	    /** @internal */
+	    SebmGoogleMapMarker.prototype.toString = function () { return 'SebmGoogleMapMarker-' + this._id.toString(); };
+	    /** @internal */
+	    SebmGoogleMapMarker.prototype.ngOnDestroy = function () {
+	        this._markerManager.deleteMarker(this);
+	        // unsubscribe all registered observable subscriptions
+	        this._observableSubscriptions.forEach(function (s) { return s.unsubscribe(); });
+	    };
+	    SebmGoogleMapMarker.decorators = [
+	        { type: core_1.Directive, args: [{
+	                    selector: 'sebm-google-map-marker',
+	                    inputs: [
+	                        'latitude', 'longitude', 'title', 'label', 'draggable: markerDraggable', 'iconUrl',
+	                        'openInfoWindow', 'opacity', 'visible', 'zIndex'
+	                    ],
+	                    outputs: ['markerClick', 'dragEnd', 'mouseOver', 'mouseOut']
+	                },] },
+	    ];
+	    /** @nocollapse */
+	    SebmGoogleMapMarker.ctorParameters = [
+	        { type: marker_manager_1.MarkerManager, },
+	    ];
+	    SebmGoogleMapMarker.propDecorators = {
+	        'infoWindow': [{ type: core_1.ContentChild, args: [google_map_info_window_1.SebmGoogleMapInfoWindow,] },],
+	    };
+	    return SebmGoogleMapMarker;
+	}());
+	exports.SebmGoogleMapMarker = SebmGoogleMapMarker;
+	//# sourceMappingURL=google-map-marker.js.map
+
+/***/ },
+/* 370 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var polygon_manager_1 = __webpack_require__(365);
+	/**
+	 * SebmGoogleMapPolygon renders a polygon on a {@link SebmGoogleMap}
+	 *
+	 * ### Example
+	 * ```typescript
+	 * import { Component } from '@angular/core';
+	 * import { SebmGoogleMap, SebmGooglePolygon, LatLngLiteral } from 'angular2-maps/core';
+	 *
+	 * @Component({
+	 *  selector: 'my-map-cmp',
+	 *  styles: [`
+	 *    .semb-map-container {
+	 *      height: 300px;
+	 *    }
+	 * `],
+	 *  template: `
+	 *    <semb-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+	 *      <semb-map-polygon [paths]="paths">
+	 *      </semb-map-polygon>
+	 *    </semb-map>
+	 *  `
+	 * })
+	 * export class MyMapCmp {
+	 *   lat: number = 0;
+	 *   lng: number = 0;
+	 *   zoom: number = 10;
+	 *   paths: Array<LatLngLiteral> = [
+	 *     { lat: 0,  lng: 10 },
+	 *     { lat: 0,  lng: 20 },
+	 *     { lat: 10, lng: 20 },
+	 *     { lat: 10, lng: 10 },
+	 *     { lat: 0,  lng: 10 }
+	 *   ]
+	 *   // Nesting paths will create a hole where they overlap;
+	 *   nestedPaths: Array<Array<LatLngLiteral>> = [[
+	 *     { lat: 0,  lng: 10 },
+	 *     { lat: 0,  lng: 20 },
+	 *     { lat: 10, lng: 20 },
+	 *     { lat: 10, lng: 10 },
+	 *     { lat: 0,  lng: 10 }
+	 *   ], [
+	 *     { lat: 0, lng: 15 },
+	 *     { lat: 0, lng: 20 },
+	 *     { lat: 5, lng: 20 },
+	 *     { lat: 5, lng: 15 },
+	 *     { lat: 0, lng: 15 }
+	 *   ]]
+	 * }
+	 * ```
+	 */
+	var SebmGoogleMapPolygon = (function () {
+	    function SebmGoogleMapPolygon(_polygonManager) {
+	        this._polygonManager = _polygonManager;
+	        /**
+	         * Indicates whether this Polygon handles mouse events. Defaults to true.
+	         */
+	        this.clickable = true;
+	        /**
+	         * If set to true, the user can drag this shape over the map. The geodesic
+	         * property defines the mode of dragging. Defaults to false.
+	         */
+	        this.draggable = false;
+	        /**
+	         * If set to true, the user can edit this shape by dragging the control
+	         * points shown at the vertices and on each segment. Defaults to false.
+	         */
+	        this.editable = false;
+	        /**
+	         * When true, edges of the polygon are interpreted as geodesic and will
+	         * follow the curvature of the Earth. When false, edges of the polygon are
+	         * rendered as straight lines in screen space. Note that the shape of a
+	         * geodesic polygon may appear to change when dragged, as the dimensions
+	         * are maintained relative to the surface of the earth. Defaults to false.
+	         */
+	        this.geodesic = false;
+	        /**
+	         * The ordered sequence of coordinates that designates a closed loop.
+	         * Unlike polylines, a polygon may consist of one or more paths.
+	         *  As a result, the paths property may specify one or more arrays of
+	         * LatLng coordinates. Paths are closed automatically; do not repeat the
+	         * first vertex of the path as the last vertex. Simple polygons may be
+	         * defined using a single array of LatLngs. More complex polygons may
+	         * specify an array of arrays. Any simple arrays are converted into Arrays.
+	         * Inserting or removing LatLngs from the Array will automatically update
+	         * the polygon on the map.
+	         */
+	        this.paths = [];
+	        /**
+	         * This event is fired when the DOM click event is fired on the Polygon.
+	         */
+	        this.polyClick = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM dblclick event is fired on the Polygon.
+	         */
+	        this.polyDblClick = new core_1.EventEmitter();
+	        /**
+	         * This event is repeatedly fired while the user drags the polygon.
+	         */
+	        this.polyDrag = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user stops dragging the polygon.
+	         */
+	        this.polyDragEnd = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user starts dragging the polygon.
+	         */
+	        this.polyDragStart = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM mousedown event is fired on the Polygon.
+	         */
+	        this.polyMouseDown = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM mousemove event is fired on the Polygon.
+	         */
+	        this.polyMouseMove = new core_1.EventEmitter();
+	        /**
+	         * This event is fired on Polygon mouseout.
+	         */
+	        this.polyMouseOut = new core_1.EventEmitter();
+	        /**
+	         * This event is fired on Polygon mouseover.
+	         */
+	        this.polyMouseOver = new core_1.EventEmitter();
+	        /**
+	         * This event is fired whe the DOM mouseup event is fired on the Polygon
+	         */
+	        this.polyMouseUp = new core_1.EventEmitter();
+	        /**
+	         * This even is fired when the Polygon is right-clicked on.
+	         */
+	        this.polyRightClick = new core_1.EventEmitter();
+	        this._polygonAddedToManager = false;
+	        this._subscriptions = [];
+	    }
+	    /** @internal */
+	    SebmGoogleMapPolygon.prototype.ngAfterContentInit = function () {
+	        if (!this._polygonAddedToManager) {
+	            this._init();
+	        }
+	    };
+	    SebmGoogleMapPolygon.prototype.ngOnChanges = function (changes) {
+	        if (!this._polygonAddedToManager) {
+	            this._init();
+	            return;
+	        }
+	        this._polygonManager.setPolygonOptions(this, this._updatePolygonOptions(changes));
+	    };
+	    SebmGoogleMapPolygon.prototype._init = function () {
+	        this._polygonManager.addPolygon(this);
+	        this._polygonAddedToManager = true;
+	        this._addEventListeners();
+	    };
+	    SebmGoogleMapPolygon.prototype._addEventListeners = function () {
+	        var _this = this;
+	        var handlers = [
+	            { name: 'click', handler: function (ev) { return _this.polyClick.emit(ev); } },
+	            { name: 'dbclick', handler: function (ev) { return _this.polyDblClick.emit(ev); } },
+	            { name: 'drag', handler: function (ev) { return _this.polyDrag.emit(ev); } },
+	            { name: 'dragend', handler: function (ev) { return _this.polyDragEnd.emit(ev); } },
+	            { name: 'dragstart', handler: function (ev) { return _this.polyDragStart.emit(ev); } },
+	            { name: 'mousedown', handler: function (ev) { return _this.polyMouseDown.emit(ev); } },
+	            { name: 'mousemove', handler: function (ev) { return _this.polyMouseMove.emit(ev); } },
+	            { name: 'mouseout', handler: function (ev) { return _this.polyMouseOut.emit(ev); } },
+	            { name: 'mouseover', handler: function (ev) { return _this.polyMouseOver.emit(ev); } },
+	            { name: 'mouseup', handler: function (ev) { return _this.polyMouseUp.emit(ev); } },
+	            { name: 'rightclick', handler: function (ev) { return _this.polyRightClick.emit(ev); } },
+	        ];
+	        handlers.forEach(function (obj) {
+	            var os = _this._polygonManager.createEventObservable(obj.name, _this).subscribe(obj.handler);
+	            _this._subscriptions.push(os);
+	        });
+	    };
+	    SebmGoogleMapPolygon.prototype._updatePolygonOptions = function (changes) {
+	        return Object.keys(changes)
+	            .filter(function (k) { return SebmGoogleMapPolygon._polygonOptionsAttributes.indexOf(k) !== -1; })
+	            .reduce(function (obj, k) {
+	            obj[k] = changes[k].currentValue;
+	            return obj;
+	        }, {});
+	    };
+	    /** @internal */
+	    SebmGoogleMapPolygon.prototype.id = function () { return this._id; };
+	    /** @internal */
+	    SebmGoogleMapPolygon.prototype.ngOnDestroy = function () {
+	        this._polygonManager.deletePolygon(this);
+	        // unsubscribe all registered observable subscriptions
+	        this._subscriptions.forEach(function (s) { return s.unsubscribe(); });
+	    };
+	    SebmGoogleMapPolygon._polygonOptionsAttributes = [
+	        'clickable', 'draggable', 'editable', 'fillColor', 'fillOpacity', 'geodesic', 'icon', 'map',
+	        'paths', 'strokeColor', 'strokeOpacity', 'strokeWeight', 'visible', 'zIndex', 'draggable',
+	        'editable', 'visible'
+	    ];
+	    SebmGoogleMapPolygon.decorators = [
+	        { type: core_1.Directive, args: [{
+	                    selector: 'sebm-map-polygon',
+	                    inputs: [
+	                        'clickable',
+	                        'draggable: polyDraggable',
+	                        'editable',
+	                        'fillColor',
+	                        'fillOpacity',
+	                        'geodesic',
+	                        'paths',
+	                        'strokeColor',
+	                        'strokeOpacity',
+	                        'strokeWeight',
+	                        'visible',
+	                        'zIndex',
+	                    ],
+	                    outputs: [
+	                        'polyClick', 'polyDblClick', 'polyDrag', 'polyDragEnd', 'polyMouseDown', 'polyMouseMove',
+	                        'polyMouseOut', 'polyMouseOver', 'polyMouseUp', 'polyRightClick'
+	                    ]
+	                },] },
+	    ];
+	    /** @nocollapse */
+	    SebmGoogleMapPolygon.ctorParameters = [
+	        { type: polygon_manager_1.PolygonManager, },
+	    ];
+	    return SebmGoogleMapPolygon;
+	}());
+	exports.SebmGoogleMapPolygon = SebmGoogleMapPolygon;
+	//# sourceMappingURL=google-map-polygon.js.map
+
+/***/ },
+/* 371 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var polyline_manager_1 = __webpack_require__(366);
+	var google_map_polyline_point_1 = __webpack_require__(372);
+	var polylineId = 0;
+	/**
+	 * SebmGoogleMapPolyline renders a polyline on a {@link SebmGoogleMap}
+	 *
+	 * ### Example
+	 * ```typescript
+	 * import { Component } from 'angular2/core';
+	 * import { SebmGoogleMap, SebmGooglePolyline, SebmGooglePolylinePoint } from
+	 * 'angular2-google-maps/core';
+	 *
+	 * @Component({
+	 *  selector: 'my-map-cmp',
+	 *  directives: [SebmGoogleMap, SebmGooglePolyline, SebmGooglePolylinePoint],
+	 *  styles: [`
+	 *    .sebm-google-map-container {
+	 *      height: 300px;
+	 *    }
+	 * `],
+	 *  template: `
+	 *    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+	 *      <sebm-google-map-polyline>
+	 *          <sebm-google-map-polyline-point [latitude]="latA" [longitude]="lngA">
+	 *          </sebm-google-map-polyline-point>
+	 *          <sebm-google-map-polyline-point [latitude]="latB" [longitude]="lngB">
+	 *          </sebm-google-map-polyline-point>
+	 *      </sebm-google-map-polyline>
+	 *    </sebm-google-map>
+	 *  `
+	 * })
+	 * ```
+	 */
+	var SebmGoogleMapPolyline = (function () {
+	    function SebmGoogleMapPolyline(_polylineManager) {
+	        this._polylineManager = _polylineManager;
+	        /**
+	         * Indicates whether this Polyline handles mouse events. Defaults to true.
+	         */
+	        this.clickable = true;
+	        /**
+	         * If set to true, the user can drag this shape over the map. The geodesic property defines the
+	         * mode of dragging. Defaults to false.
+	         */
+	        this.draggable = false;
+	        /**
+	         * If set to true, the user can edit this shape by dragging the control points shown at the
+	         * vertices and on each segment. Defaults to false.
+	         */
+	        this.editable = false;
+	        /**
+	         * When true, edges of the polygon are interpreted as geodesic and will follow the curvature of
+	         * the Earth. When false, edges of the polygon are rendered as straight lines in screen space.
+	         * Note that the shape of a geodesic polygon may appear to change when dragged, as the dimensions
+	         * are maintained relative to the surface of the earth. Defaults to false.
+	         */
+	        this.geodesic = false;
+	        /**
+	         * Whether this polyline is visible on the map. Defaults to true.
+	         */
+	        this.visible = true;
+	        /**
+	         * This event is fired when the DOM click event is fired on the Polyline.
+	         */
+	        this.lineClick = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM dblclick event is fired on the Polyline.
+	         */
+	        this.lineDblClick = new core_1.EventEmitter();
+	        /**
+	         * This event is repeatedly fired while the user drags the polyline.
+	         */
+	        this.lineDrag = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user stops dragging the polyline.
+	         */
+	        this.lineDragEnd = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the user starts dragging the polyline.
+	         */
+	        this.lineDragStart = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM mousedown event is fired on the Polyline.
+	         */
+	        this.lineMouseDown = new core_1.EventEmitter();
+	        /**
+	         * This event is fired when the DOM mousemove event is fired on the Polyline.
+	         */
+	        this.lineMouseMove = new core_1.EventEmitter();
+	        /**
+	         * This event is fired on Polyline mouseout.
+	         */
+	        this.lineMouseOut = new core_1.EventEmitter();
+	        /**
+	         * This event is fired on Polyline mouseover.
+	         */
+	        this.lineMouseOver = new core_1.EventEmitter();
+	        /**
+	         * This event is fired whe the DOM mouseup event is fired on the Polyline
+	         */
+	        this.lineMouseUp = new core_1.EventEmitter();
+	        /**
+	         * This even is fired when the Polyline is right-clicked on.
+	         */
+	        this.lineRightClick = new core_1.EventEmitter();
+	        this._polylineAddedToManager = false;
+	        this._subscriptions = [];
+	        this._id = (polylineId++).toString();
+	    }
+	    /** @internal */
+	    SebmGoogleMapPolyline.prototype.ngAfterContentInit = function () {
+	        var _this = this;
+	        if (this.points.length) {
+	            this.points.forEach(function (point) {
+	                var s = point.positionChanged.subscribe(function () { _this._polylineManager.updatePolylinePoints(_this); });
+	                _this._subscriptions.push(s);
+	            });
+	        }
+	        if (!this._polylineAddedToManager) {
+	            this._init();
+	        }
+	        var s = this.points.changes.subscribe(function () { return _this._polylineManager.updatePolylinePoints(_this); });
+	        this._subscriptions.push(s);
+	        this._polylineManager.updatePolylinePoints(this);
+	    };
+	    SebmGoogleMapPolyline.prototype.ngOnChanges = function (changes) {
+	        if (!this._polylineAddedToManager) {
+	            this._init();
+	            return;
+	        }
+	        var options = {};
+	        var optionKeys = Object.keys(changes).filter(function (k) { return SebmGoogleMapPolyline._polylineOptionsAttributes.indexOf(k) !== -1; });
+	        optionKeys.forEach(function (k) { return options[k] = changes[k].currentValue; });
+	        this._polylineManager.setPolylineOptions(this, options);
+	    };
+	    SebmGoogleMapPolyline.prototype._init = function () {
+	        this._polylineManager.addPolyline(this);
+	        this._polylineAddedToManager = true;
+	        this._addEventListeners();
+	    };
+	    SebmGoogleMapPolyline.prototype._addEventListeners = function () {
+	        var _this = this;
+	        var handlers = [
+	            { name: 'click', handler: function (ev) { return _this.lineClick.emit(ev); } },
+	            { name: 'dbclick', handler: function (ev) { return _this.lineDblClick.emit(ev); } },
+	            { name: 'drag', handler: function (ev) { return _this.lineDrag.emit(ev); } },
+	            { name: 'dragend', handler: function (ev) { return _this.lineDragEnd.emit(ev); } },
+	            { name: 'dragstart', handler: function (ev) { return _this.lineDragStart.emit(ev); } },
+	            { name: 'mousedown', handler: function (ev) { return _this.lineMouseDown.emit(ev); } },
+	            { name: 'mousemove', handler: function (ev) { return _this.lineMouseMove.emit(ev); } },
+	            { name: 'mouseout', handler: function (ev) { return _this.lineMouseOut.emit(ev); } },
+	            { name: 'mouseover', handler: function (ev) { return _this.lineMouseOver.emit(ev); } },
+	            { name: 'mouseup', handler: function (ev) { return _this.lineMouseUp.emit(ev); } },
+	            { name: 'rightclick', handler: function (ev) { return _this.lineRightClick.emit(ev); } },
+	        ];
+	        handlers.forEach(function (obj) {
+	            var os = _this._polylineManager.createEventObservable(obj.name, _this).subscribe(obj.handler);
+	            _this._subscriptions.push(os);
+	        });
+	    };
+	    /** @internal */
+	    SebmGoogleMapPolyline.prototype._getPoints = function () {
+	        if (this.points) {
+	            return this.points.toArray();
+	        }
+	        return [];
+	    };
+	    /** @internal */
+	    SebmGoogleMapPolyline.prototype.id = function () { return this._id; };
+	    /** @internal */
+	    SebmGoogleMapPolyline.prototype.ngOnDestroy = function () {
+	        this._polylineManager.deletePolyline(this);
+	        // unsubscribe all registered observable subscriptions
+	        this._subscriptions.forEach(function (s) { return s.unsubscribe(); });
+	    };
+	    SebmGoogleMapPolyline._polylineOptionsAttributes = [
+	        'draggable', 'editable', 'visible', 'geodesic', 'strokeColor', 'strokeOpacity', 'strokeWeight',
+	        'zIndex'
+	    ];
+	    SebmGoogleMapPolyline.decorators = [
+	        { type: core_1.Directive, args: [{
+	                    selector: 'sebm-google-map-polyline',
+	                    inputs: [
+	                        'clickable', 'draggable: polylineDraggable', 'editable', 'geodesic', 'strokeColor',
+	                        'strokeWeight', 'strokeOpacity', 'visible', 'zIndex'
+	                    ],
+	                    outputs: [
+	                        'lineClick', 'lineDblClick', 'lineDrag', 'lineDragEnd', 'lineMouseDown', 'lineMouseMove',
+	                        'lineMouseOut', 'lineMouseOver', 'lineMouseUp', 'lineRightClick'
+	                    ]
+	                },] },
+	    ];
+	    /** @nocollapse */
+	    SebmGoogleMapPolyline.ctorParameters = [
+	        { type: polyline_manager_1.PolylineManager, },
+	    ];
+	    SebmGoogleMapPolyline.propDecorators = {
+	        'points': [{ type: core_1.ContentChildren, args: [google_map_polyline_point_1.SebmGoogleMapPolylinePoint,] },],
+	    };
+	    return SebmGoogleMapPolyline;
+	}());
+	exports.SebmGoogleMapPolyline = SebmGoogleMapPolyline;
+	//# sourceMappingURL=google-map-polyline.js.map
+
+/***/ },
+/* 372 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	/**
+	 * SebmGoogleMapPolylinePoint represents one element of a polyline within a  {@link
+	 * SembGoogleMapPolyline}
+	 */
+	var SebmGoogleMapPolylinePoint = (function () {
+	    function SebmGoogleMapPolylinePoint() {
+	        /**
+	         * This event emitter gets emitted when the position of the point changed.
+	         */
+	        this.positionChanged = new core_1.EventEmitter();
+	    }
+	    SebmGoogleMapPolylinePoint.prototype.ngOnChanges = function (changes) {
+	        if (changes['latitude'] || changes['longitude']) {
+	            var position = {
+	                lat: changes['latitude'].currentValue,
+	                lng: changes['longitude'].currentValue
+	            };
+	            this.positionChanged.emit(position);
+	        }
+	    };
+	    SebmGoogleMapPolylinePoint.decorators = [
+	        { type: core_1.Directive, args: [{ selector: 'sebm-google-map-polyline-point' },] },
+	    ];
+	    /** @nocollapse */
+	    SebmGoogleMapPolylinePoint.ctorParameters = [];
+	    SebmGoogleMapPolylinePoint.propDecorators = {
+	        'latitude': [{ type: core_1.Input },],
+	        'longitude': [{ type: core_1.Input },],
+	        'positionChanged': [{ type: core_1.Output },],
+	    };
+	    return SebmGoogleMapPolylinePoint;
+	}());
+	exports.SebmGoogleMapPolylinePoint = SebmGoogleMapPolylinePoint;
+	//# sourceMappingURL=google-map-polyline-point.js.map
+
+/***/ },
+/* 373 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var google_maps_api_wrapper_1 = __webpack_require__(360);
+	exports.GoogleMapsAPIWrapper = google_maps_api_wrapper_1.GoogleMapsAPIWrapper;
+	var circle_manager_1 = __webpack_require__(362);
+	exports.CircleManager = circle_manager_1.CircleManager;
+	var info_window_manager_1 = __webpack_require__(363);
+	exports.InfoWindowManager = info_window_manager_1.InfoWindowManager;
+	var marker_manager_1 = __webpack_require__(364);
+	exports.MarkerManager = marker_manager_1.MarkerManager;
+	var polygon_manager_1 = __webpack_require__(365);
+	exports.PolygonManager = polygon_manager_1.PolygonManager;
+	var polyline_manager_1 = __webpack_require__(366);
+	exports.PolylineManager = polyline_manager_1.PolylineManager;
+	var lazy_maps_api_loader_1 = __webpack_require__(374);
+	exports.GoogleMapsScriptProtocol = lazy_maps_api_loader_1.GoogleMapsScriptProtocol;
+	exports.LAZY_MAPS_API_CONFIG = lazy_maps_api_loader_1.LAZY_MAPS_API_CONFIG;
+	exports.LazyMapsAPILoader = lazy_maps_api_loader_1.LazyMapsAPILoader;
+	var maps_api_loader_1 = __webpack_require__(361);
+	exports.MapsAPILoader = maps_api_loader_1.MapsAPILoader;
+	var noop_maps_api_loader_1 = __webpack_require__(376);
+	exports.NoOpMapsAPILoader = noop_maps_api_loader_1.NoOpMapsAPILoader;
+	//# sourceMappingURL=services.js.map
+
+/***/ },
+/* 374 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var core_1 = __webpack_require__(326);
+	var browser_globals_1 = __webpack_require__(375);
+	var maps_api_loader_1 = __webpack_require__(361);
+	(function (GoogleMapsScriptProtocol) {
+	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTP"] = 1] = "HTTP";
+	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTPS"] = 2] = "HTTPS";
+	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["AUTO"] = 3] = "AUTO";
+	})(exports.GoogleMapsScriptProtocol || (exports.GoogleMapsScriptProtocol = {}));
+	var GoogleMapsScriptProtocol = exports.GoogleMapsScriptProtocol;
+	/**
+	 * Token for the config of the LazyMapsAPILoader. Please provide an object of type {@link
+	 * LazyMapsAPILoaderConfig}.
+	 */
+	exports.LAZY_MAPS_API_CONFIG = new core_1.OpaqueToken('angular2-google-maps LAZY_MAPS_API_CONFIG');
+	var LazyMapsAPILoader = (function (_super) {
+	    __extends(LazyMapsAPILoader, _super);
+	    function LazyMapsAPILoader(config, w, d) {
+	        _super.call(this);
+	        this._config = config || {};
+	        this._windowRef = w;
+	        this._documentRef = d;
+	    }
+	    LazyMapsAPILoader.prototype.load = function () {
+	        var _this = this;
+	        if (this._scriptLoadingPromise) {
+	            return this._scriptLoadingPromise;
+	        }
+	        var script = this._documentRef.getNativeDocument().createElement('script');
+	        script.type = 'text/javascript';
+	        script.async = true;
+	        script.defer = true;
+	        var callbackName = "angular2GoogleMapsLazyMapsAPILoader";
+	        script.src = this._getScriptSrc(callbackName);
+	        this._scriptLoadingPromise = new Promise(function (resolve, reject) {
+	            _this._windowRef.getNativeWindow()[callbackName] = function () { resolve(); };
+	            script.onerror = function (error) { reject(error); };
+	        });
+	        this._documentRef.getNativeDocument().body.appendChild(script);
+	        return this._scriptLoadingPromise;
+	    };
+	    LazyMapsAPILoader.prototype._getScriptSrc = function (callbackName) {
+	        var protocolType = (this._config && this._config.protocol) || GoogleMapsScriptProtocol.HTTPS;
+	        var protocol;
+	        switch (protocolType) {
+	            case GoogleMapsScriptProtocol.AUTO:
+	                protocol = '';
+	                break;
+	            case GoogleMapsScriptProtocol.HTTP:
+	                protocol = 'http:';
+	                break;
+	            case GoogleMapsScriptProtocol.HTTPS:
+	                protocol = 'https:';
+	                break;
+	        }
+	        var hostAndPath = this._config.hostAndPath || 'maps.googleapis.com/maps/api/js';
+	        var queryParams = {
+	            v: this._config.apiVersion || '3',
+	            callback: callbackName,
+	            key: this._config.apiKey,
+	            client: this._config.clientId,
+	            channel: this._config.channel,
+	            libraries: this._config.libraries,
+	            region: this._config.region,
+	            language: this._config.language
+	        };
+	        var params = Object.keys(queryParams)
+	            .filter(function (k) { return queryParams[k] != null; })
+	            .filter(function (k) {
+	            // remove empty arrays
+	            return !Array.isArray(queryParams[k]) ||
+	                (Array.isArray(queryParams[k]) && queryParams[k].length > 0);
+	        })
+	            .map(function (k) {
+	            // join arrays as comma seperated strings
+	            var i = queryParams[k];
+	            if (Array.isArray(i)) {
+	                return { key: k, value: i.join(',') };
+	            }
+	            return { key: k, value: queryParams[k] };
+	        })
+	            .map(function (entry) { return entry.key + "=" + entry.value; })
+	            .join('&');
+	        return protocol + "//" + hostAndPath + "?" + params;
+	    };
+	    LazyMapsAPILoader.decorators = [
+	        { type: core_1.Injectable },
+	    ];
+	    /** @nocollapse */
+	    LazyMapsAPILoader.ctorParameters = [
+	        { type: undefined, decorators: [{ type: core_1.Inject, args: [exports.LAZY_MAPS_API_CONFIG,] },] },
+	        { type: browser_globals_1.WindowRef, },
+	        { type: browser_globals_1.DocumentRef, },
+	    ];
+	    return LazyMapsAPILoader;
+	}(maps_api_loader_1.MapsAPILoader));
+	exports.LazyMapsAPILoader = LazyMapsAPILoader;
+	//# sourceMappingURL=lazy-maps-api-loader.js.map
+
+/***/ },
+/* 375 */
+/***/ function(module, exports) {
+
+	"use strict";
+	var WindowRef = (function () {
+	    function WindowRef() {
+	    }
+	    WindowRef.prototype.getNativeWindow = function () { return window; };
+	    return WindowRef;
+	}());
+	exports.WindowRef = WindowRef;
+	var DocumentRef = (function () {
+	    function DocumentRef() {
+	    }
+	    DocumentRef.prototype.getNativeDocument = function () { return document; };
+	    return DocumentRef;
+	}());
+	exports.DocumentRef = DocumentRef;
+	exports.BROWSER_GLOBALS_PROVIDERS = [WindowRef, DocumentRef];
+	//# sourceMappingURL=browser-globals.js.map
+
+/***/ },
+/* 376 */
+/***/ function(module, exports) {
+
+	"use strict";
+	/**
+	 * When using the NoOpMapsAPILoader, the Google Maps API must be added to the page via a `<script>`
+	 * Tag.
+	 * It's important that the Google Maps API script gets loaded first on the page.
+	 */
+	var NoOpMapsAPILoader = (function () {
+	    function NoOpMapsAPILoader() {
+	    }
+	    NoOpMapsAPILoader.prototype.load = function () {
+	        if (!window.google || !window.google.maps) {
+	            throw new Error('Google Maps API not loaded on page. Make sure window.google.maps is available!');
+	        }
+	        return Promise.resolve();
+	    };
+	    ;
+	    return NoOpMapsAPILoader;
+	}());
+	exports.NoOpMapsAPILoader = NoOpMapsAPILoader;
+	//# sourceMappingURL=noop-maps-api-loader.js.map
+
+/***/ },
+/* 377 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(326);
+	var google_map_1 = __webpack_require__(359);
+	var google_map_circle_1 = __webpack_require__(367);
+	var google_map_info_window_1 = __webpack_require__(368);
+	var google_map_marker_1 = __webpack_require__(369);
+	var google_map_polygon_1 = __webpack_require__(370);
+	var google_map_polyline_1 = __webpack_require__(371);
+	var google_map_polyline_point_1 = __webpack_require__(372);
+	var lazy_maps_api_loader_1 = __webpack_require__(374);
+	var lazy_maps_api_loader_2 = __webpack_require__(374);
+	var maps_api_loader_1 = __webpack_require__(361);
+	var browser_globals_1 = __webpack_require__(375);
+	/**
+	 * @internal
+	 */
+	function coreDirectives() {
+	    return [
+	        google_map_1.SebmGoogleMap, google_map_marker_1.SebmGoogleMapMarker, google_map_info_window_1.SebmGoogleMapInfoWindow, google_map_circle_1.SebmGoogleMapCircle,
+	        google_map_polygon_1.SebmGoogleMapPolygon, google_map_polyline_1.SebmGoogleMapPolyline, google_map_polyline_point_1.SebmGoogleMapPolylinePoint
+	    ];
+	}
+	exports.coreDirectives = coreDirectives;
+	;
+	/**
+	 * The angular2-google-maps core module. Contains all Directives/Services/Pipes
+	 * of the core module. Please use `AgmCoreModule.forRoot()` in your app module.
+	 */
+	var AgmCoreModule = (function () {
+	    function AgmCoreModule() {
+	    }
+	    /**
+	     * Please use this method when you register the module at the root level.
+	     */
+	    AgmCoreModule.forRoot = function (lazyMapsAPILoaderConfig) {
+	        return {
+	            ngModule: AgmCoreModule,
+	            providers: browser_globals_1.BROWSER_GLOBALS_PROVIDERS.concat([
+	                { provide: maps_api_loader_1.MapsAPILoader, useClass: lazy_maps_api_loader_1.LazyMapsAPILoader },
+	                { provide: lazy_maps_api_loader_2.LAZY_MAPS_API_CONFIG, useValue: lazyMapsAPILoaderConfig }
+	            ]),
+	        };
+	    };
+	    AgmCoreModule.decorators = [
+	        { type: core_1.NgModule, args: [{ declarations: coreDirectives(), exports: coreDirectives() },] },
+	    ];
+	    /** @nocollapse */
+	    AgmCoreModule.ctorParameters = [];
+	    return AgmCoreModule;
+	}());
+	exports.AgmCoreModule = AgmCoreModule;
+	//# sourceMappingURL=core-module.js.map
 
 /***/ }
 /******/ ]);

@@ -11,6 +11,12 @@ import { GoogleMap } from './ui';
     template: `
     <city-table></city-table>
     <google-map></google-map>
-    `
+    `,
 })
-export class AppComponent { }
+export class AppComponent {
+    constructor() {}
+}
+
+
+
+
