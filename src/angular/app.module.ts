@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CityTable } from './ui';
 import { GoogleMap } from './ui';
-//import { RouterModule } from '@angular/router';
-//import { FormsModule } from '@angular/forms';
+import { MyHeader } from './ui';
+import { MaterialModule } from '@angular/material';
+
+import { FormsModule } from '@angular/forms';
+import 'hammerjs';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-//import { AppRoutingModule, routingComponents } from './app.routers'
+
 
 
 @NgModule({
@@ -15,16 +18,17 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         BrowserModule,
         HttpModule,
         JsonpModule,
+        FormsModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyAaFWg1Jpix-Krmge62_UDT3Nuf_0Sht6Y'
         }),
-//        AppRoutingModule
+        MaterialModule.forRoot(),
     ],
     declarations: [
         AppComponent,
         CityTable,
         GoogleMap,
-//        routingComponents
+        MyHeader
     ],
     bootstrap: [AppComponent]
 })

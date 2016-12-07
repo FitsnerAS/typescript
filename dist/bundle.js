@@ -49,10 +49,8 @@
 	__webpack_require__(308);
 	__webpack_require__(309);
 	__webpack_require__(311);
-	__webpack_require__(320);
-	__webpack_require__(322);
-	var platform_browser_dynamic_1 = __webpack_require__(324);
-	var app_module_1 = __webpack_require__(346);
+	var platform_browser_dynamic_1 = __webpack_require__(320);
+	var app_module_1 = __webpack_require__(342);
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
@@ -10394,20 +10392,6 @@
 /* 318 */,
 /* 319 */,
 /* 320 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 321 */,
-/* 322 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 323 */,
-/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -10416,7 +10400,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(325), __webpack_require__(326), __webpack_require__(344)) :
+	     true ? factory(exports, __webpack_require__(321), __webpack_require__(322), __webpack_require__(340)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/compiler', '@angular/core', '@angular/platform-browser'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.platformBrowserDynamic = global.ng.platformBrowserDynamic || {}),global.ng.compiler,global.ng.core,global.ng.platformBrowser));
 	}(this, function (exports,_angular_compiler,_angular_core,_angular_platformBrowser) { 'use strict';
@@ -10575,7 +10559,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 325 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10584,7 +10568,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	   true ? factory(exports, __webpack_require__(326)) :
+	   true ? factory(exports, __webpack_require__(322)) :
 	  typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
 	  (factory((global.ng = global.ng || {}, global.ng.compiler = global.ng.compiler || {}),global.ng.core));
 	}(this, function (exports,_angular_core) { 'use strict';
@@ -29035,7 +29019,7 @@
 	}));
 
 /***/ },
-/* 326 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -29044,7 +29028,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(327), __webpack_require__(328)) :
+	     true ? factory(exports, __webpack_require__(323), __webpack_require__(324)) :
 	    typeof define === 'function' && define.amd ? define(['exports', 'rxjs/Subject', 'rxjs/Observable'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.core = global.ng.core || {}),global.Rx,global.Rx));
 	}(this, function (exports,rxjs_Subject,rxjs_Observable) { 'use strict';
@@ -38832,7 +38816,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 327 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38841,12 +38825,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var Subscriber_1 = __webpack_require__(331);
-	var Subscription_1 = __webpack_require__(333);
-	var ObjectUnsubscribedError_1 = __webpack_require__(342);
-	var SubjectSubscription_1 = __webpack_require__(343);
-	var rxSubscriber_1 = __webpack_require__(340);
+	var Observable_1 = __webpack_require__(324);
+	var Subscriber_1 = __webpack_require__(327);
+	var Subscription_1 = __webpack_require__(329);
+	var ObjectUnsubscribedError_1 = __webpack_require__(338);
+	var SubjectSubscription_1 = __webpack_require__(339);
+	var rxSubscriber_1 = __webpack_require__(336);
 	/**
 	 * @class SubjectSubscriber<T>
 	 */
@@ -38997,13 +38981,13 @@
 	//# sourceMappingURL=Subject.js.map
 
 /***/ },
-/* 328 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
-	var toSubscriber_1 = __webpack_require__(330);
-	var observable_1 = __webpack_require__(341);
+	var root_1 = __webpack_require__(325);
+	var toSubscriber_1 = __webpack_require__(326);
+	var observable_1 = __webpack_require__(337);
 	/**
 	 * A representation of any set of values over any amount of time. This the most basic building block
 	 * of RxJS.
@@ -39131,7 +39115,7 @@
 	//# sourceMappingURL=Observable.js.map
 
 /***/ },
-/* 329 */
+/* 325 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
@@ -39150,13 +39134,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 330 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Subscriber_1 = __webpack_require__(331);
-	var rxSubscriber_1 = __webpack_require__(340);
-	var Observer_1 = __webpack_require__(339);
+	var Subscriber_1 = __webpack_require__(327);
+	var rxSubscriber_1 = __webpack_require__(336);
+	var Observer_1 = __webpack_require__(335);
 	function toSubscriber(nextOrObserver, error, complete) {
 	    if (nextOrObserver) {
 	        if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -39175,7 +39159,7 @@
 	//# sourceMappingURL=toSubscriber.js.map
 
 /***/ },
-/* 331 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39184,10 +39168,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isFunction_1 = __webpack_require__(332);
-	var Subscription_1 = __webpack_require__(333);
-	var Observer_1 = __webpack_require__(339);
-	var rxSubscriber_1 = __webpack_require__(340);
+	var isFunction_1 = __webpack_require__(328);
+	var Subscription_1 = __webpack_require__(329);
+	var Observer_1 = __webpack_require__(335);
+	var rxSubscriber_1 = __webpack_require__(336);
 	/**
 	 * Implements the {@link Observer} interface and extends the
 	 * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -39429,7 +39413,7 @@
 	//# sourceMappingURL=Subscriber.js.map
 
 /***/ },
-/* 332 */
+/* 328 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39440,16 +39424,16 @@
 	//# sourceMappingURL=isFunction.js.map
 
 /***/ },
-/* 333 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isArray_1 = __webpack_require__(334);
-	var isObject_1 = __webpack_require__(335);
-	var isFunction_1 = __webpack_require__(332);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var UnsubscriptionError_1 = __webpack_require__(338);
+	var isArray_1 = __webpack_require__(330);
+	var isObject_1 = __webpack_require__(331);
+	var isFunction_1 = __webpack_require__(328);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var UnsubscriptionError_1 = __webpack_require__(334);
 	/**
 	 * Represents a disposable resource, such as the execution of an Observable. A
 	 * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -39598,7 +39582,7 @@
 	//# sourceMappingURL=Subscription.js.map
 
 /***/ },
-/* 334 */
+/* 330 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39606,7 +39590,7 @@
 	//# sourceMappingURL=isArray.js.map
 
 /***/ },
-/* 335 */
+/* 331 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39617,11 +39601,11 @@
 	//# sourceMappingURL=isObject.js.map
 
 /***/ },
-/* 336 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var errorObject_1 = __webpack_require__(337);
+	var errorObject_1 = __webpack_require__(333);
 	var tryCatchTarget;
 	function tryCatcher() {
 	    try {
@@ -39641,7 +39625,7 @@
 	//# sourceMappingURL=tryCatch.js.map
 
 /***/ },
-/* 337 */
+/* 333 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39650,7 +39634,7 @@
 	//# sourceMappingURL=errorObject.js.map
 
 /***/ },
-/* 338 */
+/* 334 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39680,7 +39664,7 @@
 	//# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ },
-/* 339 */
+/* 335 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39693,22 +39677,22 @@
 	//# sourceMappingURL=Observer.js.map
 
 /***/ },
-/* 340 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	var Symbol = root_1.root.Symbol;
 	exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
 	    Symbol.for('rxSubscriber') : '@@rxSubscriber';
 	//# sourceMappingURL=rxSubscriber.js.map
 
 /***/ },
-/* 341 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	function getSymbolObservable(context) {
 	    var $$observable;
 	    var Symbol = context.Symbol;
@@ -39731,7 +39715,7 @@
 	//# sourceMappingURL=observable.js.map
 
 /***/ },
-/* 342 */
+/* 338 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39763,7 +39747,7 @@
 	//# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ },
-/* 343 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39772,7 +39756,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(333);
+	var Subscription_1 = __webpack_require__(329);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -39808,7 +39792,7 @@
 	//# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ },
-/* 344 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -39817,7 +39801,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(345), __webpack_require__(326)) :
+	     true ? factory(exports, __webpack_require__(341), __webpack_require__(322)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/common', '@angular/core'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.platformBrowser = global.ng.platformBrowser || {}),global.ng.common,global.ng.core));
 	}(this, function (exports,_angular_common,_angular_core) { 'use strict';
@@ -42448,7 +42432,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 345 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -42457,7 +42441,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(326)) :
+	     true ? factory(exports, __webpack_require__(322)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.common = global.ng.common || {}),global.ng.core));
 	}(this, function (exports,_angular_core) { 'use strict';
@@ -45369,7 +45353,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 346 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45382,16 +45366,17 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(326);
-	var platform_browser_1 = __webpack_require__(344);
-	var app_component_1 = __webpack_require__(347);
-	var ui_1 = __webpack_require__(348);
-	var ui_2 = __webpack_require__(348);
-	//import { RouterModule } from '@angular/router';
-	//import { FormsModule } from '@angular/forms';
-	var http_1 = __webpack_require__(352);
-	var core_2 = __webpack_require__(679);
-	//import { AppRoutingModule, routingComponents } from './app.routers'
+	var core_1 = __webpack_require__(322);
+	var platform_browser_1 = __webpack_require__(340);
+	var app_component_1 = __webpack_require__(343);
+	var ui_1 = __webpack_require__(344);
+	var ui_2 = __webpack_require__(344);
+	//import { MyHeader } from './ui';
+	var material_1 = __webpack_require__(677);
+	var forms_1 = __webpack_require__(678);
+	__webpack_require__(679);
+	var http_1 = __webpack_require__(348);
+	var core_2 = __webpack_require__(680);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -45401,9 +45386,11 @@
 	                platform_browser_1.BrowserModule,
 	                http_1.HttpModule,
 	                http_1.JsonpModule,
+	                forms_1.FormsModule,
 	                core_2.AgmCoreModule.forRoot({
 	                    apiKey: 'AIzaSyAaFWg1Jpix-Krmge62_UDT3Nuf_0Sht6Y'
 	                }),
+	                material_1.MaterialModule.forRoot(),
 	            ],
 	            declarations: [
 	                app_component_1.AppComponent,
@@ -45420,7 +45407,7 @@
 
 
 /***/ },
-/* 347 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45433,19 +45420,18 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(326);
-	var ui_1 = __webpack_require__(348);
-	var ui_2 = __webpack_require__(348);
-	var app_service_1 = __webpack_require__(351);
+	var core_1 = __webpack_require__(322);
+	var ui_1 = __webpack_require__(344);
+	var ui_2 = __webpack_require__(344);
+	var app_service_1 = __webpack_require__(347);
+	//import { MdButton } from '@angular/material/button';
 	var AppComponent = (function () {
 	    function AppComponent(dataService) {
 	        var _this = this;
 	        this.dataService = dataService;
 	        this.promiseFlag = false;
 	        this.dataService.getCoords().then(function (data) {
-	            _this.dataService.setLat(data.latitude);
-	            _this.dataService.setLon(data.longitude);
-	            console.log(data);
+	            _this.coords = data;
 	            _this.promiseFlag = true;
 	        });
 	    }
@@ -45454,9 +45440,11 @@
 	            selector: 'my-app',
 	            directives: [
 	                ui_2.GoogleMap,
-	                ui_1.CityTable
+	                ui_1.CityTable,
 	            ],
-	            template: "\n    <city-table *ngIf='promiseFlag'></city-table>\n    <google-map *ngIf='promiseFlag'></google-map>\n    ",
+	            styles: ["\n             .main-content{\n                margin-top:40px;\n                \n                pading:20px;\n             }\n        "
+	            ],
+	            template: "\n        <my-header></my-header>\n        <div class='container main-content'>\n            <md-card>\n                <div md-content flex layout-padding>\n                    <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>\n                    <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>\n                </div>\n            </md-card>\n        </div>\n    ",
 	            providers: [app_service_1.DataService]
 	        }), 
 	        __metadata('design:paramtypes', [app_service_1.DataService])
@@ -45467,27 +45455,29 @@
 
 
 /***/ },
-/* 348 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var table_1 = __webpack_require__(349);
+	var table_1 = __webpack_require__(345);
 	exports.CityTable = table_1.CityTable;
-	var map_1 = __webpack_require__(677);
+	var map_1 = __webpack_require__(673);
 	exports.GoogleMap = map_1.GoogleMap;
+	var header_1 = __webpack_require__(675);
+	exports.MyHeader = header_1.MyHeader;
 
 
 /***/ },
-/* 349 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var table_1 = __webpack_require__(350);
+	var table_1 = __webpack_require__(346);
 	exports.CityTable = table_1.CityTable;
 
 
 /***/ },
-/* 350 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45500,8 +45490,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(326);
-	var app_service_1 = __webpack_require__(351);
+	var core_1 = __webpack_require__(322);
+	var app_service_1 = __webpack_require__(347);
 	var CityTable = (function () {
 	    function CityTable(dataService) {
 	        this.dataService = dataService;
@@ -45509,8 +45499,14 @@
 	    }
 	    CityTable.prototype.ngOnInit = function () {
 	        var _this = this;
-	        this.dataService.fetchData().subscribe(function (data) { return _this.citiesArray = data.list; });
+	        this.dataService.fetchData(this.coords).subscribe(function (data) {
+	            _this.citiesArray = data;
+	        });
 	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], CityTable.prototype, "coords", void 0);
 	    CityTable = __decorate([
 	        core_1.Component({
 	            selector: 'city-table',
@@ -45525,7 +45521,7 @@
 
 
 /***/ },
-/* 351 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45538,42 +45534,31 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(326);
-	var http_1 = __webpack_require__(352);
-	__webpack_require__(353);
-	__webpack_require__(355);
+	var core_1 = __webpack_require__(322);
+	var http_1 = __webpack_require__(348);
+	__webpack_require__(349);
+	__webpack_require__(351);
 	var DataService = (function () {
 	    function DataService(http) {
 	        this.http = http;
-	        this.dataUrl = 'http://api.openweathermap.org/data/2.5/find?&lat=' + this.lat
-	            + '&lon=' + this.lon + '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6';
 	    }
-	    DataService.prototype.ngOnInit = function () {
+	    DataService.prototype.dataUrl = function (coords) {
+	        return 'http://api.openweathermap.org/data/2.5/find?&lat=' + coords.latitude
+	            + '&lon=' + coords.longitude + '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6';
 	    };
-	    DataService.prototype.fetchData = function () {
-	        return this.http.get(this.dataUrl).map(function (response) { return response.json(); });
-	    };
-	    DataService.prototype.setLat = function (vv) {
-	        this.lat = vv;
-	    };
-	    DataService.prototype.setLon = function (vv) {
-	        this.lon = vv;
-	    };
-	    DataService.prototype.getLat = function () {
-	        alert('get');
-	        return this.lat;
-	    };
-	    DataService.prototype.getLon = function () {
-	        return this.lon;
+	    DataService.prototype.fetchData = function (coords) {
+	        return this.http.get(this.dataUrl(coords)).map(function (response) { return response.json().list; });
 	    };
 	    DataService.prototype.getCoords = function () {
 	        return new Promise(function (resolve, reject) {
 	            if (navigator.geolocation) {
 	                navigator.geolocation.getCurrentPosition(function (position) {
-	                    alert('33');
 	                    resolve(position.coords);
 	                }, function () {
-	                    return { latitude: 53.904539799999995, longitude: 27.5615244 };
+	                    resolve({
+	                        latitude: 53.904539799999995,
+	                        longitude: 27.5615244
+	                    });
 	                });
 	            }
 	            ;
@@ -45589,7 +45574,7 @@
 
 
 /***/ },
-/* 352 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -45598,7 +45583,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(326), __webpack_require__(328), __webpack_require__(344)) :
+	     true ? factory(exports, __webpack_require__(322), __webpack_require__(324), __webpack_require__(340)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Observable', '@angular/platform-browser'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.http = global.ng.http || {}),global.ng.core,global.Rx,global.ng.platformBrowser));
 	}(this, function (exports,_angular_core,rxjs_Observable,_angular_platformBrowser) { 'use strict';
@@ -47379,17 +47364,17 @@
 	}));
 
 /***/ },
-/* 353 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var map_1 = __webpack_require__(354);
+	var Observable_1 = __webpack_require__(324);
+	var map_1 = __webpack_require__(350);
 	Observable_1.Observable.prototype.map = map_1.map;
 	//# sourceMappingURL=map.js.map
 
 /***/ },
-/* 354 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47398,7 +47383,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Applies a given `project` function to each value emitted by the source
 	 * Observable, and emits the resulting values as an Observable.
@@ -47481,7 +47466,7 @@
 	//# sourceMappingURL=map.js.map
 
 /***/ },
-/* 355 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47489,105 +47474,107 @@
 	// Subject imported before Observable to bypass circular dependency issue since
 	// Subject extends Observable and Observable references Subject in it's
 	// definition
-	var Subject_1 = __webpack_require__(327);
+	var Subject_1 = __webpack_require__(323);
 	exports.Subject = Subject_1.Subject;
 	exports.AnonymousSubject = Subject_1.AnonymousSubject;
 	/* tslint:enable:no-unused-variable */
-	var Observable_1 = __webpack_require__(328);
+	var Observable_1 = __webpack_require__(324);
 	exports.Observable = Observable_1.Observable;
 	// statics
 	/* tslint:disable:no-use-before-declare */
+	__webpack_require__(352);
 	__webpack_require__(356);
-	__webpack_require__(360);
-	__webpack_require__(363);
+	__webpack_require__(359);
+	__webpack_require__(371);
 	__webpack_require__(375);
-	__webpack_require__(379);
-	__webpack_require__(382);
-	__webpack_require__(384);
-	__webpack_require__(387);
-	__webpack_require__(395);
-	__webpack_require__(398);
+	__webpack_require__(378);
+	__webpack_require__(380);
+	__webpack_require__(383);
+	__webpack_require__(391);
+	__webpack_require__(394);
+	__webpack_require__(397);
+	__webpack_require__(399);
 	__webpack_require__(401);
-	__webpack_require__(403);
-	__webpack_require__(405);
-	__webpack_require__(408);
-	__webpack_require__(417);
-	__webpack_require__(420);
+	__webpack_require__(404);
+	__webpack_require__(413);
+	__webpack_require__(416);
+	__webpack_require__(418);
 	__webpack_require__(422);
+	__webpack_require__(424);
 	__webpack_require__(426);
-	__webpack_require__(428);
-	__webpack_require__(430);
-	__webpack_require__(433);
-	__webpack_require__(436);
-	__webpack_require__(439);
+	__webpack_require__(429);
+	__webpack_require__(432);
+	__webpack_require__(435);
+	__webpack_require__(438);
 	__webpack_require__(442);
-	__webpack_require__(446);
 	//dom
-	__webpack_require__(449);
-	__webpack_require__(452);
+	__webpack_require__(445);
+	__webpack_require__(448);
 	//operators
+	__webpack_require__(456);
+	__webpack_require__(458);
 	__webpack_require__(460);
 	__webpack_require__(462);
 	__webpack_require__(464);
 	__webpack_require__(466);
 	__webpack_require__(468);
 	__webpack_require__(470);
+	__webpack_require__(471);
 	__webpack_require__(472);
 	__webpack_require__(474);
-	__webpack_require__(475);
-	__webpack_require__(476);
-	__webpack_require__(478);
-	__webpack_require__(481);
+	__webpack_require__(477);
+	__webpack_require__(480);
+	__webpack_require__(482);
 	__webpack_require__(484);
 	__webpack_require__(486);
 	__webpack_require__(488);
 	__webpack_require__(490);
 	__webpack_require__(492);
 	__webpack_require__(494);
-	__webpack_require__(496);
-	__webpack_require__(498);
+	__webpack_require__(497);
+	__webpack_require__(499);
 	__webpack_require__(501);
 	__webpack_require__(503);
 	__webpack_require__(505);
 	__webpack_require__(507);
 	__webpack_require__(509);
-	__webpack_require__(511);
-	__webpack_require__(513);
+	__webpack_require__(512);
+	__webpack_require__(514);
 	__webpack_require__(516);
 	__webpack_require__(518);
 	__webpack_require__(520);
-	__webpack_require__(522);
-	__webpack_require__(524);
-	__webpack_require__(527);
+	__webpack_require__(523);
+	__webpack_require__(528);
+	__webpack_require__(530);
 	__webpack_require__(532);
 	__webpack_require__(534);
 	__webpack_require__(536);
 	__webpack_require__(538);
 	__webpack_require__(540);
+	__webpack_require__(349);
 	__webpack_require__(542);
 	__webpack_require__(544);
-	__webpack_require__(353);
 	__webpack_require__(546);
-	__webpack_require__(548);
+	__webpack_require__(549);
 	__webpack_require__(550);
+	__webpack_require__(551);
+	__webpack_require__(552);
 	__webpack_require__(553);
-	__webpack_require__(554);
 	__webpack_require__(555);
-	__webpack_require__(556);
 	__webpack_require__(557);
-	__webpack_require__(559);
+	__webpack_require__(560);
 	__webpack_require__(561);
+	__webpack_require__(562);
 	__webpack_require__(564);
-	__webpack_require__(565);
-	__webpack_require__(566);
-	__webpack_require__(568);
+	__webpack_require__(567);
+	__webpack_require__(569);
 	__webpack_require__(571);
-	__webpack_require__(573);
-	__webpack_require__(575);
+	__webpack_require__(574);
+	__webpack_require__(576);
 	__webpack_require__(578);
+	__webpack_require__(579);
 	__webpack_require__(580);
 	__webpack_require__(582);
-	__webpack_require__(583);
 	__webpack_require__(584);
 	__webpack_require__(586);
 	__webpack_require__(588);
@@ -47601,8 +47588,8 @@
 	__webpack_require__(604);
 	__webpack_require__(606);
 	__webpack_require__(608);
-	__webpack_require__(610);
-	__webpack_require__(612);
+	__webpack_require__(616);
+	__webpack_require__(618);
 	__webpack_require__(620);
 	__webpack_require__(622);
 	__webpack_require__(624);
@@ -47612,8 +47599,8 @@
 	__webpack_require__(632);
 	__webpack_require__(634);
 	__webpack_require__(636);
-	__webpack_require__(638);
-	__webpack_require__(640);
+	__webpack_require__(639);
+	__webpack_require__(641);
 	__webpack_require__(643);
 	__webpack_require__(645);
 	__webpack_require__(647);
@@ -47623,53 +47610,51 @@
 	__webpack_require__(655);
 	__webpack_require__(657);
 	__webpack_require__(659);
-	__webpack_require__(661);
-	__webpack_require__(663);
-	__webpack_require__(664);
+	__webpack_require__(660);
 	/* tslint:disable:no-unused-variable */
-	var Subscription_1 = __webpack_require__(333);
+	var Subscription_1 = __webpack_require__(329);
 	exports.Subscription = Subscription_1.Subscription;
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	exports.Subscriber = Subscriber_1.Subscriber;
-	var AsyncSubject_1 = __webpack_require__(359);
+	var AsyncSubject_1 = __webpack_require__(355);
 	exports.AsyncSubject = AsyncSubject_1.AsyncSubject;
-	var ReplaySubject_1 = __webpack_require__(455);
+	var ReplaySubject_1 = __webpack_require__(451);
 	exports.ReplaySubject = ReplaySubject_1.ReplaySubject;
-	var BehaviorSubject_1 = __webpack_require__(577);
+	var BehaviorSubject_1 = __webpack_require__(573);
 	exports.BehaviorSubject = BehaviorSubject_1.BehaviorSubject;
-	var ConnectableObservable_1 = __webpack_require__(563);
+	var ConnectableObservable_1 = __webpack_require__(559);
 	exports.ConnectableObservable = ConnectableObservable_1.ConnectableObservable;
-	var Notification_1 = __webpack_require__(394);
+	var Notification_1 = __webpack_require__(390);
 	exports.Notification = Notification_1.Notification;
-	var EmptyError_1 = __webpack_require__(526);
+	var EmptyError_1 = __webpack_require__(522);
 	exports.EmptyError = EmptyError_1.EmptyError;
-	var ArgumentOutOfRangeError_1 = __webpack_require__(515);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
 	exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError_1.ArgumentOutOfRangeError;
-	var ObjectUnsubscribedError_1 = __webpack_require__(342);
+	var ObjectUnsubscribedError_1 = __webpack_require__(338);
 	exports.ObjectUnsubscribedError = ObjectUnsubscribedError_1.ObjectUnsubscribedError;
-	var TimeoutError_1 = __webpack_require__(642);
+	var TimeoutError_1 = __webpack_require__(638);
 	exports.TimeoutError = TimeoutError_1.TimeoutError;
-	var UnsubscriptionError_1 = __webpack_require__(338);
+	var UnsubscriptionError_1 = __webpack_require__(334);
 	exports.UnsubscriptionError = UnsubscriptionError_1.UnsubscriptionError;
-	var timeInterval_1 = __webpack_require__(639);
+	var timeInterval_1 = __webpack_require__(635);
 	exports.TimeInterval = timeInterval_1.TimeInterval;
-	var timestamp_1 = __webpack_require__(646);
+	var timestamp_1 = __webpack_require__(642);
 	exports.Timestamp = timestamp_1.Timestamp;
-	var TestScheduler_1 = __webpack_require__(666);
+	var TestScheduler_1 = __webpack_require__(662);
 	exports.TestScheduler = TestScheduler_1.TestScheduler;
-	var VirtualTimeScheduler_1 = __webpack_require__(672);
+	var VirtualTimeScheduler_1 = __webpack_require__(668);
 	exports.VirtualTimeScheduler = VirtualTimeScheduler_1.VirtualTimeScheduler;
-	var AjaxObservable_1 = __webpack_require__(451);
+	var AjaxObservable_1 = __webpack_require__(447);
 	exports.AjaxResponse = AjaxObservable_1.AjaxResponse;
 	exports.AjaxError = AjaxObservable_1.AjaxError;
 	exports.AjaxTimeoutError = AjaxObservable_1.AjaxTimeoutError;
-	var asap_1 = __webpack_require__(615);
-	var async_1 = __webpack_require__(412);
-	var queue_1 = __webpack_require__(456);
-	var animationFrame_1 = __webpack_require__(673);
-	var rxSubscriber_1 = __webpack_require__(340);
-	var iterator_1 = __webpack_require__(373);
-	var observable_1 = __webpack_require__(341);
+	var asap_1 = __webpack_require__(611);
+	var async_1 = __webpack_require__(408);
+	var queue_1 = __webpack_require__(452);
+	var animationFrame_1 = __webpack_require__(669);
+	var rxSubscriber_1 = __webpack_require__(336);
+	var iterator_1 = __webpack_require__(369);
+	var observable_1 = __webpack_require__(337);
 	/* tslint:enable:no-unused-variable */
 	/**
 	 * @typedef {Object} Rx.Scheduler
@@ -47713,26 +47698,26 @@
 	//# sourceMappingURL=Rx.js.map
 
 /***/ },
-/* 356 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var bindCallback_1 = __webpack_require__(357);
+	var Observable_1 = __webpack_require__(324);
+	var bindCallback_1 = __webpack_require__(353);
 	Observable_1.Observable.bindCallback = bindCallback_1.bindCallback;
 	//# sourceMappingURL=bindCallback.js.map
 
 /***/ },
-/* 357 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var BoundCallbackObservable_1 = __webpack_require__(358);
+	var BoundCallbackObservable_1 = __webpack_require__(354);
 	exports.bindCallback = BoundCallbackObservable_1.BoundCallbackObservable.create;
 	//# sourceMappingURL=bindCallback.js.map
 
 /***/ },
-/* 358 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47741,10 +47726,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var AsyncSubject_1 = __webpack_require__(359);
+	var Observable_1 = __webpack_require__(324);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var AsyncSubject_1 = __webpack_require__(355);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -47901,7 +47886,7 @@
 	//# sourceMappingURL=BoundCallbackObservable.js.map
 
 /***/ },
-/* 359 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47910,8 +47895,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var Subscription_1 = __webpack_require__(333);
+	var Subject_1 = __webpack_require__(323);
+	var Subscription_1 = __webpack_require__(329);
 	/**
 	 * @class AsyncSubject<T>
 	 */
@@ -47954,26 +47939,26 @@
 	//# sourceMappingURL=AsyncSubject.js.map
 
 /***/ },
-/* 360 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var bindNodeCallback_1 = __webpack_require__(361);
+	var Observable_1 = __webpack_require__(324);
+	var bindNodeCallback_1 = __webpack_require__(357);
 	Observable_1.Observable.bindNodeCallback = bindNodeCallback_1.bindNodeCallback;
 	//# sourceMappingURL=bindNodeCallback.js.map
 
 /***/ },
-/* 361 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var BoundNodeCallbackObservable_1 = __webpack_require__(362);
+	var BoundNodeCallbackObservable_1 = __webpack_require__(358);
 	exports.bindNodeCallback = BoundNodeCallbackObservable_1.BoundNodeCallbackObservable.create;
 	//# sourceMappingURL=bindNodeCallback.js.map
 
 /***/ },
-/* 362 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47982,10 +47967,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var AsyncSubject_1 = __webpack_require__(359);
+	var Observable_1 = __webpack_require__(324);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var AsyncSubject_1 = __webpack_require__(355);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -48154,24 +48139,24 @@
 	//# sourceMappingURL=BoundNodeCallbackObservable.js.map
 
 /***/ },
-/* 363 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var combineLatest_1 = __webpack_require__(364);
+	var Observable_1 = __webpack_require__(324);
+	var combineLatest_1 = __webpack_require__(360);
 	Observable_1.Observable.combineLatest = combineLatest_1.combineLatest;
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 364 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isScheduler_1 = __webpack_require__(365);
-	var isArray_1 = __webpack_require__(334);
-	var ArrayObservable_1 = __webpack_require__(366);
-	var combineLatest_1 = __webpack_require__(369);
+	var isScheduler_1 = __webpack_require__(361);
+	var isArray_1 = __webpack_require__(330);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var combineLatest_1 = __webpack_require__(365);
 	/* tslint:enable:max-line-length */
 	/**
 	 * Combines multiple Observables to create an Observable whose values are
@@ -48240,7 +48225,7 @@
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 365 */
+/* 361 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -48251,7 +48236,7 @@
 	//# sourceMappingURL=isScheduler.js.map
 
 /***/ },
-/* 366 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48260,10 +48245,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var ScalarObservable_1 = __webpack_require__(367);
-	var EmptyObservable_1 = __webpack_require__(368);
-	var isScheduler_1 = __webpack_require__(365);
+	var Observable_1 = __webpack_require__(324);
+	var ScalarObservable_1 = __webpack_require__(363);
+	var EmptyObservable_1 = __webpack_require__(364);
+	var isScheduler_1 = __webpack_require__(361);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -48378,7 +48363,7 @@
 	//# sourceMappingURL=ArrayObservable.js.map
 
 /***/ },
-/* 367 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48387,7 +48372,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
+	var Observable_1 = __webpack_require__(324);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -48441,7 +48426,7 @@
 	//# sourceMappingURL=ScalarObservable.js.map
 
 /***/ },
-/* 368 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48450,7 +48435,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
+	var Observable_1 = __webpack_require__(324);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -48521,7 +48506,7 @@
 	//# sourceMappingURL=EmptyObservable.js.map
 
 /***/ },
-/* 369 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48530,10 +48515,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var ArrayObservable_1 = __webpack_require__(366);
-	var isArray_1 = __webpack_require__(334);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var isArray_1 = __webpack_require__(330);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	var none = {};
 	/* tslint:disable:max-line-length */
 	/**
@@ -48673,7 +48658,7 @@
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 370 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48682,7 +48667,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -48708,17 +48693,17 @@
 	//# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ },
-/* 371 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
-	var isArray_1 = __webpack_require__(334);
-	var isPromise_1 = __webpack_require__(372);
-	var Observable_1 = __webpack_require__(328);
-	var iterator_1 = __webpack_require__(373);
-	var InnerSubscriber_1 = __webpack_require__(374);
-	var observable_1 = __webpack_require__(341);
+	var root_1 = __webpack_require__(325);
+	var isArray_1 = __webpack_require__(330);
+	var isPromise_1 = __webpack_require__(368);
+	var Observable_1 = __webpack_require__(324);
+	var iterator_1 = __webpack_require__(369);
+	var InnerSubscriber_1 = __webpack_require__(370);
+	var observable_1 = __webpack_require__(337);
 	function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
 	    var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
 	    if (destination.closed) {
@@ -48787,7 +48772,7 @@
 	//# sourceMappingURL=subscribeToResult.js.map
 
 /***/ },
-/* 372 */
+/* 368 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -48798,11 +48783,11 @@
 	//# sourceMappingURL=isPromise.js.map
 
 /***/ },
-/* 373 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	function symbolIteratorPonyfill(root) {
 	    var Symbol = root.Symbol;
 	    if (typeof Symbol === 'function') {
@@ -48837,7 +48822,7 @@
 	//# sourceMappingURL=iterator.js.map
 
 /***/ },
-/* 374 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48846,7 +48831,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -48878,32 +48863,32 @@
 	//# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ },
-/* 375 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var concat_1 = __webpack_require__(376);
+	var Observable_1 = __webpack_require__(324);
+	var concat_1 = __webpack_require__(372);
 	Observable_1.Observable.concat = concat_1.concat;
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 376 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var concat_1 = __webpack_require__(377);
+	var concat_1 = __webpack_require__(373);
 	exports.concat = concat_1.concatStatic;
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 377 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isScheduler_1 = __webpack_require__(365);
-	var ArrayObservable_1 = __webpack_require__(366);
-	var mergeAll_1 = __webpack_require__(378);
+	var isScheduler_1 = __webpack_require__(361);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var mergeAll_1 = __webpack_require__(374);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Creates an output Observable which sequentially emits all values from every
@@ -49014,7 +48999,7 @@
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 378 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49023,8 +49008,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable which
 	 * concurrently delivers all values that are emitted on the inner Observables.
@@ -49130,26 +49115,26 @@
 	//# sourceMappingURL=mergeAll.js.map
 
 /***/ },
-/* 379 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var defer_1 = __webpack_require__(380);
+	var Observable_1 = __webpack_require__(324);
+	var defer_1 = __webpack_require__(376);
 	Observable_1.Observable.defer = defer_1.defer;
 	//# sourceMappingURL=defer.js.map
 
 /***/ },
-/* 380 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var DeferObservable_1 = __webpack_require__(381);
+	var DeferObservable_1 = __webpack_require__(377);
 	exports.defer = DeferObservable_1.DeferObservable.create;
 	//# sourceMappingURL=defer.js.map
 
 /***/ },
-/* 381 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49158,9 +49143,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var OuterSubscriber_1 = __webpack_require__(370);
+	var Observable_1 = __webpack_require__(324);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(366);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49247,45 +49232,45 @@
 	//# sourceMappingURL=DeferObservable.js.map
 
 /***/ },
-/* 382 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var empty_1 = __webpack_require__(383);
+	var Observable_1 = __webpack_require__(324);
+	var empty_1 = __webpack_require__(379);
 	Observable_1.Observable.empty = empty_1.empty;
 	//# sourceMappingURL=empty.js.map
 
 /***/ },
-/* 383 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var EmptyObservable_1 = __webpack_require__(368);
+	var EmptyObservable_1 = __webpack_require__(364);
 	exports.empty = EmptyObservable_1.EmptyObservable.create;
 	//# sourceMappingURL=empty.js.map
 
 /***/ },
-/* 384 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var forkJoin_1 = __webpack_require__(385);
+	var Observable_1 = __webpack_require__(324);
+	var forkJoin_1 = __webpack_require__(381);
 	Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
 	//# sourceMappingURL=forkJoin.js.map
 
 /***/ },
-/* 385 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ForkJoinObservable_1 = __webpack_require__(386);
+	var ForkJoinObservable_1 = __webpack_require__(382);
 	exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
 	//# sourceMappingURL=forkJoin.js.map
 
 /***/ },
-/* 386 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49294,11 +49279,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var EmptyObservable_1 = __webpack_require__(368);
-	var isArray_1 = __webpack_require__(334);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var OuterSubscriber_1 = __webpack_require__(370);
+	var Observable_1 = __webpack_require__(324);
+	var EmptyObservable_1 = __webpack_require__(364);
+	var isArray_1 = __webpack_require__(330);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(366);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49402,26 +49387,26 @@
 	//# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ },
-/* 387 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var from_1 = __webpack_require__(388);
+	var Observable_1 = __webpack_require__(324);
+	var from_1 = __webpack_require__(384);
 	Observable_1.Observable.from = from_1.from;
 	//# sourceMappingURL=from.js.map
 
 /***/ },
-/* 388 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromObservable_1 = __webpack_require__(389);
+	var FromObservable_1 = __webpack_require__(385);
 	exports.from = FromObservable_1.FromObservable.create;
 	//# sourceMappingURL=from.js.map
 
 /***/ },
-/* 389 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49430,16 +49415,16 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isArray_1 = __webpack_require__(334);
-	var isPromise_1 = __webpack_require__(372);
-	var PromiseObservable_1 = __webpack_require__(390);
-	var IteratorObservable_1 = __webpack_require__(391);
-	var ArrayObservable_1 = __webpack_require__(366);
-	var ArrayLikeObservable_1 = __webpack_require__(392);
-	var iterator_1 = __webpack_require__(373);
-	var Observable_1 = __webpack_require__(328);
-	var observeOn_1 = __webpack_require__(393);
-	var observable_1 = __webpack_require__(341);
+	var isArray_1 = __webpack_require__(330);
+	var isPromise_1 = __webpack_require__(368);
+	var PromiseObservable_1 = __webpack_require__(386);
+	var IteratorObservable_1 = __webpack_require__(387);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var ArrayLikeObservable_1 = __webpack_require__(388);
+	var iterator_1 = __webpack_require__(369);
+	var Observable_1 = __webpack_require__(324);
+	var observeOn_1 = __webpack_require__(389);
+	var observable_1 = __webpack_require__(337);
 	var isArrayLike = (function (x) { return x && typeof x.length === 'number'; });
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
@@ -49542,7 +49527,7 @@
 	//# sourceMappingURL=FromObservable.js.map
 
 /***/ },
-/* 390 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49551,8 +49536,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var root_1 = __webpack_require__(329);
-	var Observable_1 = __webpack_require__(328);
+	var root_1 = __webpack_require__(325);
+	var Observable_1 = __webpack_require__(324);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49668,7 +49653,7 @@
 	//# sourceMappingURL=PromiseObservable.js.map
 
 /***/ },
-/* 391 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49677,9 +49662,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var root_1 = __webpack_require__(329);
-	var Observable_1 = __webpack_require__(328);
-	var iterator_1 = __webpack_require__(373);
+	var root_1 = __webpack_require__(325);
+	var Observable_1 = __webpack_require__(324);
+	var iterator_1 = __webpack_require__(369);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49836,7 +49821,7 @@
 	//# sourceMappingURL=IteratorObservable.js.map
 
 /***/ },
-/* 392 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49845,9 +49830,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var ScalarObservable_1 = __webpack_require__(367);
-	var EmptyObservable_1 = __webpack_require__(368);
+	var Observable_1 = __webpack_require__(324);
+	var ScalarObservable_1 = __webpack_require__(363);
+	var EmptyObservable_1 = __webpack_require__(364);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49911,7 +49896,7 @@
 	//# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ },
-/* 393 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49920,8 +49905,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var Notification_1 = __webpack_require__(394);
+	var Subscriber_1 = __webpack_require__(327);
+	var Notification_1 = __webpack_require__(390);
 	/**
 	 * @see {@link Notification}
 	 *
@@ -49991,11 +49976,11 @@
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 394 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
+	var Observable_1 = __webpack_require__(324);
 	/**
 	 * Represents a push-based event or value that an {@link Observable} can emit.
 	 * This class is particularly useful for operators that manage notifications,
@@ -50123,26 +50108,26 @@
 	//# sourceMappingURL=Notification.js.map
 
 /***/ },
-/* 395 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var fromEvent_1 = __webpack_require__(396);
+	var Observable_1 = __webpack_require__(324);
+	var fromEvent_1 = __webpack_require__(392);
 	Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
 	//# sourceMappingURL=fromEvent.js.map
 
 /***/ },
-/* 396 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromEventObservable_1 = __webpack_require__(397);
+	var FromEventObservable_1 = __webpack_require__(393);
 	exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
 	//# sourceMappingURL=fromEvent.js.map
 
 /***/ },
-/* 397 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50151,11 +50136,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var tryCatch_1 = __webpack_require__(336);
-	var isFunction_1 = __webpack_require__(332);
-	var errorObject_1 = __webpack_require__(337);
-	var Subscription_1 = __webpack_require__(333);
+	var Observable_1 = __webpack_require__(324);
+	var tryCatch_1 = __webpack_require__(332);
+	var isFunction_1 = __webpack_require__(328);
+	var errorObject_1 = __webpack_require__(333);
+	var Subscription_1 = __webpack_require__(329);
 	function isNodeStyleEventEmmitter(sourceObj) {
 	    return !!sourceObj && typeof sourceObj.addListener === 'function' && typeof sourceObj.removeListener === 'function';
 	}
@@ -50282,26 +50267,26 @@
 	//# sourceMappingURL=FromEventObservable.js.map
 
 /***/ },
-/* 398 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var fromEventPattern_1 = __webpack_require__(399);
+	var Observable_1 = __webpack_require__(324);
+	var fromEventPattern_1 = __webpack_require__(395);
 	Observable_1.Observable.fromEventPattern = fromEventPattern_1.fromEventPattern;
 	//# sourceMappingURL=fromEventPattern.js.map
 
 /***/ },
-/* 399 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromEventPatternObservable_1 = __webpack_require__(400);
+	var FromEventPatternObservable_1 = __webpack_require__(396);
 	exports.fromEventPattern = FromEventPatternObservable_1.FromEventPatternObservable.create;
 	//# sourceMappingURL=fromEventPattern.js.map
 
 /***/ },
-/* 400 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50310,8 +50295,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var Subscription_1 = __webpack_require__(333);
+	var Observable_1 = __webpack_require__(324);
+	var Subscription_1 = __webpack_require__(329);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -50414,36 +50399,36 @@
 	//# sourceMappingURL=FromEventPatternObservable.js.map
 
 /***/ },
-/* 401 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var fromPromise_1 = __webpack_require__(402);
+	var Observable_1 = __webpack_require__(324);
+	var fromPromise_1 = __webpack_require__(398);
 	Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 402 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PromiseObservable_1 = __webpack_require__(390);
+	var PromiseObservable_1 = __webpack_require__(386);
 	exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 403 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var GenerateObservable_1 = __webpack_require__(404);
+	var Observable_1 = __webpack_require__(324);
+	var GenerateObservable_1 = __webpack_require__(400);
 	Observable_1.Observable.generate = GenerateObservable_1.GenerateObservable.create;
 	//# sourceMappingURL=generate.js.map
 
 /***/ },
-/* 404 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50452,8 +50437,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var isScheduler_1 = __webpack_require__(365);
+	var Observable_1 = __webpack_require__(324);
+	var isScheduler_1 = __webpack_require__(361);
 	var selfSelector = function (value) { return value; };
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
@@ -50583,26 +50568,26 @@
 	//# sourceMappingURL=GenerateObservable.js.map
 
 /***/ },
-/* 405 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var if_1 = __webpack_require__(406);
+	var Observable_1 = __webpack_require__(324);
+	var if_1 = __webpack_require__(402);
 	Observable_1.Observable.if = if_1._if;
 	//# sourceMappingURL=if.js.map
 
 /***/ },
-/* 406 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var IfObservable_1 = __webpack_require__(407);
+	var IfObservable_1 = __webpack_require__(403);
 	exports._if = IfObservable_1.IfObservable.create;
 	//# sourceMappingURL=if.js.map
 
 /***/ },
-/* 407 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50611,9 +50596,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var OuterSubscriber_1 = __webpack_require__(370);
+	var Observable_1 = __webpack_require__(324);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(366);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -50668,26 +50653,26 @@
 	//# sourceMappingURL=IfObservable.js.map
 
 /***/ },
-/* 408 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var interval_1 = __webpack_require__(409);
+	var Observable_1 = __webpack_require__(324);
+	var interval_1 = __webpack_require__(405);
 	Observable_1.Observable.interval = interval_1.interval;
 	//# sourceMappingURL=interval.js.map
 
 /***/ },
-/* 409 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var IntervalObservable_1 = __webpack_require__(410);
+	var IntervalObservable_1 = __webpack_require__(406);
 	exports.interval = IntervalObservable_1.IntervalObservable.create;
 	//# sourceMappingURL=interval.js.map
 
 /***/ },
-/* 410 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50696,9 +50681,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isNumeric_1 = __webpack_require__(411);
-	var Observable_1 = __webpack_require__(328);
-	var async_1 = __webpack_require__(412);
+	var isNumeric_1 = __webpack_require__(407);
+	var Observable_1 = __webpack_require__(324);
+	var async_1 = __webpack_require__(408);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -50780,11 +50765,11 @@
 	//# sourceMappingURL=IntervalObservable.js.map
 
 /***/ },
-/* 411 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isArray_1 = __webpack_require__(334);
+	var isArray_1 = __webpack_require__(330);
 	function isNumeric(val) {
 	    // parseFloat NaNs numeric-cast false positives (null|true|false|"")
 	    // ...but misinterprets leading-number strings, particularly hex literals ("0x...")
@@ -50797,17 +50782,17 @@
 	//# sourceMappingURL=isNumeric.js.map
 
 /***/ },
-/* 412 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AsyncAction_1 = __webpack_require__(413);
-	var AsyncScheduler_1 = __webpack_require__(415);
+	var AsyncAction_1 = __webpack_require__(409);
+	var AsyncScheduler_1 = __webpack_require__(411);
 	exports.async = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
 	//# sourceMappingURL=async.js.map
 
 /***/ },
-/* 413 */
+/* 409 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50816,8 +50801,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var root_1 = __webpack_require__(329);
-	var Action_1 = __webpack_require__(414);
+	var root_1 = __webpack_require__(325);
+	var Action_1 = __webpack_require__(410);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -50954,7 +50939,7 @@
 	//# sourceMappingURL=AsyncAction.js.map
 
 /***/ },
-/* 414 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50963,7 +50948,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(333);
+	var Subscription_1 = __webpack_require__(329);
 	/**
 	 * A unit of work to be executed in a {@link Scheduler}. An action is typically
 	 * created from within a Scheduler and an RxJS user does not need to concern
@@ -51003,7 +50988,7 @@
 	//# sourceMappingURL=Action.js.map
 
 /***/ },
-/* 415 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51012,7 +50997,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Scheduler_1 = __webpack_require__(416);
+	var Scheduler_1 = __webpack_require__(412);
 	var AsyncScheduler = (function (_super) {
 	    __extends(AsyncScheduler, _super);
 	    function AsyncScheduler() {
@@ -51059,7 +51044,7 @@
 	//# sourceMappingURL=AsyncScheduler.js.map
 
 /***/ },
-/* 416 */
+/* 412 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -51113,32 +51098,32 @@
 	//# sourceMappingURL=Scheduler.js.map
 
 /***/ },
-/* 417 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var merge_1 = __webpack_require__(418);
+	var Observable_1 = __webpack_require__(324);
+	var merge_1 = __webpack_require__(414);
 	Observable_1.Observable.merge = merge_1.merge;
 	//# sourceMappingURL=merge.js.map
 
 /***/ },
-/* 418 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var merge_1 = __webpack_require__(419);
+	var merge_1 = __webpack_require__(415);
 	exports.merge = merge_1.mergeStatic;
 	//# sourceMappingURL=merge.js.map
 
 /***/ },
-/* 419 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(366);
-	var mergeAll_1 = __webpack_require__(378);
-	var isScheduler_1 = __webpack_require__(365);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var mergeAll_1 = __webpack_require__(374);
+	var isScheduler_1 = __webpack_require__(361);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Creates an output Observable which concurrently emits all values from every
@@ -51266,17 +51251,17 @@
 	//# sourceMappingURL=merge.js.map
 
 /***/ },
-/* 420 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var race_1 = __webpack_require__(421);
+	var Observable_1 = __webpack_require__(324);
+	var race_1 = __webpack_require__(417);
 	Observable_1.Observable.race = race_1.raceStatic;
 	//# sourceMappingURL=race.js.map
 
 /***/ },
-/* 421 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51285,10 +51270,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isArray_1 = __webpack_require__(334);
-	var ArrayObservable_1 = __webpack_require__(366);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var isArray_1 = __webpack_require__(330);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that mirrors the first source Observable to emit an item
@@ -51392,26 +51377,26 @@
 	//# sourceMappingURL=race.js.map
 
 /***/ },
-/* 422 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var never_1 = __webpack_require__(423);
+	var Observable_1 = __webpack_require__(324);
+	var never_1 = __webpack_require__(419);
 	Observable_1.Observable.never = never_1.never;
 	//# sourceMappingURL=never.js.map
 
 /***/ },
-/* 423 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var NeverObservable_1 = __webpack_require__(424);
+	var NeverObservable_1 = __webpack_require__(420);
 	exports.never = NeverObservable_1.NeverObservable.create;
 	//# sourceMappingURL=never.js.map
 
 /***/ },
-/* 424 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51420,8 +51405,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var noop_1 = __webpack_require__(425);
+	var Observable_1 = __webpack_require__(324);
+	var noop_1 = __webpack_require__(421);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -51475,7 +51460,7 @@
 	//# sourceMappingURL=NeverObservable.js.map
 
 /***/ },
-/* 425 */
+/* 421 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -51485,36 +51470,36 @@
 	//# sourceMappingURL=noop.js.map
 
 /***/ },
-/* 426 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var of_1 = __webpack_require__(427);
+	var Observable_1 = __webpack_require__(324);
+	var of_1 = __webpack_require__(423);
 	Observable_1.Observable.of = of_1.of;
 	//# sourceMappingURL=of.js.map
 
 /***/ },
-/* 427 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(366);
+	var ArrayObservable_1 = __webpack_require__(362);
 	exports.of = ArrayObservable_1.ArrayObservable.of;
 	//# sourceMappingURL=of.js.map
 
 /***/ },
-/* 428 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var onErrorResumeNext_1 = __webpack_require__(429);
+	var Observable_1 = __webpack_require__(324);
+	var onErrorResumeNext_1 = __webpack_require__(425);
 	Observable_1.Observable.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNextStatic;
 	//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ },
-/* 429 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51523,10 +51508,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FromObservable_1 = __webpack_require__(389);
-	var isArray_1 = __webpack_require__(334);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var FromObservable_1 = __webpack_require__(385);
+	var isArray_1 = __webpack_require__(330);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	function onErrorResumeNext() {
 	    var nextSources = [];
@@ -51595,26 +51580,26 @@
 	//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ },
-/* 430 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var pairs_1 = __webpack_require__(431);
+	var Observable_1 = __webpack_require__(324);
+	var pairs_1 = __webpack_require__(427);
 	Observable_1.Observable.pairs = pairs_1.pairs;
 	//# sourceMappingURL=pairs.js.map
 
 /***/ },
-/* 431 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PairsObservable_1 = __webpack_require__(432);
+	var PairsObservable_1 = __webpack_require__(428);
 	exports.pairs = PairsObservable_1.PairsObservable.create;
 	//# sourceMappingURL=pairs.js.map
 
 /***/ },
-/* 432 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51623,7 +51608,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
+	var Observable_1 = __webpack_require__(324);
 	function dispatch(state) {
 	    var obj = state.obj, keys = state.keys, length = state.length, index = state.index, subscriber = state.subscriber;
 	    if (index === length) {
@@ -51704,26 +51689,26 @@
 	//# sourceMappingURL=PairsObservable.js.map
 
 /***/ },
-/* 433 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var range_1 = __webpack_require__(434);
+	var Observable_1 = __webpack_require__(324);
+	var range_1 = __webpack_require__(430);
 	Observable_1.Observable.range = range_1.range;
 	//# sourceMappingURL=range.js.map
 
 /***/ },
-/* 434 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var RangeObservable_1 = __webpack_require__(435);
+	var RangeObservable_1 = __webpack_require__(431);
 	exports.range = RangeObservable_1.RangeObservable.create;
 	//# sourceMappingURL=range.js.map
 
 /***/ },
-/* 435 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51732,7 +51717,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
+	var Observable_1 = __webpack_require__(324);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -51824,26 +51809,26 @@
 	//# sourceMappingURL=RangeObservable.js.map
 
 /***/ },
-/* 436 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var using_1 = __webpack_require__(437);
+	var Observable_1 = __webpack_require__(324);
+	var using_1 = __webpack_require__(433);
 	Observable_1.Observable.using = using_1.using;
 	//# sourceMappingURL=using.js.map
 
 /***/ },
-/* 437 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var UsingObservable_1 = __webpack_require__(438);
+	var UsingObservable_1 = __webpack_require__(434);
 	exports.using = UsingObservable_1.UsingObservable.create;
 	//# sourceMappingURL=using.js.map
 
 /***/ },
-/* 438 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51852,9 +51837,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var OuterSubscriber_1 = __webpack_require__(370);
+	var Observable_1 = __webpack_require__(324);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(366);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -51909,26 +51894,26 @@
 	//# sourceMappingURL=UsingObservable.js.map
 
 /***/ },
-/* 439 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var throw_1 = __webpack_require__(440);
+	var Observable_1 = __webpack_require__(324);
+	var throw_1 = __webpack_require__(436);
 	Observable_1.Observable.throw = throw_1._throw;
 	//# sourceMappingURL=throw.js.map
 
 /***/ },
-/* 440 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ErrorObservable_1 = __webpack_require__(441);
+	var ErrorObservable_1 = __webpack_require__(437);
 	exports._throw = ErrorObservable_1.ErrorObservable.create;
 	//# sourceMappingURL=throw.js.map
 
 /***/ },
-/* 441 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51937,7 +51922,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
+	var Observable_1 = __webpack_require__(324);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -52015,26 +52000,26 @@
 	//# sourceMappingURL=ErrorObservable.js.map
 
 /***/ },
-/* 442 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var timer_1 = __webpack_require__(443);
+	var Observable_1 = __webpack_require__(324);
+	var timer_1 = __webpack_require__(439);
 	Observable_1.Observable.timer = timer_1.timer;
 	//# sourceMappingURL=timer.js.map
 
 /***/ },
-/* 443 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var TimerObservable_1 = __webpack_require__(444);
+	var TimerObservable_1 = __webpack_require__(440);
 	exports.timer = TimerObservable_1.TimerObservable.create;
 	//# sourceMappingURL=timer.js.map
 
 /***/ },
-/* 444 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52043,11 +52028,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isNumeric_1 = __webpack_require__(411);
-	var Observable_1 = __webpack_require__(328);
-	var async_1 = __webpack_require__(412);
-	var isScheduler_1 = __webpack_require__(365);
-	var isDate_1 = __webpack_require__(445);
+	var isNumeric_1 = __webpack_require__(407);
+	var Observable_1 = __webpack_require__(324);
+	var async_1 = __webpack_require__(408);
+	var isScheduler_1 = __webpack_require__(361);
+	var isDate_1 = __webpack_require__(441);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -52146,7 +52131,7 @@
 	//# sourceMappingURL=TimerObservable.js.map
 
 /***/ },
-/* 445 */
+/* 441 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -52157,26 +52142,26 @@
 	//# sourceMappingURL=isDate.js.map
 
 /***/ },
-/* 446 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var zip_1 = __webpack_require__(447);
+	var Observable_1 = __webpack_require__(324);
+	var zip_1 = __webpack_require__(443);
 	Observable_1.Observable.zip = zip_1.zip;
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 447 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var zip_1 = __webpack_require__(448);
+	var zip_1 = __webpack_require__(444);
 	exports.zip = zip_1.zipStatic;
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 448 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52185,12 +52170,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var ArrayObservable_1 = __webpack_require__(366);
-	var isArray_1 = __webpack_require__(334);
-	var Subscriber_1 = __webpack_require__(331);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var iterator_1 = __webpack_require__(373);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var isArray_1 = __webpack_require__(330);
+	var Subscriber_1 = __webpack_require__(327);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var iterator_1 = __webpack_require__(369);
 	/* tslint:disable:max-line-length */
 	/**
 	 * @param observables
@@ -52432,26 +52417,26 @@
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 449 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var ajax_1 = __webpack_require__(450);
+	var Observable_1 = __webpack_require__(324);
+	var ajax_1 = __webpack_require__(446);
 	Observable_1.Observable.ajax = ajax_1.ajax;
 	//# sourceMappingURL=ajax.js.map
 
 /***/ },
-/* 450 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AjaxObservable_1 = __webpack_require__(451);
+	var AjaxObservable_1 = __webpack_require__(447);
 	exports.ajax = AjaxObservable_1.AjaxObservable.create;
 	//# sourceMappingURL=ajax.js.map
 
 /***/ },
-/* 451 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52460,12 +52445,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var root_1 = __webpack_require__(329);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var Observable_1 = __webpack_require__(328);
-	var Subscriber_1 = __webpack_require__(331);
-	var map_1 = __webpack_require__(354);
+	var root_1 = __webpack_require__(325);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var Observable_1 = __webpack_require__(324);
+	var Subscriber_1 = __webpack_require__(327);
+	var map_1 = __webpack_require__(350);
 	function getCORSRequest() {
 	    if (root_1.root.XMLHttpRequest) {
 	        var xhr = new root_1.root.XMLHttpRequest();
@@ -52857,26 +52842,26 @@
 	//# sourceMappingURL=AjaxObservable.js.map
 
 /***/ },
-/* 452 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var webSocket_1 = __webpack_require__(453);
+	var Observable_1 = __webpack_require__(324);
+	var webSocket_1 = __webpack_require__(449);
 	Observable_1.Observable.webSocket = webSocket_1.webSocket;
 	//# sourceMappingURL=webSocket.js.map
 
 /***/ },
-/* 453 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var WebSocketSubject_1 = __webpack_require__(454);
+	var WebSocketSubject_1 = __webpack_require__(450);
 	exports.webSocket = WebSocketSubject_1.WebSocketSubject.create;
 	//# sourceMappingURL=webSocket.js.map
 
 /***/ },
-/* 454 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52885,15 +52870,15 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var Subscriber_1 = __webpack_require__(331);
-	var Observable_1 = __webpack_require__(328);
-	var Subscription_1 = __webpack_require__(333);
-	var root_1 = __webpack_require__(329);
-	var ReplaySubject_1 = __webpack_require__(455);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var assign_1 = __webpack_require__(459);
+	var Subject_1 = __webpack_require__(323);
+	var Subscriber_1 = __webpack_require__(327);
+	var Observable_1 = __webpack_require__(324);
+	var Subscription_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
+	var ReplaySubject_1 = __webpack_require__(451);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var assign_1 = __webpack_require__(455);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -53097,7 +53082,7 @@
 	//# sourceMappingURL=WebSocketSubject.js.map
 
 /***/ },
-/* 455 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53106,12 +53091,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var queue_1 = __webpack_require__(456);
-	var Subscription_1 = __webpack_require__(333);
-	var observeOn_1 = __webpack_require__(393);
-	var ObjectUnsubscribedError_1 = __webpack_require__(342);
-	var SubjectSubscription_1 = __webpack_require__(343);
+	var Subject_1 = __webpack_require__(323);
+	var queue_1 = __webpack_require__(452);
+	var Subscription_1 = __webpack_require__(329);
+	var observeOn_1 = __webpack_require__(389);
+	var ObjectUnsubscribedError_1 = __webpack_require__(338);
+	var SubjectSubscription_1 = __webpack_require__(339);
 	/**
 	 * @class ReplaySubject<T>
 	 */
@@ -53204,17 +53189,17 @@
 	//# sourceMappingURL=ReplaySubject.js.map
 
 /***/ },
-/* 456 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var QueueAction_1 = __webpack_require__(457);
-	var QueueScheduler_1 = __webpack_require__(458);
+	var QueueAction_1 = __webpack_require__(453);
+	var QueueScheduler_1 = __webpack_require__(454);
 	exports.queue = new QueueScheduler_1.QueueScheduler(QueueAction_1.QueueAction);
 	//# sourceMappingURL=queue.js.map
 
 /***/ },
-/* 457 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53223,7 +53208,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncAction_1 = __webpack_require__(413);
+	var AsyncAction_1 = __webpack_require__(409);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -53268,7 +53253,7 @@
 	//# sourceMappingURL=QueueAction.js.map
 
 /***/ },
-/* 458 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53277,7 +53262,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncScheduler_1 = __webpack_require__(415);
+	var AsyncScheduler_1 = __webpack_require__(411);
 	var QueueScheduler = (function (_super) {
 	    __extends(QueueScheduler, _super);
 	    function QueueScheduler() {
@@ -53289,11 +53274,11 @@
 	//# sourceMappingURL=QueueScheduler.js.map
 
 /***/ },
-/* 459 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	function assignImpl(target) {
 	    var sources = [];
 	    for (var _i = 1; _i < arguments.length; _i++) {
@@ -53320,17 +53305,17 @@
 	//# sourceMappingURL=assign.js.map
 
 /***/ },
-/* 460 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var buffer_1 = __webpack_require__(461);
+	var Observable_1 = __webpack_require__(324);
+	var buffer_1 = __webpack_require__(457);
 	Observable_1.Observable.prototype.buffer = buffer_1.buffer;
 	//# sourceMappingURL=buffer.js.map
 
 /***/ },
-/* 461 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53339,8 +53324,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Buffers the source Observable values until `closingNotifier` emits.
 	 *
@@ -53411,17 +53396,17 @@
 	//# sourceMappingURL=buffer.js.map
 
 /***/ },
-/* 462 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var bufferCount_1 = __webpack_require__(463);
+	var Observable_1 = __webpack_require__(324);
+	var bufferCount_1 = __webpack_require__(459);
 	Observable_1.Observable.prototype.bufferCount = bufferCount_1.bufferCount;
 	//# sourceMappingURL=bufferCount.js.map
 
 /***/ },
-/* 463 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53430,7 +53415,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Buffers the source Observable values until the size hits the maximum
 	 * `bufferSize` given.
@@ -53533,17 +53518,17 @@
 	//# sourceMappingURL=bufferCount.js.map
 
 /***/ },
-/* 464 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var bufferTime_1 = __webpack_require__(465);
+	var Observable_1 = __webpack_require__(324);
+	var bufferTime_1 = __webpack_require__(461);
 	Observable_1.Observable.prototype.bufferTime = bufferTime_1.bufferTime;
 	//# sourceMappingURL=bufferTime.js.map
 
 /***/ },
-/* 465 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53552,9 +53537,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(412);
-	var Subscriber_1 = __webpack_require__(331);
-	var isScheduler_1 = __webpack_require__(365);
+	var async_1 = __webpack_require__(408);
+	var Subscriber_1 = __webpack_require__(327);
+	var isScheduler_1 = __webpack_require__(361);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Buffers the source Observable values for a specific time period.
@@ -53747,17 +53732,17 @@
 	//# sourceMappingURL=bufferTime.js.map
 
 /***/ },
-/* 466 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var bufferToggle_1 = __webpack_require__(467);
+	var Observable_1 = __webpack_require__(324);
+	var bufferToggle_1 = __webpack_require__(463);
 	Observable_1.Observable.prototype.bufferToggle = bufferToggle_1.bufferToggle;
 	//# sourceMappingURL=bufferToggle.js.map
 
 /***/ },
-/* 467 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53766,9 +53751,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(333);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var OuterSubscriber_1 = __webpack_require__(370);
+	var Subscription_1 = __webpack_require__(329);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(366);
 	/**
 	 * Buffers the source Observable values starting from an emission from
 	 * `openings` and ending when the output of `closingSelector` emits.
@@ -53914,17 +53899,17 @@
 	//# sourceMappingURL=bufferToggle.js.map
 
 /***/ },
-/* 468 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var bufferWhen_1 = __webpack_require__(469);
+	var Observable_1 = __webpack_require__(324);
+	var bufferWhen_1 = __webpack_require__(465);
 	Observable_1.Observable.prototype.bufferWhen = bufferWhen_1.bufferWhen;
 	//# sourceMappingURL=bufferWhen.js.map
 
 /***/ },
-/* 469 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53933,11 +53918,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(333);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var Subscription_1 = __webpack_require__(329);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Buffers the source Observable values, using a factory function of closing
 	 * Observables to determine when to close, emit, and reset the buffer.
@@ -54051,18 +54036,18 @@
 	//# sourceMappingURL=bufferWhen.js.map
 
 /***/ },
-/* 470 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var catch_1 = __webpack_require__(471);
+	var Observable_1 = __webpack_require__(324);
+	var catch_1 = __webpack_require__(467);
 	Observable_1.Observable.prototype.catch = catch_1._catch;
 	Observable_1.Observable.prototype._catch = catch_1._catch;
 	//# sourceMappingURL=catch.js.map
 
 /***/ },
-/* 471 */
+/* 467 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54071,8 +54056,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Catches errors on the observable to be handled by returning a new observable or throwing an error.
 	 * @param {function} selector a function that takes as arguments `err`, which is the error, and `caught`, which
@@ -54133,21 +54118,21 @@
 	//# sourceMappingURL=catch.js.map
 
 /***/ },
-/* 472 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var combineAll_1 = __webpack_require__(473);
+	var Observable_1 = __webpack_require__(324);
+	var combineAll_1 = __webpack_require__(469);
 	Observable_1.Observable.prototype.combineAll = combineAll_1.combineAll;
 	//# sourceMappingURL=combineAll.js.map
 
 /***/ },
-/* 473 */
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var combineLatest_1 = __webpack_require__(369);
+	var combineLatest_1 = __webpack_require__(365);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by waiting
 	 * for the outer Observable to complete, then applying {@link combineLatest}.
@@ -54195,41 +54180,41 @@
 	//# sourceMappingURL=combineAll.js.map
 
 /***/ },
-/* 474 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var combineLatest_1 = __webpack_require__(369);
+	var Observable_1 = __webpack_require__(324);
+	var combineLatest_1 = __webpack_require__(365);
 	Observable_1.Observable.prototype.combineLatest = combineLatest_1.combineLatest;
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 475 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var concat_1 = __webpack_require__(377);
+	var Observable_1 = __webpack_require__(324);
+	var concat_1 = __webpack_require__(373);
 	Observable_1.Observable.prototype.concat = concat_1.concat;
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 476 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var concatAll_1 = __webpack_require__(477);
+	var Observable_1 = __webpack_require__(324);
+	var concatAll_1 = __webpack_require__(473);
 	Observable_1.Observable.prototype.concatAll = concatAll_1.concatAll;
 	//# sourceMappingURL=concatAll.js.map
 
 /***/ },
-/* 477 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeAll_1 = __webpack_require__(378);
+	var mergeAll_1 = __webpack_require__(374);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by
@@ -54280,21 +54265,21 @@
 	//# sourceMappingURL=concatAll.js.map
 
 /***/ },
-/* 478 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var concatMap_1 = __webpack_require__(479);
+	var Observable_1 = __webpack_require__(324);
+	var concatMap_1 = __webpack_require__(475);
 	Observable_1.Observable.prototype.concatMap = concatMap_1.concatMap;
 	//# sourceMappingURL=concatMap.js.map
 
 /***/ },
-/* 479 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeMap_1 = __webpack_require__(480);
+	var mergeMap_1 = __webpack_require__(476);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -54359,7 +54344,7 @@
 	//# sourceMappingURL=concatMap.js.map
 
 /***/ },
-/* 480 */
+/* 476 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54368,8 +54353,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var subscribeToResult_1 = __webpack_require__(371);
-	var OuterSubscriber_1 = __webpack_require__(370);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(366);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -54526,21 +54511,21 @@
 	//# sourceMappingURL=mergeMap.js.map
 
 /***/ },
-/* 481 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var concatMapTo_1 = __webpack_require__(482);
+	var Observable_1 = __webpack_require__(324);
+	var concatMapTo_1 = __webpack_require__(478);
 	Observable_1.Observable.prototype.concatMapTo = concatMapTo_1.concatMapTo;
 	//# sourceMappingURL=concatMapTo.js.map
 
 /***/ },
-/* 482 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeMapTo_1 = __webpack_require__(483);
+	var mergeMapTo_1 = __webpack_require__(479);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to the same Observable which is merged multiple
@@ -54599,7 +54584,7 @@
 	//# sourceMappingURL=concatMapTo.js.map
 
 /***/ },
-/* 483 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54608,8 +54593,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to the same Observable which is merged multiple
@@ -54759,17 +54744,17 @@
 	//# sourceMappingURL=mergeMapTo.js.map
 
 /***/ },
-/* 484 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var count_1 = __webpack_require__(485);
+	var Observable_1 = __webpack_require__(324);
+	var count_1 = __webpack_require__(481);
 	Observable_1.Observable.prototype.count = count_1.count;
 	//# sourceMappingURL=count.js.map
 
 /***/ },
-/* 485 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54778,7 +54763,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Counts the number of emissions on the source and emits that number when the
 	 * source completes.
@@ -54882,17 +54867,17 @@
 	//# sourceMappingURL=count.js.map
 
 /***/ },
-/* 486 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var dematerialize_1 = __webpack_require__(487);
+	var Observable_1 = __webpack_require__(324);
+	var dematerialize_1 = __webpack_require__(483);
 	Observable_1.Observable.prototype.dematerialize = dematerialize_1.dematerialize;
 	//# sourceMappingURL=dematerialize.js.map
 
 /***/ },
-/* 487 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54901,7 +54886,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Converts an Observable of {@link Notification} objects into the emissions
 	 * that they represent.
@@ -54967,17 +54952,17 @@
 	//# sourceMappingURL=dematerialize.js.map
 
 /***/ },
-/* 488 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var debounce_1 = __webpack_require__(489);
+	var Observable_1 = __webpack_require__(324);
+	var debounce_1 = __webpack_require__(485);
 	Observable_1.Observable.prototype.debounce = debounce_1.debounce;
 	//# sourceMappingURL=debounce.js.map
 
 /***/ },
-/* 489 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54986,8 +54971,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Emits a value from the source Observable only after a particular time span
 	 * determined by another Observable has passed without another source emission.
@@ -55109,17 +55094,17 @@
 	//# sourceMappingURL=debounce.js.map
 
 /***/ },
-/* 490 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var debounceTime_1 = __webpack_require__(491);
+	var Observable_1 = __webpack_require__(324);
+	var debounceTime_1 = __webpack_require__(487);
 	Observable_1.Observable.prototype.debounceTime = debounceTime_1.debounceTime;
 	//# sourceMappingURL=debounceTime.js.map
 
 /***/ },
-/* 491 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55128,8 +55113,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var async_1 = __webpack_require__(412);
+	var Subscriber_1 = __webpack_require__(327);
+	var async_1 = __webpack_require__(408);
 	/**
 	 * Emits a value from the source Observable only after a particular time span
 	 * has passed without another source emission.
@@ -55240,17 +55225,17 @@
 	//# sourceMappingURL=debounceTime.js.map
 
 /***/ },
-/* 492 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var defaultIfEmpty_1 = __webpack_require__(493);
+	var Observable_1 = __webpack_require__(324);
+	var defaultIfEmpty_1 = __webpack_require__(489);
 	Observable_1.Observable.prototype.defaultIfEmpty = defaultIfEmpty_1.defaultIfEmpty;
 	//# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ },
-/* 493 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55259,7 +55244,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Emits a given value if the source Observable completes without emitting any
@@ -55332,17 +55317,17 @@
 	//# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ },
-/* 494 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var delay_1 = __webpack_require__(495);
+	var Observable_1 = __webpack_require__(324);
+	var delay_1 = __webpack_require__(491);
 	Observable_1.Observable.prototype.delay = delay_1.delay;
 	//# sourceMappingURL=delay.js.map
 
 /***/ },
-/* 495 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55351,10 +55336,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(412);
-	var isDate_1 = __webpack_require__(445);
-	var Subscriber_1 = __webpack_require__(331);
-	var Notification_1 = __webpack_require__(394);
+	var async_1 = __webpack_require__(408);
+	var isDate_1 = __webpack_require__(441);
+	var Subscriber_1 = __webpack_require__(327);
+	var Notification_1 = __webpack_require__(390);
 	/**
 	 * Delays the emission of items from the source Observable by a given timeout or
 	 * until a given Date.
@@ -55482,17 +55467,17 @@
 	//# sourceMappingURL=delay.js.map
 
 /***/ },
-/* 496 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var delayWhen_1 = __webpack_require__(497);
+	var Observable_1 = __webpack_require__(324);
+	var delayWhen_1 = __webpack_require__(493);
 	Observable_1.Observable.prototype.delayWhen = delayWhen_1.delayWhen;
 	//# sourceMappingURL=delayWhen.js.map
 
 /***/ },
-/* 497 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55501,10 +55486,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var Observable_1 = __webpack_require__(328);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var Subscriber_1 = __webpack_require__(327);
+	var Observable_1 = __webpack_require__(324);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Delays the emission of items from the source Observable by a given time span
 	 * determined by the emissions of another Observable.
@@ -55687,17 +55672,17 @@
 	//# sourceMappingURL=delayWhen.js.map
 
 /***/ },
-/* 498 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var distinct_1 = __webpack_require__(499);
+	var Observable_1 = __webpack_require__(324);
+	var distinct_1 = __webpack_require__(495);
 	Observable_1.Observable.prototype.distinct = distinct_1.distinct;
 	//# sourceMappingURL=distinct.js.map
 
 /***/ },
-/* 499 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55706,9 +55691,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var Set_1 = __webpack_require__(500);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var Set_1 = __webpack_require__(496);
 	/**
 	 * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items.
 	 * If a keySelector function is provided, then it will project each value from the source observable into a new value that it will
@@ -55793,11 +55778,11 @@
 	//# sourceMappingURL=distinct.js.map
 
 /***/ },
-/* 500 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	function minimalSetImpl() {
 	    // THIS IS NOT a full impl of Set, this is just the minimum
 	    // bits of functionality we need for this library.
@@ -55831,17 +55816,17 @@
 	//# sourceMappingURL=Set.js.map
 
 /***/ },
-/* 501 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var distinctUntilChanged_1 = __webpack_require__(502);
+	var Observable_1 = __webpack_require__(324);
+	var distinctUntilChanged_1 = __webpack_require__(498);
 	Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_1.distinctUntilChanged;
 	//# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ },
-/* 502 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55850,9 +55835,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
+	var Subscriber_1 = __webpack_require__(327);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
@@ -55924,21 +55909,21 @@
 	//# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ },
-/* 503 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var distinctUntilKeyChanged_1 = __webpack_require__(504);
+	var Observable_1 = __webpack_require__(324);
+	var distinctUntilKeyChanged_1 = __webpack_require__(500);
 	Observable_1.Observable.prototype.distinctUntilKeyChanged = distinctUntilKeyChanged_1.distinctUntilKeyChanged;
 	//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 /***/ },
-/* 504 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var distinctUntilChanged_1 = __webpack_require__(502);
+	var distinctUntilChanged_1 = __webpack_require__(498);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item,
@@ -55963,18 +55948,18 @@
 	//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 /***/ },
-/* 505 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var do_1 = __webpack_require__(506);
+	var Observable_1 = __webpack_require__(324);
+	var do_1 = __webpack_require__(502);
 	Observable_1.Observable.prototype.do = do_1._do;
 	Observable_1.Observable.prototype._do = do_1._do;
 	//# sourceMappingURL=do.js.map
 
 /***/ },
-/* 506 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55983,7 +55968,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Perform a side effect for every emission on the source Observable, but return
@@ -56092,17 +56077,17 @@
 	//# sourceMappingURL=do.js.map
 
 /***/ },
-/* 507 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var exhaust_1 = __webpack_require__(508);
+	var Observable_1 = __webpack_require__(324);
+	var exhaust_1 = __webpack_require__(504);
 	Observable_1.Observable.prototype.exhaust = exhaust_1.exhaust;
 	//# sourceMappingURL=exhaust.js.map
 
 /***/ },
-/* 508 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56111,8 +56096,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by dropping
 	 * inner Observables while the previous inner Observable has not yet completed.
@@ -56197,17 +56182,17 @@
 	//# sourceMappingURL=exhaust.js.map
 
 /***/ },
-/* 509 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var exhaustMap_1 = __webpack_require__(510);
+	var Observable_1 = __webpack_require__(324);
+	var exhaustMap_1 = __webpack_require__(506);
 	Observable_1.Observable.prototype.exhaustMap = exhaustMap_1.exhaustMap;
 	//# sourceMappingURL=exhaustMap.js.map
 
 /***/ },
-/* 510 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56216,8 +56201,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -56350,17 +56335,17 @@
 	//# sourceMappingURL=exhaustMap.js.map
 
 /***/ },
-/* 511 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var expand_1 = __webpack_require__(512);
+	var Observable_1 = __webpack_require__(324);
+	var expand_1 = __webpack_require__(508);
 	Observable_1.Observable.prototype.expand = expand_1.expand;
 	//# sourceMappingURL=expand.js.map
 
 /***/ },
-/* 512 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56369,10 +56354,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Recursively projects each source value to an Observable which is merged in
@@ -56516,17 +56501,17 @@
 	//# sourceMappingURL=expand.js.map
 
 /***/ },
-/* 513 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var elementAt_1 = __webpack_require__(514);
+	var Observable_1 = __webpack_require__(324);
+	var elementAt_1 = __webpack_require__(510);
 	Observable_1.Observable.prototype.elementAt = elementAt_1.elementAt;
 	//# sourceMappingURL=elementAt.js.map
 
 /***/ },
-/* 514 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56535,8 +56520,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var ArgumentOutOfRangeError_1 = __webpack_require__(515);
+	var Subscriber_1 = __webpack_require__(327);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
 	/**
 	 * Emits the single value at the specified `index` in a sequence of emissions
 	 * from the source Observable.
@@ -56626,7 +56611,7 @@
 	//# sourceMappingURL=elementAt.js.map
 
 /***/ },
-/* 515 */
+/* 511 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -56659,17 +56644,17 @@
 	//# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ },
-/* 516 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var filter_1 = __webpack_require__(517);
+	var Observable_1 = __webpack_require__(324);
+	var filter_1 = __webpack_require__(513);
 	Observable_1.Observable.prototype.filter = filter_1.filter;
 	//# sourceMappingURL=filter.js.map
 
 /***/ },
-/* 517 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56678,7 +56663,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Filter items emitted by the source Observable by only emitting those that
@@ -56768,18 +56753,18 @@
 	//# sourceMappingURL=filter.js.map
 
 /***/ },
-/* 518 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var finally_1 = __webpack_require__(519);
+	var Observable_1 = __webpack_require__(324);
+	var finally_1 = __webpack_require__(515);
 	Observable_1.Observable.prototype.finally = finally_1._finally;
 	Observable_1.Observable.prototype._finally = finally_1._finally;
 	//# sourceMappingURL=finally.js.map
 
 /***/ },
-/* 519 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56788,8 +56773,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var Subscription_1 = __webpack_require__(333);
+	var Subscriber_1 = __webpack_require__(327);
+	var Subscription_1 = __webpack_require__(329);
 	/**
 	 * Returns an Observable that mirrors the source Observable, but will call a specified function when
 	 * the source terminates on complete or error.
@@ -56827,17 +56812,17 @@
 	//# sourceMappingURL=finally.js.map
 
 /***/ },
-/* 520 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var find_1 = __webpack_require__(521);
+	var Observable_1 = __webpack_require__(324);
+	var find_1 = __webpack_require__(517);
 	Observable_1.Observable.prototype.find = find_1.find;
 	//# sourceMappingURL=find.js.map
 
 /***/ },
-/* 521 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56846,7 +56831,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Emits only the first value emitted by the source Observable that meets some
@@ -56943,21 +56928,21 @@
 	//# sourceMappingURL=find.js.map
 
 /***/ },
-/* 522 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var findIndex_1 = __webpack_require__(523);
+	var Observable_1 = __webpack_require__(324);
+	var findIndex_1 = __webpack_require__(519);
 	Observable_1.Observable.prototype.findIndex = findIndex_1.findIndex;
 	//# sourceMappingURL=findIndex.js.map
 
 /***/ },
-/* 523 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var find_1 = __webpack_require__(521);
+	var find_1 = __webpack_require__(517);
 	/**
 	 * Emits only the index of the first value emitted by the source Observable that
 	 * meets some condition.
@@ -56999,17 +56984,17 @@
 	//# sourceMappingURL=findIndex.js.map
 
 /***/ },
-/* 524 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var first_1 = __webpack_require__(525);
+	var Observable_1 = __webpack_require__(324);
+	var first_1 = __webpack_require__(521);
 	Observable_1.Observable.prototype.first = first_1.first;
 	//# sourceMappingURL=first.js.map
 
 /***/ },
-/* 525 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57018,8 +57003,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var EmptyError_1 = __webpack_require__(526);
+	var Subscriber_1 = __webpack_require__(327);
+	var EmptyError_1 = __webpack_require__(522);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Emits only the first value (or the first value that meets some condition)
@@ -57167,7 +57152,7 @@
 	//# sourceMappingURL=first.js.map
 
 /***/ },
-/* 526 */
+/* 522 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -57200,17 +57185,17 @@
 	//# sourceMappingURL=EmptyError.js.map
 
 /***/ },
-/* 527 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var groupBy_1 = __webpack_require__(528);
+	var Observable_1 = __webpack_require__(324);
+	var groupBy_1 = __webpack_require__(524);
 	Observable_1.Observable.prototype.groupBy = groupBy_1.groupBy;
 	//# sourceMappingURL=groupBy.js.map
 
 /***/ },
-/* 528 */
+/* 524 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57219,12 +57204,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var Subscription_1 = __webpack_require__(333);
-	var Observable_1 = __webpack_require__(328);
-	var Subject_1 = __webpack_require__(327);
-	var Map_1 = __webpack_require__(529);
-	var FastMap_1 = __webpack_require__(531);
+	var Subscriber_1 = __webpack_require__(327);
+	var Subscription_1 = __webpack_require__(329);
+	var Observable_1 = __webpack_require__(324);
+	var Subject_1 = __webpack_require__(323);
+	var Map_1 = __webpack_require__(525);
+	var FastMap_1 = __webpack_require__(527);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Groups the items emitted by an Observable according to a specified criterion,
@@ -57450,17 +57435,17 @@
 	//# sourceMappingURL=groupBy.js.map
 
 /***/ },
-/* 529 */
+/* 525 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
-	var MapPolyfill_1 = __webpack_require__(530);
+	var root_1 = __webpack_require__(325);
+	var MapPolyfill_1 = __webpack_require__(526);
 	exports.Map = root_1.root.Map || (function () { return MapPolyfill_1.MapPolyfill; })();
 	//# sourceMappingURL=Map.js.map
 
 /***/ },
-/* 530 */
+/* 526 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -57512,7 +57497,7 @@
 	//# sourceMappingURL=MapPolyfill.js.map
 
 /***/ },
-/* 531 */
+/* 527 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -57548,17 +57533,17 @@
 	//# sourceMappingURL=FastMap.js.map
 
 /***/ },
-/* 532 */
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var ignoreElements_1 = __webpack_require__(533);
+	var Observable_1 = __webpack_require__(324);
+	var ignoreElements_1 = __webpack_require__(529);
 	Observable_1.Observable.prototype.ignoreElements = ignoreElements_1.ignoreElements;
 	//# sourceMappingURL=ignoreElements.js.map
 
 /***/ },
-/* 533 */
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57567,8 +57552,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var noop_1 = __webpack_require__(425);
+	var Subscriber_1 = __webpack_require__(327);
+	var noop_1 = __webpack_require__(421);
 	/**
 	 * Ignores all items emitted by the source Observable and only passes calls of `complete` or `error`.
 	 *
@@ -57610,17 +57595,17 @@
 	//# sourceMappingURL=ignoreElements.js.map
 
 /***/ },
-/* 534 */
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var isEmpty_1 = __webpack_require__(535);
+	var Observable_1 = __webpack_require__(324);
+	var isEmpty_1 = __webpack_require__(531);
 	Observable_1.Observable.prototype.isEmpty = isEmpty_1.isEmpty;
 	//# sourceMappingURL=isEmpty.js.map
 
 /***/ },
-/* 535 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57629,7 +57614,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * If the source Observable is empty it returns an Observable that emits true, otherwise it emits false.
 	 *
@@ -57677,17 +57662,17 @@
 	//# sourceMappingURL=isEmpty.js.map
 
 /***/ },
-/* 536 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var audit_1 = __webpack_require__(537);
+	var Observable_1 = __webpack_require__(324);
+	var audit_1 = __webpack_require__(533);
 	Observable_1.Observable.prototype.audit = audit_1.audit;
 	//# sourceMappingURL=audit.js.map
 
 /***/ },
-/* 537 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57696,10 +57681,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Ignores source values for a duration determined by another Observable, then
 	 * emits the most recent value from the source Observable, then repeats this
@@ -57802,17 +57787,17 @@
 	//# sourceMappingURL=audit.js.map
 
 /***/ },
-/* 538 */
+/* 534 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var auditTime_1 = __webpack_require__(539);
+	var Observable_1 = __webpack_require__(324);
+	var auditTime_1 = __webpack_require__(535);
 	Observable_1.Observable.prototype.auditTime = auditTime_1.auditTime;
 	//# sourceMappingURL=auditTime.js.map
 
 /***/ },
-/* 539 */
+/* 535 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57821,8 +57806,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(412);
-	var Subscriber_1 = __webpack_require__(331);
+	var async_1 = __webpack_require__(408);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Ignores source values for `duration` milliseconds, then emits the most recent
 	 * value from the source Observable, then repeats this process.
@@ -57921,17 +57906,17 @@
 	//# sourceMappingURL=auditTime.js.map
 
 /***/ },
-/* 540 */
+/* 536 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var last_1 = __webpack_require__(541);
+	var Observable_1 = __webpack_require__(324);
+	var last_1 = __webpack_require__(537);
 	Observable_1.Observable.prototype.last = last_1.last;
 	//# sourceMappingURL=last.js.map
 
 /***/ },
-/* 541 */
+/* 537 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57940,8 +57925,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var EmptyError_1 = __webpack_require__(526);
+	var Subscriber_1 = __webpack_require__(327);
+	var EmptyError_1 = __webpack_require__(522);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits only the last item emitted by the source Observable.
@@ -58055,18 +58040,18 @@
 	//# sourceMappingURL=last.js.map
 
 /***/ },
-/* 542 */
+/* 538 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var let_1 = __webpack_require__(543);
+	var Observable_1 = __webpack_require__(324);
+	var let_1 = __webpack_require__(539);
 	Observable_1.Observable.prototype.let = let_1.letProto;
 	Observable_1.Observable.prototype.letBind = let_1.letProto;
 	//# sourceMappingURL=let.js.map
 
 /***/ },
-/* 543 */
+/* 539 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -58083,17 +58068,17 @@
 	//# sourceMappingURL=let.js.map
 
 /***/ },
-/* 544 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var every_1 = __webpack_require__(545);
+	var Observable_1 = __webpack_require__(324);
+	var every_1 = __webpack_require__(541);
 	Observable_1.Observable.prototype.every = every_1.every;
 	//# sourceMappingURL=every.js.map
 
 /***/ },
-/* 545 */
+/* 541 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58102,7 +58087,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Returns an Observable that emits whether or not every item of the source satisfies the condition specified.
 	 * @param {function} predicate a function for determining if an item meets a specified condition.
@@ -58166,17 +58151,17 @@
 	//# sourceMappingURL=every.js.map
 
 /***/ },
-/* 546 */
+/* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var mapTo_1 = __webpack_require__(547);
+	var Observable_1 = __webpack_require__(324);
+	var mapTo_1 = __webpack_require__(543);
 	Observable_1.Observable.prototype.mapTo = mapTo_1.mapTo;
 	//# sourceMappingURL=mapTo.js.map
 
 /***/ },
-/* 547 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58185,7 +58170,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Emits the given constant value on the output Observable every time the source
 	 * Observable emits a value.
@@ -58244,17 +58229,17 @@
 	//# sourceMappingURL=mapTo.js.map
 
 /***/ },
-/* 548 */
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var materialize_1 = __webpack_require__(549);
+	var Observable_1 = __webpack_require__(324);
+	var materialize_1 = __webpack_require__(545);
 	Observable_1.Observable.prototype.materialize = materialize_1.materialize;
 	//# sourceMappingURL=materialize.js.map
 
 /***/ },
-/* 549 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58263,8 +58248,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var Notification_1 = __webpack_require__(394);
+	var Subscriber_1 = __webpack_require__(327);
+	var Notification_1 = __webpack_require__(390);
 	/**
 	 * Represents all of the notifications from the source Observable as `next`
 	 * emissions marked with their original types within {@link Notification}
@@ -58342,21 +58327,21 @@
 	//# sourceMappingURL=materialize.js.map
 
 /***/ },
-/* 550 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var max_1 = __webpack_require__(551);
+	var Observable_1 = __webpack_require__(324);
+	var max_1 = __webpack_require__(547);
 	Observable_1.Observable.prototype.max = max_1.max;
 	//# sourceMappingURL=max.js.map
 
 /***/ },
-/* 551 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var reduce_1 = __webpack_require__(552);
+	var reduce_1 = __webpack_require__(548);
 	/**
 	 * The Max operator operates on an Observable that emits numbers (or items that can be evaluated as numbers),
 	 * and when source Observable completes it emits a single item: the item with the largest number.
@@ -58379,7 +58364,7 @@
 	//# sourceMappingURL=max.js.map
 
 /***/ },
-/* 552 */
+/* 548 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58388,7 +58373,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Applies an accumulator function over the source Observable, and returns the
@@ -58507,59 +58492,59 @@
 	//# sourceMappingURL=reduce.js.map
 
 /***/ },
-/* 553 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var merge_1 = __webpack_require__(419);
+	var Observable_1 = __webpack_require__(324);
+	var merge_1 = __webpack_require__(415);
 	Observable_1.Observable.prototype.merge = merge_1.merge;
 	//# sourceMappingURL=merge.js.map
 
 /***/ },
-/* 554 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var mergeAll_1 = __webpack_require__(378);
+	var Observable_1 = __webpack_require__(324);
+	var mergeAll_1 = __webpack_require__(374);
 	Observable_1.Observable.prototype.mergeAll = mergeAll_1.mergeAll;
 	//# sourceMappingURL=mergeAll.js.map
 
 /***/ },
-/* 555 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var mergeMap_1 = __webpack_require__(480);
+	var Observable_1 = __webpack_require__(324);
+	var mergeMap_1 = __webpack_require__(476);
 	Observable_1.Observable.prototype.mergeMap = mergeMap_1.mergeMap;
 	Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
 	//# sourceMappingURL=mergeMap.js.map
 
 /***/ },
-/* 556 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var mergeMapTo_1 = __webpack_require__(483);
+	var Observable_1 = __webpack_require__(324);
+	var mergeMapTo_1 = __webpack_require__(479);
 	Observable_1.Observable.prototype.flatMapTo = mergeMapTo_1.mergeMapTo;
 	Observable_1.Observable.prototype.mergeMapTo = mergeMapTo_1.mergeMapTo;
 	//# sourceMappingURL=mergeMapTo.js.map
 
 /***/ },
-/* 557 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var mergeScan_1 = __webpack_require__(558);
+	var Observable_1 = __webpack_require__(324);
+	var mergeScan_1 = __webpack_require__(554);
 	Observable_1.Observable.prototype.mergeScan = mergeScan_1.mergeScan;
 	//# sourceMappingURL=mergeScan.js.map
 
 /***/ },
-/* 558 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58568,10 +58553,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var subscribeToResult_1 = __webpack_require__(371);
-	var OuterSubscriber_1 = __webpack_require__(370);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(366);
 	/**
 	 * @param project
 	 * @param seed
@@ -58670,21 +58655,21 @@
 	//# sourceMappingURL=mergeScan.js.map
 
 /***/ },
-/* 559 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var min_1 = __webpack_require__(560);
+	var Observable_1 = __webpack_require__(324);
+	var min_1 = __webpack_require__(556);
 	Observable_1.Observable.prototype.min = min_1.min;
 	//# sourceMappingURL=min.js.map
 
 /***/ },
-/* 560 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var reduce_1 = __webpack_require__(552);
+	var reduce_1 = __webpack_require__(548);
 	/**
 	 * The Min operator operates on an Observable that emits numbers (or items that can be evaluated as numbers),
 	 * and when source Observable completes it emits a single item: the item with the smallest number.
@@ -58706,21 +58691,21 @@
 	//# sourceMappingURL=min.js.map
 
 /***/ },
-/* 561 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var multicast_1 = __webpack_require__(562);
+	var Observable_1 = __webpack_require__(324);
+	var multicast_1 = __webpack_require__(558);
 	Observable_1.Observable.prototype.multicast = multicast_1.multicast;
 	//# sourceMappingURL=multicast.js.map
 
 /***/ },
-/* 562 */
+/* 558 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ConnectableObservable_1 = __webpack_require__(563);
+	var ConnectableObservable_1 = __webpack_require__(559);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits the results of invoking a specified selector on items
@@ -58778,7 +58763,7 @@
 	//# sourceMappingURL=multicast.js.map
 
 /***/ },
-/* 563 */
+/* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58787,10 +58772,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var Observable_1 = __webpack_require__(328);
-	var Subscriber_1 = __webpack_require__(331);
-	var Subscription_1 = __webpack_require__(333);
+	var Subject_1 = __webpack_require__(323);
+	var Observable_1 = __webpack_require__(324);
+	var Subscriber_1 = __webpack_require__(327);
+	var Subscription_1 = __webpack_require__(329);
 	/**
 	 * @class ConnectableObservable<T>
 	 */
@@ -58945,37 +58930,37 @@
 	//# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ },
-/* 564 */
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var observeOn_1 = __webpack_require__(393);
+	var Observable_1 = __webpack_require__(324);
+	var observeOn_1 = __webpack_require__(389);
 	Observable_1.Observable.prototype.observeOn = observeOn_1.observeOn;
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 565 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var onErrorResumeNext_1 = __webpack_require__(429);
+	var Observable_1 = __webpack_require__(324);
+	var onErrorResumeNext_1 = __webpack_require__(425);
 	Observable_1.Observable.prototype.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNext;
 	//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ },
-/* 566 */
+/* 562 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var pairwise_1 = __webpack_require__(567);
+	var Observable_1 = __webpack_require__(324);
+	var pairwise_1 = __webpack_require__(563);
 	Observable_1.Observable.prototype.pairwise = pairwise_1.pairwise;
 	//# sourceMappingURL=pairwise.js.map
 
 /***/ },
-/* 567 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58984,7 +58969,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Groups pairs of consecutive emissions together and emits them as an array of
 	 * two values.
@@ -59057,22 +59042,22 @@
 	//# sourceMappingURL=pairwise.js.map
 
 /***/ },
-/* 568 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var partition_1 = __webpack_require__(569);
+	var Observable_1 = __webpack_require__(324);
+	var partition_1 = __webpack_require__(565);
 	Observable_1.Observable.prototype.partition = partition_1.partition;
 	//# sourceMappingURL=partition.js.map
 
 /***/ },
-/* 569 */
+/* 565 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var not_1 = __webpack_require__(570);
-	var filter_1 = __webpack_require__(517);
+	var not_1 = __webpack_require__(566);
+	var filter_1 = __webpack_require__(513);
 	/**
 	 * Splits the source Observable into two, one with values that satisfy a
 	 * predicate, and another with values that don't satisfy the predicate.
@@ -59124,7 +59109,7 @@
 	//# sourceMappingURL=partition.js.map
 
 /***/ },
-/* 570 */
+/* 566 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -59140,21 +59125,21 @@
 	//# sourceMappingURL=not.js.map
 
 /***/ },
-/* 571 */
+/* 567 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var pluck_1 = __webpack_require__(572);
+	var Observable_1 = __webpack_require__(324);
+	var pluck_1 = __webpack_require__(568);
 	Observable_1.Observable.prototype.pluck = pluck_1.pluck;
 	//# sourceMappingURL=pluck.js.map
 
 /***/ },
-/* 572 */
+/* 568 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var map_1 = __webpack_require__(354);
+	var map_1 = __webpack_require__(350);
 	/**
 	 * Maps each source value (an object) to its specified nested property.
 	 *
@@ -59213,22 +59198,22 @@
 	//# sourceMappingURL=pluck.js.map
 
 /***/ },
-/* 573 */
+/* 569 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var publish_1 = __webpack_require__(574);
+	var Observable_1 = __webpack_require__(324);
+	var publish_1 = __webpack_require__(570);
 	Observable_1.Observable.prototype.publish = publish_1.publish;
 	//# sourceMappingURL=publish.js.map
 
 /***/ },
-/* 574 */
+/* 570 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Subject_1 = __webpack_require__(327);
-	var multicast_1 = __webpack_require__(562);
+	var Subject_1 = __webpack_require__(323);
+	var multicast_1 = __webpack_require__(558);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns a ConnectableObservable, which is a variety of Observable that waits until its connect method is called
@@ -59251,22 +59236,22 @@
 	//# sourceMappingURL=publish.js.map
 
 /***/ },
-/* 575 */
+/* 571 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var publishBehavior_1 = __webpack_require__(576);
+	var Observable_1 = __webpack_require__(324);
+	var publishBehavior_1 = __webpack_require__(572);
 	Observable_1.Observable.prototype.publishBehavior = publishBehavior_1.publishBehavior;
 	//# sourceMappingURL=publishBehavior.js.map
 
 /***/ },
-/* 576 */
+/* 572 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var BehaviorSubject_1 = __webpack_require__(577);
-	var multicast_1 = __webpack_require__(562);
+	var BehaviorSubject_1 = __webpack_require__(573);
+	var multicast_1 = __webpack_require__(558);
 	/**
 	 * @param value
 	 * @return {ConnectableObservable<T>}
@@ -59280,7 +59265,7 @@
 	//# sourceMappingURL=publishBehavior.js.map
 
 /***/ },
-/* 577 */
+/* 573 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59289,8 +59274,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var ObjectUnsubscribedError_1 = __webpack_require__(342);
+	var Subject_1 = __webpack_require__(323);
+	var ObjectUnsubscribedError_1 = __webpack_require__(338);
 	/**
 	 * @class BehaviorSubject<T>
 	 */
@@ -59334,22 +59319,22 @@
 	//# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ },
-/* 578 */
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var publishReplay_1 = __webpack_require__(579);
+	var Observable_1 = __webpack_require__(324);
+	var publishReplay_1 = __webpack_require__(575);
 	Observable_1.Observable.prototype.publishReplay = publishReplay_1.publishReplay;
 	//# sourceMappingURL=publishReplay.js.map
 
 /***/ },
-/* 579 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ReplaySubject_1 = __webpack_require__(455);
-	var multicast_1 = __webpack_require__(562);
+	var ReplaySubject_1 = __webpack_require__(451);
+	var multicast_1 = __webpack_require__(558);
 	/**
 	 * @param bufferSize
 	 * @param windowTime
@@ -59367,22 +59352,22 @@
 	//# sourceMappingURL=publishReplay.js.map
 
 /***/ },
-/* 580 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var publishLast_1 = __webpack_require__(581);
+	var Observable_1 = __webpack_require__(324);
+	var publishLast_1 = __webpack_require__(577);
 	Observable_1.Observable.prototype.publishLast = publishLast_1.publishLast;
 	//# sourceMappingURL=publishLast.js.map
 
 /***/ },
-/* 581 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AsyncSubject_1 = __webpack_require__(359);
-	var multicast_1 = __webpack_require__(562);
+	var AsyncSubject_1 = __webpack_require__(355);
+	var multicast_1 = __webpack_require__(558);
 	/**
 	 * @return {ConnectableObservable<T>}
 	 * @method publishLast
@@ -59395,37 +59380,37 @@
 	//# sourceMappingURL=publishLast.js.map
 
 /***/ },
-/* 582 */
+/* 578 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var race_1 = __webpack_require__(421);
+	var Observable_1 = __webpack_require__(324);
+	var race_1 = __webpack_require__(417);
 	Observable_1.Observable.prototype.race = race_1.race;
 	//# sourceMappingURL=race.js.map
 
 /***/ },
-/* 583 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var reduce_1 = __webpack_require__(552);
+	var Observable_1 = __webpack_require__(324);
+	var reduce_1 = __webpack_require__(548);
 	Observable_1.Observable.prototype.reduce = reduce_1.reduce;
 	//# sourceMappingURL=reduce.js.map
 
 /***/ },
-/* 584 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var repeat_1 = __webpack_require__(585);
+	var Observable_1 = __webpack_require__(324);
+	var repeat_1 = __webpack_require__(581);
 	Observable_1.Observable.prototype.repeat = repeat_1.repeat;
 	//# sourceMappingURL=repeat.js.map
 
 /***/ },
-/* 585 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59434,8 +59419,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var EmptyObservable_1 = __webpack_require__(368);
+	var Subscriber_1 = __webpack_require__(327);
+	var EmptyObservable_1 = __webpack_require__(364);
 	/**
 	 * Returns an Observable that repeats the stream of items emitted by the source Observable at most count times,
 	 * on a particular Scheduler.
@@ -59505,17 +59490,17 @@
 	//# sourceMappingURL=repeat.js.map
 
 /***/ },
-/* 586 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var repeatWhen_1 = __webpack_require__(587);
+	var Observable_1 = __webpack_require__(324);
+	var repeatWhen_1 = __webpack_require__(583);
 	Observable_1.Observable.prototype.repeatWhen = repeatWhen_1.repeatWhen;
 	//# sourceMappingURL=repeatWhen.js.map
 
 /***/ },
-/* 587 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59524,11 +59509,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var Subject_1 = __webpack_require__(323);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Returns an Observable that emits the same values as the source observable with the exception of a `complete`.
 	 * A `complete` will cause the emission of the Throwable that cause the complete to the Observable returned from
@@ -59626,17 +59611,17 @@
 	//# sourceMappingURL=repeatWhen.js.map
 
 /***/ },
-/* 588 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var retry_1 = __webpack_require__(589);
+	var Observable_1 = __webpack_require__(324);
+	var retry_1 = __webpack_require__(585);
 	Observable_1.Observable.prototype.retry = retry_1.retry;
 	//# sourceMappingURL=retry.js.map
 
 /***/ },
-/* 589 */
+/* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59645,7 +59630,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Returns an Observable that mirrors the source Observable, resubscribing to it if it calls `error` and the
 	 * predicate returns true for that specific exception and retry count.
@@ -59710,17 +59695,17 @@
 	//# sourceMappingURL=retry.js.map
 
 /***/ },
-/* 590 */
+/* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var retryWhen_1 = __webpack_require__(591);
+	var Observable_1 = __webpack_require__(324);
+	var retryWhen_1 = __webpack_require__(587);
 	Observable_1.Observable.prototype.retryWhen = retryWhen_1.retryWhen;
 	//# sourceMappingURL=retryWhen.js.map
 
 /***/ },
-/* 591 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59729,11 +59714,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var Subject_1 = __webpack_require__(323);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Returns an Observable that emits the same values as the source observable with the exception of an `error`.
 	 * An `error` will cause the emission of the Throwable that cause the error to the Observable returned from
@@ -59831,17 +59816,17 @@
 	//# sourceMappingURL=retryWhen.js.map
 
 /***/ },
-/* 592 */
+/* 588 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var sample_1 = __webpack_require__(593);
+	var Observable_1 = __webpack_require__(324);
+	var sample_1 = __webpack_require__(589);
 	Observable_1.Observable.prototype.sample = sample_1.sample;
 	//# sourceMappingURL=sample.js.map
 
 /***/ },
-/* 593 */
+/* 589 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59850,8 +59835,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Emits the most recently emitted value from the source Observable whenever
 	 * another Observable, the `notifier`, emits.
@@ -59934,17 +59919,17 @@
 	//# sourceMappingURL=sample.js.map
 
 /***/ },
-/* 594 */
+/* 590 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var sampleTime_1 = __webpack_require__(595);
+	var Observable_1 = __webpack_require__(324);
+	var sampleTime_1 = __webpack_require__(591);
 	Observable_1.Observable.prototype.sampleTime = sampleTime_1.sampleTime;
 	//# sourceMappingURL=sampleTime.js.map
 
 /***/ },
-/* 595 */
+/* 591 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59953,8 +59938,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var async_1 = __webpack_require__(412);
+	var Subscriber_1 = __webpack_require__(327);
+	var async_1 = __webpack_require__(408);
 	/**
 	 * Emits the most recently emitted value from the source Observable within
 	 * periodic time intervals.
@@ -60040,17 +60025,17 @@
 	//# sourceMappingURL=sampleTime.js.map
 
 /***/ },
-/* 596 */
+/* 592 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var scan_1 = __webpack_require__(597);
+	var Observable_1 = __webpack_require__(324);
+	var scan_1 = __webpack_require__(593);
 	Observable_1.Observable.prototype.scan = scan_1.scan;
 	//# sourceMappingURL=scan.js.map
 
 /***/ },
-/* 597 */
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60059,7 +60044,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Applies an accumulator function over the source Observable, and returns each
@@ -60174,17 +60159,17 @@
 	//# sourceMappingURL=scan.js.map
 
 /***/ },
-/* 598 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var sequenceEqual_1 = __webpack_require__(599);
+	var Observable_1 = __webpack_require__(324);
+	var sequenceEqual_1 = __webpack_require__(595);
 	Observable_1.Observable.prototype.sequenceEqual = sequenceEqual_1.sequenceEqual;
 	//# sourceMappingURL=sequenceEqual.js.map
 
 /***/ },
-/* 599 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60193,9 +60178,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
+	var Subscriber_1 = __webpack_require__(327);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
 	/**
 	 * Compares all values of two observables in sequence using an optional comparor function
 	 * and returns an observable of a single boolean value representing whether or not the two sequences
@@ -60353,22 +60338,22 @@
 	//# sourceMappingURL=sequenceEqual.js.map
 
 /***/ },
-/* 600 */
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var share_1 = __webpack_require__(601);
+	var Observable_1 = __webpack_require__(324);
+	var share_1 = __webpack_require__(597);
 	Observable_1.Observable.prototype.share = share_1.share;
 	//# sourceMappingURL=share.js.map
 
 /***/ },
-/* 601 */
+/* 597 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var multicast_1 = __webpack_require__(562);
-	var Subject_1 = __webpack_require__(327);
+	var multicast_1 = __webpack_require__(558);
+	var Subject_1 = __webpack_require__(323);
 	function shareSubjectFactory() {
 	    return new Subject_1.Subject();
 	}
@@ -60392,17 +60377,17 @@
 	//# sourceMappingURL=share.js.map
 
 /***/ },
-/* 602 */
+/* 598 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var single_1 = __webpack_require__(603);
+	var Observable_1 = __webpack_require__(324);
+	var single_1 = __webpack_require__(599);
 	Observable_1.Observable.prototype.single = single_1.single;
 	//# sourceMappingURL=single.js.map
 
 /***/ },
-/* 603 */
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60411,8 +60396,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var EmptyError_1 = __webpack_require__(526);
+	var Subscriber_1 = __webpack_require__(327);
+	var EmptyError_1 = __webpack_require__(522);
 	/**
 	 * Returns an Observable that emits the single item emitted by the source Observable that matches a specified
 	 * predicate, if that Observable emits one such item. If the source Observable emits more than one such item or no
@@ -60502,17 +60487,17 @@
 	//# sourceMappingURL=single.js.map
 
 /***/ },
-/* 604 */
+/* 600 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var skip_1 = __webpack_require__(605);
+	var Observable_1 = __webpack_require__(324);
+	var skip_1 = __webpack_require__(601);
 	Observable_1.Observable.prototype.skip = skip_1.skip;
 	//# sourceMappingURL=skip.js.map
 
 /***/ },
-/* 605 */
+/* 601 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60521,7 +60506,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Returns an Observable that skips `n` items emitted by an Observable.
 	 *
@@ -60568,17 +60553,17 @@
 	//# sourceMappingURL=skip.js.map
 
 /***/ },
-/* 606 */
+/* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var skipUntil_1 = __webpack_require__(607);
+	var Observable_1 = __webpack_require__(324);
+	var skipUntil_1 = __webpack_require__(603);
 	Observable_1.Observable.prototype.skipUntil = skipUntil_1.skipUntil;
 	//# sourceMappingURL=skipUntil.js.map
 
 /***/ },
-/* 607 */
+/* 603 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60587,8 +60572,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Returns an Observable that skips items emitted by the source Observable until a second Observable emits an item.
 	 *
@@ -60654,17 +60639,17 @@
 	//# sourceMappingURL=skipUntil.js.map
 
 /***/ },
-/* 608 */
+/* 604 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var skipWhile_1 = __webpack_require__(609);
+	var Observable_1 = __webpack_require__(324);
+	var skipWhile_1 = __webpack_require__(605);
 	Observable_1.Observable.prototype.skipWhile = skipWhile_1.skipWhile;
 	//# sourceMappingURL=skipWhile.js.map
 
 /***/ },
-/* 609 */
+/* 605 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60673,7 +60658,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Returns an Observable that skips all items emitted by the source Observable as long as a specified condition holds
 	 * true, but emits all further source items as soon as the condition becomes false.
@@ -60735,25 +60720,25 @@
 	//# sourceMappingURL=skipWhile.js.map
 
 /***/ },
-/* 610 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var startWith_1 = __webpack_require__(611);
+	var Observable_1 = __webpack_require__(324);
+	var startWith_1 = __webpack_require__(607);
 	Observable_1.Observable.prototype.startWith = startWith_1.startWith;
 	//# sourceMappingURL=startWith.js.map
 
 /***/ },
-/* 611 */
+/* 607 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(366);
-	var ScalarObservable_1 = __webpack_require__(367);
-	var EmptyObservable_1 = __webpack_require__(368);
-	var concat_1 = __webpack_require__(377);
-	var isScheduler_1 = __webpack_require__(365);
+	var ArrayObservable_1 = __webpack_require__(362);
+	var ScalarObservable_1 = __webpack_require__(363);
+	var EmptyObservable_1 = __webpack_require__(364);
+	var concat_1 = __webpack_require__(373);
+	var isScheduler_1 = __webpack_require__(361);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits the items in a specified Iterable before it begins to emit items emitted by the
@@ -60794,21 +60779,21 @@
 	//# sourceMappingURL=startWith.js.map
 
 /***/ },
-/* 612 */
+/* 608 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var subscribeOn_1 = __webpack_require__(613);
+	var Observable_1 = __webpack_require__(324);
+	var subscribeOn_1 = __webpack_require__(609);
 	Observable_1.Observable.prototype.subscribeOn = subscribeOn_1.subscribeOn;
 	//# sourceMappingURL=subscribeOn.js.map
 
 /***/ },
-/* 613 */
+/* 609 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var SubscribeOnObservable_1 = __webpack_require__(614);
+	var SubscribeOnObservable_1 = __webpack_require__(610);
 	/**
 	 * Asynchronously subscribes Observers to this Observable on the specified Scheduler.
 	 *
@@ -60828,7 +60813,7 @@
 	//# sourceMappingURL=subscribeOn.js.map
 
 /***/ },
-/* 614 */
+/* 610 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60837,9 +60822,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var asap_1 = __webpack_require__(615);
-	var isNumeric_1 = __webpack_require__(411);
+	var Observable_1 = __webpack_require__(324);
+	var asap_1 = __webpack_require__(611);
+	var isNumeric_1 = __webpack_require__(407);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -60884,17 +60869,17 @@
 	//# sourceMappingURL=SubscribeOnObservable.js.map
 
 /***/ },
-/* 615 */
+/* 611 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AsapAction_1 = __webpack_require__(616);
-	var AsapScheduler_1 = __webpack_require__(619);
+	var AsapAction_1 = __webpack_require__(612);
+	var AsapScheduler_1 = __webpack_require__(615);
 	exports.asap = new AsapScheduler_1.AsapScheduler(AsapAction_1.AsapAction);
 	//# sourceMappingURL=asap.js.map
 
 /***/ },
-/* 616 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60903,8 +60888,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Immediate_1 = __webpack_require__(617);
-	var AsyncAction_1 = __webpack_require__(413);
+	var Immediate_1 = __webpack_require__(613);
+	var AsyncAction_1 = __webpack_require__(409);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -60954,14 +60939,14 @@
 	//# sourceMappingURL=AsapAction.js.map
 
 /***/ },
-/* 617 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(clearImmediate, setImmediate) {/**
 	Some credit for this helper goes to http://github.com/YuzuJS/setImmediate
 	*/
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	var ImmediateDefinition = (function () {
 	    function ImmediateDefinition(root) {
 	        this.root = root;
@@ -61166,10 +61151,10 @@
 	exports.ImmediateDefinition = ImmediateDefinition;
 	exports.Immediate = new ImmediateDefinition(root_1.root);
 	//# sourceMappingURL=Immediate.js.map
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(618).clearImmediate, __webpack_require__(618).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(614).clearImmediate, __webpack_require__(614).setImmediate))
 
 /***/ },
-/* 618 */
+/* 614 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(310).nextTick;
@@ -61248,10 +61233,10 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(618).setImmediate, __webpack_require__(618).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(614).setImmediate, __webpack_require__(614).clearImmediate))
 
 /***/ },
-/* 619 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61260,7 +61245,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncScheduler_1 = __webpack_require__(415);
+	var AsyncScheduler_1 = __webpack_require__(411);
 	var AsapScheduler = (function (_super) {
 	    __extends(AsapScheduler, _super);
 	    function AsapScheduler() {
@@ -61293,18 +61278,18 @@
 	//# sourceMappingURL=AsapScheduler.js.map
 
 /***/ },
-/* 620 */
+/* 616 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var switch_1 = __webpack_require__(621);
+	var Observable_1 = __webpack_require__(324);
+	var switch_1 = __webpack_require__(617);
 	Observable_1.Observable.prototype.switch = switch_1._switch;
 	Observable_1.Observable.prototype._switch = switch_1._switch;
 	//# sourceMappingURL=switch.js.map
 
 /***/ },
-/* 621 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61313,8 +61298,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by
 	 * subscribing to only the most recently emitted of those inner Observables.
@@ -61417,17 +61402,17 @@
 	//# sourceMappingURL=switch.js.map
 
 /***/ },
-/* 622 */
+/* 618 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var switchMap_1 = __webpack_require__(623);
+	var Observable_1 = __webpack_require__(324);
+	var switchMap_1 = __webpack_require__(619);
 	Observable_1.Observable.prototype.switchMap = switchMap_1.switchMap;
 	//# sourceMappingURL=switchMap.js.map
 
 /***/ },
-/* 623 */
+/* 619 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61436,8 +61421,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -61572,17 +61557,17 @@
 	//# sourceMappingURL=switchMap.js.map
 
 /***/ },
-/* 624 */
+/* 620 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var switchMapTo_1 = __webpack_require__(625);
+	var Observable_1 = __webpack_require__(324);
+	var switchMapTo_1 = __webpack_require__(621);
 	Observable_1.Observable.prototype.switchMapTo = switchMapTo_1.switchMapTo;
 	//# sourceMappingURL=switchMapTo.js.map
 
 /***/ },
-/* 625 */
+/* 621 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61591,8 +61576,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to the same Observable which is flattened multiple
@@ -61714,17 +61699,17 @@
 	//# sourceMappingURL=switchMapTo.js.map
 
 /***/ },
-/* 626 */
+/* 622 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var take_1 = __webpack_require__(627);
+	var Observable_1 = __webpack_require__(324);
+	var take_1 = __webpack_require__(623);
 	Observable_1.Observable.prototype.take = take_1.take;
 	//# sourceMappingURL=take.js.map
 
 /***/ },
-/* 627 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61733,9 +61718,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var ArgumentOutOfRangeError_1 = __webpack_require__(515);
-	var EmptyObservable_1 = __webpack_require__(368);
+	var Subscriber_1 = __webpack_require__(327);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
+	var EmptyObservable_1 = __webpack_require__(364);
 	/**
 	 * Emits only the first `count` values emitted by the source Observable.
 	 *
@@ -61818,17 +61803,17 @@
 	//# sourceMappingURL=take.js.map
 
 /***/ },
-/* 628 */
+/* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var takeLast_1 = __webpack_require__(629);
+	var Observable_1 = __webpack_require__(324);
+	var takeLast_1 = __webpack_require__(625);
 	Observable_1.Observable.prototype.takeLast = takeLast_1.takeLast;
 	//# sourceMappingURL=takeLast.js.map
 
 /***/ },
-/* 629 */
+/* 625 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61837,9 +61822,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var ArgumentOutOfRangeError_1 = __webpack_require__(515);
-	var EmptyObservable_1 = __webpack_require__(368);
+	var Subscriber_1 = __webpack_require__(327);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
+	var EmptyObservable_1 = __webpack_require__(364);
 	/**
 	 * Emits only the last `count` values emitted by the source Observable.
 	 *
@@ -61940,17 +61925,17 @@
 	//# sourceMappingURL=takeLast.js.map
 
 /***/ },
-/* 630 */
+/* 626 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var takeUntil_1 = __webpack_require__(631);
+	var Observable_1 = __webpack_require__(324);
+	var takeUntil_1 = __webpack_require__(627);
 	Observable_1.Observable.prototype.takeUntil = takeUntil_1.takeUntil;
 	//# sourceMappingURL=takeUntil.js.map
 
 /***/ },
-/* 631 */
+/* 627 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61959,8 +61944,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Emits the values emitted by the source Observable until a `notifier`
 	 * Observable emits a value.
@@ -62030,17 +62015,17 @@
 	//# sourceMappingURL=takeUntil.js.map
 
 /***/ },
-/* 632 */
+/* 628 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var takeWhile_1 = __webpack_require__(633);
+	var Observable_1 = __webpack_require__(324);
+	var takeWhile_1 = __webpack_require__(629);
 	Observable_1.Observable.prototype.takeWhile = takeWhile_1.takeWhile;
 	//# sourceMappingURL=takeWhile.js.map
 
 /***/ },
-/* 633 */
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62049,7 +62034,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Emits values emitted by the source Observable so long as each value satisfies
 	 * the given `predicate`, and then completes as soon as this `predicate` is not
@@ -62137,17 +62122,17 @@
 	//# sourceMappingURL=takeWhile.js.map
 
 /***/ },
-/* 634 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var throttle_1 = __webpack_require__(635);
+	var Observable_1 = __webpack_require__(324);
+	var throttle_1 = __webpack_require__(631);
 	Observable_1.Observable.prototype.throttle = throttle_1.throttle;
 	//# sourceMappingURL=throttle.js.map
 
 /***/ },
-/* 635 */
+/* 631 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62156,8 +62141,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Emits a value from the source Observable, then ignores subsequent source
 	 * values for a duration determined by another Observable, then repeats this
@@ -62260,17 +62245,17 @@
 	//# sourceMappingURL=throttle.js.map
 
 /***/ },
-/* 636 */
+/* 632 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var throttleTime_1 = __webpack_require__(637);
+	var Observable_1 = __webpack_require__(324);
+	var throttleTime_1 = __webpack_require__(633);
 	Observable_1.Observable.prototype.throttleTime = throttleTime_1.throttleTime;
 	//# sourceMappingURL=throttleTime.js.map
 
 /***/ },
-/* 637 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62279,8 +62264,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var async_1 = __webpack_require__(412);
+	var Subscriber_1 = __webpack_require__(327);
+	var async_1 = __webpack_require__(408);
 	/**
 	 * Emits a value from the source Observable, then ignores subsequent source
 	 * values for `duration` milliseconds, then repeats this process.
@@ -62370,17 +62355,17 @@
 	//# sourceMappingURL=throttleTime.js.map
 
 /***/ },
-/* 638 */
+/* 634 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var timeInterval_1 = __webpack_require__(639);
+	var Observable_1 = __webpack_require__(324);
+	var timeInterval_1 = __webpack_require__(635);
 	Observable_1.Observable.prototype.timeInterval = timeInterval_1.timeInterval;
 	//# sourceMappingURL=timeInterval.js.map
 
 /***/ },
-/* 639 */
+/* 635 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62389,8 +62374,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var async_1 = __webpack_require__(412);
+	var Subscriber_1 = __webpack_require__(327);
+	var async_1 = __webpack_require__(408);
 	/**
 	 * @param scheduler
 	 * @return {Observable<TimeInterval<any>>|WebSocketSubject<T>|Observable<T>}
@@ -62444,17 +62429,17 @@
 	//# sourceMappingURL=timeInterval.js.map
 
 /***/ },
-/* 640 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var timeout_1 = __webpack_require__(641);
+	var Observable_1 = __webpack_require__(324);
+	var timeout_1 = __webpack_require__(637);
 	Observable_1.Observable.prototype.timeout = timeout_1.timeout;
 	//# sourceMappingURL=timeout.js.map
 
 /***/ },
-/* 641 */
+/* 637 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62463,10 +62448,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(412);
-	var isDate_1 = __webpack_require__(445);
-	var Subscriber_1 = __webpack_require__(331);
-	var TimeoutError_1 = __webpack_require__(642);
+	var async_1 = __webpack_require__(408);
+	var isDate_1 = __webpack_require__(441);
+	var Subscriber_1 = __webpack_require__(327);
+	var TimeoutError_1 = __webpack_require__(638);
 	/**
 	 * @param due
 	 * @param errorToSend
@@ -62563,7 +62548,7 @@
 	//# sourceMappingURL=timeout.js.map
 
 /***/ },
-/* 642 */
+/* 638 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -62593,17 +62578,17 @@
 	//# sourceMappingURL=TimeoutError.js.map
 
 /***/ },
-/* 643 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var timeoutWith_1 = __webpack_require__(644);
+	var Observable_1 = __webpack_require__(324);
+	var timeoutWith_1 = __webpack_require__(640);
 	Observable_1.Observable.prototype.timeoutWith = timeoutWith_1.timeoutWith;
 	//# sourceMappingURL=timeoutWith.js.map
 
 /***/ },
-/* 644 */
+/* 640 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62612,10 +62597,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(412);
-	var isDate_1 = __webpack_require__(445);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var async_1 = __webpack_require__(408);
+	var isDate_1 = __webpack_require__(441);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * @param due
@@ -62719,17 +62704,17 @@
 	//# sourceMappingURL=timeoutWith.js.map
 
 /***/ },
-/* 645 */
+/* 641 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var timestamp_1 = __webpack_require__(646);
+	var Observable_1 = __webpack_require__(324);
+	var timestamp_1 = __webpack_require__(642);
 	Observable_1.Observable.prototype.timestamp = timestamp_1.timestamp;
 	//# sourceMappingURL=timestamp.js.map
 
 /***/ },
-/* 646 */
+/* 642 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62738,8 +62723,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var async_1 = __webpack_require__(412);
+	var Subscriber_1 = __webpack_require__(327);
+	var async_1 = __webpack_require__(408);
 	/**
 	 * @param scheduler
 	 * @return {Observable<Timestamp<any>>|WebSocketSubject<T>|Observable<T>}
@@ -62784,17 +62769,17 @@
 	//# sourceMappingURL=timestamp.js.map
 
 /***/ },
-/* 647 */
+/* 643 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var toArray_1 = __webpack_require__(648);
+	var Observable_1 = __webpack_require__(324);
+	var toArray_1 = __webpack_require__(644);
 	Observable_1.Observable.prototype.toArray = toArray_1.toArray;
 	//# sourceMappingURL=toArray.js.map
 
 /***/ },
-/* 648 */
+/* 644 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62803,7 +62788,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * @return {Observable<any[]>|WebSocketSubject<T>|Observable<T>}
 	 * @method toArray
@@ -62844,21 +62829,21 @@
 	//# sourceMappingURL=toArray.js.map
 
 /***/ },
-/* 649 */
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var toPromise_1 = __webpack_require__(650);
+	var Observable_1 = __webpack_require__(324);
+	var toPromise_1 = __webpack_require__(646);
 	Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
 	//# sourceMappingURL=toPromise.js.map
 
 /***/ },
-/* 650 */
+/* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	/* tslint:disable:max-line-length */
 	/**
 	 * @param PromiseCtor
@@ -62888,17 +62873,17 @@
 	//# sourceMappingURL=toPromise.js.map
 
 /***/ },
-/* 651 */
+/* 647 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var window_1 = __webpack_require__(652);
+	var Observable_1 = __webpack_require__(324);
+	var window_1 = __webpack_require__(648);
 	Observable_1.Observable.prototype.window = window_1.window;
 	//# sourceMappingURL=window.js.map
 
 /***/ },
-/* 652 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62907,9 +62892,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var Subject_1 = __webpack_require__(323);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Branch out the source Observable values as a nested Observable whenever
 	 * `windowBoundaries` emits.
@@ -63013,17 +62998,17 @@
 	//# sourceMappingURL=window.js.map
 
 /***/ },
-/* 653 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var windowCount_1 = __webpack_require__(654);
+	var Observable_1 = __webpack_require__(324);
+	var windowCount_1 = __webpack_require__(650);
 	Observable_1.Observable.prototype.windowCount = windowCount_1.windowCount;
 	//# sourceMappingURL=windowCount.js.map
 
 /***/ },
-/* 654 */
+/* 650 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63032,8 +63017,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(331);
-	var Subject_1 = __webpack_require__(327);
+	var Subscriber_1 = __webpack_require__(327);
+	var Subject_1 = __webpack_require__(323);
 	/**
 	 * Branch out the source Observable values as a nested Observable with each
 	 * nested Observable emitting at most `windowSize` values.
@@ -63159,17 +63144,17 @@
 	//# sourceMappingURL=windowCount.js.map
 
 /***/ },
-/* 655 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var windowTime_1 = __webpack_require__(656);
+	var Observable_1 = __webpack_require__(324);
+	var windowTime_1 = __webpack_require__(652);
 	Observable_1.Observable.prototype.windowTime = windowTime_1.windowTime;
 	//# sourceMappingURL=windowTime.js.map
 
 /***/ },
-/* 656 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63178,9 +63163,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var async_1 = __webpack_require__(412);
-	var Subscriber_1 = __webpack_require__(331);
+	var Subject_1 = __webpack_require__(323);
+	var async_1 = __webpack_require__(408);
+	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Branch out the source Observable values as a nested Observable periodically
 	 * in time.
@@ -63343,17 +63328,17 @@
 	//# sourceMappingURL=windowTime.js.map
 
 /***/ },
-/* 657 */
+/* 653 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var windowToggle_1 = __webpack_require__(658);
+	var Observable_1 = __webpack_require__(324);
+	var windowToggle_1 = __webpack_require__(654);
 	Observable_1.Observable.prototype.windowToggle = windowToggle_1.windowToggle;
 	//# sourceMappingURL=windowToggle.js.map
 
 /***/ },
-/* 658 */
+/* 654 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63362,12 +63347,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var Subscription_1 = __webpack_require__(333);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var Subject_1 = __webpack_require__(323);
+	var Subscription_1 = __webpack_require__(329);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Branch out the source Observable values as a nested Observable starting from
 	 * an emission from `openings` and ending when the output of `closingSelector`
@@ -63538,17 +63523,17 @@
 	//# sourceMappingURL=windowToggle.js.map
 
 /***/ },
-/* 659 */
+/* 655 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var windowWhen_1 = __webpack_require__(660);
+	var Observable_1 = __webpack_require__(324);
+	var windowWhen_1 = __webpack_require__(656);
 	Observable_1.Observable.prototype.windowWhen = windowWhen_1.windowWhen;
 	//# sourceMappingURL=windowWhen.js.map
 
 /***/ },
-/* 660 */
+/* 656 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63557,11 +63542,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var tryCatch_1 = __webpack_require__(336);
-	var errorObject_1 = __webpack_require__(337);
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var Subject_1 = __webpack_require__(323);
+	var tryCatch_1 = __webpack_require__(332);
+	var errorObject_1 = __webpack_require__(333);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/**
 	 * Branch out the source Observable values as a nested Observable using a
 	 * factory function of closing Observables to determine when to start a new
@@ -63680,17 +63665,17 @@
 	//# sourceMappingURL=windowWhen.js.map
 
 /***/ },
-/* 661 */
+/* 657 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var withLatestFrom_1 = __webpack_require__(662);
+	var Observable_1 = __webpack_require__(324);
+	var withLatestFrom_1 = __webpack_require__(658);
 	Observable_1.Observable.prototype.withLatestFrom = withLatestFrom_1.withLatestFrom;
 	//# sourceMappingURL=withLatestFrom.js.map
 
 /***/ },
-/* 662 */
+/* 658 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63699,8 +63684,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(370);
-	var subscribeToResult_1 = __webpack_require__(371);
+	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(367);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Combines the source Observable with other Observables to create an Observable
@@ -63825,31 +63810,31 @@
 	//# sourceMappingURL=withLatestFrom.js.map
 
 /***/ },
-/* 663 */
+/* 659 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var zip_1 = __webpack_require__(448);
+	var Observable_1 = __webpack_require__(324);
+	var zip_1 = __webpack_require__(444);
 	Observable_1.Observable.prototype.zip = zip_1.zipProto;
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 664 */
+/* 660 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Observable_1 = __webpack_require__(328);
-	var zipAll_1 = __webpack_require__(665);
+	var Observable_1 = __webpack_require__(324);
+	var zipAll_1 = __webpack_require__(661);
 	Observable_1.Observable.prototype.zipAll = zipAll_1.zipAll;
 	//# sourceMappingURL=zipAll.js.map
 
 /***/ },
-/* 665 */
+/* 661 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var zip_1 = __webpack_require__(448);
+	var zip_1 = __webpack_require__(444);
 	/**
 	 * @param project
 	 * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
@@ -63863,7 +63848,7 @@
 	//# sourceMappingURL=zipAll.js.map
 
 /***/ },
-/* 666 */
+/* 662 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63872,12 +63857,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var Notification_1 = __webpack_require__(394);
-	var ColdObservable_1 = __webpack_require__(667);
-	var HotObservable_1 = __webpack_require__(671);
-	var SubscriptionLog_1 = __webpack_require__(669);
-	var VirtualTimeScheduler_1 = __webpack_require__(672);
+	var Observable_1 = __webpack_require__(324);
+	var Notification_1 = __webpack_require__(390);
+	var ColdObservable_1 = __webpack_require__(663);
+	var HotObservable_1 = __webpack_require__(667);
+	var SubscriptionLog_1 = __webpack_require__(665);
+	var VirtualTimeScheduler_1 = __webpack_require__(668);
 	var defaultMaxFrame = 750;
 	var TestScheduler = (function (_super) {
 	    __extends(TestScheduler, _super);
@@ -64091,7 +64076,7 @@
 	//# sourceMappingURL=TestScheduler.js.map
 
 /***/ },
-/* 667 */
+/* 663 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64100,10 +64085,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(328);
-	var Subscription_1 = __webpack_require__(333);
-	var SubscriptionLoggable_1 = __webpack_require__(668);
-	var applyMixins_1 = __webpack_require__(670);
+	var Observable_1 = __webpack_require__(324);
+	var Subscription_1 = __webpack_require__(329);
+	var SubscriptionLoggable_1 = __webpack_require__(664);
+	var applyMixins_1 = __webpack_require__(666);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -64142,11 +64127,11 @@
 	//# sourceMappingURL=ColdObservable.js.map
 
 /***/ },
-/* 668 */
+/* 664 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var SubscriptionLog_1 = __webpack_require__(669);
+	var SubscriptionLog_1 = __webpack_require__(665);
 	var SubscriptionLoggable = (function () {
 	    function SubscriptionLoggable() {
 	        this.subscriptions = [];
@@ -64166,7 +64151,7 @@
 	//# sourceMappingURL=SubscriptionLoggable.js.map
 
 /***/ },
-/* 669 */
+/* 665 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -64182,7 +64167,7 @@
 	//# sourceMappingURL=SubscriptionLog.js.map
 
 /***/ },
-/* 670 */
+/* 666 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -64200,7 +64185,7 @@
 	//# sourceMappingURL=applyMixins.js.map
 
 /***/ },
-/* 671 */
+/* 667 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64209,10 +64194,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(327);
-	var Subscription_1 = __webpack_require__(333);
-	var SubscriptionLoggable_1 = __webpack_require__(668);
-	var applyMixins_1 = __webpack_require__(670);
+	var Subject_1 = __webpack_require__(323);
+	var Subscription_1 = __webpack_require__(329);
+	var SubscriptionLoggable_1 = __webpack_require__(664);
+	var applyMixins_1 = __webpack_require__(666);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -64253,7 +64238,7 @@
 	//# sourceMappingURL=HotObservable.js.map
 
 /***/ },
-/* 672 */
+/* 668 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64262,8 +64247,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncAction_1 = __webpack_require__(413);
-	var AsyncScheduler_1 = __webpack_require__(415);
+	var AsyncAction_1 = __webpack_require__(409);
+	var AsyncScheduler_1 = __webpack_require__(411);
 	var VirtualTimeScheduler = (function (_super) {
 	    __extends(VirtualTimeScheduler, _super);
 	    function VirtualTimeScheduler(SchedulerAction, maxFrames) {
@@ -64356,17 +64341,17 @@
 	//# sourceMappingURL=VirtualTimeScheduler.js.map
 
 /***/ },
-/* 673 */
+/* 669 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AnimationFrameAction_1 = __webpack_require__(674);
-	var AnimationFrameScheduler_1 = __webpack_require__(676);
+	var AnimationFrameAction_1 = __webpack_require__(670);
+	var AnimationFrameScheduler_1 = __webpack_require__(672);
 	exports.animationFrame = new AnimationFrameScheduler_1.AnimationFrameScheduler(AnimationFrameAction_1.AnimationFrameAction);
 	//# sourceMappingURL=animationFrame.js.map
 
 /***/ },
-/* 674 */
+/* 670 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64375,8 +64360,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncAction_1 = __webpack_require__(413);
-	var AnimationFrame_1 = __webpack_require__(675);
+	var AsyncAction_1 = __webpack_require__(409);
+	var AnimationFrame_1 = __webpack_require__(671);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -64426,11 +64411,11 @@
 	//# sourceMappingURL=AnimationFrameAction.js.map
 
 /***/ },
-/* 675 */
+/* 671 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(329);
+	var root_1 = __webpack_require__(325);
 	var RequestAnimationFrameDefinition = (function () {
 	    function RequestAnimationFrameDefinition(root) {
 	        if (root.requestAnimationFrame) {
@@ -64465,7 +64450,7 @@
 	//# sourceMappingURL=AnimationFrame.js.map
 
 /***/ },
-/* 676 */
+/* 672 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64474,7 +64459,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncScheduler_1 = __webpack_require__(415);
+	var AsyncScheduler_1 = __webpack_require__(411);
 	var AnimationFrameScheduler = (function (_super) {
 	    __extends(AnimationFrameScheduler, _super);
 	    function AnimationFrameScheduler() {
@@ -64507,16 +64492,16 @@
 	//# sourceMappingURL=AnimationFrameScheduler.js.map
 
 /***/ },
-/* 677 */
+/* 673 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var map_1 = __webpack_require__(678);
+	var map_1 = __webpack_require__(674);
 	exports.GoogleMap = map_1.GoogleMap;
 
 
 /***/ },
-/* 678 */
+/* 674 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64529,24 +64514,21 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(326);
-	var app_service_1 = __webpack_require__(351);
+	var core_1 = __webpack_require__(322);
 	var GoogleMap = (function () {
-	    function GoogleMap(dataService) {
-	        this.dataService = dataService;
-	        this.lat = this.dataService.getLat();
-	        this.lng = this.dataService.getLon();
+	    function GoogleMap() {
 	    }
-	    GoogleMap.prototype.ngAfterContentInit = function () {
-	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], GoogleMap.prototype, "coords", void 0);
 	    GoogleMap = __decorate([
 	        core_1.Component({
 	            selector: 'google-map',
 	            styles: ["\n\t\t.sebm-google-map-container {\n\t\t\theight: 300px;\n\t\t}\n\t"],
-	            template: "\n    <sebm-google-map [latitude]=\"lat\" [longitude]=\"lng\"></sebm-google-map>\n    ",
-	            providers: [app_service_1.DataService]
+	            template: "\n    <sebm-google-map [latitude]=\"coords.latitude\" [longitude]=\"coords.longitude\"></sebm-google-map>\n    "
 	        }), 
-	        __metadata('design:paramtypes', [app_service_1.DataService])
+	        __metadata('design:paramtypes', [])
 	    ], GoogleMap);
 	    return GoogleMap;
 	}());
@@ -64554,7 +64536,17034 @@
 
 
 /***/ },
+/* 675 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var header_1 = __webpack_require__(676);
+	exports.MyHeader = header_1.MyHeader;
+
+
+/***/ },
+/* 676 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(322);
+	var MyHeader = (function () {
+	    function MyHeader() {
+	        alert();
+	    }
+	    MyHeader = __decorate([
+	        core_1.Component({
+	            selector: 'my-header',
+	            styles: ["\n\t\t.header {\n\t\t\theight: 300px;\n\t\t}\n\t"],
+	            template: "\n    <div class='header'>!</div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], MyHeader);
+	    return MyHeader;
+	}());
+	exports.MyHeader = MyHeader;
+
+
+/***/ },
+/* 677 */
+/***/ function(module, exports, __webpack_require__) {
+
+	(function (global, factory) {
+	     true ? factory(exports, __webpack_require__(322), __webpack_require__(323), __webpack_require__(340), __webpack_require__(678), __webpack_require__(324), __webpack_require__(341), __webpack_require__(348), __webpack_require__(380), __webpack_require__(422), __webpack_require__(349), __webpack_require__(512), __webpack_require__(501), __webpack_require__(596), __webpack_require__(514), __webpack_require__(466), __webpack_require__(520)) :
+	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Subject', '@angular/platform-browser', '@angular/forms', 'rxjs/Observable', '@angular/common', '@angular/http', 'rxjs/add/observable/forkJoin', 'rxjs/add/observable/of', 'rxjs/add/operator/map', 'rxjs/add/operator/filter', 'rxjs/add/operator/do', 'rxjs/add/operator/share', 'rxjs/add/operator/finally', 'rxjs/add/operator/catch', 'rxjs/add/operator/first'], factory) :
+	    (factory((global.ng = global.ng || {}, global.ng.material = global.ng.material || {}),global.ng.core,global.Rx,global.ng.platformBrowser,global.ng.forms,global.Rx,global.ng.common,global.ng.http,global.Rx.Observable,global.Rx.Observable,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype));
+	}(this, (function (exports,_angular_core,rxjs_Subject,_angular_platformBrowser,_angular_forms,rxjs_Observable,_angular_common,_angular_http,rxjs_add_observable_forkJoin,rxjs_add_observable_of,rxjs_add_operator_map,rxjs_add_operator_filter,rxjs_add_operator_do,rxjs_add_operator_share,rxjs_add_operator_finally,rxjs_add_operator_catch,rxjs_add_operator_first) { 'use strict';
+
+	var __decorate$1 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$1 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Shared directive to count lines inside a text area, such as a list item.
+	 * Line elements can be extracted with a @ContentChildren(MdLine) query, then
+	 * counted by checking the query list's length.
+	 */
+	var MdLine = (function () {
+	    function MdLine() {
+	    }
+	    MdLine = __decorate$1([
+	        _angular_core.Directive({ selector: '[md-line]' }), 
+	        __metadata$1('design:paramtypes', [])
+	    ], MdLine);
+	    return MdLine;
+	}());
+	/* Helper that takes a query list of lines and sets the correct class on the host */
+	var MdLineSetter = (function () {
+	    function MdLineSetter(_lines, _renderer, _element) {
+	        var _this = this;
+	        this._lines = _lines;
+	        this._renderer = _renderer;
+	        this._element = _element;
+	        this._setLineClass(this._lines.length);
+	        this._lines.changes.subscribe(function () {
+	            _this._setLineClass(_this._lines.length);
+	        });
+	    }
+	    MdLineSetter.prototype._setLineClass = function (count) {
+	        this._resetClasses();
+	        if (count === 2 || count === 3) {
+	            this._setClass("md-" + count + "-line", true);
+	        }
+	        else if (count > 3) {
+	            this._setClass("md-multi-line", true);
+	        }
+	    };
+	    MdLineSetter.prototype._resetClasses = function () {
+	        this._setClass('md-2-line', false);
+	        this._setClass('md-3-line', false);
+	        this._setClass('md-multi-line', false);
+	    };
+	    MdLineSetter.prototype._setClass = function (className, bool) {
+	        this._renderer.setElementClass(this._element.nativeElement, className, bool);
+	    };
+	    return MdLineSetter;
+	}());
+	var MdLineModule = (function () {
+	    function MdLineModule() {
+	    }
+	    MdLineModule = __decorate$1([
+	        _angular_core.NgModule({
+	            exports: [MdLine],
+	            declarations: [MdLine],
+	        }), 
+	        __metadata$1('design:paramtypes', [])
+	    ], MdLineModule);
+	    return MdLineModule;
+	}());
+
+	var __decorate$2 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$2 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Directive to listen to changes of direction of part of the DOM.
+	 *
+	 * Applications should use this directive instead of the native attribute so that Material
+	 * components can listen on changes of direction.
+	 */
+	var Dir = (function () {
+	    function Dir() {
+	        this._dir = 'ltr';
+	        this.dirChange = new _angular_core.EventEmitter();
+	    }
+	    Object.defineProperty(Dir.prototype, "dir", {
+	        get: function () {
+	            return this._dir;
+	        },
+	        set: function (v) {
+	            var old = this._dir;
+	            this._dir = v;
+	            if (old != this._dir) {
+	                this.dirChange.emit();
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(Dir.prototype, "value", {
+	        get: function () { return this.dir; },
+	        set: function (v) { this.dir = v; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    __decorate$2([
+	        _angular_core.Input('dir'), 
+	        __metadata$2('design:type', String)
+	    ], Dir.prototype, "_dir", void 0);
+	    __decorate$2([
+	        _angular_core.Output(), 
+	        __metadata$2('design:type', Object)
+	    ], Dir.prototype, "dirChange", void 0);
+	    __decorate$2([
+	        _angular_core.HostBinding('attr.dir'), 
+	        __metadata$2('design:type', String)
+	    ], Dir.prototype, "dir", null);
+	    Dir = __decorate$2([
+	        _angular_core.Directive({
+	            selector: '[dir]',
+	            // TODO(hansl): maybe `$implicit` isn't the best option here, but for now that's the best we got.
+	            exportAs: '$implicit'
+	        }), 
+	        __metadata$2('design:paramtypes', [])
+	    ], Dir);
+	    return Dir;
+	}());
+	var RtlModule = (function () {
+	    function RtlModule() {
+	    }
+	    RtlModule.forRoot = function () {
+	        return {
+	            ngModule: RtlModule,
+	            providers: []
+	        };
+	    };
+	    RtlModule = __decorate$2([
+	        _angular_core.NgModule({
+	            exports: [Dir],
+	            declarations: [Dir]
+	        }), 
+	        __metadata$2('design:paramtypes', [])
+	    ], RtlModule);
+	    return RtlModule;
+	}());
+
+	/** TODO: internal */
+	var ForegroundRippleState;
+	(function (ForegroundRippleState) {
+	    ForegroundRippleState[ForegroundRippleState["NEW"] = 0] = "NEW";
+	    ForegroundRippleState[ForegroundRippleState["EXPANDING"] = 1] = "EXPANDING";
+	    ForegroundRippleState[ForegroundRippleState["FADING_OUT"] = 2] = "FADING_OUT";
+	})(ForegroundRippleState || (ForegroundRippleState = {}));
+	/**
+	 * Wrapper for a foreground ripple DOM element and its animation state.
+	 * TODO: internal
+	 */
+	var ForegroundRipple = (function () {
+	    function ForegroundRipple(rippleElement) {
+	        this.rippleElement = rippleElement;
+	        this.state = ForegroundRippleState.NEW;
+	    }
+	    return ForegroundRipple;
+	}());
+	var RIPPLE_SPEED_PX_PER_SECOND = 1000;
+	var MIN_RIPPLE_FILL_TIME_SECONDS = 0.1;
+	var MAX_RIPPLE_FILL_TIME_SECONDS = 0.3;
+	/**
+	 * Returns the distance from the point (x, y) to the furthest corner of a rectangle.
+	 */
+	var distanceToFurthestCorner = function (x, y, rect) {
+	    var distX = Math.max(Math.abs(x - rect.left), Math.abs(x - rect.right));
+	    var distY = Math.max(Math.abs(y - rect.top), Math.abs(y - rect.bottom));
+	    return Math.sqrt(distX * distX + distY * distY);
+	};
+	/**
+	 * Helper service that performs DOM manipulations. Not intended to be used outside this module.
+	 * The constructor takes a reference to the ripple directive's host element and a map of DOM
+	 * event handlers to be installed on the element that triggers ripple animations.
+	 * This will eventually become a custom renderer once Angular support exists.
+	 * TODO: internal
+	 */
+	var RippleRenderer = (function () {
+	    function RippleRenderer(_elementRef, _eventHandlers) {
+	        this._eventHandlers = _eventHandlers;
+	        this._rippleElement = _elementRef.nativeElement;
+	        // It might be nice to delay creating the background until it's needed, but doing this in
+	        // fadeInRippleBackground causes the first click event to not be handled reliably.
+	        this._backgroundDiv = document.createElement('div');
+	        this._backgroundDiv.classList.add('md-ripple-background');
+	        this._rippleElement.appendChild(this._backgroundDiv);
+	    }
+	    /**
+	     * Installs event handlers on the given trigger element, and removes event handlers from the
+	     * previous trigger if needed.
+	     */
+	    RippleRenderer.prototype.setTriggerElement = function (newTrigger) {
+	        var _this = this;
+	        if (this._triggerElement !== newTrigger) {
+	            if (this._triggerElement) {
+	                this._eventHandlers.forEach(function (eventHandler, eventName) {
+	                    _this._triggerElement.removeEventListener(eventName, eventHandler);
+	                });
+	            }
+	            this._triggerElement = newTrigger;
+	            if (this._triggerElement) {
+	                this._eventHandlers.forEach(function (eventHandler, eventName) {
+	                    _this._triggerElement.addEventListener(eventName, eventHandler);
+	                });
+	            }
+	        }
+	    };
+	    /**
+	     * Installs event handlers on the host element of the md-ripple directive.
+	     */
+	    RippleRenderer.prototype.setTriggerElementToHost = function () {
+	        this.setTriggerElement(this._rippleElement);
+	    };
+	    /**
+	     * Removes event handlers from the current trigger element if needed.
+	     */
+	    RippleRenderer.prototype.clearTriggerElement = function () {
+	        this.setTriggerElement(null);
+	    };
+	    /**
+	     * Creates a foreground ripple and sets its animation to expand and fade in from the position
+	     * given by rippleOriginLeft and rippleOriginTop (or from the center of the <md-ripple>
+	     * bounding rect if centered is true).
+	     */
+	    RippleRenderer.prototype.createForegroundRipple = function (rippleOriginLeft, rippleOriginTop, color, centered, radius, speedFactor, transitionEndCallback) {
+	        var parentRect = this._rippleElement.getBoundingClientRect();
+	        // Create a foreground ripple div with the size and position of the fully expanded ripple.
+	        // When the div is created, it's given a transform style that causes the ripple to be displayed
+	        // small and centered on the event location (or the center of the bounding rect if the centered
+	        // argument is true). Removing that transform causes the ripple to animate to its natural size.
+	        var startX = centered ? (parentRect.left + parentRect.width / 2) : rippleOriginLeft;
+	        var startY = centered ? (parentRect.top + parentRect.height / 2) : rippleOriginTop;
+	        var offsetX = startX - parentRect.left;
+	        var offsetY = startY - parentRect.top;
+	        var maxRadius = radius > 0 ? radius : distanceToFurthestCorner(startX, startY, parentRect);
+	        var rippleDiv = document.createElement('div');
+	        this._rippleElement.appendChild(rippleDiv);
+	        rippleDiv.classList.add('md-ripple-foreground');
+	        rippleDiv.style.left = (offsetX - maxRadius) + "px";
+	        rippleDiv.style.top = (offsetY - maxRadius) + "px";
+	        rippleDiv.style.width = 2 * maxRadius + "px";
+	        rippleDiv.style.height = rippleDiv.style.width;
+	        // If color input is not set, this will default to the background color defined in CSS.
+	        rippleDiv.style.backgroundColor = color;
+	        // Start the ripple tiny.
+	        rippleDiv.style.transform = "scale(0.001)";
+	        var fadeInSeconds = (1 / (speedFactor || 1)) * Math.max(MIN_RIPPLE_FILL_TIME_SECONDS, Math.min(MAX_RIPPLE_FILL_TIME_SECONDS, maxRadius / RIPPLE_SPEED_PX_PER_SECOND));
+	        rippleDiv.style.transitionDuration = fadeInSeconds + "s";
+	        // https://timtaubert.de/blog/2012/09/css-transitions-for-dynamically-created-dom-elements/
+	        window.getComputedStyle(rippleDiv).opacity;
+	        rippleDiv.classList.add('md-ripple-fade-in');
+	        // Clearing the transform property causes the ripple to animate to its full size.
+	        rippleDiv.style.transform = '';
+	        var ripple = new ForegroundRipple(rippleDiv);
+	        ripple.state = ForegroundRippleState.EXPANDING;
+	        rippleDiv.addEventListener('transitionend', function (event) { return transitionEndCallback(ripple, event); });
+	    };
+	    /**
+	     * Fades out a foreground ripple after it has fully expanded and faded in.
+	     */
+	    RippleRenderer.prototype.fadeOutForegroundRipple = function (ripple) {
+	        ripple.classList.remove('md-ripple-fade-in');
+	        ripple.classList.add('md-ripple-fade-out');
+	    };
+	    /**
+	     * Removes a foreground ripple from the DOM after it has faded out.
+	     */
+	    RippleRenderer.prototype.removeRippleFromDom = function (ripple) {
+	        ripple.parentElement.removeChild(ripple);
+	    };
+	    /**
+	     * Fades in the ripple background.
+	     */
+	    RippleRenderer.prototype.fadeInRippleBackground = function (color) {
+	        this._backgroundDiv.classList.add('md-ripple-active');
+	        // If color is not set, this will default to the background color defined in CSS.
+	        this._backgroundDiv.style.backgroundColor = color;
+	    };
+	    /**
+	     * Fades out the ripple background.
+	     */
+	    RippleRenderer.prototype.fadeOutRippleBackground = function () {
+	        if (this._backgroundDiv) {
+	            this._backgroundDiv.classList.remove('md-ripple-active');
+	        }
+	    };
+	    return RippleRenderer;
+	}());
+
+	var __decorate$3 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$3 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MdRipple = (function () {
+	    function MdRipple(_elementRef) {
+	        var _this = this;
+	        /**
+	         * If set, the radius in pixels of foreground ripples when fully expanded. If unset, the radius
+	         * will be the distance from the center of the ripple to the furthest corner of the host element's
+	         * bounding rectangle.
+	         */
+	        this.maxRadius = 0;
+	        /**
+	         * If set, the normal duration of ripple animations is divided by this value. For example,
+	         * setting it to 0.5 will cause the animations to take twice as long.
+	         */
+	        this.speedFactor = 1;
+	        // These event handlers are attached to the element that triggers the ripple animations.
+	        var eventHandlers = new Map();
+	        eventHandlers.set('mousedown', function (event) { return _this._mouseDown(event); });
+	        eventHandlers.set('click', function (event) { return _this._click(event); });
+	        eventHandlers.set('mouseleave', function (event) { return _this._mouseLeave(event); });
+	        this._rippleRenderer = new RippleRenderer(_elementRef, eventHandlers);
+	    }
+	    /** TODO: internal */
+	    MdRipple.prototype.ngOnInit = function () {
+	        // If no trigger element was explicity set, use the host element
+	        if (!this.trigger) {
+	            this._rippleRenderer.setTriggerElementToHost();
+	        }
+	    };
+	    /** TODO: internal */
+	    MdRipple.prototype.ngOnDestroy = function () {
+	        // Remove event listeners on the trigger element.
+	        this._rippleRenderer.clearTriggerElement();
+	    };
+	    /** TODO: internal */
+	    MdRipple.prototype.ngOnChanges = function (changes) {
+	        // If the trigger element changed (or is being initially set), add event listeners to it.
+	        var changedInputs = Object.keys(changes);
+	        if (changedInputs.indexOf('trigger') !== -1) {
+	            this._rippleRenderer.setTriggerElement(this.trigger);
+	        }
+	    };
+	    /**
+	     * Responds to the start of a ripple animation trigger by fading the background in.
+	     */
+	    MdRipple.prototype.start = function () {
+	        this._rippleRenderer.fadeInRippleBackground(this.backgroundColor);
+	    };
+	    /**
+	     * Responds to the end of a ripple animation trigger by fading the background out, and creating a
+	     * foreground ripple that expands from the event location (or from the center of the element if
+	     * the "centered" property is set or forceCenter is true).
+	     */
+	    MdRipple.prototype.end = function (left, top, forceCenter) {
+	        var _this = this;
+	        if (forceCenter === void 0) { forceCenter = true; }
+	        this._rippleRenderer.createForegroundRipple(left, top, this.color, this.centered || forceCenter, this.maxRadius, this.speedFactor, function (ripple, e) { return _this._rippleTransitionEnded(ripple, e); });
+	        this._rippleRenderer.fadeOutRippleBackground();
+	    };
+	    MdRipple.prototype._rippleTransitionEnded = function (ripple, event) {
+	        if (event.propertyName === 'opacity') {
+	            // If the ripple finished expanding, start fading it out. If it finished fading out,
+	            // remove it from the DOM.
+	            switch (ripple.state) {
+	                case ForegroundRippleState.EXPANDING:
+	                    this._rippleRenderer.fadeOutForegroundRipple(ripple.rippleElement);
+	                    ripple.state = ForegroundRippleState.FADING_OUT;
+	                    break;
+	                case ForegroundRippleState.FADING_OUT:
+	                    this._rippleRenderer.removeRippleFromDom(ripple.rippleElement);
+	                    break;
+	            }
+	        }
+	    };
+	    /**
+	     * Called when the trigger element receives a mousedown event. Starts the ripple animation by
+	     * fading in the background.
+	     */
+	    MdRipple.prototype._mouseDown = function (event) {
+	        if (!this.disabled && event.button === 0) {
+	            this.start();
+	        }
+	    };
+	    /**
+	     * Called when the trigger element receives a click event. Creates a foreground ripple and
+	     * runs its animation.
+	     */
+	    MdRipple.prototype._click = function (event) {
+	        if (!this.disabled && event.button === 0) {
+	            // If screen and page positions are all 0, this was probably triggered by a keypress.
+	            // In that case, use the center of the bounding rect as the ripple origin.
+	            // FIXME: This fails on IE11, which still sets pageX/Y and screenX/Y on keyboard clicks.
+	            var isKeyEvent = (event.screenX === 0 && event.screenY === 0 && event.pageX === 0 && event.pageY === 0);
+	            this.end(event.pageX, event.pageY, isKeyEvent);
+	        }
+	    };
+	    /**
+	     * Called when the trigger element receives a mouseleave event. Fades out the background.
+	     */
+	    MdRipple.prototype._mouseLeave = function (event) {
+	        // We can always fade out the background here; It's a no-op if it was already inactive.
+	        this._rippleRenderer.fadeOutRippleBackground();
+	    };
+	    __decorate$3([
+	        _angular_core.Input('md-ripple-trigger'), 
+	        __metadata$3('design:type', Object)
+	    ], MdRipple.prototype, "trigger", void 0);
+	    __decorate$3([
+	        _angular_core.Input('md-ripple-centered'), 
+	        __metadata$3('design:type', Boolean)
+	    ], MdRipple.prototype, "centered", void 0);
+	    __decorate$3([
+	        _angular_core.Input('md-ripple-disabled'), 
+	        __metadata$3('design:type', Boolean)
+	    ], MdRipple.prototype, "disabled", void 0);
+	    __decorate$3([
+	        _angular_core.Input('md-ripple-max-radius'), 
+	        __metadata$3('design:type', Number)
+	    ], MdRipple.prototype, "maxRadius", void 0);
+	    __decorate$3([
+	        _angular_core.Input('md-ripple-speed-factor'), 
+	        __metadata$3('design:type', Number)
+	    ], MdRipple.prototype, "speedFactor", void 0);
+	    __decorate$3([
+	        _angular_core.Input('md-ripple-color'), 
+	        __metadata$3('design:type', String)
+	    ], MdRipple.prototype, "color", void 0);
+	    __decorate$3([
+	        _angular_core.Input('md-ripple-background-color'), 
+	        __metadata$3('design:type', String)
+	    ], MdRipple.prototype, "backgroundColor", void 0);
+	    __decorate$3([
+	        _angular_core.HostBinding('class.md-ripple-focused'),
+	        _angular_core.Input('md-ripple-focused'), 
+	        __metadata$3('design:type', Boolean)
+	    ], MdRipple.prototype, "focused", void 0);
+	    __decorate$3([
+	        _angular_core.HostBinding('class.md-ripple-unbounded'),
+	        _angular_core.Input('md-ripple-unbounded'), 
+	        __metadata$3('design:type', Boolean)
+	    ], MdRipple.prototype, "unbounded", void 0);
+	    MdRipple = __decorate$3([
+	        _angular_core.Directive({
+	            selector: '[md-ripple]',
+	        }), 
+	        __metadata$3('design:paramtypes', [_angular_core.ElementRef])
+	    ], MdRipple);
+	    return MdRipple;
+	}());
+	var MdRippleModule = (function () {
+	    function MdRippleModule() {
+	    }
+	    MdRippleModule.forRoot = function () {
+	        return {
+	            ngModule: MdRippleModule,
+	            providers: []
+	        };
+	    };
+	    MdRippleModule = __decorate$3([
+	        _angular_core.NgModule({
+	            exports: [MdRipple],
+	            declarations: [MdRipple],
+	        }), 
+	        __metadata$3('design:paramtypes', [])
+	    ], MdRippleModule);
+	    return MdRippleModule;
+	}());
+
+	// TODO(kara): Revisit why error messages are not being properly set.
+	var __extends$3 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * Wrapper around Error that sets the error message.
+	 */
+	var MdError = (function (_super) {
+	    __extends$3(MdError, _super);
+	    function MdError(value) {
+	        _super.call(this);
+	        this.message = value;
+	    }
+	    return MdError;
+	}(Error));
+
+	var __extends$2 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/** Exception thrown when attempting to attach a null portal to a host. */
+	var MdNullPortalError = (function (_super) {
+	    __extends$2(MdNullPortalError, _super);
+	    function MdNullPortalError() {
+	        _super.call(this, 'Must provide a portal to attach');
+	    }
+	    return MdNullPortalError;
+	}(MdError));
+	/** Exception thrown when attempting to attach a portal to a host that is already attached. */
+	var MdPortalAlreadyAttachedError = (function (_super) {
+	    __extends$2(MdPortalAlreadyAttachedError, _super);
+	    function MdPortalAlreadyAttachedError() {
+	        _super.call(this, 'Host already has a portal attached');
+	    }
+	    return MdPortalAlreadyAttachedError;
+	}(MdError));
+	/** Exception thrown when attempting to attach a portal to an already-disposed host. */
+	var MdPortalHostAlreadyDisposedError = (function (_super) {
+	    __extends$2(MdPortalHostAlreadyDisposedError, _super);
+	    function MdPortalHostAlreadyDisposedError() {
+	        _super.call(this, 'This PortalHost has already been disposed');
+	    }
+	    return MdPortalHostAlreadyDisposedError;
+	}(MdError));
+	/** Exception thrown when attempting to attach an unknown portal type. */
+	var MdUnknownPortalTypeError = (function (_super) {
+	    __extends$2(MdUnknownPortalTypeError, _super);
+	    function MdUnknownPortalTypeError() {
+	        _super.call(this, 'Attempting to attach an unknown Portal type. ' +
+	            'BasePortalHost accepts either a ComponentPortal or a TemplatePortal.');
+	    }
+	    return MdUnknownPortalTypeError;
+	}(MdError));
+	/** Exception thrown when attempting to attach a portal to a null host. */
+	var MdNullPortalHostError = (function (_super) {
+	    __extends$2(MdNullPortalHostError, _super);
+	    function MdNullPortalHostError() {
+	        _super.call(this, 'Attempting to attach a portal to a null PortalHost');
+	    }
+	    return MdNullPortalHostError;
+	}(MdError));
+	/** Exception thrown when attempting to detach a portal that is not attached. */
+	var MdNoPortalAttachedError = (function (_super) {
+	    __extends$2(MdNoPortalAttachedError, _super);
+	    function MdNoPortalAttachedError() {
+	        _super.call(this, 'Attempting to detach a portal that is not attached to a host');
+	    }
+	    return MdNoPortalAttachedError;
+	}(MdError));
+
+	var __extends$1 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * A `Portal` is something that you want to render somewhere else.
+	 * It can be attach to / detached from a `PortalHost`.
+	 */
+	var Portal = (function () {
+	    function Portal() {
+	    }
+	    /** Attach this portal to a host. */
+	    Portal.prototype.attach = function (host) {
+	        if (host == null) {
+	            throw new MdNullPortalHostError();
+	        }
+	        if (host.hasAttached()) {
+	            throw new MdPortalAlreadyAttachedError();
+	        }
+	        this._attachedHost = host;
+	        return host.attach(this);
+	    };
+	    /** Detach this portal from its host */
+	    Portal.prototype.detach = function () {
+	        var host = this._attachedHost;
+	        if (host == null) {
+	            throw new MdNoPortalAttachedError();
+	        }
+	        this._attachedHost = null;
+	        return host.detach();
+	    };
+	    Object.defineProperty(Portal.prototype, "isAttached", {
+	        /** Whether this portal is attached to a host. */
+	        get: function () {
+	            return this._attachedHost != null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Sets the PortalHost reference without performing `attach()`. This is used directly by
+	     * the PortalHost when it is performing an `attach()` or `detatch()`.
+	     */
+	    Portal.prototype.setAttachedHost = function (host) {
+	        this._attachedHost = host;
+	    };
+	    return Portal;
+	}());
+	/**
+	 * A `ComponentPortal` is a portal that instantiates some Component upon attachment.
+	 */
+	var ComponentPortal = (function (_super) {
+	    __extends$1(ComponentPortal, _super);
+	    function ComponentPortal(component, viewContainerRef, injector) {
+	        if (viewContainerRef === void 0) { viewContainerRef = null; }
+	        if (injector === void 0) { injector = null; }
+	        _super.call(this);
+	        this.component = component;
+	        this.viewContainerRef = viewContainerRef;
+	        this.injector = injector;
+	    }
+	    return ComponentPortal;
+	}(Portal));
+	/**
+	 * A `TemplatePortal` is a portal that represents some embedded template (TemplateRef).
+	 */
+	var TemplatePortal = (function (_super) {
+	    __extends$1(TemplatePortal, _super);
+	    function TemplatePortal(template, viewContainerRef) {
+	        _super.call(this);
+	        /**
+	         * Additional locals for the instantiated embedded view.
+	         * These locals can be seen as "exports" for the template, such as how ngFor has
+	         * index / event / odd.
+	         * See https://angular.io/docs/ts/latest/api/core/EmbeddedViewRef-class.html
+	         */
+	        this.locals = new Map();
+	        this.templateRef = template;
+	        this.viewContainerRef = viewContainerRef;
+	    }
+	    Object.defineProperty(TemplatePortal.prototype, "origin", {
+	        get: function () {
+	            return this.templateRef.elementRef;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    TemplatePortal.prototype.attach = function (host, locals) {
+	        this.locals = locals == null ? new Map() : locals;
+	        return _super.prototype.attach.call(this, host);
+	    };
+	    TemplatePortal.prototype.detach = function () {
+	        this.locals = new Map();
+	        return _super.prototype.detach.call(this);
+	    };
+	    return TemplatePortal;
+	}(Portal));
+	/**
+	 * Partial implementation of PortalHost that only deals with attaching either a
+	 * ComponentPortal or a TemplatePortal.
+	 */
+	var BasePortalHost = (function () {
+	    function BasePortalHost() {
+	        /** Whether this host has already been permanently disposed. */
+	        this._isDisposed = false;
+	    }
+	    /** Whether this host has an attached portal. */
+	    BasePortalHost.prototype.hasAttached = function () {
+	        return this._attachedPortal != null;
+	    };
+	    BasePortalHost.prototype.attach = function (portal) {
+	        if (portal == null) {
+	            throw new MdNullPortalError();
+	        }
+	        if (this.hasAttached()) {
+	            throw new MdPortalAlreadyAttachedError();
+	        }
+	        if (this._isDisposed) {
+	            throw new MdPortalHostAlreadyDisposedError();
+	        }
+	        if (portal instanceof ComponentPortal) {
+	            this._attachedPortal = portal;
+	            return this.attachComponentPortal(portal);
+	        }
+	        else if (portal instanceof TemplatePortal) {
+	            this._attachedPortal = portal;
+	            return this.attachTemplatePortal(portal);
+	        }
+	        throw new MdUnknownPortalTypeError();
+	    };
+	    BasePortalHost.prototype.detach = function () {
+	        if (this._attachedPortal) {
+	            this._attachedPortal.setAttachedHost(null);
+	        }
+	        this._attachedPortal = null;
+	        if (this._disposeFn != null) {
+	            this._disposeFn();
+	            this._disposeFn = null;
+	        }
+	    };
+	    BasePortalHost.prototype.dispose = function () {
+	        if (this.hasAttached()) {
+	            this.detach();
+	        }
+	        this._isDisposed = true;
+	    };
+	    BasePortalHost.prototype.setDisposeFn = function (fn) {
+	        this._disposeFn = fn;
+	    };
+	    return BasePortalHost;
+	}());
+
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$4 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$4 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Directive version of a `TemplatePortal`. Because the directive *is* a TemplatePortal,
+	 * the directive instance itself can be attached to a host, enabling declarative use of portals.
+	 *
+	 * Usage:
+	 * <template portal #greeting>
+	 *   <p> Hello {{name}} </p>
+	 * </template>
+	 */
+	var TemplatePortalDirective = (function (_super) {
+	    __extends(TemplatePortalDirective, _super);
+	    function TemplatePortalDirective(templateRef, viewContainerRef) {
+	        _super.call(this, templateRef, viewContainerRef);
+	    }
+	    TemplatePortalDirective = __decorate$4([
+	        _angular_core.Directive({
+	            selector: '[portal]',
+	            exportAs: 'portal',
+	        }), 
+	        __metadata$4('design:paramtypes', [_angular_core.TemplateRef, _angular_core.ViewContainerRef])
+	    ], TemplatePortalDirective);
+	    return TemplatePortalDirective;
+	}(TemplatePortal));
+	/**
+	 * Directive version of a PortalHost. Because the directive *is* a PortalHost, portals can be
+	 * directly attached to it, enabling declarative use.
+	 *
+	 * Usage:
+	 * <template [portalHost]="greeting"></template>
+	 */
+	var PortalHostDirective = (function (_super) {
+	    __extends(PortalHostDirective, _super);
+	    function PortalHostDirective(_componentFactoryResolver, _viewContainerRef) {
+	        _super.call(this);
+	        this._componentFactoryResolver = _componentFactoryResolver;
+	        this._viewContainerRef = _viewContainerRef;
+	    }
+	    Object.defineProperty(PortalHostDirective.prototype, "portal", {
+	        get: function () {
+	            return this._portal;
+	        },
+	        set: function (p) {
+	            this._replaceAttachedPortal(p);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    PortalHostDirective.prototype.ngOnDestroy = function () {
+	        this.dispose();
+	    };
+	    /** Attach the given ComponentPortal to this PortalHost using the ComponentFactoryResolver. */
+	    PortalHostDirective.prototype.attachComponentPortal = function (portal) {
+	        portal.setAttachedHost(this);
+	        // If the portal specifies an origin, use that as the logical location of the component
+	        // in the application tree. Otherwise use the location of this PortalHost.
+	        var viewContainerRef = portal.viewContainerRef != null ?
+	            portal.viewContainerRef :
+	            this._viewContainerRef;
+	        var componentFactory = this._componentFactoryResolver.resolveComponentFactory(portal.component);
+	        var ref = viewContainerRef.createComponent(componentFactory, viewContainerRef.length, portal.injector || viewContainerRef.parentInjector);
+	        this.setDisposeFn(function () { return ref.destroy(); });
+	        return ref;
+	    };
+	    /** Attach the given TemplatePortal to this PortlHost as an embedded View. */
+	    PortalHostDirective.prototype.attachTemplatePortal = function (portal) {
+	        var _this = this;
+	        portal.setAttachedHost(this);
+	        this._viewContainerRef.createEmbeddedView(portal.templateRef);
+	        this.setDisposeFn(function () { return _this._viewContainerRef.clear(); });
+	        // TODO(jelbourn): return locals from view
+	        return new Map();
+	    };
+	    /** Detatches the currently attached Portal (if there is one) and attaches the given Portal. */
+	    PortalHostDirective.prototype._replaceAttachedPortal = function (p) {
+	        if (this.hasAttached()) {
+	            this.detach();
+	        }
+	        if (p) {
+	            this.attach(p);
+	            this._portal = p;
+	        }
+	    };
+	    PortalHostDirective = __decorate$4([
+	        _angular_core.Directive({
+	            selector: '[portalHost]',
+	            inputs: ['portal: portalHost']
+	        }), 
+	        __metadata$4('design:paramtypes', [_angular_core.ComponentFactoryResolver, _angular_core.ViewContainerRef])
+	    ], PortalHostDirective);
+	    return PortalHostDirective;
+	}(BasePortalHost));
+	var PortalModule = (function () {
+	    function PortalModule() {
+	    }
+	    PortalModule.forRoot = function () {
+	        return {
+	            ngModule: PortalModule,
+	            providers: []
+	        };
+	    };
+	    PortalModule = __decorate$4([
+	        _angular_core.NgModule({
+	            exports: [TemplatePortalDirective, PortalHostDirective],
+	            declarations: [TemplatePortalDirective, PortalHostDirective],
+	        }), 
+	        __metadata$4('design:paramtypes', [])
+	    ], PortalModule);
+	    return PortalModule;
+	}());
+
+	/**
+	 * OverlayState is a bag of values for either the initial configuration or current state of an
+	 * overlay.
+	 */
+	var OverlayState = (function () {
+	    function OverlayState() {
+	        /** Whether the overlay has a backdrop. */
+	        this.hasBackdrop = false;
+	        /** Custom class to add to the backdrop **/
+	        this.backdropClass = 'md-overlay-dark-backdrop';
+	        /** The direction of the text in the overlay panel. */
+	        this.direction = 'ltr';
+	    }
+	    return OverlayState;
+	}());
+
+	var __extends$4 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * A PortalHost for attaching portals to an arbitrary DOM element outside of the Angular
+	 * application context.
+	 *
+	 * This is the only part of the portal core that directly touches the DOM.
+	 */
+	var DomPortalHost = (function (_super) {
+	    __extends$4(DomPortalHost, _super);
+	    function DomPortalHost(_hostDomElement, _componentFactoryResolver, _appRef, _defaultInjector) {
+	        _super.call(this);
+	        this._hostDomElement = _hostDomElement;
+	        this._componentFactoryResolver = _componentFactoryResolver;
+	        this._appRef = _appRef;
+	        this._defaultInjector = _defaultInjector;
+	    }
+	    /** Attach the given ComponentPortal to DOM element using the ComponentFactoryResolver. */
+	    DomPortalHost.prototype.attachComponentPortal = function (portal) {
+	        var _this = this;
+	        var componentFactory = this._componentFactoryResolver.resolveComponentFactory(portal.component);
+	        var componentRef;
+	        // If the portal specifies a ViewContainerRef, we will use that as the attachment point
+	        // for the component (in terms of Angular's component tree, not rendering).
+	        // When the ViewContainerRef is missing, we use the factory to create the component directly
+	        // and then manually attach the ChangeDetector for that component to the application (which
+	        // happens automatically when using a ViewContainer).
+	        if (portal.viewContainerRef) {
+	            componentRef = portal.viewContainerRef.createComponent(componentFactory, portal.viewContainerRef.length, portal.injector || portal.viewContainerRef.parentInjector);
+	            this.setDisposeFn(function () { return componentRef.destroy(); });
+	        }
+	        else {
+	            componentRef = componentFactory.create(portal.injector || this._defaultInjector);
+	            // When creating a component outside of a ViewContainer, we need to manually register
+	            // its ChangeDetector with the application. This API is unfortunately not yet published
+	            // in Angular core. The change detector must also be deregistered when the component
+	            // is destroyed to prevent memory leaks.
+	            //
+	            // See https://github.com/angular/angular/pull/12674
+	            var changeDetectorRef_1 = componentRef.changeDetectorRef;
+	            this._appRef.registerChangeDetector(changeDetectorRef_1);
+	            this.setDisposeFn(function () {
+	                _this._appRef.unregisterChangeDetector(changeDetectorRef_1);
+	                // Normally the ViewContainer will remove the component's nodes from the DOM.
+	                // Without a ViewContainer, we need to manually remove the nodes.
+	                var componentRootNode = _this._getComponentRootNode(componentRef);
+	                if (componentRootNode.parentNode) {
+	                    componentRootNode.parentNode.removeChild(componentRootNode);
+	                }
+	                componentRef.destroy();
+	            });
+	        }
+	        // At this point the component has been instantiated, so we move it to the location in the DOM
+	        // where we want it to be rendered.
+	        this._hostDomElement.appendChild(this._getComponentRootNode(componentRef));
+	        return componentRef;
+	    };
+	    DomPortalHost.prototype.attachTemplatePortal = function (portal) {
+	        var _this = this;
+	        var viewContainer = portal.viewContainerRef;
+	        var viewRef = viewContainer.createEmbeddedView(portal.templateRef);
+	        viewRef.rootNodes.forEach(function (rootNode) { return _this._hostDomElement.appendChild(rootNode); });
+	        this.setDisposeFn((function () {
+	            var index = viewContainer.indexOf(viewRef);
+	            if (index != -1) {
+	                viewContainer.remove(index);
+	            }
+	        }));
+	        // TODO(jelbourn): Return locals from view.
+	        return new Map();
+	    };
+	    DomPortalHost.prototype.dispose = function () {
+	        _super.prototype.dispose.call(this);
+	        if (this._hostDomElement.parentNode != null) {
+	            this._hostDomElement.parentNode.removeChild(this._hostDomElement);
+	        }
+	    };
+	    /** Gets the root HTMLElement for an instantiated component. */
+	    DomPortalHost.prototype._getComponentRootNode = function (componentRef) {
+	        return componentRef.hostView.rootNodes[0];
+	    };
+	    return DomPortalHost;
+	}(BasePortalHost));
+
+	/**
+	 * Reference to an overlay that has been created with the Overlay service.
+	 * Used to manipulate or dispose of said overlay.
+	 */
+	var OverlayRef = (function () {
+	    function OverlayRef(_portalHost, _pane, _state) {
+	        this._portalHost = _portalHost;
+	        this._pane = _pane;
+	        this._state = _state;
+	        this._backdropElement = null;
+	        this._backdropClick = new rxjs_Subject.Subject();
+	    }
+	    OverlayRef.prototype.attach = function (portal) {
+	        if (this._state.hasBackdrop) {
+	            this._attachBackdrop();
+	        }
+	        var attachResult = this._portalHost.attach(portal);
+	        this.updateSize();
+	        this.updateDirection();
+	        this.updatePosition();
+	        return attachResult;
+	    };
+	    OverlayRef.prototype.detach = function () {
+	        this._detatchBackdrop();
+	        return this._portalHost.detach();
+	    };
+	    OverlayRef.prototype.dispose = function () {
+	        this._detatchBackdrop();
+	        this._portalHost.dispose();
+	    };
+	    OverlayRef.prototype.hasAttached = function () {
+	        return this._portalHost.hasAttached();
+	    };
+	    OverlayRef.prototype.backdropClick = function () {
+	        return this._backdropClick.asObservable();
+	    };
+	    /** Gets the current state config of the overlay. */
+	    OverlayRef.prototype.getState = function () {
+	        return this._state;
+	    };
+	    /** Updates the position of the overlay based on the position strategy. */
+	    OverlayRef.prototype.updatePosition = function () {
+	        if (this._state.positionStrategy) {
+	            this._state.positionStrategy.apply(this._pane);
+	        }
+	    };
+	    /** Updates the text direction of the overlay panel. **/
+	    OverlayRef.prototype.updateDirection = function () {
+	        this._pane.setAttribute('dir', this._state.direction);
+	    };
+	    /** Updates the size of the overlay based on the overlay config. */
+	    OverlayRef.prototype.updateSize = function () {
+	        if (this._state.width || this._state.width === 0) {
+	            this._pane.style.width = formatCssUnit(this._state.width);
+	        }
+	        if (this._state.height || this._state.height === 0) {
+	            this._pane.style.height = formatCssUnit(this._state.height);
+	        }
+	    };
+	    /** Attaches a backdrop for this overlay. */
+	    OverlayRef.prototype._attachBackdrop = function () {
+	        var _this = this;
+	        this._backdropElement = document.createElement('div');
+	        this._backdropElement.classList.add('md-overlay-backdrop');
+	        this._backdropElement.classList.add(this._state.backdropClass);
+	        this._pane.parentElement.appendChild(this._backdropElement);
+	        // Forward backdrop clicks such that the consumer of the overlay can perform whatever
+	        // action desired when such a click occurs (usually closing the overlay).
+	        this._backdropElement.addEventListener('click', function () {
+	            _this._backdropClick.next(null);
+	        });
+	        // Add class to fade-in the backdrop after one frame.
+	        requestAnimationFrame(function () {
+	            _this._backdropElement.classList.add('md-overlay-backdrop-showing');
+	        });
+	    };
+	    /** Detaches the backdrop (if any) associated with the overlay. */
+	    OverlayRef.prototype._detatchBackdrop = function () {
+	        var _this = this;
+	        var backdropToDetach = this._backdropElement;
+	        if (backdropToDetach) {
+	            backdropToDetach.classList.remove('md-overlay-backdrop-showing');
+	            backdropToDetach.classList.remove(this._state.backdropClass);
+	            backdropToDetach.addEventListener('transitionend', function () {
+	                backdropToDetach.parentNode.removeChild(backdropToDetach);
+	                // It is possible that a new portal has been attached to this overlay since we started
+	                // removing the backdrop. If that is the case, only clear the backdrop reference if it
+	                // is still the same instance that we started to remove.
+	                if (_this._backdropElement == backdropToDetach) {
+	                    _this._backdropElement = null;
+	                }
+	            });
+	        }
+	    };
+	    return OverlayRef;
+	}());
+	function formatCssUnit(value) {
+	    return typeof value === 'string' ? value : value + "px";
+	}
+
+	var __decorate$8 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$8 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Simple utility for getting the bounds of the browser viewport.
+	 * TODO: internal
+	 */
+	var ViewportRuler = (function () {
+	    function ViewportRuler() {
+	    }
+	    // TODO(jelbourn): cache the document's bounding rect and only update it when the window
+	    // is resized (debounced).
+	    /** Gets a ClientRect for the viewport's bounds. */
+	    ViewportRuler.prototype.getViewportRect = function () {
+	        // Use the document element's bounding rect rather than the window scroll properties
+	        // (e.g. pageYOffset, scrollY) due to in issue in Chrome and IE where window scroll
+	        // properties and client coordinates (boundingClientRect, clientX/Y, etc.) are in different
+	        // conceptual viewports. Under most circumstances these viewports are equivalent, but they
+	        // can disagree when the page is pinch-zoomed (on devices that support touch).
+	        // See https://bugs.chromium.org/p/chromium/issues/detail?id=489206#c4
+	        // We use the documentElement instead of the body because, by default (without a css reset)
+	        // browsers typically give the document body an 8px margin, which is not included in
+	        // getBoundingClientRect().
+	        var documentRect = document.documentElement.getBoundingClientRect();
+	        var scrollPosition = this.getViewportScrollPosition(documentRect);
+	        var height = window.innerHeight;
+	        var width = window.innerWidth;
+	        return {
+	            top: scrollPosition.top,
+	            left: scrollPosition.left,
+	            bottom: scrollPosition.top + height,
+	            right: scrollPosition.left + width,
+	            height: height,
+	            width: width,
+	        };
+	    };
+	    /**
+	     * Gets the (top, left) scroll position of the viewport.
+	     * @param documentRect
+	     */
+	    ViewportRuler.prototype.getViewportScrollPosition = function (documentRect) {
+	        if (documentRect === void 0) { documentRect = document.documentElement.getBoundingClientRect(); }
+	        // The top-left-corner of the viewport is determined by the scroll position of the document
+	        // body, normally just (scrollLeft, scrollTop). However, Chrome and Firefox disagree about
+	        // whether `document.body` or `document.documentElement` is the scrolled element, so reading
+	        // `scrollTop` and `scrollLeft` is inconsistent. However, using the bounding rect of
+	        // `document.documentElement` works consistently, where the `top` and `left` values will
+	        // equal negative the scroll position.
+	        var top = documentRect.top < 0 && document.body.scrollTop == 0 ?
+	            -documentRect.top :
+	            document.body.scrollTop;
+	        var left = documentRect.left < 0 && document.body.scrollLeft == 0 ?
+	            -documentRect.left :
+	            document.body.scrollLeft;
+	        return { top: top, left: left };
+	    };
+	    ViewportRuler = __decorate$8([
+	        _angular_core.Injectable(), 
+	        __metadata$8('design:paramtypes', [])
+	    ], ViewportRuler);
+	    return ViewportRuler;
+	}());
+
+	/**
+	 * Applies a CSS transform to an element, including browser-prefixed properties.
+	 * @param element
+	 * @param transformValue
+	 */
+	function applyCssTransform(element, transformValue) {
+	    // It's important to trim the result, because the browser will ignore the set operation
+	    // if the string contains only whitespace.
+	    var value = transformValue.trim();
+	    element.style.transform = value;
+	    element.style.webkitTransform = value;
+	}
+
+	/** The points of the origin element and the overlay element to connect. */
+	var ConnectionPositionPair = (function () {
+	    function ConnectionPositionPair(origin, overlay) {
+	        this.originX = origin.originX;
+	        this.originY = origin.originY;
+	        this.overlayX = overlay.overlayX;
+	        this.overlayY = overlay.overlayY;
+	    }
+	    return ConnectionPositionPair;
+	}());
+
+	/**
+	 * A strategy for positioning overlays. Using this strategy, an overlay is given an
+	 * implicit position relative some origin element. The relative position is defined in terms of
+	 * a point on the origin element that is connected to a point on the overlay element. For example,
+	 * a basic dropdown is connecting the bottom-left corner of the origin to the top-left corner
+	 * of the overlay.
+	 */
+	var ConnectedPositionStrategy = (function () {
+	    function ConnectedPositionStrategy(_connectedTo, _originPos, _overlayPos, _viewportRuler) {
+	        this._connectedTo = _connectedTo;
+	        this._originPos = _originPos;
+	        this._overlayPos = _overlayPos;
+	        this._viewportRuler = _viewportRuler;
+	        this._dir = 'ltr';
+	        /** The offset in pixels for the overlay connection point on the x-axis */
+	        this._offsetX = 0;
+	        /** The offset in pixels for the overlay connection point on the y-axis */
+	        this._offsetY = 0;
+	        /** Ordered list of preferred positions, from most to least desirable. */
+	        this._preferredPositions = [];
+	        this._origin = this._connectedTo.nativeElement;
+	        this.withFallbackPosition(_originPos, _overlayPos);
+	    }
+	    Object.defineProperty(ConnectedPositionStrategy.prototype, "_isRtl", {
+	        /** Whether the we're dealing with an RTL context */
+	        get: function () {
+	            return this._dir === 'rtl';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(ConnectedPositionStrategy.prototype, "positions", {
+	        get: function () {
+	            return this._preferredPositions;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Updates the position of the overlay element, using whichever preferred position relative
+	     * to the origin fits on-screen.
+	     * TODO: internal
+	     */
+	    ConnectedPositionStrategy.prototype.apply = function (element) {
+	        // We need the bounding rects for the origin and the overlay to determine how to position
+	        // the overlay relative to the origin.
+	        var originRect = this._origin.getBoundingClientRect();
+	        var overlayRect = element.getBoundingClientRect();
+	        // We use the viewport rect to determine whether a position would go off-screen.
+	        var viewportRect = this._viewportRuler.getViewportRect();
+	        var firstOverlayPoint = null;
+	        // We want to place the overlay in the first of the preferred positions such that the
+	        // overlay fits on-screen.
+	        for (var _i = 0, _a = this._preferredPositions; _i < _a.length; _i++) {
+	            var pos = _a[_i];
+	            // Get the (x, y) point of connection on the origin, and then use that to get the
+	            // (top, left) coordinate for the overlay at `pos`.
+	            var originPoint = this._getOriginConnectionPoint(originRect, pos);
+	            var overlayPoint = this._getOverlayPoint(originPoint, overlayRect, pos);
+	            firstOverlayPoint = firstOverlayPoint || overlayPoint;
+	            // If the overlay in the calculated position fits on-screen, put it there and we're done.
+	            if (this._willOverlayFitWithinViewport(overlayPoint, overlayRect, viewportRect)) {
+	                this._setElementPosition(element, overlayPoint);
+	                return Promise.resolve(null);
+	            }
+	        }
+	        // TODO(jelbourn): fallback behavior for when none of the preferred positions fit on-screen.
+	        // For now, just stick it in the first position and let it go off-screen.
+	        this._setElementPosition(element, firstOverlayPoint);
+	        return Promise.resolve(null);
+	    };
+	    ConnectedPositionStrategy.prototype.withFallbackPosition = function (originPos, overlayPos) {
+	        this._preferredPositions.push(new ConnectionPositionPair(originPos, overlayPos));
+	        return this;
+	    };
+	    /** Sets the layout direction so the overlay's position can be adjusted to match. */
+	    ConnectedPositionStrategy.prototype.withDirection = function (dir) {
+	        this._dir = dir;
+	        return this;
+	    };
+	    /** Sets an offset for the overlay's connection point on the x-axis */
+	    ConnectedPositionStrategy.prototype.withOffsetX = function (offset) {
+	        this._offsetX = offset;
+	        return this;
+	    };
+	    /** Sets an offset for the overlay's connection point on the y-axis */
+	    ConnectedPositionStrategy.prototype.withOffsetY = function (offset) {
+	        this._offsetY = offset;
+	        return this;
+	    };
+	    /**
+	     * Gets the horizontal (x) "start" dimension based on whether the overlay is in an RTL context.
+	     * @param rect
+	     */
+	    ConnectedPositionStrategy.prototype._getStartX = function (rect) {
+	        return this._isRtl ? rect.right : rect.left;
+	    };
+	    /**
+	     * Gets the horizontal (x) "end" dimension based on whether the overlay is in an RTL context.
+	     * @param rect
+	     */
+	    ConnectedPositionStrategy.prototype._getEndX = function (rect) {
+	        return this._isRtl ? rect.left : rect.right;
+	    };
+	    /**
+	     * Gets the (x, y) coordinate of a connection point on the origin based on a relative position.
+	     * @param originRect
+	     * @param pos
+	     */
+	    ConnectedPositionStrategy.prototype._getOriginConnectionPoint = function (originRect, pos) {
+	        var originStartX = this._getStartX(originRect);
+	        var originEndX = this._getEndX(originRect);
+	        var x;
+	        if (pos.originX == 'center') {
+	            x = originStartX + (originRect.width / 2);
+	        }
+	        else {
+	            x = pos.originX == 'start' ? originStartX : originEndX;
+	        }
+	        var y;
+	        if (pos.originY == 'center') {
+	            y = originRect.top + (originRect.height / 2);
+	        }
+	        else {
+	            y = pos.originY == 'top' ? originRect.top : originRect.bottom;
+	        }
+	        return { x: x, y: y };
+	    };
+	    /**
+	     * Gets the (x, y) coordinate of the top-left corner of the overlay given a given position and
+	     * origin point to which the overlay should be connected.
+	     * @param originPoint
+	     * @param overlayRect
+	     * @param pos
+	     */
+	    ConnectedPositionStrategy.prototype._getOverlayPoint = function (originPoint, overlayRect, pos) {
+	        // Calculate the (overlayStartX, overlayStartY), the start of the potential overlay position
+	        // relative to the origin point.
+	        var overlayStartX;
+	        if (pos.overlayX == 'center') {
+	            overlayStartX = -overlayRect.width / 2;
+	        }
+	        else if (pos.overlayX === 'start') {
+	            overlayStartX = this._isRtl ? -overlayRect.width : 0;
+	        }
+	        else {
+	            overlayStartX = this._isRtl ? 0 : -overlayRect.width;
+	        }
+	        var overlayStartY;
+	        if (pos.overlayY == 'center') {
+	            overlayStartY = -overlayRect.height / 2;
+	        }
+	        else {
+	            overlayStartY = pos.overlayY == 'top' ? 0 : -overlayRect.height;
+	        }
+	        return {
+	            x: originPoint.x + overlayStartX + this._offsetX,
+	            y: originPoint.y + overlayStartY + this._offsetY
+	        };
+	    };
+	    /**
+	     * Gets whether the overlay positioned at the given point will fit on-screen.
+	     * @param overlayPoint The top-left coordinate of the overlay.
+	     * @param overlayRect Bounding rect of the overlay, used to get its size.
+	     * @param viewportRect The bounding viewport.
+	     */
+	    ConnectedPositionStrategy.prototype._willOverlayFitWithinViewport = function (overlayPoint, overlayRect, viewportRect) {
+	        // TODO(jelbourn): probably also want some space between overlay edge and viewport edge.
+	        return overlayPoint.x >= viewportRect.left &&
+	            overlayPoint.x + overlayRect.width <= viewportRect.right &&
+	            overlayPoint.y >= viewportRect.top &&
+	            overlayPoint.y + overlayRect.height <= viewportRect.bottom;
+	    };
+	    /**
+	     * Physically positions the overlay element to the given coordinate.
+	     * @param element
+	     * @param overlayPoint
+	     */
+	    ConnectedPositionStrategy.prototype._setElementPosition = function (element, overlayPoint) {
+	        var x = overlayPoint.x;
+	        var y = overlayPoint.y;
+	        // TODO(jelbourn): we don't want to always overwrite the transform property here,
+	        // because it will need to be used for animations.
+	        applyCssTransform(element, "translateX(" + x + "px) translateY(" + y + "px)");
+	    };
+	    return ConnectedPositionStrategy;
+	}());
+
+	/**
+	 * A strategy for positioning overlays. Using this strategy, an overlay is given an
+	 * explicit position relative to the browser's viewport.
+	 */
+	var GlobalPositionStrategy = (function () {
+	    function GlobalPositionStrategy() {
+	        this._cssPosition = 'absolute';
+	        this._top = '';
+	        this._bottom = '';
+	        this._left = '';
+	        this._right = '';
+	        /** Array of individual applications of translateX(). Currently only for centering. */
+	        this._translateX = [];
+	        /** Array of individual applications of translateY(). Currently only for centering. */
+	        this._translateY = [];
+	    }
+	    /** Sets the element to use CSS position: fixed */
+	    GlobalPositionStrategy.prototype.fixed = function () {
+	        this._cssPosition = 'fixed';
+	        return this;
+	    };
+	    /** Sets the element to use CSS position: absolute. This is the default. */
+	    GlobalPositionStrategy.prototype.absolute = function () {
+	        this._cssPosition = 'absolute';
+	        return this;
+	    };
+	    /** Sets the top position of the overlay. Clears any previously set vertical position. */
+	    GlobalPositionStrategy.prototype.top = function (value) {
+	        this._bottom = '';
+	        this._translateY = [];
+	        this._top = value;
+	        return this;
+	    };
+	    /** Sets the left position of the overlay. Clears any previously set horizontal position. */
+	    GlobalPositionStrategy.prototype.left = function (value) {
+	        this._right = '';
+	        this._translateX = [];
+	        this._left = value;
+	        return this;
+	    };
+	    /** Sets the bottom position of the overlay. Clears any previously set vertical position. */
+	    GlobalPositionStrategy.prototype.bottom = function (value) {
+	        this._top = '';
+	        this._translateY = [];
+	        this._bottom = value;
+	        return this;
+	    };
+	    /** Sets the right position of the overlay. Clears any previously set horizontal position. */
+	    GlobalPositionStrategy.prototype.right = function (value) {
+	        this._left = '';
+	        this._translateX = [];
+	        this._right = value;
+	        return this;
+	    };
+	    /**
+	     * Centers the overlay horizontally with an optional offset.
+	     * Clears any previously set horizontal position.
+	     */
+	    GlobalPositionStrategy.prototype.centerHorizontally = function (offset) {
+	        if (offset === void 0) { offset = '0px'; }
+	        this._left = '50%';
+	        this._right = '';
+	        this._translateX = ['-50%', offset];
+	        return this;
+	    };
+	    /**
+	     * Centers the overlay vertically with an optional offset.
+	     * Clears any previously set vertical position.
+	     */
+	    GlobalPositionStrategy.prototype.centerVertically = function (offset) {
+	        if (offset === void 0) { offset = '0px'; }
+	        this._top = '50%';
+	        this._bottom = '';
+	        this._translateY = ['-50%', offset];
+	        return this;
+	    };
+	    /**
+	     * Apply the position to the element.
+	     * TODO: internal
+	     */
+	    GlobalPositionStrategy.prototype.apply = function (element) {
+	        element.style.position = this._cssPosition;
+	        element.style.top = this._top;
+	        element.style.left = this._left;
+	        element.style.bottom = this._bottom;
+	        element.style.right = this._right;
+	        // TODO(jelbourn): we don't want to always overwrite the transform property here,
+	        // because it will need to be used for animations.
+	        var tranlateX = this._reduceTranslateValues('translateX', this._translateX);
+	        var translateY = this._reduceTranslateValues('translateY', this._translateY);
+	        applyCssTransform(element, tranlateX + " " + translateY);
+	        return Promise.resolve(null);
+	    };
+	    /** Reduce a list of translate values to a string that can be used in the transform property */
+	    GlobalPositionStrategy.prototype._reduceTranslateValues = function (translateFn, values) {
+	        return values.map(function (t) { return (translateFn + "(" + t + ")"); }).join(' ');
+	    };
+	    return GlobalPositionStrategy;
+	}());
+
+	var __decorate$7 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$7 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Builder for overlay position strategy. */
+	var OverlayPositionBuilder = (function () {
+	    function OverlayPositionBuilder(_viewportRuler) {
+	        this._viewportRuler = _viewportRuler;
+	    }
+	    /** Creates a global position strategy. */
+	    OverlayPositionBuilder.prototype.global = function () {
+	        return new GlobalPositionStrategy();
+	    };
+	    /** Creates a relative position strategy. */
+	    OverlayPositionBuilder.prototype.connectedTo = function (elementRef, originPos, overlayPos) {
+	        return new ConnectedPositionStrategy(elementRef, originPos, overlayPos, this._viewportRuler);
+	    };
+	    OverlayPositionBuilder = __decorate$7([
+	        _angular_core.Injectable(), 
+	        __metadata$7('design:paramtypes', [ViewportRuler])
+	    ], OverlayPositionBuilder);
+	    return OverlayPositionBuilder;
+	}());
+
+	/**
+	 * The OverlayContainer is the container in which all overlays will load.
+	 * It should be provided in the root component to ensure it is properly shared.
+	 */
+	var OverlayContainer = (function () {
+	    function OverlayContainer() {
+	    }
+	    /**
+	     * This method returns the overlay container element.  It will lazily
+	     * create the element the first time  it is called to facilitate using
+	     * the container in non-browser environments.
+	     * @returns {HTMLElement} the container element
+	     */
+	    OverlayContainer.prototype.getContainerElement = function () {
+	        if (!this._containerElement) {
+	            this._createContainer();
+	        }
+	        return this._containerElement;
+	    };
+	    /**
+	     * Create the overlay container element, which is simply a div
+	     * with the 'md-overlay-container' class on the document body.
+	     */
+	    OverlayContainer.prototype._createContainer = function () {
+	        var container = document.createElement('div');
+	        container.classList.add('md-overlay-container');
+	        document.body.appendChild(container);
+	        this._containerElement = container;
+	    };
+	    return OverlayContainer;
+	}());
+
+	var __decorate$6 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$6 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Next overlay unique ID. */
+	var nextUniqueId = 0;
+	/** The default state for newly created overlays. */
+	var defaultState = new OverlayState();
+	/**
+	 * Service to create Overlays. Overlays are dynamically added pieces of floating UI, meant to be
+	 * used as a low-level building building block for other components. Dialogs, tooltips, menus,
+	 * selects, etc. can all be built using overlays. The service should primarily be used by authors
+	 * of re-usable components rather than developers building end-user applications.
+	 *
+	 * An overlay *is* a PortalHost, so any kind of Portal can be loaded into one.
+	 */
+	var Overlay = (function () {
+	    function Overlay(_overlayContainer, _componentFactoryResolver, _positionBuilder, _appRef, _injector) {
+	        this._overlayContainer = _overlayContainer;
+	        this._componentFactoryResolver = _componentFactoryResolver;
+	        this._positionBuilder = _positionBuilder;
+	        this._appRef = _appRef;
+	        this._injector = _injector;
+	    }
+	    /**
+	     * Creates an overlay.
+	     * @param state State to apply to the overlay.
+	     * @returns A reference to the created overlay.
+	     */
+	    Overlay.prototype.create = function (state) {
+	        if (state === void 0) { state = defaultState; }
+	        return this._createOverlayRef(this._createPaneElement(), state);
+	    };
+	    /**
+	     * Returns a position builder that can be used, via fluent API,
+	     * to construct and configure a position strategy.
+	     */
+	    Overlay.prototype.position = function () {
+	        return this._positionBuilder;
+	    };
+	    /**
+	     * Creates the DOM element for an overlay and appends it to the overlay container.
+	     * @returns Promise resolving to the created element.
+	     */
+	    Overlay.prototype._createPaneElement = function () {
+	        var pane = document.createElement('div');
+	        pane.id = "md-overlay-" + nextUniqueId++;
+	        pane.classList.add('md-overlay-pane');
+	        this._overlayContainer.getContainerElement().appendChild(pane);
+	        return pane;
+	    };
+	    /**
+	     * Create a DomPortalHost into which the overlay content can be loaded.
+	     * @param pane The DOM element to turn into a portal host.
+	     * @returns A portal host for the given DOM element.
+	     */
+	    Overlay.prototype._createPortalHost = function (pane) {
+	        return new DomPortalHost(pane, this._componentFactoryResolver, this._appRef, this._injector);
+	    };
+	    /**
+	     * Creates an OverlayRef for an overlay in the given DOM element.
+	     * @param pane DOM element for the overlay
+	     * @param state
+	     * @returns {OverlayRef}
+	     */
+	    Overlay.prototype._createOverlayRef = function (pane, state) {
+	        return new OverlayRef(this._createPortalHost(pane), pane, state);
+	    };
+	    Overlay = __decorate$6([
+	        _angular_core.Injectable(), 
+	        __metadata$6('design:paramtypes', [OverlayContainer, _angular_core.ComponentFactoryResolver, OverlayPositionBuilder, _angular_core.ApplicationRef, _angular_core.Injector])
+	    ], Overlay);
+	    return Overlay;
+	}());
+	/** Providers for Overlay and its related injectables. */
+	var OVERLAY_PROVIDERS = [
+	    ViewportRuler,
+	    OverlayPositionBuilder,
+	    Overlay,
+	    OverlayContainer,
+	];
+
+	var __decorate$5 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$5 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	/** Default set of positions for the overlay. Follows the behavior of a dropdown. */
+	var defaultPositionList = [
+	    new ConnectionPositionPair({ originX: 'start', originY: 'bottom' }, { overlayX: 'start', overlayY: 'top' }),
+	    new ConnectionPositionPair({ originX: 'start', originY: 'top' }, { overlayX: 'start', overlayY: 'bottom' }),
+	];
+	/**
+	 * Directive applied to an element to make it usable as an origin for an Overlay using a
+	 * ConnectedPositionStrategy.
+	 */
+	var OverlayOrigin = (function () {
+	    function OverlayOrigin(_elementRef) {
+	        this._elementRef = _elementRef;
+	    }
+	    Object.defineProperty(OverlayOrigin.prototype, "elementRef", {
+	        get: function () {
+	            return this._elementRef;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    OverlayOrigin = __decorate$5([
+	        _angular_core.Directive({
+	            selector: '[overlay-origin]',
+	            exportAs: 'overlayOrigin',
+	        }), 
+	        __metadata$5('design:paramtypes', [_angular_core.ElementRef])
+	    ], OverlayOrigin);
+	    return OverlayOrigin;
+	}());
+	/**
+	 * Directive to facilitate declarative creation of an Overlay using a ConnectedPositionStrategy.
+	 */
+	var ConnectedOverlayDirective = (function () {
+	    // TODO(jelbourn): inputs for size, scroll behavior, animation, etc.
+	    function ConnectedOverlayDirective(_overlay, templateRef, viewContainerRef, _dir) {
+	        this._overlay = _overlay;
+	        this._dir = _dir;
+	        this._open = false;
+	        this._hasBackdrop = false;
+	        /** The offset in pixels for the overlay connection point on the x-axis */
+	        this.offsetX = 0;
+	        /** The offset in pixels for the overlay connection point on the y-axis */
+	        this.offsetY = 0;
+	        /** Event emitted when the backdrop is clicked. */
+	        this.backdropClick = new _angular_core.EventEmitter();
+	        this._templatePortal = new TemplatePortal(templateRef, viewContainerRef);
+	    }
+	    Object.defineProperty(ConnectedOverlayDirective.prototype, "hasBackdrop", {
+	        /** Whether or not the overlay should attach a backdrop. */
+	        get: function () {
+	            return this._hasBackdrop;
+	        },
+	        // TODO: move the boolean coercion logic to a shared function in core
+	        set: function (value) {
+	            this._hasBackdrop = value != null && "" + value !== 'false';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(ConnectedOverlayDirective.prototype, "open", {
+	        get: function () {
+	            return this._open;
+	        },
+	        set: function (value) {
+	            value ? this._attachOverlay() : this._detachOverlay();
+	            this._open = value;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(ConnectedOverlayDirective.prototype, "overlayRef", {
+	        get: function () {
+	            return this._overlayRef;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(ConnectedOverlayDirective.prototype, "dir", {
+	        get: function () {
+	            return this._dir ? this._dir.value : 'ltr';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** TODO: internal */
+	    ConnectedOverlayDirective.prototype.ngOnDestroy = function () {
+	        this._destroyOverlay();
+	    };
+	    /** Creates an overlay */
+	    ConnectedOverlayDirective.prototype._createOverlay = function () {
+	        if (!this.positions || !this.positions.length) {
+	            this.positions = defaultPositionList;
+	        }
+	        this._overlayRef = this._overlay.create(this._buildConfig());
+	    };
+	    /** Builds the overlay config based on the directive's inputs */
+	    ConnectedOverlayDirective.prototype._buildConfig = function () {
+	        var overlayConfig = new OverlayState();
+	        if (this.width || this.width === 0) {
+	            overlayConfig.width = this.width;
+	        }
+	        if (this.height || this.height === 0) {
+	            overlayConfig.height = this.height;
+	        }
+	        overlayConfig.hasBackdrop = this.hasBackdrop;
+	        if (this.backdropClass) {
+	            overlayConfig.backdropClass = this.backdropClass;
+	        }
+	        overlayConfig.positionStrategy = this._createPositionStrategy();
+	        overlayConfig.direction = this.dir;
+	        return overlayConfig;
+	    };
+	    /** Returns the position strategy of the overlay to be set on the overlay config */
+	    ConnectedOverlayDirective.prototype._createPositionStrategy = function () {
+	        var pos = this.positions[0];
+	        var originPoint = { originX: pos.originX, originY: pos.originY };
+	        var overlayPoint = { overlayX: pos.overlayX, overlayY: pos.overlayY };
+	        return this._overlay.position()
+	            .connectedTo(this.origin.elementRef, originPoint, overlayPoint)
+	            .withDirection(this.dir)
+	            .withOffsetX(this.offsetX)
+	            .withOffsetY(this.offsetY);
+	    };
+	    /** Attaches the overlay and subscribes to backdrop clicks if backdrop exists */
+	    ConnectedOverlayDirective.prototype._attachOverlay = function () {
+	        var _this = this;
+	        if (!this._overlayRef) {
+	            this._createOverlay();
+	        }
+	        if (!this._overlayRef.hasAttached()) {
+	            this._overlayRef.attach(this._templatePortal);
+	        }
+	        if (this.hasBackdrop) {
+	            this._backdropSubscription = this._overlayRef.backdropClick().subscribe(function () {
+	                _this.backdropClick.emit();
+	            });
+	        }
+	    };
+	    /** Detaches the overlay and unsubscribes to backdrop clicks if backdrop exists */
+	    ConnectedOverlayDirective.prototype._detachOverlay = function () {
+	        if (this._overlayRef) {
+	            this._overlayRef.detach();
+	        }
+	        if (this._backdropSubscription) {
+	            this._backdropSubscription.unsubscribe();
+	            this._backdropSubscription = null;
+	        }
+	    };
+	    /** Destroys the overlay created by this directive. */
+	    ConnectedOverlayDirective.prototype._destroyOverlay = function () {
+	        if (this._overlayRef) {
+	            this._overlayRef.dispose();
+	        }
+	        if (this._backdropSubscription) {
+	            this._backdropSubscription.unsubscribe();
+	        }
+	    };
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', OverlayOrigin)
+	    ], ConnectedOverlayDirective.prototype, "origin", void 0);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', Array)
+	    ], ConnectedOverlayDirective.prototype, "positions", void 0);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', Number)
+	    ], ConnectedOverlayDirective.prototype, "offsetX", void 0);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', Number)
+	    ], ConnectedOverlayDirective.prototype, "offsetY", void 0);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', Object)
+	    ], ConnectedOverlayDirective.prototype, "width", void 0);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', Object)
+	    ], ConnectedOverlayDirective.prototype, "height", void 0);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', String)
+	    ], ConnectedOverlayDirective.prototype, "backdropClass", void 0);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', Object)
+	    ], ConnectedOverlayDirective.prototype, "hasBackdrop", null);
+	    __decorate$5([
+	        _angular_core.Input(), 
+	        __metadata$5('design:type', Object)
+	    ], ConnectedOverlayDirective.prototype, "open", null);
+	    __decorate$5([
+	        _angular_core.Output(), 
+	        __metadata$5('design:type', Object)
+	    ], ConnectedOverlayDirective.prototype, "backdropClick", void 0);
+	    ConnectedOverlayDirective = __decorate$5([
+	        _angular_core.Directive({
+	            selector: '[connected-overlay]',
+	            exportAs: 'connectedOverlay'
+	        }),
+	        __param(3, _angular_core.Optional()), 
+	        __metadata$5('design:paramtypes', [Overlay, _angular_core.TemplateRef, _angular_core.ViewContainerRef, Dir])
+	    ], ConnectedOverlayDirective);
+	    return ConnectedOverlayDirective;
+	}());
+	var OverlayModule = (function () {
+	    function OverlayModule() {
+	    }
+	    OverlayModule.forRoot = function () {
+	        return {
+	            ngModule: OverlayModule,
+	            providers: OVERLAY_PROVIDERS,
+	        };
+	    };
+	    OverlayModule = __decorate$5([
+	        _angular_core.NgModule({
+	            imports: [PortalModule],
+	            exports: [ConnectedOverlayDirective, OverlayOrigin],
+	            declarations: [ConnectedOverlayDirective, OverlayOrigin],
+	        }), 
+	        __metadata$5('design:paramtypes', [])
+	    ], OverlayModule);
+	    return OverlayModule;
+	}());
+
+	var __decorate$11 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$11 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Utility for checking the interactivity of an element, such as whether is is focusable or
+	 * tabbable.
+	 *
+	 * NOTE: Currently does not capture any special element behaviors, browser quirks, or edge cases.
+	 * This is a basic/naive starting point onto which further behavior will be added.
+	 *
+	 * This class uses instance methods instead of static functions so that alternate implementations
+	 * can be injected.
+	 *
+	 * TODO(jelbourn): explore using ally.js directly for its significantly more robust
+	 * checks (need to evaluate payload size, performance, and compatibility with tree-shaking).
+	 */
+	var InteractivityChecker = (function () {
+	    function InteractivityChecker() {
+	    }
+	    /** Gets whether an element is disabled. */
+	    InteractivityChecker.prototype.isDisabled = function (element) {
+	        // This does not capture some cases, such as a non-form control with a disabled attribute or
+	        // a form control inside of a disabled form, but should capture the most common cases.
+	        return element.hasAttribute('disabled');
+	    };
+	    /**
+	     * Gets whether an element is visible for the purposes of interactivity.
+	     *
+	     * This will capture states like `display: none` and `visibility: hidden`, but not things like
+	     * being clipped by an `overflow: hidden` parent or being outside the viewport.
+	     */
+	    InteractivityChecker.prototype.isVisible = function (element) {
+	        // There are additional special cases that this does not capture, but this will work for
+	        // the most common cases.
+	        // Use logic from jQuery to check for `display: none`.
+	        // See https://github.com/jquery/jquery/blob/master/src/css/hiddenVisibleSelectors.js#L12
+	        if (!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)) {
+	            return false;
+	        }
+	        // Check for css `visibility` property.
+	        // TODO(jelbourn): do any browsers we support return an empty string instead of 'visible'?
+	        return getComputedStyle(element).getPropertyValue('visibility') == 'visible';
+	    };
+	    /**
+	     * Gets whether an element can be reached via Tab key.
+	     * Assumes that the element has already been checked with isFocusable.
+	     */
+	    InteractivityChecker.prototype.isTabbable = function (element) {
+	        // Again, naive approach that does not capture many special cases and browser quirks.
+	        return element.tabIndex >= 0;
+	    };
+	    /** Gets whether an element can be focused by the user. */
+	    InteractivityChecker.prototype.isFocusable = function (element) {
+	        // Perform checks in order of left to most expensive.
+	        // Again, naive approach that does not capture many edge cases and browser quirks.
+	        return isPotentiallyFocusable(element) && !this.isDisabled(element) && this.isVisible(element);
+	    };
+	    InteractivityChecker = __decorate$11([
+	        _angular_core.Injectable(), 
+	        __metadata$11('design:paramtypes', [])
+	    ], InteractivityChecker);
+	    return InteractivityChecker;
+	}());
+	/** Gets whether an element's  */
+	function isNativeFormElement(element) {
+	    var nodeName = element.nodeName.toLowerCase();
+	    return nodeName === 'input' ||
+	        nodeName === 'select' ||
+	        nodeName === 'button' ||
+	        nodeName === 'textarea';
+	}
+	/** Gets whether an element is an <input type="hidden">. */
+	function isHiddenInput(element) {
+	    return isInputElement(element) && element.type == 'hidden';
+	}
+	/** Gets whether an element is an anchor that has an href attribute. */
+	function isAnchorWithHref(element) {
+	    return isAnchorElement(element) && element.hasAttribute('href');
+	}
+	/** Gets whether an element is an input element. */
+	function isInputElement(element) {
+	    return element.nodeName == 'input';
+	}
+	/** Gets whether an element is an anchor element. */
+	function isAnchorElement(element) {
+	    return element.nodeName.toLowerCase() == 'a';
+	}
+	/** Gets whether an element has a valid tabindex. */
+	function hasValidTabIndex(element) {
+	    if (!element.hasAttribute('tabindex') || element.tabIndex === undefined) {
+	        return false;
+	    }
+	    var tabIndex = element.getAttribute('tabindex');
+	    // IE11 parses tabindex="" as the value "-32768"
+	    if (tabIndex == '-32768') {
+	        return false;
+	    }
+	    return !!(tabIndex && !isNaN(parseInt(tabIndex, 10)));
+	}
+	/**
+	 * Gets whether an element is potentially focusable without taking current visible/disabled state
+	 * into account.
+	 */
+	function isPotentiallyFocusable(element) {
+	    // Inputs are potentially focusable *unless* they're type="hidden".
+	    if (isHiddenInput(element)) {
+	        return false;
+	    }
+	    return isNativeFormElement(element) ||
+	        isAnchorWithHref(element) ||
+	        element.hasAttribute('contenteditable') ||
+	        hasValidTabIndex(element);
+	}
+
+	var __decorate$10 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$10 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Directive for trapping focus within a region.
+	 *
+	 * NOTE: This directive currently uses a very simple (naive) approach to focus trapping.
+	 * It assumes that the tab order is the same as DOM order, which is not necessarily true.
+	 * Things like tabIndex > 0, flex `order`, and shadow roots can cause to two to misalign.
+	 * This will be replaced with a more intelligent solution before the library is considered stable.
+	 */
+	var FocusTrap = (function () {
+	    function FocusTrap(_checker) {
+	        this._checker = _checker;
+	    }
+	    /** Focuses the first tabbable element within the focus trap region. */
+	    FocusTrap.prototype.focusFirstTabbableElement = function () {
+	        var redirectToElement = this._getFirstTabbableElement(this.trappedContent.nativeElement);
+	        if (redirectToElement) {
+	            redirectToElement.focus();
+	        }
+	    };
+	    /** Focuses the last tabbable element within the focus trap region. */
+	    FocusTrap.prototype.focusLastTabbableElement = function () {
+	        var redirectToElement = this._getLastTabbableElement(this.trappedContent.nativeElement);
+	        if (redirectToElement) {
+	            redirectToElement.focus();
+	        }
+	    };
+	    /** Get the first tabbable element from a DOM subtree (inclusive). */
+	    FocusTrap.prototype._getFirstTabbableElement = function (root) {
+	        if (this._checker.isFocusable(root) && this._checker.isTabbable(root)) {
+	            return root;
+	        }
+	        // Iterate in DOM order.
+	        var childCount = root.children.length;
+	        for (var i = 0; i < childCount; i++) {
+	            var tabbableChild = this._getFirstTabbableElement(root.children[i]);
+	            if (tabbableChild) {
+	                return tabbableChild;
+	            }
+	        }
+	        return null;
+	    };
+	    /** Get the last tabbable element from a DOM subtree (inclusive). */
+	    FocusTrap.prototype._getLastTabbableElement = function (root) {
+	        if (this._checker.isFocusable(root) && this._checker.isTabbable(root)) {
+	            return root;
+	        }
+	        // Iterate in reverse DOM order.
+	        for (var i = root.children.length - 1; i >= 0; i--) {
+	            var tabbableChild = this._getLastTabbableElement(root.children[i]);
+	            if (tabbableChild) {
+	                return tabbableChild;
+	            }
+	        }
+	        return null;
+	    };
+	    __decorate$10([
+	        _angular_core.ViewChild('trappedContent'), 
+	        __metadata$10('design:type', _angular_core.ElementRef)
+	    ], FocusTrap.prototype, "trappedContent", void 0);
+	    FocusTrap = __decorate$10([
+	        _angular_core.Component({selector: 'focus-trap',
+	            // TODO(jelbourn): move this to a separate file.
+	            template: "\n  <div tabindex=\"0\" (focus)=\"focusLastTabbableElement()\"></div>\n  <div #trappedContent><ng-content></ng-content></div>\n  <div tabindex=\"0\" (focus)=\"focusFirstTabbableElement()\"></div>",
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }), 
+	        __metadata$10('design:paramtypes', [InteractivityChecker])
+	    ], FocusTrap);
+	    return FocusTrap;
+	}());
+
+	var __decorate$12 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$12 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param$1 = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	var LIVE_ANNOUNCER_ELEMENT_TOKEN = new _angular_core.OpaqueToken('mdLiveAnnouncerElement');
+	var MdLiveAnnouncer = (function () {
+	    function MdLiveAnnouncer(elementToken) {
+	        // We inject the live element as `any` because the constructor signature cannot reference
+	        // browser globals (HTMLElement) on non-browser environments, since having a class decorator
+	        // causes TypeScript to preserve the constructor signature types.
+	        this._liveElement = elementToken || this._createLiveElement();
+	    }
+	    /**
+	     * @param message Message to be announced to the screenreader
+	     * @param politeness The politeness of the announcer element.
+	     */
+	    MdLiveAnnouncer.prototype.announce = function (message, politeness) {
+	        var _this = this;
+	        if (politeness === void 0) { politeness = 'polite'; }
+	        this._liveElement.textContent = '';
+	        // TODO: ensure changing the politeness works on all environments we support.
+	        this._liveElement.setAttribute('aria-live', politeness);
+	        // This 100ms timeout is necessary for some browser + screen-reader combinations:
+	        // - Both JAWS and NVDA over IE11 will not announce anything without a non-zero timeout.
+	        // - With Chrome and IE11 with NVDA or JAWS, a repeated (identical) message won't be read a
+	        //   second time without clearing and then using a non-zero delay.
+	        // (using JAWS 17 at time of this writing).
+	        setTimeout(function () { return _this._liveElement.textContent = message; }, 100);
+	    };
+	    /** Removes the aria-live element from the DOM. */
+	    MdLiveAnnouncer.prototype._removeLiveElement = function () {
+	        if (this._liveElement && this._liveElement.parentNode) {
+	            this._liveElement.parentNode.removeChild(this._liveElement);
+	        }
+	    };
+	    MdLiveAnnouncer.prototype._createLiveElement = function () {
+	        var liveEl = document.createElement('div');
+	        liveEl.classList.add('md-visually-hidden');
+	        liveEl.setAttribute('aria-atomic', 'true');
+	        liveEl.setAttribute('aria-live', 'polite');
+	        document.body.appendChild(liveEl);
+	        return liveEl;
+	    };
+	    MdLiveAnnouncer = __decorate$12([
+	        _angular_core.Injectable(),
+	        __param$1(0, _angular_core.Optional()),
+	        __param$1(0, _angular_core.Inject(LIVE_ANNOUNCER_ELEMENT_TOKEN)), 
+	        __metadata$12('design:paramtypes', [Object])
+	    ], MdLiveAnnouncer);
+	    return MdLiveAnnouncer;
+	}());
+
+	var __decorate$9 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$9 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var A11Y_PROVIDERS = [MdLiveAnnouncer, InteractivityChecker];
+	var A11yModule = (function () {
+	    function A11yModule() {
+	    }
+	    A11yModule.forRoot = function () {
+	        return {
+	            ngModule: A11yModule,
+	            providers: A11Y_PROVIDERS,
+	        };
+	    };
+	    A11yModule = __decorate$9([
+	        _angular_core.NgModule({
+	            declarations: [FocusTrap],
+	            exports: [FocusTrap],
+	        }), 
+	        __metadata$9('design:paramtypes', [])
+	    ], A11yModule);
+	    return A11yModule;
+	}());
+
+	var __extends$5 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$13 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$13 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/* Adjusts configuration of our gesture library, Hammer. */
+	var MdGestureConfig = (function (_super) {
+	    __extends$5(MdGestureConfig, _super);
+	    function MdGestureConfig() {
+	        _super.apply(this, arguments);
+	        /* List of new event names to add to the gesture support list */
+	        this.events = [
+	            'longpress',
+	            'slide',
+	            'slidestart',
+	            'slideend',
+	            'slideright',
+	            'slideleft'
+	        ];
+	    }
+	    /*
+	     * Builds Hammer instance manually to add custom recognizers that match the Material Design spec.
+	     *
+	     * Our gesture names come from the Material Design gestures spec:
+	     * https://www.google.com/design/spec/patterns/gestures.html#gestures-touch-mechanics
+	     *
+	     * More information on default recognizers can be found in Hammer docs:
+	     * http://hammerjs.github.io/recognizer-pan/
+	     * http://hammerjs.github.io/recognizer-press/
+	     *
+	     * TODO: Confirm threshold numbers with Material Design UX Team
+	     * */
+	    MdGestureConfig.prototype.buildHammer = function (element) {
+	        var mc = new Hammer(element);
+	        // Default Hammer Recognizers.
+	        var pan = new Hammer.Pan();
+	        var swipe = new Hammer.Swipe();
+	        var press = new Hammer.Press();
+	        // Notice that a HammerJS recognizer can only depend on one other recognizer once.
+	        // Otherwise the previous `recognizeWith` will be dropped.
+	        var slide = this._createRecognizer(pan, { event: 'slide', threshold: 0 }, swipe);
+	        var longpress = this._createRecognizer(press, { event: 'longpress', time: 500 });
+	        // Overwrite the default `pan` event to use the swipe event.
+	        pan.recognizeWith(swipe);
+	        // Add customized gestures to Hammer manager
+	        mc.add([swipe, press, pan, slide, longpress]);
+	        return mc;
+	    };
+	    /** Creates a new recognizer, without affecting the default recognizers of HammerJS */
+	    MdGestureConfig.prototype._createRecognizer = function (base, options) {
+	        var inheritances = [];
+	        for (var _i = 2; _i < arguments.length; _i++) {
+	            inheritances[_i - 2] = arguments[_i];
+	        }
+	        var recognizer = new base.constructor(options);
+	        inheritances.push(base);
+	        inheritances.forEach(function (item) { return recognizer.recognizeWith(item); });
+	        return recognizer;
+	    };
+	    MdGestureConfig = __decorate$13([
+	        _angular_core.Injectable(), 
+	        __metadata$13('design:paramtypes', [])
+	    ], MdGestureConfig);
+	    return MdGestureConfig;
+	}(_angular_platformBrowser.HammerGestureConfig));
+
+	/**
+	 * Screenreaders will often fire fake mousedown events when a focusable element
+	 * is activated using the keyboard. We can typically distinguish between these faked
+	 * mousedown events and real mousedown events using the "buttons" property. While
+	 * real mousedowns will indicate the mouse button that was pressed (e.g. "1" for
+	 * the left mouse button), faked mousedowns will usually set the property value to 0.
+	 */
+	function isFakeMousedownFromScreenReader(event) {
+	    return event.buttons === 0;
+	}
+
+	var __decorate$14 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$14 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Class to coordinate unique selection based on name.
+	 * Intended to be consumed as an Angular service.
+	 * This service is needed because native radio change events are only fired on the item currently
+	 * being selected, and we still need to uncheck the previous selection.
+	 *
+	 * This service does not *store* any IDs and names because they may change at any time, so it is
+	 * less error-prone if they are simply passed through when the events occur.
+	 */
+	var MdUniqueSelectionDispatcher = (function () {
+	    function MdUniqueSelectionDispatcher() {
+	        this._listeners = [];
+	    }
+	    /** Notify other items that selection for the given name has been set. */
+	    MdUniqueSelectionDispatcher.prototype.notify = function (id, name) {
+	        for (var _i = 0, _a = this._listeners; _i < _a.length; _i++) {
+	            var listener = _a[_i];
+	            listener(id, name);
+	        }
+	    };
+	    /** Listen for future changes to item selection. */
+	    MdUniqueSelectionDispatcher.prototype.listen = function (listener) {
+	        this._listeners.push(listener);
+	    };
+	    MdUniqueSelectionDispatcher = __decorate$14([
+	        _angular_core.Injectable(), 
+	        __metadata$14('design:paramtypes', [])
+	    ], MdUniqueSelectionDispatcher);
+	    return MdUniqueSelectionDispatcher;
+	}());
+
+	// Due to a bug in the ChromeDriver, Angular 2 keyboard events are not triggered by `sendKeys`
+	// during E2E tests when using dot notation such as `(keydown.rightArrow)`. To get around this,
+	// we are temporarily using a single (keydown) handler.
+	// See: https://github.com/angular/angular/issues/9419
+	var UP_ARROW = 38;
+	var DOWN_ARROW = 40;
+	var RIGHT_ARROW = 39;
+	var LEFT_ARROW = 37;
+	var ENTER = 13;
+	var SPACE = 32;
+	var TAB = 9;
+
+	var __decorate$15 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$15 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Selector that matches all elements that may have style collisions with material1. */
+	var ELEMENTS_SELECTOR = "\n  md-card,\n  md-card-actions,\n  md-card-content,\n  md-card-footer,\n  md-card-header,\n  md-card-subtitle,\n  md-card-title,\n  md-card-title-group,\n  md-checkbox,\n  md-dialog-container,\n  md-divider,\n  md-grid-list,\n  md-grid-tile,\n  md-grid-tile-footer,\n  md-grid-tile-header,\n  md-hint,\n  md-icon,\n  md-ink-bar,\n  md-input,\n  md-list,\n  md-list-item,\n  md-menu,\n  md-nav-list,\n  md-option,\n  md-placeholder,\n  md-progress-bar,\n  md-progress-circle,\n  md-radio-button,\n  md-radio-group,\n  md-select,\n  md-sidenav,\n  md-slider,\n  md-spinner,\n  md-tab,\n  md-toolbar\n";
+	/**
+	 * Directive to apply to all material2 components that use the same element name as a
+	 * component in material2. It does two things:
+	 * 1) Adds the css class "md2" to the host element so that material1 can use this class with a
+	 *    :not() in order to avoid affecting material2 elements.
+	 * 2) Adds a css class to the element that is identical to the element's tag. E.g., the element
+	 *    `<md-card>` would be given a css class `md-card`. This is done so that material2 can style
+	 *    only these classes instead of defining element rules that would affect material1 components.
+	 */
+	var StyleCompatibility = (function () {
+	    function StyleCompatibility(renderer, elementRef) {
+	        var element = elementRef.nativeElement;
+	        renderer.setElementClass(element, 'md2', true);
+	        renderer.setElementClass(element, element.nodeName.toLowerCase(), true);
+	    }
+	    StyleCompatibility = __decorate$15([
+	        _angular_core.Directive({
+	            selector: ELEMENTS_SELECTOR,
+	        }), 
+	        __metadata$15('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef])
+	    ], StyleCompatibility);
+	    return StyleCompatibility;
+	}());
+	var StyleCompatibilityModule = (function () {
+	    function StyleCompatibilityModule() {
+	    }
+	    StyleCompatibilityModule.forRoot = function () {
+	        return {
+	            ngModule: StyleCompatibilityModule,
+	            providers: [],
+	        };
+	    };
+	    StyleCompatibilityModule = __decorate$15([
+	        _angular_core.NgModule({
+	            declarations: [StyleCompatibility],
+	            exports: [StyleCompatibility],
+	        }), 
+	        __metadata$15('design:paramtypes', [])
+	    ], StyleCompatibilityModule);
+	    return StyleCompatibilityModule;
+	}());
+
+	var AnimationCurves = (function () {
+	    function AnimationCurves() {
+	    }
+	    AnimationCurves.STANDARD_CURVE = 'cubic-bezier(0.4,0.0,0.2,1)';
+	    AnimationCurves.DECELERATION_CURVE = 'cubic-bezier(0.0,0.0,0.2,1)';
+	    AnimationCurves.ACCELERATION_CURVE = 'cubic-bezier(0.4,0.0,1,1)';
+	    AnimationCurves.SHARP_CURVE = 'cubic-bezier(0.4,0.0,0.6,1)';
+	    return AnimationCurves;
+	}());
+	;
+	var AnimationDurations = (function () {
+	    function AnimationDurations() {
+	    }
+	    AnimationDurations.COMPLEX = '375ms';
+	    AnimationDurations.ENTERING = '225ms';
+	    AnimationDurations.EXITING = '195ms';
+	    return AnimationDurations;
+	}());
+	;
+
+	/** Coerces a data-bound value (typically a string) to a boolean. */
+	function coerceBooleanProperty(value) {
+	    return value != null && "" + value !== 'false';
+	}
+
+	/** Coerces a data-bound value (typically a string) to a number. */
+	function coerceNumberProperty(value, fallbackValue) {
+	    if (fallbackValue === void 0) { fallbackValue = 0; }
+	    // parseFloat(value) handles most of the cases we're interested in (it treats null, empty string,
+	    // and other non-number values as NaN, where Number just uses 0) but it considers the string
+	    // '123hello' to be a valid number. Therefore we also check if Number(value) is NaN.
+	    return isNaN(parseFloat(value)) || isNaN(Number(value)) ? fallbackValue : Number(value);
+	}
+
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MdCoreModule = (function () {
+	    function MdCoreModule() {
+	    }
+	    MdCoreModule.forRoot = function () {
+	        return {
+	            ngModule: MdCoreModule,
+	            providers: [A11Y_PROVIDERS, OVERLAY_PROVIDERS],
+	        };
+	    };
+	    MdCoreModule = __decorate([
+	        _angular_core.NgModule({
+	            imports: [MdLineModule, RtlModule, MdRippleModule, PortalModule, OverlayModule, A11yModule],
+	            exports: [MdLineModule, RtlModule, MdRippleModule, PortalModule, OverlayModule, A11yModule],
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], MdCoreModule);
+	    return MdCoreModule;
+	}());
+
+	var __decorate$17 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$17 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param$2 = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	/**
+	 * Provider Expression that allows md-button-toggle-group to register as a ControlValueAccessor.
+	 * This allows it to support [(ngModel)].
+	 */
+	var MD_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR = {
+	    provide: _angular_forms.NG_VALUE_ACCESSOR,
+	    useExisting: _angular_core.forwardRef(function () { return MdButtonToggleGroup; }),
+	    multi: true
+	};
+	var _uniqueIdCounter = 0;
+	/** A simple change event emitted by either MdButtonToggle or MdButtonToggleGroup. */
+	var MdButtonToggleChange = (function () {
+	    function MdButtonToggleChange() {
+	    }
+	    return MdButtonToggleChange;
+	}());
+	/** Exclusive selection button toggle group that behaves like a radio-button group. */
+	var MdButtonToggleGroup = (function () {
+	    function MdButtonToggleGroup() {
+	        /** The value for the button toggle group. Should match currently selected button toggle. */
+	        this._value = null;
+	        /** The HTML name attribute applied to toggles in this group. */
+	        this._name = "md-radio-group-" + _uniqueIdCounter++;
+	        /** Disables all toggles in the group. */
+	        this._disabled = null;
+	        /** The currently selected button toggle, should match the value. */
+	        this._selected = null;
+	        /** Whether the button toggle group is initialized or not. */
+	        this._isInitialized = false;
+	        /**
+	         * The method to be called in order to update ngModel.
+	         * Now `ngModel` binding is not supported in multiple selection mode.
+	         */
+	        this._controlValueAccessorChangeFn = function (value) { };
+	        /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
+	        this.onTouched = function () { };
+	        /** Event emitted when the group's value changes. */
+	        this._change = new _angular_core.EventEmitter();
+	        /** Child button toggle buttons. */
+	        this._buttonToggles = null;
+	    }
+	    Object.defineProperty(MdButtonToggleGroup.prototype, "change", {
+	        get: function () {
+	            return this._change.asObservable();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** TODO: internal */
+	    MdButtonToggleGroup.prototype.ngAfterViewInit = function () {
+	        this._isInitialized = true;
+	    };
+	    Object.defineProperty(MdButtonToggleGroup.prototype, "name", {
+	        get: function () {
+	            return this._name;
+	        },
+	        set: function (value) {
+	            this._name = value;
+	            this._updateButtonToggleNames();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdButtonToggleGroup.prototype, "disabled", {
+	        get: function () {
+	            return this._disabled;
+	        },
+	        set: function (value) {
+	            this._disabled = coerceBooleanProperty(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdButtonToggleGroup.prototype, "value", {
+	        get: function () {
+	            return this._value;
+	        },
+	        set: function (newValue) {
+	            if (this._value != newValue) {
+	                this._value = newValue;
+	                this._updateSelectedButtonToggleFromValue();
+	                // Only emit a change event if the view is completely initialized.
+	                // We don't want to emit a change event for the initial values.
+	                if (this._isInitialized) {
+	                    this._emitChangeEvent();
+	                }
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdButtonToggleGroup.prototype, "selected", {
+	        get: function () {
+	            return this._selected;
+	        },
+	        set: function (selected) {
+	            this._selected = selected;
+	            this.value = selected ? selected.value : null;
+	            if (selected && !selected.checked) {
+	                selected.checked = true;
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdButtonToggleGroup.prototype._updateButtonToggleNames = function () {
+	        var _this = this;
+	        if (this._buttonToggles) {
+	            this._buttonToggles.forEach(function (toggle) {
+	                toggle.name = _this._name;
+	            });
+	        }
+	    };
+	    // TODO: Refactor into shared code with radio.
+	    MdButtonToggleGroup.prototype._updateSelectedButtonToggleFromValue = function () {
+	        var _this = this;
+	        var isAlreadySelected = this._selected != null && this._selected.value == this._value;
+	        if (this._buttonToggles != null && !isAlreadySelected) {
+	            var matchingButtonToggle = this._buttonToggles.filter(function (buttonToggle) { return buttonToggle.value == _this._value; })[0];
+	            if (matchingButtonToggle) {
+	                this.selected = matchingButtonToggle;
+	            }
+	            else if (this.value == null) {
+	                this.selected = null;
+	                this._buttonToggles.forEach(function (buttonToggle) {
+	                    buttonToggle.checked = false;
+	                });
+	            }
+	        }
+	    };
+	    /** Dispatch change event with current selection and group value. */
+	    MdButtonToggleGroup.prototype._emitChangeEvent = function () {
+	        var event = new MdButtonToggleChange();
+	        event.source = this._selected;
+	        event.value = this._value;
+	        this._controlValueAccessorChangeFn(event.value);
+	        this._change.emit(event);
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdButtonToggleGroup.prototype.writeValue = function (value) {
+	        this.value = value;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdButtonToggleGroup.prototype.registerOnChange = function (fn) {
+	        this._controlValueAccessorChangeFn = fn;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdButtonToggleGroup.prototype.registerOnTouched = function (fn) {
+	        this.onTouched = fn;
+	    };
+	    __decorate$17([
+	        _angular_core.Output(), 
+	        __metadata$17('design:type', rxjs_Observable.Observable)
+	    ], MdButtonToggleGroup.prototype, "change", null);
+	    __decorate$17([
+	        _angular_core.ContentChildren(_angular_core.forwardRef(function () { return MdButtonToggle; })), 
+	        __metadata$17('design:type', _angular_core.QueryList)
+	    ], MdButtonToggleGroup.prototype, "_buttonToggles", void 0);
+	    __decorate$17([
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', String)
+	    ], MdButtonToggleGroup.prototype, "name", null);
+	    __decorate$17([
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', Boolean)
+	    ], MdButtonToggleGroup.prototype, "disabled", null);
+	    __decorate$17([
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', Object)
+	    ], MdButtonToggleGroup.prototype, "value", null);
+	    __decorate$17([
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', Object)
+	    ], MdButtonToggleGroup.prototype, "selected", null);
+	    MdButtonToggleGroup = __decorate$17([
+	        _angular_core.Directive({
+	            selector: 'md-button-toggle-group:not([multiple])',
+	            providers: [MD_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR],
+	            host: {
+	                'role': 'radiogroup',
+	            },
+	            exportAs: 'mdButtonToggleGroup',
+	        }), 
+	        __metadata$17('design:paramtypes', [])
+	    ], MdButtonToggleGroup);
+	    return MdButtonToggleGroup;
+	}());
+	/** Multiple selection button-toggle group. `ngModel` is not supported in this mode. */
+	var MdButtonToggleGroupMultiple = (function () {
+	    function MdButtonToggleGroupMultiple() {
+	        /** Disables all toggles in the group. */
+	        this._disabled = null;
+	    }
+	    Object.defineProperty(MdButtonToggleGroupMultiple.prototype, "disabled", {
+	        get: function () {
+	            return this._disabled;
+	        },
+	        set: function (value) {
+	            this._disabled = (value != null && value !== false) ? true : null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    __decorate$17([
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', Boolean)
+	    ], MdButtonToggleGroupMultiple.prototype, "disabled", null);
+	    MdButtonToggleGroupMultiple = __decorate$17([
+	        _angular_core.Directive({
+	            selector: 'md-button-toggle-group[multiple]',
+	            exportAs: 'mdButtonToggleGroup',
+	        }), 
+	        __metadata$17('design:paramtypes', [])
+	    ], MdButtonToggleGroupMultiple);
+	    return MdButtonToggleGroupMultiple;
+	}());
+	var MdButtonToggle = (function () {
+	    function MdButtonToggle(toggleGroup, toggleGroupMultiple, buttonToggleDispatcher) {
+	        var _this = this;
+	        this.buttonToggleDispatcher = buttonToggleDispatcher;
+	        /** Whether or not this button toggle is checked. */
+	        this._checked = false;
+	        /** Whether or not this button toggle is disabled. */
+	        this._disabled = null;
+	        /** Value assigned to this button toggle. */
+	        this._value = null;
+	        /** Whether or not the button toggle is a single selection. */
+	        this._isSingleSelector = null;
+	        /** Event emitted when the group value changes. */
+	        this._change = new _angular_core.EventEmitter();
+	        this.buttonToggleGroup = toggleGroup;
+	        this.buttonToggleGroupMultiple = toggleGroupMultiple;
+	        if (this.buttonToggleGroup) {
+	            buttonToggleDispatcher.listen(function (id, name) {
+	                if (id != _this.id && name == _this.name) {
+	                    _this.checked = false;
+	                }
+	            });
+	            this._type = 'radio';
+	            this.name = this.buttonToggleGroup.name;
+	            this._isSingleSelector = true;
+	        }
+	        else {
+	            // Even if there is no group at all, treat the button toggle as a checkbox so it can be
+	            // toggled on or off.
+	            this._type = 'checkbox';
+	            this._isSingleSelector = false;
+	        }
+	    }
+	    Object.defineProperty(MdButtonToggle.prototype, "change", {
+	        get: function () {
+	            return this._change.asObservable();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdButtonToggle.prototype.ngOnInit = function () {
+	        if (this.id == null) {
+	            this.id = "md-button-toggle-" + _uniqueIdCounter++;
+	        }
+	        if (this.buttonToggleGroup && this._value == this.buttonToggleGroup.value) {
+	            this._checked = true;
+	        }
+	    };
+	    Object.defineProperty(MdButtonToggle.prototype, "inputId", {
+	        get: function () {
+	            return this.id + "-input";
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdButtonToggle.prototype, "checked", {
+	        get: function () {
+	            return this._checked;
+	        },
+	        set: function (newCheckedState) {
+	            if (this._isSingleSelector) {
+	                if (newCheckedState) {
+	                    // Notify all button toggles with the same name (in the same group) to un-check.
+	                    this.buttonToggleDispatcher.notify(this.id, this.name);
+	                }
+	            }
+	            this._checked = newCheckedState;
+	            if (newCheckedState && this._isSingleSelector && this.buttonToggleGroup.value != this.value) {
+	                this.buttonToggleGroup.selected = this;
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdButtonToggle.prototype, "value", {
+	        /** MdButtonToggleGroup reads this to assign its own value. */
+	        get: function () {
+	            return this._value;
+	        },
+	        set: function (value) {
+	            if (this._value != value) {
+	                if (this.buttonToggleGroup != null && this.checked) {
+	                    this.buttonToggleGroup.value = value;
+	                }
+	                this._value = value;
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Dispatch change event with current value. */
+	    MdButtonToggle.prototype._emitChangeEvent = function () {
+	        var event = new MdButtonToggleChange();
+	        event.source = this;
+	        event.value = this._value;
+	        this._change.emit(event);
+	    };
+	    Object.defineProperty(MdButtonToggle.prototype, "disabled", {
+	        get: function () {
+	            return this._disabled || (this.buttonToggleGroup != null && this.buttonToggleGroup.disabled) ||
+	                (this.buttonToggleGroupMultiple != null && this.buttonToggleGroupMultiple.disabled);
+	        },
+	        set: function (value) {
+	            this._disabled = (value != null && value !== false) ? true : null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Toggle the state of the current button toggle. */
+	    MdButtonToggle.prototype._toggle = function () {
+	        this.checked = !this.checked;
+	    };
+	    /** Checks the button toggle due to an interaction with the underlying native input. */
+	    MdButtonToggle.prototype._onInputChange = function (event) {
+	        event.stopPropagation();
+	        if (this._isSingleSelector) {
+	            // Propagate the change one-way via the group, which will in turn mark this
+	            // button toggle as checked.
+	            this.checked = true;
+	            this.buttonToggleGroup.selected = this;
+	            this.buttonToggleGroup.onTouched();
+	        }
+	        else {
+	            this._toggle();
+	        }
+	        // Emit a change event when the native input does.
+	        this._emitChangeEvent();
+	    };
+	    /** TODO: internal */
+	    MdButtonToggle.prototype._onInputClick = function (event) {
+	        // We have to stop propagation for click events on the visual hidden input element.
+	        // By default, when a user clicks on a label element, a generated click event will be
+	        // dispatched on the associated input element. Since we are using a label element as our
+	        // root container, the click event on the `slide-toggle` will be executed twice.
+	        // The real click event will bubble up, and the generated click event also tries to bubble up.
+	        // This will lead to multiple click events.
+	        // Preventing bubbling for the second event will solve that issue.
+	        event.stopPropagation();
+	    };
+	    __decorate$17([
+	        _angular_core.HostBinding(),
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', String)
+	    ], MdButtonToggle.prototype, "id", void 0);
+	    __decorate$17([
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', String)
+	    ], MdButtonToggle.prototype, "name", void 0);
+	    __decorate$17([
+	        _angular_core.Output(), 
+	        __metadata$17('design:type', rxjs_Observable.Observable)
+	    ], MdButtonToggle.prototype, "change", null);
+	    __decorate$17([
+	        _angular_core.HostBinding('class.md-button-toggle-checked'),
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', Boolean)
+	    ], MdButtonToggle.prototype, "checked", null);
+	    __decorate$17([
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', Object)
+	    ], MdButtonToggle.prototype, "value", null);
+	    __decorate$17([
+	        _angular_core.HostBinding('class.md-button-toggle-disabled'),
+	        _angular_core.Input(), 
+	        __metadata$17('design:type', Boolean)
+	    ], MdButtonToggle.prototype, "disabled", null);
+	    MdButtonToggle = __decorate$17([
+	        _angular_core.Component({selector: 'md-button-toggle',
+	            template: "<label [attr.for]=\"inputId\" class=\"md-button-toggle-label\"> <input #input class=\"md-button-toggle-input md-visually-hidden\" [type]=\"_type\" [id]=\"inputId\" [checked]=\"checked\" [disabled]=\"disabled\" [name]=\"name\" (change)=\"_onInputChange($event)\" (click)=\"_onInputClick($event)\"> <div class=\"md-button-toggle-label-content\"> <ng-content></ng-content> </div> </label> ",
+	            styles: ["md-button-toggle-group { box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); position: relative; display: inline-flex; border-radius: 2px; cursor: pointer; white-space: nowrap; } .md-button-toggle-disabled .md-button-toggle-label-content { cursor: default; } md-button-toggle { white-space: nowrap; } .md-button-toggle-label-content { display: inline-block; line-height: 36px; padding: 0 16px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .md-button-toggle-label-content > * { vertical-align: middle; } /*# sourceMappingURL=button-toggle.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }),
+	        __param$2(0, _angular_core.Optional()),
+	        __param$2(1, _angular_core.Optional()), 
+	        __metadata$17('design:paramtypes', [MdButtonToggleGroup, MdButtonToggleGroupMultiple, MdUniqueSelectionDispatcher])
+	    ], MdButtonToggle);
+	    return MdButtonToggle;
+	}());
+	var MdButtonToggleModule = (function () {
+	    function MdButtonToggleModule() {
+	    }
+	    MdButtonToggleModule.forRoot = function () {
+	        return {
+	            ngModule: MdButtonToggleModule,
+	            providers: [MdUniqueSelectionDispatcher]
+	        };
+	    };
+	    MdButtonToggleModule = __decorate$17([
+	        _angular_core.NgModule({
+	            imports: [_angular_forms.FormsModule],
+	            exports: [MdButtonToggleGroup, MdButtonToggleGroupMultiple, MdButtonToggle],
+	            declarations: [MdButtonToggleGroup, MdButtonToggleGroupMultiple, MdButtonToggle],
+	        }), 
+	        __metadata$17('design:paramtypes', [])
+	    ], MdButtonToggleModule);
+	    return MdButtonToggleModule;
+	}());
+
+	var __extends$6 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$18 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$18 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	// TODO(jelbourn): Make the `isMouseDown` stuff done with one global listener.
+	// TODO(kara): Convert attribute selectors to classes when attr maps become available
+	var MdButton = (function () {
+	    function MdButton(_elementRef, _renderer) {
+	        this._elementRef = _elementRef;
+	        this._renderer = _renderer;
+	        /** Whether the button has focus from the keyboard (not the mouse). Used for class binding. */
+	        this._isKeyboardFocused = false;
+	        /** Whether a mousedown has occurred on this element in the last 100ms. */
+	        this._isMouseDown = false;
+	        /** Whether the ripple effect on click should be disabled. */
+	        this._disableRipple = false;
+	        this._disabled = false;
+	    }
+	    Object.defineProperty(MdButton.prototype, "disableRipple", {
+	        get: function () { return this._disableRipple; },
+	        set: function (v) { this._disableRipple = coerceBooleanProperty(v); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdButton.prototype, "disabled", {
+	        get: function () { return this._disabled; },
+	        set: function (value) { this._disabled = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdButton.prototype, "color", {
+	        get: function () {
+	            return this._color;
+	        },
+	        set: function (value) {
+	            this._updateColor(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdButton.prototype._setMousedown = function () {
+	        var _this = this;
+	        // We only *show* the focus style when focus has come to the button via the keyboard.
+	        // The Material Design spec is silent on this topic, and without doing this, the
+	        // button continues to look :active after clicking.
+	        // @see http://marcysutton.com/button-focus-hell/
+	        this._isMouseDown = true;
+	        setTimeout(function () { _this._isMouseDown = false; }, 100);
+	    };
+	    MdButton.prototype._updateColor = function (newColor) {
+	        this._setElementColor(this._color, false);
+	        this._setElementColor(newColor, true);
+	        this._color = newColor;
+	    };
+	    MdButton.prototype._setElementColor = function (color, isAdd) {
+	        if (color != null && color != '') {
+	            this._renderer.setElementClass(this._elementRef.nativeElement, "md-" + color, isAdd);
+	        }
+	    };
+	    MdButton.prototype._setKeyboardFocus = function () {
+	        this._isKeyboardFocused = !this._isMouseDown;
+	    };
+	    MdButton.prototype._removeKeyboardFocus = function () {
+	        this._isKeyboardFocused = false;
+	    };
+	    /** TODO(hansl): e2e test this function. */
+	    MdButton.prototype.focus = function () {
+	        this._elementRef.nativeElement.focus();
+	    };
+	    MdButton.prototype.getHostElement = function () {
+	        return this._elementRef.nativeElement;
+	    };
+	    MdButton.prototype.isRoundButton = function () {
+	        var el = this._elementRef.nativeElement;
+	        return el.hasAttribute('md-icon-button') ||
+	            el.hasAttribute('md-fab') ||
+	            el.hasAttribute('md-mini-fab');
+	    };
+	    MdButton.prototype._isRippleDisabled = function () {
+	        return this.disableRipple || this.disabled;
+	    };
+	    __decorate$18([
+	        _angular_core.Input(), 
+	        __metadata$18('design:type', Object)
+	    ], MdButton.prototype, "disableRipple", null);
+	    __decorate$18([
+	        _angular_core.Input(), 
+	        __metadata$18('design:type', Object)
+	    ], MdButton.prototype, "disabled", null);
+	    __decorate$18([
+	        _angular_core.Input(), 
+	        __metadata$18('design:type', String)
+	    ], MdButton.prototype, "color", null);
+	    MdButton = __decorate$18([
+	        _angular_core.Component({selector: 'button[md-button], button[md-raised-button], button[md-icon-button], ' +
+	                'button[md-fab], button[md-mini-fab]',
+	            host: {
+	                '[disabled]': 'disabled',
+	                '[class.md-button-focus]': '_isKeyboardFocused',
+	                '(mousedown)': '_setMousedown()',
+	                '(focus)': '_setKeyboardFocus()',
+	                '(blur)': '_removeKeyboardFocus()',
+	            },
+	            template: "<span class=\"md-button-wrapper\"><ng-content></ng-content></span> <div md-ripple *ngIf=\"!_isRippleDisabled()\" class=\"md-button-ripple\" [class.md-button-ripple-round]=\"isRoundButton()\" [md-ripple-trigger]=\"getHostElement()\" [md-ripple-color]=\"isRoundButton() ? 'rgba(255, 255, 255, 0.2)' : ''\" md-ripple-background-color=\"rgba(0, 0, 0, 0)\"></div> ",
+	            styles: ["[md-raised-button], [md-fab], [md-mini-fab], [md-button], [md-icon-button] { box-sizing: border-box; position: relative; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; outline: none; border: none; display: inline-block; white-space: nowrap; text-decoration: none; vertical-align: baseline; font-size: 14px; font-family: Roboto, \"Helvetica Neue\", sans-serif; font-weight: 500; color: currentColor; text-align: center; margin: 0; min-width: 88px; line-height: 36px; padding: 0 16px; border-radius: 2px; } [disabled][md-raised-button], [disabled][md-fab], [disabled][md-mini-fab], [disabled][md-button], [disabled][md-icon-button] { cursor: default; } .md-button-focus[md-raised-button]::after, .md-button-focus[md-fab]::after, .md-button-focus[md-mini-fab]::after, .md-button-focus[md-button]::after, .md-button-focus[md-icon-button]::after { position: absolute; top: 0; left: 0; bottom: 0; right: 0; content: ''; background-color: rgba(0, 0, 0, 0.12); border-radius: inherit; pointer-events: none; } [md-raised-button], [md-fab], [md-mini-fab] { box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); transform: translate3d(0, 0, 0); transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); } [md-raised-button]:active, [md-fab]:active, [md-mini-fab]:active { box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); } [disabled][md-raised-button], [disabled][md-fab], [disabled][md-mini-fab] { box-shadow: none; } [md-button]:hover::after, [md-icon-button]:hover::after { position: absolute; top: 0; left: 0; bottom: 0; right: 0; content: ''; background-color: rgba(0, 0, 0, 0.12); border-radius: inherit; pointer-events: none; } [md-button][disabled]:hover.md-primary, [md-button][disabled]:hover.md-accent, [md-button][disabled]:hover.md-warn, [md-button][disabled]:hover::after, [md-icon-button][disabled]:hover.md-primary, [md-icon-button][disabled]:hover.md-accent, [md-icon-button][disabled]:hover.md-warn, [md-icon-button][disabled]:hover::after { background-color: transparent; } [md-fab] { min-width: 0; border-radius: 50%; width: 56px; height: 56px; padding: 0; } [md-fab] i, [md-fab] md-icon { padding: 16px 0; line-height: 24px; } [md-mini-fab] { min-width: 0; border-radius: 50%; width: 40px; height: 40px; padding: 0; } [md-mini-fab] i, [md-mini-fab] md-icon { padding: 8px 0; line-height: 24px; } [md-icon-button] { min-width: 0; padding: 0; width: 40px; height: 40px; line-height: 24px; border-radius: 50%; } [md-icon-button] .md-button-wrapper > * { line-height: 24px; vertical-align: middle; } [md-button] .md-button-wrapper > *, [md-raised-button] .md-button-wrapper > * { vertical-align: middle; } .md-button-ripple { position: absolute; top: 0; left: 0; bottom: 0; right: 0; } .md-button-ripple-round { border-radius: 50%; z-index: 1; } @media screen and (-ms-high-contrast: active) { .md-raised-button, .md-fab, .md-mini-fab { border: 1px solid #fff; } } /*# sourceMappingURL=button.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	        }), 
+	        __metadata$18('design:paramtypes', [_angular_core.ElementRef, _angular_core.Renderer])
+	    ], MdButton);
+	    return MdButton;
+	}());
+	var MdAnchor = (function (_super) {
+	    __extends$6(MdAnchor, _super);
+	    function MdAnchor(elementRef, renderer) {
+	        _super.call(this, elementRef, renderer);
+	    }
+	    Object.defineProperty(MdAnchor.prototype, "tabIndex", {
+	        get: function () {
+	            return this.disabled ? -1 : 0;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdAnchor.prototype, "isAriaDisabled", {
+	        get: function () {
+	            return this.disabled ? 'true' : 'false';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdAnchor.prototype._haltDisabledEvents = function (event) {
+	        // A disabled button shouldn't apply any actions
+	        if (this.disabled) {
+	            event.preventDefault();
+	            event.stopImmediatePropagation();
+	        }
+	    };
+	    __decorate$18([
+	        _angular_core.HostBinding('tabIndex'), 
+	        __metadata$18('design:type', Number)
+	    ], MdAnchor.prototype, "tabIndex", null);
+	    __decorate$18([
+	        _angular_core.HostBinding('attr.aria-disabled'), 
+	        __metadata$18('design:type', String)
+	    ], MdAnchor.prototype, "isAriaDisabled", null);
+	    MdAnchor = __decorate$18([
+	        _angular_core.Component({selector: 'a[md-button], a[md-raised-button], a[md-icon-button], a[md-fab], a[md-mini-fab]',
+	            inputs: ['color', 'disabled', 'disableRipple'],
+	            host: {
+	                '[attr.disabled]': 'disabled',
+	                '[class.md-button-focus]': '_isKeyboardFocused',
+	                '(mousedown)': '_setMousedown()',
+	                '(focus)': '_setKeyboardFocus()',
+	                '(blur)': '_removeKeyboardFocus()',
+	                '(click)': '_haltDisabledEvents($event)',
+	            },
+	            template: "<span class=\"md-button-wrapper\"><ng-content></ng-content></span> <div md-ripple *ngIf=\"!_isRippleDisabled()\" class=\"md-button-ripple\" [class.md-button-ripple-round]=\"isRoundButton()\" [md-ripple-trigger]=\"getHostElement()\" [md-ripple-color]=\"isRoundButton() ? 'rgba(255, 255, 255, 0.2)' : ''\" md-ripple-background-color=\"rgba(0, 0, 0, 0)\"></div> ",
+	            styles: ["[md-raised-button], [md-fab], [md-mini-fab], [md-button], [md-icon-button] { box-sizing: border-box; position: relative; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; outline: none; border: none; display: inline-block; white-space: nowrap; text-decoration: none; vertical-align: baseline; font-size: 14px; font-family: Roboto, \"Helvetica Neue\", sans-serif; font-weight: 500; color: currentColor; text-align: center; margin: 0; min-width: 88px; line-height: 36px; padding: 0 16px; border-radius: 2px; } [disabled][md-raised-button], [disabled][md-fab], [disabled][md-mini-fab], [disabled][md-button], [disabled][md-icon-button] { cursor: default; } .md-button-focus[md-raised-button]::after, .md-button-focus[md-fab]::after, .md-button-focus[md-mini-fab]::after, .md-button-focus[md-button]::after, .md-button-focus[md-icon-button]::after { position: absolute; top: 0; left: 0; bottom: 0; right: 0; content: ''; background-color: rgba(0, 0, 0, 0.12); border-radius: inherit; pointer-events: none; } [md-raised-button], [md-fab], [md-mini-fab] { box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); transform: translate3d(0, 0, 0); transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); } [md-raised-button]:active, [md-fab]:active, [md-mini-fab]:active { box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); } [disabled][md-raised-button], [disabled][md-fab], [disabled][md-mini-fab] { box-shadow: none; } [md-button]:hover::after, [md-icon-button]:hover::after { position: absolute; top: 0; left: 0; bottom: 0; right: 0; content: ''; background-color: rgba(0, 0, 0, 0.12); border-radius: inherit; pointer-events: none; } [md-button][disabled]:hover.md-primary, [md-button][disabled]:hover.md-accent, [md-button][disabled]:hover.md-warn, [md-button][disabled]:hover::after, [md-icon-button][disabled]:hover.md-primary, [md-icon-button][disabled]:hover.md-accent, [md-icon-button][disabled]:hover.md-warn, [md-icon-button][disabled]:hover::after { background-color: transparent; } [md-fab] { min-width: 0; border-radius: 50%; width: 56px; height: 56px; padding: 0; } [md-fab] i, [md-fab] md-icon { padding: 16px 0; line-height: 24px; } [md-mini-fab] { min-width: 0; border-radius: 50%; width: 40px; height: 40px; padding: 0; } [md-mini-fab] i, [md-mini-fab] md-icon { padding: 8px 0; line-height: 24px; } [md-icon-button] { min-width: 0; padding: 0; width: 40px; height: 40px; line-height: 24px; border-radius: 50%; } [md-icon-button] .md-button-wrapper > * { line-height: 24px; vertical-align: middle; } [md-button] .md-button-wrapper > *, [md-raised-button] .md-button-wrapper > * { vertical-align: middle; } .md-button-ripple { position: absolute; top: 0; left: 0; bottom: 0; right: 0; } .md-button-ripple-round { border-radius: 50%; z-index: 1; } @media screen and (-ms-high-contrast: active) { .md-raised-button, .md-fab, .md-mini-fab { border: 1px solid #fff; } } /*# sourceMappingURL=button.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None
+	        }), 
+	        __metadata$18('design:paramtypes', [_angular_core.ElementRef, _angular_core.Renderer])
+	    ], MdAnchor);
+	    return MdAnchor;
+	}(MdButton));
+	var MdButtonModule = (function () {
+	    function MdButtonModule() {
+	    }
+	    MdButtonModule.forRoot = function () {
+	        return {
+	            ngModule: MdButtonModule,
+	            providers: []
+	        };
+	    };
+	    MdButtonModule = __decorate$18([
+	        _angular_core.NgModule({
+	            imports: [_angular_common.CommonModule, MdRippleModule],
+	            exports: [MdButton, MdAnchor],
+	            declarations: [MdButton, MdAnchor],
+	        }), 
+	        __metadata$18('design:paramtypes', [])
+	    ], MdButtonModule);
+	    return MdButtonModule;
+	}());
+
+	var __decorate$19 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$19 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Monotonically increasing integer used to auto-generate unique ids for checkbox components.
+	 */
+	var nextId = 0;
+	/**
+	 * Provider Expression that allows md-checkbox to register as a ControlValueAccessor. This allows it
+	 * to support [(ngModel)].
+	 */
+	var MD_CHECKBOX_CONTROL_VALUE_ACCESSOR = {
+	    provide: _angular_forms.NG_VALUE_ACCESSOR,
+	    useExisting: _angular_core.forwardRef(function () { return MdCheckbox; }),
+	    multi: true
+	};
+	/**
+	 * Represents the different states that require custom transitions between them.
+	 */
+	(function (TransitionCheckState) {
+	    /** The initial state of the component before any user interaction. */
+	    TransitionCheckState[TransitionCheckState["Init"] = 0] = "Init";
+	    /** The state representing the component when it's becoming checked. */
+	    TransitionCheckState[TransitionCheckState["Checked"] = 1] = "Checked";
+	    /** The state representing the component when it's becoming unchecked. */
+	    TransitionCheckState[TransitionCheckState["Unchecked"] = 2] = "Unchecked";
+	    /** The state representing the component when it's becoming indeterminate. */
+	    TransitionCheckState[TransitionCheckState["Indeterminate"] = 3] = "Indeterminate";
+	})(exports.TransitionCheckState || (exports.TransitionCheckState = {}));
+	// A simple change event emitted by the MdCheckbox component.
+	var MdCheckboxChange = (function () {
+	    function MdCheckboxChange() {
+	    }
+	    return MdCheckboxChange;
+	}());
+	/**
+	 * A material design checkbox component. Supports all of the functionality of an HTML5 checkbox,
+	 * and exposes a similar API. An MdCheckbox can be either checked, unchecked, indeterminate, or
+	 * disabled. Note that all additional accessibility attributes are taken care of by the component,
+	 * so there is no need to provide them yourself. However, if you want to omit a label and still
+	 * have the checkbox be accessible, you may supply an [aria-label] input.
+	 * See: https://www.google.com/design/spec/components/selection-controls.html
+	 */
+	var MdCheckbox = (function () {
+	    function MdCheckbox(_renderer, _elementRef) {
+	        this._renderer = _renderer;
+	        this._elementRef = _elementRef;
+	        /**
+	         * Attached to the aria-label attribute of the host element. In most cases, arial-labelledby will
+	         * take precedence so this may be omitted.
+	         */
+	        this.ariaLabel = '';
+	        /**
+	         * Users can specify the `aria-labelledby` attribute which will be forwarded to the input element
+	         */
+	        this.ariaLabelledby = null;
+	        /** A unique id for the checkbox. If one is not supplied, it is auto-generated. */
+	        this.id = "md-checkbox-" + ++nextId;
+	        /** Whether or not the checkbox should come before or after the label. */
+	        this.align = 'start';
+	        /**
+	         * The tabindex attribute for the checkbox. Note that when the checkbox is disabled, the attribute
+	         * on the host element will be removed. It will be placed back when the checkbox is re-enabled.
+	         */
+	        this.tabindex = 0;
+	        /** Name value will be applied to the input element if present */
+	        this.name = null;
+	        /** Event emitted when the checkbox's `checked` value changes. */
+	        this.change = new _angular_core.EventEmitter();
+	        /** Called when the checkbox is blurred. Needed to properly implement ControlValueAccessor. */
+	        this.onTouched = function () { };
+	        this._currentAnimationClass = '';
+	        this._currentCheckState = exports.TransitionCheckState.Init;
+	        this._checked = false;
+	        this._indeterminate = false;
+	        this._controlValueAccessorChangeFn = function (value) { };
+	        this.hasFocus = false;
+	        this.color = 'accent';
+	    }
+	    Object.defineProperty(MdCheckbox.prototype, "disableRipple", {
+	        get: function () { return this._disableRipple; },
+	        set: function (value) { this._disableRipple = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdCheckbox.prototype, "inputId", {
+	        /** ID to be applied to the `input` element */
+	        get: function () {
+	            return "input-" + this.id;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdCheckbox.prototype, "required", {
+	        /** Whether the checkbox is required or not. */
+	        get: function () { return this._required; },
+	        set: function (value) { this._required = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdCheckbox.prototype, "disabled", {
+	        /**
+	         * Whether the checkbox is disabled. When the checkbox is disabled it cannot be interacted with.
+	         * The correct ARIA attributes are applied to denote this to assistive technology.
+	         */
+	        get: function () { return this._disabled; },
+	        set: function (value) { this._disabled = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdCheckbox.prototype, "checked", {
+	        /**
+	         * Whether the checkbox is checked. Note that setting `checked` will immediately set
+	         * `indeterminate` to false.
+	         */
+	        get: function () {
+	            return this._checked;
+	        },
+	        set: function (checked) {
+	            if (checked != this.checked) {
+	                this._indeterminate = false;
+	                this._checked = checked;
+	                this._transitionCheckState(this._checked ? exports.TransitionCheckState.Checked : exports.TransitionCheckState.Unchecked);
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdCheckbox.prototype, "indeterminate", {
+	        /**
+	         * Whether the checkbox is indeterminate. This is also known as "mixed" mode and can be used to
+	         * represent a checkbox with three states, e.g. a checkbox that represents a nested list of
+	         * checkable items. Note that whenever `checked` is set, indeterminate is immediately set to
+	         * false. This differs from the web platform in that indeterminate state on native
+	         * checkboxes is only remove when the user manually checks the checkbox (rather than setting the
+	         * `checked` property programmatically). However, we feel that this behavior is more accommodating
+	         * to the way consumers would envision using this component.
+	         */
+	        get: function () {
+	            return this._indeterminate;
+	        },
+	        set: function (indeterminate) {
+	            this._indeterminate = indeterminate;
+	            if (this._indeterminate) {
+	                this._transitionCheckState(exports.TransitionCheckState.Indeterminate);
+	            }
+	            else {
+	                this._transitionCheckState(this.checked ? exports.TransitionCheckState.Checked : exports.TransitionCheckState.Unchecked);
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdCheckbox.prototype, "color", {
+	        /** Sets the color of the checkbox */
+	        get: function () {
+	            return this._color;
+	        },
+	        set: function (value) {
+	            this._updateColor(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdCheckbox.prototype._updateColor = function (newColor) {
+	        this._setElementColor(this._color, false);
+	        this._setElementColor(newColor, true);
+	        this._color = newColor;
+	    };
+	    MdCheckbox.prototype._setElementColor = function (color, isAdd) {
+	        if (color != null && color != '') {
+	            this._renderer.setElementClass(this._elementRef.nativeElement, "md-" + color, isAdd);
+	        }
+	    };
+	    MdCheckbox.prototype._isRippleDisabled = function () {
+	        return this.disableRipple || this.disabled;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdCheckbox.prototype.writeValue = function (value) {
+	        this.checked = !!value;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdCheckbox.prototype.registerOnChange = function (fn) {
+	        this._controlValueAccessorChangeFn = fn;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdCheckbox.prototype.registerOnTouched = function (fn) {
+	        this.onTouched = fn;
+	    };
+	    MdCheckbox.prototype._transitionCheckState = function (newState) {
+	        var oldState = this._currentCheckState;
+	        var renderer = this._renderer;
+	        var elementRef = this._elementRef;
+	        if (oldState === newState) {
+	            return;
+	        }
+	        if (this._currentAnimationClass.length > 0) {
+	            renderer.setElementClass(elementRef.nativeElement, this._currentAnimationClass, false);
+	        }
+	        this._currentAnimationClass = this._getAnimationClassForCheckStateTransition(oldState, newState);
+	        this._currentCheckState = newState;
+	        if (this._currentAnimationClass.length > 0) {
+	            renderer.setElementClass(elementRef.nativeElement, this._currentAnimationClass, true);
+	        }
+	    };
+	    MdCheckbox.prototype._emitChangeEvent = function () {
+	        var event = new MdCheckboxChange();
+	        event.source = this;
+	        event.checked = this.checked;
+	        this._controlValueAccessorChangeFn(this.checked);
+	        this.change.emit(event);
+	    };
+	    /** Informs the component when the input has focus so that we can style accordingly */
+	    MdCheckbox.prototype._onInputFocus = function () {
+	        this.hasFocus = true;
+	    };
+	    /** Informs the component when we lose focus in order to style accordingly */
+	    MdCheckbox.prototype._onInputBlur = function () {
+	        this.hasFocus = false;
+	        this.onTouched();
+	    };
+	    /**
+	     * Toggles the `checked` value between true and false
+	     */
+	    MdCheckbox.prototype.toggle = function () {
+	        this.checked = !this.checked;
+	    };
+	    /**
+	     * Event handler for checkbox input element.
+	     * Toggles checked state if element is not disabled.
+	     * @param event
+	     */
+	    MdCheckbox.prototype._onInteractionEvent = function (event) {
+	        // We always have to stop propagation on the change event.
+	        // Otherwise the change event, from the input element, will bubble up and
+	        // emit its event object to the `change` output.
+	        event.stopPropagation();
+	        if (!this.disabled) {
+	            this.toggle();
+	            // Emit our custom change event if the native input emitted one.
+	            // It is important to only emit it, if the native input triggered one, because
+	            // we don't want to trigger a change event, when the `checked` variable changes for example.
+	            this._emitChangeEvent();
+	        }
+	    };
+	    MdCheckbox.prototype._onInputClick = function (event) {
+	        // We have to stop propagation for click events on the visual hidden input element.
+	        // By default, when a user clicks on a label element, a generated click event will be
+	        // dispatched on the associated input element. Since we are using a label element as our
+	        // root container, the click event on the `checkbox` will be executed twice.
+	        // The real click event will bubble up, and the generated click event also tries to bubble up.
+	        // This will lead to multiple click events.
+	        // Preventing bubbling for the second event will solve that issue.
+	        event.stopPropagation();
+	    };
+	    MdCheckbox.prototype._getAnimationClassForCheckStateTransition = function (oldState, newState) {
+	        var animSuffix;
+	        switch (oldState) {
+	            case exports.TransitionCheckState.Init:
+	                // Handle edge case where user interacts with checkbox that does not have [(ngModel)] or
+	                // [checked] bound to it.
+	                if (newState === exports.TransitionCheckState.Checked) {
+	                    animSuffix = 'unchecked-checked';
+	                }
+	                else {
+	                    return '';
+	                }
+	                break;
+	            case exports.TransitionCheckState.Unchecked:
+	                animSuffix = newState === exports.TransitionCheckState.Checked ?
+	                    'unchecked-checked' : 'unchecked-indeterminate';
+	                break;
+	            case exports.TransitionCheckState.Checked:
+	                animSuffix = newState === exports.TransitionCheckState.Unchecked ?
+	                    'checked-unchecked' : 'checked-indeterminate';
+	                break;
+	            case exports.TransitionCheckState.Indeterminate:
+	                animSuffix = newState === exports.TransitionCheckState.Checked ?
+	                    'indeterminate-checked' : 'indeterminate-unchecked';
+	        }
+	        return "md-checkbox-anim-" + animSuffix;
+	    };
+	    MdCheckbox.prototype.getHostElement = function () {
+	        return this._elementRef.nativeElement;
+	    };
+	    __decorate$19([
+	        _angular_core.Input('aria-label'), 
+	        __metadata$19('design:type', String)
+	    ], MdCheckbox.prototype, "ariaLabel", void 0);
+	    __decorate$19([
+	        _angular_core.Input('aria-labelledby'), 
+	        __metadata$19('design:type', String)
+	    ], MdCheckbox.prototype, "ariaLabelledby", void 0);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', String)
+	    ], MdCheckbox.prototype, "id", void 0);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', Boolean)
+	    ], MdCheckbox.prototype, "disableRipple", null);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', Boolean)
+	    ], MdCheckbox.prototype, "required", null);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', Object)
+	    ], MdCheckbox.prototype, "align", void 0);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', Boolean)
+	    ], MdCheckbox.prototype, "disabled", null);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', Number)
+	    ], MdCheckbox.prototype, "tabindex", void 0);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', String)
+	    ], MdCheckbox.prototype, "name", void 0);
+	    __decorate$19([
+	        _angular_core.Output(), 
+	        __metadata$19('design:type', _angular_core.EventEmitter)
+	    ], MdCheckbox.prototype, "change", void 0);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', Object)
+	    ], MdCheckbox.prototype, "checked", null);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', Object)
+	    ], MdCheckbox.prototype, "indeterminate", null);
+	    __decorate$19([
+	        _angular_core.Input(), 
+	        __metadata$19('design:type', String)
+	    ], MdCheckbox.prototype, "color", null);
+	    MdCheckbox = __decorate$19([
+	        _angular_core.Component({selector: 'md-checkbox',
+	            template: "<label class=\"md-checkbox-layout\"> <div class=\"md-checkbox-inner-container\"> <input class=\"md-checkbox-input md-visually-hidden\" type=\"checkbox\" [id]=\"inputId\" [required]=\"required\" [checked]=\"checked\" [disabled]=\"disabled\" [name]=\"name\" [tabIndex]=\"tabindex\" [indeterminate]=\"indeterminate\" [attr.aria-label]=\"ariaLabel\" [attr.aria-labelledby]=\"ariaLabelledby\" (focus)=\"_onInputFocus()\" (blur)=\"_onInputBlur()\" (change)=\"_onInteractionEvent($event)\" (click)=\"_onInputClick($event)\"> <div md-ripple *ngIf=\"!_isRippleDisabled()\" class=\"md-checkbox-ripple\" [md-ripple-trigger]=\"getHostElement()\" [md-ripple-centered]=\"true\" [md-ripple-speed-factor]=\"0.3\" md-ripple-background-color=\"rgba(0, 0, 0, 0)\"></div> <div class=\"md-checkbox-frame\"></div> <div class=\"md-checkbox-background\"> <svg version=\"1.1\" class=\"md-checkbox-checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" xml:space=\"preserve\"> <path class=\"md-checkbox-checkmark-path\" fill=\"none\" stroke=\"white\" d=\"M4.1,12.7 9,17.6 20.3,6.3\"/> </svg> <!-- Element for rendering the indeterminate state checkbox. --> <div class=\"md-checkbox-mixedmark\"></div> </div> </div> <span class=\"md-checkbox-label\"> <ng-content></ng-content> </span> </label> ",
+	            styles: ["@keyframes md-checkbox-fade-in-background { 0% { opacity: 0; } 50% { opacity: 1; } } @keyframes md-checkbox-fade-out-background { 0%, 50% { opacity: 1; } 100% { opacity: 0; } } @keyframes md-checkbox-unchecked-checked-checkmark-path { 0%, 50% { stroke-dashoffset: 22.91026; } 50% { animation-timing-function: cubic-bezier(0, 0, 0.2, 0.1); } 100% { stroke-dashoffset: 0; } } @keyframes md-checkbox-unchecked-indeterminate-mixedmark { 0%, 68.2% { transform: scaleX(0); } 68.2% { animation-timing-function: cubic-bezier(0, 0, 0, 1); } 100% { transform: scaleX(1); } } @keyframes md-checkbox-checked-unchecked-checkmark-path { from { animation-timing-function: cubic-bezier(0.4, 0, 1, 1); stroke-dashoffset: 0; } to { stroke-dashoffset: -22.91026; } } @keyframes md-checkbox-checked-indeterminate-checkmark { from { animation-timing-function: cubic-bezier(0, 0, 0.2, 0.1); opacity: 1; transform: rotate(0deg); } to { opacity: 0; transform: rotate(45deg); } } @keyframes md-checkbox-indeterminate-checked-checkmark { from { animation-timing-function: cubic-bezier(0.14, 0, 0, 1); opacity: 0; transform: rotate(45deg); } to { opacity: 1; transform: rotate(360deg); } } @keyframes md-checkbox-checked-indeterminate-mixedmark { from { animation-timing-function: cubic-bezier(0, 0, 0.2, 0.1); opacity: 0; transform: rotate(-45deg); } to { opacity: 1; transform: rotate(0deg); } } @keyframes md-checkbox-indeterminate-checked-mixedmark { from { animation-timing-function: cubic-bezier(0.14, 0, 0, 1); opacity: 1; transform: rotate(0deg); } to { opacity: 0; transform: rotate(315deg); } } @keyframes md-checkbox-indeterminate-unchecked-mixedmark { 0% { animation-timing-function: linear; opacity: 1; transform: scaleX(1); } 32.8%, 100% { opacity: 0; transform: scaleX(0); } } .md-checkbox-frame, .md-checkbox-background, .md-checkbox-checkmark { bottom: 0; left: 0; position: absolute; right: 0; top: 0; } .md-checkbox-checkmark, .md-checkbox-mixedmark { width: calc(100% - 4px); } .md-checkbox-frame, .md-checkbox-background { border-radius: 2px; box-sizing: border-box; pointer-events: none; } md-checkbox { cursor: pointer; transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); } .md-checkbox-layout { cursor: inherit; align-items: baseline; vertical-align: middle; display: inline-flex; } .md-checkbox-inner-container { display: inline-block; height: 20px; line-height: 0; margin: auto; margin-right: 8px; order: 0; position: relative; vertical-align: middle; white-space: nowrap; width: 20px; flex-shrink: 0; } [dir='rtl'] .md-checkbox-inner-container { margin-left: 8px; margin-right: auto; } .md-checkbox-layout .md-checkbox-label { line-height: 24px; } .md-checkbox-frame { background-color: transparent; border: 2px solid; transition: border-color 90ms cubic-bezier(0, 0, 0.2, 0.1); will-change: border-color; } .md-checkbox-background { align-items: center; display: inline-flex; justify-content: center; transition: background-color 90ms cubic-bezier(0, 0, 0.2, 0.1), opacity 90ms cubic-bezier(0, 0, 0.2, 0.1); will-change: background-color, opacity; } .md-checkbox-checkmark { width: 100%; } .md-checkbox-checkmark-path { stroke-dashoffset: 22.91026; stroke-dasharray: 22.91026; stroke-width: 2.66667px; } .md-checkbox-mixedmark { height: 2px; opacity: 0; transform: scaleX(0) rotate(0deg); } .md-checkbox-align-end .md-checkbox-inner-container { order: 1; margin-left: 8px; margin-right: auto; } [dir='rtl'] .md-checkbox-align-end .md-checkbox-inner-container { margin-left: auto; margin-right: 8px; } .md-checkbox-checked .md-checkbox-checkmark { opacity: 1; } .md-checkbox-checked .md-checkbox-checkmark-path { stroke-dashoffset: 0; } .md-checkbox-checked .md-checkbox-mixedmark { transform: scaleX(1) rotate(-45deg); } .md-checkbox-indeterminate .md-checkbox-checkmark { opacity: 0; transform: rotate(45deg); } .md-checkbox-indeterminate .md-checkbox-checkmark-path { stroke-dashoffset: 0; } .md-checkbox-indeterminate .md-checkbox-mixedmark { opacity: 1; transform: scaleX(1) rotate(0deg); } .md-checkbox-unchecked .md-checkbox-background { background-color: transparent; } .md-checkbox-disabled { cursor: default; } .md-checkbox-anim-unchecked-checked .md-checkbox-background { animation: 180ms linear 0ms md-checkbox-fade-in-background; } .md-checkbox-anim-unchecked-checked .md-checkbox-checkmark-path { animation: 180ms linear 0ms md-checkbox-unchecked-checked-checkmark-path; } .md-checkbox-anim-unchecked-indeterminate .md-checkbox-background { animation: 180ms linear 0ms md-checkbox-fade-in-background; } .md-checkbox-anim-unchecked-indeterminate .md-checkbox-mixedmark { animation: 90ms linear 0ms md-checkbox-unchecked-indeterminate-mixedmark; } .md-checkbox-anim-checked-unchecked .md-checkbox-background { animation: 180ms linear 0ms md-checkbox-fade-out-background; } .md-checkbox-anim-checked-unchecked .md-checkbox-checkmark-path { animation: 90ms linear 0ms md-checkbox-checked-unchecked-checkmark-path; } .md-checkbox-anim-checked-indeterminate .md-checkbox-checkmark { animation: 90ms linear 0ms md-checkbox-checked-indeterminate-checkmark; } .md-checkbox-anim-checked-indeterminate .md-checkbox-mixedmark { animation: 90ms linear 0ms md-checkbox-checked-indeterminate-mixedmark; } .md-checkbox-anim-indeterminate-checked .md-checkbox-checkmark { animation: 500ms linear 0ms md-checkbox-indeterminate-checked-checkmark; } .md-checkbox-anim-indeterminate-checked .md-checkbox-mixedmark { animation: 500ms linear 0ms md-checkbox-indeterminate-checked-mixedmark; } .md-checkbox-anim-indeterminate-unchecked .md-checkbox-background { animation: 180ms linear 0ms md-checkbox-fade-out-background; } .md-checkbox-anim-indeterminate-unchecked .md-checkbox-mixedmark { animation: 300ms linear 0ms md-checkbox-indeterminate-unchecked-mixedmark; } .md-checkbox-input { bottom: 0; left: 50%; } .md-checkbox-ripple { position: absolute; left: -15px; top: -15px; right: -15px; bottom: -15px; border-radius: 50%; z-index: 1; pointer-events: none; } /*# sourceMappingURL=checkbox.css.map */ "],
+	            host: {
+	                '[class.md-checkbox-indeterminate]': 'indeterminate',
+	                '[class.md-checkbox-checked]': 'checked',
+	                '[class.md-checkbox-disabled]': 'disabled',
+	                '[class.md-checkbox-align-end]': 'align == "end"',
+	                '[class.md-checkbox-focused]': 'hasFocus',
+	            },
+	            providers: [MD_CHECKBOX_CONTROL_VALUE_ACCESSOR],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush
+	        }), 
+	        __metadata$19('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef])
+	    ], MdCheckbox);
+	    return MdCheckbox;
+	}());
+	var MdCheckboxModule = (function () {
+	    function MdCheckboxModule() {
+	    }
+	    MdCheckboxModule.forRoot = function () {
+	        return {
+	            ngModule: MdCheckboxModule,
+	            providers: []
+	        };
+	    };
+	    MdCheckboxModule = __decorate$19([
+	        _angular_core.NgModule({
+	            imports: [_angular_common.CommonModule, MdRippleModule],
+	            exports: [MdCheckbox],
+	            declarations: [MdCheckbox],
+	        }), 
+	        __metadata$19('design:paramtypes', [])
+	    ], MdCheckboxModule);
+	    return MdCheckboxModule;
+	}());
+
+	var __decorate$20 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$20 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param$3 = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	/**
+	 * Provider Expression that allows md-radio-group to register as a ControlValueAccessor. This
+	 * allows it to support [(ngModel)] and ngControl.
+	 */
+	var MD_RADIO_GROUP_CONTROL_VALUE_ACCESSOR = {
+	    provide: _angular_forms.NG_VALUE_ACCESSOR,
+	    useExisting: _angular_core.forwardRef(function () { return MdRadioGroup; }),
+	    multi: true
+	};
+	// TODO(mtlin):
+	// Ink ripple is currently placeholder.
+	// Determine motion spec for button transitions.
+	// Design review.
+	// RTL
+	// Support forms API.
+	// Use ChangeDetectionStrategy.OnPush
+	var _uniqueIdCounter$1 = 0;
+	/** A simple change event emitted by either MdRadioButton or MdRadioGroup. */
+	var MdRadioChange = (function () {
+	    function MdRadioChange() {
+	    }
+	    return MdRadioChange;
+	}());
+	var MdRadioGroup = (function () {
+	    function MdRadioGroup() {
+	        /**
+	         * Selected value for group. Should equal the value of the selected radio button if there *is*
+	         * a corresponding radio button with a matching value. If there is *not* such a corresponding
+	         * radio button, this value persists to be applied in case a new radio button is added with a
+	         * matching value.
+	         */
+	        this._value = null;
+	        /** The HTML name attribute applied to radio buttons in this group. */
+	        this._name = "md-radio-group-" + _uniqueIdCounter$1++;
+	        /** Disables all individual radio buttons assigned to this group. */
+	        this._disabled = false;
+	        /** The currently selected radio button. Should match value. */
+	        this._selected = null;
+	        /** Whether the `value` has been set to its initial value. */
+	        this._isInitialized = false;
+	        /** The method to be called in order to update ngModel */
+	        this._controlValueAccessorChangeFn = function (value) { };
+	        /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
+	        this.onTouched = function () { };
+	        /** Event emitted when the group value changes. */
+	        this.change = new _angular_core.EventEmitter();
+	        /** Child radio buttons. */
+	        this._radios = null;
+	    }
+	    Object.defineProperty(MdRadioGroup.prototype, "name", {
+	        get: function () {
+	            return this._name;
+	        },
+	        set: function (value) {
+	            this._name = value;
+	            this._updateRadioButtonNames();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioGroup.prototype, "disabled", {
+	        get: function () {
+	            return this._disabled;
+	        },
+	        set: function (value) {
+	            // The presence of *any* disabled value makes the component disabled, *except* for false.
+	            this._disabled = (value != null && value !== false) ? true : null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioGroup.prototype, "value", {
+	        get: function () {
+	            return this._value;
+	        },
+	        set: function (newValue) {
+	            if (this._value != newValue) {
+	                // Set this before proceeding to ensure no circular loop occurs with selection.
+	                this._value = newValue;
+	                this._updateSelectedRadioFromValue();
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioGroup.prototype, "selected", {
+	        get: function () {
+	            return this._selected;
+	        },
+	        set: function (selected) {
+	            this._selected = selected;
+	            this.value = selected ? selected.value : null;
+	            if (selected && !selected.checked) {
+	                selected.checked = true;
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Initialize properties once content children are available.
+	     * This allows us to propagate relevant attributes to associated buttons.
+	     * TODO: internal
+	     */
+	    MdRadioGroup.prototype.ngAfterContentInit = function () {
+	        // Mark this component as initialized in AfterContentInit because the initial value can
+	        // possibly be set by NgModel on MdRadioGroup, and it is possible that the OnInit of the
+	        // NgModel occurs *after* the OnInit of the MdRadioGroup.
+	        this._isInitialized = true;
+	    };
+	    /**
+	     * Mark this group as being "touched" (for ngModel). Meant to be called by the contained
+	     * radio buttons upon their blur.
+	     */
+	    MdRadioGroup.prototype._touch = function () {
+	        if (this.onTouched) {
+	            this.onTouched();
+	        }
+	    };
+	    MdRadioGroup.prototype._updateRadioButtonNames = function () {
+	        var _this = this;
+	        if (this._radios) {
+	            this._radios.forEach(function (radio) {
+	                radio.name = _this.name;
+	            });
+	        }
+	    };
+	    /** Updates the `selected` radio button from the internal _value state. */
+	    MdRadioGroup.prototype._updateSelectedRadioFromValue = function () {
+	        var _this = this;
+	        // If the value already matches the selected radio, do nothing.
+	        var isAlreadySelected = this._selected != null && this._selected.value == this._value;
+	        if (this._radios != null && !isAlreadySelected) {
+	            var matchingRadio = this._radios.filter(function (radio) { return radio.value == _this._value; })[0];
+	            if (matchingRadio) {
+	                this.selected = matchingRadio;
+	            }
+	            else if (this.value == null) {
+	                this.selected = null;
+	                this._radios.forEach(function (radio) { radio.checked = false; });
+	            }
+	        }
+	    };
+	    /** Dispatch change event with current selection and group value. */
+	    MdRadioGroup.prototype._emitChangeEvent = function () {
+	        if (this._isInitialized) {
+	            var event_1 = new MdRadioChange();
+	            event_1.source = this._selected;
+	            event_1.value = this._value;
+	            this.change.emit(event_1);
+	        }
+	    };
+	    /**
+	      * Implemented as part of ControlValueAccessor.
+	      * TODO: internal
+	      */
+	    MdRadioGroup.prototype.writeValue = function (value) {
+	        this.value = value;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdRadioGroup.prototype.registerOnChange = function (fn) {
+	        this._controlValueAccessorChangeFn = fn;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdRadioGroup.prototype.registerOnTouched = function (fn) {
+	        this.onTouched = fn;
+	    };
+	    __decorate$20([
+	        _angular_core.Output(), 
+	        __metadata$20('design:type', _angular_core.EventEmitter)
+	    ], MdRadioGroup.prototype, "change", void 0);
+	    __decorate$20([
+	        _angular_core.ContentChildren(_angular_core.forwardRef(function () { return MdRadioButton; })), 
+	        __metadata$20('design:type', _angular_core.QueryList)
+	    ], MdRadioGroup.prototype, "_radios", void 0);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', String)
+	    ], MdRadioGroup.prototype, "name", null);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Object)
+	    ], MdRadioGroup.prototype, "align", void 0);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Boolean)
+	    ], MdRadioGroup.prototype, "disabled", null);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Object)
+	    ], MdRadioGroup.prototype, "value", null);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Object)
+	    ], MdRadioGroup.prototype, "selected", null);
+	    MdRadioGroup = __decorate$20([
+	        _angular_core.Directive({
+	            selector: 'md-radio-group',
+	            providers: [MD_RADIO_GROUP_CONTROL_VALUE_ACCESSOR],
+	            host: {
+	                'role': 'radiogroup',
+	            },
+	        }), 
+	        __metadata$20('design:paramtypes', [])
+	    ], MdRadioGroup);
+	    return MdRadioGroup;
+	}());
+	var MdRadioButton = (function () {
+	    function MdRadioButton(radioGroup, _elementRef, radioDispatcher) {
+	        // Assertions. Ideally these should be stripped out by the compiler.
+	        // TODO(jelbourn): Assert that there's no name binding AND a parent radio group.
+	        var _this = this;
+	        this._elementRef = _elementRef;
+	        this.radioDispatcher = radioDispatcher;
+	        /** Whether this radio is checked. */
+	        this._checked = false;
+	        /** The unique ID for the radio button. */
+	        this.id = "md-radio-" + _uniqueIdCounter$1++;
+	        /** Value assigned to this radio.*/
+	        this._value = null;
+	        /** Event emitted when the group value changes. */
+	        this.change = new _angular_core.EventEmitter();
+	        this.radioGroup = radioGroup;
+	        radioDispatcher.listen(function (id, name) {
+	            if (id != _this.id && name == _this.name) {
+	                _this.checked = false;
+	            }
+	        });
+	    }
+	    Object.defineProperty(MdRadioButton.prototype, "disableRipple", {
+	        get: function () { return this._disableRipple; },
+	        set: function (value) { this._disableRipple = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioButton.prototype, "inputId", {
+	        get: function () {
+	            return this.id + "-input";
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioButton.prototype, "checked", {
+	        get: function () {
+	            return this._checked;
+	        },
+	        set: function (newCheckedState) {
+	            this._checked = newCheckedState;
+	            if (newCheckedState && this.radioGroup && this.radioGroup.value != this.value) {
+	                this.radioGroup.selected = this;
+	            }
+	            else if (!newCheckedState && this.radioGroup && this.radioGroup.value == this.value) {
+	                // When unchecking the selected radio button, update the selected radio
+	                // property on the group.
+	                this.radioGroup.selected = null;
+	            }
+	            if (newCheckedState) {
+	                // Notify all radio buttons with the same name to un-check.
+	                this.radioDispatcher.notify(this.id, this.name);
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioButton.prototype, "value", {
+	        /** MdRadioGroup reads this to assign its own value. */
+	        get: function () {
+	            return this._value;
+	        },
+	        set: function (value) {
+	            if (this._value != value) {
+	                if (this.radioGroup != null && this.checked) {
+	                    this.radioGroup.value = value;
+	                }
+	                this._value = value;
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioButton.prototype, "align", {
+	        get: function () {
+	            return this._align || (this.radioGroup != null && this.radioGroup.align) || 'start';
+	        },
+	        set: function (value) {
+	            this._align = value;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdRadioButton.prototype, "disabled", {
+	        get: function () {
+	            return this._disabled || (this.radioGroup != null && this.radioGroup.disabled);
+	        },
+	        set: function (value) {
+	            // The presence of *any* disabled value makes the component disabled, *except* for false.
+	            this._disabled = (value != null && value !== false) ? true : null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** TODO: internal */
+	    MdRadioButton.prototype.ngOnInit = function () {
+	        if (this.radioGroup) {
+	            // If the radio is inside a radio group, determine if it should be checked
+	            this.checked = this.radioGroup.value === this._value;
+	            // Copy name from parent radio group
+	            this.name = this.radioGroup.name;
+	        }
+	    };
+	    /** Dispatch change event with current value. */
+	    MdRadioButton.prototype._emitChangeEvent = function () {
+	        var event = new MdRadioChange();
+	        event.source = this;
+	        event.value = this._value;
+	        this.change.emit(event);
+	    };
+	    MdRadioButton.prototype._isRippleDisabled = function () {
+	        return this.disableRipple || this.disabled;
+	    };
+	    /**
+	     * We use a hidden native input field to handle changes to focus state via keyboard navigation,
+	     * with visual rendering done separately. The native element is kept in sync with the overall
+	     * state of the component.
+	     */
+	    MdRadioButton.prototype._onInputFocus = function () {
+	        this._isFocused = true;
+	    };
+	    /** TODO: internal */
+	    MdRadioButton.prototype._onInputBlur = function () {
+	        this._isFocused = false;
+	        if (this.radioGroup) {
+	            this.radioGroup._touch();
+	        }
+	    };
+	    /** TODO: internal */
+	    MdRadioButton.prototype._onInputClick = function (event) {
+	        // We have to stop propagation for click events on the visual hidden input element.
+	        // By default, when a user clicks on a label element, a generated click event will be
+	        // dispatched on the associated input element. Since we are using a label element as our
+	        // root container, the click event on the `radio-button` will be executed twice.
+	        // The real click event will bubble up, and the generated click event also tries to bubble up.
+	        // This will lead to multiple click events.
+	        // Preventing bubbling for the second event will solve that issue.
+	        event.stopPropagation();
+	    };
+	    /**
+	     * Triggered when the radio button received a click or the input recognized any change.
+	     * Clicking on a label element, will trigger a change event on the associated input.
+	     * TODO: internal
+	     */
+	    MdRadioButton.prototype._onInputChange = function (event) {
+	        // We always have to stop propagation on the change event.
+	        // Otherwise the change event, from the input element, will bubble up and
+	        // emit its event object to the `change` output.
+	        event.stopPropagation();
+	        var groupValueChanged = this.radioGroup && this.value != this.radioGroup.value;
+	        this.checked = true;
+	        this._emitChangeEvent();
+	        if (this.radioGroup) {
+	            this.radioGroup._controlValueAccessorChangeFn(this.value);
+	            this.radioGroup._touch();
+	            if (groupValueChanged) {
+	                this.radioGroup._emitChangeEvent();
+	            }
+	        }
+	    };
+	    MdRadioButton.prototype.getHostElement = function () {
+	        return this._elementRef.nativeElement;
+	    };
+	    __decorate$20([
+	        _angular_core.HostBinding('class.md-radio-focused'), 
+	        __metadata$20('design:type', Boolean)
+	    ], MdRadioButton.prototype, "_isFocused", void 0);
+	    __decorate$20([
+	        _angular_core.HostBinding('id'),
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', String)
+	    ], MdRadioButton.prototype, "id", void 0);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', String)
+	    ], MdRadioButton.prototype, "name", void 0);
+	    __decorate$20([
+	        _angular_core.Input('aria-label'), 
+	        __metadata$20('design:type', String)
+	    ], MdRadioButton.prototype, "ariaLabel", void 0);
+	    __decorate$20([
+	        _angular_core.Input('aria-labelledby'), 
+	        __metadata$20('design:type', String)
+	    ], MdRadioButton.prototype, "ariaLabelledby", void 0);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Boolean)
+	    ], MdRadioButton.prototype, "disableRipple", null);
+	    __decorate$20([
+	        _angular_core.Output(), 
+	        __metadata$20('design:type', _angular_core.EventEmitter)
+	    ], MdRadioButton.prototype, "change", void 0);
+	    __decorate$20([
+	        _angular_core.HostBinding('class.md-radio-checked'),
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Boolean)
+	    ], MdRadioButton.prototype, "checked", null);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Object)
+	    ], MdRadioButton.prototype, "value", null);
+	    __decorate$20([
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Object)
+	    ], MdRadioButton.prototype, "align", null);
+	    __decorate$20([
+	        _angular_core.HostBinding('class.md-radio-disabled'),
+	        _angular_core.Input(), 
+	        __metadata$20('design:type', Boolean)
+	    ], MdRadioButton.prototype, "disabled", null);
+	    MdRadioButton = __decorate$20([
+	        _angular_core.Component({selector: 'md-radio-button',
+	            template: "<!-- TODO(jelbourn): render the radio on either side of the content --> <!-- TODO(mtlin): Evaluate trade-offs of using native radio vs. cost of additional bindings. --> <label [attr.for]=\"inputId\" class=\"md-radio-label\"> <!-- The actual 'radio' part of the control. --> <div class=\"md-radio-container\"> <div class=\"md-radio-outer-circle\"></div> <div class=\"md-radio-inner-circle\"></div> <div md-ripple *ngIf=\"!_isRippleDisabled()\" class=\"md-radio-ripple\" [md-ripple-trigger]=\"getHostElement()\" [md-ripple-centered]=\"true\" [md-ripple-speed-factor]=\"0.3\" md-ripple-background-color=\"rgba(0, 0, 0, 0)\"></div> </div> <input #input class=\"md-radio-input md-visually-hidden\" type=\"radio\" [id]=\"inputId\" [checked]=\"checked\" [disabled]=\"disabled\" [name]=\"name\" [attr.aria-label]=\"ariaLabel\" [attr.aria-labelledby]=\"ariaLabelledby\" (change)=\"_onInputChange($event)\" (focus)=\"_onInputFocus()\" (blur)=\"_onInputBlur()\" (click)=\"_onInputClick($event)\"> <!-- The label content for radio control. --> <div class=\"md-radio-label-content\" [class.md-radio-align-end]=\"align == 'end'\"> <ng-content></ng-content> </div> </label> ",
+	            styles: ["md-radio-button { display: inline-block; } .md-radio-label { cursor: pointer; display: inline-flex; align-items: baseline; white-space: nowrap; } .md-radio-container { box-sizing: border-box; display: inline-block; height: 20px; position: relative; width: 20px; top: 2px; } .md-radio-outer-circle { border: solid 2px; border-radius: 50%; box-sizing: border-box; height: 20px; left: 0; position: absolute; top: 0; transition: border-color ease 280ms; width: 20px; } .md-radio-inner-circle { border-radius: 50%; box-sizing: border-box; height: 20px; left: 0; position: absolute; top: 0; transition: transform ease 280ms, background-color ease 280ms; transform: scale(0); width: 20px; } .md-radio-checked .md-radio-inner-circle { transform: scale(0.5); } .md-radio-label-content { display: inline-block; order: 0; line-height: inherit; padding-left: 8px; padding-right: 0; } [dir='rtl'] .md-radio-label-content { padding-right: 8px; padding-left: 0; } .md-radio-label-content.md-radio-align-end { order: -1; padding-left: 0; padding-right: 8px; } [dir='rtl'] .md-radio-label-content.md-radio-align-end { padding-right: 0; padding-left: 8px; } .md-radio-disabled, .md-radio-disabled .md-radio-label { cursor: default; } .md-radio-ripple { position: absolute; left: -15px; top: -15px; right: -15px; bottom: -15px; border-radius: 50%; z-index: 1; pointer-events: none; } /*# sourceMappingURL=radio.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None
+	        }),
+	        __param$3(0, _angular_core.Optional()), 
+	        __metadata$20('design:paramtypes', [MdRadioGroup, _angular_core.ElementRef, MdUniqueSelectionDispatcher])
+	    ], MdRadioButton);
+	    return MdRadioButton;
+	}());
+	var MdRadioModule = (function () {
+	    function MdRadioModule() {
+	    }
+	    MdRadioModule.forRoot = function () {
+	        return {
+	            ngModule: MdRadioModule,
+	            providers: [MdUniqueSelectionDispatcher],
+	        };
+	    };
+	    MdRadioModule = __decorate$20([
+	        _angular_core.NgModule({
+	            imports: [_angular_common.CommonModule, MdRippleModule],
+	            exports: [MdRadioGroup, MdRadioButton],
+	            declarations: [MdRadioGroup, MdRadioButton],
+	        }), 
+	        __metadata$20('design:paramtypes', [])
+	    ], MdRadioModule);
+	    return MdRadioModule;
+	}());
+
+	var __decorate$21 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$21 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MD_SLIDE_TOGGLE_VALUE_ACCESSOR = {
+	    provide: _angular_forms.NG_VALUE_ACCESSOR,
+	    useExisting: _angular_core.forwardRef(function () { return MdSlideToggle; }),
+	    multi: true
+	};
+	// A simple change event emitted by the MdSlideToggle component.
+	var MdSlideToggleChange = (function () {
+	    function MdSlideToggleChange() {
+	    }
+	    return MdSlideToggleChange;
+	}());
+	// Increasing integer for generating unique ids for slide-toggle components.
+	var nextId$1 = 0;
+	var MdSlideToggle = (function () {
+	    function MdSlideToggle(_elementRef, _renderer) {
+	        var _this = this;
+	        this._elementRef = _elementRef;
+	        this._renderer = _renderer;
+	        this.onChange = function (_) { };
+	        this.onTouched = function () { };
+	        // A unique id for the slide-toggle. By default the id is auto-generated.
+	        this._uniqueId = "md-slide-toggle-" + ++nextId$1;
+	        this._checked = false;
+	        this._isMousedown = false;
+	        this._slideRenderer = null;
+	        this._disabled = false;
+	        this._required = false;
+	        // Needs to be public to support AOT compilation (as host binding).
+	        this._hasFocus = false;
+	        this.name = null;
+	        this.id = this._uniqueId;
+	        this.tabIndex = 0;
+	        this.ariaLabel = null;
+	        this.ariaLabelledby = null;
+	        this._change = new _angular_core.EventEmitter();
+	        this.change = this._change.asObservable();
+	        // Returns the unique id for the visual hidden input.
+	        this.getInputId = function () { return ((_this.id || _this._uniqueId) + "-input"); };
+	    }
+	    Object.defineProperty(MdSlideToggle.prototype, "disabled", {
+	        get: function () { return this._disabled; },
+	        set: function (value) { this._disabled = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlideToggle.prototype, "required", {
+	        get: function () { return this._required; },
+	        set: function (value) { this._required = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** TODO: internal */
+	    MdSlideToggle.prototype.ngAfterContentInit = function () {
+	        this._slideRenderer = new SlideToggleRenderer(this._elementRef);
+	    };
+	    /**
+	     * The onChangeEvent method will be also called on click.
+	     * This is because everything for the slide-toggle is wrapped inside of a label,
+	     * which triggers a onChange event on click.
+	     */
+	    MdSlideToggle.prototype._onChangeEvent = function (event) {
+	        // We always have to stop propagation on the change event.
+	        // Otherwise the change event, from the input element, will bubble up and
+	        // emit its event object to the component's `change` output.
+	        event.stopPropagation();
+	        // Once a drag is currently in progress, we do not want to toggle the slide-toggle on a click.
+	        if (!this.disabled && !this._slideRenderer.isDragging()) {
+	            this.toggle();
+	            // Emit our custom change event if the native input emitted one.
+	            // It is important to only emit it, if the native input triggered one, because
+	            // we don't want to trigger a change event, when the `checked` variable changes for example.
+	            this._emitChangeEvent();
+	        }
+	    };
+	    MdSlideToggle.prototype._onInputClick = function (event) {
+	        this.onTouched();
+	        // We have to stop propagation for click events on the visual hidden input element.
+	        // By default, when a user clicks on a label element, a generated click event will be
+	        // dispatched on the associated input element. Since we are using a label element as our
+	        // root container, the click event on the `slide-toggle` will be executed twice.
+	        // The real click event will bubble up, and the generated click event also tries to bubble up.
+	        // This will lead to multiple click events.
+	        // Preventing bubbling for the second event will solve that issue.
+	        event.stopPropagation();
+	    };
+	    MdSlideToggle.prototype._setMousedown = function () {
+	        var _this = this;
+	        // We only *show* the focus style when focus has come to the button via the keyboard.
+	        // The Material Design spec is silent on this topic, and without doing this, the
+	        // button continues to look :active after clicking.
+	        // @see http://marcysutton.com/button-focus-hell/
+	        this._isMousedown = true;
+	        setTimeout(function () { return _this._isMousedown = false; }, 100);
+	    };
+	    MdSlideToggle.prototype._onInputFocus = function () {
+	        // Only show the focus / ripple indicator when the focus was not triggered by a mouse
+	        // interaction on the component.
+	        if (!this._isMousedown) {
+	            this._hasFocus = true;
+	        }
+	    };
+	    MdSlideToggle.prototype._onInputBlur = function () {
+	        this._hasFocus = false;
+	        this.onTouched();
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdSlideToggle.prototype.writeValue = function (value) {
+	        this.checked = value;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdSlideToggle.prototype.registerOnChange = function (fn) {
+	        this.onChange = fn;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdSlideToggle.prototype.registerOnTouched = function (fn) {
+	        this.onTouched = fn;
+	    };
+	    Object.defineProperty(MdSlideToggle.prototype, "checked", {
+	        get: function () {
+	            return !!this._checked;
+	        },
+	        set: function (value) {
+	            if (this.checked !== !!value) {
+	                this._checked = value;
+	                this.onChange(this._checked);
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlideToggle.prototype, "color", {
+	        get: function () {
+	            return this._color;
+	        },
+	        set: function (value) {
+	            this._updateColor(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdSlideToggle.prototype.toggle = function () {
+	        this.checked = !this.checked;
+	    };
+	    MdSlideToggle.prototype._updateColor = function (newColor) {
+	        this._setElementColor(this._color, false);
+	        this._setElementColor(newColor, true);
+	        this._color = newColor;
+	    };
+	    MdSlideToggle.prototype._setElementColor = function (color, isAdd) {
+	        if (color != null && color != '') {
+	            this._renderer.setElementClass(this._elementRef.nativeElement, "md-" + color, isAdd);
+	        }
+	    };
+	    /** Emits the change event to the `change` output EventEmitter */
+	    MdSlideToggle.prototype._emitChangeEvent = function () {
+	        var event = new MdSlideToggleChange();
+	        event.source = this;
+	        event.checked = this.checked;
+	        this._change.emit(event);
+	    };
+	    /** TODO: internal */
+	    MdSlideToggle.prototype._onDragStart = function () {
+	        if (!this.disabled) {
+	            this._slideRenderer.startThumbDrag(this.checked);
+	        }
+	    };
+	    /** TODO: internal */
+	    MdSlideToggle.prototype._onDrag = function (event) {
+	        if (this._slideRenderer.isDragging()) {
+	            this._slideRenderer.updateThumbPosition(event.deltaX);
+	        }
+	    };
+	    /** TODO: internal */
+	    MdSlideToggle.prototype._onDragEnd = function () {
+	        var _this = this;
+	        if (!this._slideRenderer.isDragging()) {
+	            return;
+	        }
+	        // Notice that we have to stop outside of the current event handler,
+	        // because otherwise the click event will be fired and will reset the new checked variable.
+	        setTimeout(function () {
+	            _this.checked = _this._slideRenderer.stopThumbDrag();
+	            _this._emitChangeEvent();
+	        }, 0);
+	    };
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', String)
+	    ], MdSlideToggle.prototype, "name", void 0);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', String)
+	    ], MdSlideToggle.prototype, "id", void 0);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', Number)
+	    ], MdSlideToggle.prototype, "tabIndex", void 0);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', String)
+	    ], MdSlideToggle.prototype, "ariaLabel", void 0);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', String)
+	    ], MdSlideToggle.prototype, "ariaLabelledby", void 0);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', Boolean)
+	    ], MdSlideToggle.prototype, "disabled", null);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', Boolean)
+	    ], MdSlideToggle.prototype, "required", null);
+	    __decorate$21([
+	        _angular_core.Output(), 
+	        __metadata$21('design:type', rxjs_Observable.Observable)
+	    ], MdSlideToggle.prototype, "change", void 0);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', Object)
+	    ], MdSlideToggle.prototype, "checked", null);
+	    __decorate$21([
+	        _angular_core.Input(), 
+	        __metadata$21('design:type', String)
+	    ], MdSlideToggle.prototype, "color", null);
+	    MdSlideToggle = __decorate$21([
+	        _angular_core.Component({selector: 'md-slide-toggle',
+	            host: {
+	                '[class.md-checked]': 'checked',
+	                '[class.md-disabled]': 'disabled',
+	                // This md-slide-toggle prefix will change, once the temporary ripple is removed.
+	                '[class.md-slide-toggle-focused]': '_hasFocus',
+	                '(mousedown)': '_setMousedown()'
+	            },
+	            template: "<label class=\"md-slide-toggle-label\"> <div class=\"md-slide-toggle-container\"> <div class=\"md-slide-toggle-bar\"></div> <div class=\"md-slide-toggle-thumb-container\" (slidestart)=\"_onDragStart()\" (slide)=\"_onDrag($event)\" (slideend)=\"_onDragEnd()\"> <div class=\"md-slide-toggle-thumb\"> <div class=\"md-ink-ripple\"></div> </div> </div> <input #input class=\"md-slide-toggle-input md-visually-hidden\" type=\"checkbox\" [id]=\"getInputId()\" [required]=\"required\" [tabIndex]=\"tabIndex\" [checked]=\"checked\" [disabled]=\"disabled\" [attr.name]=\"name\" [attr.aria-label]=\"ariaLabel\" [attr.aria-labelledby]=\"ariaLabelledby\" (blur)=\"_onInputBlur()\" (focus)=\"_onInputFocus()\" (change)=\"_onChangeEvent($event)\" (click)=\"_onInputClick($event)\"> </div> <span class=\"md-slide-toggle-content\"> <ng-content></ng-content> </span> </label> ",
+	            styles: ["md-slide-toggle { display: flex; height: 24px; margin: 16px 0; line-height: 24px; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; outline: none; } md-slide-toggle.md-checked .md-slide-toggle-thumb-container { transform: translate3d(100%, 0, 0); } md-slide-toggle .md-ink-ripple { border-radius: 50%; opacity: 0; height: 48px; left: 50%; overflow: hidden; pointer-events: none; position: absolute; top: 50%; transform: translate(-50%, -50%); transition: opacity ease 280ms, background-color ease 280ms; width: 48px; } md-slide-toggle.md-slide-toggle-focused .md-ink-ripple { opacity: 1; } md-slide-toggle.md-slide-toggle-disabled .md-ink-ripple { background-color: #000; } md-slide-toggle.md-disabled .md-slide-toggle-label, md-slide-toggle.md-disabled .md-slide-toggle-container { cursor: default; } .md-slide-toggle-content { font-size: 14px; font-family: Roboto, \"Helvetica Neue\", sans-serif; font-weight: 500; } .md-slide-toggle-label { display: flex; flex: 1; cursor: pointer; } .md-slide-toggle-container { cursor: -webkit-grab; cursor: grab; width: 36px; height: 24px; position: relative; margin-right: 8px; } [dir='rtl'] .md-slide-toggle-container { margin-left: 8px; margin-right: 0; } .md-slide-toggle-thumb-container { position: absolute; top: 2px; left: 0; z-index: 1; width: 16px; transform: translate3d(0, 0, 0); transition: all 80ms linear; transition-property: transform; } .md-slide-toggle-thumb-container.md-dragging { transition-duration: 0ms; } .md-slide-toggle-thumb { position: absolute; margin: 0; left: 0; top: 0; height: 20px; width: 20px; border-radius: 50%; box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); } .md-slide-toggle-bar { position: absolute; left: 1px; top: 5px; width: 34px; height: 14px; border-radius: 8px; } .md-slide-toggle-input { bottom: 0; left: 10px; } .md-slide-toggle-bar, .md-slide-toggle-thumb { transition: all 80ms linear; transition-property: background-color; transition-delay: 50ms; } /*# sourceMappingURL=slide-toggle.css.map */ "],
+	            providers: [MD_SLIDE_TOGGLE_VALUE_ACCESSOR],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush
+	        }), 
+	        __metadata$21('design:paramtypes', [_angular_core.ElementRef, _angular_core.Renderer])
+	    ], MdSlideToggle);
+	    return MdSlideToggle;
+	}());
+	/**
+	 * Renderer for the Slide Toggle component, which separates DOM modification in its own class
+	 */
+	var SlideToggleRenderer = (function () {
+	    function SlideToggleRenderer(_elementRef) {
+	        this._elementRef = _elementRef;
+	        this._thumbEl = _elementRef.nativeElement.querySelector('.md-slide-toggle-thumb-container');
+	        this._thumbBarEl = _elementRef.nativeElement.querySelector('.md-slide-toggle-bar');
+	    }
+	    /** Whether the slide-toggle is currently dragging. */
+	    SlideToggleRenderer.prototype.isDragging = function () {
+	        return !!this._thumbBarWidth;
+	    };
+	    /** Initializes the drag of the slide-toggle. */
+	    SlideToggleRenderer.prototype.startThumbDrag = function (checked) {
+	        if (!this.isDragging()) {
+	            this._thumbBarWidth = this._thumbBarEl.clientWidth - this._thumbEl.clientWidth;
+	            this._checked = checked;
+	            this._thumbEl.classList.add('md-dragging');
+	        }
+	    };
+	    /** Stops the current drag and returns the new checked value. */
+	    SlideToggleRenderer.prototype.stopThumbDrag = function () {
+	        if (this.isDragging()) {
+	            this._thumbBarWidth = null;
+	            this._thumbEl.classList.remove('md-dragging');
+	            applyCssTransform(this._thumbEl, '');
+	            return this._percentage > 50;
+	        }
+	    };
+	    /** Updates the thumb containers position from the specified distance. */
+	    SlideToggleRenderer.prototype.updateThumbPosition = function (distance) {
+	        this._percentage = this._getThumbPercentage(distance);
+	        applyCssTransform(this._thumbEl, "translate3d(" + this._percentage + "%, 0, 0)");
+	    };
+	    /** Retrieves the percentage of thumb from the moved distance. */
+	    SlideToggleRenderer.prototype._getThumbPercentage = function (distance) {
+	        var percentage = (distance / this._thumbBarWidth) * 100;
+	        // When the toggle was initially checked, then we have to start the drag at the end.
+	        if (this._checked) {
+	            percentage += 100;
+	        }
+	        return Math.max(0, Math.min(percentage, 100));
+	    };
+	    return SlideToggleRenderer;
+	}());
+	var MdSlideToggleModule = (function () {
+	    function MdSlideToggleModule() {
+	    }
+	    MdSlideToggleModule.forRoot = function () {
+	        return {
+	            ngModule: MdSlideToggleModule,
+	            providers: [{ provide: _angular_platformBrowser.HAMMER_GESTURE_CONFIG, useClass: MdGestureConfig }]
+	        };
+	    };
+	    MdSlideToggleModule = __decorate$21([
+	        _angular_core.NgModule({
+	            imports: [_angular_forms.FormsModule],
+	            exports: [MdSlideToggle],
+	            declarations: [MdSlideToggle],
+	        }), 
+	        __metadata$21('design:paramtypes', [])
+	    ], MdSlideToggleModule);
+	    return MdSlideToggleModule;
+	}());
+
+	var __decorate$22 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$22 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Visually, a 30px separation between tick marks looks best. This is very subjective but it is
+	 * the default separation we chose.
+	 */
+	var MIN_AUTO_TICK_SEPARATION = 30;
+	/**
+	 * Provider Expression that allows md-slider to register as a ControlValueAccessor.
+	 * This allows it to support [(ngModel)] and [formControl].
+	 */
+	var MD_SLIDER_VALUE_ACCESSOR = {
+	    provide: _angular_forms.NG_VALUE_ACCESSOR,
+	    useExisting: _angular_core.forwardRef(function () { return MdSlider; }),
+	    multi: true
+	};
+	/** A simple change event emitted by the MdSlider component. */
+	var MdSliderChange = (function () {
+	    function MdSliderChange() {
+	    }
+	    return MdSliderChange;
+	}());
+	var MdSlider = (function () {
+	    function MdSlider(elementRef) {
+	        /** A renderer to handle updating the slider's thumb and fill track. */
+	        this._renderer = null;
+	        /** The dimensions of the slider. */
+	        this._sliderDimensions = null;
+	        /** Whether or not the slider is disabled. */
+	        this._disabled = false;
+	        /** Whether or not to show the thumb label. */
+	        this._thumbLabel = false;
+	        this._controlValueAccessorChangeFn = function () { };
+	        /** The last value for which a change event was emitted. */
+	        this._lastEmittedValue = null;
+	        /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
+	        this.onTouched = function () { };
+	        /**
+	         * Whether or not the thumb is sliding.
+	         * Used to determine if there should be a transition for the thumb and fill track.
+	         */
+	        this._isSliding = false;
+	        /**
+	         * Whether or not the slider is active (clicked or sliding).
+	         * Used to shrink and grow the thumb as according to the Material Design spec.
+	         */
+	        this._isActive = false;
+	        /** The values at which the thumb will snap. */
+	        this._step = 1;
+	        /**
+	         * How often to show ticks. Relative to the step so that a tick always appears on a step.
+	         * Ex: Tick interval of 4 with a step of 3 will draw a tick every 4 steps (every 12 values).
+	         */
+	        this._tickInterval = 0;
+	        /** The size of a tick interval as a percentage of the size of the track. */
+	        this._tickIntervalPercent = 0;
+	        /** The percentage of the slider that coincides with the value. */
+	        this._percent = 0;
+	        /** Value of the slider. */
+	        this._value = null;
+	        /** The miniumum value that the slider can have. */
+	        this._min = 0;
+	        /** The maximum value that the slider can have. */
+	        this._max = 100;
+	        this.change = new _angular_core.EventEmitter();
+	        this._renderer = new SliderRenderer(elementRef);
+	    }
+	    Object.defineProperty(MdSlider.prototype, "disabled", {
+	        get: function () { return this._disabled; },
+	        set: function (value) { this._disabled = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "thumbLabel", {
+	        get: function () { return this._thumbLabel; },
+	        set: function (value) { this._thumbLabel = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "step", {
+	        get: function () { return this._step; },
+	        set: function (v) { this._step = coerceNumberProperty(v, this._step); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "tickInterval", {
+	        get: function () { return this._tickInterval; },
+	        set: function (v) {
+	            this._tickInterval = (v == 'auto') ? v : coerceNumberProperty(v, this._tickInterval);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "tickIntervalPercent", {
+	        get: function () { return this._tickIntervalPercent; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "percent", {
+	        get: function () { return this._clamp(this._percent); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "value", {
+	        get: function () {
+	            // If the value needs to be read and it is still uninitialized, initialize it to the min.
+	            if (this._value === null) {
+	                this.value = this._min;
+	            }
+	            return this._value;
+	        },
+	        set: function (v) {
+	            this._value = coerceNumberProperty(v, this._value);
+	            this._percent = this._calculatePercentage(this._value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "min", {
+	        get: function () {
+	            return this._min;
+	        },
+	        set: function (v) {
+	            this._min = coerceNumberProperty(v, this._min);
+	            // If the value wasn't explicitly set by the user, set it to the min.
+	            if (this._value === null) {
+	                this.value = this._min;
+	            }
+	            this._percent = this._calculatePercentage(this.value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "max", {
+	        get: function () {
+	            return this._max;
+	        },
+	        set: function (v) {
+	            this._max = coerceNumberProperty(v, this._max);
+	            this._percent = this._calculatePercentage(this.value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "trackFillFlexBasis", {
+	        get: function () {
+	            return this.percent * 100 + '%';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "ticksMarginLeft", {
+	        get: function () {
+	            return this.tickIntervalPercent / 2 * 100 + '%';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "ticksContainerMarginLeft", {
+	        get: function () {
+	            return '-' + this.ticksMarginLeft;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSlider.prototype, "ticksBackgroundSize", {
+	        get: function () {
+	            return this.tickIntervalPercent * 100 + '% 2px';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdSlider.prototype._onMouseenter = function () {
+	        if (this.disabled) {
+	            return;
+	        }
+	        // We save the dimensions of the slider here so we can use them to update the spacing of the
+	        // ticks and determine where on the slider click and slide events happen.
+	        this._sliderDimensions = this._renderer.getSliderDimensions();
+	        this._updateTickIntervalPercent();
+	    };
+	    MdSlider.prototype._onClick = function (event) {
+	        if (this.disabled) {
+	            return;
+	        }
+	        this._isActive = true;
+	        this._isSliding = false;
+	        this._renderer.addFocus();
+	        this._updateValueFromPosition(event.clientX);
+	        this._emitValueIfChanged();
+	    };
+	    MdSlider.prototype._onSlide = function (event) {
+	        if (this.disabled) {
+	            return;
+	        }
+	        // Prevent the slide from selecting anything else.
+	        event.preventDefault();
+	        this._updateValueFromPosition(event.center.x);
+	    };
+	    MdSlider.prototype._onSlideStart = function (event) {
+	        if (this.disabled) {
+	            return;
+	        }
+	        event.preventDefault();
+	        this._isSliding = true;
+	        this._isActive = true;
+	        this._renderer.addFocus();
+	        this._updateValueFromPosition(event.center.x);
+	    };
+	    MdSlider.prototype._onSlideEnd = function () {
+	        this._isSliding = false;
+	        this._emitValueIfChanged();
+	    };
+	    MdSlider.prototype._onBlur = function () {
+	        this._isActive = false;
+	        this.onTouched();
+	    };
+	    /**
+	     * Calculate the new value from the new physical location. The value will always be snapped.
+	     */
+	    MdSlider.prototype._updateValueFromPosition = function (pos) {
+	        if (!this._sliderDimensions) {
+	            return;
+	        }
+	        var offset = this._sliderDimensions.left;
+	        var size = this._sliderDimensions.width;
+	        // The exact value is calculated from the event and used to find the closest snap value.
+	        var percent = this._clamp((pos - offset) / size);
+	        var exactValue = this._calculateValue(percent);
+	        // This calculation finds the closest step by finding the closest whole number divisible by the
+	        // step relative to the min.
+	        var closestValue = Math.round((exactValue - this.min) / this.step) * this.step + this.min;
+	        // The value needs to snap to the min and max.
+	        this.value = this._clamp(closestValue, this.min, this.max);
+	    };
+	    /** Emits a change event if the current value is different from the last emitted value. */
+	    MdSlider.prototype._emitValueIfChanged = function () {
+	        if (this.value != this._lastEmittedValue) {
+	            var event_1 = new MdSliderChange();
+	            event_1.source = this;
+	            event_1.value = this.value;
+	            this.change.emit(event_1);
+	            this._controlValueAccessorChangeFn(this.value);
+	            this._lastEmittedValue = this.value;
+	        }
+	    };
+	    /**
+	     * Updates the amount of space between ticks as a percentage of the width of the slider.
+	     */
+	    MdSlider.prototype._updateTickIntervalPercent = function () {
+	        if (!this.tickInterval) {
+	            return;
+	        }
+	        if (this.tickInterval == 'auto') {
+	            var pixelsPerStep = this._sliderDimensions.width * this.step / (this.max - this.min);
+	            var stepsPerTick = Math.ceil(MIN_AUTO_TICK_SEPARATION / pixelsPerStep);
+	            var pixelsPerTick = stepsPerTick * this.step;
+	            this._tickIntervalPercent = pixelsPerTick / (this._sliderDimensions.width);
+	        }
+	        else {
+	            this._tickIntervalPercent = this.tickInterval * this.step / (this.max - this.min);
+	        }
+	    };
+	    /**
+	     * Calculates the percentage of the slider that a value is.
+	     */
+	    MdSlider.prototype._calculatePercentage = function (value) {
+	        return (value - this.min) / (this.max - this.min);
+	    };
+	    /**
+	     * Calculates the value a percentage of the slider corresponds to.
+	     */
+	    MdSlider.prototype._calculateValue = function (percentage) {
+	        return this.min + percentage * (this.max - this.min);
+	    };
+	    /**
+	     * Return a number between two numbers.
+	     */
+	    MdSlider.prototype._clamp = function (value, min, max) {
+	        if (min === void 0) { min = 0; }
+	        if (max === void 0) { max = 1; }
+	        return Math.max(min, Math.min(value, max));
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     */
+	    MdSlider.prototype.writeValue = function (value) {
+	        this.value = value;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     */
+	    MdSlider.prototype.registerOnChange = function (fn) {
+	        this._controlValueAccessorChangeFn = fn;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     */
+	    MdSlider.prototype.registerOnTouched = function (fn) {
+	        this.onTouched = fn;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     */
+	    MdSlider.prototype.setDisabledState = function (isDisabled) {
+	        this.disabled = isDisabled;
+	    };
+	    __decorate$22([
+	        _angular_core.Input(), 
+	        __metadata$22('design:type', Boolean)
+	    ], MdSlider.prototype, "disabled", null);
+	    __decorate$22([
+	        _angular_core.Input('thumb-label'), 
+	        __metadata$22('design:type', Boolean)
+	    ], MdSlider.prototype, "thumbLabel", null);
+	    __decorate$22([
+	        _angular_core.Input(), 
+	        __metadata$22('design:type', Object)
+	    ], MdSlider.prototype, "step", null);
+	    __decorate$22([
+	        _angular_core.Input('tick-interval'), 
+	        __metadata$22('design:type', Object)
+	    ], MdSlider.prototype, "tickInterval", null);
+	    __decorate$22([
+	        _angular_core.Input(), 
+	        __metadata$22('design:type', Object)
+	    ], MdSlider.prototype, "value", null);
+	    __decorate$22([
+	        _angular_core.Input(), 
+	        __metadata$22('design:type', Object)
+	    ], MdSlider.prototype, "min", null);
+	    __decorate$22([
+	        _angular_core.Input(), 
+	        __metadata$22('design:type', Object)
+	    ], MdSlider.prototype, "max", null);
+	    __decorate$22([
+	        _angular_core.Output(), 
+	        __metadata$22('design:type', Object)
+	    ], MdSlider.prototype, "change", void 0);
+	    MdSlider = __decorate$22([
+	        _angular_core.Component({selector: 'md-slider',
+	            providers: [MD_SLIDER_VALUE_ACCESSOR],
+	            host: {
+	                '(blur)': '_onBlur()',
+	                '(click)': '_onClick($event)',
+	                '(mouseenter)': '_onMouseenter()',
+	                '(slide)': '_onSlide($event)',
+	                '(slideend)': '_onSlideEnd()',
+	                '(slidestart)': '_onSlideStart($event)',
+	                'tabindex': '0',
+	                '[attr.aria-disabled]': 'disabled',
+	                '[attr.aria-valuemax]': 'max',
+	                '[attr.aria-valuemin]': 'min',
+	                '[attr.aria-valuenow]': 'value',
+	                '[class.md-slider-active]': '_isActive',
+	                '[class.md-slider-disabled]': 'disabled',
+	                '[class.md-slider-has-ticks]': 'tickInterval',
+	                '[class.md-slider-sliding]': '_isSliding',
+	                '[class.md-slider-thumb-label-showing]': 'thumbLabel',
+	            },
+	            template: "<div class=\"md-slider-track\"> <div class=\"md-slider-track-fill\" [style.flexBasis]=\"trackFillFlexBasis\"></div> <div class=\"md-slider-ticks-container\" [style.marginLeft]=\"ticksContainerMarginLeft\"> <div class=\"md-slider-ticks\" [style.marginLeft]=\"ticksMarginLeft\" [style.backgroundSize]=\"ticksBackgroundSize\"></div> </div> <div class=\"md-slider-thumb-container\"> <div class=\"md-slider-thumb\"></div> <div class=\"md-slider-thumb-label\"> <span class=\"md-slider-thumb-label-text\">{{value}}</span> </div> </div> </div>",
+	            styles: ["md-slider { display: inline-block; box-sizing: border-box; position: relative; height: 48px; min-width: 128px; padding: 8px; outline: none; vertical-align: middle; } .md-slider-track { display: flex; flex-grow: 1; align-items: center; position: relative; top: 15px; height: 2px; transition: box-shadow 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-slider-has-ticks.md-slider-active .md-slider-track, .md-slider-has-ticks:hover .md-slider-track { box-shadow: inset -4px 0 0 -2px rgba(0, 0, 0, 0.6); } .md-slider-track-fill { flex: 0 0 50%; height: 2px; transition: flex-basis 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-slider-sliding .md-slider-track-fill { transition: none; } .md-slider-ticks-container { position: absolute; left: 0; top: 0; height: 2px; width: 100%; overflow: hidden; } .md-slider-ticks { background: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 2px, transparent 0, transparent) repeat; background: -moz-repeating-linear-gradient(0.0001deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 2px, transparent 0, transparent) repeat; height: 2px; width: 100%; opacity: 0; transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-slider-has-ticks.md-slider-active .md-slider-ticks, .md-slider-has-ticks:hover .md-slider-ticks { opacity: 1; } .md-slider-thumb-container { flex: 0 0 auto; position: relative; width: 0; height: 0; } .md-slider-thumb { position: absolute; left: -10px; top: -10px; width: 20px; height: 20px; border-radius: 50%; transform-origin: 50% 50%; transform: scale(0.7); transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-slider-active .md-slider-thumb { transform: scale(1); } .md-slider-active.md-slider-thumb-label-showing .md-slider-thumb { transform: scale(0); } .md-slider-thumb-label { display: flex; align-items: center; justify-content: center; position: absolute; left: -14px; top: -40px; width: 28px; height: 28px; border-radius: 50%; transform: translateY(26px) scale(0.4) rotate(45deg); transition: 300ms cubic-bezier(0.35, 0, 0.25, 1); transition-property: transform, border-radius; } .md-slider-active .md-slider-thumb-label { border-radius: 50% 50% 0; transform: rotate(45deg); } md-slider:not(.md-slider-thumb-label-showing) .md-slider-thumb-label { display: none; } .md-slider-thumb-label-text { z-index: 1; font-size: 12px; font-weight: bold; opacity: 0; transform: rotate(-45deg); transition: opacity 300ms cubic-bezier(0.35, 0, 0.25, 1); } .md-slider-active .md-slider-thumb-label-text { opacity: 1; } /*# sourceMappingURL=slider.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }), 
+	        __metadata$22('design:paramtypes', [_angular_core.ElementRef])
+	    ], MdSlider);
+	    return MdSlider;
+	}());
+	/**
+	 * Renderer class in order to keep all dom manipulation in one place and outside of the main class.
+	 */
+	var SliderRenderer = (function () {
+	    function SliderRenderer(elementRef) {
+	        this._sliderElement = elementRef.nativeElement;
+	    }
+	    /**
+	     * Get the bounding client rect of the slider track element.
+	     * The track is used rather than the native element to ignore the extra space that the thumb can
+	     * take up.
+	     */
+	    SliderRenderer.prototype.getSliderDimensions = function () {
+	        var trackElement = this._sliderElement.querySelector('.md-slider-track');
+	        return trackElement.getBoundingClientRect();
+	    };
+	    /**
+	     * Focuses the native element.
+	     * Currently only used to allow a blur event to fire but will be used with keyboard input later.
+	     */
+	    SliderRenderer.prototype.addFocus = function () {
+	        this._sliderElement.focus();
+	    };
+	    return SliderRenderer;
+	}());
+	var MdSliderModule = (function () {
+	    function MdSliderModule() {
+	    }
+	    MdSliderModule.forRoot = function () {
+	        return {
+	            ngModule: MdSliderModule,
+	            providers: [{ provide: _angular_platformBrowser.HAMMER_GESTURE_CONFIG, useClass: MdGestureConfig }]
+	        };
+	    };
+	    MdSliderModule = __decorate$22([
+	        _angular_core.NgModule({
+	            imports: [_angular_forms.FormsModule],
+	            exports: [MdSlider],
+	            declarations: [MdSlider],
+	            providers: [
+	                { provide: _angular_platformBrowser.HAMMER_GESTURE_CONFIG, useClass: MdGestureConfig },
+	            ],
+	        }), 
+	        __metadata$22('design:paramtypes', [])
+	    ], MdSliderModule);
+	    return MdSliderModule;
+	}());
+
+	var __extends$7 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$23 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$23 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param$4 = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	/** Exception thrown when two MdSidenav are matching the same side. */
+	var MdDuplicatedSidenavError = (function (_super) {
+	    __extends$7(MdDuplicatedSidenavError, _super);
+	    function MdDuplicatedSidenavError(align) {
+	        _super.call(this, "A sidenav was already declared for 'align=\"" + align + "\"'");
+	    }
+	    return MdDuplicatedSidenavError;
+	}(MdError));
+	/**
+	 * <md-sidenav> component.
+	 *
+	 * This component corresponds to the drawer of the sidenav.
+	 *
+	 * Please refer to README.md for examples on how to use it.
+	 */
+	var MdSidenav = (function () {
+	    /**
+	     * @param _elementRef The DOM element reference. Used for transition and width calculation.
+	     *     If not available we do not hook on transitions.
+	     */
+	    function MdSidenav(_elementRef) {
+	        this._elementRef = _elementRef;
+	        /** Alignment of the sidenav (direction neutral); whether 'start' or 'end'. */
+	        this._align = 'start';
+	        this._valid = true;
+	        /** Mode of the sidenav; whether 'over' or 'side'. */
+	        this.mode = 'over';
+	        /** Whether the sidenav is opened. */
+	        this._opened = false;
+	        /** Event emitted when the sidenav is being opened. Use this to synchronize animations. */
+	        this.onOpenStart = new _angular_core.EventEmitter();
+	        /** Event emitted when the sidenav is fully opened. */
+	        this.onOpen = new _angular_core.EventEmitter();
+	        /** Event emitted when the sidenav is being closed. Use this to synchronize animations. */
+	        this.onCloseStart = new _angular_core.EventEmitter();
+	        /** Event emitted when the sidenav is fully closed. */
+	        this.onClose = new _angular_core.EventEmitter();
+	        /** Event emitted when the sidenav alignment changes. */
+	        this.onAlignChanged = new _angular_core.EventEmitter();
+	        this._transition = false;
+	    }
+	    Object.defineProperty(MdSidenav.prototype, "valid", {
+	        /** Whether this md-sidenav is part of a valid md-sidenav-layout configuration. */
+	        get: function () {
+	            return this._valid;
+	        },
+	        set: function (value) {
+	            value = coerceBooleanProperty(value);
+	            // When the drawers are not in a valid configuration we close them all until they are in a valid
+	            // configuration again.
+	            if (!value) {
+	                this.close();
+	            }
+	            this._valid = value;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "align", {
+	        get: function () {
+	            return this._align;
+	        },
+	        set: function (value) {
+	            // Make sure we have a valid value.
+	            value = (value == 'end') ? 'end' : 'start';
+	            if (value != this._align) {
+	                this._align = value;
+	                this.onAlignChanged.emit();
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdSidenav.prototype.ngAfterContentInit = function () {
+	        // This can happen when the sidenav is set to opened in the template and the transition
+	        // isn't ended.
+	        if (this._openPromise) {
+	            this._openPromiseResolve();
+	            this._openPromise = null;
+	        }
+	    };
+	    Object.defineProperty(MdSidenav.prototype, "opened", {
+	        /**
+	         * Whether the sidenav is opened. We overload this because we trigger an event when it
+	         * starts or end.
+	         */
+	        get: function () { return this._opened; },
+	        set: function (v) {
+	            this.toggle(coerceBooleanProperty(v));
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Open this sidenav, and return a Promise that will resolve when it's fully opened (or get
+	     * rejected if it didn't). */
+	    MdSidenav.prototype.open = function () {
+	        return this.toggle(true);
+	    };
+	    /**
+	     * Close this sidenav, and return a Promise that will resolve when it's fully closed (or get
+	     * rejected if it didn't).
+	     */
+	    MdSidenav.prototype.close = function () {
+	        return this.toggle(false);
+	    };
+	    /**
+	     * Toggle this sidenav. This is equivalent to calling open() when it's already opened, or
+	     * close() when it's closed.
+	     * @param isOpen
+	     */
+	    MdSidenav.prototype.toggle = function (isOpen) {
+	        var _this = this;
+	        if (isOpen === void 0) { isOpen = !this.opened; }
+	        if (!this.valid) {
+	            return Promise.resolve(null);
+	        }
+	        // Shortcut it if we're already opened.
+	        if (isOpen === this.opened) {
+	            if (!this._transition) {
+	                return Promise.resolve(null);
+	            }
+	            else {
+	                return isOpen ? this._openPromise : this._closePromise;
+	            }
+	        }
+	        this._opened = isOpen;
+	        this._transition = true;
+	        if (isOpen) {
+	            this.onOpenStart.emit();
+	        }
+	        else {
+	            this.onCloseStart.emit();
+	        }
+	        if (isOpen) {
+	            if (this._openPromise == null) {
+	                this._openPromise = new Promise(function (resolve, reject) {
+	                    _this._openPromiseResolve = resolve;
+	                    _this._openPromiseReject = reject;
+	                });
+	            }
+	            return this._openPromise;
+	        }
+	        else {
+	            if (this._closePromise == null) {
+	                this._closePromise = new Promise(function (resolve, reject) {
+	                    _this._closePromiseResolve = resolve;
+	                    _this._closePromiseReject = reject;
+	                });
+	            }
+	            return this._closePromise;
+	        }
+	    };
+	    /**
+	     * When transition has finished, set the internal state for classes and emit the proper event.
+	     * The event passed is actually of type TransitionEvent, but that type is not available in
+	     * Android so we use any.
+	     */
+	    MdSidenav.prototype._onTransitionEnd = function (transitionEvent) {
+	        if (transitionEvent.target == this._elementRef.nativeElement
+	            && transitionEvent.propertyName.endsWith('transform')) {
+	            this._transition = false;
+	            if (this._opened) {
+	                if (this._openPromise != null) {
+	                    this._openPromiseResolve();
+	                }
+	                if (this._closePromise != null) {
+	                    this._closePromiseReject();
+	                }
+	                this.onOpen.emit();
+	            }
+	            else {
+	                if (this._closePromise != null) {
+	                    this._closePromiseResolve();
+	                }
+	                if (this._openPromise != null) {
+	                    this._openPromiseReject();
+	                }
+	                this.onClose.emit();
+	            }
+	            this._openPromise = null;
+	            this._closePromise = null;
+	        }
+	    };
+	    Object.defineProperty(MdSidenav.prototype, "_isClosing", {
+	        get: function () {
+	            return !this._opened && this._transition;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_isOpening", {
+	        get: function () {
+	            return this._opened && this._transition;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_isClosed", {
+	        get: function () {
+	            return !this._opened && !this._transition;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_isOpened", {
+	        get: function () {
+	            return this._opened && !this._transition;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_isEnd", {
+	        get: function () {
+	            return this.align == 'end';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_modeSide", {
+	        get: function () {
+	            return this.mode == 'side';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_modeOver", {
+	        get: function () {
+	            return this.mode == 'over';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_modePush", {
+	        get: function () {
+	            return this.mode == 'push';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenav.prototype, "_width", {
+	        get: function () {
+	            if (this._elementRef.nativeElement) {
+	                return this._elementRef.nativeElement.offsetWidth;
+	            }
+	            return 0;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    __decorate$23([
+	        _angular_core.Input(), 
+	        __metadata$23('design:type', Object)
+	    ], MdSidenav.prototype, "align", null);
+	    __decorate$23([
+	        _angular_core.Input(), 
+	        __metadata$23('design:type', Object)
+	    ], MdSidenav.prototype, "mode", void 0);
+	    __decorate$23([
+	        _angular_core.Output('open-start'), 
+	        __metadata$23('design:type', Object)
+	    ], MdSidenav.prototype, "onOpenStart", void 0);
+	    __decorate$23([
+	        _angular_core.Output('open'), 
+	        __metadata$23('design:type', Object)
+	    ], MdSidenav.prototype, "onOpen", void 0);
+	    __decorate$23([
+	        _angular_core.Output('close-start'), 
+	        __metadata$23('design:type', Object)
+	    ], MdSidenav.prototype, "onCloseStart", void 0);
+	    __decorate$23([
+	        _angular_core.Output('close'), 
+	        __metadata$23('design:type', Object)
+	    ], MdSidenav.prototype, "onClose", void 0);
+	    __decorate$23([
+	        _angular_core.Output('align-changed'), 
+	        __metadata$23('design:type', Object)
+	    ], MdSidenav.prototype, "onAlignChanged", void 0);
+	    __decorate$23([
+	        _angular_core.Input(), 
+	        __metadata$23('design:type', Boolean)
+	    ], MdSidenav.prototype, "opened", null);
+	    MdSidenav = __decorate$23([
+	        _angular_core.Component({selector: 'md-sidenav',
+	            template: '<ng-content></ng-content>',
+	            host: {
+	                '(transitionend)': '_onTransitionEnd($event)',
+	                // must prevent the browser from aligning text based on value
+	                '[attr.align]': 'null',
+	                '[class.md-sidenav-closed]': '_isClosed',
+	                '[class.md-sidenav-closing]': '_isClosing',
+	                '[class.md-sidenav-end]': '_isEnd',
+	                '[class.md-sidenav-opened]': '_isOpened',
+	                '[class.md-sidenav-opening]': '_isOpening',
+	                '[class.md-sidenav-over]': '_modeOver',
+	                '[class.md-sidenav-push]': '_modePush',
+	                '[class.md-sidenav-side]': '_modeSide',
+	                '[class.md-sidenav-invalid]': '!valid',
+	            },
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }), 
+	        __metadata$23('design:paramtypes', [_angular_core.ElementRef])
+	    ], MdSidenav);
+	    return MdSidenav;
+	}());
+	/**
+	 * <md-sidenav-layout> component.
+	 *
+	 * This is the parent component to one or two <md-sidenav>s that validates the state internally
+	 * and coordinates the backdrop and content styling.
+	 */
+	var MdSidenavLayout = (function () {
+	    function MdSidenavLayout(_dir, _element, _renderer) {
+	        var _this = this;
+	        this._dir = _dir;
+	        this._element = _element;
+	        this._renderer = _renderer;
+	        // If a `Dir` directive exists up the tree, listen direction changes and update the left/right
+	        // properties to point to the proper start/end.
+	        if (_dir != null) {
+	            _dir.dirChange.subscribe(function () { return _this._validateDrawers(); });
+	        }
+	    }
+	    Object.defineProperty(MdSidenavLayout.prototype, "start", {
+	        get: function () { return this._start; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdSidenavLayout.prototype, "end", {
+	        get: function () { return this._end; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdSidenavLayout.prototype.ngAfterContentInit = function () {
+	        var _this = this;
+	        // On changes, assert on consistency.
+	        this._sidenavs.changes.subscribe(function () { return _this._validateDrawers(); });
+	        this._sidenavs.forEach(function (sidenav) {
+	            _this._watchSidenavToggle(sidenav);
+	            _this._watchSidenavAlign(sidenav);
+	        });
+	        this._validateDrawers();
+	    };
+	    /**
+	     * Subscribes to sidenav events in order to set a class on the main layout element when the
+	     * sidenav is open and the backdrop is visible. This ensures any overflow on the layout element is
+	     * properly hidden.
+	     */
+	    MdSidenavLayout.prototype._watchSidenavToggle = function (sidenav) {
+	        var _this = this;
+	        if (!sidenav || sidenav.mode === 'side') {
+	            return;
+	        }
+	        sidenav.onOpen.subscribe(function () { return _this._setLayoutClass(sidenav, true); });
+	        sidenav.onClose.subscribe(function () { return _this._setLayoutClass(sidenav, false); });
+	    };
+	    /**
+	     * Subscribes to sidenav onAlignChanged event in order to re-validate drawers when the align
+	     * changes.
+	     */
+	    MdSidenavLayout.prototype._watchSidenavAlign = function (sidenav) {
+	        var _this = this;
+	        if (!sidenav) {
+	            return;
+	        }
+	        sidenav.onAlignChanged.subscribe(function () { return _this._validateDrawers(); });
+	    };
+	    /** Toggles the 'md-sidenav-opened' class on the main 'md-sidenav-layout' element. */
+	    MdSidenavLayout.prototype._setLayoutClass = function (sidenav, bool) {
+	        this._renderer.setElementClass(this._element.nativeElement, 'md-sidenav-opened', bool);
+	    };
+	    /** Sets the valid state of the drawers. */
+	    MdSidenavLayout.prototype._setDrawersValid = function (valid) {
+	        this._sidenavs.forEach(function (sidenav) {
+	            sidenav.valid = valid;
+	        });
+	        if (!valid) {
+	            this._start = this._end = this._left = this._right = null;
+	        }
+	    };
+	    /** Validate the state of the sidenav children components. */
+	    MdSidenavLayout.prototype._validateDrawers = function () {
+	        this._start = this._end = null;
+	        // Ensure that we have at most one start and one end sidenav.
+	        // NOTE: We must call toArray on _sidenavs even though it's iterable
+	        // (see https://github.com/Microsoft/TypeScript/issues/3164).
+	        for (var _i = 0, _a = this._sidenavs.toArray(); _i < _a.length; _i++) {
+	            var sidenav = _a[_i];
+	            if (sidenav.align == 'end') {
+	                if (this._end != null) {
+	                    this._setDrawersValid(false);
+	                    return;
+	                }
+	                this._end = sidenav;
+	            }
+	            else {
+	                if (this._start != null) {
+	                    this._setDrawersValid(false);
+	                    return;
+	                }
+	                this._start = sidenav;
+	            }
+	        }
+	        this._right = this._left = null;
+	        // Detect if we're LTR or RTL.
+	        if (this._dir == null || this._dir.value == 'ltr') {
+	            this._left = this._start;
+	            this._right = this._end;
+	        }
+	        else {
+	            this._left = this._end;
+	            this._right = this._start;
+	        }
+	        this._setDrawersValid(true);
+	    };
+	    MdSidenavLayout.prototype._closeModalSidenav = function () {
+	        if (this._start != null && this._start.mode != 'side') {
+	            this._start.close();
+	        }
+	        if (this._end != null && this._end.mode != 'side') {
+	            this._end.close();
+	        }
+	    };
+	    MdSidenavLayout.prototype._isShowingBackdrop = function () {
+	        return (this._isSidenavOpen(this._start) && this._start.mode != 'side')
+	            || (this._isSidenavOpen(this._end) && this._end.mode != 'side');
+	    };
+	    MdSidenavLayout.prototype._isSidenavOpen = function (side) {
+	        return side != null && side.opened;
+	    };
+	    /**
+	     * Return the width of the sidenav, if it's in the proper mode and opened.
+	     * This may relayout the view, so do not call this often.
+	     * @param sidenav
+	     * @param mode
+	     */
+	    MdSidenavLayout.prototype._getSidenavEffectiveWidth = function (sidenav, mode) {
+	        return (this._isSidenavOpen(sidenav) && sidenav.mode == mode) ? sidenav._width : 0;
+	    };
+	    MdSidenavLayout.prototype._getMarginLeft = function () {
+	        return this._getSidenavEffectiveWidth(this._left, 'side');
+	    };
+	    MdSidenavLayout.prototype._getMarginRight = function () {
+	        return this._getSidenavEffectiveWidth(this._right, 'side');
+	    };
+	    MdSidenavLayout.prototype._getPositionLeft = function () {
+	        return this._getSidenavEffectiveWidth(this._left, 'push');
+	    };
+	    MdSidenavLayout.prototype._getPositionRight = function () {
+	        return this._getSidenavEffectiveWidth(this._right, 'push');
+	    };
+	    /**
+	     * Returns the horizontal offset for the content area.  There should never be a value for both
+	     * left and right, so by subtracting the right value from the left value, we should always get
+	     * the appropriate offset.
+	     */
+	    MdSidenavLayout.prototype._getPositionOffset = function () {
+	        return this._getPositionLeft() - this._getPositionRight();
+	    };
+	    /**
+	     * This is using [ngStyle] rather than separate [style...] properties because [style.transform]
+	     * doesn't seem to work right now.
+	     */
+	    MdSidenavLayout.prototype._getStyles = function () {
+	        return {
+	            marginLeft: this._getMarginLeft() + "px",
+	            marginRight: this._getMarginRight() + "px",
+	            transform: "translate3d(" + this._getPositionOffset() + "px, 0, 0)"
+	        };
+	    };
+	    __decorate$23([
+	        _angular_core.ContentChildren(MdSidenav), 
+	        __metadata$23('design:type', _angular_core.QueryList)
+	    ], MdSidenavLayout.prototype, "_sidenavs", void 0);
+	    MdSidenavLayout = __decorate$23([
+	        _angular_core.Component({selector: 'md-sidenav-layout',
+	            // Do not use ChangeDetectionStrategy.OnPush. It does not work for this component because
+	            // technically it is a sibling of MdSidenav (on the content tree) and isn't updated when MdSidenav
+	            // changes its state.
+	            template: "<div class=\"md-sidenav-backdrop\" (click)=\"_closeModalSidenav()\" [class.md-sidenav-shown]=\"_isShowingBackdrop()\"></div> <ng-content select=\"md-sidenav\"></ng-content> <div class=\"md-sidenav-content\" [ngStyle]=\"_getStyles()\"> <ng-content></ng-content> </div> ",
+	            styles: ["md-sidenav-layout { position: relative; transform: translate3d(0, 0, 0); box-sizing: border-box; -webkit-overflow-scrolling: touch; display: block; overflow: hidden; } md-sidenav-layout[fullscreen] { position: fixed; top: 0; left: 0; right: 0; bottom: 0; } md-sidenav-layout[fullscreen].md-sidenav-opened { overflow: hidden; } .md-sidenav-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: block; z-index: 2; visibility: hidden; } .md-sidenav-backdrop.md-sidenav-shown { visibility: visible; } .md-sidenav-content { position: relative; transform: translate3d(0, 0, 0); display: block; height: 100%; overflow: auto; } md-sidenav { position: relative; transform: translate3d(0, 0, 0); display: block; position: absolute; top: 0; bottom: 0; z-index: 3; min-width: 5%; overflow-y: auto; transform: translate3d(-100%, 0, 0); } md-sidenav.md-sidenav-closed { visibility: hidden; } md-sidenav.md-sidenav-closing { transform: translate3d(-100%, 0, 0); } md-sidenav.md-sidenav-opening { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); visibility: visible; transform: translate3d(0, 0, 0); } md-sidenav.md-sidenav-opened { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); transform: translate3d(0, 0, 0); } md-sidenav.md-sidenav-side { z-index: 1; } md-sidenav.md-sidenav-end { right: 0; transform: translate3d(100%, 0, 0); } md-sidenav.md-sidenav-end.md-sidenav-closed { visibility: hidden; } md-sidenav.md-sidenav-end.md-sidenav-closing { transform: translate3d(100%, 0, 0); } md-sidenav.md-sidenav-end.md-sidenav-opening { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); visibility: visible; transform: translate3d(0, 0, 0); } md-sidenav.md-sidenav-end.md-sidenav-opened { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); transform: translate3d(0, 0, 0); } [dir='rtl'] md-sidenav { transform: translate3d(100%, 0, 0); } [dir='rtl'] md-sidenav.md-sidenav-closed { visibility: hidden; } [dir='rtl'] md-sidenav.md-sidenav-closing { transform: translate3d(100%, 0, 0); } [dir='rtl'] md-sidenav.md-sidenav-opening { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); visibility: visible; transform: translate3d(0, 0, 0); } [dir='rtl'] md-sidenav.md-sidenav-opened { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); transform: translate3d(0, 0, 0); } [dir='rtl'] md-sidenav.md-sidenav-end { left: 0; right: auto; transform: translate3d(-100%, 0, 0); } [dir='rtl'] md-sidenav.md-sidenav-end.md-sidenav-closed { visibility: hidden; } [dir='rtl'] md-sidenav.md-sidenav-end.md-sidenav-closing { transform: translate3d(-100%, 0, 0); } [dir='rtl'] md-sidenav.md-sidenav-end.md-sidenav-opening { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); visibility: visible; transform: translate3d(0, 0, 0); } [dir='rtl'] md-sidenav.md-sidenav-end.md-sidenav-opened { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); transform: translate3d(0, 0, 0); } .md-sidenav-invalid { display: none; } /*# sourceMappingURL=sidenav.css.map */ ",
+	"md-sidenav { transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-sidenav-content { transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-sidenav-backdrop.md-sidenav-shown { transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } /*# sourceMappingURL=sidenav-transitions.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }),
+	        __param$4(0, _angular_core.Optional()), 
+	        __metadata$23('design:paramtypes', [Dir, _angular_core.ElementRef, _angular_core.Renderer])
+	    ], MdSidenavLayout);
+	    return MdSidenavLayout;
+	}());
+	var MdSidenavModule = (function () {
+	    function MdSidenavModule() {
+	    }
+	    MdSidenavModule.forRoot = function () {
+	        return {
+	            ngModule: MdSidenavModule,
+	            providers: []
+	        };
+	    };
+	    MdSidenavModule = __decorate$23([
+	        _angular_core.NgModule({
+	            imports: [_angular_common.CommonModule],
+	            exports: [MdSidenavLayout, MdSidenav],
+	            declarations: [MdSidenavLayout, MdSidenav],
+	        }), 
+	        __metadata$23('design:paramtypes', [])
+	    ], MdSidenavModule);
+	    return MdSidenavModule;
+	}());
+
+	var __decorate$24 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$24 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MdListDivider = (function () {
+	    function MdListDivider() {
+	    }
+	    MdListDivider = __decorate$24([
+	        _angular_core.Directive({
+	            selector: 'md-divider'
+	        }), 
+	        __metadata$24('design:paramtypes', [])
+	    ], MdListDivider);
+	    return MdListDivider;
+	}());
+	var MdList = (function () {
+	    function MdList() {
+	    }
+	    MdList = __decorate$24([
+	        _angular_core.Component({selector: 'md-list, md-nav-list',
+	            host: { 'role': 'list' },
+	            template: '<ng-content></ng-content>',
+	            styles: ["md-list, md-nav-list { padding-top: 8px; display: block; } md-list [md-subheader], md-nav-list [md-subheader] { display: block; box-sizing: border-box; height: 48px; padding: 16px; margin: 0; font-size: 14px; font-weight: 500; } md-list [md-subheader]:first-child, md-nav-list [md-subheader]:first-child { margin-top: -8px; } md-list md-list-item .md-list-item, md-list a[md-list-item] .md-list-item, md-nav-list md-list-item .md-list-item, md-nav-list a[md-list-item] .md-list-item { display: flex; flex-direction: row; align-items: center; font-family: Roboto, \"Helvetica Neue\", sans-serif; box-sizing: border-box; font-size: 16px; height: 48px; padding: 0 16px; } md-list md-list-item.md-list-avatar .md-list-item, md-list a[md-list-item].md-list-avatar .md-list-item, md-nav-list md-list-item.md-list-avatar .md-list-item, md-nav-list a[md-list-item].md-list-avatar .md-list-item { height: 56px; } md-list md-list-item.md-2-line .md-list-item, md-list a[md-list-item].md-2-line .md-list-item, md-nav-list md-list-item.md-2-line .md-list-item, md-nav-list a[md-list-item].md-2-line .md-list-item { height: 72px; } md-list md-list-item.md-3-line .md-list-item, md-list a[md-list-item].md-3-line .md-list-item, md-nav-list md-list-item.md-3-line .md-list-item, md-nav-list a[md-list-item].md-3-line .md-list-item { height: 88px; } md-list md-list-item.md-multi-line .md-list-item, md-list a[md-list-item].md-multi-line .md-list-item, md-nav-list md-list-item.md-multi-line .md-list-item, md-nav-list a[md-list-item].md-multi-line .md-list-item { height: 100%; padding: 8px 16px; } md-list md-list-item .md-list-text, md-list a[md-list-item] .md-list-text, md-nav-list md-list-item .md-list-text, md-nav-list a[md-list-item] .md-list-text { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; overflow: hidden; padding: 0 16px; } md-list md-list-item .md-list-text > *, md-list a[md-list-item] .md-list-text > *, md-nav-list md-list-item .md-list-text > *, md-nav-list a[md-list-item] .md-list-text > * { margin: 0; padding: 0; font-weight: normal; font-size: inherit; } md-list md-list-item .md-list-text:empty, md-list a[md-list-item] .md-list-text:empty, md-nav-list md-list-item .md-list-text:empty, md-nav-list a[md-list-item] .md-list-text:empty { display: none; } md-list md-list-item .md-list-text:first-child, md-list a[md-list-item] .md-list-text:first-child, md-nav-list md-list-item .md-list-text:first-child, md-nav-list a[md-list-item] .md-list-text:first-child { padding: 0; } md-list md-list-item [md-list-avatar], md-list a[md-list-item] [md-list-avatar], md-nav-list md-list-item [md-list-avatar], md-nav-list a[md-list-item] [md-list-avatar] { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; } md-list md-list-item [md-list-icon], md-list a[md-list-item] [md-list-icon], md-nav-list md-list-item [md-list-icon], md-nav-list a[md-list-item] [md-list-icon] { width: 24px; height: 24px; border-radius: 50%; padding: 4px; } md-list md-list-item [md-line], md-list a[md-list-item] [md-line], md-nav-list md-list-item [md-line], md-nav-list a[md-list-item] [md-line] { white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; display: block; box-sizing: border-box; } md-list md-list-item [md-line]:nth-child(n+2), md-list a[md-list-item] [md-line]:nth-child(n+2), md-nav-list md-list-item [md-line]:nth-child(n+2), md-nav-list a[md-list-item] [md-line]:nth-child(n+2) { font-size: 14px; } md-list[dense], md-nav-list[dense] { padding-top: 4px; display: block; } md-list[dense] [md-subheader], md-nav-list[dense] [md-subheader] { display: block; box-sizing: border-box; height: 40px; padding: 16px; margin: 0; font-size: 13px; font-weight: 500; } md-list[dense] [md-subheader]:first-child, md-nav-list[dense] [md-subheader]:first-child { margin-top: -4px; } md-list[dense] md-list-item .md-list-item, md-list[dense] a[md-list-item] .md-list-item, md-nav-list[dense] md-list-item .md-list-item, md-nav-list[dense] a[md-list-item] .md-list-item { display: flex; flex-direction: row; align-items: center; font-family: Roboto, \"Helvetica Neue\", sans-serif; box-sizing: border-box; font-size: 13px; height: 40px; padding: 0 16px; } md-list[dense] md-list-item.md-list-avatar .md-list-item, md-list[dense] a[md-list-item].md-list-avatar .md-list-item, md-nav-list[dense] md-list-item.md-list-avatar .md-list-item, md-nav-list[dense] a[md-list-item].md-list-avatar .md-list-item { height: 48px; } md-list[dense] md-list-item.md-2-line .md-list-item, md-list[dense] a[md-list-item].md-2-line .md-list-item, md-nav-list[dense] md-list-item.md-2-line .md-list-item, md-nav-list[dense] a[md-list-item].md-2-line .md-list-item { height: 60px; } md-list[dense] md-list-item.md-3-line .md-list-item, md-list[dense] a[md-list-item].md-3-line .md-list-item, md-nav-list[dense] md-list-item.md-3-line .md-list-item, md-nav-list[dense] a[md-list-item].md-3-line .md-list-item { height: 76px; } md-list[dense] md-list-item.md-multi-line .md-list-item, md-list[dense] a[md-list-item].md-multi-line .md-list-item, md-nav-list[dense] md-list-item.md-multi-line .md-list-item, md-nav-list[dense] a[md-list-item].md-multi-line .md-list-item { height: 100%; padding: 8px 16px; } md-list[dense] md-list-item .md-list-text, md-list[dense] a[md-list-item] .md-list-text, md-nav-list[dense] md-list-item .md-list-text, md-nav-list[dense] a[md-list-item] .md-list-text { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; overflow: hidden; padding: 0 16px; } md-list[dense] md-list-item .md-list-text > *, md-list[dense] a[md-list-item] .md-list-text > *, md-nav-list[dense] md-list-item .md-list-text > *, md-nav-list[dense] a[md-list-item] .md-list-text > * { margin: 0; padding: 0; font-weight: normal; font-size: inherit; } md-list[dense] md-list-item .md-list-text:empty, md-list[dense] a[md-list-item] .md-list-text:empty, md-nav-list[dense] md-list-item .md-list-text:empty, md-nav-list[dense] a[md-list-item] .md-list-text:empty { display: none; } md-list[dense] md-list-item .md-list-text:first-child, md-list[dense] a[md-list-item] .md-list-text:first-child, md-nav-list[dense] md-list-item .md-list-text:first-child, md-nav-list[dense] a[md-list-item] .md-list-text:first-child { padding: 0; } md-list[dense] md-list-item [md-list-avatar], md-list[dense] a[md-list-item] [md-list-avatar], md-nav-list[dense] md-list-item [md-list-avatar], md-nav-list[dense] a[md-list-item] [md-list-avatar] { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; } md-list[dense] md-list-item [md-list-icon], md-list[dense] a[md-list-item] [md-list-icon], md-nav-list[dense] md-list-item [md-list-icon], md-nav-list[dense] a[md-list-item] [md-list-icon] { width: 24px; height: 24px; border-radius: 50%; padding: 4px; } md-list[dense] md-list-item [md-line], md-list[dense] a[md-list-item] [md-line], md-nav-list[dense] md-list-item [md-line], md-nav-list[dense] a[md-list-item] [md-line] { white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; display: block; box-sizing: border-box; } md-list[dense] md-list-item [md-line]:nth-child(n+2), md-list[dense] a[md-list-item] [md-line]:nth-child(n+2), md-nav-list[dense] md-list-item [md-line]:nth-child(n+2), md-nav-list[dense] a[md-list-item] [md-line]:nth-child(n+2) { font-size: 13px; } md-divider { display: block; border-top-style: solid; border-top-width: 1px; margin: 0; } md-nav-list a { text-decoration: none; color: inherit; } md-nav-list .md-list-item { cursor: pointer; } md-nav-list .md-list-item:hover, md-nav-list .md-list-item.md-list-item-focus { outline: none; } /*# sourceMappingURL=list.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None
+	        }), 
+	        __metadata$24('design:paramtypes', [])
+	    ], MdList);
+	    return MdList;
+	}());
+	/* Need directive for a ContentChild query in list-item */
+	var MdListAvatar = (function () {
+	    function MdListAvatar() {
+	    }
+	    MdListAvatar = __decorate$24([
+	        _angular_core.Directive({ selector: '[md-list-avatar]' }), 
+	        __metadata$24('design:paramtypes', [])
+	    ], MdListAvatar);
+	    return MdListAvatar;
+	}());
+	var MdListItem = (function () {
+	    function MdListItem(_renderer, _element) {
+	        this._renderer = _renderer;
+	        this._element = _element;
+	        this._hasFocus = false;
+	    }
+	    Object.defineProperty(MdListItem.prototype, "_hasAvatar", {
+	        set: function (avatar) {
+	            this._renderer.setElementClass(this._element.nativeElement, 'md-list-avatar', avatar != null);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** TODO: internal */
+	    MdListItem.prototype.ngAfterContentInit = function () {
+	        this._lineSetter = new MdLineSetter(this._lines, this._renderer, this._element);
+	    };
+	    MdListItem.prototype._handleFocus = function () {
+	        this._hasFocus = true;
+	    };
+	    MdListItem.prototype._handleBlur = function () {
+	        this._hasFocus = false;
+	    };
+	    __decorate$24([
+	        _angular_core.ContentChildren(MdLine), 
+	        __metadata$24('design:type', _angular_core.QueryList)
+	    ], MdListItem.prototype, "_lines", void 0);
+	    __decorate$24([
+	        _angular_core.ContentChild(MdListAvatar), 
+	        __metadata$24('design:type', MdListAvatar), 
+	        __metadata$24('design:paramtypes', [MdListAvatar])
+	    ], MdListItem.prototype, "_hasAvatar", null);
+	    MdListItem = __decorate$24([
+	        _angular_core.Component({selector: 'md-list-item, a[md-list-item]',
+	            host: {
+	                'role': 'listitem',
+	                '(focus)': '_handleFocus()',
+	                '(blur)': '_handleBlur()',
+	            },
+	            template: "<div class=\"md-list-item\" [class.md-list-item-focus]=\"_hasFocus\"> <ng-content select=\"[md-list-avatar],[md-list-icon]\"></ng-content> <div class=\"md-list-text\"><ng-content select=\"[md-line]\"></ng-content></div> <ng-content></ng-content> </div> ",
+	            encapsulation: _angular_core.ViewEncapsulation.None
+	        }), 
+	        __metadata$24('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef])
+	    ], MdListItem);
+	    return MdListItem;
+	}());
+	var MdListModule = (function () {
+	    function MdListModule() {
+	    }
+	    MdListModule.forRoot = function () {
+	        return {
+	            ngModule: MdListModule,
+	            providers: []
+	        };
+	    };
+	    MdListModule = __decorate$24([
+	        _angular_core.NgModule({
+	            imports: [MdLineModule],
+	            exports: [MdList, MdListItem, MdListDivider, MdListAvatar, MdLineModule],
+	            declarations: [MdList, MdListItem, MdListDivider, MdListAvatar],
+	        }), 
+	        __metadata$24('design:paramtypes', [])
+	    ], MdListModule);
+	    return MdListModule;
+	}());
+
+	/**
+	 * Converts values into strings. Falsy values become empty strings.
+	 * TODO: internal
+	 */
+	function coerceToString(value) {
+	    return "" + (value || '');
+	}
+	/**
+	 * Converts a value that might be a string into a number.
+	 * TODO: internal
+	 */
+	function coerceToNumber(value) {
+	    return typeof value === 'string' ? parseInt(value, 10) : value;
+	}
+
+	var __decorate$26 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$26 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MdGridTile = (function () {
+	    function MdGridTile(_renderer, _element) {
+	        this._renderer = _renderer;
+	        this._element = _element;
+	        this._rowspan = 1;
+	        this._colspan = 1;
+	    }
+	    Object.defineProperty(MdGridTile.prototype, "rowspan", {
+	        get: function () {
+	            return this._rowspan;
+	        },
+	        set: function (value) {
+	            this._rowspan = coerceToNumber(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdGridTile.prototype, "colspan", {
+	        get: function () {
+	            return this._colspan;
+	        },
+	        set: function (value) {
+	            this._colspan = coerceToNumber(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Sets the style of the grid-tile element.  Needs to be set manually to avoid
+	     * "Changed after checked" errors that would occur with HostBinding.
+	     */
+	    MdGridTile.prototype._setStyle = function (property, value) {
+	        this._renderer.setElementStyle(this._element.nativeElement, property, value);
+	    };
+	    __decorate$26([
+	        _angular_core.Input(), 
+	        __metadata$26('design:type', Object)
+	    ], MdGridTile.prototype, "rowspan", null);
+	    __decorate$26([
+	        _angular_core.Input(), 
+	        __metadata$26('design:type', Object)
+	    ], MdGridTile.prototype, "colspan", null);
+	    MdGridTile = __decorate$26([
+	        _angular_core.Component({selector: 'md-grid-tile',
+	            host: { 'role': 'listitem' },
+	            template: "<!-- TODO(kara): Revisit why this is a figure.--> <figure> <ng-content></ng-content> </figure>",
+	            styles: ["md-grid-list { display: block; position: relative; } md-grid-tile { display: block; position: absolute; overflow: hidden; } md-grid-tile figure { display: flex; position: absolute; align-items: center; justify-content: center; height: 100%; top: 0; right: 0; bottom: 0; left: 0; padding: 0; margin: 0; } md-grid-tile md-grid-tile-header, md-grid-tile md-grid-tile-footer { display: flex; align-items: center; height: 48px; color: #fff; background: rgba(0, 0, 0, 0.38); overflow: hidden; padding: 0 16px; font-size: 16px; position: absolute; left: 0; right: 0; } md-grid-tile md-grid-tile-header [md-line], md-grid-tile md-grid-tile-footer [md-line] { white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; display: block; box-sizing: border-box; } md-grid-tile md-grid-tile-header [md-line]:nth-child(n+2), md-grid-tile md-grid-tile-footer [md-line]:nth-child(n+2) { font-size: 12px; } md-grid-tile md-grid-tile-header > *, md-grid-tile md-grid-tile-footer > * { margin: 0; padding: 0; font-weight: normal; font-size: inherit; } md-grid-tile md-grid-tile-header.md-2-line, md-grid-tile md-grid-tile-footer.md-2-line { height: 68px; } md-grid-tile .md-grid-list-text { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; overflow: hidden; } md-grid-tile .md-grid-list-text > * { margin: 0; padding: 0; font-weight: normal; font-size: inherit; } md-grid-tile .md-grid-list-text:empty { display: none; } md-grid-tile md-grid-tile-header { top: 0; } md-grid-tile md-grid-tile-footer { bottom: 0; } md-grid-tile [md-grid-avatar] { padding-right: 16px; } [dir='rtl'] md-grid-tile [md-grid-avatar] { padding-right: 0; padding-left: 16px; } md-grid-tile [md-grid-avatar]:empty { display: none; } /*# sourceMappingURL=grid-list.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }), 
+	        __metadata$26('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef])
+	    ], MdGridTile);
+	    return MdGridTile;
+	}());
+	var MdGridTileText = (function () {
+	    function MdGridTileText(_renderer, _element) {
+	        this._renderer = _renderer;
+	        this._element = _element;
+	    }
+	    MdGridTileText.prototype.ngAfterContentInit = function () {
+	        this._lineSetter = new MdLineSetter(this._lines, this._renderer, this._element);
+	    };
+	    __decorate$26([
+	        _angular_core.ContentChildren(MdLine), 
+	        __metadata$26('design:type', _angular_core.QueryList)
+	    ], MdGridTileText.prototype, "_lines", void 0);
+	    MdGridTileText = __decorate$26([
+	        _angular_core.Component({selector: 'md-grid-tile-header, md-grid-tile-footer',
+	            template: "<ng-content select=\"[md-grid-avatar]\"></ng-content> <div class=\"md-grid-list-text\"><ng-content select=\"[md-line]\"></ng-content></div> <ng-content></ng-content>"
+	        }), 
+	        __metadata$26('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef])
+	    ], MdGridTileText);
+	    return MdGridTileText;
+	}());
+
+	var __extends$8 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * Exception thrown when cols property is missing from grid-list
+	 */
+	var MdGridListColsError = (function (_super) {
+	    __extends$8(MdGridListColsError, _super);
+	    function MdGridListColsError() {
+	        _super.call(this, "md-grid-list: must pass in number of columns. Example: <md-grid-list cols=\"3\">");
+	    }
+	    return MdGridListColsError;
+	}(MdError));
+	/**
+	 * Exception thrown when a tile's colspan is longer than the number of cols in list
+	 */
+	var MdGridTileTooWideError = (function (_super) {
+	    __extends$8(MdGridTileTooWideError, _super);
+	    function MdGridTileTooWideError(cols, listLength) {
+	        _super.call(this, "md-grid-list: tile with colspan " + cols + " is wider than grid with cols=\"" + listLength + "\".");
+	    }
+	    return MdGridTileTooWideError;
+	}(MdError));
+	/**
+	 * Exception thrown when an invalid ratio is passed in as a rowHeight
+	 */
+	var MdGridListBadRatioError = (function (_super) {
+	    __extends$8(MdGridListBadRatioError, _super);
+	    function MdGridListBadRatioError(value) {
+	        _super.call(this, "md-grid-list: invalid ratio given for row-height: \"" + value + "\"");
+	    }
+	    return MdGridListBadRatioError;
+	}(MdError));
+
+	/**
+	 * Class for determining, from a list of tiles, the (row, col) position of each of those tiles
+	 * in the grid. This is necessary (rather than just rendering the tiles in normal document flow)
+	 * because the tiles can have a rowspan.
+	 *
+	 * The positioning algorithm greedily places each tile as soon as it encounters a gap in the grid
+	 * large enough to accommodate it so that the tiles still render in the same order in which they
+	 * are given.
+	 *
+	 * The basis of the algorithm is the use of an array to track the already placed tiles. Each
+	 * element of the array corresponds to a column, and the value indicates how many cells in that
+	 * column are already occupied; zero indicates an empty cell. Moving "down" to the next row
+	 * decrements each value in the tracking array (indicating that the column is one cell closer to
+	 * being free).
+	 */
+	var TileCoordinator = (function () {
+	    function TileCoordinator(numColumns, tiles) {
+	        var _this = this;
+	        /** Index at which the search for the next gap will start. */
+	        this.columnIndex = 0;
+	        /** The current row index. */
+	        this.rowIndex = 0;
+	        this.tracker = new Array(numColumns);
+	        this.tracker.fill(0, 0, this.tracker.length);
+	        this.positions = tiles.map(function (tile) { return _this._trackTile(tile); });
+	    }
+	    Object.defineProperty(TileCoordinator.prototype, "rowCount", {
+	        /** Gets the total number of rows occupied by tiles */
+	        get: function () { return this.rowIndex + 1; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(TileCoordinator.prototype, "rowspan", {
+	        /** Gets the total span of rows occupied by tiles.
+	         * Ex: A list with 1 row that contains a tile with rowspan 2 will have a total rowspan of 2. */
+	        get: function () {
+	            var lastRowMax = Math.max.apply(Math, this.tracker);
+	            // if any of the tiles has a rowspan that pushes it beyond the total row count,
+	            // add the difference to the rowcount
+	            return lastRowMax > 1 ? this.rowCount + lastRowMax - 1 : this.rowCount;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Calculates the row and col position of a tile. */
+	    TileCoordinator.prototype._trackTile = function (tile) {
+	        // Find a gap large enough for this tile.
+	        var gapStartIndex = this._findMatchingGap(tile.colspan);
+	        // Place tile in the resulting gap.
+	        this._markTilePosition(gapStartIndex, tile);
+	        // The next time we look for a gap, the search will start at columnIndex, which should be
+	        // immediately after the tile that has just been placed.
+	        this.columnIndex = gapStartIndex + tile.colspan;
+	        return new TilePosition(this.rowIndex, gapStartIndex);
+	    };
+	    /** Finds the next available space large enough to fit the tile. */
+	    TileCoordinator.prototype._findMatchingGap = function (tileCols) {
+	        if (tileCols > this.tracker.length) {
+	            throw new MdGridTileTooWideError(tileCols, this.tracker.length);
+	        }
+	        // Start index is inclusive, end index is exclusive.
+	        var gapStartIndex = -1;
+	        var gapEndIndex = -1;
+	        // Look for a gap large enough to fit the given tile. Empty spaces are marked with a zero.
+	        do {
+	            // If we've reached the end of the row, go to the next row.
+	            if (this.columnIndex + tileCols > this.tracker.length) {
+	                this._nextRow();
+	                continue;
+	            }
+	            gapStartIndex = this.tracker.indexOf(0, this.columnIndex);
+	            // If there are no more empty spaces in this row at all, move on to the next row.
+	            if (gapStartIndex == -1) {
+	                this._nextRow();
+	                continue;
+	            }
+	            gapEndIndex = this._findGapEndIndex(gapStartIndex);
+	            // If a gap large enough isn't found, we want to start looking immediately after the current
+	            // gap on the next iteration.
+	            this.columnIndex = gapStartIndex + 1;
+	        } while (gapEndIndex - gapStartIndex < tileCols);
+	        return gapStartIndex;
+	    };
+	    /** Move "down" to the next row. */
+	    TileCoordinator.prototype._nextRow = function () {
+	        this.columnIndex = 0;
+	        this.rowIndex++;
+	        // Decrement all spaces by one to reflect moving down one row.
+	        for (var i = 0; i < this.tracker.length; i++) {
+	            this.tracker[i] = Math.max(0, this.tracker[i] - 1);
+	        }
+	    };
+	    /**
+	     * Finds the end index (exclusive) of a gap given the index from which to start looking.
+	     * The gap ends when a non-zero value is found.
+	     */
+	    TileCoordinator.prototype._findGapEndIndex = function (gapStartIndex) {
+	        for (var i = gapStartIndex + 1; i < this.tracker.length; i++) {
+	            if (this.tracker[i] != 0) {
+	                return i;
+	            }
+	        }
+	        // The gap ends with the end of the row.
+	        return this.tracker.length;
+	    };
+	    /** Update the tile tracker to account for the given tile in the given space. */
+	    TileCoordinator.prototype._markTilePosition = function (start, tile) {
+	        for (var i = 0; i < tile.colspan; i++) {
+	            this.tracker[start + i] = tile.rowspan;
+	        }
+	    };
+	    return TileCoordinator;
+	}());
+	/** Simple data structure for tile position (row, col). */
+	var TilePosition = (function () {
+	    function TilePosition(row, col) {
+	        this.row = row;
+	        this.col = col;
+	    }
+	    return TilePosition;
+	}());
+
+	var __extends$9 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * Sets the style properties for an individual tile, given the position calculated by the
+	 * Tile Coordinator.
+	 * TODO: internal
+	 */
+	var TileStyler = (function () {
+	    function TileStyler() {
+	        this._rows = 0;
+	        this._rowspan = 0;
+	    }
+	    /**
+	     * Adds grid-list layout info once it is available. Cannot be processed in the constructor
+	     * because these properties haven't been calculated by that point.
+	     */
+	    TileStyler.prototype.init = function (_gutterSize, tracker, cols, direction) {
+	        this._gutterSize = normalizeUnits(_gutterSize);
+	        this._rows = tracker.rowCount;
+	        this._rowspan = tracker.rowspan;
+	        this._cols = cols;
+	        this._direction = direction;
+	    };
+	    /**
+	     * Computes the amount of space a single 1x1 tile would take up (width or height).
+	     * Used as a basis for other calculations.
+	     * @param sizePercent Percent of the total grid-list space that one 1x1 tile would take up.
+	     * @param gutterFraction Fraction of the gutter size taken up by one 1x1 tile.
+	     * @return The size of a 1x1 tile as an expression that can be evaluated via CSS calc().
+	     */
+	    TileStyler.prototype.getBaseTileSize = function (sizePercent, gutterFraction) {
+	        // Take the base size percent (as would be if evenly dividing the size between cells),
+	        // and then subtracting the size of one gutter. However, since there are no gutters on the
+	        // edges, each tile only uses a fraction (gutterShare = numGutters / numCells) of the gutter
+	        // size. (Imagine having one gutter per tile, and then breaking up the extra gutter on the
+	        // edge evenly among the cells).
+	        return "(" + sizePercent + "% - ( " + this._gutterSize + " * " + gutterFraction + " ))";
+	    };
+	    /**
+	     * Gets The horizontal or vertical position of a tile, e.g., the 'top' or 'left' property value.
+	     * @param offset Number of tiles that have already been rendered in the row/column.
+	     * @param baseSize Base size of a 1x1 tile (as computed in getBaseTileSize).
+	     * @return Position of the tile as a CSS calc() expression.
+	     */
+	    TileStyler.prototype.getTilePosition = function (baseSize, offset) {
+	        // The position comes the size of a 1x1 tile plus gutter for each previous tile in the
+	        // row/column (offset).
+	        return calc("(" + baseSize + " + " + this._gutterSize + ") * " + offset);
+	    };
+	    /**
+	     * Gets the actual size of a tile, e.g., width or height, taking rowspan or colspan into account.
+	     * @param baseSize Base size of a 1x1 tile (as computed in getBaseTileSize).
+	     * @param span The tile's rowspan or colspan.
+	     * @return Size of the tile as a CSS calc() expression.
+	     */
+	    TileStyler.prototype.getTileSize = function (baseSize, span) {
+	        return "(" + baseSize + " * " + span + ") + (" + (span - 1) + " * " + this._gutterSize + ")";
+	    };
+	    /** Gets the style properties to be applied to a tile for the given row and column index. */
+	    TileStyler.prototype.setStyle = function (tile, rowIndex, colIndex) {
+	        // Percent of the available horizontal space that one column takes up.
+	        var percentWidthPerTile = 100 / this._cols;
+	        // Fraction of the vertical gutter size that each column takes up.
+	        // For example, if there are 5 columns, each column uses 4/5 = 0.8 times the gutter width.
+	        var gutterWidthFractionPerTile = (this._cols - 1) / this._cols;
+	        this.setColStyles(tile, colIndex, percentWidthPerTile, gutterWidthFractionPerTile);
+	        this.setRowStyles(tile, rowIndex, percentWidthPerTile, gutterWidthFractionPerTile);
+	    };
+	    /** Sets the horizontal placement of the tile in the list. */
+	    TileStyler.prototype.setColStyles = function (tile, colIndex, percentWidth, gutterWidth) {
+	        // Base horizontal size of a column.
+	        var baseTileWidth = this.getBaseTileSize(percentWidth, gutterWidth);
+	        // The width and horizontal position of each tile is always calculated the same way, but the
+	        // height and vertical position depends on the rowMode.
+	        var side = this._direction === 'ltr' ? 'left' : 'right';
+	        tile._setStyle(side, this.getTilePosition(baseTileWidth, colIndex));
+	        tile._setStyle('width', calc(this.getTileSize(baseTileWidth, tile.colspan)));
+	    };
+	    /** Calculates the total size taken up by gutters across one axis of a list. */
+	    TileStyler.prototype.getGutterSpan = function () {
+	        return this._gutterSize + " * (" + this._rowspan + " - 1)";
+	    };
+	    /** Calculates the total size taken up by tiles across one axis of a list. */
+	    TileStyler.prototype.getTileSpan = function (tileHeight) {
+	        return this._rowspan + " * " + this.getTileSize(tileHeight, 1);
+	    };
+	    /**
+	     * Sets the vertical placement of the tile in the list.
+	     * This method will be implemented by each type of TileStyler.
+	     */
+	    TileStyler.prototype.setRowStyles = function (tile, rowIndex, percentWidth, gutterWidth) { };
+	    /**
+	     * Calculates the computed height and returns the correct style property to set.
+	     * This method will be implemented by each type of TileStyler.
+	     */
+	    TileStyler.prototype.getComputedHeight = function () { return null; };
+	    return TileStyler;
+	}());
+	/**
+	 * This type of styler is instantiated when the user passes in a fixed row height.
+	 * Example <md-grid-list cols="3" rowHeight="100px">
+	 * TODO: internal
+	 */
+	var FixedTileStyler = (function (_super) {
+	    __extends$9(FixedTileStyler, _super);
+	    function FixedTileStyler(fixedRowHeight) {
+	        _super.call(this);
+	        this.fixedRowHeight = fixedRowHeight;
+	    }
+	    FixedTileStyler.prototype.init = function (gutterSize, tracker, cols, direction) {
+	        _super.prototype.init.call(this, gutterSize, tracker, cols, direction);
+	        this.fixedRowHeight = normalizeUnits(this.fixedRowHeight);
+	    };
+	    FixedTileStyler.prototype.setRowStyles = function (tile, rowIndex, percentWidth, gutterWidth) {
+	        tile._setStyle('top', this.getTilePosition(this.fixedRowHeight, rowIndex));
+	        tile._setStyle('height', calc(this.getTileSize(this.fixedRowHeight, tile.rowspan)));
+	    };
+	    FixedTileStyler.prototype.getComputedHeight = function () {
+	        return [
+	            'height', calc(this.getTileSpan(this.fixedRowHeight) + " + " + this.getGutterSpan())
+	        ];
+	    };
+	    return FixedTileStyler;
+	}(TileStyler));
+	/**
+	 * This type of styler is instantiated when the user passes in a width:height ratio
+	 * for the row height.  Example <md-grid-list cols="3" rowHeight="3:1">
+	 * TODO: internal
+	 */
+	var RatioTileStyler = (function (_super) {
+	    __extends$9(RatioTileStyler, _super);
+	    function RatioTileStyler(value) {
+	        _super.call(this);
+	        this._parseRatio(value);
+	    }
+	    RatioTileStyler.prototype.setRowStyles = function (tile, rowIndex, percentWidth, gutterWidth) {
+	        var percentHeightPerTile = percentWidth / this.rowHeightRatio;
+	        this.baseTileHeight = this.getBaseTileSize(percentHeightPerTile, gutterWidth);
+	        // Use paddingTop and marginTop to maintain the given aspect ratio, as
+	        // a percentage-based value for these properties is applied versus the *width* of the
+	        // containing block. See http://www.w3.org/TR/CSS2/box.html#margin-properties
+	        tile._setStyle('marginTop', this.getTilePosition(this.baseTileHeight, rowIndex));
+	        tile._setStyle('paddingTop', calc(this.getTileSize(this.baseTileHeight, tile.rowspan)));
+	    };
+	    RatioTileStyler.prototype.getComputedHeight = function () {
+	        return [
+	            'paddingBottom', calc(this.getTileSpan(this.baseTileHeight) + " + " + this.getGutterSpan())
+	        ];
+	    };
+	    RatioTileStyler.prototype._parseRatio = function (value) {
+	        var ratioParts = value.split(':');
+	        if (ratioParts.length !== 2) {
+	            throw new MdGridListBadRatioError(value);
+	        }
+	        this.rowHeightRatio = parseFloat(ratioParts[0]) / parseFloat(ratioParts[1]);
+	    };
+	    return RatioTileStyler;
+	}(TileStyler));
+	/*  This type of styler is instantiated when the user selects a "fit" row height mode.
+	 *  In other words, the row height will reflect the total height of the container divided
+	 *  by the number of rows.  Example <md-grid-list cols="3" rowHeight="fit"> */
+	var FitTileStyler = (function (_super) {
+	    __extends$9(FitTileStyler, _super);
+	    function FitTileStyler() {
+	        _super.apply(this, arguments);
+	    }
+	    FitTileStyler.prototype.setRowStyles = function (tile, rowIndex, percentWidth, gutterWidth) {
+	        // Percent of the available vertical space that one row takes up.
+	        var percentHeightPerTile = 100 / this._rowspan;
+	        // Fraction of the horizontal gutter size that each column takes up.
+	        var gutterHeightPerTile = (this._rows - 1) / this._rows;
+	        // Base vertical size of a column.
+	        var baseTileHeight = this.getBaseTileSize(percentHeightPerTile, gutterHeightPerTile);
+	        tile._setStyle('top', this.getTilePosition(baseTileHeight, rowIndex));
+	        tile._setStyle('height', calc(this.getTileSize(baseTileHeight, tile.rowspan)));
+	    };
+	    return FitTileStyler;
+	}(TileStyler));
+	/** Wraps a CSS string in a calc function */
+	function calc(exp) { return "calc(" + exp + ")"; }
+	/** Appends pixels to a CSS string if no units are given. */
+	function normalizeUnits(value) {
+	    return (value.match(/px|em|rem/)) ? value : value + 'px';
+	}
+
+	var __decorate$25 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$25 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param$5 = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	// TODO(kara): Conditional (responsive) column count / row size.
+	// TODO(kara): Re-layout on window resize / media change (debounced).
+	// TODO(kara): gridTileHeader and gridTileFooter.
+	var MD_FIT_MODE = 'fit';
+	var MdGridList = (function () {
+	    function MdGridList(_renderer, _element, _dir) {
+	        this._renderer = _renderer;
+	        this._element = _element;
+	        this._dir = _dir;
+	        /** The amount of space between tiles. This will be something like '5px' or '2em'. */
+	        this._gutter = '1px';
+	    }
+	    Object.defineProperty(MdGridList.prototype, "cols", {
+	        get: function () {
+	            return this._cols;
+	        },
+	        set: function (value) {
+	            this._cols = coerceToNumber(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdGridList.prototype, "gutterSize", {
+	        get: function () {
+	            return this._gutter;
+	        },
+	        set: function (value) {
+	            this._gutter = coerceToString(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdGridList.prototype, "rowHeight", {
+	        /** Set internal representation of row height from the user-provided value. */
+	        set: function (value) {
+	            this._rowHeight = coerceToString(value);
+	            this._setTileStyler();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** TODO: internal */
+	    MdGridList.prototype.ngOnInit = function () {
+	        this._checkCols();
+	        this._checkRowHeight();
+	    };
+	    /**
+	     * The layout calculation is fairly cheap if nothing changes, so there's little cost
+	     * to run it frequently.
+	     * TODO: internal
+	     */
+	    MdGridList.prototype.ngAfterContentChecked = function () {
+	        this._layoutTiles();
+	    };
+	    /** Throw a friendly error if cols property is missing */
+	    MdGridList.prototype._checkCols = function () {
+	        if (!this.cols) {
+	            throw new MdGridListColsError();
+	        }
+	    };
+	    /** Default to equal width:height if rowHeight property is missing */
+	    MdGridList.prototype._checkRowHeight = function () {
+	        if (!this._rowHeight) {
+	            this._tileStyler = new RatioTileStyler('1:1');
+	        }
+	    };
+	    /** Creates correct Tile Styler subtype based on rowHeight passed in by user */
+	    MdGridList.prototype._setTileStyler = function () {
+	        if (this._rowHeight === MD_FIT_MODE) {
+	            this._tileStyler = new FitTileStyler();
+	        }
+	        else if (this._rowHeight && this._rowHeight.match(/:/g)) {
+	            this._tileStyler = new RatioTileStyler(this._rowHeight);
+	        }
+	        else {
+	            this._tileStyler = new FixedTileStyler(this._rowHeight);
+	        }
+	    };
+	    /** Computes and applies the size and position for all children grid tiles. */
+	    MdGridList.prototype._layoutTiles = function () {
+	        var tiles = this._tiles.toArray();
+	        var tracker = new TileCoordinator(this.cols, tiles);
+	        var direction = this._dir ? this._dir.value : 'ltr';
+	        this._tileStyler.init(this.gutterSize, tracker, this.cols, direction);
+	        for (var i = 0; i < tiles.length; i++) {
+	            var pos = tracker.positions[i];
+	            var tile = tiles[i];
+	            this._tileStyler.setStyle(tile, pos.row, pos.col);
+	        }
+	        this._setListStyle(this._tileStyler.getComputedHeight());
+	    };
+	    /** Sets style on the main grid-list element, given the style name and value. */
+	    MdGridList.prototype._setListStyle = function (style) {
+	        if (style) {
+	            this._renderer.setElementStyle(this._element.nativeElement, style[0], style[1]);
+	        }
+	    };
+	    __decorate$25([
+	        _angular_core.ContentChildren(MdGridTile), 
+	        __metadata$25('design:type', _angular_core.QueryList)
+	    ], MdGridList.prototype, "_tiles", void 0);
+	    __decorate$25([
+	        _angular_core.Input(), 
+	        __metadata$25('design:type', Object)
+	    ], MdGridList.prototype, "cols", null);
+	    __decorate$25([
+	        _angular_core.Input('gutterSize'), 
+	        __metadata$25('design:type', Object)
+	    ], MdGridList.prototype, "gutterSize", null);
+	    __decorate$25([
+	        _angular_core.Input(), 
+	        __metadata$25('design:type', Object), 
+	        __metadata$25('design:paramtypes', [Object])
+	    ], MdGridList.prototype, "rowHeight", null);
+	    MdGridList = __decorate$25([
+	        _angular_core.Component({selector: 'md-grid-list',
+	            template: "<div class=\"md-grid-list\"> <ng-content></ng-content> </div>",
+	            styles: ["md-grid-list { display: block; position: relative; } md-grid-tile { display: block; position: absolute; overflow: hidden; } md-grid-tile figure { display: flex; position: absolute; align-items: center; justify-content: center; height: 100%; top: 0; right: 0; bottom: 0; left: 0; padding: 0; margin: 0; } md-grid-tile md-grid-tile-header, md-grid-tile md-grid-tile-footer { display: flex; align-items: center; height: 48px; color: #fff; background: rgba(0, 0, 0, 0.38); overflow: hidden; padding: 0 16px; font-size: 16px; position: absolute; left: 0; right: 0; } md-grid-tile md-grid-tile-header [md-line], md-grid-tile md-grid-tile-footer [md-line] { white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; display: block; box-sizing: border-box; } md-grid-tile md-grid-tile-header [md-line]:nth-child(n+2), md-grid-tile md-grid-tile-footer [md-line]:nth-child(n+2) { font-size: 12px; } md-grid-tile md-grid-tile-header > *, md-grid-tile md-grid-tile-footer > * { margin: 0; padding: 0; font-weight: normal; font-size: inherit; } md-grid-tile md-grid-tile-header.md-2-line, md-grid-tile md-grid-tile-footer.md-2-line { height: 68px; } md-grid-tile .md-grid-list-text { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; overflow: hidden; } md-grid-tile .md-grid-list-text > * { margin: 0; padding: 0; font-weight: normal; font-size: inherit; } md-grid-tile .md-grid-list-text:empty { display: none; } md-grid-tile md-grid-tile-header { top: 0; } md-grid-tile md-grid-tile-footer { bottom: 0; } md-grid-tile [md-grid-avatar] { padding-right: 16px; } [dir='rtl'] md-grid-tile [md-grid-avatar] { padding-right: 0; padding-left: 16px; } md-grid-tile [md-grid-avatar]:empty { display: none; } /*# sourceMappingURL=grid-list.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }),
+	        __param$5(2, _angular_core.Optional()), 
+	        __metadata$25('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef, Dir])
+	    ], MdGridList);
+	    return MdGridList;
+	}());
+	var MdGridListModule = (function () {
+	    function MdGridListModule() {
+	    }
+	    MdGridListModule.forRoot = function () {
+	        return {
+	            ngModule: MdGridListModule,
+	            providers: []
+	        };
+	    };
+	    MdGridListModule = __decorate$25([
+	        _angular_core.NgModule({
+	            imports: [MdLineModule],
+	            exports: [MdGridList, MdGridTile, MdGridTileText, MdLineModule],
+	            declarations: [MdGridList, MdGridTile, MdGridTileText],
+	        }), 
+	        __metadata$25('design:paramtypes', [])
+	    ], MdGridListModule);
+	    return MdGridListModule;
+	}());
+
+	var __decorate$27 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$27 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Content of a card, needed as it's used as a selector in the API.
+	 */
+	var MdCardContent = (function () {
+	    function MdCardContent() {
+	    }
+	    MdCardContent = __decorate$27([
+	        _angular_core.Directive({
+	            selector: 'md-card-content'
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardContent);
+	    return MdCardContent;
+	}());
+	/**
+	 * Title of a card, needed as it's used as a selector in the API.
+	 */
+	var MdCardTitle = (function () {
+	    function MdCardTitle() {
+	    }
+	    MdCardTitle = __decorate$27([
+	        _angular_core.Directive({
+	            selector: 'md-card-title'
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardTitle);
+	    return MdCardTitle;
+	}());
+	/**
+	 * Sub-title of a card, needed as it's used as a selector in the API.
+	 */
+	var MdCardSubtitle = (function () {
+	    function MdCardSubtitle() {
+	    }
+	    MdCardSubtitle = __decorate$27([
+	        _angular_core.Directive({
+	            selector: 'md-card-subtitle'
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardSubtitle);
+	    return MdCardSubtitle;
+	}());
+	/**
+	 * Action section of a card, needed as it's used as a selector in the API.
+	 */
+	var MdCardActions = (function () {
+	    function MdCardActions() {
+	    }
+	    MdCardActions = __decorate$27([
+	        _angular_core.Directive({
+	            selector: 'md-card-actions'
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardActions);
+	    return MdCardActions;
+	}());
+	/**
+	 * Footer of a card, needed as it's used as a selector in the API.
+	 */
+	var MdCardFooter = (function () {
+	    function MdCardFooter() {
+	    }
+	    MdCardFooter = __decorate$27([
+	        _angular_core.Directive({
+	            selector: 'md-card-footer'
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardFooter);
+	    return MdCardFooter;
+	}());
+	/*
+
+	<md-card> is a basic content container component that adds the styles of a material design card.
+
+	While you can use this component alone,
+	it also provides a number of preset styles for common card sections, including:
+	 - md-card-title
+	 - md-card-subtitle
+	 - md-card-content
+	 - md-card-actions
+	 - md-card-footer
+
+	 You can see some examples of cards here:
+	 http://embed.plnkr.co/s5O4YcyvbLhIApSrIhtj/
+
+	 TODO(kara): update link to demo site when it exists
+
+	*/
+	var MdCard = (function () {
+	    function MdCard() {
+	    }
+	    MdCard = __decorate$27([
+	        _angular_core.Component({selector: 'md-card',
+	            template: "<ng-content></ng-content> ",
+	            styles: ["md-card { box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); will-change: box-shadow; display: block; position: relative; padding: 24px; border-radius: 2px; font-family: Roboto, \"Helvetica Neue\", sans-serif; } md-card:hover { box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); } .md-card-flat { box-shadow: none; } md-card-title, md-card-subtitle, md-card-content, md-card-actions { display: block; margin-bottom: 16px; } md-card-title { font-size: 24px; font-weight: 400; } md-card-subtitle { font-size: 14px; } md-card-content { font-size: 14px; } md-card-actions { margin-left: -16px; margin-right: -16px; padding: 8px 0; } md-card-actions[align='end'] { display: flex; justify-content: flex-end; } [md-card-image] { width: calc(100% + 48px); margin: 0 -24px 16px -24px; } [md-card-xl-image] { width: 240px; height: 240px; margin: -8px; } md-card-footer { position: absolute; width: 100%; min-height: 5px; bottom: 0; left: 0; } md-card-actions [md-button], md-card-actions [md-raised-button] { margin: 0 4px; } md-card-header { display: flex; flex-direction: row; height: 40px; margin: -8px 0 16px 0; } .md-card-header-text { height: 40px; margin: 0 8px; } [md-card-avatar] { height: 40px; width: 40px; border-radius: 50%; } md-card-header md-card-title { font-size: 14px; } [md-card-sm-image], [md-card-md-image], [md-card-lg-image] { margin: -8px 0; } md-card-title-group { display: flex; justify-content: space-between; margin: 0 -8px; } [md-card-sm-image] { width: 80px; height: 80px; } [md-card-md-image] { width: 112px; height: 112px; } [md-card-lg-image] { width: 152px; height: 152px; } @media (max-width: 600px) { md-card { padding: 24px 16px; } [md-card-image] { width: calc(100% + 32px); margin: 16px -16px; } md-card-title-group { margin: 0; } [md-card-xl-image] { margin-left: 0; margin-right: 0; } md-card-header { margin: -8px 0 0 0; } } md-card > :first-child, md-card-content > :first-child { margin-top: 0; } md-card > :last-child, md-card-content > :last-child { margin-bottom: 0; } [md-card-image]:first-child { margin-top: -24px; } md-card > md-card-actions:last-child { margin-bottom: -16px; padding-bottom: 0; } md-card-actions [md-button]:first-child, md-card-actions [md-raised-button]:first-child { margin-left: 0; margin-right: 0; } md-card-title:not(:first-child), md-card-subtitle:not(:first-child) { margin-top: -4px; } md-card-header md-card-subtitle:not(:first-child) { margin-top: -8px; } md-card > [md-card-xl-image]:first-child { margin-top: -8px; } md-card > [md-card-xl-image]:last-child { margin-bottom: -8px; } /*# sourceMappingURL=card.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCard);
+	    return MdCard;
+	}());
+	/*  The following components don't have any behavior.
+	 They simply use content projection to wrap user content
+	 for flex layout purposes in <md-card> (and thus allow a cleaner, boilerplate-free API).
+
+
+	<md-card-header> is a component intended to be used within the <md-card> component.
+	It adds styles for a preset header section (i.e. a title, subtitle, and avatar layout).
+
+	You can see an example of a card with a header here:
+	http://embed.plnkr.co/tvJl19z3gZTQd6WmwkIa/
+
+	TODO(kara): update link to demo site when it exists
+	*/
+	var MdCardHeader = (function () {
+	    function MdCardHeader() {
+	    }
+	    MdCardHeader = __decorate$27([
+	        _angular_core.Component({selector: 'md-card-header',
+	            template: "<ng-content select=\"[md-card-avatar]\"></ng-content> <div class=\"md-card-header-text\"> <ng-content select=\"md-card-title, md-card-subtitle\"></ng-content> </div> <ng-content></ng-content> ",
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardHeader);
+	    return MdCardHeader;
+	}());
+	/*
+
+	<md-card-title-group> is a component intended to be used within the <md-card> component.
+	It adds styles for a preset layout that groups an image with a title section.
+
+	You can see an example of a card with a title-group section here:
+	http://embed.plnkr.co/EDfgCF9eKcXjini1WODm/
+
+	TODO(kara): update link to demo site when it exists
+	*/
+	var MdCardTitleGroup = (function () {
+	    function MdCardTitleGroup() {
+	    }
+	    MdCardTitleGroup = __decorate$27([
+	        _angular_core.Component({selector: 'md-card-title-group',
+	            template: "<div> <ng-content select=\"md-card-title, md-card-subtitle\"></ng-content> </div> <ng-content select=\"img\"></ng-content> <ng-content></ng-content> ",
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardTitleGroup);
+	    return MdCardTitleGroup;
+	}());
+	var MdCardModule = (function () {
+	    function MdCardModule() {
+	    }
+	    MdCardModule.forRoot = function () {
+	        return {
+	            ngModule: MdCardModule,
+	            providers: []
+	        };
+	    };
+	    MdCardModule = __decorate$27([
+	        _angular_core.NgModule({
+	            exports: [
+	                MdCard, MdCardHeader, MdCardTitleGroup, MdCardContent, MdCardTitle, MdCardSubtitle,
+	                MdCardActions, MdCardFooter
+	            ],
+	            declarations: [
+	                MdCard, MdCardHeader, MdCardTitleGroup, MdCardContent, MdCardTitle, MdCardSubtitle,
+	                MdCardActions, MdCardFooter
+	            ],
+	        }), 
+	        __metadata$27('design:paramtypes', [])
+	    ], MdCardModule);
+	    return MdCardModule;
+	}());
+
+	var __extends$11 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$29 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$29 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Exception thrown when attempting to load an icon with a name that cannot be found. */
+	var MdIconNameNotFoundError = (function (_super) {
+	    __extends$11(MdIconNameNotFoundError, _super);
+	    function MdIconNameNotFoundError(iconName) {
+	        _super.call(this, "Unable to find icon with the name \"" + iconName + "\"");
+	    }
+	    return MdIconNameNotFoundError;
+	}(MdError));
+	/**
+	 * Exception thrown when attempting to load SVG content that does not contain the expected
+	 * <svg> tag.
+	 */
+	var MdIconSvgTagNotFoundError = (function (_super) {
+	    __extends$11(MdIconSvgTagNotFoundError, _super);
+	    function MdIconSvgTagNotFoundError() {
+	        _super.call(this, '<svg> tag not found');
+	    }
+	    return MdIconSvgTagNotFoundError;
+	}(MdError));
+	/** Configuration for an icon, including the URL and possibly the cached SVG element. */
+	var SvgIconConfig = (function () {
+	    function SvgIconConfig(url) {
+	        this.url = url;
+	        this.svgElement = null;
+	    }
+	    return SvgIconConfig;
+	}());
+	/** Returns the cache key to use for an icon namespace and name. */
+	var iconKey = function (namespace, name) { return namespace + ':' + name; };
+	/**
+	 * Service to register and display icons used by the <md-icon> component.
+	 * - Registers icon URLs by namespace and name.
+	 * - Registers icon set URLs by namespace.
+	 * - Registers aliases for CSS classes, for use with icon fonts.
+	 * - Loads icons from URLs and extracts individual icons from icon sets.
+	 */
+	var MdIconRegistry = (function () {
+	    function MdIconRegistry(_http) {
+	        this._http = _http;
+	        /**
+	         * URLs and cached SVG elements for individual icons. Keys are of the format "[namespace]:[icon]".
+	         */
+	        this._svgIconConfigs = new Map();
+	        /**
+	         * SvgIconConfig objects and cached SVG elements for icon sets, keyed by namespace.
+	         * Multiple icon sets can be registered under the same namespace.
+	         */
+	        this._iconSetConfigs = new Map();
+	        /** Cache for icons loaded by direct URLs. */
+	        this._cachedIconsByUrl = new Map();
+	        /** In-progress icon fetches. Used to coalesce multiple requests to the same URL. */
+	        this._inProgressUrlFetches = new Map();
+	        /** Map from font identifiers to their CSS class names. Used for icon fonts. */
+	        this._fontCssClassesByAlias = new Map();
+	        /**
+	         * The CSS class to apply when an <md-icon> component has no icon name, url, or font specified.
+	         * The default 'material-icons' value assumes that the material icon font has been loaded as
+	         * described at http://google.github.io/material-design-icons/#icon-font-for-the-web
+	         */
+	        this._defaultFontSetClass = 'material-icons';
+	    }
+	    /** Registers an icon by URL in the default namespace. */
+	    MdIconRegistry.prototype.addSvgIcon = function (iconName, url) {
+	        return this.addSvgIconInNamespace('', iconName, url);
+	    };
+	    /** Registers an icon by URL in the specified namespace. */
+	    MdIconRegistry.prototype.addSvgIconInNamespace = function (namespace, iconName, url) {
+	        var key = iconKey(namespace, iconName);
+	        this._svgIconConfigs.set(key, new SvgIconConfig(url));
+	        return this;
+	    };
+	    /** Registers an icon set by URL in the default namespace. */
+	    MdIconRegistry.prototype.addSvgIconSet = function (url) {
+	        return this.addSvgIconSetInNamespace('', url);
+	    };
+	    /** Registers an icon set by URL in the specified namespace. */
+	    MdIconRegistry.prototype.addSvgIconSetInNamespace = function (namespace, url) {
+	        var config = new SvgIconConfig(url);
+	        if (this._iconSetConfigs.has(namespace)) {
+	            this._iconSetConfigs.get(namespace).push(config);
+	        }
+	        else {
+	            this._iconSetConfigs.set(namespace, [config]);
+	        }
+	        return this;
+	    };
+	    /**
+	     * Defines an alias for a CSS class name to be used for icon fonts. Creating an mdIcon
+	     * component with the alias as the fontSet input will cause the class name to be applied
+	     * to the <md-icon> element.
+	     */
+	    MdIconRegistry.prototype.registerFontClassAlias = function (alias, className) {
+	        if (className === void 0) { className = alias; }
+	        this._fontCssClassesByAlias.set(alias, className);
+	        return this;
+	    };
+	    /**
+	     * Returns the CSS class name associated with the alias by a previous call to
+	     * registerFontClassAlias. If no CSS class has been associated, returns the alias unmodified.
+	     */
+	    MdIconRegistry.prototype.classNameForFontAlias = function (alias) {
+	        return this._fontCssClassesByAlias.get(alias) || alias;
+	    };
+	    /**
+	     * Sets the CSS class name to be used for icon fonts when an <md-icon> component does not
+	     * have a fontSet input value, and is not loading an icon by name or URL.
+	     */
+	    MdIconRegistry.prototype.setDefaultFontSetClass = function (className) {
+	        this._defaultFontSetClass = className;
+	        return this;
+	    };
+	    /**
+	     * Returns the CSS class name to be used for icon fonts when an <md-icon> component does not
+	     * have a fontSet input value, and is not loading an icon by name or URL.
+	     */
+	    MdIconRegistry.prototype.getDefaultFontSetClass = function () {
+	        return this._defaultFontSetClass;
+	    };
+	    /**
+	     * Returns an Observable that produces the icon (as an <svg> DOM element) from the given URL.
+	     * The response from the URL may be cached so this will not always cause an HTTP request, but
+	     * the produced element will always be a new copy of the originally fetched icon. (That is,
+	     * it will not contain any modifications made to elements previously returned).
+	     */
+	    MdIconRegistry.prototype.getSvgIconFromUrl = function (url) {
+	        var _this = this;
+	        if (this._cachedIconsByUrl.has(url)) {
+	            return rxjs_Observable.Observable.of(cloneSvg(this._cachedIconsByUrl.get(url)));
+	        }
+	        return this._loadSvgIconFromConfig(new SvgIconConfig(url))
+	            .do(function (svg) { return _this._cachedIconsByUrl.set(url, svg); })
+	            .map(function (svg) { return cloneSvg(svg); });
+	    };
+	    /**
+	     * Returns an Observable that produces the icon (as an <svg> DOM element) with the given name
+	     * and namespace. The icon must have been previously registered with addIcon or addIconSet;
+	     * if not, the Observable will throw an MdIconNameNotFoundError.
+	     */
+	    MdIconRegistry.prototype.getNamedSvgIcon = function (name, namespace) {
+	        if (namespace === void 0) { namespace = ''; }
+	        // Return (copy of) cached icon if possible.
+	        var key = iconKey(namespace, name);
+	        if (this._svgIconConfigs.has(key)) {
+	            return this._getSvgFromConfig(this._svgIconConfigs.get(key));
+	        }
+	        // See if we have any icon sets registered for the namespace.
+	        var iconSetConfigs = this._iconSetConfigs.get(namespace);
+	        if (iconSetConfigs) {
+	            return this._getSvgFromIconSetConfigs(name, iconSetConfigs);
+	        }
+	        return rxjs_Observable.Observable.throw(new MdIconNameNotFoundError(key));
+	    };
+	    /**
+	     * Returns the cached icon for a SvgIconConfig if available, or fetches it from its URL if not.
+	     */
+	    MdIconRegistry.prototype._getSvgFromConfig = function (config) {
+	        if (config.svgElement) {
+	            // We already have the SVG element for this icon, return a copy.
+	            return rxjs_Observable.Observable.of(cloneSvg(config.svgElement));
+	        }
+	        else {
+	            // Fetch the icon from the config's URL, cache it, and return a copy.
+	            return this._loadSvgIconFromConfig(config)
+	                .do(function (svg) { return config.svgElement = svg; })
+	                .map(function (svg) { return cloneSvg(svg); });
+	        }
+	    };
+	    /**
+	     * Attempts to find an icon with the specified name in any of the SVG icon sets.
+	     * First searches the available cached icons for a nested element with a matching name, and
+	     * if found copies the element to a new <svg> element. If not found, fetches all icon sets
+	     * that have not been cached, and searches again after all fetches are completed.
+	     * The returned Observable produces the SVG element if possible, and throws
+	     * MdIconNameNotFoundError if no icon with the specified name can be found.
+	     */
+	    MdIconRegistry.prototype._getSvgFromIconSetConfigs = function (name, iconSetConfigs) {
+	        var _this = this;
+	        // For all the icon set SVG elements we've fetched, see if any contain an icon with the
+	        // requested name.
+	        var namedIcon = this._extractIconWithNameFromAnySet(name, iconSetConfigs);
+	        if (namedIcon) {
+	            // We could cache namedIcon in _svgIconConfigs, but since we have to make a copy every
+	            // time anyway, there's probably not much advantage compared to just always extracting
+	            // it from the icon set.
+	            return rxjs_Observable.Observable.of(namedIcon);
+	        }
+	        // Not found in any cached icon sets. If there are icon sets with URLs that we haven't
+	        // fetched, fetch them now and look for iconName in the results.
+	        var iconSetFetchRequests = iconSetConfigs
+	            .filter(function (iconSetConfig) { return !iconSetConfig.svgElement; })
+	            .map(function (iconSetConfig) {
+	            return _this._loadSvgIconSetFromConfig(iconSetConfig)
+	                .catch(function (err, caught) {
+	                // Swallow errors fetching individual URLs so the combined Observable won't
+	                // necessarily fail.
+	                console.log("Loading icon set URL: " + iconSetConfig.url + " failed: " + err);
+	                return rxjs_Observable.Observable.of(null);
+	            })
+	                .do(function (svg) {
+	                // Cache SVG element.
+	                if (svg) {
+	                    iconSetConfig.svgElement = svg;
+	                }
+	            });
+	        });
+	        // Fetch all the icon set URLs. When the requests complete, every IconSet should have a
+	        // cached SVG element (unless the request failed), and we can check again for the icon.
+	        return rxjs_Observable.Observable.forkJoin(iconSetFetchRequests)
+	            .map(function (ignoredResults) {
+	            var foundIcon = _this._extractIconWithNameFromAnySet(name, iconSetConfigs);
+	            if (!foundIcon) {
+	                throw new MdIconNameNotFoundError(name);
+	            }
+	            return foundIcon;
+	        });
+	    };
+	    /**
+	     * Searches the cached SVG elements for the given icon sets for a nested icon element whose "id"
+	     * tag matches the specified name. If found, copies the nested element to a new SVG element and
+	     * returns it. Returns null if no matching element is found.
+	     */
+	    MdIconRegistry.prototype._extractIconWithNameFromAnySet = function (iconName, iconSetConfigs) {
+	        // Iterate backwards, so icon sets added later have precedence.
+	        for (var i = iconSetConfigs.length - 1; i >= 0; i--) {
+	            var config = iconSetConfigs[i];
+	            if (config.svgElement) {
+	                var foundIcon = this._extractSvgIconFromSet(config.svgElement, iconName, config);
+	                if (foundIcon) {
+	                    return foundIcon;
+	                }
+	            }
+	        }
+	        return null;
+	    };
+	    /**
+	     * Loads the content of the icon URL specified in the SvgIconConfig and creates an SVG element
+	     * from it.
+	     */
+	    MdIconRegistry.prototype._loadSvgIconFromConfig = function (config) {
+	        var _this = this;
+	        return this._fetchUrl(config.url)
+	            .map(function (svgText) { return _this._createSvgElementForSingleIcon(svgText, config); });
+	    };
+	    /**
+	     * Loads the content of the icon set URL specified in the SvgIconConfig and creates an SVG element
+	     * from it.
+	     */
+	    MdIconRegistry.prototype._loadSvgIconSetFromConfig = function (config) {
+	        var _this = this;
+	        // TODO: Document that icons should only be loaded from trusted sources.
+	        return this._fetchUrl(config.url)
+	            .map(function (svgText) { return _this._svgElementFromString(svgText); });
+	    };
+	    /**
+	     * Creates a DOM element from the given SVG string, and adds default attributes.
+	     */
+	    MdIconRegistry.prototype._createSvgElementForSingleIcon = function (responseText, config) {
+	        var svg = this._svgElementFromString(responseText);
+	        this._setSvgAttributes(svg, config);
+	        return svg;
+	    };
+	    /**
+	     * Searches the cached element of the given SvgIconConfig for a nested icon element whose "id"
+	     * tag matches the specified name. If found, copies the nested element to a new SVG element and
+	     * returns it. Returns null if no matching element is found.
+	     */
+	    MdIconRegistry.prototype._extractSvgIconFromSet = function (iconSet, iconName, config) {
+	        var iconNode = iconSet.querySelector('#' + iconName);
+	        if (!iconNode) {
+	            return null;
+	        }
+	        // If the icon node is itself an <svg> node, clone and return it directly. If not, set it as
+	        // the content of a new <svg> node.
+	        if (iconNode.tagName.toLowerCase() == 'svg') {
+	            return this._setSvgAttributes(iconNode.cloneNode(true), config);
+	        }
+	        // createElement('SVG') doesn't work as expected; the DOM ends up with
+	        // the correct nodes, but the SVG content doesn't render. Instead we
+	        // have to create an empty SVG node using innerHTML and append its content.
+	        // Elements created using DOMParser.parseFromString have the same problem.
+	        // http://stackoverflow.com/questions/23003278/svg-innerhtml-in-firefox-can-not-display
+	        var svg = this._svgElementFromString('<svg></svg>');
+	        // Clone the node so we don't remove it from the parent icon set element.
+	        svg.appendChild(iconNode.cloneNode(true));
+	        return this._setSvgAttributes(svg, config);
+	    };
+	    /**
+	     * Creates a DOM element from the given SVG string.
+	     */
+	    MdIconRegistry.prototype._svgElementFromString = function (str) {
+	        // TODO: Is there a better way than innerHTML? Renderer doesn't appear to have a method for
+	        // creating an element from an HTML string.
+	        var div = document.createElement('DIV');
+	        div.innerHTML = str;
+	        var svg = div.querySelector('svg');
+	        if (!svg) {
+	            throw new MdIconSvgTagNotFoundError();
+	        }
+	        return svg;
+	    };
+	    /**
+	     * Sets the default attributes for an SVG element to be used as an icon.
+	     */
+	    MdIconRegistry.prototype._setSvgAttributes = function (svg, config) {
+	        if (!svg.getAttribute('xmlns')) {
+	            svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+	        }
+	        svg.setAttribute('fit', '');
+	        svg.setAttribute('height', '100%');
+	        svg.setAttribute('width', '100%');
+	        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+	        svg.setAttribute('focusable', 'false'); // Disable IE11 default behavior to make SVGs focusable.
+	        return svg;
+	    };
+	    /**
+	     * Returns an Observable which produces the string contents of the given URL. Results may be
+	     * cached, so future calls with the same URL may not cause another HTTP request.
+	     */
+	    MdIconRegistry.prototype._fetchUrl = function (url) {
+	        var _this = this;
+	        // Store in-progress fetches to avoid sending a duplicate request for a URL when there is
+	        // already a request in progress for that URL. It's necessary to call share() on the
+	        // Observable returned by http.get() so that multiple subscribers don't cause multiple XHRs.
+	        if (this._inProgressUrlFetches.has(url)) {
+	            return this._inProgressUrlFetches.get(url);
+	        }
+	        // TODO(jelbourn): for some reason, the `finally` operator "loses" the generic type on the
+	        // Observable. Figure out why and fix it.
+	        var req = this._http.get(url)
+	            .map(function (response) { return response.text(); })
+	            .finally(function () {
+	            _this._inProgressUrlFetches.delete(url);
+	        })
+	            .share();
+	        this._inProgressUrlFetches.set(url, req);
+	        return req;
+	    };
+	    MdIconRegistry = __decorate$29([
+	        _angular_core.Injectable(), 
+	        __metadata$29('design:paramtypes', [_angular_http.Http])
+	    ], MdIconRegistry);
+	    return MdIconRegistry;
+	}());
+	/** Clones an SVGElement while preserving type information. */
+	function cloneSvg(svg) {
+	    return svg.cloneNode(true);
+	}
+
+	var __extends$10 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$28 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$28 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Exception thrown when an invalid icon name is passed to an md-icon component. */
+	var MdIconInvalidNameError = (function (_super) {
+	    __extends$10(MdIconInvalidNameError, _super);
+	    function MdIconInvalidNameError(iconName) {
+	        _super.call(this, "Invalid icon name: \"" + iconName + "\"");
+	    }
+	    return MdIconInvalidNameError;
+	}(MdError));
+	/**
+	 * Component to display an icon. It can be used in the following ways:
+	 * - Specify the svgSrc input to load an SVG icon from a URL. The SVG content is directly inlined
+	 *   as a child of the <md-icon> component, so that CSS styles can easily be applied to it.
+	 *   The URL is loaded via an XMLHttpRequest, so it must be on the same domain as the page or its
+	 *   server must be configured to allow cross-domain requests.
+	 *   Example:
+	 *     <md-icon svgSrc="assets/arrow.svg"></md-icon>
+	 *
+	 * - Specify the svgIcon input to load an SVG icon from a URL previously registered with the
+	 *   addSvgIcon, addSvgIconInNamespace, addSvgIconSet, or addSvgIconSetInNamespace methods of
+	 *   MdIconRegistry. If the svgIcon value contains a colon it is assumed to be in the format
+	 *   "[namespace]:[name]", if not the value will be the name of an icon in the default namespace.
+	 *   Examples:
+	 *     <md-icon svgIcon="left-arrow"></md-icon>
+	 *     <md-icon svgIcon="animals:cat"></md-icon>
+	 *
+	 * - Use a font ligature as an icon by putting the ligature text in the content of the <md-icon>
+	 *   component. By default the Material icons font is used as described at
+	 *   http://google.github.io/material-design-icons/#icon-font-for-the-web. You can specify an
+	 *   alternate font by setting the fontSet input to either the CSS class to apply to use the
+	 *   desired font, or to an alias previously registered with MdIconRegistry.registerFontClassAlias.
+	 *   Examples:
+	 *     <md-icon>home</md-icon>
+	 *     <md-icon fontSet="myfont">sun</md-icon>
+	 *
+	 * - Specify a font glyph to be included via CSS rules by setting the fontSet input to specify the
+	 *   font, and the fontIcon input to specify the icon. Typically the fontIcon will specify a
+	 *   CSS class which causes the glyph to be displayed via a :before selector, as in
+	 *   https://fortawesome.github.io/Font-Awesome/examples/
+	 *   Example:
+	 *     <md-icon fontSet="fa" fontIcon="alarm"></md-icon>
+	 */
+	var MdIcon = (function () {
+	    function MdIcon(_element, _renderer, _mdIconRegistry) {
+	        this._element = _element;
+	        this._renderer = _renderer;
+	        this._mdIconRegistry = _mdIconRegistry;
+	        this.hostAriaLabel = '';
+	    }
+	    /**
+	     * Splits an svgIcon binding value into its icon set and icon name components.
+	     * Returns a 2-element array of [(icon set), (icon name)].
+	     * The separator for the two fields is ':'. If there is no separator, an empty
+	     * string is returned for the icon set and the entire value is returned for
+	     * the icon name. If the argument is falsy, returns an array of two empty strings.
+	     * Throws a MdIconInvalidNameError if the name contains two or more ':' separators.
+	     * Examples:
+	     *   'social:cake' -> ['social', 'cake']
+	     *   'penguin' -> ['', 'penguin']
+	     *   null -> ['', '']
+	     *   'a:b:c' -> (throws MdIconInvalidNameError)
+	     */
+	    MdIcon.prototype._splitIconName = function (iconName) {
+	        if (!iconName) {
+	            return ['', ''];
+	        }
+	        var parts = iconName.split(':');
+	        switch (parts.length) {
+	            case 1:
+	                // Use default namespace.
+	                return ['', parts[0]];
+	            case 2:
+	                return parts;
+	            default:
+	                throw new MdIconInvalidNameError(iconName);
+	        }
+	    };
+	    /** TODO: internal */
+	    MdIcon.prototype.ngOnChanges = function (changes) {
+	        var _this = this;
+	        var changedInputs = Object.keys(changes);
+	        // Only update the inline SVG icon if the inputs changed, to avoid unnecessary DOM operations.
+	        if (changedInputs.indexOf('svgIcon') != -1 || changedInputs.indexOf('svgSrc') != -1) {
+	            if (this.svgIcon) {
+	                var _a = this._splitIconName(this.svgIcon), namespace = _a[0], iconName = _a[1];
+	                this._mdIconRegistry.getNamedSvgIcon(iconName, namespace).first().subscribe(function (svg) { return _this._setSvgElement(svg); }, function (err) { return console.log("Error retrieving icon: " + err); });
+	            }
+	            else if (this.svgSrc) {
+	                this._mdIconRegistry.getSvgIconFromUrl(this.svgSrc).first().subscribe(function (svg) { return _this._setSvgElement(svg); }, function (err) { return console.log("Error retrieving icon: " + err); });
+	            }
+	        }
+	        if (this._usingFontIcon()) {
+	            this._updateFontIconClasses();
+	        }
+	        this._updateAriaLabel();
+	    };
+	    /** TODO: internal */
+	    MdIcon.prototype.ngOnInit = function () {
+	        // Update font classes because ngOnChanges won't be called if none of the inputs are present,
+	        // e.g. <md-icon>arrow</md-icon>. In this case we need to add a CSS class for the default font.
+	        if (this._usingFontIcon()) {
+	            this._updateFontIconClasses();
+	        }
+	    };
+	    /** TODO: internal */
+	    MdIcon.prototype.ngAfterViewChecked = function () {
+	        // Update aria label here because it may depend on the projected text content.
+	        // (e.g. <md-icon>home</md-icon> should use 'home').
+	        this._updateAriaLabel();
+	    };
+	    MdIcon.prototype._updateAriaLabel = function () {
+	        var ariaLabel = this._getAriaLabel();
+	        if (ariaLabel) {
+	            this._renderer.setElementAttribute(this._element.nativeElement, 'aria-label', ariaLabel);
+	        }
+	    };
+	    MdIcon.prototype._getAriaLabel = function () {
+	        // If the parent provided an aria-label attribute value, use it as-is. Otherwise look for a
+	        // reasonable value from the alt attribute, font icon name, SVG icon name, or (for ligatures)
+	        // the text content of the directive.
+	        var label = this.hostAriaLabel ||
+	            this.alt ||
+	            this.fontIcon ||
+	            this._splitIconName(this.svgIcon)[1];
+	        if (label) {
+	            return label;
+	        }
+	        // The "content" of an SVG icon is not a useful label.
+	        if (this._usingFontIcon()) {
+	            var text = this._element.nativeElement.textContent;
+	            if (text) {
+	                return text;
+	            }
+	        }
+	        // TODO: Warn here in dev mode.
+	        return null;
+	    };
+	    MdIcon.prototype._usingFontIcon = function () {
+	        return !(this.svgIcon || this.svgSrc);
+	    };
+	    MdIcon.prototype._setSvgElement = function (svg) {
+	        var layoutElement = this._element.nativeElement;
+	        // Remove existing child nodes and add the new SVG element.
+	        // We would use renderer.detachView(Array.from(layoutElement.childNodes)) here,
+	        // but it fails in IE11: https://github.com/angular/angular/issues/6327
+	        layoutElement.innerHTML = '';
+	        this._renderer.projectNodes(layoutElement, [svg]);
+	    };
+	    MdIcon.prototype._updateFontIconClasses = function () {
+	        if (!this._usingFontIcon()) {
+	            return;
+	        }
+	        var elem = this._element.nativeElement;
+	        var fontSetClass = this.fontSet ?
+	            this._mdIconRegistry.classNameForFontAlias(this.fontSet) :
+	            this._mdIconRegistry.getDefaultFontSetClass();
+	        if (fontSetClass != this._previousFontSetClass) {
+	            if (this._previousFontSetClass) {
+	                this._renderer.setElementClass(elem, this._previousFontSetClass, false);
+	            }
+	            if (fontSetClass) {
+	                this._renderer.setElementClass(elem, fontSetClass, true);
+	            }
+	            this._previousFontSetClass = fontSetClass;
+	        }
+	        if (this.fontIcon != this._previousFontIconClass) {
+	            if (this._previousFontIconClass) {
+	                this._renderer.setElementClass(elem, this._previousFontIconClass, false);
+	            }
+	            if (this.fontIcon) {
+	                this._renderer.setElementClass(elem, this.fontIcon, true);
+	            }
+	            this._previousFontIconClass = this.fontIcon;
+	        }
+	    };
+	    __decorate$28([
+	        _angular_core.Input(), 
+	        __metadata$28('design:type', String)
+	    ], MdIcon.prototype, "svgSrc", void 0);
+	    __decorate$28([
+	        _angular_core.Input(), 
+	        __metadata$28('design:type', String)
+	    ], MdIcon.prototype, "svgIcon", void 0);
+	    __decorate$28([
+	        _angular_core.Input(), 
+	        __metadata$28('design:type', String)
+	    ], MdIcon.prototype, "fontSet", void 0);
+	    __decorate$28([
+	        _angular_core.Input(), 
+	        __metadata$28('design:type', String)
+	    ], MdIcon.prototype, "fontIcon", void 0);
+	    __decorate$28([
+	        _angular_core.Input(), 
+	        __metadata$28('design:type', String)
+	    ], MdIcon.prototype, "alt", void 0);
+	    __decorate$28([
+	        _angular_core.Input('aria-label'), 
+	        __metadata$28('design:type', String)
+	    ], MdIcon.prototype, "hostAriaLabel", void 0);
+	    MdIcon = __decorate$28([
+	        _angular_core.Component({template: '<ng-content></ng-content>',
+	            selector: 'md-icon',
+	            styles: ["md-icon { background-repeat: no-repeat; display: inline-block; fill: currentColor; height: 24px; width: 24px; } /*# sourceMappingURL=icon.css.map */ "],
+	            host: {
+	                'role': 'img',
+	            },
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	        }), 
+	        __metadata$28('design:paramtypes', [_angular_core.ElementRef, _angular_core.Renderer, MdIconRegistry])
+	    ], MdIcon);
+	    return MdIcon;
+	}());
+	var MdIconModule = (function () {
+	    function MdIconModule() {
+	    }
+	    MdIconModule.forRoot = function () {
+	        return {
+	            ngModule: MdIconModule,
+	            providers: [MdIconRegistry],
+	        };
+	    };
+	    MdIconModule = __decorate$28([
+	        _angular_core.NgModule({
+	            imports: [_angular_http.HttpModule],
+	            exports: [MdIcon],
+	            declarations: [MdIcon],
+	        }), 
+	        __metadata$28('design:paramtypes', [])
+	    ], MdIconModule);
+	    return MdIconModule;
+	}());
+
+	var __extends$12 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$30 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$30 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	// TODO(josephperrott): Benchpress tests.
+	/** A single degree in radians. */
+	var DEGREE_IN_RADIANS = Math.PI / 180;
+	/** Duration of the indeterminate animation. */
+	var DURATION_INDETERMINATE = 667;
+	/** Duration of the indeterminate animation. */
+	var DURATION_DETERMINATE = 225;
+	/** Start animation value of the indeterminate animation */
+	var startIndeterminate = 3;
+	/** End animation value of the indeterminate animation */
+	var endIndeterminate = 80;
+	/* Maximum angle for the arc. The angle can't be exactly 360, because the arc becomes hidden. */
+	var MAX_ANGLE = 359.99 / 100;
+	/**
+	 * <md-progress-circle> component.
+	 */
+	var MdProgressCircle = (function () {
+	    function MdProgressCircle(_changeDetectorRef, _ngZone, _elementRef) {
+	        this._changeDetectorRef = _changeDetectorRef;
+	        this._ngZone = _ngZone;
+	        this._elementRef = _elementRef;
+	        /** The id of the last requested animation. */
+	        this._lastAnimationId = 0;
+	        this._mode = 'determinate';
+	    }
+	    Object.defineProperty(MdProgressCircle.prototype, "_ariaValueMin", {
+	        /**
+	         * Values for aria max and min are only defined as numbers when in a determinate mode.  We do this
+	         * because voiceover does not report the progress indicator as indeterminate if the aria min
+	         * and/or max value are number values.
+	         */
+	        get: function () {
+	            return this.mode == 'determinate' ? 0 : null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdProgressCircle.prototype, "_ariaValueMax", {
+	        get: function () {
+	            return this.mode == 'determinate' ? 100 : null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdProgressCircle.prototype, "interdeterminateInterval", {
+	        /** TODO: internal */
+	        get: function () {
+	            return this._interdeterminateInterval;
+	        },
+	        /** TODO: internal */
+	        set: function (interval) {
+	            clearInterval(this._interdeterminateInterval);
+	            this._interdeterminateInterval = interval;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Clean up any animations that were running. */
+	    MdProgressCircle.prototype.ngOnDestroy = function () {
+	        this._cleanupIndeterminateAnimation();
+	    };
+	    Object.defineProperty(MdProgressCircle.prototype, "value", {
+	        get: function () {
+	            if (this.mode == 'determinate') {
+	                return this._value;
+	            }
+	        },
+	        set: function (v) {
+	            if (v != null && this.mode == 'determinate') {
+	                var newValue = clamp(v);
+	                this._animateCircle((this.value || 0), newValue, linearEase, DURATION_DETERMINATE, 0);
+	                this._value = newValue;
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdProgressCircle.prototype, "mode", {
+	        /**
+	         * Mode of the progress circle
+	         *
+	         * Input must be one of the values from ProgressMode, defaults to 'determinate'.
+	         * mode is bound to the host as the attribute host.
+	         */
+	        get: function () {
+	            return this._mode;
+	        },
+	        set: function (m) {
+	            if (m == 'indeterminate') {
+	                this._startIndeterminateAnimation();
+	            }
+	            else {
+	                this._cleanupIndeterminateAnimation();
+	            }
+	            this._mode = m;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Animates the circle from one percentage value to another.
+	     *
+	     * @param animateFrom The percentage of the circle filled starting the animation.
+	     * @param animateTo The percentage of the circle filled ending the animation.
+	     * @param ease The easing function to manage the pace of change in the animation.
+	     * @param duration The length of time to show the animation, in milliseconds.
+	     * @param rotation The starting angle of the circle fill, with 0° represented at the top center
+	     *    of the circle.
+	     */
+	    MdProgressCircle.prototype._animateCircle = function (animateFrom, animateTo, ease, duration, rotation) {
+	        var _this = this;
+	        var id = ++this._lastAnimationId;
+	        var startTime = Date.now();
+	        var changeInValue = animateTo - animateFrom;
+	        // No need to animate it if the values are the same
+	        if (animateTo === animateFrom) {
+	            this._renderArc(animateTo, rotation);
+	        }
+	        else {
+	            var animation_1 = function () {
+	                var elapsedTime = Math.max(0, Math.min(Date.now() - startTime, duration));
+	                _this._renderArc(ease(elapsedTime, animateFrom, changeInValue, duration), rotation);
+	                // Prevent overlapping animations by checking if a new animation has been called for and
+	                // if the animation has lasted longer than the animation duration.
+	                if (id === _this._lastAnimationId && elapsedTime < duration) {
+	                    requestAnimationFrame(animation_1);
+	                }
+	            };
+	            // Run the animation outside of Angular's zone, in order to avoid
+	            // hitting ZoneJS and change detection on each frame.
+	            this._ngZone.runOutsideAngular(animation_1);
+	        }
+	    };
+	    /**
+	     * Starts the indeterminate animation interval, if it is not already running.
+	     */
+	    MdProgressCircle.prototype._startIndeterminateAnimation = function () {
+	        var _this = this;
+	        var rotationStartPoint = 0;
+	        var start = startIndeterminate;
+	        var end = endIndeterminate;
+	        var duration = DURATION_INDETERMINATE;
+	        var animate = function () {
+	            _this._animateCircle(start, end, materialEase, duration, rotationStartPoint);
+	            // Prevent rotation from reaching Number.MAX_SAFE_INTEGER.
+	            rotationStartPoint = (rotationStartPoint + end) % 100;
+	            var temp = start;
+	            start = -end;
+	            end = -temp;
+	        };
+	        if (!this.interdeterminateInterval) {
+	            this._ngZone.runOutsideAngular(function () {
+	                _this.interdeterminateInterval = setInterval(animate, duration + 50, 0, false);
+	                animate();
+	            });
+	        }
+	    };
+	    /**
+	     * Removes interval, ending the animation.
+	     */
+	    MdProgressCircle.prototype._cleanupIndeterminateAnimation = function () {
+	        this.interdeterminateInterval = null;
+	    };
+	    /**
+	     * Renders the arc onto the SVG element. Proxies `getArc` while setting the proper
+	     * DOM attribute on the `<path>`.
+	     */
+	    MdProgressCircle.prototype._renderArc = function (currentValue, rotation) {
+	        // Caches the path reference so it doesn't have to be looked up every time.
+	        var path = this._path = this._path || this._elementRef.nativeElement.querySelector('path');
+	        // Ensure that the path was found. This may not be the case if the
+	        // animation function fires too early.
+	        if (path) {
+	            path.setAttribute('d', getSvgArc(currentValue, rotation));
+	        }
+	    };
+	    __decorate$30([
+	        _angular_core.Input(),
+	        _angular_core.HostBinding('attr.aria-valuenow'), 
+	        __metadata$30('design:type', Object)
+	    ], MdProgressCircle.prototype, "value", null);
+	    __decorate$30([
+	        _angular_core.HostBinding('attr.mode'),
+	        _angular_core.Input(), 
+	        __metadata$30('design:type', Object)
+	    ], MdProgressCircle.prototype, "mode", null);
+	    MdProgressCircle = __decorate$30([
+	        _angular_core.Component({selector: 'md-progress-circle',
+	            host: {
+	                'role': 'progressbar',
+	                '[attr.aria-valuemin]': '_ariaValueMin',
+	                '[attr.aria-valuemax]': '_ariaValueMax',
+	            },
+	            template: "<!-- preserveAspectRatio of xMidYMid meet as the center of the viewport is the circle's center.  The center of the circle with remain at the center of the md-progress-circle element containing the SVG. --> <svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"xMidYMid meet\"> <path></path> </svg> ",
+	            styles: [":host { display: block; height: 100px; width: 100px; overflow: hidden; } :host svg { height: 100%; width: 100%; transform-origin: center; } :host path { fill: transparent; stroke-width: 10px; } :host[mode='indeterminate'] svg { animation-duration: 5250ms, 2887.5ms; animation-name: md-progress-circle-sporadic-rotate, md-progress-circle-linear-rotate; animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1), linear; animation-iteration-count: infinite; transition: none; } @keyframes md-progress-circle-linear-rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } @keyframes md-progress-circle-sporadic-rotate { 12.5% { transform: rotate(135deg); } 25% { transform: rotate(270deg); } 37.5% { transform: rotate(405deg); } 50% { transform: rotate(540deg); } 62.5% { transform: rotate(675deg); } 75% { transform: rotate(810deg); } 87.5% { transform: rotate(945deg); } 100% { transform: rotate(1080deg); } } /*# sourceMappingURL=progress-circle.css.map */ "],
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	        }), 
+	        __metadata$30('design:paramtypes', [_angular_core.ChangeDetectorRef, _angular_core.NgZone, _angular_core.ElementRef])
+	    ], MdProgressCircle);
+	    return MdProgressCircle;
+	}());
+	/**
+	 * <md-spinner> component.
+	 *
+	 * This is a component definition to be used as a convenience reference to create an
+	 * indeterminate <md-progress-circle> instance.
+	 */
+	var MdSpinner = (function (_super) {
+	    __extends$12(MdSpinner, _super);
+	    function MdSpinner(changeDetectorRef, elementRef, ngZone) {
+	        _super.call(this, changeDetectorRef, ngZone, elementRef);
+	        this.mode = 'indeterminate';
+	    }
+	    MdSpinner = __decorate$30([
+	        _angular_core.Component({selector: 'md-spinner',
+	            host: {
+	                'role': 'progressbar',
+	                'mode': 'indeterminate',
+	            },
+	            template: "<!-- preserveAspectRatio of xMidYMid meet as the center of the viewport is the circle's center.  The center of the circle with remain at the center of the md-progress-circle element containing the SVG. --> <svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"xMidYMid meet\"> <path></path> </svg> ",
+	            styles: [":host { display: block; height: 100px; width: 100px; overflow: hidden; } :host svg { height: 100%; width: 100%; transform-origin: center; } :host path { fill: transparent; stroke-width: 10px; } :host[mode='indeterminate'] svg { animation-duration: 5250ms, 2887.5ms; animation-name: md-progress-circle-sporadic-rotate, md-progress-circle-linear-rotate; animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1), linear; animation-iteration-count: infinite; transition: none; } @keyframes md-progress-circle-linear-rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } @keyframes md-progress-circle-sporadic-rotate { 12.5% { transform: rotate(135deg); } 25% { transform: rotate(270deg); } 37.5% { transform: rotate(405deg); } 50% { transform: rotate(540deg); } 62.5% { transform: rotate(675deg); } 75% { transform: rotate(810deg); } 87.5% { transform: rotate(945deg); } 100% { transform: rotate(1080deg); } } /*# sourceMappingURL=progress-circle.css.map */ "],
+	        }), 
+	        __metadata$30('design:paramtypes', [_angular_core.ChangeDetectorRef, _angular_core.ElementRef, _angular_core.NgZone])
+	    ], MdSpinner);
+	    return MdSpinner;
+	}(MdProgressCircle));
+	/**
+	 * Module functions.
+	 */
+	/** Clamps a value to be between 0 and 100. */
+	function clamp(v) {
+	    return Math.max(0, Math.min(100, v));
+	}
+	/**
+	 * Converts Polar coordinates to Cartesian.
+	 */
+	function polarToCartesian(radius, pathRadius, angleInDegrees) {
+	    var angleInRadians = (angleInDegrees - 90) * DEGREE_IN_RADIANS;
+	    return (radius + (pathRadius * Math.cos(angleInRadians))) +
+	        ',' + (radius + (pathRadius * Math.sin(angleInRadians)));
+	}
+	/**
+	 * Easing function for linear animation.
+	 */
+	function linearEase(currentTime, startValue, changeInValue, duration) {
+	    return changeInValue * currentTime / duration + startValue;
+	}
+	/**
+	 * Easing function to match material design indeterminate animation.
+	 */
+	function materialEase(currentTime, startValue, changeInValue, duration) {
+	    var time = currentTime / duration;
+	    var timeCubed = Math.pow(time, 3);
+	    var timeQuad = Math.pow(time, 4);
+	    var timeQuint = Math.pow(time, 5);
+	    return startValue + changeInValue * ((6 * timeQuint) + (-15 * timeQuad) + (10 * timeCubed));
+	}
+	/**
+	 * Determines the path value to define the arc.  Converting percentage values to to polar
+	 * coordinates on the circle, and then to cartesian coordinates in the viewport.
+	 *
+	 * @param currentValue The current percentage value of the progress circle, the percentage of the
+	 *    circle to fill.
+	 * @param rotation The starting point of the circle with 0 being the 0 degree point.
+	 * @return A string for an SVG path representing a circle filled from the starting point to the
+	 *    percentage value provided.
+	 */
+	function getSvgArc(currentValue, rotation) {
+	    var startPoint = rotation || 0;
+	    var radius = 50;
+	    var pathRadius = 40;
+	    var startAngle = startPoint * MAX_ANGLE;
+	    var endAngle = currentValue * MAX_ANGLE;
+	    var start = polarToCartesian(radius, pathRadius, startAngle);
+	    var end = polarToCartesian(radius, pathRadius, endAngle + startAngle);
+	    var arcSweep = endAngle < 0 ? 0 : 1;
+	    var largeArcFlag;
+	    if (endAngle < 0) {
+	        largeArcFlag = endAngle >= -180 ? 0 : 1;
+	    }
+	    else {
+	        largeArcFlag = endAngle <= 180 ? 0 : 1;
+	    }
+	    return "M" + start + "A" + pathRadius + "," + pathRadius + " 0 " + largeArcFlag + "," + arcSweep + " " + end;
+	}
+	var MdProgressCircleModule = (function () {
+	    function MdProgressCircleModule() {
+	    }
+	    MdProgressCircleModule.forRoot = function () {
+	        return {
+	            ngModule: MdProgressCircleModule,
+	            providers: []
+	        };
+	    };
+	    MdProgressCircleModule = __decorate$30([
+	        _angular_core.NgModule({
+	            exports: [MdProgressCircle, MdSpinner],
+	            declarations: [MdProgressCircle, MdSpinner],
+	        }), 
+	        __metadata$30('design:paramtypes', [])
+	    ], MdProgressCircleModule);
+	    return MdProgressCircleModule;
+	}());
+
+	var __decorate$31 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$31 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	// TODO(josephperrott): Benchpress tests.
+	// TODO(josephperrott): Add ARIA attributes for progressbar "for".
+	/**
+	 * <md-progress-bar> component.
+	 */
+	var MdProgressBar = (function () {
+	    function MdProgressBar() {
+	        /** Value of the progressbar. Defaults to zero. Mirrored to aria-valuenow. */
+	        this._value = 0;
+	        /** Buffer value of the progress bar. Defaults to zero. */
+	        this._bufferValue = 0;
+	        /**
+	         * Mode of the progress bar.
+	         *
+	         * Input must be one of these values: determinate, indeterminate, buffer, query, defaults to
+	         * 'determinate'.
+	         * Mirrored to mode attribute.
+	         */
+	        this.mode = 'determinate';
+	    }
+	    Object.defineProperty(MdProgressBar.prototype, "value", {
+	        get: function () {
+	            return this._value;
+	        },
+	        set: function (v) {
+	            this._value = clamp$1(v || 0);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdProgressBar.prototype, "bufferValue", {
+	        get: function () {
+	            return this._bufferValue;
+	        },
+	        set: function (v) {
+	            this._bufferValue = clamp$1(v || 0);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Gets the current transform value for the progress bar's primary indicator. */
+	    MdProgressBar.prototype._primaryTransform = function () {
+	        var scale = this.value / 100;
+	        return { transform: "scaleX(" + scale + ")" };
+	    };
+	    /**
+	     * Gets the current transform value for the progress bar's buffer indicator.  Only used if the
+	     * progress mode is set to buffer, otherwise returns an undefined, causing no transformation.
+	     */
+	    MdProgressBar.prototype._bufferTransform = function () {
+	        if (this.mode == 'buffer') {
+	            var scale = this.bufferValue / 100;
+	            return { transform: "scaleX(" + scale + ")" };
+	        }
+	    };
+	    __decorate$31([
+	        _angular_core.Input(),
+	        _angular_core.HostBinding('attr.aria-valuenow'), 
+	        __metadata$31('design:type', Object)
+	    ], MdProgressBar.prototype, "value", null);
+	    __decorate$31([
+	        _angular_core.Input(), 
+	        __metadata$31('design:type', Object)
+	    ], MdProgressBar.prototype, "bufferValue", null);
+	    __decorate$31([
+	        _angular_core.Input(),
+	        _angular_core.HostBinding('attr.mode'), 
+	        __metadata$31('design:type', Object)
+	    ], MdProgressBar.prototype, "mode", void 0);
+	    MdProgressBar = __decorate$31([
+	        _angular_core.Component({selector: 'md-progress-bar',
+	            host: {
+	                'role': 'progressbar',
+	                'aria-valuemin': '0',
+	                'aria-valuemax': '100',
+	            },
+	            template: "<!-- The background div is named as such because it appears below the other divs and is not sized based on values. --> <div class=\"md-progress-bar-background\"></div> <div class=\"md-progress-bar-buffer\" [ngStyle]=\"_bufferTransform()\"></div> <div class=\"md-progress-bar-primary md-progress-bar-fill\" [ngStyle]=\"_primaryTransform()\"></div> <div class=\"md-progress-bar-secondary md-progress-bar-fill\"></div> ",
+	            styles: [":host { display: block; height: 5px; overflow: hidden; position: relative; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; } :host .md-progress-bar-background { background-repeat: repeat-x; background-size: 10px 4px; height: 100%; position: absolute; visibility: hidden; width: 100%; } :host .md-progress-bar-buffer { height: 100%; position: absolute; transform-origin: top left; transition: transform 250ms ease; width: 100%; } :host .md-progress-bar-secondary { visibility: hidden; } :host .md-progress-bar-fill { animation: none; height: 100%; position: absolute; transform-origin: top left; transition: transform 250ms ease; width: 100%; } :host .md-progress-bar-fill::after { animation: none; content: ''; display: inline-block; height: 100%; position: absolute; width: 100%; left: 0; } :host[mode='query'] { transform: rotateZ(180deg); } :host[mode='indeterminate'] .md-progress-bar-fill, :host[mode='query'] .md-progress-bar-fill { transition: none; } :host[mode='indeterminate'] .md-progress-bar-primary, :host[mode='query'] .md-progress-bar-primary { animation: md-progress-bar-primary-indeterminate-translate 2000ms infinite linear; left: -145.166611%; } :host[mode='indeterminate'] .md-progress-bar-primary.md-progress-bar-fill::after, :host[mode='query'] .md-progress-bar-primary.md-progress-bar-fill::after { animation: md-progress-bar-primary-indeterminate-scale 2000ms infinite linear; } :host[mode='indeterminate'] .md-progress-bar-secondary, :host[mode='query'] .md-progress-bar-secondary { animation: md-progress-bar-secondary-indeterminate-translate 2000ms infinite linear; left: -54.888891%; visibility: visible; } :host[mode='indeterminate'] .md-progress-bar-secondary.md-progress-bar-fill::after, :host[mode='query'] .md-progress-bar-secondary.md-progress-bar-fill::after { animation: md-progress-bar-secondary-indeterminate-scale 2000ms infinite linear; } :host[mode='buffer'] .md-progress-bar-background { animation: md-progress-bar-background-scroll 250ms infinite linear; visibility: visible; } :host-context([dir='rtl']) { transform: rotateY(180deg); } @keyframes md-progress-bar-primary-indeterminate-translate { 0% { transform: translateX(0); } 20% { animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582); transform: translateX(0); } 59.15% { animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635); transform: translateX(83.67142%); } 100% { transform: translateX(200.61106%); } } @keyframes md-progress-bar-primary-indeterminate-scale { 0% { transform: scaleX(0.08); } 36.65% { animation-timing-function: cubic-bezier(0.33473, 0.12482, 0.78584, 1); transform: scaleX(0.08); } 69.15% { animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1); transform: scaleX(0.66148); } 100% { transform: scaleX(0.08); } } @keyframes md-progress-bar-secondary-indeterminate-translate { 0% { animation-timing-function: cubic-bezier(0.15, 0, 0.51506, 0.40969); transform: translateX(0); } 25% { animation-timing-function: cubic-bezier(0.31033, 0.28406, 0.8, 0.73371); transform: translateX(37.65191%); } 48.35% { animation-timing-function: cubic-bezier(0.4, 0.62704, 0.6, 0.90203); transform: translateX(84.38617%); } 100% { transform: translateX(160.27778%); } } @keyframes md-progress-bar-secondary-indeterminate-scale { 0% { animation-timing-function: cubic-bezier(0.15, 0, 0.51506, 0.40969); transform: scaleX(0.08); } 19.15% { animation-timing-function: cubic-bezier(0.31033, 0.28406, 0.8, 0.73371); transform: scaleX(0.4571); } 44.15% { animation-timing-function: cubic-bezier(0.4, 0.62704, 0.6, 0.90203); transform: scaleX(0.72796); } 100% { transform: scaleX(0.08); } } @keyframes md-progress-bar-background-scroll { to { transform: translateX(-10px); } } /*# sourceMappingURL=progress-bar.css.map */ "],
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	        }), 
+	        __metadata$31('design:paramtypes', [])
+	    ], MdProgressBar);
+	    return MdProgressBar;
+	}());
+	/** Clamps a value to be between two numbers, by default 0 and 100. */
+	function clamp$1(v, min, max) {
+	    if (min === void 0) { min = 0; }
+	    if (max === void 0) { max = 100; }
+	    return Math.max(min, Math.min(max, v));
+	}
+	var MdProgressBarModule = (function () {
+	    function MdProgressBarModule() {
+	    }
+	    MdProgressBarModule.forRoot = function () {
+	        return {
+	            ngModule: MdProgressBarModule,
+	            providers: []
+	        };
+	    };
+	    MdProgressBarModule = __decorate$31([
+	        _angular_core.NgModule({
+	            imports: [_angular_common.CommonModule],
+	            exports: [MdProgressBar],
+	            declarations: [MdProgressBar],
+	        }), 
+	        __metadata$31('design:paramtypes', [])
+	    ], MdProgressBarModule);
+	    return MdProgressBarModule;
+	}());
+
+	var __extends$13 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$32 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$32 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var noop = function () { };
+	var MD_INPUT_CONTROL_VALUE_ACCESSOR = {
+	    provide: _angular_forms.NG_VALUE_ACCESSOR,
+	    useExisting: _angular_core.forwardRef(function () { return MdInput; }),
+	    multi: true
+	};
+	// Invalid input type. Using one of these will throw an MdInputUnsupportedTypeError.
+	var MD_INPUT_INVALID_INPUT_TYPE = [
+	    'file',
+	    'radio',
+	    'checkbox',
+	];
+	var nextUniqueId$1 = 0;
+	var MdInputPlaceholderConflictError = (function (_super) {
+	    __extends$13(MdInputPlaceholderConflictError, _super);
+	    function MdInputPlaceholderConflictError() {
+	        _super.call(this, 'Placeholder attribute and child element were both specified.');
+	    }
+	    return MdInputPlaceholderConflictError;
+	}(MdError));
+	var MdInputUnsupportedTypeError = (function (_super) {
+	    __extends$13(MdInputUnsupportedTypeError, _super);
+	    function MdInputUnsupportedTypeError(type) {
+	        _super.call(this, "Input type \"" + type + "\" isn't supported by md-input.");
+	    }
+	    return MdInputUnsupportedTypeError;
+	}(MdError));
+	var MdInputDuplicatedHintError = (function (_super) {
+	    __extends$13(MdInputDuplicatedHintError, _super);
+	    function MdInputDuplicatedHintError(align) {
+	        _super.call(this, "A hint was already declared for 'align=\"" + align + "\"'.");
+	    }
+	    return MdInputDuplicatedHintError;
+	}(MdError));
+	/**
+	 * The placeholder directive. The content can declare this to implement more
+	 * complex placeholders.
+	 */
+	var MdPlaceholder = (function () {
+	    function MdPlaceholder() {
+	    }
+	    MdPlaceholder = __decorate$32([
+	        _angular_core.Directive({
+	            selector: 'md-placeholder'
+	        }), 
+	        __metadata$32('design:paramtypes', [])
+	    ], MdPlaceholder);
+	    return MdPlaceholder;
+	}());
+	/** The hint directive, used to tag content as hint labels (going under the input). */
+	var MdHint = (function () {
+	    function MdHint() {
+	        // Whether to align the hint label at the start or end of the line.
+	        this.align = 'start';
+	    }
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Object)
+	    ], MdHint.prototype, "align", void 0);
+	    MdHint = __decorate$32([
+	        _angular_core.Directive({
+	            selector: 'md-hint',
+	            host: {
+	                '[class.md-right]': 'align == "end"',
+	                '[class.md-hint]': 'true'
+	            }
+	        }), 
+	        __metadata$32('design:paramtypes', [])
+	    ], MdHint);
+	    return MdHint;
+	}());
+	/**
+	 * Component that represents a text input. It encapsulates the <input> HTMLElement and
+	 * improve on its behaviour, along with styling it according to the Material Design.
+	 */
+	var MdInput = (function () {
+	    function MdInput(elementRef) {
+	        this._focused = false;
+	        this._value = '';
+	        /** Callback registered via registerOnTouched (ControlValueAccessor) */
+	        this._onTouchedCallback = noop;
+	        /** Callback registered via registerOnChange (ControlValueAccessor) */
+	        this._onChangeCallback = noop;
+	        /**
+	         * Bindings.
+	         */
+	        this.align = 'start';
+	        this.dividerColor = 'primary';
+	        this.hintLabel = '';
+	        this.id = "md-input-" + nextUniqueId$1++;
+	        this.list = null;
+	        this.max = null;
+	        this.maxlength = null;
+	        this.min = null;
+	        this.minlength = null;
+	        this.placeholder = null;
+	        this.step = null;
+	        this.tabindex = null;
+	        this.type = 'text';
+	        this.name = null;
+	        // textarea-specific
+	        this.rows = null;
+	        this.cols = null;
+	        this.wrap = null;
+	        this._floatingPlaceholder = true;
+	        this._autofocus = false;
+	        this._disabled = false;
+	        this._readonly = false;
+	        this._required = false;
+	        this._spellcheck = false;
+	        this._blurEmitter = new _angular_core.EventEmitter();
+	        this._focusEmitter = new _angular_core.EventEmitter();
+	        // Set the element type depending on normalized selector used(md-input / md-textarea)
+	        this._elementType = elementRef.nativeElement.nodeName.toLowerCase() === 'md-input' ?
+	            'input' :
+	            'textarea';
+	    }
+	    Object.defineProperty(MdInput.prototype, "ariaDisabled", {
+	        get: function () { return this._ariaDisabled; },
+	        set: function (value) { this._ariaDisabled = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "ariaRequired", {
+	        get: function () { return this._ariaRequired; },
+	        set: function (value) { this._ariaRequired = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "ariaInvalid", {
+	        get: function () { return this._ariaInvalid; },
+	        set: function (value) { this._ariaInvalid = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "focused", {
+	        /** Readonly properties. */
+	        get: function () { return this._focused; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "empty", {
+	        get: function () { return (this._value == null || this._value === '') && this.type !== 'date'; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "characterCount", {
+	        get: function () {
+	            return this.empty ? 0 : ('' + this._value).length;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "inputId", {
+	        get: function () { return this.id + "-input"; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "floatingPlaceholder", {
+	        get: function () { return this._floatingPlaceholder; },
+	        set: function (value) { this._floatingPlaceholder = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "autofocus", {
+	        get: function () { return this._autofocus; },
+	        set: function (value) { this._autofocus = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "disabled", {
+	        get: function () { return this._disabled; },
+	        set: function (value) { this._disabled = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "readonly", {
+	        get: function () { return this._readonly; },
+	        set: function (value) { this._readonly = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "required", {
+	        get: function () { return this._required; },
+	        set: function (value) { this._required = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "spellcheck", {
+	        get: function () { return this._spellcheck; },
+	        set: function (value) { this._spellcheck = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "onBlur", {
+	        get: function () {
+	            return this._blurEmitter.asObservable();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "onFocus", {
+	        get: function () {
+	            return this._focusEmitter.asObservable();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdInput.prototype, "value", {
+	        get: function () { return this._value; },
+	        set: function (v) {
+	            v = this._convertValueForInputType(v);
+	            if (v !== this._value) {
+	                this._value = v;
+	                this._onChangeCallback(v);
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    ;
+	    Object.defineProperty(MdInput.prototype, "_align", {
+	        // This is to remove the `align` property of the `md-input` itself. Otherwise HTML5
+	        // might place it as RTL when we don't want to. We still want to use `align` as an
+	        // Input though, so we use HostBinding.
+	        get: function () { return null; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Set focus on input */
+	    MdInput.prototype.focus = function () {
+	        this._inputElement.nativeElement.focus();
+	    };
+	    MdInput.prototype._handleFocus = function (event) {
+	        this._focused = true;
+	        this._focusEmitter.emit(event);
+	    };
+	    MdInput.prototype._handleBlur = function (event) {
+	        this._focused = false;
+	        this._onTouchedCallback();
+	        this._blurEmitter.emit(event);
+	    };
+	    MdInput.prototype._handleChange = function (event) {
+	        this.value = event.target.value;
+	        this._onTouchedCallback();
+	    };
+	    MdInput.prototype._hasPlaceholder = function () {
+	        return !!this.placeholder || this._placeholderChild != null;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdInput.prototype.writeValue = function (value) {
+	        this._value = value;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdInput.prototype.registerOnChange = function (fn) {
+	        this._onChangeCallback = fn;
+	    };
+	    /**
+	     * Implemented as part of ControlValueAccessor.
+	     * TODO: internal
+	     */
+	    MdInput.prototype.registerOnTouched = function (fn) {
+	        this._onTouchedCallback = fn;
+	    };
+	    /** TODO: internal */
+	    MdInput.prototype.ngAfterContentInit = function () {
+	        var _this = this;
+	        this._validateConstraints();
+	        // Trigger validation when the hint children change.
+	        this._hintChildren.changes.subscribe(function () {
+	            _this._validateConstraints();
+	        });
+	    };
+	    /** TODO: internal */
+	    MdInput.prototype.ngOnChanges = function (changes) {
+	        this._validateConstraints();
+	    };
+	    /**
+	     * Convert the value passed in to a value that is expected from the type of the md-input.
+	     * This is normally performed by the *_VALUE_ACCESSOR in forms, but since the type is bound
+	     * on our internal input it won't work locally.
+	     * @private
+	     */
+	    MdInput.prototype._convertValueForInputType = function (v) {
+	        switch (this.type) {
+	            case 'number': return parseFloat(v);
+	            default: return v;
+	        }
+	    };
+	    /**
+	     * Ensure that all constraints defined by the API are validated, or throw errors otherwise.
+	     * Constraints for now:
+	     *   - placeholder attribute and <md-placeholder> are mutually exclusive.
+	     *   - type attribute is not one of the forbidden types (see constant at the top).
+	     *   - Maximum one of each `<md-hint>` alignment specified, with the attribute being
+	     *     considered as align="start".
+	     * @private
+	     */
+	    MdInput.prototype._validateConstraints = function () {
+	        var _this = this;
+	        if (this.placeholder != '' && this.placeholder != null && this._placeholderChild != null) {
+	            throw new MdInputPlaceholderConflictError();
+	        }
+	        if (MD_INPUT_INVALID_INPUT_TYPE.indexOf(this.type) != -1) {
+	            throw new MdInputUnsupportedTypeError(this.type);
+	        }
+	        if (this._hintChildren) {
+	            // Validate the hint labels.
+	            var startHint_1 = null;
+	            var endHint_1 = null;
+	            this._hintChildren.forEach(function (hint) {
+	                if (hint.align == 'start') {
+	                    if (startHint_1 || _this.hintLabel) {
+	                        throw new MdInputDuplicatedHintError('start');
+	                    }
+	                    startHint_1 = hint;
+	                }
+	                else if (hint.align == 'end') {
+	                    if (endHint_1) {
+	                        throw new MdInputDuplicatedHintError('end');
+	                    }
+	                    endHint_1 = hint;
+	                }
+	            });
+	        }
+	    };
+	    __decorate$32([
+	        _angular_core.Input('aria-label'), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "ariaLabel", void 0);
+	    __decorate$32([
+	        _angular_core.Input('aria-labelledby'), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "ariaLabelledBy", void 0);
+	    __decorate$32([
+	        _angular_core.Input('aria-disabled'), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "ariaDisabled", null);
+	    __decorate$32([
+	        _angular_core.Input('aria-required'), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "ariaRequired", null);
+	    __decorate$32([
+	        _angular_core.Input('aria-invalid'), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "ariaInvalid", null);
+	    __decorate$32([
+	        _angular_core.ContentChild(MdPlaceholder), 
+	        __metadata$32('design:type', MdPlaceholder)
+	    ], MdInput.prototype, "_placeholderChild", void 0);
+	    __decorate$32([
+	        _angular_core.ContentChildren(MdHint), 
+	        __metadata$32('design:type', _angular_core.QueryList)
+	    ], MdInput.prototype, "_hintChildren", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Object)
+	    ], MdInput.prototype, "align", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Object)
+	    ], MdInput.prototype, "dividerColor", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "hintLabel", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "autocomplete", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "autocorrect", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "autocapitalize", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "id", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "list", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Object)
+	    ], MdInput.prototype, "max", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Number)
+	    ], MdInput.prototype, "maxlength", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Object)
+	    ], MdInput.prototype, "min", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Number)
+	    ], MdInput.prototype, "minlength", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "placeholder", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Number)
+	    ], MdInput.prototype, "step", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Number)
+	    ], MdInput.prototype, "tabindex", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "type", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', String)
+	    ], MdInput.prototype, "name", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Number)
+	    ], MdInput.prototype, "rows", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Number)
+	    ], MdInput.prototype, "cols", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Object)
+	    ], MdInput.prototype, "wrap", void 0);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "floatingPlaceholder", null);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "autofocus", null);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "disabled", null);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "readonly", null);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "required", null);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Boolean)
+	    ], MdInput.prototype, "spellcheck", null);
+	    __decorate$32([
+	        _angular_core.Output('blur'), 
+	        __metadata$32('design:type', rxjs_Observable.Observable)
+	    ], MdInput.prototype, "onBlur", null);
+	    __decorate$32([
+	        _angular_core.Output('focus'), 
+	        __metadata$32('design:type', rxjs_Observable.Observable)
+	    ], MdInput.prototype, "onFocus", null);
+	    __decorate$32([
+	        _angular_core.Input(), 
+	        __metadata$32('design:type', Object)
+	    ], MdInput.prototype, "value", null);
+	    __decorate$32([
+	        _angular_core.HostBinding('attr.align'), 
+	        __metadata$32('design:type', Object)
+	    ], MdInput.prototype, "_align", null);
+	    __decorate$32([
+	        _angular_core.ViewChild('input'), 
+	        __metadata$32('design:type', _angular_core.ElementRef)
+	    ], MdInput.prototype, "_inputElement", void 0);
+	    MdInput = __decorate$32([
+	        _angular_core.Component({selector: 'md-input, md-textarea',
+	            template: "<div class=\"md-input-wrapper\"> <div class=\"md-input-table\"> <div class=\"md-input-prefix\"><ng-content select=\"[md-prefix]\"></ng-content></div> <div class=\"md-input-infix\"> <input #input *ngIf=\"_elementType === 'input'\" class=\"md-input-element\" [class.md-end]=\"align == 'end'\" [attr.aria-label]=\"ariaLabel\" [attr.aria-labelledby]=\"ariaLabelledBy\" [attr.aria-disabled]=\"ariaDisabled\" [attr.aria-required]=\"ariaRequired\" [attr.aria-invalid]=\"ariaInvalid\" [attr.autocomplete]=\"autocomplete\" [attr.autocorrect]=\"autocorrect\" [attr.autocapitalize]=\"autocapitalize\" [autofocus]=\"autofocus\" [disabled]=\"disabled\" [id]=\"inputId\" [attr.list]=\"list\" [attr.max]=\"max\" [attr.maxlength]=\"maxlength\" [attr.min]=\"min\" [attr.minlength]=\"minlength\" [readonly]=\"readonly\" [required]=\"required\" [spellcheck]=\"spellcheck\" [attr.step]=\"step\" [attr.tabindex]=\"tabindex\" [type]=\"type\" [attr.name]=\"name\" (focus)=\"_handleFocus($event)\" (blur)=\"_handleBlur($event)\" [(ngModel)]=\"value\" (change)=\"_handleChange($event)\"> <textarea #input *ngIf=\"_elementType === 'textarea'\" class=\"md-input-element  md-input-element-textarea\" [class.md-end]=\"align == 'end'\" [attr.aria-label]=\"ariaLabel\" [attr.aria-labelledby]=\"ariaLabelledBy\" [attr.aria-disabled]=\"ariaDisabled\" [attr.aria-required]=\"ariaRequired\" [attr.aria-invalid]=\"ariaInvalid\" [attr.autocomplete]=\"autocomplete\" [attr.autocapitalize]=\"autocapitalize\" [attr.cols]=\"cols\" [attr.rows]=\"rows\" [attr.wrap]=\"wrap\" [autofocus]=\"autofocus\" [disabled]=\"disabled\" [id]=\"inputId\" [attr.maxlength]=\"maxlength\" [attr.minlength]=\"minlength\" [readonly]=\"readonly\" [required]=\"required\" [spellcheck]=\"spellcheck\" [attr.tabindex]=\"tabindex\" [attr.name]=\"name\" (focus)=\"_handleFocus($event)\" (blur)=\"_handleBlur($event)\" [(ngModel)]=\"value\" (change)=\"_handleChange($event)\"></textarea> <label class=\"md-input-placeholder\" [attr.for]=\"inputId\" [class.md-empty]=\"empty\" [class.md-focused]=\"focused\" [class.md-float]=\"floatingPlaceholder\" [class.md-accent]=\"dividerColor == 'accent'\" [class.md-warn]=\"dividerColor == 'warn'\" *ngIf=\"_hasPlaceholder()\"> <ng-content select=\"md-placeholder\"></ng-content> {{placeholder}} <span class=\"md-placeholder-required\" *ngIf=\"required\">*</span> </label> </div> <div class=\"md-input-suffix\"><ng-content select=\"[md-suffix]\"></ng-content></div> </div> <div class=\"md-input-underline\" [class.md-disabled]=\"disabled\"> <span class=\"md-input-ripple\" [class.md-focused]=\"focused\" [class.md-accent]=\"dividerColor == 'accent'\" [class.md-warn]=\"dividerColor == 'warn'\"></span> </div> <div *ngIf=\"hintLabel != ''\" class=\"md-hint\">{{hintLabel}}</div> <ng-content select=\"md-hint\"></ng-content> </div> ",
+	            styles: ["md-input, md-textarea { display: inline-block; position: relative; font-family: Roboto, \"Helvetica Neue\", sans-serif; line-height: normal; text-align: left; } [dir='rtl'] md-input, [dir='rtl'] md-textarea { text-align: right; } .md-input-wrapper { margin: 16px 0; } .md-input-table { display: inline-table; flex-flow: column; vertical-align: bottom; width: 100%; } .md-input-table > * { display: table-cell; } .md-input-infix { position: relative; } .md-input-element { font: inherit; background: transparent; color: currentColor; border: none; outline: none; padding: 0; width: 100%; } .md-input-element.md-end { text-align: right; } [dir='rtl'] .md-input-element.md-end { text-align: left; } .md-input-element:-moz-ui-invalid { box-shadow: none; } .md-input-element:-webkit-autofill + .md-input-placeholder.md-float { display: block; padding-bottom: 5px; transform: translateY(-100%) scale(0.75); width: 133.33333%; } .md-input-placeholder { position: absolute; left: 0; top: 0; font-size: 100%; pointer-events: none; z-index: 1; width: 100%; display: none; white-space: nowrap; text-overflow: ellipsis; overflow-x: hidden; transform: translateY(0); transform-origin: bottom left; transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1), scale 400ms cubic-bezier(0.25, 0.8, 0.25, 1), color 400ms cubic-bezier(0.25, 0.8, 0.25, 1), width 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-input-placeholder.md-empty { display: block; cursor: text; } .md-input-placeholder.md-float:not(.md-empty), .md-input-placeholder.md-float.md-focused { display: block; padding-bottom: 5px; transform: translateY(-100%) scale(0.75); width: 133.33333%; } [dir='rtl'] .md-input-placeholder { transform-origin: bottom right; } .md-input-underline { position: absolute; height: 1px; width: 100%; margin-top: 4px; border-top-width: 1px; border-top-style: solid; } .md-input-underline.md-disabled { border-top: 0; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%); background-position: 0; background-size: 4px 1px; background-repeat: repeat-x; } .md-input-underline .md-input-ripple { position: absolute; height: 2px; z-index: 1; top: -1px; width: 100%; transform-origin: top; opacity: 0; transform: scaleY(0); transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1), opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1); } .md-input-underline .md-input-ripple.md-focused { opacity: 1; transform: scaleY(1); } .md-hint { display: block; position: absolute; font-size: 75%; bottom: -0.5em; } .md-hint.md-right { right: 0; } [dir='rtl'] .md-hint { right: 0; left: auto; } [dir='rtl'] .md-hint.md-right { right: auto; left: 0; } /*# sourceMappingURL=input.css.map */ "],
+	            providers: [MD_INPUT_CONTROL_VALUE_ACCESSOR],
+	            host: { '(click)': 'focus()' },
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }), 
+	        __metadata$32('design:paramtypes', [_angular_core.ElementRef])
+	    ], MdInput);
+	    return MdInput;
+	}());
+	var MdInputModule = (function () {
+	    function MdInputModule() {
+	    }
+	    MdInputModule.forRoot = function () {
+	        return {
+	            ngModule: MdInputModule,
+	            providers: []
+	        };
+	    };
+	    MdInputModule = __decorate$32([
+	        _angular_core.NgModule({
+	            declarations: [MdPlaceholder, MdInput, MdHint],
+	            imports: [_angular_common.CommonModule, _angular_forms.FormsModule],
+	            exports: [MdPlaceholder, MdInput, MdHint],
+	        }), 
+	        __metadata$32('design:paramtypes', [])
+	    ], MdInputModule);
+	    return MdInputModule;
+	}());
+
+	/**
+	 * Configuration used when opening a snack-bar.
+	 */
+	var MdSnackBarConfig = (function () {
+	    function MdSnackBarConfig() {
+	        /** The politeness level for the MdAriaLiveAnnouncer announcement. */
+	        this.politeness = 'assertive';
+	        /** Message to be announced by the MdAriaLiveAnnouncer */
+	        this.announcementMessage = '';
+	        /** The view container to place the overlay for the snack bar into. */
+	        this.viewContainerRef = null;
+	    }
+	    return MdSnackBarConfig;
+	}());
+
+	// TODO(josephperrott): Implement onAction observable.
+	/**
+	 * Reference to a snack bar dispatched from the snack bar service.
+	 */
+	var MdSnackBarRef = (function () {
+	    function MdSnackBarRef(instance, containerInstance, _overlayRef) {
+	        this._overlayRef = _overlayRef;
+	        /** Subject for notifying the user that the snack bar has closed. */
+	        this._afterClosed = new rxjs_Subject.Subject();
+	        // Sets the readonly instance of the snack bar content component.
+	        this.instance = instance;
+	        this.containerInstance = containerInstance;
+	    }
+	    /** Dismisses the snack bar. */
+	    MdSnackBarRef.prototype.dismiss = function () {
+	        var _this = this;
+	        if (!this._afterClosed.closed) {
+	            this.containerInstance.exit().subscribe(function () {
+	                _this._overlayRef.dispose();
+	                _this._afterClosed.next();
+	                _this._afterClosed.complete();
+	            });
+	        }
+	    };
+	    /** Gets an observable that is notified when the snack bar is finished closing. */
+	    MdSnackBarRef.prototype.afterDismissed = function () {
+	        return this._afterClosed.asObservable();
+	    };
+	    return MdSnackBarRef;
+	}());
+
+	var __extends$15 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var MdSnackBarContentAlreadyAttached = (function (_super) {
+	    __extends$15(MdSnackBarContentAlreadyAttached, _super);
+	    function MdSnackBarContentAlreadyAttached() {
+	        _super.call(this, 'Attempting to attach snack bar content after content is already attached');
+	    }
+	    return MdSnackBarContentAlreadyAttached;
+	}(MdError));
+
+	var __extends$14 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$34 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$34 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	// TODO(jelbourn): we can't use constants from animation.ts here because you can't use
+	// a text interpolation in anything that is analyzed statically with ngc (for AoT compile).
+	var SHOW_ANIMATION = '225ms cubic-bezier(0.4,0.0,1,1)';
+	var HIDE_ANIMATION = '195ms cubic-bezier(0.0,0.0,0.2,1)';
+	/**
+	 * Internal component that wraps user-provided snack bar content.
+	 */
+	var MdSnackBarContainer = (function (_super) {
+	    __extends$14(MdSnackBarContainer, _super);
+	    function MdSnackBarContainer(_ngZone) {
+	        _super.call(this);
+	        this._ngZone = _ngZone;
+	        /** Subject for notifying that the snack bar has exited from view. */
+	        this._onExit = new rxjs_Subject.Subject();
+	        /** The state of the snack bar animations. */
+	        this.animationState = 'initial';
+	    }
+	    /** Attach a component portal as content to this snack bar container. */
+	    MdSnackBarContainer.prototype.attachComponentPortal = function (portal) {
+	        if (this._portalHost.hasAttached()) {
+	            throw new MdSnackBarContentAlreadyAttached();
+	        }
+	        return this._portalHost.attachComponentPortal(portal);
+	    };
+	    /** Attach a template portal as content to this snack bar container. */
+	    MdSnackBarContainer.prototype.attachTemplatePortal = function (portal) {
+	        throw Error('Not yet implemented');
+	    };
+	    /** Begin animation of the snack bar exiting from view. */
+	    MdSnackBarContainer.prototype.exit = function () {
+	        this.animationState = 'complete';
+	        return this._onExit.asObservable();
+	    };
+	    /** Mark snack bar as exited from the view. */
+	    MdSnackBarContainer.prototype.markAsExited = function (event) {
+	        var _this = this;
+	        if (event.toState === 'void' || event.toState === 'complete') {
+	            this._ngZone.run(function () {
+	                _this._onExit.next();
+	                _this._onExit.complete();
+	            });
+	        }
+	    };
+	    /** Begin animation of snack bar entrance into view. */
+	    MdSnackBarContainer.prototype.enter = function () {
+	        this.animationState = 'visible';
+	    };
+	    __decorate$34([
+	        _angular_core.ViewChild(PortalHostDirective), 
+	        __metadata$34('design:type', PortalHostDirective)
+	    ], MdSnackBarContainer.prototype, "_portalHost", void 0);
+	    MdSnackBarContainer = __decorate$34([
+	        _angular_core.Component({selector: 'snack-bar-container',
+	            template: "<template portalHost></template>",
+	            styles: [":host { box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); background: #323232; border-radius: 2px; box-sizing: content-box; display: block; height: 20px; max-width: 568px; min-width: 288px; overflow: hidden; padding: 14px 24px; transform: translateY(100%); } /*# sourceMappingURL=snack-bar-container.css.map */ "],
+	            host: {
+	                'role': 'alert',
+	                '[@state]': 'animationState',
+	                '(@state.done)': 'markAsExited($event)'
+	            },
+	            animations: [
+	                _angular_core.trigger('state', [
+	                    _angular_core.state('initial', _angular_core.style({ transform: 'translateY(100%)' })),
+	                    _angular_core.state('visible', _angular_core.style({ transform: 'translateY(0%)' })),
+	                    _angular_core.state('complete', _angular_core.style({ transform: 'translateY(100%)' })),
+	                    _angular_core.transition('visible => complete', _angular_core.animate(HIDE_ANIMATION)),
+	                    _angular_core.transition('initial => visible, void => visible', _angular_core.animate(SHOW_ANIMATION)),
+	                ])
+	            ],
+	        }), 
+	        __metadata$34('design:paramtypes', [_angular_core.NgZone])
+	    ], MdSnackBarContainer);
+	    return MdSnackBarContainer;
+	}(BasePortalHost));
+
+	var __decorate$35 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$35 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * A component used to open as the default snack bar, matching material spec.
+	 * This should only be used internally by the snack bar service.
+	 */
+	var SimpleSnackBar = (function () {
+	    function SimpleSnackBar() {
+	    }
+	    /** Dismisses the snack bar. */
+	    SimpleSnackBar.prototype.dismiss = function () {
+	        this.snackBarRef.dismiss();
+	    };
+	    Object.defineProperty(SimpleSnackBar.prototype, "hasAction", {
+	        /** If the action button should be shown. */
+	        get: function () { return !!this.action; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    SimpleSnackBar = __decorate$35([
+	        _angular_core.Component({selector: 'simple-snack-bar',
+	            template: "<span class=\"md-simple-snackbar-message\">{{message}}</span> <button md-button class=\"md-simple-snackbar-action\" *ngIf=\"hasAction\" (click)=\"dismiss()\">{{action}}</button>",
+	            styles: ["md-simple-snackbar { display: flex; justify-content: space-between; } .md-simple-snackbar-message { box-sizing: border-box; border: none; color: white; font-family: Roboto, 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 20px; outline: none; text-decoration: none; word-break: break-all; } .md-simple-snackbar-action { box-sizing: border-box; color: white; float: right; font-weight: 600; line-height: 20px; margin: -5px 0 0 48px; min-width: initial; padding: 5px; text-transform: uppercase; } /*# sourceMappingURL=simple-snack-bar.css.map */ "],
+	        }), 
+	        __metadata$35('design:paramtypes', [])
+	    ], SimpleSnackBar);
+	    return SimpleSnackBar;
+	}());
+
+	/**
+	 * Extends an object with the *enumerable* and *own* properties of one or more source objects,
+	 * similar to Object.assign.
+	 *
+	 * @param dest The object which will have properties copied to it.
+	 * @param sources The source objects from which properties will be copied.
+	 */
+	function extendObject(dest) {
+	    var sources = [];
+	    for (var _i = 1; _i < arguments.length; _i++) {
+	        sources[_i - 1] = arguments[_i];
+	    }
+	    if (dest == null) {
+	        throw TypeError('Cannot convert undefined or null to object');
+	    }
+	    for (var _a = 0, sources_1 = sources; _a < sources_1.length; _a++) {
+	        var source = sources_1[_a];
+	        if (source != null) {
+	            for (var key in source) {
+	                if (source.hasOwnProperty(key)) {
+	                    dest[key] = source[key];
+	                }
+	            }
+	        }
+	    }
+	    return dest;
+	}
+
+	var __decorate$33 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$33 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	// TODO(josephperrott): Automate dismiss after timeout.
+	/**
+	 * Service to dispatch Material Design snack bar messages.
+	 */
+	var MdSnackBar = (function () {
+	    function MdSnackBar(_overlay, _live) {
+	        this._overlay = _overlay;
+	        this._live = _live;
+	    }
+	    /**
+	     * Creates and dispatches a snack bar with a custom component for the content, removing any
+	     * currently opened snack bars.
+	     */
+	    MdSnackBar.prototype.openFromComponent = function (component, config) {
+	        var _this = this;
+	        config = _applyConfigDefaults(config);
+	        var overlayRef = this._createOverlay();
+	        var snackBarContainer = this._attachSnackBarContainer(overlayRef, config);
+	        var snackBarRef = this._attachSnackbarContent(component, snackBarContainer, overlayRef);
+	        // When the snackbar is dismissed, clear the reference to it.
+	        snackBarRef.afterDismissed().subscribe(function () {
+	            // Clear the snackbar ref if it hasn't already been replaced by a newer snackbar.
+	            if (_this._snackBarRef == snackBarRef) {
+	                _this._snackBarRef = null;
+	            }
+	        });
+	        // If a snack bar is already in view, dismiss it and enter the new snack bar after exit
+	        // animation is complete.
+	        if (this._snackBarRef) {
+	            this._snackBarRef.afterDismissed().subscribe(function () {
+	                snackBarRef.containerInstance.enter();
+	            });
+	            this._snackBarRef.dismiss();
+	        }
+	        else {
+	            snackBarRef.containerInstance.enter();
+	        }
+	        this._live.announce(config.announcementMessage, config.politeness);
+	        this._snackBarRef = snackBarRef;
+	        return this._snackBarRef;
+	    };
+	    /**
+	     * Opens a snackbar with a message and an optional action.
+	     * @param message The message to show in the snackbar.
+	     * @param action The label for the snackbar action.
+	     * @param config Additional configuration options for the snackbar.
+	     * @returns {MdSnackBarRef<SimpleSnackBar>}
+	     */
+	    MdSnackBar.prototype.open = function (message, action, config) {
+	        if (action === void 0) { action = ''; }
+	        if (config === void 0) { config = {}; }
+	        config.announcementMessage = message;
+	        var simpleSnackBarRef = this.openFromComponent(SimpleSnackBar, config);
+	        simpleSnackBarRef.instance.snackBarRef = simpleSnackBarRef;
+	        simpleSnackBarRef.instance.message = message;
+	        simpleSnackBarRef.instance.action = action;
+	        return simpleSnackBarRef;
+	    };
+	    /**
+	     * Attaches the snack bar container component to the overlay.
+	     */
+	    MdSnackBar.prototype._attachSnackBarContainer = function (overlayRef, config) {
+	        var containerPortal = new ComponentPortal(MdSnackBarContainer, config.viewContainerRef);
+	        var containerRef = overlayRef.attach(containerPortal);
+	        containerRef.instance.snackBarConfig = config;
+	        return containerRef.instance;
+	    };
+	    /**
+	     * Places a new component as the content of the snack bar container.
+	     */
+	    MdSnackBar.prototype._attachSnackbarContent = function (component, container, overlayRef) {
+	        var portal = new ComponentPortal(component);
+	        var contentRef = container.attachComponentPortal(portal);
+	        return new MdSnackBarRef(contentRef.instance, container, overlayRef);
+	    };
+	    /**
+	     * Creates a new overlay and places it in the correct location.
+	     */
+	    MdSnackBar.prototype._createOverlay = function () {
+	        var state = new OverlayState();
+	        state.positionStrategy = this._overlay.position().global()
+	            .fixed()
+	            .centerHorizontally()
+	            .bottom('0');
+	        return this._overlay.create(state);
+	    };
+	    MdSnackBar = __decorate$33([
+	        _angular_core.Injectable(), 
+	        __metadata$33('design:paramtypes', [Overlay, MdLiveAnnouncer])
+	    ], MdSnackBar);
+	    return MdSnackBar;
+	}());
+	/**
+	 * Applies default options to the snackbar config.
+	 * @param config The configuration to which the defaults will be applied.
+	 * @returns The new configuration object with defaults applied.
+	 */
+	function _applyConfigDefaults(config) {
+	    return extendObject(new MdSnackBarConfig(), config);
+	}
+	var MdSnackBarModule = (function () {
+	    function MdSnackBarModule() {
+	    }
+	    MdSnackBarModule.forRoot = function () {
+	        return {
+	            ngModule: MdSnackBarModule,
+	            providers: [MdSnackBar, OVERLAY_PROVIDERS, MdLiveAnnouncer]
+	        };
+	    };
+	    MdSnackBarModule = __decorate$33([
+	        _angular_core.NgModule({
+	            imports: [OverlayModule, PortalModule, _angular_common.CommonModule],
+	            exports: [MdSnackBarContainer],
+	            declarations: [MdSnackBarContainer, SimpleSnackBar],
+	            entryComponents: [MdSnackBarContainer, SimpleSnackBar],
+	        }), 
+	        __metadata$33('design:paramtypes', [])
+	    ], MdSnackBarModule);
+	    return MdSnackBarModule;
+	}());
+
+	var __extends$16 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$37 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$37 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Used to flag tab labels for use with the portal directive */
+	var MdTabLabel = (function (_super) {
+	    __extends$16(MdTabLabel, _super);
+	    function MdTabLabel(templateRef, viewContainerRef) {
+	        _super.call(this, templateRef, viewContainerRef);
+	    }
+	    MdTabLabel = __decorate$37([
+	        _angular_core.Directive({
+	            selector: '[md-tab-label]',
+	        }), 
+	        __metadata$37('design:paramtypes', [_angular_core.TemplateRef, _angular_core.ViewContainerRef])
+	    ], MdTabLabel);
+	    return MdTabLabel;
+	}(TemplatePortalDirective));
+
+	var __decorate$38 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$38 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Used in the `md-tab-group` view to display tab labels */
+	var MdTabLabelWrapper = (function () {
+	    function MdTabLabelWrapper(elementRef) {
+	        this.elementRef = elementRef;
+	    }
+	    /**
+	     * Sets focus on the wrapper element
+	     */
+	    MdTabLabelWrapper.prototype.focus = function () {
+	        this.elementRef.nativeElement.focus();
+	    };
+	    MdTabLabelWrapper = __decorate$38([
+	        _angular_core.Directive({
+	            selector: '[md-tab-label-wrapper]'
+	        }), 
+	        __metadata$38('design:paramtypes', [_angular_core.ElementRef])
+	    ], MdTabLabelWrapper);
+	    return MdTabLabelWrapper;
+	}());
+
+	var __decorate$40 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$40 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** The ink-bar is used to display and animate the line underneath the current active tab label. */
+	var MdInkBar = (function () {
+	    function MdInkBar(_renderer, _elementRef) {
+	        this._renderer = _renderer;
+	        this._elementRef = _elementRef;
+	    }
+	    /**
+	     * Calculates the styles from the provided element in order to align the ink-bar to that element.
+	     * @param element
+	     */
+	    MdInkBar.prototype.alignToElement = function (element) {
+	        this._renderer.setElementStyle(this._elementRef.nativeElement, 'left', this._getLeftPosition(element));
+	        this._renderer.setElementStyle(this._elementRef.nativeElement, 'width', this._getElementWidth(element));
+	    };
+	    /**
+	     * Generates the pixel distance from the left based on the provided element in string format.
+	     * @param element
+	     * @returns {string}
+	     */
+	    MdInkBar.prototype._getLeftPosition = function (element) {
+	        return element ? element.offsetLeft + 'px' : '0';
+	    };
+	    /**
+	     * Generates the pixel width from the provided element in string format.
+	     * @param element
+	     * @returns {string}
+	     */
+	    MdInkBar.prototype._getElementWidth = function (element) {
+	        return element ? element.offsetWidth + 'px' : '0';
+	    };
+	    MdInkBar = __decorate$40([
+	        _angular_core.Directive({
+	            selector: 'md-ink-bar',
+	        }), 
+	        __metadata$40('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef])
+	    ], MdInkBar);
+	    return MdInkBar;
+	}());
+
+	var __decorate$39 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$39 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Navigation component matching the styles of the tab group header.
+	 * Provides anchored navigation with animated ink bar.
+	 */
+	var MdTabNavBar = (function () {
+	    function MdTabNavBar() {
+	    }
+	    /** Animates the ink bar to the position of the active link element. */
+	    MdTabNavBar.prototype.updateActiveLink = function (element) {
+	        this._inkBar.alignToElement(element);
+	    };
+	    __decorate$39([
+	        _angular_core.ViewChild(MdInkBar), 
+	        __metadata$39('design:type', MdInkBar)
+	    ], MdTabNavBar.prototype, "_inkBar", void 0);
+	    MdTabNavBar = __decorate$39([
+	        _angular_core.Component({selector: '[md-tab-nav-bar]',
+	            template: "<ng-content></ng-content> <md-ink-bar></md-ink-bar> ",
+	            styles: ["[md-tab-nav-bar] { overflow: hidden; position: relative; display: flex; flex-direction: row; flex-shrink: 0; } [md-tab-link] { line-height: 48px; height: 48px; padding: 0 12px; font-size: 14px; font-family: Roboto, \"Helvetica Neue\", sans-serif; font-weight: 500; cursor: pointer; box-sizing: border-box; color: currentColor; opacity: 0.6; min-width: 160px; text-align: center; text-decoration: none; } [md-tab-link]:focus { outline: none; opacity: 1; } @media (max-width: 600px) { [md-tab-link] { min-width: 72px; } } md-ink-bar { position: absolute; bottom: 0; height: 2px; transition: 350ms ease-out; } /*# sourceMappingURL=tab-nav-bar.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }), 
+	        __metadata$39('design:paramtypes', [])
+	    ], MdTabNavBar);
+	    return MdTabNavBar;
+	}());
+	var MdTabLink = (function () {
+	    function MdTabLink(_mdTabNavBar, _element) {
+	        this._mdTabNavBar = _mdTabNavBar;
+	        this._element = _element;
+	        this._isActive = false;
+	    }
+	    Object.defineProperty(MdTabLink.prototype, "active", {
+	        get: function () {
+	            return this._isActive;
+	        },
+	        set: function (value) {
+	            this._isActive = value;
+	            if (value) {
+	                this._mdTabNavBar.updateActiveLink(this._element.nativeElement);
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    __decorate$39([
+	        _angular_core.Input(), 
+	        __metadata$39('design:type', Boolean)
+	    ], MdTabLink.prototype, "active", null);
+	    MdTabLink = __decorate$39([
+	        _angular_core.Directive({
+	            selector: '[md-tab-link]',
+	        }), 
+	        __metadata$39('design:paramtypes', [MdTabNavBar, _angular_core.ElementRef])
+	    ], MdTabLink);
+	    return MdTabLink;
+	}());
+
+	var __decorate$36 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$36 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Used to generate unique ID's for each tab component */
+	var nextId$2 = 0;
+	/** A simple change event emitted on focus or selection changes. */
+	var MdTabChangeEvent = (function () {
+	    function MdTabChangeEvent() {
+	    }
+	    return MdTabChangeEvent;
+	}());
+	var MdTab = (function () {
+	    function MdTab(_viewContainerRef) {
+	        this._viewContainerRef = _viewContainerRef;
+	        /** The plain text label for the tab, used when there is no template label. */
+	        this.textLabel = '';
+	        this._contentPortal = null;
+	        this._disabled = false;
+	    }
+	    MdTab.prototype.ngOnInit = function () {
+	        this._contentPortal = new TemplatePortal(this._content, this._viewContainerRef);
+	    };
+	    Object.defineProperty(MdTab.prototype, "disabled", {
+	        get: function () { return this._disabled; },
+	        set: function (value) { this._disabled = coerceBooleanProperty(value); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdTab.prototype, "content", {
+	        get: function () {
+	            return this._contentPortal;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    __decorate$36([
+	        _angular_core.ContentChild(MdTabLabel), 
+	        __metadata$36('design:type', MdTabLabel)
+	    ], MdTab.prototype, "templateLabel", void 0);
+	    __decorate$36([
+	        _angular_core.ViewChild(_angular_core.TemplateRef), 
+	        __metadata$36('design:type', _angular_core.TemplateRef)
+	    ], MdTab.prototype, "_content", void 0);
+	    __decorate$36([
+	        _angular_core.Input('label'), 
+	        __metadata$36('design:type', String)
+	    ], MdTab.prototype, "textLabel", void 0);
+	    __decorate$36([
+	        _angular_core.Input(), 
+	        __metadata$36('design:type', Boolean), 
+	        __metadata$36('design:paramtypes', [Boolean])
+	    ], MdTab.prototype, "disabled", null);
+	    MdTab = __decorate$36([
+	        _angular_core.Component({selector: 'md-tab',
+	            template: "<!-- Create a template for the content of the <md-tab> so that we can grab a reference to this TemplateRef and use it in a Portal to render the tab content in the appropriate place in the tab-group. --> <template><ng-content></ng-content></template> ",
+	        }), 
+	        __metadata$36('design:paramtypes', [_angular_core.ViewContainerRef])
+	    ], MdTab);
+	    return MdTab;
+	}());
+	/**
+	 * Material design tab-group component.  Supports basic tab pairs (label + content) and includes
+	 * animated ink-bar, keyboard navigation, and screen reader.
+	 * See: https://www.google.com/design/spec/components/tabs.html
+	 */
+	var MdTabGroup = (function () {
+	    function MdTabGroup(_zone) {
+	        this._zone = _zone;
+	        this._isInitialized = false;
+	        this._selectedIndex = 0;
+	        this._onFocusChange = new _angular_core.EventEmitter();
+	        this._onSelectChange = new _angular_core.EventEmitter();
+	        this._focusIndex = 0;
+	        this._groupId = nextId$2++;
+	    }
+	    Object.defineProperty(MdTabGroup.prototype, "selectedIndex", {
+	        get: function () {
+	            return this._selectedIndex;
+	        },
+	        set: function (value) {
+	            if (value != this._selectedIndex && this.isValidIndex(value)) {
+	                this._selectedIndex = value;
+	                if (this._isInitialized) {
+	                    this._onSelectChange.emit(this._createChangeEvent(value));
+	                }
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Determines if an index is valid.  If the tabs are not ready yet, we assume that the user is
+	     * providing a valid index and return true.
+	     */
+	    MdTabGroup.prototype.isValidIndex = function (index) {
+	        if (this._tabs) {
+	            var tab = this._tabs.toArray()[index];
+	            return tab && !tab.disabled;
+	        }
+	        else {
+	            return true;
+	        }
+	    };
+	    Object.defineProperty(MdTabGroup.prototype, "selectedIndexChange", {
+	        /** Output to enable support for two-way binding on `selectedIndex`. */
+	        get: function () {
+	            return this.selectChange.map(function (event) { return event.index; });
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdTabGroup.prototype, "focusChange", {
+	        get: function () {
+	            return this._onFocusChange.asObservable();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdTabGroup.prototype, "selectChange", {
+	        get: function () {
+	            return this._onSelectChange.asObservable();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Waits one frame for the view to update, then updates the ink bar
+	     * Note: This must be run outside of the zone or it will create an infinite change detection loop
+	     * TODO: internal
+	     */
+	    MdTabGroup.prototype.ngAfterViewChecked = function () {
+	        var _this = this;
+	        this._zone.runOutsideAngular(function () {
+	            window.requestAnimationFrame(function () {
+	                _this._updateInkBar();
+	            });
+	        });
+	        this._isInitialized = true;
+	    };
+	    /** Tells the ink-bar to align itself to the current label wrapper */
+	    MdTabGroup.prototype._updateInkBar = function () {
+	        this._inkBar.toArray()[0].alignToElement(this._currentLabelWrapper);
+	    };
+	    Object.defineProperty(MdTabGroup.prototype, "_currentLabelWrapper", {
+	        /**
+	         * Reference to the current label wrapper; defaults to null for initial render before the
+	         * ViewChildren references are ready.
+	         */
+	        get: function () {
+	            return this._labelWrappers && this._labelWrappers.length
+	                ? this._labelWrappers.toArray()[this.selectedIndex].elementRef.nativeElement
+	                : null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdTabGroup.prototype, "focusIndex", {
+	        /** Tracks which element has focus; used for keyboard navigation */
+	        get: function () {
+	            return this._focusIndex;
+	        },
+	        /** When the focus index is set, we must manually send focus to the correct label */
+	        set: function (value) {
+	            if (this.isValidIndex(value)) {
+	                this._focusIndex = value;
+	                if (this._isInitialized) {
+	                    this._onFocusChange.emit(this._createChangeEvent(value));
+	                }
+	                if (this._labelWrappers && this._labelWrappers.length) {
+	                    this._labelWrappers.toArray()[value].focus();
+	                }
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdTabGroup.prototype._createChangeEvent = function (index) {
+	        var event = new MdTabChangeEvent;
+	        event.index = index;
+	        if (this._tabs && this._tabs.length) {
+	            event.tab = this._tabs.toArray()[index];
+	        }
+	        return event;
+	    };
+	    /** Returns a unique id for each tab label element */
+	    MdTabGroup.prototype._getTabLabelId = function (i) {
+	        return "md-tab-label-" + this._groupId + "-" + i;
+	    };
+	    /** Returns a unique id for each tab content element */
+	    MdTabGroup.prototype._getTabContentId = function (i) {
+	        return "md-tab-content-" + this._groupId + "-" + i;
+	    };
+	    MdTabGroup.prototype.handleKeydown = function (event) {
+	        switch (event.keyCode) {
+	            case RIGHT_ARROW:
+	                this.focusNextTab();
+	                break;
+	            case LEFT_ARROW:
+	                this.focusPreviousTab();
+	                break;
+	            case ENTER:
+	                this.selectedIndex = this.focusIndex;
+	                break;
+	        }
+	    };
+	    /**
+	     * Moves the focus left or right depending on the offset provided.  Valid offsets are 1 and -1.
+	     */
+	    MdTabGroup.prototype.moveFocus = function (offset) {
+	        if (this._labelWrappers) {
+	            var tabs = this._tabs.toArray();
+	            for (var i = this.focusIndex + offset; i < tabs.length && i >= 0; i += offset) {
+	                if (this.isValidIndex(i)) {
+	                    this.focusIndex = i;
+	                    return;
+	                }
+	            }
+	        }
+	    };
+	    /** Increment the focus index by 1 until a valid tab is found. */
+	    MdTabGroup.prototype.focusNextTab = function () {
+	        this.moveFocus(1);
+	    };
+	    /** Decrement the focus index by 1 until a valid tab is found. */
+	    MdTabGroup.prototype.focusPreviousTab = function () {
+	        this.moveFocus(-1);
+	    };
+	    __decorate$36([
+	        _angular_core.ContentChildren(MdTab), 
+	        __metadata$36('design:type', _angular_core.QueryList)
+	    ], MdTabGroup.prototype, "_tabs", void 0);
+	    __decorate$36([
+	        _angular_core.ViewChildren(MdTabLabelWrapper), 
+	        __metadata$36('design:type', _angular_core.QueryList)
+	    ], MdTabGroup.prototype, "_labelWrappers", void 0);
+	    __decorate$36([
+	        _angular_core.ViewChildren(MdInkBar), 
+	        __metadata$36('design:type', _angular_core.QueryList)
+	    ], MdTabGroup.prototype, "_inkBar", void 0);
+	    __decorate$36([
+	        _angular_core.Input(), 
+	        __metadata$36('design:type', Number), 
+	        __metadata$36('design:paramtypes', [Number])
+	    ], MdTabGroup.prototype, "selectedIndex", null);
+	    __decorate$36([
+	        _angular_core.Output(), 
+	        __metadata$36('design:type', rxjs_Observable.Observable)
+	    ], MdTabGroup.prototype, "selectedIndexChange", null);
+	    __decorate$36([
+	        _angular_core.Output(), 
+	        __metadata$36('design:type', rxjs_Observable.Observable)
+	    ], MdTabGroup.prototype, "focusChange", null);
+	    __decorate$36([
+	        _angular_core.Output(), 
+	        __metadata$36('design:type', rxjs_Observable.Observable)
+	    ], MdTabGroup.prototype, "selectChange", null);
+	    MdTabGroup = __decorate$36([
+	        _angular_core.Component({selector: 'md-tab-group',
+	            template: "<div class=\"md-tab-header\" role=\"tablist\" (keydown)=\"handleKeydown($event)\"> <div class=\"md-tab-label\" role=\"tab\" md-tab-label-wrapper *ngFor=\"let tab of _tabs; let i = index\" [id]=\"_getTabLabelId(i)\" [tabIndex]=\"selectedIndex == i ? 0 : -1\" [attr.aria-controls]=\"_getTabContentId(i)\" [attr.aria-selected]=\"selectedIndex == i\" [class.md-tab-active]=\"selectedIndex == i\" [class.md-tab-disabled]=\"tab.disabled\" (click)=\"focusIndex = selectedIndex = i\"> <!-- If there is a label template, use it. --> <template [ngIf]=\"tab.templateLabel\"> <template [portalHost]=\"tab.templateLabel\"></template> </template> <!-- If there is not a label template, fall back to the text label. --> <template [ngIf]=\"!tab.templateLabel\">{{tab.textLabel}}</template> </div> <md-ink-bar></md-ink-bar> </div> <div class=\"md-tab-body-wrapper\"> <div class=\"md-tab-body\" role=\"tabpanel\" *ngFor=\"let tab of _tabs; let i = index\" [id]=\"_getTabContentId(i)\" [class.md-tab-active]=\"selectedIndex == i\" [attr.aria-labelledby]=\"_getTabLabelId(i)\"> <template [ngIf]=\"selectedIndex == i\"> <template [portalHost]=\"tab.content\"></template> </template> </div> </div> ",
+	            styles: [":host { display: flex; flex-direction: column; font-family: Roboto, \"Helvetica Neue\", sans-serif; } .md-tab-header { overflow: hidden; position: relative; display: flex; flex-direction: row; flex-shrink: 0; } .md-tab-label { line-height: 48px; height: 48px; padding: 0 12px; font-size: 14px; font-family: Roboto, \"Helvetica Neue\", sans-serif; font-weight: 500; cursor: pointer; box-sizing: border-box; color: currentColor; opacity: 0.6; min-width: 160px; text-align: center; } .md-tab-label:focus { outline: none; opacity: 1; } @media (max-width: 600px) { .md-tab-label { min-width: 72px; } } md-ink-bar { position: absolute; bottom: 0; height: 2px; transition: 350ms ease-out; } .md-tab-body-wrapper { position: relative; overflow: hidden; flex-grow: 1; display: flex; } .md-tab-body { display: none; overflow: auto; box-sizing: border-box; flex-grow: 1; flex-shrink: 1; } .md-tab-body.md-tab-active { display: block; } .md-tab-disabled { cursor: default; pointer-events: none; } /*# sourceMappingURL=tab-group.css.map */ "],
+	        }), 
+	        __metadata$36('design:paramtypes', [_angular_core.NgZone])
+	    ], MdTabGroup);
+	    return MdTabGroup;
+	}());
+	var MdTabsModule = (function () {
+	    function MdTabsModule() {
+	    }
+	    MdTabsModule.forRoot = function () {
+	        return {
+	            ngModule: MdTabsModule,
+	            providers: []
+	        };
+	    };
+	    MdTabsModule = __decorate$36([
+	        _angular_core.NgModule({
+	            imports: [_angular_common.CommonModule, PortalModule],
+	            // Don't export MdInkBar or MdTabLabelWrapper, as they are internal implementation details.
+	            exports: [MdTabGroup, MdTabLabel, MdTab, MdTabNavBar, MdTabLink],
+	            declarations: [MdTabGroup, MdTabLabel, MdTab, MdInkBar, MdTabLabelWrapper,
+	                MdTabNavBar, MdTabLink],
+	        }), 
+	        __metadata$36('design:paramtypes', [])
+	    ], MdTabsModule);
+	    return MdTabsModule;
+	}());
+
+	var __decorate$41 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$41 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MdToolbarRow = (function () {
+	    function MdToolbarRow() {
+	    }
+	    MdToolbarRow = __decorate$41([
+	        _angular_core.Directive({
+	            selector: 'md-toolbar-row'
+	        }), 
+	        __metadata$41('design:paramtypes', [])
+	    ], MdToolbarRow);
+	    return MdToolbarRow;
+	}());
+	var MdToolbar = (function () {
+	    function MdToolbar(elementRef, renderer) {
+	        this.elementRef = elementRef;
+	        this.renderer = renderer;
+	    }
+	    Object.defineProperty(MdToolbar.prototype, "color", {
+	        get: function () {
+	            return this._color;
+	        },
+	        set: function (value) {
+	            this._updateColor(value);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdToolbar.prototype._updateColor = function (newColor) {
+	        this._setElementColor(this._color, false);
+	        this._setElementColor(newColor, true);
+	        this._color = newColor;
+	    };
+	    MdToolbar.prototype._setElementColor = function (color, isAdd) {
+	        if (color != null && color != '') {
+	            this.renderer.setElementClass(this.elementRef.nativeElement, "md-" + color, isAdd);
+	        }
+	    };
+	    __decorate$41([
+	        _angular_core.Input(), 
+	        __metadata$41('design:type', String)
+	    ], MdToolbar.prototype, "color", null);
+	    MdToolbar = __decorate$41([
+	        _angular_core.Component({selector: 'md-toolbar',
+	            template: "<div class=\"md-toolbar-layout\"> <md-toolbar-row> <ng-content></ng-content> </md-toolbar-row> <ng-content select=\"md-toolbar-row\"></ng-content> </div>",
+	            styles: ["md-toolbar { display: flex; box-sizing: border-box; width: 100%; min-height: 64px; font-size: 20px; font-weight: 400; font-family: Roboto, \"Helvetica Neue\", sans-serif; padding: 0 16px; flex-direction: column; } md-toolbar md-toolbar-row { display: flex; box-sizing: border-box; width: 100%; height: 64px; flex-direction: row; align-items: center; } /*# sourceMappingURL=toolbar.css.map */ "],
+	            changeDetection: _angular_core.ChangeDetectionStrategy.OnPush,
+	            encapsulation: _angular_core.ViewEncapsulation.None
+	        }), 
+	        __metadata$41('design:paramtypes', [_angular_core.ElementRef, _angular_core.Renderer])
+	    ], MdToolbar);
+	    return MdToolbar;
+	}());
+	var MdToolbarModule = (function () {
+	    function MdToolbarModule() {
+	    }
+	    MdToolbarModule.forRoot = function () {
+	        return {
+	            ngModule: MdToolbarModule,
+	            providers: []
+	        };
+	    };
+	    MdToolbarModule = __decorate$41([
+	        _angular_core.NgModule({
+	            exports: [MdToolbar, MdToolbarRow],
+	            declarations: [MdToolbar, MdToolbarRow],
+	        }), 
+	        __metadata$41('design:paramtypes', [])
+	    ], MdToolbarModule);
+	    return MdToolbarModule;
+	}());
+
+	var __decorate$42 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$42 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/** Time in ms to delay before changing the tooltip visibility to hidden */
+	var TOOLTIP_HIDE_DELAY = 1500;
+	/**
+	 * Directive that attaches a material design tooltip to the host element. Animates the showing and
+	 * hiding of a tooltip provided position (defaults to below the element).
+	 *
+	 * https://material.google.com/components/tooltips.html
+	 */
+	var MdTooltip = (function () {
+	    function MdTooltip(_overlay, _elementRef, _viewContainerRef, _ngZone) {
+	        this._overlay = _overlay;
+	        this._elementRef = _elementRef;
+	        this._viewContainerRef = _viewContainerRef;
+	        this._ngZone = _ngZone;
+	        /** Allows the user to define the position of the tooltip relative to the parent element */
+	        this._position = 'below';
+	    }
+	    Object.defineProperty(MdTooltip.prototype, "position", {
+	        get: function () {
+	            return this._position;
+	        },
+	        set: function (value) {
+	            if (value !== this._position) {
+	                this._position = value;
+	                // TODO(andrewjs): When the overlay's position can be dynamically changed, do not destroy
+	                // the tooltip.
+	                if (this._tooltipInstance) {
+	                    this._disposeTooltip();
+	                }
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdTooltip.prototype, "message", {
+	        get: function () {
+	            return this._message;
+	        },
+	        set: function (value) {
+	            this._message = value;
+	            if (this._tooltipInstance) {
+	                this._setTooltipMessage(this._message);
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Dispose the tooltip when destroyed */
+	    MdTooltip.prototype.ngOnDestroy = function () {
+	        if (this._tooltipInstance) {
+	            this._disposeTooltip();
+	        }
+	    };
+	    /** Shows the tooltip */
+	    MdTooltip.prototype.show = function () {
+	        if (!this._tooltipInstance) {
+	            this._createTooltip();
+	        }
+	        this._setTooltipMessage(this._message);
+	        this._tooltipInstance.show(this._position);
+	    };
+	    /**
+	     * Create the overlay config and position strategy
+	     * Hides the tooltip after the provided delay in ms. Defaults the delay to the material design
+	     * prescribed delay time
+	     */
+	    MdTooltip.prototype.hide = function (delay) {
+	        if (delay === void 0) { delay = TOOLTIP_HIDE_DELAY; }
+	        if (this._tooltipInstance) {
+	            this._tooltipInstance.hide(delay);
+	        }
+	    };
+	    /** Shows/hides the tooltip */
+	    MdTooltip.prototype.toggle = function () {
+	        this._isTooltipVisible() ? this.hide() : this.show();
+	    };
+	    /** Returns true if the tooltip is currently visible to the user */
+	    MdTooltip.prototype._isTooltipVisible = function () {
+	        return this._tooltipInstance && this._tooltipInstance.isVisible();
+	    };
+	    /** Create the tooltip to display */
+	    MdTooltip.prototype._createTooltip = function () {
+	        var _this = this;
+	        this._createOverlay();
+	        var portal = new ComponentPortal(TooltipComponent, this._viewContainerRef);
+	        this._tooltipInstance = this._overlayRef.attach(portal).instance;
+	        // Dispose the overlay when finished the shown tooltip.
+	        this._tooltipInstance.afterHidden().subscribe(function () {
+	            _this._disposeTooltip();
+	        });
+	    };
+	    /** Create the overlay config and position strategy */
+	    MdTooltip.prototype._createOverlay = function () {
+	        var origin = this._getOrigin();
+	        var position = this._getOverlayPosition();
+	        var strategy = this._overlay.position().connectedTo(this._elementRef, origin, position);
+	        var config = new OverlayState();
+	        config.positionStrategy = strategy;
+	        this._overlayRef = this._overlay.create(config);
+	    };
+	    /** Disposes the current tooltip and the overlay it is attached to */
+	    MdTooltip.prototype._disposeTooltip = function () {
+	        this._overlayRef.dispose();
+	        this._overlayRef = null;
+	        this._tooltipInstance = null;
+	    };
+	    /** Returns the origin position based on the user's position preference */
+	    MdTooltip.prototype._getOrigin = function () {
+	        switch (this.position) {
+	            case 'before': return { originX: 'start', originY: 'center' };
+	            case 'after': return { originX: 'end', originY: 'center' };
+	            case 'above': return { originX: 'center', originY: 'top' };
+	            case 'below': return { originX: 'center', originY: 'bottom' };
+	        }
+	    };
+	    /** Returns the overlay position based on the user's preference */
+	    MdTooltip.prototype._getOverlayPosition = function () {
+	        switch (this.position) {
+	            case 'before': return { overlayX: 'end', overlayY: 'center' };
+	            case 'after': return { overlayX: 'start', overlayY: 'center' };
+	            case 'above': return { overlayX: 'center', overlayY: 'bottom' };
+	            case 'below': return { overlayX: 'center', overlayY: 'top' };
+	        }
+	    };
+	    /** Updates the tooltip message and repositions the overlay according to the new message length */
+	    MdTooltip.prototype._setTooltipMessage = function (message) {
+	        var _this = this;
+	        // Must wait for the message to be painted to the tooltip so that the overlay can properly
+	        // calculate the correct positioning based on the size of the text.
+	        this._tooltipInstance.message = message;
+	        this._ngZone.onMicrotaskEmpty.first().subscribe(function () {
+	            if (_this._tooltipInstance) {
+	                _this._overlayRef.updatePosition();
+	            }
+	        });
+	    };
+	    __decorate$42([
+	        _angular_core.Input('tooltip-position'), 
+	        __metadata$42('design:type', String)
+	    ], MdTooltip.prototype, "position", null);
+	    __decorate$42([
+	        _angular_core.Input('md-tooltip'), 
+	        __metadata$42('design:type', Object)
+	    ], MdTooltip.prototype, "message", null);
+	    MdTooltip = __decorate$42([
+	        _angular_core.Directive({
+	            selector: '[md-tooltip]',
+	            host: {
+	                '(mouseenter)': 'show()',
+	                '(mouseleave)': 'hide()',
+	            },
+	            exportAs: 'mdTooltip',
+	        }), 
+	        __metadata$42('design:paramtypes', [Overlay, _angular_core.ElementRef, _angular_core.ViewContainerRef, _angular_core.NgZone])
+	    ], MdTooltip);
+	    return MdTooltip;
+	}());
+	var TooltipComponent = (function () {
+	    function TooltipComponent() {
+	        /** Whether interactions on the page should close the tooltip */
+	        this._closeOnInteraction = false;
+	        /** The transform origin used in the animation for showing and hiding the tooltip */
+	        this._transformOrigin = 'bottom';
+	        /** Subject for notifying that the tooltip has been hidden from the view */
+	        this._onHide = new rxjs_Subject.Subject();
+	    }
+	    /** Shows the tooltip with an animation originating from the provided origin */
+	    TooltipComponent.prototype.show = function (position) {
+	        var _this = this;
+	        this._closeOnInteraction = false;
+	        this._visibility = 'visible';
+	        this._setTransformOrigin(position);
+	        // Cancel the delayed hide if it is scheduled
+	        if (this._hideTimeoutId) {
+	            clearTimeout(this._hideTimeoutId);
+	        }
+	        // If this was set to true immediately, then the body click would trigger interaction and
+	        // close the tooltip right after it was displayed.
+	        setTimeout(function () { _this._closeOnInteraction = true; }, 0);
+	    };
+	    /** Begins the animation to hide the tooltip after the provided delay in ms */
+	    TooltipComponent.prototype.hide = function (delay) {
+	        var _this = this;
+	        this._hideTimeoutId = setTimeout(function () {
+	            _this._visibility = 'hidden';
+	            _this._closeOnInteraction = false;
+	        }, delay);
+	    };
+	    /** Returns an observable that notifies when the tooltip has been hidden from view */
+	    TooltipComponent.prototype.afterHidden = function () {
+	        return this._onHide.asObservable();
+	    };
+	    /** Whether the tooltip is being displayed */
+	    TooltipComponent.prototype.isVisible = function () {
+	        return this._visibility === 'visible';
+	    };
+	    /** Sets the tooltip transform origin according to the tooltip position */
+	    TooltipComponent.prototype._setTransformOrigin = function (value) {
+	        switch (value) {
+	            case 'before':
+	                this._transformOrigin = 'right';
+	                break;
+	            case 'after':
+	                this._transformOrigin = 'left';
+	                break;
+	            case 'above':
+	                this._transformOrigin = 'bottom';
+	                break;
+	            case 'below':
+	                this._transformOrigin = 'top';
+	                break;
+	        }
+	    };
+	    TooltipComponent.prototype._afterVisibilityAnimation = function (e) {
+	        if (e.toState === 'hidden' && !this.isVisible()) {
+	            this._onHide.next();
+	        }
+	    };
+	    /**
+	     * Interactions on the HTML body should close the tooltip immediately as defined in the
+	     * material design spec.
+	     * https://material.google.com/components/tooltips.html#tooltips-interaction
+	     */
+	    TooltipComponent.prototype._handleBodyInteraction = function () {
+	        if (this._closeOnInteraction) {
+	            this.hide(0);
+	        }
+	    };
+	    TooltipComponent = __decorate$42([
+	        _angular_core.Component({selector: 'md-tooltip-component',
+	            template: "<div class=\"md-tooltip\" [style.transform-origin]=\"_transformOrigin\" [@state]=\"_visibility\" (@state.done)=\"this._afterVisibilityAnimation($event)\"> {{message}} </div>",
+	            styles: [":host { pointer-events: none; } .md-tooltip { color: white; padding: 0 8px; border-radius: 2px; font-family: Roboto, \"Helvetica Neue\", sans-serif; font-size: 10px; margin: 14px; height: 22px; line-height: 22px; } /*# sourceMappingURL=tooltip.css.map */ "],
+	            animations: [
+	                _angular_core.trigger('state', [
+	                    _angular_core.state('void', _angular_core.style({ transform: 'scale(0)' })),
+	                    _angular_core.state('visible', _angular_core.style({ transform: 'scale(1)' })),
+	                    _angular_core.state('hidden', _angular_core.style({ transform: 'scale(0)' })),
+	                    _angular_core.transition('* => visible', _angular_core.animate('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
+	                    _angular_core.transition('* => hidden', _angular_core.animate('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
+	                ])
+	            ],
+	            host: {
+	                '(body:click)': 'this._handleBodyInteraction()'
+	            }
+	        }), 
+	        __metadata$42('design:paramtypes', [])
+	    ], TooltipComponent);
+	    return TooltipComponent;
+	}());
+	var MdTooltipModule = (function () {
+	    function MdTooltipModule() {
+	    }
+	    MdTooltipModule.forRoot = function () {
+	        return {
+	            ngModule: MdTooltipModule,
+	            providers: OVERLAY_PROVIDERS,
+	        };
+	    };
+	    MdTooltipModule = __decorate$42([
+	        _angular_core.NgModule({
+	            imports: [OverlayModule],
+	            exports: [MdTooltip, TooltipComponent],
+	            declarations: [MdTooltip, TooltipComponent],
+	            entryComponents: [TooltipComponent],
+	        }), 
+	        __metadata$42('design:paramtypes', [])
+	    ], MdTooltipModule);
+	    return MdTooltipModule;
+	}());
+
+	var __extends$17 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * Exception thrown when menu trigger doesn't have a valid md-menu instance
+	 */
+	var MdMenuMissingError = (function (_super) {
+	    __extends$17(MdMenuMissingError, _super);
+	    function MdMenuMissingError() {
+	        _super.call(this, "md-menu-trigger: must pass in an md-menu instance.\n\n    Example:\n      <md-menu #menu=\"mdMenu\"></md-menu>\n      <button [md-menu-trigger-for]=\"menu\"></button>\n    ");
+	    }
+	    return MdMenuMissingError;
+	}(MdError));
+	/**
+	 * Exception thrown when menu's x-position value isn't valid.
+	 * In other words, it doesn't match 'before' or 'after'.
+	 */
+	var MdMenuInvalidPositionX = (function (_super) {
+	    __extends$17(MdMenuInvalidPositionX, _super);
+	    function MdMenuInvalidPositionX() {
+	        _super.call(this, "x-position value must be either 'before' or after'.\n      Example: <md-menu x-position=\"before\" #menu=\"mdMenu\"></md-menu>\n    ");
+	    }
+	    return MdMenuInvalidPositionX;
+	}(MdError));
+	/**
+	 * Exception thrown when menu's y-position value isn't valid.
+	 * In other words, it doesn't match 'above' or 'below'.
+	 */
+	var MdMenuInvalidPositionY = (function (_super) {
+	    __extends$17(MdMenuInvalidPositionY, _super);
+	    function MdMenuInvalidPositionY() {
+	        _super.call(this, "y-position value must be either 'above' or below'.\n      Example: <md-menu y-position=\"above\" #menu=\"mdMenu\"></md-menu>\n    ");
+	    }
+	    return MdMenuInvalidPositionY;
+	}(MdError));
+
+	var __decorate$45 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$45 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * This directive is intended to be used inside an md-menu tag.
+	 * It exists mostly to set the role attribute.
+	 */
+	var MdMenuItem = (function () {
+	    function MdMenuItem(_renderer, _elementRef) {
+	        this._renderer = _renderer;
+	        this._elementRef = _elementRef;
+	    }
+	    MdMenuItem.prototype.focus = function () {
+	        this._renderer.invokeElementMethod(this._elementRef.nativeElement, 'focus');
+	    };
+	    Object.defineProperty(MdMenuItem.prototype, "disabled", {
+	        // this is necessary to support anchors
+	        get: function () {
+	            return this._disabled;
+	        },
+	        set: function (value) {
+	            this._disabled = (value === false || value === undefined) ? null : true;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdMenuItem.prototype, "isAriaDisabled", {
+	        get: function () {
+	            return String(!!this.disabled);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(MdMenuItem.prototype, "_tabindex", {
+	        get: function () {
+	            return this.disabled ? '-1' : '0';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdMenuItem.prototype._getHostElement = function () {
+	        return this._elementRef.nativeElement;
+	    };
+	    MdMenuItem.prototype._checkDisabled = function (event) {
+	        if (this.disabled) {
+	            event.preventDefault();
+	            event.stopPropagation();
+	        }
+	    };
+	    __decorate$45([
+	        _angular_core.HostBinding('attr.disabled'),
+	        _angular_core.Input(), 
+	        __metadata$45('design:type', Boolean)
+	    ], MdMenuItem.prototype, "disabled", null);
+	    __decorate$45([
+	        _angular_core.HostBinding('attr.aria-disabled'), 
+	        __metadata$45('design:type', String)
+	    ], MdMenuItem.prototype, "isAriaDisabled", null);
+	    MdMenuItem = __decorate$45([
+	        _angular_core.Component({selector: '[md-menu-item]',
+	            host: {
+	                'role': 'menuitem',
+	                '(click)': '_checkDisabled($event)',
+	                '[attr.tabindex]': '_tabindex'
+	            },
+	            template: "<ng-content></ng-content> <div class=\"md-menu-ripple\" *ngIf=\"!disabled\" md-ripple md-ripple-background-color=\"rgba(0,0,0,0)\" [md-ripple-trigger]=\"_getHostElement()\"> </div> ",
+	            exportAs: 'mdMenuItem'
+	        }), 
+	        __metadata$45('design:paramtypes', [_angular_core.Renderer, _angular_core.ElementRef])
+	    ], MdMenuItem);
+	    return MdMenuItem;
+	}());
+
+	/**
+	 * This class manages keyboard events for selectable lists. If you pass it a query list
+	 * of focusable items, it will focus the correct item when arrow events occur.
+	 */
+	var ListKeyManager = (function () {
+	    function ListKeyManager(_items) {
+	        this._items = _items;
+	        this._tabOut = new rxjs_Subject.Subject();
+	    }
+	    Object.defineProperty(ListKeyManager.prototype, "tabOut", {
+	        /**
+	         * Observable that emits any time the TAB key is pressed, so components can react
+	         * when focus is shifted off of the list.
+	         */
+	        get: function () {
+	            return this._tabOut.asObservable();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(ListKeyManager.prototype, "focusedItemIndex", {
+	        get: function () {
+	            return this._focusedItemIndex;
+	        },
+	        set: function (value) {
+	            this._focusedItemIndex = value;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    ListKeyManager.prototype.onKeydown = function (event) {
+	        if (event.keyCode === DOWN_ARROW) {
+	            this._focusNextItem();
+	        }
+	        else if (event.keyCode === UP_ARROW) {
+	            this._focusPreviousItem();
+	        }
+	        else if (event.keyCode === TAB) {
+	            this._tabOut.next(null);
+	        }
+	    };
+	    ListKeyManager.prototype._focusNextItem = function () {
+	        var items = this._items.toArray();
+	        this._updateFocusedItemIndex(1, items);
+	        items[this._focusedItemIndex].focus();
+	    };
+	    ListKeyManager.prototype._focusPreviousItem = function () {
+	        var items = this._items.toArray();
+	        this._updateFocusedItemIndex(-1, items);
+	        items[this._focusedItemIndex].focus();
+	    };
+	    /**
+	     * This method sets focus to the correct item, given a list of items and the delta
+	     * between the currently focused item and the new item to be focused. It will
+	     * continue to move down the list until it finds an item that is not disabled, and it will wrap
+	     * if it encounters either end of the list.
+	     *
+	     * @param delta the desired change in focus index
+	     */
+	    ListKeyManager.prototype._updateFocusedItemIndex = function (delta, items) {
+	        // when focus would leave menu, wrap to beginning or end
+	        this._focusedItemIndex =
+	            (this._focusedItemIndex + delta + items.length) % items.length;
+	        // skip all disabled menu items recursively until an active one
+	        // is reached or the menu closes for overreaching bounds
+	        while (items[this._focusedItemIndex].disabled) {
+	            this._updateFocusedItemIndex(delta, items);
+	        }
+	    };
+	    return ListKeyManager;
+	}());
+
+	/**
+	 * Below are all the animations for the md-menu component.
+	 * Animation duration and timing values are based on Material 1.
+	 */
+	/**
+	 * This animation controls the menu panel's entry and exit from the page.
+	 *
+	 * When the menu panel is added to the DOM, it scales in and fades in its border.
+	 *
+	 * When the menu panel is removed from the DOM, it simply fades out after a brief
+	 * delay to display the ripple.
+	 *
+	 * TODO(kara): switch to :enter and :leave once Mobile Safari is sorted out.
+	 */
+	var transformMenu = _angular_core.trigger('transformMenu', [
+	    _angular_core.state('showing', _angular_core.style({
+	        opacity: 1,
+	        transform: "scale(1)"
+	    })),
+	    _angular_core.transition('void => *', [
+	        _angular_core.style({
+	            opacity: 0,
+	            transform: "scale(0)"
+	        }),
+	        _angular_core.animate("200ms cubic-bezier(0.25, 0.8, 0.25, 1)")
+	    ]),
+	    _angular_core.transition('* => void', [
+	        _angular_core.animate('50ms 100ms linear', _angular_core.style({ opacity: 0 }))
+	    ])
+	]);
+	/**
+	 * This animation fades in the background color and content of the menu panel
+	 * after its containing element is scaled in.
+	 */
+	var fadeInItems = _angular_core.trigger('fadeInItems', [
+	    _angular_core.state('showing', _angular_core.style({ opacity: 1 })),
+	    _angular_core.transition('void => *', [
+	        _angular_core.style({ opacity: 0 }),
+	        _angular_core.animate("200ms 100ms cubic-bezier(0.55, 0, 0.55, 0.2)")
+	    ])
+	]);
+
+	// TODO(kara): prevent-close functionality
+	var __decorate$44 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$44 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param$6 = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	var MdMenu = (function () {
+	    function MdMenu(posX, posY) {
+	        /** Config object to be passed into the menu's ngClass */
+	        this._classList = {};
+	        this.positionX = 'after';
+	        this.positionY = 'below';
+	        this.close = new _angular_core.EventEmitter();
+	        if (posX) {
+	            this._setPositionX(posX);
+	        }
+	        if (posY) {
+	            this._setPositionY(posY);
+	        }
+	        this._setPositionClasses();
+	    }
+	    // TODO: internal
+	    MdMenu.prototype.ngAfterContentInit = function () {
+	        var _this = this;
+	        this._keyManager = new ListKeyManager(this.items);
+	        this._tabSubscription = this._keyManager.tabOut.subscribe(function () {
+	            _this._emitCloseEvent();
+	        });
+	    };
+	    // TODO: internal
+	    MdMenu.prototype.ngOnDestroy = function () {
+	        this._tabSubscription.unsubscribe();
+	    };
+	    Object.defineProperty(MdMenu.prototype, "classList", {
+	        /**
+	         * This method takes classes set on the host md-menu element and applies them on the
+	         * menu template that displays in the overlay container.  Otherwise, it's difficult
+	         * to style the containing menu from outside the component.
+	         * @param classes list of class names
+	         */
+	        set: function (classes) {
+	            this._classList = classes.split(' ').reduce(function (obj, className) {
+	                obj[className] = true;
+	                return obj;
+	            }, {});
+	            this._setPositionClasses();
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Focus the first item in the menu. This method is used by the menu trigger
+	     * to focus the first item when the menu is opened by the ENTER key.
+	     * TODO: internal
+	     */
+	    MdMenu.prototype.focusFirstItem = function () {
+	        // The menu always opens with the first item focused.
+	        this.items.first.focus();
+	        this._keyManager.focusedItemIndex = 0;
+	    };
+	    /**
+	     * This emits a close event to which the trigger is subscribed. When emitted, the
+	     * trigger will close the menu.
+	     */
+	    MdMenu.prototype._emitCloseEvent = function () {
+	        this.close.emit();
+	    };
+	    MdMenu.prototype._setPositionX = function (pos) {
+	        if (pos !== 'before' && pos !== 'after') {
+	            throw new MdMenuInvalidPositionX();
+	        }
+	        this.positionX = pos;
+	    };
+	    MdMenu.prototype._setPositionY = function (pos) {
+	        if (pos !== 'above' && pos !== 'below') {
+	            throw new MdMenuInvalidPositionY();
+	        }
+	        this.positionY = pos;
+	    };
+	    /**
+	     * It's necessary to set position-based classes to ensure the menu panel animation
+	     * folds out from the correct direction.
+	     */
+	    MdMenu.prototype._setPositionClasses = function () {
+	        this._classList['md-menu-before'] = this.positionX == 'before';
+	        this._classList['md-menu-after'] = this.positionX == 'after';
+	        this._classList['md-menu-above'] = this.positionY == 'above';
+	        this._classList['md-menu-below'] = this.positionY == 'below';
+	    };
+	    __decorate$44([
+	        _angular_core.ViewChild(_angular_core.TemplateRef), 
+	        __metadata$44('design:type', _angular_core.TemplateRef)
+	    ], MdMenu.prototype, "templateRef", void 0);
+	    __decorate$44([
+	        _angular_core.ContentChildren(MdMenuItem), 
+	        __metadata$44('design:type', _angular_core.QueryList)
+	    ], MdMenu.prototype, "items", void 0);
+	    __decorate$44([
+	        _angular_core.Input('class'), 
+	        __metadata$44('design:type', String), 
+	        __metadata$44('design:paramtypes', [String])
+	    ], MdMenu.prototype, "classList", null);
+	    __decorate$44([
+	        _angular_core.Output(), 
+	        __metadata$44('design:type', Object)
+	    ], MdMenu.prototype, "close", void 0);
+	    MdMenu = __decorate$44([
+	        _angular_core.Component({selector: 'md-menu',
+	            host: { 'role': 'menu' },
+	            template: "<template> <div class=\"md-menu-panel\" [ngClass]=\"_classList\" (keydown)=\"_keyManager.onKeydown($event)\" (click)=\"_emitCloseEvent()\" [@transformMenu]=\"'showing'\"> <div class=\"md-menu-content\" [@fadeInItems]=\"'showing'\"> <ng-content></ng-content> </div> </div> </template> ",
+	            styles: ["/** The mixins below are shared between md-menu and md-select */ /** * This mixin adds the correct panel transform styles based * on the direction that the menu panel opens. */ .md-menu-panel { box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); min-width: 112px; max-width: 280px; overflow: auto; -webkit-overflow-scrolling: touch; max-height: calc(100vh + 48px); } .md-menu-panel.md-menu-after.md-menu-below { transform-origin: left top; } .md-menu-panel.md-menu-after.md-menu-above { transform-origin: left bottom; } .md-menu-panel.md-menu-before.md-menu-below { transform-origin: right top; } .md-menu-panel.md-menu-before.md-menu-above { transform-origin: right bottom; } [dir='rtl'] .md-menu-panel.md-menu-after.md-menu-below { transform-origin: right top; } [dir='rtl'] .md-menu-panel.md-menu-after.md-menu-above { transform-origin: right bottom; } [dir='rtl'] .md-menu-panel.md-menu-before.md-menu-below { transform-origin: left top; } [dir='rtl'] .md-menu-panel.md-menu-before.md-menu-above { transform-origin: left bottom; } .md-menu-content { padding-top: 8px; padding-bottom: 8px; } [md-menu-item] { cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; outline: none; border: none; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; display: flex; flex-direction: row; align-items: center; height: 48px; padding: 0 16px; font-size: 16px; font-family: Roboto, \"Helvetica Neue\", sans-serif; text-align: start; text-decoration: none; position: relative; } [md-menu-item][disabled] { cursor: default; } [md-menu-item] md-icon { margin-right: 16px; } [dir='rtl'] [md-menu-item] md-icon { margin-left: 16px; } button[md-menu-item] { width: 100%; } .md-menu-ripple { position: absolute; top: 0; left: 0; bottom: 0; right: 0; } /*# sourceMappingURL=menu.css.map */ "],
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	            animations: [
+	                transformMenu,
+	                fadeInItems
+	            ],
+	            exportAs: 'mdMenu'
+	        }),
+	        __param$6(0, _angular_core.Attribute('x-position')),
+	        __param$6(1, _angular_core.Attribute('y-position')), 
+	        __metadata$44('design:paramtypes', [String, String])
+	    ], MdMenu);
+	    return MdMenu;
+	}());
+
+	var __decorate$46 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$46 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param$7 = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	/**
+	 * This directive is intended to be used in conjunction with an md-menu tag.  It is
+	 * responsible for toggling the display of the provided menu instance.
+	 */
+	var MdMenuTrigger = (function () {
+	    function MdMenuTrigger(_overlay, _element, _viewContainerRef, _renderer, _dir) {
+	        this._overlay = _overlay;
+	        this._element = _element;
+	        this._viewContainerRef = _viewContainerRef;
+	        this._renderer = _renderer;
+	        this._dir = _dir;
+	        this._menuOpen = false;
+	        // tracking input type is necessary so it's possible to only auto-focus
+	        // the first item of the list when the menu is opened via the keyboard
+	        this._openedByMouse = false;
+	        this.onMenuOpen = new _angular_core.EventEmitter();
+	        this.onMenuClose = new _angular_core.EventEmitter();
+	    }
+	    MdMenuTrigger.prototype.ngAfterViewInit = function () {
+	        var _this = this;
+	        this._checkMenu();
+	        this.menu.close.subscribe(function () { return _this.closeMenu(); });
+	    };
+	    MdMenuTrigger.prototype.ngOnDestroy = function () { this.destroyMenu(); };
+	    Object.defineProperty(MdMenuTrigger.prototype, "menuOpen", {
+	        get: function () { return this._menuOpen; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    MdMenuTrigger.prototype.toggleMenu = function () {
+	        return this._menuOpen ? this.closeMenu() : this.openMenu();
+	    };
+	    MdMenuTrigger.prototype.openMenu = function () {
+	        if (!this._menuOpen) {
+	            this._createOverlay();
+	            this._overlayRef.attach(this._portal);
+	            this._subscribeToBackdrop();
+	            this._initMenu();
+	        }
+	    };
+	    MdMenuTrigger.prototype.closeMenu = function () {
+	        if (this._overlayRef) {
+	            this._overlayRef.detach();
+	            this._backdropSubscription.unsubscribe();
+	            this._resetMenu();
+	        }
+	    };
+	    MdMenuTrigger.prototype.destroyMenu = function () {
+	        if (this._overlayRef) {
+	            this._overlayRef.dispose();
+	            this._overlayRef = null;
+	            if (this._backdropSubscription) {
+	                this._backdropSubscription.unsubscribe();
+	            }
+	        }
+	    };
+	    MdMenuTrigger.prototype.focus = function () {
+	        this._renderer.invokeElementMethod(this._element.nativeElement, 'focus');
+	    };
+	    Object.defineProperty(MdMenuTrigger.prototype, "dir", {
+	        /** The text direction of the containing app. */
+	        get: function () {
+	            return this._dir && this._dir.value === 'rtl' ? 'rtl' : 'ltr';
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * This method ensures that the menu closes when the overlay backdrop is clicked.
+	     * We do not use first() here because doing so would not catch clicks from within
+	     * the menu, and it would fail to unsubscribe properly. Instead, we unsubscribe
+	     * explicitly when the menu is closed or destroyed.
+	     */
+	    MdMenuTrigger.prototype._subscribeToBackdrop = function () {
+	        var _this = this;
+	        this._backdropSubscription = this._overlayRef.backdropClick().subscribe(function () {
+	            _this.closeMenu();
+	        });
+	    };
+	    /**
+	     * This method sets the menu state to open and focuses the first item if
+	     * the menu was opened via the keyboard.
+	     */
+	    MdMenuTrigger.prototype._initMenu = function () {
+	        this._setIsMenuOpen(true);
+	        // Should only set focus if opened via the keyboard, so keyboard users can
+	        // can easily navigate menu items. According to spec, mouse users should not
+	        // see the focus style.
+	        if (!this._openedByMouse) {
+	            this.menu.focusFirstItem();
+	        }
+	    };
+	    ;
+	    /**
+	     * This method resets the menu when it's closed, most importantly restoring
+	     * focus to the menu trigger if the menu was opened via the keyboard.
+	     */
+	    MdMenuTrigger.prototype._resetMenu = function () {
+	        this._setIsMenuOpen(false);
+	        // Focus only needs to be reset to the host element if the menu was opened
+	        // by the keyboard and manually shifted to the first menu item.
+	        if (!this._openedByMouse) {
+	            this.focus();
+	        }
+	        this._openedByMouse = false;
+	    };
+	    // set state rather than toggle to support triggers sharing a menu
+	    MdMenuTrigger.prototype._setIsMenuOpen = function (isOpen) {
+	        this._menuOpen = isOpen;
+	        this._menuOpen ? this.onMenuOpen.emit() : this.onMenuClose.emit();
+	    };
+	    /**
+	     *  This method checks that a valid instance of MdMenu has been passed into
+	     *  md-menu-trigger-for.  If not, an exception is thrown.
+	     */
+	    MdMenuTrigger.prototype._checkMenu = function () {
+	        if (!this.menu) {
+	            throw new MdMenuMissingError();
+	        }
+	    };
+	    /**
+	     *  This method creates the overlay from the provided menu's template and saves its
+	     *  OverlayRef so that it can be attached to the DOM when openMenu is called.
+	     */
+	    MdMenuTrigger.prototype._createOverlay = function () {
+	        if (!this._overlayRef) {
+	            this._portal = new TemplatePortal(this.menu.templateRef, this._viewContainerRef);
+	            this._overlayRef = this._overlay.create(this._getOverlayConfig());
+	        }
+	    };
+	    /**
+	     * This method builds the configuration object needed to create the overlay, the OverlayState.
+	     * @returns OverlayState
+	     */
+	    MdMenuTrigger.prototype._getOverlayConfig = function () {
+	        var overlayState = new OverlayState();
+	        overlayState.positionStrategy = this._getPosition()
+	            .withDirection(this.dir);
+	        overlayState.hasBackdrop = true;
+	        overlayState.backdropClass = 'md-overlay-transparent-backdrop';
+	        overlayState.direction = this.dir;
+	        return overlayState;
+	    };
+	    /**
+	     * This method builds the position strategy for the overlay, so the menu is properly connected
+	     * to the trigger.
+	     * @returns ConnectedPositionStrategy
+	     */
+	    MdMenuTrigger.prototype._getPosition = function () {
+	        var positionX = this.menu.positionX === 'before' ? 'end' : 'start';
+	        var positionY = this.menu.positionY === 'above' ? 'bottom' : 'top';
+	        return this._overlay.position().connectedTo(this._element, { originX: positionX, originY: positionY }, { overlayX: positionX, overlayY: positionY });
+	    };
+	    MdMenuTrigger.prototype._handleMousedown = function (event) {
+	        if (!isFakeMousedownFromScreenReader(event)) {
+	            this._openedByMouse = true;
+	        }
+	    };
+	    __decorate$46([
+	        _angular_core.Input('md-menu-trigger-for'), 
+	        __metadata$46('design:type', Object)
+	    ], MdMenuTrigger.prototype, "menu", void 0);
+	    __decorate$46([
+	        _angular_core.Output(), 
+	        __metadata$46('design:type', Object)
+	    ], MdMenuTrigger.prototype, "onMenuOpen", void 0);
+	    __decorate$46([
+	        _angular_core.Output(), 
+	        __metadata$46('design:type', Object)
+	    ], MdMenuTrigger.prototype, "onMenuClose", void 0);
+	    MdMenuTrigger = __decorate$46([
+	        _angular_core.Directive({
+	            selector: '[md-menu-trigger-for]',
+	            host: {
+	                'aria-haspopup': 'true',
+	                '(mousedown)': '_handleMousedown($event)',
+	                '(click)': 'toggleMenu()',
+	            },
+	            exportAs: 'mdMenuTrigger'
+	        }),
+	        __param$7(4, _angular_core.Optional()), 
+	        __metadata$46('design:paramtypes', [Overlay, _angular_core.ElementRef, _angular_core.ViewContainerRef, _angular_core.Renderer, Dir])
+	    ], MdMenuTrigger);
+	    return MdMenuTrigger;
+	}());
+
+	var __decorate$43 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$43 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MdMenuModule = (function () {
+	    function MdMenuModule() {
+	    }
+	    MdMenuModule.forRoot = function () {
+	        return {
+	            ngModule: MdMenuModule,
+	            providers: OVERLAY_PROVIDERS,
+	        };
+	    };
+	    MdMenuModule = __decorate$43([
+	        _angular_core.NgModule({
+	            imports: [OverlayModule, _angular_common.CommonModule, MdRippleModule],
+	            exports: [MdMenu, MdMenuItem, MdMenuTrigger],
+	            declarations: [MdMenu, MdMenuItem, MdMenuTrigger],
+	        }), 
+	        __metadata$43('design:paramtypes', [])
+	    ], MdMenuModule);
+	    return MdMenuModule;
+	}());
+
+	/**
+	 * Configuration for opening a modal dialog with the MdDialog service.
+	 */
+	var MdDialogConfig = (function () {
+	    function MdDialogConfig() {
+	        /** The ARIA role of the dialog element. */
+	        this.role = 'dialog';
+	        /** Whether the user can use escape or clicking outside to close a modal. */
+	        this.disableClose = false;
+	    }
+	    return MdDialogConfig;
+	}());
+
+	// TODO(jelbourn): resizing
+	// TODO(jelbourn): afterOpen and beforeClose
+	/**
+	 * Reference to a dialog opened via the MdDialog service.
+	 */
+	var MdDialogRef = (function () {
+	    function MdDialogRef(_overlayRef) {
+	        this._overlayRef = _overlayRef;
+	        /** Subject for notifying the user that the dialog has finished closing. */
+	        this._afterClosed = new rxjs_Subject.Subject();
+	    }
+	    /**
+	     * Close the dialog.
+	     * @param dialogResult Optional result to return to the dialog opener.
+	     */
+	    MdDialogRef.prototype.close = function (dialogResult) {
+	        this._overlayRef.dispose();
+	        this._afterClosed.next(dialogResult);
+	        this._afterClosed.complete();
+	    };
+	    /** Gets an observable that is notified when the dialog is finished closing. */
+	    MdDialogRef.prototype.afterClosed = function () {
+	        return this._afterClosed.asObservable();
+	    };
+	    return MdDialogRef;
+	}());
+
+	/** Custom injector type specifically for instantiating components with a dialog. */
+	var DialogInjector = (function () {
+	    function DialogInjector(_dialogRef, _parentInjector) {
+	        this._dialogRef = _dialogRef;
+	        this._parentInjector = _parentInjector;
+	    }
+	    DialogInjector.prototype.get = function (token, notFoundValue) {
+	        if (token === MdDialogRef) {
+	            return this._dialogRef;
+	        }
+	        return this._parentInjector.get(token, notFoundValue);
+	    };
+	    return DialogInjector;
+	}());
+
+	var __extends$19 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/** Exception thrown when a ComponentPortal is attached to a DomPortalHost without an origin. */
+	var MdDialogContentAlreadyAttachedError = (function (_super) {
+	    __extends$19(MdDialogContentAlreadyAttachedError, _super);
+	    function MdDialogContentAlreadyAttachedError() {
+	        _super.call(this, 'Attempting to attach dialog content after content is already attached');
+	    }
+	    return MdDialogContentAlreadyAttachedError;
+	}(MdError));
+
+	var __extends$18 = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate$48 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$48 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	/**
+	 * Internal component that wraps user-provided dialog content.
+	 */
+	var MdDialogContainer = (function (_super) {
+	    __extends$18(MdDialogContainer, _super);
+	    function MdDialogContainer(_ngZone) {
+	        _super.call(this);
+	        this._ngZone = _ngZone;
+	        /** Element that was focused before the dialog was opened. Save this to restore upon close. */
+	        this._elementFocusedBeforeDialogWasOpened = null;
+	    }
+	    /** Attach a portal as content to this dialog container. */
+	    MdDialogContainer.prototype.attachComponentPortal = function (portal) {
+	        var _this = this;
+	        if (this._portalHost.hasAttached()) {
+	            throw new MdDialogContentAlreadyAttachedError();
+	        }
+	        var attachResult = this._portalHost.attachComponentPortal(portal);
+	        // If were to attempt to focus immediately, then the content of the dialog would not yet be
+	        // ready in instances where change detection has to run first. To deal with this, we simply
+	        // wait for the microtask queue to be empty.
+	        this._ngZone.onMicrotaskEmpty.first().subscribe(function () {
+	            _this._elementFocusedBeforeDialogWasOpened = document.activeElement;
+	            _this._focusTrap.focusFirstTabbableElement();
+	        });
+	        return attachResult;
+	    };
+	    MdDialogContainer.prototype.attachTemplatePortal = function (portal) {
+	        throw Error('Not yet implemented');
+	    };
+	    /** Handles the user pressing the Escape key. */
+	    MdDialogContainer.prototype.handleEscapeKey = function () {
+	        if (!this.dialogConfig.disableClose) {
+	            this.dialogRef.close();
+	        }
+	    };
+	    MdDialogContainer.prototype.ngOnDestroy = function () {
+	        var _this = this;
+	        // When the dialog is destroyed, return focus to the element that originally had it before
+	        // the dialog was opened. Wait for the DOM to finish settling before changing the focus so
+	        // that it doesn't end up back on the <body>.
+	        this._ngZone.onMicrotaskEmpty.first().subscribe(function () {
+	            _this._elementFocusedBeforeDialogWasOpened.focus();
+	        });
+	    };
+	    __decorate$48([
+	        _angular_core.ViewChild(PortalHostDirective), 
+	        __metadata$48('design:type', PortalHostDirective)
+	    ], MdDialogContainer.prototype, "_portalHost", void 0);
+	    __decorate$48([
+	        _angular_core.ViewChild(FocusTrap), 
+	        __metadata$48('design:type', FocusTrap)
+	    ], MdDialogContainer.prototype, "_focusTrap", void 0);
+	    MdDialogContainer = __decorate$48([
+	        _angular_core.Component({selector: 'md-dialog-container',
+	            template: "<focus-trap> <template portalHost></template> </focus-trap> ",
+	            styles: ["md-dialog-container { box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); display: block; overflow: hidden; padding: 24px; } /*# sourceMappingURL=dialog-container.css.map */ "],
+	            host: {
+	                'class': 'md-dialog-container',
+	                '[attr.role]': 'dialogConfig?.role',
+	                '(keydown.escape)': 'handleEscapeKey()',
+	            },
+	            encapsulation: _angular_core.ViewEncapsulation.None,
+	        }), 
+	        __metadata$48('design:paramtypes', [_angular_core.NgZone])
+	    ], MdDialogContainer);
+	    return MdDialogContainer;
+	}(BasePortalHost));
+
+	var __decorate$47 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$47 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	// TODO(jelbourn): add support for opening with a TemplateRef
+	// TODO(jelbourn): add `closeAll` method
+	// TODO(jelbourn): default dialog config
+	// TODO(jelbourn): escape key closes dialog
+	// TODO(jelbourn): dialog content directives (e.g., md-dialog-header)
+	// TODO(jelbourn): animations
+	/**
+	 * Service to open Material Design modal dialogs.
+	 */
+	var MdDialog = (function () {
+	    function MdDialog(_overlay, _injector) {
+	        this._overlay = _overlay;
+	        this._injector = _injector;
+	    }
+	    /**
+	     * Opens a modal dialog containing the given component.
+	     * @param component Type of the component to load into the load.
+	     * @param config
+	     */
+	    MdDialog.prototype.open = function (component, config) {
+	        config = _applyConfigDefaults$1(config);
+	        var overlayRef = this._createOverlay(config);
+	        var dialogContainer = this._attachDialogContainer(overlayRef, config);
+	        return this._attachDialogContent(component, dialogContainer, overlayRef);
+	    };
+	    /**
+	     * Creates the overlay into which the dialog will be loaded.
+	     * @param dialogConfig The dialog configuration.
+	     * @returns A promise resolving to the OverlayRef for the created overlay.
+	     */
+	    MdDialog.prototype._createOverlay = function (dialogConfig) {
+	        var overlayState = this._getOverlayState(dialogConfig);
+	        return this._overlay.create(overlayState);
+	    };
+	    /**
+	     * Attaches an MdDialogContainer to a dialog's already-created overlay.
+	     * @param overlay Reference to the dialog's underlying overlay.
+	     * @param config The dialog configuration.
+	     * @returns A promise resolving to a ComponentRef for the attached container.
+	     */
+	    MdDialog.prototype._attachDialogContainer = function (overlay, config) {
+	        var viewContainer = config ? config.viewContainerRef : null;
+	        var containerPortal = new ComponentPortal(MdDialogContainer, viewContainer);
+	        var containerRef = overlay.attach(containerPortal);
+	        containerRef.instance.dialogConfig = config;
+	        return containerRef.instance;
+	    };
+	    /**
+	     * Attaches the user-provided component to the already-created MdDialogContainer.
+	     * @param component The type of component being loaded into the dialog.
+	     * @param dialogContainer Reference to the wrapping MdDialogContainer.
+	     * @param overlayRef Reference to the overlay in which the dialog resides.
+	     * @returns A promise resolving to the MdDialogRef that should be returned to the user.
+	     */
+	    MdDialog.prototype._attachDialogContent = function (component, dialogContainer, overlayRef) {
+	        // Create a reference to the dialog we're creating in order to give the user a handle
+	        // to modify and close it.
+	        var dialogRef = new MdDialogRef(overlayRef);
+	        if (!dialogContainer.dialogConfig.disableClose) {
+	            // When the dialog backdrop is clicked, we want to close it.
+	            overlayRef.backdropClick().first().subscribe(function () { return dialogRef.close(); });
+	        }
+	        // Set the dialogRef to the container so that it can use the ref to close the dialog.
+	        dialogContainer.dialogRef = dialogRef;
+	        // We create an injector specifically for the component we're instantiating so that it can
+	        // inject the MdDialogRef. This allows a component loaded inside of a dialog to close itself
+	        // and, optionally, to return a value.
+	        var dialogInjector = new DialogInjector(dialogRef, this._injector);
+	        var contentPortal = new ComponentPortal(component, null, dialogInjector);
+	        var contentRef = dialogContainer.attachComponentPortal(contentPortal);
+	        dialogRef.componentInstance = contentRef.instance;
+	        return dialogRef;
+	    };
+	    /**
+	     * Creates an overlay state from a dialog config.
+	     * @param dialogConfig The dialog configuration.
+	     * @returns The overlay configuration.
+	     */
+	    MdDialog.prototype._getOverlayState = function (dialogConfig) {
+	        var state = new OverlayState();
+	        state.hasBackdrop = true;
+	        state.positionStrategy = this._overlay.position()
+	            .global()
+	            .centerHorizontally()
+	            .centerVertically();
+	        return state;
+	    };
+	    MdDialog = __decorate$47([
+	        _angular_core.Injectable(), 
+	        __metadata$47('design:paramtypes', [Overlay, _angular_core.Injector])
+	    ], MdDialog);
+	    return MdDialog;
+	}());
+	/**
+	 * Applies default options to the dialog config.
+	 * @param dialogConfig Config to be modified.
+	 * @returns The new configuration object.
+	 */
+	function _applyConfigDefaults$1(dialogConfig) {
+	    return extendObject(new MdDialogConfig(), dialogConfig);
+	}
+	var MdDialogModule = (function () {
+	    function MdDialogModule() {
+	    }
+	    MdDialogModule.forRoot = function () {
+	        return {
+	            ngModule: MdDialogModule,
+	            providers: [MdDialog, OVERLAY_PROVIDERS, InteractivityChecker],
+	        };
+	    };
+	    MdDialogModule = __decorate$47([
+	        _angular_core.NgModule({
+	            imports: [OverlayModule, PortalModule, A11yModule],
+	            exports: [MdDialogContainer],
+	            declarations: [MdDialogContainer],
+	            entryComponents: [MdDialogContainer],
+	        }), 
+	        __metadata$47('design:paramtypes', [])
+	    ], MdDialogModule);
+	    return MdDialogModule;
+	}());
+
+	var __decorate$16 = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata$16 = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var MATERIAL_MODULES = [
+	    MdButtonModule,
+	    MdButtonToggleModule,
+	    MdCardModule,
+	    MdCheckboxModule,
+	    MdDialogModule,
+	    MdGridListModule,
+	    MdIconModule,
+	    MdInputModule,
+	    MdListModule,
+	    MdMenuModule,
+	    MdProgressBarModule,
+	    MdProgressCircleModule,
+	    MdRadioModule,
+	    MdRippleModule,
+	    MdSidenavModule,
+	    MdSliderModule,
+	    MdSlideToggleModule,
+	    MdSnackBarModule,
+	    MdTabsModule,
+	    MdToolbarModule,
+	    MdTooltipModule,
+	    OverlayModule,
+	    PortalModule,
+	    RtlModule,
+	    A11yModule,
+	    StyleCompatibilityModule,
+	];
+	var MaterialRootModule = (function () {
+	    function MaterialRootModule() {
+	    }
+	    MaterialRootModule = __decorate$16([
+	        _angular_core.NgModule({
+	            imports: [
+	                MdButtonModule.forRoot(),
+	                MdCardModule.forRoot(),
+	                MdCheckboxModule.forRoot(),
+	                MdGridListModule.forRoot(),
+	                MdInputModule.forRoot(),
+	                MdListModule.forRoot(),
+	                MdProgressBarModule.forRoot(),
+	                MdProgressCircleModule.forRoot(),
+	                MdRippleModule.forRoot(),
+	                MdSidenavModule.forRoot(),
+	                MdTabsModule.forRoot(),
+	                MdToolbarModule.forRoot(),
+	                PortalModule.forRoot(),
+	                RtlModule.forRoot(),
+	                // These modules include providers.
+	                A11yModule.forRoot(),
+	                MdButtonToggleModule.forRoot(),
+	                MdDialogModule.forRoot(),
+	                MdIconModule.forRoot(),
+	                MdMenuModule.forRoot(),
+	                MdRadioModule.forRoot(),
+	                MdSliderModule.forRoot(),
+	                MdSlideToggleModule.forRoot(),
+	                MdSnackBarModule.forRoot(),
+	                MdTooltipModule.forRoot(),
+	                OverlayModule.forRoot(),
+	                StyleCompatibilityModule.forRoot(),
+	            ],
+	            exports: MATERIAL_MODULES,
+	        }), 
+	        __metadata$16('design:paramtypes', [])
+	    ], MaterialRootModule);
+	    return MaterialRootModule;
+	}());
+	var MaterialModule = (function () {
+	    function MaterialModule() {
+	    }
+	    MaterialModule.forRoot = function () {
+	        return { ngModule: MaterialRootModule };
+	    };
+	    MaterialModule = __decorate$16([
+	        _angular_core.NgModule({
+	            imports: MATERIAL_MODULES,
+	            exports: MATERIAL_MODULES,
+	        }), 
+	        __metadata$16('design:paramtypes', [])
+	    ], MaterialModule);
+	    return MaterialModule;
+	}());
+
+	exports.MdCoreModule = MdCoreModule;
+	exports.Dir = Dir;
+	exports.RtlModule = RtlModule;
+	exports.Portal = Portal;
+	exports.BasePortalHost = BasePortalHost;
+	exports.ComponentPortal = ComponentPortal;
+	exports.TemplatePortal = TemplatePortal;
+	exports.PortalHostDirective = PortalHostDirective;
+	exports.TemplatePortalDirective = TemplatePortalDirective;
+	exports.PortalModule = PortalModule;
+	exports.DomPortalHost = DomPortalHost;
+	exports.Overlay = Overlay;
+	exports.OVERLAY_PROVIDERS = OVERLAY_PROVIDERS;
+	exports.OverlayContainer = OverlayContainer;
+	exports.OverlayRef = OverlayRef;
+	exports.OverlayState = OverlayState;
+	exports.ConnectedOverlayDirective = ConnectedOverlayDirective;
+	exports.OverlayOrigin = OverlayOrigin;
+	exports.OverlayModule = OverlayModule;
+	exports.MdGestureConfig = MdGestureConfig;
+	exports.MdRipple = MdRipple;
+	exports.MdRippleModule = MdRippleModule;
+	exports.MdLiveAnnouncer = MdLiveAnnouncer;
+	exports.LIVE_ANNOUNCER_ELEMENT_TOKEN = LIVE_ANNOUNCER_ELEMENT_TOKEN;
+	exports.FocusTrap = FocusTrap;
+	exports.InteractivityChecker = InteractivityChecker;
+	exports.isFakeMousedownFromScreenReader = isFakeMousedownFromScreenReader;
+	exports.A11yModule = A11yModule;
+	exports.MdUniqueSelectionDispatcher = MdUniqueSelectionDispatcher;
+	exports.MdLineModule = MdLineModule;
+	exports.MdLine = MdLine;
+	exports.MdLineSetter = MdLineSetter;
+	exports.applyCssTransform = applyCssTransform;
+	exports.MdError = MdError;
+	exports.coerceBooleanProperty = coerceBooleanProperty;
+	exports.coerceNumberProperty = coerceNumberProperty;
+	exports.ConnectedPositionStrategy = ConnectedPositionStrategy;
+	exports.ConnectionPositionPair = ConnectionPositionPair;
+	exports.UP_ARROW = UP_ARROW;
+	exports.DOWN_ARROW = DOWN_ARROW;
+	exports.RIGHT_ARROW = RIGHT_ARROW;
+	exports.LEFT_ARROW = LEFT_ARROW;
+	exports.ENTER = ENTER;
+	exports.SPACE = SPACE;
+	exports.TAB = TAB;
+	exports.ELEMENTS_SELECTOR = ELEMENTS_SELECTOR;
+	exports.StyleCompatibility = StyleCompatibility;
+	exports.StyleCompatibilityModule = StyleCompatibilityModule;
+	exports.AnimationCurves = AnimationCurves;
+	exports.AnimationDurations = AnimationDurations;
+	exports.MaterialRootModule = MaterialRootModule;
+	exports.MaterialModule = MaterialModule;
+	exports.MdButton = MdButton;
+	exports.MdAnchor = MdAnchor;
+	exports.MdButtonModule = MdButtonModule;
+	exports.MD_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR = MD_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR;
+	exports.MdButtonToggleChange = MdButtonToggleChange;
+	exports.MdButtonToggleGroup = MdButtonToggleGroup;
+	exports.MdButtonToggleGroupMultiple = MdButtonToggleGroupMultiple;
+	exports.MdButtonToggle = MdButtonToggle;
+	exports.MdButtonToggleModule = MdButtonToggleModule;
+	exports.MdCardContent = MdCardContent;
+	exports.MdCardTitle = MdCardTitle;
+	exports.MdCardSubtitle = MdCardSubtitle;
+	exports.MdCardActions = MdCardActions;
+	exports.MdCardFooter = MdCardFooter;
+	exports.MdCard = MdCard;
+	exports.MdCardHeader = MdCardHeader;
+	exports.MdCardTitleGroup = MdCardTitleGroup;
+	exports.MdCardModule = MdCardModule;
+	exports.MD_CHECKBOX_CONTROL_VALUE_ACCESSOR = MD_CHECKBOX_CONTROL_VALUE_ACCESSOR;
+	exports.MdCheckboxChange = MdCheckboxChange;
+	exports.MdCheckbox = MdCheckbox;
+	exports.MdCheckboxModule = MdCheckboxModule;
+	exports.MdDialog = MdDialog;
+	exports.MdDialogModule = MdDialogModule;
+	exports.MdDialogConfig = MdDialogConfig;
+	exports.MdDialogRef = MdDialogRef;
+	exports.MdDialogContainer = MdDialogContainer;
+	exports.MdGridList = MdGridList;
+	exports.MdGridListModule = MdGridListModule;
+	exports.MdIconInvalidNameError = MdIconInvalidNameError;
+	exports.MdIcon = MdIcon;
+	exports.MdIconModule = MdIconModule;
+	exports.MdIconRegistry = MdIconRegistry;
+	exports.MD_INPUT_CONTROL_VALUE_ACCESSOR = MD_INPUT_CONTROL_VALUE_ACCESSOR;
+	exports.MdInputPlaceholderConflictError = MdInputPlaceholderConflictError;
+	exports.MdInputUnsupportedTypeError = MdInputUnsupportedTypeError;
+	exports.MdInputDuplicatedHintError = MdInputDuplicatedHintError;
+	exports.MdPlaceholder = MdPlaceholder;
+	exports.MdHint = MdHint;
+	exports.MdInput = MdInput;
+	exports.MdInputModule = MdInputModule;
+	exports.MdListDivider = MdListDivider;
+	exports.MdList = MdList;
+	exports.MdListAvatar = MdListAvatar;
+	exports.MdListItem = MdListItem;
+	exports.MdListModule = MdListModule;
+	exports.MdMenuModule = MdMenuModule;
+	exports.MdMenu = MdMenu;
+	exports.MdMenuItem = MdMenuItem;
+	exports.MdMenuTrigger = MdMenuTrigger;
+	exports.MdProgressBar = MdProgressBar;
+	exports.MdProgressBarModule = MdProgressBarModule;
+	exports.MdProgressCircle = MdProgressCircle;
+	exports.MdSpinner = MdSpinner;
+	exports.MdProgressCircleModule = MdProgressCircleModule;
+	exports.MD_RADIO_GROUP_CONTROL_VALUE_ACCESSOR = MD_RADIO_GROUP_CONTROL_VALUE_ACCESSOR;
+	exports.MdRadioChange = MdRadioChange;
+	exports.MdRadioGroup = MdRadioGroup;
+	exports.MdRadioButton = MdRadioButton;
+	exports.MdRadioModule = MdRadioModule;
+	exports.MdDuplicatedSidenavError = MdDuplicatedSidenavError;
+	exports.MdSidenav = MdSidenav;
+	exports.MdSidenavLayout = MdSidenavLayout;
+	exports.MdSidenavModule = MdSidenavModule;
+	exports.MD_SLIDER_VALUE_ACCESSOR = MD_SLIDER_VALUE_ACCESSOR;
+	exports.MdSliderChange = MdSliderChange;
+	exports.MdSlider = MdSlider;
+	exports.SliderRenderer = SliderRenderer;
+	exports.MdSliderModule = MdSliderModule;
+	exports.MD_SLIDE_TOGGLE_VALUE_ACCESSOR = MD_SLIDE_TOGGLE_VALUE_ACCESSOR;
+	exports.MdSlideToggleChange = MdSlideToggleChange;
+	exports.MdSlideToggle = MdSlideToggle;
+	exports.MdSlideToggleModule = MdSlideToggleModule;
+	exports.MdSnackBar = MdSnackBar;
+	exports.MdSnackBarModule = MdSnackBarModule;
+	exports.SHOW_ANIMATION = SHOW_ANIMATION;
+	exports.HIDE_ANIMATION = HIDE_ANIMATION;
+	exports.MdSnackBarContainer = MdSnackBarContainer;
+	exports.MdSnackBarConfig = MdSnackBarConfig;
+	exports.MdSnackBarRef = MdSnackBarRef;
+	exports.MdTabChangeEvent = MdTabChangeEvent;
+	exports.MdTab = MdTab;
+	exports.MdTabGroup = MdTabGroup;
+	exports.MdTabsModule = MdTabsModule;
+	exports.MdTabNavBar = MdTabNavBar;
+	exports.MdTabLink = MdTabLink;
+	exports.MdToolbarRow = MdToolbarRow;
+	exports.MdToolbar = MdToolbar;
+	exports.MdToolbarModule = MdToolbarModule;
+	exports.TOOLTIP_HIDE_DELAY = TOOLTIP_HIDE_DELAY;
+	exports.MdTooltip = MdTooltip;
+	exports.TooltipComponent = TooltipComponent;
+	exports.MdTooltipModule = MdTooltipModule;
+
+	Object.defineProperty(exports, '__esModule', { value: true });
+
+	})));
+
+	//# sourceMappingURL=./material.umd.js.map
+
+
+/***/ },
+/* 678 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @license Angular v2.2.4
+	 * (c) 2010-2016 Google, Inc. https://angular.io/
+	 * License: MIT
+	 */
+	(function (global, factory) {
+	     true ? factory(exports, __webpack_require__(322), __webpack_require__(646), __webpack_require__(323), __webpack_require__(324), __webpack_require__(398)) :
+	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/operator/toPromise', 'rxjs/Subject', 'rxjs/Observable', 'rxjs/observable/fromPromise'], factory) :
+	    (factory((global.ng = global.ng || {}, global.ng.forms = global.ng.forms || {}),global.ng.core,global.Rx.Observable.prototype,global.Rx,global.Rx,global.Rx.Observable));
+	}(this, function (exports,_angular_core,rxjs_operator_toPromise,rxjs_Subject,rxjs_Observable,rxjs_observable_fromPromise) { 'use strict';
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    /**
+	     * Base class for control directives.
+	     *
+	     * Only used internally in the forms module.
+	     *
+	     * @stable
+	     */
+	    var AbstractControlDirective = (function () {
+	        function AbstractControlDirective() {
+	        }
+	        Object.defineProperty(AbstractControlDirective.prototype, "control", {
+	            get: function () { throw new Error('unimplemented'); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "value", {
+	            get: function () { return this.control ? this.control.value : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "valid", {
+	            get: function () { return this.control ? this.control.valid : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "invalid", {
+	            get: function () { return this.control ? this.control.invalid : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "pending", {
+	            get: function () { return this.control ? this.control.pending : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "errors", {
+	            get: function () { return this.control ? this.control.errors : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
+	            get: function () { return this.control ? this.control.pristine : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
+	            get: function () { return this.control ? this.control.dirty : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "touched", {
+	            get: function () { return this.control ? this.control.touched : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
+	            get: function () { return this.control ? this.control.untouched : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "disabled", {
+	            get: function () { return this.control ? this.control.disabled : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "enabled", {
+	            get: function () { return this.control ? this.control.enabled : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "statusChanges", {
+	            get: function () { return this.control ? this.control.statusChanges : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "valueChanges", {
+	            get: function () { return this.control ? this.control.valueChanges : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "path", {
+	            get: function () { return null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        AbstractControlDirective.prototype.reset = function (value) {
+	            if (value === void 0) { value = undefined; }
+	            if (this.control)
+	                this.control.reset(value);
+	        };
+	        AbstractControlDirective.prototype.hasError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            return this.control ? this.control.hasError(errorCode, path) : false;
+	        };
+	        AbstractControlDirective.prototype.getError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            return this.control ? this.control.getError(errorCode, path) : null;
+	        };
+	        return AbstractControlDirective;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$1 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * A directive that contains multiple {@link NgControl}s.
+	     *
+	     * Only used by the forms module.
+	     *
+	     * @stable
+	     */
+	    var ControlContainer = (function (_super) {
+	        __extends$1(ControlContainer, _super);
+	        function ControlContainer() {
+	            _super.apply(this, arguments);
+	        }
+	        Object.defineProperty(ControlContainer.prototype, "formDirective", {
+	            /**
+	             * Get the form to which this container belongs.
+	             */
+	            get: function () { return null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(ControlContainer.prototype, "path", {
+	            /**
+	             * Get the path to this container.
+	             */
+	            get: function () { return null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        return ControlContainer;
+	    }(AbstractControlDirective));
+
+	    function isPresent(obj) {
+	        return obj != null;
+	    }
+	    function isBlank(obj) {
+	        return obj == null;
+	    }
+	    // JS has NaN !== NaN
+	    function looseIdentical(a, b) {
+	        return a === b || typeof a === 'number' && typeof b === 'number' && isNaN(a) && isNaN(b);
+	    }
+	    function isJsObject(o) {
+	        return o !== null && (typeof o === 'function' || typeof o === 'object');
+	    }
+	    function isPrimitive(obj) {
+	        return !isJsObject(obj);
+	    }
+
+	    /**
+	     * Wraps Javascript Objects
+	     */
+	    var StringMapWrapper = (function () {
+	        function StringMapWrapper() {
+	        }
+	        StringMapWrapper.merge = function (m1, m2) {
+	            var m = {};
+	            for (var _i = 0, _a = Object.keys(m1); _i < _a.length; _i++) {
+	                var k = _a[_i];
+	                m[k] = m1[k];
+	            }
+	            for (var _b = 0, _c = Object.keys(m2); _b < _c.length; _b++) {
+	                var k = _c[_b];
+	                m[k] = m2[k];
+	            }
+	            return m;
+	        };
+	        StringMapWrapper.equals = function (m1, m2) {
+	            var k1 = Object.keys(m1);
+	            var k2 = Object.keys(m2);
+	            if (k1.length != k2.length) {
+	                return false;
+	            }
+	            for (var i = 0; i < k1.length; i++) {
+	                var key = k1[i];
+	                if (m1[key] !== m2[key]) {
+	                    return false;
+	                }
+	            }
+	            return true;
+	        };
+	        return StringMapWrapper;
+	    }());
+	    var ListWrapper = (function () {
+	        function ListWrapper() {
+	        }
+	        ListWrapper.removeAll = function (list, items) {
+	            for (var i = 0; i < items.length; ++i) {
+	                var index = list.indexOf(items[i]);
+	                if (index > -1) {
+	                    list.splice(index, 1);
+	                }
+	            }
+	        };
+	        ListWrapper.remove = function (list, el) {
+	            var index = list.indexOf(el);
+	            if (index > -1) {
+	                list.splice(index, 1);
+	                return true;
+	            }
+	            return false;
+	        };
+	        ListWrapper.equals = function (a, b) {
+	            if (a.length != b.length)
+	                return false;
+	            for (var i = 0; i < a.length; ++i) {
+	                if (a[i] !== b[i])
+	                    return false;
+	            }
+	            return true;
+	        };
+	        ListWrapper.flatten = function (list) {
+	            return list.reduce(function (flat, item) {
+	                var flatItem = Array.isArray(item) ? ListWrapper.flatten(item) : item;
+	                return flat.concat(flatItem);
+	            }, []);
+	        };
+	        return ListWrapper;
+	    }());
+
+	    var isPromise = _angular_core.__core_private__.isPromise;
+
+	    function isEmptyInputValue(value) {
+	        return value == null || typeof value === 'string' && value.length === 0;
+	    }
+	    /**
+	     * Providers for validators to be used for {@link FormControl}s in a form.
+	     *
+	     * Provide this using `multi: true` to add validators.
+	     *
+	     * ### Example
+	     *
+	     * {@example core/forms/ts/ng_validators/ng_validators.ts region='ng_validators'}
+	     * @stable
+	     */
+	    var NG_VALIDATORS = new _angular_core.OpaqueToken('NgValidators');
+	    /**
+	     * Providers for asynchronous validators to be used for {@link FormControl}s
+	     * in a form.
+	     *
+	     * Provide this using `multi: true` to add validators.
+	     *
+	     * See {@link NG_VALIDATORS} for more details.
+	     *
+	     * @stable
+	     */
+	    var NG_ASYNC_VALIDATORS = new _angular_core.OpaqueToken('NgAsyncValidators');
+	    /**
+	     * Provides a set of validators used by form controls.
+	     *
+	     * A validator is a function that processes a {@link FormControl} or collection of
+	     * controls and returns a map of errors. A null map means that validation has passed.
+	     *
+	     * ### Example
+	     *
+	     * ```typescript
+	     * var loginControl = new FormControl("", Validators.required)
+	     * ```
+	     *
+	     * @stable
+	     */
+	    var Validators = (function () {
+	        function Validators() {
+	        }
+	        /**
+	         * Validator that requires controls to have a non-empty value.
+	         */
+	        Validators.required = function (control) {
+	            return isEmptyInputValue(control.value) ? { 'required': true } : null;
+	        };
+	        /**
+	         * Validator that requires controls to have a value of a minimum length.
+	         */
+	        Validators.minLength = function (minLength) {
+	            return function (control) {
+	                if (isEmptyInputValue(control.value)) {
+	                    return null; // don't validate empty values to allow optional controls
+	                }
+	                var length = typeof control.value === 'string' ? control.value.length : 0;
+	                return length < minLength ?
+	                    { 'minlength': { 'requiredLength': minLength, 'actualLength': length } } :
+	                    null;
+	            };
+	        };
+	        /**
+	         * Validator that requires controls to have a value of a maximum length.
+	         */
+	        Validators.maxLength = function (maxLength) {
+	            return function (control) {
+	                var length = typeof control.value === 'string' ? control.value.length : 0;
+	                return length > maxLength ?
+	                    { 'maxlength': { 'requiredLength': maxLength, 'actualLength': length } } :
+	                    null;
+	            };
+	        };
+	        /**
+	         * Validator that requires a control to match a regex to its value.
+	         */
+	        Validators.pattern = function (pattern) {
+	            if (!pattern)
+	                return Validators.nullValidator;
+	            var regex;
+	            var regexStr;
+	            if (typeof pattern === 'string') {
+	                regexStr = "^" + pattern + "$";
+	                regex = new RegExp(regexStr);
+	            }
+	            else {
+	                regexStr = pattern.toString();
+	                regex = pattern;
+	            }
+	            return function (control) {
+	                if (isEmptyInputValue(control.value)) {
+	                    return null; // don't validate empty values to allow optional controls
+	                }
+	                var value = control.value;
+	                return regex.test(value) ? null :
+	                    { 'pattern': { 'requiredPattern': regexStr, 'actualValue': value } };
+	            };
+	        };
+	        /**
+	         * No-op validator.
+	         */
+	        Validators.nullValidator = function (c) { return null; };
+	        /**
+	         * Compose multiple validators into a single function that returns the union
+	         * of the individual error maps.
+	         */
+	        Validators.compose = function (validators) {
+	            if (!validators)
+	                return null;
+	            var presentValidators = validators.filter(isPresent);
+	            if (presentValidators.length == 0)
+	                return null;
+	            return function (control) {
+	                return _mergeErrors(_executeValidators(control, presentValidators));
+	            };
+	        };
+	        Validators.composeAsync = function (validators) {
+	            if (!validators)
+	                return null;
+	            var presentValidators = validators.filter(isPresent);
+	            if (presentValidators.length == 0)
+	                return null;
+	            return function (control) {
+	                var promises = _executeAsyncValidators(control, presentValidators).map(_convertToPromise);
+	                return Promise.all(promises).then(_mergeErrors);
+	            };
+	        };
+	        return Validators;
+	    }());
+	    function _convertToPromise(obj) {
+	        return isPromise(obj) ? obj : rxjs_operator_toPromise.toPromise.call(obj);
+	    }
+	    function _executeValidators(control, validators) {
+	        return validators.map(function (v) { return v(control); });
+	    }
+	    function _executeAsyncValidators(control, validators) {
+	        return validators.map(function (v) { return v(control); });
+	    }
+	    function _mergeErrors(arrayOfErrors) {
+	        var res = arrayOfErrors.reduce(function (res, errors) {
+	            return isPresent(errors) ? StringMapWrapper.merge(res, errors) : res;
+	        }, {});
+	        return Object.keys(res).length === 0 ? null : res;
+	    }
+
+	    /**
+	     * Used to provide a {@link ControlValueAccessor} for form controls.
+	     *
+	     * See {@link DefaultValueAccessor} for how to implement one.
+	     * @stable
+	     */
+	    var NG_VALUE_ACCESSOR = new _angular_core.OpaqueToken('NgValueAccessor');
+
+	    var CHECKBOX_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return CheckboxControlValueAccessor; }),
+	        multi: true,
+	    };
+	    /**
+	     * The accessor for writing a value and listening to changes on a checkbox input element.
+	     *
+	     *  ### Example
+	     *  ```
+	     *  <input type="checkbox" name="rememberLogin" ngModel>
+	     *  ```
+	     *
+	     *  @stable
+	     */
+	    var CheckboxControlValueAccessor = (function () {
+	        function CheckboxControlValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        CheckboxControlValueAccessor.prototype.writeValue = function (value) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', value);
+	        };
+	        CheckboxControlValueAccessor.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+	        CheckboxControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        CheckboxControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        CheckboxControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=checkbox][formControlName],input[type=checkbox][formControl],input[type=checkbox][ngModel]',
+	                        host: { '(change)': 'onChange($event.target.checked)', '(blur)': 'onTouched()' },
+	                        providers: [CHECKBOX_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        CheckboxControlValueAccessor.ctorParameters = [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ];
+	        return CheckboxControlValueAccessor;
+	    }());
+
+	    var DEFAULT_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return DefaultValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     * The default accessor for writing a value and listening to changes that is used by the
+	     * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
+	     *
+	     *  ### Example
+	     *  ```
+	     *  <input type="text" name="searchQuery" ngModel>
+	     *  ```
+	     *
+	     *  @stable
+	     */
+	    var DefaultValueAccessor = (function () {
+	        function DefaultValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        DefaultValueAccessor.prototype.writeValue = function (value) {
+	            var normalizedValue = value == null ? '' : value;
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+	        };
+	        DefaultValueAccessor.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+	        DefaultValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        DefaultValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        DefaultValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]',
+	                        // TODO: vsavkin replace the above selector with the one below it once
+	                        // https://github.com/angular/angular/issues/3011 is implemented
+	                        // selector: '[ngControl],[ngModel],[ngFormControl]',
+	                        host: { '(input)': 'onChange($event.target.value)', '(blur)': 'onTouched()' },
+	                        providers: [DEFAULT_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        DefaultValueAccessor.ctorParameters = [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ];
+	        return DefaultValueAccessor;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    function normalizeValidator(validator) {
+	        if (validator.validate) {
+	            return function (c) { return validator.validate(c); };
+	        }
+	        else {
+	            return validator;
+	        }
+	    }
+	    function normalizeAsyncValidator(validator) {
+	        if (validator.validate) {
+	            return function (c) { return validator.validate(c); };
+	        }
+	        else {
+	            return validator;
+	        }
+	    }
+
+	    var NUMBER_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return NumberValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     * The accessor for writing a number value and listening to changes that is used by the
+	     * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
+	     *
+	     *  ### Example
+	     *  ```
+	     *  <input type="number" [(ngModel)]="age">
+	     *  ```
+	     */
+	    var NumberValueAccessor = (function () {
+	        function NumberValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        NumberValueAccessor.prototype.writeValue = function (value) {
+	            // The value needs to be normalized for IE9, otherwise it is set to 'null' when null
+	            var normalizedValue = value == null ? '' : value;
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+	        };
+	        NumberValueAccessor.prototype.registerOnChange = function (fn) {
+	            this.onChange = function (value) { fn(value == '' ? null : parseFloat(value)); };
+	        };
+	        NumberValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        NumberValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        NumberValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=number][formControlName],input[type=number][formControl],input[type=number][ngModel]',
+	                        host: {
+	                            '(change)': 'onChange($event.target.value)',
+	                            '(input)': 'onChange($event.target.value)',
+	                            '(blur)': 'onTouched()'
+	                        },
+	                        providers: [NUMBER_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NumberValueAccessor.ctorParameters = [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ];
+	        return NumberValueAccessor;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$2 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    function unimplemented() {
+	        throw new Error('unimplemented');
+	    }
+	    /**
+	     * A base class that all control directive extend.
+	     * It binds a {@link FormControl} object to a DOM element.
+	     *
+	     * Used internally by Angular forms.
+	     *
+	     * @stable
+	     */
+	    var NgControl = (function (_super) {
+	        __extends$2(NgControl, _super);
+	        function NgControl() {
+	            _super.apply(this, arguments);
+	            /** @internal */
+	            this._parent = null;
+	            this.name = null;
+	            this.valueAccessor = null;
+	            /** @internal */
+	            this._rawValidators = [];
+	            /** @internal */
+	            this._rawAsyncValidators = [];
+	        }
+	        Object.defineProperty(NgControl.prototype, "validator", {
+	            get: function () { return unimplemented(); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgControl.prototype, "asyncValidator", {
+	            get: function () { return unimplemented(); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        return NgControl;
+	    }(AbstractControlDirective));
+
+	    var RADIO_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return RadioControlValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     * Internal class used by Angular to uncheck radio buttons with the matching name.
+	     */
+	    var RadioControlRegistry = (function () {
+	        function RadioControlRegistry() {
+	            this._accessors = [];
+	        }
+	        RadioControlRegistry.prototype.add = function (control, accessor) {
+	            this._accessors.push([control, accessor]);
+	        };
+	        RadioControlRegistry.prototype.remove = function (accessor) {
+	            for (var i = this._accessors.length - 1; i >= 0; --i) {
+	                if (this._accessors[i][1] === accessor) {
+	                    this._accessors.splice(i, 1);
+	                    return;
+	                }
+	            }
+	        };
+	        RadioControlRegistry.prototype.select = function (accessor) {
+	            var _this = this;
+	            this._accessors.forEach(function (c) {
+	                if (_this._isSameGroup(c, accessor) && c[1] !== accessor) {
+	                    c[1].fireUncheck(accessor.value);
+	                }
+	            });
+	        };
+	        RadioControlRegistry.prototype._isSameGroup = function (controlPair, accessor) {
+	            if (!controlPair[0].control)
+	                return false;
+	            return controlPair[0]._parent === accessor._control._parent &&
+	                controlPair[1].name === accessor.name;
+	        };
+	        RadioControlRegistry.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        RadioControlRegistry.ctorParameters = [];
+	        return RadioControlRegistry;
+	    }());
+	    /**
+	     * @whatItDoes  Writes radio control values and listens to radio control changes.
+	     *
+	     * Used by {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName}
+	     * to keep the view synced with the {@link FormControl} model.
+	     *
+	     * @howToUse
+	     *
+	     * If you have imported the {@link FormsModule} or the {@link ReactiveFormsModule}, this
+	     * value accessor will be active on any radio control that has a form directive. You do
+	     * **not** need to add a special selector to activate it.
+	     *
+	     * ### How to use radio buttons with form directives
+	     *
+	     * To use radio buttons in a template-driven form, you'll want to ensure that radio buttons
+	     * in the same group have the same `name` attribute.  Radio buttons with different `name`
+	     * attributes do not affect each other.
+	     *
+	     * {@example forms/ts/radioButtons/radio_button_example.ts region='TemplateDriven'}
+	     *
+	     * When using radio buttons in a reactive form, radio buttons in the same group should have the
+	     * same `formControlName`. You can also add a `name` attribute, but it's optional.
+	     *
+	     * {@example forms/ts/reactiveRadioButtons/reactive_radio_button_example.ts region='Reactive'}
+	     *
+	     *  * **npm package**: `@angular/forms`
+	     *
+	     *  @stable
+	     */
+	    var RadioControlValueAccessor = (function () {
+	        function RadioControlValueAccessor(_renderer, _elementRef, _registry, _injector) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this._registry = _registry;
+	            this._injector = _injector;
+	            this.onChange = function () { };
+	            this.onTouched = function () { };
+	        }
+	        RadioControlValueAccessor.prototype.ngOnInit = function () {
+	            this._control = this._injector.get(NgControl);
+	            this._checkName();
+	            this._registry.add(this._control, this);
+	        };
+	        RadioControlValueAccessor.prototype.ngOnDestroy = function () { this._registry.remove(this); };
+	        RadioControlValueAccessor.prototype.writeValue = function (value) {
+	            this._state = value === this.value;
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', this._state);
+	        };
+	        RadioControlValueAccessor.prototype.registerOnChange = function (fn) {
+	            var _this = this;
+	            this._fn = fn;
+	            this.onChange = function () {
+	                fn(_this.value);
+	                _this._registry.select(_this);
+	            };
+	        };
+	        RadioControlValueAccessor.prototype.fireUncheck = function (value) { this.writeValue(value); };
+	        RadioControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        RadioControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        RadioControlValueAccessor.prototype._checkName = function () {
+	            if (this.name && this.formControlName && this.name !== this.formControlName) {
+	                this._throwNameError();
+	            }
+	            if (!this.name && this.formControlName)
+	                this.name = this.formControlName;
+	        };
+	        RadioControlValueAccessor.prototype._throwNameError = function () {
+	            throw new Error("\n      If you define both a name and a formControlName attribute on your radio button, their values\n      must match. Ex: <input type=\"radio\" formControlName=\"food\" name=\"food\">\n    ");
+	        };
+	        RadioControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=radio][formControlName],input[type=radio][formControl],input[type=radio][ngModel]',
+	                        host: { '(change)': 'onChange()', '(blur)': 'onTouched()' },
+	                        providers: [RADIO_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        RadioControlValueAccessor.ctorParameters = [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	            { type: RadioControlRegistry, },
+	            { type: _angular_core.Injector, },
+	        ];
+	        RadioControlValueAccessor.propDecorators = {
+	            'name': [{ type: _angular_core.Input },],
+	            'formControlName': [{ type: _angular_core.Input },],
+	            'value': [{ type: _angular_core.Input },],
+	        };
+	        return RadioControlValueAccessor;
+	    }());
+
+	    var RANGE_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return RangeValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     * The accessor for writing a range value and listening to changes that is used by the
+	     * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
+	     *
+	     *  ### Example
+	     *  ```
+	     *  <input type="range" [(ngModel)]="age" >
+	     *  ```
+	     */
+	    var RangeValueAccessor = (function () {
+	        function RangeValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        RangeValueAccessor.prototype.writeValue = function (value) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', parseFloat(value));
+	        };
+	        RangeValueAccessor.prototype.registerOnChange = function (fn) {
+	            this.onChange = function (value) { fn(value == '' ? null : parseFloat(value)); };
+	        };
+	        RangeValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        RangeValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        RangeValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=range][formControlName],input[type=range][formControl],input[type=range][ngModel]',
+	                        host: {
+	                            '(change)': 'onChange($event.target.value)',
+	                            '(input)': 'onChange($event.target.value)',
+	                            '(blur)': 'onTouched()'
+	                        },
+	                        providers: [RANGE_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        RangeValueAccessor.ctorParameters = [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ];
+	        return RangeValueAccessor;
+	    }());
+
+	    var SELECT_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return SelectControlValueAccessor; }),
+	        multi: true
+	    };
+	    function _buildValueString(id, value) {
+	        if (id == null)
+	            return "" + value;
+	        if (!isPrimitive(value))
+	            value = 'Object';
+	        return (id + ": " + value).slice(0, 50);
+	    }
+	    function _extractId(valueString) {
+	        return valueString.split(':')[0];
+	    }
+	    /**
+	     * @whatItDoes Writes values and listens to changes on a select element.
+	     *
+	     * Used by {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName}
+	     * to keep the view synced with the {@link FormControl} model.
+	     *
+	     * @howToUse
+	     *
+	     * If you have imported the {@link FormsModule} or the {@link ReactiveFormsModule}, this
+	     * value accessor will be active on any select control that has a form directive. You do
+	     * **not** need to add a special selector to activate it.
+	     *
+	     * ### How to use select controls with form directives
+	     *
+	     * To use a select in a template-driven form, simply add an `ngModel` and a `name`
+	     * attribute to the main `<select>` tag.
+	     *
+	     * If your option values are simple strings, you can bind to the normal `value` property
+	     * on the option.  If your option values happen to be objects (and you'd like to save the
+	     * selection in your form as an object), use `ngValue` instead:
+	     *
+	     * {@example forms/ts/selectControl/select_control_example.ts region='Component'}
+	     *
+	     * In reactive forms, you'll also want to add your form directive (`formControlName` or
+	     * `formControl`) on the main `<select>` tag. Like in the former example, you have the
+	     * choice of binding to the  `value` or `ngValue` property on the select's options.
+	     *
+	     * {@example forms/ts/reactiveSelectControl/reactive_select_control_example.ts region='Component'}
+	     *
+	     * Note: We listen to the 'change' event because 'input' events aren't fired
+	     * for selects in Firefox and IE:
+	     * https://bugzilla.mozilla.org/show_bug.cgi?id=1024350
+	     * https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4660045/
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * @stable
+	     */
+	    var SelectControlValueAccessor = (function () {
+	        function SelectControlValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            /** @internal */
+	            this._optionMap = new Map();
+	            /** @internal */
+	            this._idCounter = 0;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        SelectControlValueAccessor.prototype.writeValue = function (value) {
+	            this.value = value;
+	            var valueString = _buildValueString(this._getOptionId(value), value);
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', valueString);
+	        };
+	        SelectControlValueAccessor.prototype.registerOnChange = function (fn) {
+	            var _this = this;
+	            this.onChange = function (valueString) {
+	                _this.value = valueString;
+	                fn(_this._getOptionValue(valueString));
+	            };
+	        };
+	        SelectControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        SelectControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        /** @internal */
+	        SelectControlValueAccessor.prototype._registerOption = function () { return (this._idCounter++).toString(); };
+	        /** @internal */
+	        SelectControlValueAccessor.prototype._getOptionId = function (value) {
+	            for (var _i = 0, _a = Array.from(this._optionMap.keys()); _i < _a.length; _i++) {
+	                var id = _a[_i];
+	                if (looseIdentical(this._optionMap.get(id), value))
+	                    return id;
+	            }
+	            return null;
+	        };
+	        /** @internal */
+	        SelectControlValueAccessor.prototype._getOptionValue = function (valueString) {
+	            var id = _extractId(valueString);
+	            return this._optionMap.has(id) ? this._optionMap.get(id) : valueString;
+	        };
+	        SelectControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]',
+	                        host: { '(change)': 'onChange($event.target.value)', '(blur)': 'onTouched()' },
+	                        providers: [SELECT_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        SelectControlValueAccessor.ctorParameters = [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ];
+	        return SelectControlValueAccessor;
+	    }());
+	    /**
+	     * @whatItDoes Marks `<option>` as dynamic, so Angular can be notified when options change.
+	     *
+	     * @howToUse
+	     *
+	     * See docs for {@link SelectControlValueAccessor} for usage examples.
+	     *
+	     * @stable
+	     */
+	    var NgSelectOption = (function () {
+	        function NgSelectOption(_element, _renderer, _select) {
+	            this._element = _element;
+	            this._renderer = _renderer;
+	            this._select = _select;
+	            if (this._select)
+	                this.id = this._select._registerOption();
+	        }
+	        Object.defineProperty(NgSelectOption.prototype, "ngValue", {
+	            set: function (value) {
+	                if (this._select == null)
+	                    return;
+	                this._select._optionMap.set(this.id, value);
+	                this._setElementValue(_buildValueString(this.id, value));
+	                this._select.writeValue(this._select.value);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgSelectOption.prototype, "value", {
+	            set: function (value) {
+	                this._setElementValue(value);
+	                if (this._select)
+	                    this._select.writeValue(this._select.value);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /** @internal */
+	        NgSelectOption.prototype._setElementValue = function (value) {
+	            this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+	        };
+	        NgSelectOption.prototype.ngOnDestroy = function () {
+	            if (this._select) {
+	                this._select._optionMap.delete(this.id);
+	                this._select.writeValue(this._select.value);
+	            }
+	        };
+	        NgSelectOption.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: 'option' },] },
+	        ];
+	        /** @nocollapse */
+	        NgSelectOption.ctorParameters = [
+	            { type: _angular_core.ElementRef, },
+	            { type: _angular_core.Renderer, },
+	            { type: SelectControlValueAccessor, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
+	        ];
+	        NgSelectOption.propDecorators = {
+	            'ngValue': [{ type: _angular_core.Input, args: ['ngValue',] },],
+	            'value': [{ type: _angular_core.Input, args: ['value',] },],
+	        };
+	        return NgSelectOption;
+	    }());
+
+	    var SELECT_MULTIPLE_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return SelectMultipleControlValueAccessor; }),
+	        multi: true
+	    };
+	    function _buildValueString$1(id, value) {
+	        if (id == null)
+	            return "" + value;
+	        if (typeof value === 'string')
+	            value = "'" + value + "'";
+	        if (!isPrimitive(value))
+	            value = 'Object';
+	        return (id + ": " + value).slice(0, 50);
+	    }
+	    function _extractId$1(valueString) {
+	        return valueString.split(':')[0];
+	    }
+	    /**
+	     * The accessor for writing a value and listening to changes on a select element.
+	     *
+	     * @stable
+	     */
+	    var SelectMultipleControlValueAccessor = (function () {
+	        function SelectMultipleControlValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            /** @internal */
+	            this._optionMap = new Map();
+	            /** @internal */
+	            this._idCounter = 0;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        SelectMultipleControlValueAccessor.prototype.writeValue = function (value) {
+	            var _this = this;
+	            this.value = value;
+	            if (value == null)
+	                return;
+	            var values = value;
+	            // convert values to ids
+	            var ids = values.map(function (v) { return _this._getOptionId(v); });
+	            this._optionMap.forEach(function (opt, o) { opt._setSelected(ids.indexOf(o.toString()) > -1); });
+	        };
+	        SelectMultipleControlValueAccessor.prototype.registerOnChange = function (fn) {
+	            var _this = this;
+	            this.onChange = function (_) {
+	                var selected = [];
+	                if (_.hasOwnProperty('selectedOptions')) {
+	                    var options = _.selectedOptions;
+	                    for (var i = 0; i < options.length; i++) {
+	                        var opt = options.item(i);
+	                        var val = _this._getOptionValue(opt.value);
+	                        selected.push(val);
+	                    }
+	                }
+	                else {
+	                    var options = _.options;
+	                    for (var i = 0; i < options.length; i++) {
+	                        var opt = options.item(i);
+	                        if (opt.selected) {
+	                            var val = _this._getOptionValue(opt.value);
+	                            selected.push(val);
+	                        }
+	                    }
+	                }
+	                fn(selected);
+	            };
+	        };
+	        SelectMultipleControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        SelectMultipleControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        /** @internal */
+	        SelectMultipleControlValueAccessor.prototype._registerOption = function (value) {
+	            var id = (this._idCounter++).toString();
+	            this._optionMap.set(id, value);
+	            return id;
+	        };
+	        /** @internal */
+	        SelectMultipleControlValueAccessor.prototype._getOptionId = function (value) {
+	            for (var _i = 0, _a = Array.from(this._optionMap.keys()); _i < _a.length; _i++) {
+	                var id = _a[_i];
+	                if (looseIdentical(this._optionMap.get(id)._value, value))
+	                    return id;
+	            }
+	            return null;
+	        };
+	        /** @internal */
+	        SelectMultipleControlValueAccessor.prototype._getOptionValue = function (valueString) {
+	            var id = _extractId$1(valueString);
+	            return this._optionMap.has(id) ? this._optionMap.get(id)._value : valueString;
+	        };
+	        SelectMultipleControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'select[multiple][formControlName],select[multiple][formControl],select[multiple][ngModel]',
+	                        host: { '(change)': 'onChange($event.target)', '(blur)': 'onTouched()' },
+	                        providers: [SELECT_MULTIPLE_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        SelectMultipleControlValueAccessor.ctorParameters = [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ];
+	        return SelectMultipleControlValueAccessor;
+	    }());
+	    /**
+	     * Marks `<option>` as dynamic, so Angular can be notified when options change.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * <select multiple name="city" ngModel>
+	     *   <option *ngFor="let c of cities" [value]="c"></option>
+	     * </select>
+	     * ```
+	     */
+	    var NgSelectMultipleOption = (function () {
+	        function NgSelectMultipleOption(_element, _renderer, _select) {
+	            this._element = _element;
+	            this._renderer = _renderer;
+	            this._select = _select;
+	            if (this._select) {
+	                this.id = this._select._registerOption(this);
+	            }
+	        }
+	        Object.defineProperty(NgSelectMultipleOption.prototype, "ngValue", {
+	            set: function (value) {
+	                if (this._select == null)
+	                    return;
+	                this._value = value;
+	                this._setElementValue(_buildValueString$1(this.id, value));
+	                this._select.writeValue(this._select.value);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgSelectMultipleOption.prototype, "value", {
+	            set: function (value) {
+	                if (this._select) {
+	                    this._value = value;
+	                    this._setElementValue(_buildValueString$1(this.id, value));
+	                    this._select.writeValue(this._select.value);
+	                }
+	                else {
+	                    this._setElementValue(value);
+	                }
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /** @internal */
+	        NgSelectMultipleOption.prototype._setElementValue = function (value) {
+	            this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+	        };
+	        /** @internal */
+	        NgSelectMultipleOption.prototype._setSelected = function (selected) {
+	            this._renderer.setElementProperty(this._element.nativeElement, 'selected', selected);
+	        };
+	        NgSelectMultipleOption.prototype.ngOnDestroy = function () {
+	            if (this._select) {
+	                this._select._optionMap.delete(this.id);
+	                this._select.writeValue(this._select.value);
+	            }
+	        };
+	        NgSelectMultipleOption.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: 'option' },] },
+	        ];
+	        /** @nocollapse */
+	        NgSelectMultipleOption.ctorParameters = [
+	            { type: _angular_core.ElementRef, },
+	            { type: _angular_core.Renderer, },
+	            { type: SelectMultipleControlValueAccessor, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
+	        ];
+	        NgSelectMultipleOption.propDecorators = {
+	            'ngValue': [{ type: _angular_core.Input, args: ['ngValue',] },],
+	            'value': [{ type: _angular_core.Input, args: ['value',] },],
+	        };
+	        return NgSelectMultipleOption;
+	    }());
+
+	    function controlPath(name, parent) {
+	        return parent.path.concat([name]);
+	    }
+	    function setUpControl(control, dir) {
+	        if (!control)
+	            _throwError(dir, 'Cannot find control with');
+	        if (!dir.valueAccessor)
+	            _throwError(dir, 'No value accessor for form control with');
+	        control.validator = Validators.compose([control.validator, dir.validator]);
+	        control.asyncValidator = Validators.composeAsync([control.asyncValidator, dir.asyncValidator]);
+	        dir.valueAccessor.writeValue(control.value);
+	        // view -> model
+	        dir.valueAccessor.registerOnChange(function (newValue) {
+	            dir.viewToModelUpdate(newValue);
+	            control.markAsDirty();
+	            control.setValue(newValue, { emitModelToViewChange: false });
+	        });
+	        // touched
+	        dir.valueAccessor.registerOnTouched(function () { return control.markAsTouched(); });
+	        control.registerOnChange(function (newValue, emitModelEvent) {
+	            // control -> view
+	            dir.valueAccessor.writeValue(newValue);
+	            // control -> ngModel
+	            if (emitModelEvent)
+	                dir.viewToModelUpdate(newValue);
+	        });
+	        if (dir.valueAccessor.setDisabledState) {
+	            control.registerOnDisabledChange(function (isDisabled) { dir.valueAccessor.setDisabledState(isDisabled); });
+	        }
+	        // re-run validation when validator binding changes, e.g. minlength=3 -> minlength=4
+	        dir._rawValidators.forEach(function (validator) {
+	            if (validator.registerOnValidatorChange)
+	                validator.registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+	        });
+	        dir._rawAsyncValidators.forEach(function (validator) {
+	            if (validator.registerOnValidatorChange)
+	                validator.registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+	        });
+	    }
+	    function cleanUpControl(control, dir) {
+	        dir.valueAccessor.registerOnChange(function () { return _noControlError(dir); });
+	        dir.valueAccessor.registerOnTouched(function () { return _noControlError(dir); });
+	        dir._rawValidators.forEach(function (validator) {
+	            if (validator.registerOnValidatorChange) {
+	                validator.registerOnValidatorChange(null);
+	            }
+	        });
+	        dir._rawAsyncValidators.forEach(function (validator) {
+	            if (validator.registerOnValidatorChange) {
+	                validator.registerOnValidatorChange(null);
+	            }
+	        });
+	        if (control)
+	            control._clearChangeFns();
+	    }
+	    function setUpFormContainer(control, dir) {
+	        if (isBlank(control))
+	            _throwError(dir, 'Cannot find control with');
+	        control.validator = Validators.compose([control.validator, dir.validator]);
+	        control.asyncValidator = Validators.composeAsync([control.asyncValidator, dir.asyncValidator]);
+	    }
+	    function _noControlError(dir) {
+	        return _throwError(dir, 'There is no FormControl instance attached to form control element with');
+	    }
+	    function _throwError(dir, message) {
+	        var messageEnd;
+	        if (dir.path.length > 1) {
+	            messageEnd = "path: '" + dir.path.join(' -> ') + "'";
+	        }
+	        else if (dir.path[0]) {
+	            messageEnd = "name: '" + dir.path + "'";
+	        }
+	        else {
+	            messageEnd = 'unspecified name attribute';
+	        }
+	        throw new Error(message + " " + messageEnd);
+	    }
+	    function composeValidators(validators) {
+	        return isPresent(validators) ? Validators.compose(validators.map(normalizeValidator)) : null;
+	    }
+	    function composeAsyncValidators(validators) {
+	        return isPresent(validators) ? Validators.composeAsync(validators.map(normalizeAsyncValidator)) :
+	            null;
+	    }
+	    function isPropertyUpdated(changes, viewModel) {
+	        if (!changes.hasOwnProperty('model'))
+	            return false;
+	        var change = changes['model'];
+	        if (change.isFirstChange())
+	            return true;
+	        return !looseIdentical(viewModel, change.currentValue);
+	    }
+	    var BUILTIN_ACCESSORS = [
+	        CheckboxControlValueAccessor,
+	        RangeValueAccessor,
+	        NumberValueAccessor,
+	        SelectControlValueAccessor,
+	        SelectMultipleControlValueAccessor,
+	        RadioControlValueAccessor,
+	    ];
+	    function isBuiltInAccessor(valueAccessor) {
+	        return BUILTIN_ACCESSORS.some(function (a) { return valueAccessor.constructor === a; });
+	    }
+	    // TODO: vsavkin remove it once https://github.com/angular/angular/issues/3011 is implemented
+	    function selectValueAccessor(dir, valueAccessors) {
+	        if (!valueAccessors)
+	            return null;
+	        var defaultAccessor;
+	        var builtinAccessor;
+	        var customAccessor;
+	        valueAccessors.forEach(function (v) {
+	            if (v.constructor === DefaultValueAccessor) {
+	                defaultAccessor = v;
+	            }
+	            else if (isBuiltInAccessor(v)) {
+	                if (builtinAccessor)
+	                    _throwError(dir, 'More than one built-in value accessor matches form control with');
+	                builtinAccessor = v;
+	            }
+	            else {
+	                if (customAccessor)
+	                    _throwError(dir, 'More than one custom value accessor matches form control with');
+	                customAccessor = v;
+	            }
+	        });
+	        if (customAccessor)
+	            return customAccessor;
+	        if (builtinAccessor)
+	            return builtinAccessor;
+	        if (defaultAccessor)
+	            return defaultAccessor;
+	        _throwError(dir, 'No valid value accessor for form control with');
+	        return null;
+	    }
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * This is a base class for code shared between {@link NgModelGroup} and {@link FormGroupName}.
+	     *
+	     * @stable
+	     */
+	    var AbstractFormGroupDirective = (function (_super) {
+	        __extends(AbstractFormGroupDirective, _super);
+	        function AbstractFormGroupDirective() {
+	            _super.apply(this, arguments);
+	        }
+	        AbstractFormGroupDirective.prototype.ngOnInit = function () {
+	            this._checkParentType();
+	            this.formDirective.addFormGroup(this);
+	        };
+	        AbstractFormGroupDirective.prototype.ngOnDestroy = function () {
+	            if (this.formDirective) {
+	                this.formDirective.removeFormGroup(this);
+	            }
+	        };
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "control", {
+	            /**
+	             * Get the {@link FormGroup} backing this binding.
+	             */
+	            get: function () { return this.formDirective.getFormGroup(this); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "path", {
+	            /**
+	             * Get the path to this control group.
+	             */
+	            get: function () { return controlPath(this.name, this._parent); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "formDirective", {
+	            /**
+	             * Get the {@link Form} to which this group belongs.
+	             */
+	            get: function () { return this._parent ? this._parent.formDirective : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "validator", {
+	            get: function () { return composeValidators(this._validators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "asyncValidator", {
+	            get: function () { return composeAsyncValidators(this._asyncValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /** @internal */
+	        AbstractFormGroupDirective.prototype._checkParentType = function () { };
+	        return AbstractFormGroupDirective;
+	    }(ControlContainer));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$3 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var AbstractControlStatus = (function () {
+	        function AbstractControlStatus(cd) {
+	            this._cd = cd;
+	        }
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassUntouched", {
+	            get: function () { return this._cd.control ? this._cd.control.untouched : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassTouched", {
+	            get: function () { return this._cd.control ? this._cd.control.touched : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassPristine", {
+	            get: function () { return this._cd.control ? this._cd.control.pristine : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassDirty", {
+	            get: function () { return this._cd.control ? this._cd.control.dirty : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassValid", {
+	            get: function () { return this._cd.control ? this._cd.control.valid : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassInvalid", {
+	            get: function () { return this._cd.control ? this._cd.control.invalid : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassPending", {
+	            get: function () { return this._cd.control ? this._cd.control.pending : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        return AbstractControlStatus;
+	    }());
+	    var ngControlStatusHost = {
+	        '[class.ng-untouched]': 'ngClassUntouched',
+	        '[class.ng-touched]': 'ngClassTouched',
+	        '[class.ng-pristine]': 'ngClassPristine',
+	        '[class.ng-dirty]': 'ngClassDirty',
+	        '[class.ng-valid]': 'ngClassValid',
+	        '[class.ng-invalid]': 'ngClassInvalid',
+	        '[class.ng-pending]': 'ngClassPending',
+	    };
+	    /**
+	     * Directive automatically applied to Angular form controls that sets CSS classes
+	     * based on control status (valid/invalid/dirty/etc).
+	     *
+	     * @stable
+	     */
+	    var NgControlStatus = (function (_super) {
+	        __extends$3(NgControlStatus, _super);
+	        function NgControlStatus(cd) {
+	            _super.call(this, cd);
+	        }
+	        NgControlStatus.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formControlName],[ngModel],[formControl]', host: ngControlStatusHost },] },
+	        ];
+	        /** @nocollapse */
+	        NgControlStatus.ctorParameters = [
+	            { type: NgControl, decorators: [{ type: _angular_core.Self },] },
+	        ];
+	        return NgControlStatus;
+	    }(AbstractControlStatus));
+	    /**
+	     * Directive automatically applied to Angular form groups that sets CSS classes
+	     * based on control status (valid/invalid/dirty/etc).
+	     *
+	     * @stable
+	     */
+	    var NgControlStatusGroup = (function (_super) {
+	        __extends$3(NgControlStatusGroup, _super);
+	        function NgControlStatusGroup(cd) {
+	            _super.call(this, cd);
+	        }
+	        NgControlStatusGroup.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]',
+	                        host: ngControlStatusHost
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NgControlStatusGroup.ctorParameters = [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Self },] },
+	        ];
+	        return NgControlStatusGroup;
+	    }(AbstractControlStatus));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$5 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * Use by directives and components to emit custom Events.
+	     *
+	     * ### Examples
+	     *
+	     * In the following example, `Zippy` alternatively emits `open` and `close` events when its
+	     * title gets clicked:
+	     *
+	     * ```
+	     * @Component({
+	     *   selector: 'zippy',
+	     *   template: `
+	     *   <div class="zippy">
+	     *     <div (click)="toggle()">Toggle</div>
+	     *     <div [hidden]="!visible">
+	     *       <ng-content></ng-content>
+	     *     </div>
+	     *  </div>`})
+	     * export class Zippy {
+	     *   visible: boolean = true;
+	     *   @Output() open: EventEmitter<any> = new EventEmitter();
+	     *   @Output() close: EventEmitter<any> = new EventEmitter();
+	     *
+	     *   toggle() {
+	     *     this.visible = !this.visible;
+	     *     if (this.visible) {
+	     *       this.open.emit(null);
+	     *     } else {
+	     *       this.close.emit(null);
+	     *     }
+	     *   }
+	     * }
+	     * ```
+	     *
+	     * The events payload can be accessed by the parameter `$event` on the components output event
+	     * handler:
+	     *
+	     * ```
+	     * <zippy (open)="onOpen($event)" (close)="onClose($event)"></zippy>
+	     * ```
+	     *
+	     * Uses Rx.Observable but provides an adapter to make it work as specified here:
+	     * https://github.com/jhusain/observable-spec
+	     *
+	     * Once a reference implementation of the spec is available, switch to it.
+	     * @stable
+	     */
+	    var EventEmitter = (function (_super) {
+	        __extends$5(EventEmitter, _super);
+	        /**
+	         * Creates an instance of [EventEmitter], which depending on [isAsync],
+	         * delivers events synchronously or asynchronously.
+	         */
+	        function EventEmitter(isAsync) {
+	            if (isAsync === void 0) { isAsync = false; }
+	            _super.call(this);
+	            this.__isAsync = isAsync;
+	        }
+	        EventEmitter.prototype.emit = function (value) { _super.prototype.next.call(this, value); };
+	        EventEmitter.prototype.subscribe = function (generatorOrNext, error, complete) {
+	            var schedulerFn;
+	            var errorFn = function (err) { return null; };
+	            var completeFn = function () { return null; };
+	            if (generatorOrNext && typeof generatorOrNext === 'object') {
+	                schedulerFn = this.__isAsync ? function (value) {
+	                    setTimeout(function () { return generatorOrNext.next(value); });
+	                } : function (value) { generatorOrNext.next(value); };
+	                if (generatorOrNext.error) {
+	                    errorFn = this.__isAsync ? function (err) { setTimeout(function () { return generatorOrNext.error(err); }); } :
+	                        function (err) { generatorOrNext.error(err); };
+	                }
+	                if (generatorOrNext.complete) {
+	                    completeFn = this.__isAsync ? function () { setTimeout(function () { return generatorOrNext.complete(); }); } :
+	                        function () { generatorOrNext.complete(); };
+	                }
+	            }
+	            else {
+	                schedulerFn = this.__isAsync ? function (value) { setTimeout(function () { return generatorOrNext(value); }); } :
+	                    function (value) { generatorOrNext(value); };
+	                if (error) {
+	                    errorFn =
+	                        this.__isAsync ? function (err) { setTimeout(function () { return error(err); }); } : function (err) { error(err); };
+	                }
+	                if (complete) {
+	                    completeFn =
+	                        this.__isAsync ? function () { setTimeout(function () { return complete(); }); } : function () { complete(); };
+	                }
+	            }
+	            return _super.prototype.subscribe.call(this, schedulerFn, errorFn, completeFn);
+	        };
+	        return EventEmitter;
+	    }(rxjs_Subject.Subject));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$6 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * Indicates that a FormControl is valid, i.e. that no errors exist in the input value.
+	     */
+	    var VALID = 'VALID';
+	    /**
+	     * Indicates that a FormControl is invalid, i.e. that an error exists in the input value.
+	     */
+	    var INVALID = 'INVALID';
+	    /**
+	     * Indicates that a FormControl is pending, i.e. that async validation is occurring and
+	     * errors are not yet available for the input value.
+	     */
+	    var PENDING = 'PENDING';
+	    /**
+	     * Indicates that a FormControl is disabled, i.e. that the control is exempt from ancestor
+	     * calculations of validity or value.
+	     */
+	    var DISABLED = 'DISABLED';
+	    function _find(control, path, delimiter) {
+	        if (path == null)
+	            return null;
+	        if (!(path instanceof Array)) {
+	            path = path.split(delimiter);
+	        }
+	        if (path instanceof Array && (path.length === 0))
+	            return null;
+	        return path.reduce(function (v, name) {
+	            if (v instanceof FormGroup) {
+	                return v.controls[name] || null;
+	            }
+	            if (v instanceof FormArray) {
+	                return v.at(name) || null;
+	            }
+	            return null;
+	        }, control);
+	    }
+	    function toObservable(r) {
+	        return isPromise(r) ? rxjs_observable_fromPromise.fromPromise(r) : r;
+	    }
+	    function coerceToValidator(validator) {
+	        return Array.isArray(validator) ? composeValidators(validator) : validator;
+	    }
+	    function coerceToAsyncValidator(asyncValidator) {
+	        return Array.isArray(asyncValidator) ? composeAsyncValidators(asyncValidator) : asyncValidator;
+	    }
+	    /**
+	     * @whatItDoes This is the base class for {@link FormControl}, {@link FormGroup}, and
+	     * {@link FormArray}.
+	     *
+	     * It provides some of the shared behavior that all controls and groups of controls have, like
+	     * running validators, calculating status, and resetting state. It also defines the properties
+	     * that are shared between all sub-classes, like `value`, `valid`, and `dirty`. It shouldn't be
+	     * instantiated directly.
+	     *
+	     * @stable
+	     */
+	    var AbstractControl = (function () {
+	        function AbstractControl(validator, asyncValidator) {
+	            this.validator = validator;
+	            this.asyncValidator = asyncValidator;
+	            /** @internal */
+	            this._onCollectionChange = function () { };
+	            this._pristine = true;
+	            this._touched = false;
+	            /** @internal */
+	            this._onDisabledChange = [];
+	        }
+	        Object.defineProperty(AbstractControl.prototype, "value", {
+	            /**
+	             * The value of the control.
+	             */
+	            get: function () { return this._value; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "parent", {
+	            /**
+	             * The parent control.
+	             */
+	            get: function () { return this._parent; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "status", {
+	            /**
+	             * The validation status of the control. There are four possible
+	             * validation statuses:
+	             *
+	             * * **VALID**:  control has passed all validation checks
+	             * * **INVALID**: control has failed at least one validation check
+	             * * **PENDING**: control is in the midst of conducting a validation check
+	             * * **DISABLED**: control is exempt from validation checks
+	             *
+	             * These statuses are mutually exclusive, so a control cannot be
+	             * both valid AND invalid or invalid AND disabled.
+	             */
+	            get: function () { return this._status; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "valid", {
+	            /**
+	             * A control is `valid` when its `status === VALID`.
+	             *
+	             * In order to have this status, the control must have passed all its
+	             * validation checks.
+	             */
+	            get: function () { return this._status === VALID; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "invalid", {
+	            /**
+	             * A control is `invalid` when its `status === INVALID`.
+	             *
+	             * In order to have this status, the control must have failed
+	             * at least one of its validation checks.
+	             */
+	            get: function () { return this._status === INVALID; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "pending", {
+	            /**
+	             * A control is `pending` when its `status === PENDING`.
+	             *
+	             * In order to have this status, the control must be in the
+	             * middle of conducting a validation check.
+	             */
+	            get: function () { return this._status == PENDING; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "disabled", {
+	            /**
+	             * A control is `disabled` when its `status === DISABLED`.
+	             *
+	             * Disabled controls are exempt from validation checks and
+	             * are not included in the aggregate value of their ancestor
+	             * controls.
+	             */
+	            get: function () { return this._status === DISABLED; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "enabled", {
+	            /**
+	             * A control is `enabled` as long as its `status !== DISABLED`.
+	             *
+	             * In other words, it has a status of `VALID`, `INVALID`, or
+	             * `PENDING`.
+	             */
+	            get: function () { return this._status !== DISABLED; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "errors", {
+	            /**
+	             * Returns any errors generated by failing validation. If there
+	             * are no errors, it will return null.
+	             */
+	            get: function () { return this._errors; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "pristine", {
+	            /**
+	             * A control is `pristine` if the user has not yet changed
+	             * the value in the UI.
+	             *
+	             * Note that programmatic changes to a control's value will
+	             * *not* mark it dirty.
+	             */
+	            get: function () { return this._pristine; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "dirty", {
+	            /**
+	             * A control is `dirty` if the user has changed the value
+	             * in the UI.
+	             *
+	             * Note that programmatic changes to a control's value will
+	             * *not* mark it dirty.
+	             */
+	            get: function () { return !this.pristine; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "touched", {
+	            /**
+	            * A control is marked `touched` once the user has triggered
+	            * a `blur` event on it.
+	            */
+	            get: function () { return this._touched; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "untouched", {
+	            /**
+	             * A control is `untouched` if the user has not yet triggered
+	             * a `blur` event on it.
+	             */
+	            get: function () { return !this._touched; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "valueChanges", {
+	            /**
+	             * Emits an event every time the value of the control changes, in
+	             * the UI or programmatically.
+	             */
+	            get: function () { return this._valueChanges; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "statusChanges", {
+	            /**
+	             * Emits an event every time the validation status of the control
+	             * is re-calculated.
+	             */
+	            get: function () { return this._statusChanges; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * Sets the synchronous validators that are active on this control.  Calling
+	         * this will overwrite any existing sync validators.
+	         */
+	        AbstractControl.prototype.setValidators = function (newValidator) {
+	            this.validator = coerceToValidator(newValidator);
+	        };
+	        /**
+	         * Sets the async validators that are active on this control. Calling this
+	         * will overwrite any existing async validators.
+	         */
+	        AbstractControl.prototype.setAsyncValidators = function (newValidator) {
+	            this.asyncValidator = coerceToAsyncValidator(newValidator);
+	        };
+	        /**
+	         * Empties out the sync validator list.
+	         */
+	        AbstractControl.prototype.clearValidators = function () { this.validator = null; };
+	        /**
+	         * Empties out the async validator list.
+	         */
+	        AbstractControl.prototype.clearAsyncValidators = function () { this.asyncValidator = null; };
+	        /**
+	         * Marks the control as `touched`.
+	         *
+	         * This will also mark all direct ancestors as `touched` to maintain
+	         * the model.
+	         */
+	        AbstractControl.prototype.markAsTouched = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._touched = true;
+	            if (this._parent && !onlySelf) {
+	                this._parent.markAsTouched({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         * Marks the control as `untouched`.
+	         *
+	         * If the control has any children, it will also mark all children as `untouched`
+	         * to maintain the model, and re-calculate the `touched` status of all parent
+	         * controls.
+	         */
+	        AbstractControl.prototype.markAsUntouched = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._touched = false;
+	            this._forEachChild(function (control) { control.markAsUntouched({ onlySelf: true }); });
+	            if (this._parent && !onlySelf) {
+	                this._parent._updateTouched({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         * Marks the control as `dirty`.
+	         *
+	         * This will also mark all direct ancestors as `dirty` to maintain
+	         * the model.
+	         */
+	        AbstractControl.prototype.markAsDirty = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._pristine = false;
+	            if (this._parent && !onlySelf) {
+	                this._parent.markAsDirty({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         * Marks the control as `pristine`.
+	         *
+	         * If the control has any children, it will also mark all children as `pristine`
+	         * to maintain the model, and re-calculate the `pristine` status of all parent
+	         * controls.
+	         */
+	        AbstractControl.prototype.markAsPristine = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._pristine = true;
+	            this._forEachChild(function (control) { control.markAsPristine({ onlySelf: true }); });
+	            if (this._parent && !onlySelf) {
+	                this._parent._updatePristine({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         * Marks the control as `pending`.
+	         */
+	        AbstractControl.prototype.markAsPending = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._status = PENDING;
+	            if (this._parent && !onlySelf) {
+	                this._parent.markAsPending({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         * Disables the control. This means the control will be exempt from validation checks and
+	         * excluded from the aggregate value of any parent. Its status is `DISABLED`.
+	         *
+	         * If the control has children, all children will be disabled to maintain the model.
+	         */
+	        AbstractControl.prototype.disable = function (_a) {
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._status = DISABLED;
+	            this._errors = null;
+	            this._forEachChild(function (control) { control.disable({ onlySelf: true }); });
+	            this._updateValue();
+	            if (emitEvent !== false) {
+	                this._valueChanges.emit(this._value);
+	                this._statusChanges.emit(this._status);
+	            }
+	            this._updateAncestors(onlySelf);
+	            this._onDisabledChange.forEach(function (changeFn) { return changeFn(true); });
+	        };
+	        /**
+	         * Enables the control. This means the control will be included in validation checks and
+	         * the aggregate value of its parent. Its status is re-calculated based on its value and
+	         * its validators.
+	         *
+	         * If the control has children, all children will be enabled.
+	         */
+	        AbstractControl.prototype.enable = function (_a) {
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._status = VALID;
+	            this._forEachChild(function (control) { control.enable({ onlySelf: true }); });
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: emitEvent });
+	            this._updateAncestors(onlySelf);
+	            this._onDisabledChange.forEach(function (changeFn) { return changeFn(false); });
+	        };
+	        AbstractControl.prototype._updateAncestors = function (onlySelf) {
+	            if (this._parent && !onlySelf) {
+	                this._parent.updateValueAndValidity();
+	                this._parent._updatePristine();
+	                this._parent._updateTouched();
+	            }
+	        };
+	        AbstractControl.prototype.setParent = function (parent) { this._parent = parent; };
+	        /**
+	         * Re-calculates the value and validation status of the control.
+	         *
+	         * By default, it will also update the value and validity of its ancestors.
+	         */
+	        AbstractControl.prototype.updateValueAndValidity = function (_a) {
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._setInitialStatus();
+	            this._updateValue();
+	            if (this.enabled) {
+	                this._errors = this._runValidator();
+	                this._status = this._calculateStatus();
+	                if (this._status === VALID || this._status === PENDING) {
+	                    this._runAsyncValidator(emitEvent);
+	                }
+	            }
+	            if (emitEvent !== false) {
+	                this._valueChanges.emit(this._value);
+	                this._statusChanges.emit(this._status);
+	            }
+	            if (this._parent && !onlySelf) {
+	                this._parent.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	            }
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._updateTreeValidity = function (_a) {
+	            var emitEvent = (_a === void 0 ? { emitEvent: true } : _a).emitEvent;
+	            this._forEachChild(function (ctrl) { return ctrl._updateTreeValidity({ emitEvent: emitEvent }); });
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: emitEvent });
+	        };
+	        AbstractControl.prototype._setInitialStatus = function () { this._status = this._allControlsDisabled() ? DISABLED : VALID; };
+	        AbstractControl.prototype._runValidator = function () {
+	            return this.validator ? this.validator(this) : null;
+	        };
+	        AbstractControl.prototype._runAsyncValidator = function (emitEvent) {
+	            var _this = this;
+	            if (this.asyncValidator) {
+	                this._status = PENDING;
+	                this._cancelExistingSubscription();
+	                var obs = toObservable(this.asyncValidator(this));
+	                this._asyncValidationSubscription =
+	                    obs.subscribe({ next: function (res) { return _this.setErrors(res, { emitEvent: emitEvent }); } });
+	            }
+	        };
+	        AbstractControl.prototype._cancelExistingSubscription = function () {
+	            if (this._asyncValidationSubscription) {
+	                this._asyncValidationSubscription.unsubscribe();
+	            }
+	        };
+	        /**
+	         * Sets errors on a form control.
+	         *
+	         * This is used when validations are run manually by the user, rather than automatically.
+	         *
+	         * Calling `setErrors` will also update the validity of the parent control.
+	         *
+	         * ### Example
+	         *
+	         * ```
+	         * const login = new FormControl("someLogin");
+	         * login.setErrors({
+	         *   "notUnique": true
+	         * });
+	         *
+	         * expect(login.valid).toEqual(false);
+	         * expect(login.errors).toEqual({"notUnique": true});
+	         *
+	         * login.setValue("someOtherLogin");
+	         *
+	         * expect(login.valid).toEqual(true);
+	         * ```
+	         */
+	        AbstractControl.prototype.setErrors = function (errors, _a) {
+	            var emitEvent = (_a === void 0 ? {} : _a).emitEvent;
+	            this._errors = errors;
+	            this._updateControlsErrors(emitEvent !== false);
+	        };
+	        /**
+	         * Retrieves a child control given the control's name or path.
+	         *
+	         * Paths can be passed in as an array or a string delimited by a dot.
+	         *
+	         * To get a control nested within a `person` sub-group:
+	         *
+	         * * `this.form.get('person.name');`
+	         *
+	         * -OR-
+	         *
+	         * * `this.form.get(['person', 'name']);`
+	         */
+	        AbstractControl.prototype.get = function (path) { return _find(this, path, '.'); };
+	        /**
+	         * Returns true if the control with the given path has the error specified. Otherwise
+	         * returns null or undefined.
+	         *
+	         * If no path is given, it checks for the error on the present control.
+	         */
+	        AbstractControl.prototype.getError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            var control = path ? this.get(path) : this;
+	            return control && control._errors ? control._errors[errorCode] : null;
+	        };
+	        /**
+	         * Returns true if the control with the given path has the error specified. Otherwise
+	         * returns false.
+	         *
+	         * If no path is given, it checks for the error on the present control.
+	         */
+	        AbstractControl.prototype.hasError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            return !!this.getError(errorCode, path);
+	        };
+	        Object.defineProperty(AbstractControl.prototype, "root", {
+	            /**
+	             * Retrieves the top-level ancestor of this control.
+	             */
+	            get: function () {
+	                var x = this;
+	                while (x._parent) {
+	                    x = x._parent;
+	                }
+	                return x;
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /** @internal */
+	        AbstractControl.prototype._updateControlsErrors = function (emitEvent) {
+	            this._status = this._calculateStatus();
+	            if (emitEvent) {
+	                this._statusChanges.emit(this._status);
+	            }
+	            if (this._parent) {
+	                this._parent._updateControlsErrors(emitEvent);
+	            }
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._initObservables = function () {
+	            this._valueChanges = new EventEmitter();
+	            this._statusChanges = new EventEmitter();
+	        };
+	        AbstractControl.prototype._calculateStatus = function () {
+	            if (this._allControlsDisabled())
+	                return DISABLED;
+	            if (this._errors)
+	                return INVALID;
+	            if (this._anyControlsHaveStatus(PENDING))
+	                return PENDING;
+	            if (this._anyControlsHaveStatus(INVALID))
+	                return INVALID;
+	            return VALID;
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._anyControlsHaveStatus = function (status) {
+	            return this._anyControls(function (control) { return control.status === status; });
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._anyControlsDirty = function () {
+	            return this._anyControls(function (control) { return control.dirty; });
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._anyControlsTouched = function () {
+	            return this._anyControls(function (control) { return control.touched; });
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._updatePristine = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._pristine = !this._anyControlsDirty();
+	            if (this._parent && !onlySelf) {
+	                this._parent._updatePristine({ onlySelf: onlySelf });
+	            }
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._updateTouched = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._touched = this._anyControlsTouched();
+	            if (this._parent && !onlySelf) {
+	                this._parent._updateTouched({ onlySelf: onlySelf });
+	            }
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._isBoxedValue = function (formState) {
+	            return typeof formState === 'object' && formState !== null &&
+	                Object.keys(formState).length === 2 && 'value' in formState && 'disabled' in formState;
+	        };
+	        /** @internal */
+	        AbstractControl.prototype._registerOnCollectionChange = function (fn) { this._onCollectionChange = fn; };
+	        return AbstractControl;
+	    }());
+	    /**
+	     * @whatItDoes Tracks the value and validation status of an individual form control.
+	     *
+	     * It is one of the three fundamental building blocks of Angular forms, along with
+	     * {@link FormGroup} and {@link FormArray}.
+	     *
+	     * @howToUse
+	     *
+	     * When instantiating a {@link FormControl}, you can pass in an initial value as the
+	     * first argument. Example:
+	     *
+	     * ```ts
+	     * const ctrl = new FormControl('some value');
+	     * console.log(ctrl.value);     // 'some value'
+	     *```
+	     *
+	     * You can also initialize the control with a form state object on instantiation,
+	     * which includes both the value and whether or not the control is disabled.
+	     * You can't use the value key without the disabled key; both are required
+	     * to use this way of initialization.
+	     *
+	     * ```ts
+	     * const ctrl = new FormControl({value: 'n/a', disabled: true});
+	     * console.log(ctrl.value);     // 'n/a'
+	     * console.log(ctrl.status);   // 'DISABLED'
+	     * ```
+	     *
+	     * To include a sync validator (or an array of sync validators) with the control,
+	     * pass it in as the second argument. Async validators are also supported, but
+	     * have to be passed in separately as the third arg.
+	     *
+	     * ```ts
+	     * const ctrl = new FormControl('', Validators.required);
+	     * console.log(ctrl.value);     // ''
+	     * console.log(ctrl.status);   // 'INVALID'
+	     * ```
+	     *
+	     * See its superclass, {@link AbstractControl}, for more properties and methods.
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * @stable
+	     */
+	    var FormControl = (function (_super) {
+	        __extends$6(FormControl, _super);
+	        function FormControl(formState, validator, asyncValidator) {
+	            if (formState === void 0) { formState = null; }
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            _super.call(this, coerceToValidator(validator), coerceToAsyncValidator(asyncValidator));
+	            /** @internal */
+	            this._onChange = [];
+	            this._applyFormState(formState);
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+	            this._initObservables();
+	        }
+	        /**
+	         * Set the value of the form control to `value`.
+	         *
+	         * If `onlySelf` is `true`, this change will only affect the validation of this `FormControl`
+	         * and not its parent component. This defaults to false.
+	         *
+	         * If `emitEvent` is `true`, this
+	         * change will cause a `valueChanges` event on the `FormControl` to be emitted. This defaults
+	         * to true (as it falls through to `updateValueAndValidity`).
+	         *
+	         * If `emitModelToViewChange` is `true`, the view will be notified about the new value
+	         * via an `onChange` event. This is the default behavior if `emitModelToViewChange` is not
+	         * specified.
+	         *
+	         * If `emitViewToModelChange` is `true`, an ngModelChange event will be fired to update the
+	         * model.  This is the default behavior if `emitViewToModelChange` is not specified.
+	         */
+	        FormControl.prototype.setValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent, emitModelToViewChange = _b.emitModelToViewChange, emitViewToModelChange = _b.emitViewToModelChange;
+	            this._value = value;
+	            if (this._onChange.length && emitModelToViewChange !== false) {
+	                this._onChange.forEach(function (changeFn) { return changeFn(_this._value, emitViewToModelChange !== false); });
+	            }
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         * Patches the value of a control.
+	         *
+	         * This function is functionally the same as {@link FormControl.setValue} at this level.
+	         * It exists for symmetry with {@link FormGroup.patchValue} on `FormGroups` and `FormArrays`,
+	         * where it does behave differently.
+	         */
+	        FormControl.prototype.patchValue = function (value, options) {
+	            if (options === void 0) { options = {}; }
+	            this.setValue(value, options);
+	        };
+	        /**
+	         * Resets the form control. This means by default:
+	         *
+	         * * it is marked as `pristine`
+	         * * it is marked as `untouched`
+	         * * value is set to null
+	         *
+	         * You can also reset to a specific form state by passing through a standalone
+	         * value or a form state object that contains both a value and a disabled state
+	         * (these are the only two properties that cannot be calculated).
+	         *
+	         * Ex:
+	         *
+	         * ```ts
+	         * this.control.reset('Nancy');
+	         *
+	         * console.log(this.control.value);  // 'Nancy'
+	         * ```
+	         *
+	         * OR
+	         *
+	         * ```
+	         * this.control.reset({value: 'Nancy', disabled: true});
+	         *
+	         * console.log(this.control.value);  // 'Nancy'
+	         * console.log(this.control.status);  // 'DISABLED'
+	         * ```
+	         */
+	        FormControl.prototype.reset = function (formState, _a) {
+	            if (formState === void 0) { formState = null; }
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._applyFormState(formState);
+	            this.markAsPristine({ onlySelf: onlySelf });
+	            this.markAsUntouched({ onlySelf: onlySelf });
+	            this.setValue(this._value, { onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         * @internal
+	         */
+	        FormControl.prototype._updateValue = function () { };
+	        /**
+	         * @internal
+	         */
+	        FormControl.prototype._anyControls = function (condition) { return false; };
+	        /**
+	         * @internal
+	         */
+	        FormControl.prototype._allControlsDisabled = function () { return this.disabled; };
+	        /**
+	         * Register a listener for change events.
+	         */
+	        FormControl.prototype.registerOnChange = function (fn) { this._onChange.push(fn); };
+	        /**
+	         * @internal
+	         */
+	        FormControl.prototype._clearChangeFns = function () {
+	            this._onChange = [];
+	            this._onDisabledChange = [];
+	            this._onCollectionChange = function () { };
+	        };
+	        /**
+	         * Register a listener for disabled events.
+	         */
+	        FormControl.prototype.registerOnDisabledChange = function (fn) {
+	            this._onDisabledChange.push(fn);
+	        };
+	        /**
+	         * @internal
+	         */
+	        FormControl.prototype._forEachChild = function (cb) { };
+	        FormControl.prototype._applyFormState = function (formState) {
+	            if (this._isBoxedValue(formState)) {
+	                this._value = formState.value;
+	                formState.disabled ? this.disable({ onlySelf: true, emitEvent: false }) :
+	                    this.enable({ onlySelf: true, emitEvent: false });
+	            }
+	            else {
+	                this._value = formState;
+	            }
+	        };
+	        return FormControl;
+	    }(AbstractControl));
+	    /**
+	     * @whatItDoes Tracks the value and validity state of a group of {@link FormControl}
+	     * instances.
+	     *
+	     * A `FormGroup` aggregates the values of each child {@link FormControl} into one object,
+	     * with each control name as the key.  It calculates its status by reducing the statuses
+	     * of its children. For example, if one of the controls in a group is invalid, the entire
+	     * group becomes invalid.
+	     *
+	     * `FormGroup` is one of the three fundamental building blocks used to define forms in Angular,
+	     * along with {@link FormControl} and {@link FormArray}.
+	     *
+	     * @howToUse
+	     *
+	     * When instantiating a {@link FormGroup}, pass in a collection of child controls as the first
+	     * argument. The key for each child will be the name under which it is registered.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * const form = new FormGroup({
+	     *   first: new FormControl('Nancy', Validators.minLength(2)),
+	     *   last: new FormControl('Drew'),
+	     * });
+	     *
+	     * console.log(form.value);   // {first: 'Nancy', last; 'Drew'}
+	     * console.log(form.status);  // 'VALID'
+	     * ```
+	     *
+	     * You can also include group-level validators as the second arg, or group-level async
+	     * validators as the third arg. These come in handy when you want to perform validation
+	     * that considers the value of more than one child control.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * const form = new FormGroup({
+	     *   password: new FormControl('', Validators.minLength(2)),
+	     *   passwordConfirm: new FormControl('', Validators.minLength(2)),
+	     * }, passwordMatchValidator);
+	     *
+	     *
+	     * function passwordMatchValidator(g: FormGroup) {
+	     *    return g.get('password').value === g.get('passwordConfirm').value
+	     *       ? null : {'mismatch': true};
+	     * }
+	     * ```
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * @stable
+	     */
+	    var FormGroup = (function (_super) {
+	        __extends$6(FormGroup, _super);
+	        function FormGroup(controls, validator, asyncValidator) {
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            _super.call(this, validator, asyncValidator);
+	            this.controls = controls;
+	            this._initObservables();
+	            this._setUpControls();
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+	        }
+	        /**
+	         * Registers a control with the group's list of controls.
+	         *
+	         * This method does not update value or validity of the control, so for
+	         * most cases you'll want to use {@link FormGroup.addControl} instead.
+	         */
+	        FormGroup.prototype.registerControl = function (name, control) {
+	            if (this.controls[name])
+	                return this.controls[name];
+	            this.controls[name] = control;
+	            control.setParent(this);
+	            control._registerOnCollectionChange(this._onCollectionChange);
+	            return control;
+	        };
+	        /**
+	         * Add a control to this group.
+	         */
+	        FormGroup.prototype.addControl = function (name, control) {
+	            this.registerControl(name, control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         * Remove a control from this group.
+	         */
+	        FormGroup.prototype.removeControl = function (name) {
+	            if (this.controls[name])
+	                this.controls[name]._registerOnCollectionChange(function () { });
+	            delete (this.controls[name]);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         * Replace an existing control.
+	         */
+	        FormGroup.prototype.setControl = function (name, control) {
+	            if (this.controls[name])
+	                this.controls[name]._registerOnCollectionChange(function () { });
+	            delete (this.controls[name]);
+	            if (control)
+	                this.registerControl(name, control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         * Check whether there is an enabled control with the given name in the group.
+	         *
+	         * It will return false for disabled controls. If you'd like to check for
+	         * existence in the group only, use {@link AbstractControl.get} instead.
+	         */
+	        FormGroup.prototype.contains = function (controlName) {
+	            return this.controls.hasOwnProperty(controlName) && this.controls[controlName].enabled;
+	        };
+	        /**
+	         *  Sets the value of the {@link FormGroup}. It accepts an object that matches
+	         *  the structure of the group, with control names as keys.
+	         *
+	         * This method performs strict checks, so it will throw an error if you try
+	         * to set the value of a control that doesn't exist or if you exclude the
+	         * value of a control.
+	         *
+	         *  ### Example
+	         *
+	         *  ```
+	         *  const form = new FormGroup({
+	         *     first: new FormControl(),
+	         *     last: new FormControl()
+	         *  });
+	         *  console.log(form.value);   // {first: null, last: null}
+	         *
+	         *  form.setValue({first: 'Nancy', last: 'Drew'});
+	         *  console.log(form.value);   // {first: 'Nancy', last: 'Drew'}
+	         *
+	         *  ```
+	         */
+	        FormGroup.prototype.setValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._checkAllValuesPresent(value);
+	            Object.keys(value).forEach(function (name) {
+	                _this._throwIfControlMissing(name);
+	                _this.controls[name].setValue(value[name], { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         *  Patches the value of the {@link FormGroup}. It accepts an object with control
+	         *  names as keys, and will do its best to match the values to the correct controls
+	         *  in the group.
+	         *
+	         *  It accepts both super-sets and sub-sets of the group without throwing an error.
+	         *
+	         *  ### Example
+	         *
+	         *  ```
+	         *  const form = new FormGroup({
+	         *     first: new FormControl(),
+	         *     last: new FormControl()
+	         *  });
+	         *  console.log(form.value);   // {first: null, last: null}
+	         *
+	         *  form.patchValue({first: 'Nancy'});
+	         *  console.log(form.value);   // {first: 'Nancy', last: null}
+	         *
+	         *  ```
+	         */
+	        FormGroup.prototype.patchValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            Object.keys(value).forEach(function (name) {
+	                if (_this.controls[name]) {
+	                    _this.controls[name].patchValue(value[name], { onlySelf: true, emitEvent: emitEvent });
+	                }
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         * Resets the {@link FormGroup}. This means by default:
+	         *
+	         * * The group and all descendants are marked `pristine`
+	         * * The group and all descendants are marked `untouched`
+	         * * The value of all descendants will be null or null maps
+	         *
+	         * You can also reset to a specific form state by passing in a map of states
+	         * that matches the structure of your form, with control names as keys. The state
+	         * can be a standalone value or a form state object with both a value and a disabled
+	         * status.
+	         *
+	         * ### Example
+	         *
+	         * ```ts
+	         * this.form.reset({first: 'name', last: 'last name'});
+	         *
+	         * console.log(this.form.value);  // {first: 'name', last: 'last name'}
+	         * ```
+	         *
+	         * - OR -
+	         *
+	         * ```
+	         * this.form.reset({
+	         *   first: {value: 'name', disabled: true},
+	         *   last: 'last'
+	         * });
+	         *
+	         * console.log(this.form.value);  // {first: 'name', last: 'last name'}
+	         * console.log(this.form.get('first').status);  // 'DISABLED'
+	         * ```
+	         */
+	        FormGroup.prototype.reset = function (value, _a) {
+	            if (value === void 0) { value = {}; }
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._forEachChild(function (control, name) {
+	                control.reset(value[name], { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	            this._updatePristine({ onlySelf: onlySelf });
+	            this._updateTouched({ onlySelf: onlySelf });
+	        };
+	        /**
+	         * The aggregate value of the {@link FormGroup}, including any disabled controls.
+	         *
+	         * If you'd like to include all values regardless of disabled status, use this method.
+	         * Otherwise, the `value` property is the best way to get the value of the group.
+	         */
+	        FormGroup.prototype.getRawValue = function () {
+	            return this._reduceChildren({}, function (acc, control, name) {
+	                acc[name] = control.value;
+	                return acc;
+	            });
+	        };
+	        /** @internal */
+	        FormGroup.prototype._throwIfControlMissing = function (name) {
+	            if (!Object.keys(this.controls).length) {
+	                throw new Error("\n        There are no form controls registered with this group yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");
+	            }
+	            if (!this.controls[name]) {
+	                throw new Error("Cannot find form control with name: " + name + ".");
+	            }
+	        };
+	        /** @internal */
+	        FormGroup.prototype._forEachChild = function (cb) {
+	            var _this = this;
+	            Object.keys(this.controls).forEach(function (k) { return cb(_this.controls[k], k); });
+	        };
+	        /** @internal */
+	        FormGroup.prototype._setUpControls = function () {
+	            var _this = this;
+	            this._forEachChild(function (control) {
+	                control.setParent(_this);
+	                control._registerOnCollectionChange(_this._onCollectionChange);
+	            });
+	        };
+	        /** @internal */
+	        FormGroup.prototype._updateValue = function () { this._value = this._reduceValue(); };
+	        /** @internal */
+	        FormGroup.prototype._anyControls = function (condition) {
+	            var _this = this;
+	            var res = false;
+	            this._forEachChild(function (control, name) {
+	                res = res || (_this.contains(name) && condition(control));
+	            });
+	            return res;
+	        };
+	        /** @internal */
+	        FormGroup.prototype._reduceValue = function () {
+	            var _this = this;
+	            return this._reduceChildren({}, function (acc, control, name) {
+	                if (control.enabled || _this.disabled) {
+	                    acc[name] = control.value;
+	                }
+	                return acc;
+	            });
+	        };
+	        /** @internal */
+	        FormGroup.prototype._reduceChildren = function (initValue, fn) {
+	            var res = initValue;
+	            this._forEachChild(function (control, name) { res = fn(res, control, name); });
+	            return res;
+	        };
+	        /** @internal */
+	        FormGroup.prototype._allControlsDisabled = function () {
+	            for (var _i = 0, _a = Object.keys(this.controls); _i < _a.length; _i++) {
+	                var controlName = _a[_i];
+	                if (this.controls[controlName].enabled) {
+	                    return false;
+	                }
+	            }
+	            return Object.keys(this.controls).length > 0 || this.disabled;
+	        };
+	        /** @internal */
+	        FormGroup.prototype._checkAllValuesPresent = function (value) {
+	            this._forEachChild(function (control, name) {
+	                if (value[name] === undefined) {
+	                    throw new Error("Must supply a value for form control with name: '" + name + "'.");
+	                }
+	            });
+	        };
+	        return FormGroup;
+	    }(AbstractControl));
+	    /**
+	     * @whatItDoes Tracks the value and validity state of an array of {@link FormControl}
+	     * instances.
+	     *
+	     * A `FormArray` aggregates the values of each child {@link FormControl} into an array.
+	     * It calculates its status by reducing the statuses of its children. For example, if one of
+	     * the controls in a `FormArray` is invalid, the entire array becomes invalid.
+	     *
+	     * `FormArray` is one of the three fundamental building blocks used to define forms in Angular,
+	     * along with {@link FormControl} and {@link FormGroup}.
+	     *
+	     * @howToUse
+	     *
+	     * When instantiating a {@link FormArray}, pass in an array of child controls as the first
+	     * argument.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * const arr = new FormArray([
+	     *   new FormControl('Nancy', Validators.minLength(2)),
+	     *   new FormControl('Drew'),
+	     * ]);
+	     *
+	     * console.log(arr.value);   // ['Nancy', 'Drew']
+	     * console.log(arr.status);  // 'VALID'
+	     * ```
+	     *
+	     * You can also include array-level validators as the second arg, or array-level async
+	     * validators as the third arg. These come in handy when you want to perform validation
+	     * that considers the value of more than one child control.
+	     *
+	     * ### Adding or removing controls
+	     *
+	     * To change the controls in the array, use the `push`, `insert`, or `removeAt` methods
+	     * in `FormArray` itself. These methods ensure the controls are properly tracked in the
+	     * form's hierarchy. Do not modify the array of `AbstractControl`s used to instantiate
+	     * the `FormArray` directly, as that will result in strange and unexpected behavior such
+	     * as broken change detection.
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * @stable
+	     */
+	    var FormArray = (function (_super) {
+	        __extends$6(FormArray, _super);
+	        function FormArray(controls, validator, asyncValidator) {
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            _super.call(this, validator, asyncValidator);
+	            this.controls = controls;
+	            this._initObservables();
+	            this._setUpControls();
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+	        }
+	        /**
+	         * Get the {@link AbstractControl} at the given `index` in the array.
+	         */
+	        FormArray.prototype.at = function (index) { return this.controls[index]; };
+	        /**
+	         * Insert a new {@link AbstractControl} at the end of the array.
+	         */
+	        FormArray.prototype.push = function (control) {
+	            this.controls.push(control);
+	            this._registerControl(control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         * Insert a new {@link AbstractControl} at the given `index` in the array.
+	         */
+	        FormArray.prototype.insert = function (index, control) {
+	            this.controls.splice(index, 0, control);
+	            this._registerControl(control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         * Remove the control at the given `index` in the array.
+	         */
+	        FormArray.prototype.removeAt = function (index) {
+	            if (this.controls[index])
+	                this.controls[index]._registerOnCollectionChange(function () { });
+	            this.controls.splice(index, 1);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         * Replace an existing control.
+	         */
+	        FormArray.prototype.setControl = function (index, control) {
+	            if (this.controls[index])
+	                this.controls[index]._registerOnCollectionChange(function () { });
+	            this.controls.splice(index, 1);
+	            if (control) {
+	                this.controls.splice(index, 0, control);
+	                this._registerControl(control);
+	            }
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        Object.defineProperty(FormArray.prototype, "length", {
+	            /**
+	             * Length of the control array.
+	             */
+	            get: function () { return this.controls.length; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         *  Sets the value of the {@link FormArray}. It accepts an array that matches
+	         *  the structure of the control.
+	         *
+	         * This method performs strict checks, so it will throw an error if you try
+	         * to set the value of a control that doesn't exist or if you exclude the
+	         * value of a control.
+	         *
+	         *  ### Example
+	         *
+	         *  ```
+	         *  const arr = new FormArray([
+	         *     new FormControl(),
+	         *     new FormControl()
+	         *  ]);
+	         *  console.log(arr.value);   // [null, null]
+	         *
+	         *  arr.setValue(['Nancy', 'Drew']);
+	         *  console.log(arr.value);   // ['Nancy', 'Drew']
+	         *  ```
+	         */
+	        FormArray.prototype.setValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._checkAllValuesPresent(value);
+	            value.forEach(function (newValue, index) {
+	                _this._throwIfControlMissing(index);
+	                _this.at(index).setValue(newValue, { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         *  Patches the value of the {@link FormArray}. It accepts an array that matches the
+	         *  structure of the control, and will do its best to match the values to the correct
+	         *  controls in the group.
+	         *
+	         *  It accepts both super-sets and sub-sets of the array without throwing an error.
+	         *
+	         *  ### Example
+	         *
+	         *  ```
+	         *  const arr = new FormArray([
+	         *     new FormControl(),
+	         *     new FormControl()
+	         *  ]);
+	         *  console.log(arr.value);   // [null, null]
+	         *
+	         *  arr.patchValue(['Nancy']);
+	         *  console.log(arr.value);   // ['Nancy', null]
+	         *  ```
+	         */
+	        FormArray.prototype.patchValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            value.forEach(function (newValue, index) {
+	                if (_this.at(index)) {
+	                    _this.at(index).patchValue(newValue, { onlySelf: true, emitEvent: emitEvent });
+	                }
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         * Resets the {@link FormArray}. This means by default:
+	         *
+	         * * The array and all descendants are marked `pristine`
+	         * * The array and all descendants are marked `untouched`
+	         * * The value of all descendants will be null or null maps
+	         *
+	         * You can also reset to a specific form state by passing in an array of states
+	         * that matches the structure of the control. The state can be a standalone value
+	         * or a form state object with both a value and a disabled status.
+	         *
+	         * ### Example
+	         *
+	         * ```ts
+	         * this.arr.reset(['name', 'last name']);
+	         *
+	         * console.log(this.arr.value);  // ['name', 'last name']
+	         * ```
+	         *
+	         * - OR -
+	         *
+	         * ```
+	         * this.arr.reset([
+	         *   {value: 'name', disabled: true},
+	         *   'last'
+	         * ]);
+	         *
+	         * console.log(this.arr.value);  // ['name', 'last name']
+	         * console.log(this.arr.get(0).status);  // 'DISABLED'
+	         * ```
+	         */
+	        FormArray.prototype.reset = function (value, _a) {
+	            if (value === void 0) { value = []; }
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._forEachChild(function (control, index) {
+	                control.reset(value[index], { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	            this._updatePristine({ onlySelf: onlySelf });
+	            this._updateTouched({ onlySelf: onlySelf });
+	        };
+	        /**
+	         * The aggregate value of the array, including any disabled controls.
+	         *
+	         * If you'd like to include all values regardless of disabled status, use this method.
+	         * Otherwise, the `value` property is the best way to get the value of the array.
+	         */
+	        FormArray.prototype.getRawValue = function () { return this.controls.map(function (control) { return control.value; }); };
+	        /** @internal */
+	        FormArray.prototype._throwIfControlMissing = function (index) {
+	            if (!this.controls.length) {
+	                throw new Error("\n        There are no form controls registered with this array yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");
+	            }
+	            if (!this.at(index)) {
+	                throw new Error("Cannot find form control at index " + index);
+	            }
+	        };
+	        /** @internal */
+	        FormArray.prototype._forEachChild = function (cb) {
+	            this.controls.forEach(function (control, index) { cb(control, index); });
+	        };
+	        /** @internal */
+	        FormArray.prototype._updateValue = function () {
+	            var _this = this;
+	            this._value = this.controls.filter(function (control) { return control.enabled || _this.disabled; })
+	                .map(function (control) { return control.value; });
+	        };
+	        /** @internal */
+	        FormArray.prototype._anyControls = function (condition) {
+	            return this.controls.some(function (control) { return control.enabled && condition(control); });
+	        };
+	        /** @internal */
+	        FormArray.prototype._setUpControls = function () {
+	            var _this = this;
+	            this._forEachChild(function (control) { return _this._registerControl(control); });
+	        };
+	        /** @internal */
+	        FormArray.prototype._checkAllValuesPresent = function (value) {
+	            this._forEachChild(function (control, i) {
+	                if (value[i] === undefined) {
+	                    throw new Error("Must supply a value for form control at index: " + i + ".");
+	                }
+	            });
+	        };
+	        /** @internal */
+	        FormArray.prototype._allControlsDisabled = function () {
+	            for (var _i = 0, _a = this.controls; _i < _a.length; _i++) {
+	                var control = _a[_i];
+	                if (control.enabled)
+	                    return false;
+	            }
+	            return this.controls.length > 0 || this.disabled;
+	        };
+	        FormArray.prototype._registerControl = function (control) {
+	            control.setParent(this);
+	            control._registerOnCollectionChange(this._onCollectionChange);
+	        };
+	        return FormArray;
+	    }(AbstractControl));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$4 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var formDirectiveProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return NgForm; })
+	    };
+	    var resolvedPromise = Promise.resolve(null);
+	    /**
+	     * @whatItDoes Creates a top-level {@link FormGroup} instance and binds it to a form
+	     * to track aggregate form value and validation status.
+	     *
+	     * @howToUse
+	     *
+	     * As soon as you import the `FormsModule`, this directive becomes active by default on
+	     * all `<form>` tags.  You don't need to add a special selector.
+	     *
+	     * You can export the directive into a local template variable using `ngForm` as the key
+	     * (ex: `#myForm="ngForm"`). This is optional, but useful.  Many properties from the underlying
+	     * {@link FormGroup} instance are duplicated on the directive itself, so a reference to it
+	     * will give you access to the aggregate value and validity status of the form, as well as
+	     * user interaction properties like `dirty` and `touched`.
+	     *
+	     * To register child controls with the form, you'll want to use {@link NgModel} with a
+	     * `name` attribute.  You can also use {@link NgModelGroup} if you'd like to create
+	     * sub-groups within the form.
+	     *
+	     * You can listen to the directive's `ngSubmit` event to be notified when the user has
+	     * triggered a form submission. The `ngSubmit` event will be emitted with the original form
+	     * submission event.
+	     *
+	     * {@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * * **NgModule**: `FormsModule`
+	     *
+	     *  @stable
+	     */
+	    var NgForm = (function (_super) {
+	        __extends$4(NgForm, _super);
+	        function NgForm(validators, asyncValidators) {
+	            _super.call(this);
+	            this._submitted = false;
+	            this.ngSubmit = new EventEmitter();
+	            this.form =
+	                new FormGroup({}, composeValidators(validators), composeAsyncValidators(asyncValidators));
+	        }
+	        Object.defineProperty(NgForm.prototype, "submitted", {
+	            get: function () { return this._submitted; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "formDirective", {
+	            get: function () { return this; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "control", {
+	            get: function () { return this.form; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "path", {
+	            get: function () { return []; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "controls", {
+	            get: function () { return this.form.controls; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        NgForm.prototype.addControl = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var container = _this._findContainer(dir.path);
+	                dir._control = container.registerControl(dir.name, dir.control);
+	                setUpControl(dir.control, dir);
+	                dir.control.updateValueAndValidity({ emitEvent: false });
+	            });
+	        };
+	        NgForm.prototype.getControl = function (dir) { return this.form.get(dir.path); };
+	        NgForm.prototype.removeControl = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var container = _this._findContainer(dir.path);
+	                if (container) {
+	                    container.removeControl(dir.name);
+	                }
+	            });
+	        };
+	        NgForm.prototype.addFormGroup = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var container = _this._findContainer(dir.path);
+	                var group = new FormGroup({});
+	                setUpFormContainer(group, dir);
+	                container.registerControl(dir.name, group);
+	                group.updateValueAndValidity({ emitEvent: false });
+	            });
+	        };
+	        NgForm.prototype.removeFormGroup = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var container = _this._findContainer(dir.path);
+	                if (container) {
+	                    container.removeControl(dir.name);
+	                }
+	            });
+	        };
+	        NgForm.prototype.getFormGroup = function (dir) { return this.form.get(dir.path); };
+	        NgForm.prototype.updateModel = function (dir, value) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var ctrl = _this.form.get(dir.path);
+	                ctrl.setValue(value);
+	            });
+	        };
+	        NgForm.prototype.setValue = function (value) { this.control.setValue(value); };
+	        NgForm.prototype.onSubmit = function ($event) {
+	            this._submitted = true;
+	            this.ngSubmit.emit($event);
+	            return false;
+	        };
+	        NgForm.prototype.onReset = function () { this.resetForm(); };
+	        NgForm.prototype.resetForm = function (value) {
+	            if (value === void 0) { value = undefined; }
+	            this.form.reset(value);
+	            this._submitted = false;
+	        };
+	        /** @internal */
+	        NgForm.prototype._findContainer = function (path) {
+	            path.pop();
+	            return path.length ? this.form.get(path) : this.form;
+	        };
+	        NgForm.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'form:not([ngNoForm]):not([formGroup]),ngForm,[ngForm]',
+	                        providers: [formDirectiveProvider],
+	                        host: { '(submit)': 'onSubmit($event)', '(reset)': 'onReset()' },
+	                        outputs: ['ngSubmit'],
+	                        exportAs: 'ngForm'
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NgForm.ctorParameters = [
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ];
+	        return NgForm;
+	    }(ControlContainer));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var Examples = {
+	        formControlName: "\n    <div [formGroup]=\"myGroup\">\n      <input formControlName=\"firstName\">\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       firstName: new FormControl()\n    });",
+	        formGroupName: "\n    <div [formGroup]=\"myGroup\">\n       <div formGroupName=\"person\">\n          <input formControlName=\"firstName\">\n       </div>\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       person: new FormGroup({ firstName: new FormControl() })\n    });",
+	        formArrayName: "\n    <div [formGroup]=\"myGroup\">\n      <div formArrayName=\"cities\">\n        <div *ngFor=\"let city of cityArray.controls; let i=index\">\n          <input [formControlName]=\"i\">\n        </div>\n      </div>\n    </div>\n\n    In your class:\n\n    this.cityArray = new FormArray([new FormControl('SF')]);\n    this.myGroup = new FormGroup({\n      cities: this.cityArray\n    });",
+	        ngModelGroup: "\n    <form>\n       <div ngModelGroup=\"person\">\n          <input [(ngModel)]=\"person.name\" name=\"firstName\">\n       </div>\n    </form>",
+	        ngModelWithFormGroup: "\n    <div [formGroup]=\"myGroup\">\n       <input formControlName=\"firstName\">\n       <input [(ngModel)]=\"showMoreControls\" [ngModelOptions]=\"{standalone: true}\">\n    </div>\n  "
+	    };
+
+	    var TemplateDrivenErrors = (function () {
+	        function TemplateDrivenErrors() {
+	        }
+	        TemplateDrivenErrors.modelParentException = function () {
+	            throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroup directive.  Try using\n      formGroup's partner directive \"formControlName\" instead.  Example:\n\n      " + Examples.formControlName + "\n\n      Or, if you'd like to avoid registering this form control, indicate that it's standalone in ngModelOptions:\n\n      Example:\n\n      " + Examples.ngModelWithFormGroup);
+	        };
+	        TemplateDrivenErrors.formGroupNameException = function () {
+	            throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroupName or formArrayName directive.\n\n      Option 1: Use formControlName instead of ngModel (reactive strategy):\n\n      " + Examples.formGroupName + "\n\n      Option 2:  Update ngModel's parent be ngModelGroup (template-driven strategy):\n\n      " + Examples.ngModelGroup);
+	        };
+	        TemplateDrivenErrors.missingNameException = function () {
+	            throw new Error("If ngModel is used within a form tag, either the name attribute must be set or the form\n      control must be defined as 'standalone' in ngModelOptions.\n\n      Example 1: <input [(ngModel)]=\"person.firstName\" name=\"first\">\n      Example 2: <input [(ngModel)]=\"person.firstName\" [ngModelOptions]=\"{standalone: true}\">");
+	        };
+	        TemplateDrivenErrors.modelGroupParentException = function () {
+	            throw new Error("\n      ngModelGroup cannot be used with a parent formGroup directive.\n\n      Option 1: Use formGroupName instead of ngModelGroup (reactive strategy):\n\n      " + Examples.formGroupName + "\n\n      Option 2:  Use a regular form tag instead of the formGroup directive (template-driven strategy):\n\n      " + Examples.ngModelGroup);
+	        };
+	        return TemplateDrivenErrors;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$8 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var modelGroupProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return NgModelGroup; })
+	    };
+	    /**
+	     * @whatItDoes Creates and binds a {@link FormGroup} instance to a DOM element.
+	     *
+	     * @howToUse
+	     *
+	     * This directive can only be used as a child of {@link NgForm} (or in other words,
+	     * within `<form>` tags).
+	     *
+	     * Use this directive if you'd like to create a sub-group within a form. This can
+	     * come in handy if you want to validate a sub-group of your form separately from
+	     * the rest of your form, or if some values in your domain model make more sense to
+	     * consume together in a nested object.
+	     *
+	     * Pass in the name you'd like this sub-group to have and it will become the key
+	     * for the sub-group in the form's full value. You can also export the directive into
+	     * a local template variable using `ngModelGroup` (ex: `#myGroup="ngModelGroup"`).
+	     *
+	     * {@example forms/ts/ngModelGroup/ng_model_group_example.ts region='Component'}
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * * **NgModule**: `FormsModule`
+	     *
+	     * @stable
+	     */
+	    var NgModelGroup = (function (_super) {
+	        __extends$8(NgModelGroup, _super);
+	        function NgModelGroup(parent, validators, asyncValidators) {
+	            _super.call(this);
+	            this._parent = parent;
+	            this._validators = validators;
+	            this._asyncValidators = asyncValidators;
+	        }
+	        /** @internal */
+	        NgModelGroup.prototype._checkParentType = function () {
+	            if (!(this._parent instanceof NgModelGroup) && !(this._parent instanceof NgForm)) {
+	                TemplateDrivenErrors.modelGroupParentException();
+	            }
+	        };
+	        NgModelGroup.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[ngModelGroup]', providers: [modelGroupProvider], exportAs: 'ngModelGroup' },] },
+	        ];
+	        /** @nocollapse */
+	        NgModelGroup.ctorParameters = [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ];
+	        NgModelGroup.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['ngModelGroup',] },],
+	        };
+	        return NgModelGroup;
+	    }(AbstractFormGroupDirective));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$7 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var formControlBinding = {
+	        provide: NgControl,
+	        useExisting: _angular_core.forwardRef(function () { return NgModel; })
+	    };
+	    /**
+	     * `ngModel` forces an additional change detection run when its inputs change:
+	     * E.g.:
+	     * ```
+	     * <div>{{myModel.valid}}</div>
+	     * <input [(ngModel)]="myValue" #myModel="ngModel">
+	     * ```
+	     * I.e. `ngModel` can export itself on the element and then be used in the template.
+	     * Normally, this would result in expressions before the `input` that use the exported directive
+	     * to have and old value as they have been
+	     * dirty checked before. As this is a very common case for `ngModel`, we added this second change
+	     * detection run.
+	     *
+	     * Notes:
+	     * - this is just one extra run no matter how many `ngModel` have been changed.
+	     * - this is a general problem when using `exportAs` for directives!
+	     */
+	    var resolvedPromise$1 = Promise.resolve(null);
+	    /**
+	     * @whatItDoes Creates a {@link FormControl} instance from a domain model and binds it
+	     * to a form control element.
+	     *
+	     * The {@link FormControl} instance will track the value, user interaction, and
+	     * validation status of the control and keep the view synced with the model. If used
+	     * within a parent form, the directive will also register itself with the form as a child
+	     * control.
+	     *
+	     * @howToUse
+	     *
+	     * This directive can be used by itself or as part of a larger form. All you need is the
+	     * `ngModel` selector to activate it.
+	     *
+	     * It accepts a domain model as an optional {@link @Input}. If you have a one-way binding
+	     * to `ngModel` with `[]` syntax, changing the value of the domain model in the component
+	     * class will set the value in the view. If you have a two-way binding with `[()]` syntax
+	     * (also known as 'banana-box syntax'), the value in the UI will always be synced back to
+	     * the domain model in your class as well.
+	     *
+	     * If you wish to inspect the properties of the associated {@link FormControl} (like
+	     * validity state), you can also export the directive into a local template variable using
+	     * `ngModel` as the key (ex: `#myVar="ngModel"`). You can then access the control using the
+	     * directive's `control` property, but most properties you'll need (like `valid` and `dirty`)
+	     * will fall through to the control anyway, so you can access them directly. You can see a
+	     * full list of properties directly available in {@link AbstractControlDirective}.
+	     *
+	     * The following is an example of a simple standalone control using `ngModel`:
+	     *
+	     * {@example forms/ts/simpleNgModel/simple_ng_model_example.ts region='Component'}
+	     *
+	     * When using the `ngModel` within `<form>` tags, you'll also need to supply a `name` attribute
+	     * so that the control can be registered with the parent form under that name.
+	     *
+	     * It's worth noting that in the context of a parent form, you often can skip one-way or
+	     * two-way binding because the parent form will sync the value for you. You can access
+	     * its properties by exporting it into a local template variable using `ngForm` (ex:
+	     * `#f="ngForm"`). Then you can pass it where it needs to go on submit.
+	     *
+	     * If you do need to populate initial values into your form, using a one-way binding for
+	     * `ngModel` tends to be sufficient as long as you use the exported form's value rather
+	     * than the domain model's value on submit.
+	     *
+	     * Take a look at an example of using `ngModel` within a form:
+	     *
+	     * {@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
+	     *
+	     * To see `ngModel` examples with different form control types, see:
+	     *
+	     * * Radio buttons: {@link RadioControlValueAccessor}
+	     * * Selects: {@link SelectControlValueAccessor}
+	     *
+	     * **npm package**: `@angular/forms`
+	     *
+	     * **NgModule**: `FormsModule`
+	     *
+	     *  @stable
+	     */
+	    var NgModel = (function (_super) {
+	        __extends$7(NgModel, _super);
+	        function NgModel(parent, validators, asyncValidators, valueAccessors) {
+	            _super.call(this);
+	            /** @internal */
+	            this._control = new FormControl();
+	            /** @internal */
+	            this._registered = false;
+	            this.update = new EventEmitter();
+	            this._parent = parent;
+	            this._rawValidators = validators || [];
+	            this._rawAsyncValidators = asyncValidators || [];
+	            this.valueAccessor = selectValueAccessor(this, valueAccessors);
+	        }
+	        NgModel.prototype.ngOnChanges = function (changes) {
+	            this._checkForErrors();
+	            if (!this._registered)
+	                this._setUpControl();
+	            if ('isDisabled' in changes) {
+	                this._updateDisabled(changes);
+	            }
+	            if (isPropertyUpdated(changes, this.viewModel)) {
+	                this._updateValue(this.model);
+	                this.viewModel = this.model;
+	            }
+	        };
+	        NgModel.prototype.ngOnDestroy = function () { this.formDirective && this.formDirective.removeControl(this); };
+	        Object.defineProperty(NgModel.prototype, "control", {
+	            get: function () { return this._control; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "path", {
+	            get: function () {
+	                return this._parent ? controlPath(this.name, this._parent) : [this.name];
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "formDirective", {
+	            get: function () { return this._parent ? this._parent.formDirective : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "validator", {
+	            get: function () { return composeValidators(this._rawValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "asyncValidator", {
+	            get: function () {
+	                return composeAsyncValidators(this._rawAsyncValidators);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        NgModel.prototype.viewToModelUpdate = function (newValue) {
+	            this.viewModel = newValue;
+	            this.update.emit(newValue);
+	        };
+	        NgModel.prototype._setUpControl = function () {
+	            this._isStandalone() ? this._setUpStandalone() :
+	                this.formDirective.addControl(this);
+	            this._registered = true;
+	        };
+	        NgModel.prototype._isStandalone = function () {
+	            return !this._parent || (this.options && this.options.standalone);
+	        };
+	        NgModel.prototype._setUpStandalone = function () {
+	            setUpControl(this._control, this);
+	            this._control.updateValueAndValidity({ emitEvent: false });
+	        };
+	        NgModel.prototype._checkForErrors = function () {
+	            if (!this._isStandalone()) {
+	                this._checkParentType();
+	            }
+	            this._checkName();
+	        };
+	        NgModel.prototype._checkParentType = function () {
+	            if (!(this._parent instanceof NgModelGroup) &&
+	                this._parent instanceof AbstractFormGroupDirective) {
+	                TemplateDrivenErrors.formGroupNameException();
+	            }
+	            else if (!(this._parent instanceof NgModelGroup) && !(this._parent instanceof NgForm)) {
+	                TemplateDrivenErrors.modelParentException();
+	            }
+	        };
+	        NgModel.prototype._checkName = function () {
+	            if (this.options && this.options.name)
+	                this.name = this.options.name;
+	            if (!this._isStandalone() && !this.name) {
+	                TemplateDrivenErrors.missingNameException();
+	            }
+	        };
+	        NgModel.prototype._updateValue = function (value) {
+	            var _this = this;
+	            resolvedPromise$1.then(function () { _this.control.setValue(value, { emitViewToModelChange: false }); });
+	        };
+	        NgModel.prototype._updateDisabled = function (changes) {
+	            var _this = this;
+	            var disabledValue = changes['isDisabled'].currentValue;
+	            var isDisabled = disabledValue === '' || (disabledValue && disabledValue !== 'false');
+	            resolvedPromise$1.then(function () {
+	                if (isDisabled && !_this.control.disabled) {
+	                    _this.control.disable();
+	                }
+	                else if (!isDisabled && _this.control.disabled) {
+	                    _this.control.enable();
+	                }
+	            });
+	        };
+	        NgModel.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[ngModel]:not([formControlName]):not([formControl])',
+	                        providers: [formControlBinding],
+	                        exportAs: 'ngModel'
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NgModel.ctorParameters = [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALUE_ACCESSOR,] },] },
+	        ];
+	        NgModel.propDecorators = {
+	            'name': [{ type: _angular_core.Input },],
+	            'isDisabled': [{ type: _angular_core.Input, args: ['disabled',] },],
+	            'model': [{ type: _angular_core.Input, args: ['ngModel',] },],
+	            'options': [{ type: _angular_core.Input, args: ['ngModelOptions',] },],
+	            'update': [{ type: _angular_core.Output, args: ['ngModelChange',] },],
+	        };
+	        return NgModel;
+	    }(NgControl));
+
+	    var ReactiveErrors = (function () {
+	        function ReactiveErrors() {
+	        }
+	        ReactiveErrors.controlParentException = function () {
+	            throw new Error("formControlName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      " + Examples.formControlName);
+	        };
+	        ReactiveErrors.ngModelGroupException = function () {
+	            throw new Error("formControlName cannot be used with an ngModelGroup parent. It is only compatible with parents\n       that also have a \"form\" prefix: formGroupName, formArrayName, or formGroup.\n\n       Option 1:  Update the parent to be formGroupName (reactive form strategy)\n\n        " + Examples.formGroupName + "\n\n        Option 2: Use ngModel instead of formControlName (template-driven strategy)\n\n        " + Examples.ngModelGroup);
+	        };
+	        ReactiveErrors.missingFormException = function () {
+	            throw new Error("formGroup expects a FormGroup instance. Please pass one in.\n\n       Example:\n\n       " + Examples.formControlName);
+	        };
+	        ReactiveErrors.groupParentException = function () {
+	            throw new Error("formGroupName must be used with a parent formGroup directive.  You'll want to add a formGroup\n      directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      " + Examples.formGroupName);
+	        };
+	        ReactiveErrors.arrayParentException = function () {
+	            throw new Error("formArrayName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n        Example:\n\n        " + Examples.formArrayName);
+	        };
+	        ReactiveErrors.disabledAttrWarning = function () {
+	            console.warn("\n      It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true\n      when you set up this control in your component class, the disabled attribute will actually be set in the DOM for\n      you. We recommend using this approach to avoid 'changed after checked' errors.\n       \n      Example: \n      form = new FormGroup({\n        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),\n        last: new FormControl('Drew', Validators.required)\n      });\n    ");
+	        };
+	        return ReactiveErrors;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$9 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var formControlBinding$1 = {
+	        provide: NgControl,
+	        useExisting: _angular_core.forwardRef(function () { return FormControlDirective; })
+	    };
+	    /**
+	     * @whatItDoes Syncs a standalone {@link FormControl} instance to a form control element.
+	     *
+	     * In other words, this directive ensures that any values written to the {@link FormControl}
+	     * instance programmatically will be written to the DOM element (model -> view). Conversely,
+	     * any values written to the DOM element through user input will be reflected in the
+	     * {@link FormControl} instance (view -> model).
+	     *
+	     * @howToUse
+	     *
+	     * Use this directive if you'd like to create and manage a {@link FormControl} instance directly.
+	     * Simply create a {@link FormControl}, save it to your component class, and pass it into the
+	     * {@link FormControlDirective}.
+	     *
+	     * This directive is designed to be used as a standalone control.  Unlike {@link FormControlName},
+	     * it does not require that your {@link FormControl} instance be part of any parent
+	     * {@link FormGroup}, and it won't be registered to any {@link FormGroupDirective} that
+	     * exists above it.
+	     *
+	     * **Get the value**: the `value` property is always synced and available on the
+	     * {@link FormControl} instance. See a full list of available properties in
+	     * {@link AbstractControl}.
+	     *
+	     * **Set the value**: You can pass in an initial value when instantiating the {@link FormControl},
+	     * or you can set it programmatically later using {@link AbstractControl.setValue} or
+	     * {@link AbstractControl.patchValue}.
+	     *
+	     * **Listen to value**: If you want to listen to changes in the value of the control, you can
+	     * subscribe to the {@link AbstractControl.valueChanges} event.  You can also listen to
+	     * {@link AbstractControl.statusChanges} to be notified when the validation status is
+	     * re-calculated.
+	     *
+	     * ### Example
+	     *
+	     * {@example forms/ts/simpleFormControl/simple_form_control_example.ts region='Component'}
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * * **NgModule**: `ReactiveFormsModule`
+	     *
+	     *  @stable
+	     */
+	    var FormControlDirective = (function (_super) {
+	        __extends$9(FormControlDirective, _super);
+	        function FormControlDirective(validators, asyncValidators, valueAccessors) {
+	            _super.call(this);
+	            this.update = new EventEmitter();
+	            this._rawValidators = validators || [];
+	            this._rawAsyncValidators = asyncValidators || [];
+	            this.valueAccessor = selectValueAccessor(this, valueAccessors);
+	        }
+	        Object.defineProperty(FormControlDirective.prototype, "isDisabled", {
+	            set: function (isDisabled) { ReactiveErrors.disabledAttrWarning(); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        FormControlDirective.prototype.ngOnChanges = function (changes) {
+	            if (this._isControlChanged(changes)) {
+	                setUpControl(this.form, this);
+	                if (this.control.disabled && this.valueAccessor.setDisabledState) {
+	                    this.valueAccessor.setDisabledState(true);
+	                }
+	                this.form.updateValueAndValidity({ emitEvent: false });
+	            }
+	            if (isPropertyUpdated(changes, this.viewModel)) {
+	                this.form.setValue(this.model);
+	                this.viewModel = this.model;
+	            }
+	        };
+	        Object.defineProperty(FormControlDirective.prototype, "path", {
+	            get: function () { return []; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlDirective.prototype, "validator", {
+	            get: function () { return composeValidators(this._rawValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlDirective.prototype, "asyncValidator", {
+	            get: function () {
+	                return composeAsyncValidators(this._rawAsyncValidators);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlDirective.prototype, "control", {
+	            get: function () { return this.form; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        FormControlDirective.prototype.viewToModelUpdate = function (newValue) {
+	            this.viewModel = newValue;
+	            this.update.emit(newValue);
+	        };
+	        FormControlDirective.prototype._isControlChanged = function (changes) {
+	            return changes.hasOwnProperty('form');
+	        };
+	        FormControlDirective.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formControl]', providers: [formControlBinding$1], exportAs: 'ngForm' },] },
+	        ];
+	        /** @nocollapse */
+	        FormControlDirective.ctorParameters = [
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALUE_ACCESSOR,] },] },
+	        ];
+	        FormControlDirective.propDecorators = {
+	            'form': [{ type: _angular_core.Input, args: ['formControl',] },],
+	            'model': [{ type: _angular_core.Input, args: ['ngModel',] },],
+	            'update': [{ type: _angular_core.Output, args: ['ngModelChange',] },],
+	            'isDisabled': [{ type: _angular_core.Input, args: ['disabled',] },],
+	        };
+	        return FormControlDirective;
+	    }(NgControl));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$11 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var formDirectiveProvider$1 = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return FormGroupDirective; })
+	    };
+	    /**
+	     * @whatItDoes Binds an existing {@link FormGroup} to a DOM element.
+	     *
+	     * @howToUse
+	     *
+	     * This directive accepts an existing {@link FormGroup} instance. It will then use this
+	     * {@link FormGroup} instance to match any child {@link FormControl}, {@link FormGroup},
+	     * and {@link FormArray} instances to child {@link FormControlName}, {@link FormGroupName},
+	     * and {@link FormArrayName} directives.
+	     *
+	     * **Set value**: You can set the form's initial value when instantiating the
+	     * {@link FormGroup}, or you can set it programmatically later using the {@link FormGroup}'s
+	     * {@link AbstractControl.setValue} or {@link AbstractControl.patchValue} methods.
+	     *
+	     * **Listen to value**: If you want to listen to changes in the value of the form, you can subscribe
+	     * to the {@link FormGroup}'s {@link AbstractControl.valueChanges} event.  You can also listen to
+	     * its {@link AbstractControl.statusChanges} event to be notified when the validation status is
+	     * re-calculated.
+	     *
+	     * Furthermore, you can listen to the directive's `ngSubmit` event to be notified when the user has
+	     * triggered a form submission. The `ngSubmit` event will be emitted with the original form
+	     * submission event.
+	     *
+	     * ### Example
+	     *
+	     * In this example, we create form controls for first name and last name.
+	     *
+	     * {@example forms/ts/simpleFormGroup/simple_form_group_example.ts region='Component'}
+	     *
+	     * **npm package**: `@angular/forms`
+	     *
+	     * **NgModule**: {@link ReactiveFormsModule}
+	     *
+	     *  @stable
+	     */
+	    var FormGroupDirective = (function (_super) {
+	        __extends$11(FormGroupDirective, _super);
+	        function FormGroupDirective(_validators, _asyncValidators) {
+	            _super.call(this);
+	            this._validators = _validators;
+	            this._asyncValidators = _asyncValidators;
+	            this._submitted = false;
+	            this.directives = [];
+	            this.form = null;
+	            this.ngSubmit = new EventEmitter();
+	        }
+	        FormGroupDirective.prototype.ngOnChanges = function (changes) {
+	            this._checkFormPresent();
+	            if (changes.hasOwnProperty('form')) {
+	                this._updateValidators();
+	                this._updateDomValue();
+	                this._updateRegistrations();
+	            }
+	        };
+	        Object.defineProperty(FormGroupDirective.prototype, "submitted", {
+	            get: function () { return this._submitted; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormGroupDirective.prototype, "formDirective", {
+	            get: function () { return this; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormGroupDirective.prototype, "control", {
+	            get: function () { return this.form; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormGroupDirective.prototype, "path", {
+	            get: function () { return []; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        FormGroupDirective.prototype.addControl = function (dir) {
+	            var ctrl = this.form.get(dir.path);
+	            setUpControl(ctrl, dir);
+	            ctrl.updateValueAndValidity({ emitEvent: false });
+	            this.directives.push(dir);
+	            return ctrl;
+	        };
+	        FormGroupDirective.prototype.getControl = function (dir) { return this.form.get(dir.path); };
+	        FormGroupDirective.prototype.removeControl = function (dir) { ListWrapper.remove(this.directives, dir); };
+	        FormGroupDirective.prototype.addFormGroup = function (dir) {
+	            var ctrl = this.form.get(dir.path);
+	            setUpFormContainer(ctrl, dir);
+	            ctrl.updateValueAndValidity({ emitEvent: false });
+	        };
+	        FormGroupDirective.prototype.removeFormGroup = function (dir) { };
+	        FormGroupDirective.prototype.getFormGroup = function (dir) { return this.form.get(dir.path); };
+	        FormGroupDirective.prototype.addFormArray = function (dir) {
+	            var ctrl = this.form.get(dir.path);
+	            setUpFormContainer(ctrl, dir);
+	            ctrl.updateValueAndValidity({ emitEvent: false });
+	        };
+	        FormGroupDirective.prototype.removeFormArray = function (dir) { };
+	        FormGroupDirective.prototype.getFormArray = function (dir) { return this.form.get(dir.path); };
+	        FormGroupDirective.prototype.updateModel = function (dir, value) {
+	            var ctrl = this.form.get(dir.path);
+	            ctrl.setValue(value);
+	        };
+	        FormGroupDirective.prototype.onSubmit = function ($event) {
+	            this._submitted = true;
+	            this.ngSubmit.emit($event);
+	            return false;
+	        };
+	        FormGroupDirective.prototype.onReset = function () { this.resetForm(); };
+	        FormGroupDirective.prototype.resetForm = function (value) {
+	            if (value === void 0) { value = undefined; }
+	            this.form.reset(value);
+	            this._submitted = false;
+	        };
+	        /** @internal */
+	        FormGroupDirective.prototype._updateDomValue = function () {
+	            var _this = this;
+	            this.directives.forEach(function (dir) {
+	                var newCtrl = _this.form.get(dir.path);
+	                if (dir._control !== newCtrl) {
+	                    cleanUpControl(dir._control, dir);
+	                    if (newCtrl)
+	                        setUpControl(newCtrl, dir);
+	                    dir._control = newCtrl;
+	                }
+	            });
+	            this.form._updateTreeValidity({ emitEvent: false });
+	        };
+	        FormGroupDirective.prototype._updateRegistrations = function () {
+	            var _this = this;
+	            this.form._registerOnCollectionChange(function () { return _this._updateDomValue(); });
+	            if (this._oldForm)
+	                this._oldForm._registerOnCollectionChange(function () { });
+	            this._oldForm = this.form;
+	        };
+	        FormGroupDirective.prototype._updateValidators = function () {
+	            var sync = composeValidators(this._validators);
+	            this.form.validator = Validators.compose([this.form.validator, sync]);
+	            var async = composeAsyncValidators(this._asyncValidators);
+	            this.form.asyncValidator = Validators.composeAsync([this.form.asyncValidator, async]);
+	        };
+	        FormGroupDirective.prototype._checkFormPresent = function () {
+	            if (!this.form) {
+	                ReactiveErrors.missingFormException();
+	            }
+	        };
+	        FormGroupDirective.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[formGroup]',
+	                        providers: [formDirectiveProvider$1],
+	                        host: { '(submit)': 'onSubmit($event)', '(reset)': 'onReset()' },
+	                        exportAs: 'ngForm'
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        FormGroupDirective.ctorParameters = [
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ];
+	        FormGroupDirective.propDecorators = {
+	            'form': [{ type: _angular_core.Input, args: ['formGroup',] },],
+	            'ngSubmit': [{ type: _angular_core.Output },],
+	        };
+	        return FormGroupDirective;
+	    }(ControlContainer));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$12 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var formGroupNameProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return FormGroupName; })
+	    };
+	    /**
+	     * @whatItDoes Syncs a nested {@link FormGroup} to a DOM element.
+	     *
+	     * @howToUse
+	     *
+	     * This directive can only be used with a parent {@link FormGroupDirective} (selector:
+	     * `[formGroup]`).
+	     *
+	     * It accepts the string name of the nested {@link FormGroup} you want to link, and
+	     * will look for a {@link FormGroup} registered with that name in the parent
+	     * {@link FormGroup} instance you passed into {@link FormGroupDirective}.
+	     *
+	     * Nested form groups can come in handy when you want to validate a sub-group of a
+	     * form separately from the rest or when you'd like to group the values of certain
+	     * controls into their own nested object.
+	     *
+	     * **Access the group**: You can access the associated {@link FormGroup} using the
+	     * {@link AbstractControl.get} method. Ex: `this.form.get('name')`.
+	     *
+	     * You can also access individual controls within the group using dot syntax.
+	     * Ex: `this.form.get('name.first')`
+	     *
+	     * **Get the value**: the `value` property is always synced and available on the
+	     * {@link FormGroup}. See a full list of available properties in {@link AbstractControl}.
+	     *
+	     * **Set the value**: You can set an initial value for each child control when instantiating
+	     * the {@link FormGroup}, or you can set it programmatically later using
+	     * {@link AbstractControl.setValue} or {@link AbstractControl.patchValue}.
+	     *
+	     * **Listen to value**: If you want to listen to changes in the value of the group, you can
+	     * subscribe to the {@link AbstractControl.valueChanges} event.  You can also listen to
+	     * {@link AbstractControl.statusChanges} to be notified when the validation status is
+	     * re-calculated.
+	     *
+	     * ### Example
+	     *
+	     * {@example forms/ts/nestedFormGroup/nested_form_group_example.ts region='Component'}
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * * **NgModule**: `ReactiveFormsModule`
+	     *
+	     * @stable
+	     */
+	    var FormGroupName = (function (_super) {
+	        __extends$12(FormGroupName, _super);
+	        function FormGroupName(parent, validators, asyncValidators) {
+	            _super.call(this);
+	            this._parent = parent;
+	            this._validators = validators;
+	            this._asyncValidators = asyncValidators;
+	        }
+	        /** @internal */
+	        FormGroupName.prototype._checkParentType = function () {
+	            if (_hasInvalidParent(this._parent)) {
+	                ReactiveErrors.groupParentException();
+	            }
+	        };
+	        FormGroupName.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formGroupName]', providers: [formGroupNameProvider] },] },
+	        ];
+	        /** @nocollapse */
+	        FormGroupName.ctorParameters = [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ];
+	        FormGroupName.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['formGroupName',] },],
+	        };
+	        return FormGroupName;
+	    }(AbstractFormGroupDirective));
+	    var formArrayNameProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return FormArrayName; })
+	    };
+	    /**
+	     * @whatItDoes Syncs a nested {@link FormArray} to a DOM element.
+	     *
+	     * @howToUse
+	     *
+	     * This directive is designed to be used with a parent {@link FormGroupDirective} (selector:
+	     * `[formGroup]`).
+	     *
+	     * It accepts the string name of the nested {@link FormArray} you want to link, and
+	     * will look for a {@link FormArray} registered with that name in the parent
+	     * {@link FormGroup} instance you passed into {@link FormGroupDirective}.
+	     *
+	     * Nested form arrays can come in handy when you have a group of form controls but
+	     * you're not sure how many there will be. Form arrays allow you to create new
+	     * form controls dynamically.
+	     *
+	     * **Access the array**: You can access the associated {@link FormArray} using the
+	     * {@link AbstractControl.get} method on the parent {@link FormGroup}.
+	     * Ex: `this.form.get('cities')`.
+	     *
+	     * **Get the value**: the `value` property is always synced and available on the
+	     * {@link FormArray}. See a full list of available properties in {@link AbstractControl}.
+	     *
+	     * **Set the value**: You can set an initial value for each child control when instantiating
+	     * the {@link FormArray}, or you can set the value programmatically later using the
+	     * {@link FormArray}'s {@link AbstractControl.setValue} or {@link AbstractControl.patchValue}
+	     * methods.
+	     *
+	     * **Listen to value**: If you want to listen to changes in the value of the array, you can
+	     * subscribe to the {@link FormArray}'s {@link AbstractControl.valueChanges} event.  You can also
+	     * listen to its {@link AbstractControl.statusChanges} event to be notified when the validation
+	     * status is re-calculated.
+	     *
+	     * **Add new controls**: You can add new controls to the {@link FormArray} dynamically by
+	     * calling its {@link FormArray.push} method.
+	     *  Ex: `this.form.get('cities').push(new FormControl());`
+	     *
+	     * ### Example
+	     *
+	     * {@example forms/ts/nestedFormArray/nested_form_array_example.ts region='Component'}
+	     *
+	     * * **npm package**: `@angular/forms`
+	     *
+	     * * **NgModule**: `ReactiveFormsModule`
+	     *
+	     * @stable
+	     */
+	    var FormArrayName = (function (_super) {
+	        __extends$12(FormArrayName, _super);
+	        function FormArrayName(parent, validators, asyncValidators) {
+	            _super.call(this);
+	            this._parent = parent;
+	            this._validators = validators;
+	            this._asyncValidators = asyncValidators;
+	        }
+	        FormArrayName.prototype.ngOnInit = function () {
+	            this._checkParentType();
+	            this.formDirective.addFormArray(this);
+	        };
+	        FormArrayName.prototype.ngOnDestroy = function () {
+	            if (this.formDirective) {
+	                this.formDirective.removeFormArray(this);
+	            }
+	        };
+	        Object.defineProperty(FormArrayName.prototype, "control", {
+	            get: function () { return this.formDirective.getFormArray(this); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "formDirective", {
+	            get: function () {
+	                return this._parent ? this._parent.formDirective : null;
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "path", {
+	            get: function () { return controlPath(this.name, this._parent); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "validator", {
+	            get: function () { return composeValidators(this._validators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "asyncValidator", {
+	            get: function () { return composeAsyncValidators(this._asyncValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        FormArrayName.prototype._checkParentType = function () {
+	            if (_hasInvalidParent(this._parent)) {
+	                ReactiveErrors.arrayParentException();
+	            }
+	        };
+	        FormArrayName.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formArrayName]', providers: [formArrayNameProvider] },] },
+	        ];
+	        /** @nocollapse */
+	        FormArrayName.ctorParameters = [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ];
+	        FormArrayName.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['formArrayName',] },],
+	        };
+	        return FormArrayName;
+	    }(ControlContainer));
+	    function _hasInvalidParent(parent) {
+	        return !(parent instanceof FormGroupName) && !(parent instanceof FormGroupDirective) &&
+	            !(parent instanceof FormArrayName);
+	    }
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$10 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var controlNameBinding = {
+	        provide: NgControl,
+	        useExisting: _angular_core.forwardRef(function () { return FormControlName; })
+	    };
+	    /**
+	     * @whatItDoes  Syncs a {@link FormControl} in an existing {@link FormGroup} to a form control
+	     * element by name.
+	     *
+	     * In other words, this directive ensures that any values written to the {@link FormControl}
+	     * instance programmatically will be written to the DOM element (model -> view). Conversely,
+	     * any values written to the DOM element through user input will be reflected in the
+	     * {@link FormControl} instance (view -> model).
+	     *
+	     * @howToUse
+	     *
+	     * This directive is designed to be used with a parent {@link FormGroupDirective} (selector:
+	     * `[formGroup]`).
+	     *
+	     * It accepts the string name of the {@link FormControl} instance you want to
+	     * link, and will look for a {@link FormControl} registered with that name in the
+	     * closest {@link FormGroup} or {@link FormArray} above it.
+	     *
+	     * **Access the control**: You can access the {@link FormControl} associated with
+	     * this directive by using the {@link AbstractControl.get} method.
+	     * Ex: `this.form.get('first');`
+	     *
+	     * **Get value**: the `value` property is always synced and available on the {@link FormControl}.
+	     * See a full list of available properties in {@link AbstractControl}.
+	     *
+	     *  **Set value**: You can set an initial value for the control when instantiating the
+	     *  {@link FormControl}, or you can set it programmatically later using
+	     *  {@link AbstractControl.setValue} or {@link AbstractControl.patchValue}.
+	     *
+	     * **Listen to value**: If you want to listen to changes in the value of the control, you can
+	     * subscribe to the {@link AbstractControl.valueChanges} event.  You can also listen to
+	     * {@link AbstractControl.statusChanges} to be notified when the validation status is
+	     * re-calculated.
+	     *
+	     * ### Example
+	     *
+	     * In this example, we create form controls for first name and last name.
+	     *
+	     * {@example forms/ts/simpleFormGroup/simple_form_group_example.ts region='Component'}
+	     *
+	     * To see `formControlName` examples with different form control types, see:
+	     *
+	     * * Radio buttons: {@link RadioControlValueAccessor}
+	     * * Selects: {@link SelectControlValueAccessor}
+	     *
+	     * **npm package**: `@angular/forms`
+	     *
+	     * **NgModule**: {@link ReactiveFormsModule}
+	     *
+	     *  @stable
+	     */
+	    var FormControlName = (function (_super) {
+	        __extends$10(FormControlName, _super);
+	        function FormControlName(parent, validators, asyncValidators, valueAccessors) {
+	            _super.call(this);
+	            this._added = false;
+	            this.update = new EventEmitter();
+	            this._parent = parent;
+	            this._rawValidators = validators || [];
+	            this._rawAsyncValidators = asyncValidators || [];
+	            this.valueAccessor = selectValueAccessor(this, valueAccessors);
+	        }
+	        Object.defineProperty(FormControlName.prototype, "isDisabled", {
+	            set: function (isDisabled) { ReactiveErrors.disabledAttrWarning(); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        FormControlName.prototype.ngOnChanges = function (changes) {
+	            if (!this._added)
+	                this._setUpControl();
+	            if (isPropertyUpdated(changes, this.viewModel)) {
+	                this.viewModel = this.model;
+	                this.formDirective.updateModel(this, this.model);
+	            }
+	        };
+	        FormControlName.prototype.ngOnDestroy = function () {
+	            if (this.formDirective) {
+	                this.formDirective.removeControl(this);
+	            }
+	        };
+	        FormControlName.prototype.viewToModelUpdate = function (newValue) {
+	            this.viewModel = newValue;
+	            this.update.emit(newValue);
+	        };
+	        Object.defineProperty(FormControlName.prototype, "path", {
+	            get: function () { return controlPath(this.name, this._parent); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "formDirective", {
+	            get: function () { return this._parent ? this._parent.formDirective : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "validator", {
+	            get: function () { return composeValidators(this._rawValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "asyncValidator", {
+	            get: function () {
+	                return composeAsyncValidators(this._rawAsyncValidators);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "control", {
+	            get: function () { return this._control; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        FormControlName.prototype._checkParentType = function () {
+	            if (!(this._parent instanceof FormGroupName) &&
+	                this._parent instanceof AbstractFormGroupDirective) {
+	                ReactiveErrors.ngModelGroupException();
+	            }
+	            else if (!(this._parent instanceof FormGroupName) && !(this._parent instanceof FormGroupDirective) &&
+	                !(this._parent instanceof FormArrayName)) {
+	                ReactiveErrors.controlParentException();
+	            }
+	        };
+	        FormControlName.prototype._setUpControl = function () {
+	            this._checkParentType();
+	            this._control = this.formDirective.addControl(this);
+	            if (this.control.disabled && this.valueAccessor.setDisabledState) {
+	                this.valueAccessor.setDisabledState(true);
+	            }
+	            this._added = true;
+	        };
+	        FormControlName.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formControlName]', providers: [controlNameBinding] },] },
+	        ];
+	        /** @nocollapse */
+	        FormControlName.ctorParameters = [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALUE_ACCESSOR,] },] },
+	        ];
+	        FormControlName.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['formControlName',] },],
+	            'model': [{ type: _angular_core.Input, args: ['ngModel',] },],
+	            'update': [{ type: _angular_core.Output, args: ['ngModelChange',] },],
+	            'isDisabled': [{ type: _angular_core.Input, args: ['disabled',] },],
+	        };
+	        return FormControlName;
+	    }(NgControl));
+
+	    var REQUIRED_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return RequiredValidator; }),
+	        multi: true
+	    };
+	    /**
+	     * A Directive that adds the `required` validator to any controls marked with the
+	     * `required` attribute, via the {@link NG_VALIDATORS} binding.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * <input name="fullName" ngModel required>
+	     * ```
+	     *
+	     * @stable
+	     */
+	    var RequiredValidator = (function () {
+	        function RequiredValidator() {
+	        }
+	        Object.defineProperty(RequiredValidator.prototype, "required", {
+	            get: function () { return this._required; },
+	            set: function (value) {
+	                this._required = value != null && value !== false && "" + value !== 'false';
+	                if (this._onChange)
+	                    this._onChange();
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        RequiredValidator.prototype.validate = function (c) {
+	            return this.required ? Validators.required(c) : null;
+	        };
+	        RequiredValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        RequiredValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[required][formControlName],[required][formControl],[required][ngModel]',
+	                        providers: [REQUIRED_VALIDATOR],
+	                        host: { '[attr.required]': 'required ? "" : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        RequiredValidator.ctorParameters = [];
+	        RequiredValidator.propDecorators = {
+	            'required': [{ type: _angular_core.Input },],
+	        };
+	        return RequiredValidator;
+	    }());
+	    /**
+	     * Provider which adds {@link MinLengthValidator} to {@link NG_VALIDATORS}.
+	     *
+	     * ## Example:
+	     *
+	     * {@example common/forms/ts/validators/validators.ts region='min'}
+	     */
+	    var MIN_LENGTH_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return MinLengthValidator; }),
+	        multi: true
+	    };
+	    /**
+	     * A directive which installs the {@link MinLengthValidator} for any `formControlName`,
+	     * `formControl`, or control with `ngModel` that also has a `minlength` attribute.
+	     *
+	     * @stable
+	     */
+	    var MinLengthValidator = (function () {
+	        function MinLengthValidator() {
+	        }
+	        MinLengthValidator.prototype.ngOnChanges = function (changes) {
+	            if ('minlength' in changes) {
+	                this._createValidator();
+	                if (this._onChange)
+	                    this._onChange();
+	            }
+	        };
+	        MinLengthValidator.prototype.validate = function (c) {
+	            return this.minlength == null ? null : this._validator(c);
+	        };
+	        MinLengthValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        MinLengthValidator.prototype._createValidator = function () {
+	            this._validator = Validators.minLength(parseInt(this.minlength, 10));
+	        };
+	        MinLengthValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[minlength][formControlName],[minlength][formControl],[minlength][ngModel]',
+	                        providers: [MIN_LENGTH_VALIDATOR],
+	                        host: { '[attr.minlength]': 'minlength ? minlength : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        MinLengthValidator.ctorParameters = [];
+	        MinLengthValidator.propDecorators = {
+	            'minlength': [{ type: _angular_core.Input },],
+	        };
+	        return MinLengthValidator;
+	    }());
+	    /**
+	     * Provider which adds {@link MaxLengthValidator} to {@link NG_VALIDATORS}.
+	     *
+	     * ## Example:
+	     *
+	     * {@example common/forms/ts/validators/validators.ts region='max'}
+	     */
+	    var MAX_LENGTH_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return MaxLengthValidator; }),
+	        multi: true
+	    };
+	    /**
+	     * A directive which installs the {@link MaxLengthValidator} for any `formControlName,
+	     * `formControl`,
+	     * or control with `ngModel` that also has a `maxlength` attribute.
+	     *
+	     * @stable
+	     */
+	    var MaxLengthValidator = (function () {
+	        function MaxLengthValidator() {
+	        }
+	        MaxLengthValidator.prototype.ngOnChanges = function (changes) {
+	            if ('maxlength' in changes) {
+	                this._createValidator();
+	                if (this._onChange)
+	                    this._onChange();
+	            }
+	        };
+	        MaxLengthValidator.prototype.validate = function (c) {
+	            return this.maxlength != null ? this._validator(c) : null;
+	        };
+	        MaxLengthValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        MaxLengthValidator.prototype._createValidator = function () {
+	            this._validator = Validators.maxLength(parseInt(this.maxlength, 10));
+	        };
+	        MaxLengthValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[maxlength][formControlName],[maxlength][formControl],[maxlength][ngModel]',
+	                        providers: [MAX_LENGTH_VALIDATOR],
+	                        host: { '[attr.maxlength]': 'maxlength ? maxlength : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        MaxLengthValidator.ctorParameters = [];
+	        MaxLengthValidator.propDecorators = {
+	            'maxlength': [{ type: _angular_core.Input },],
+	        };
+	        return MaxLengthValidator;
+	    }());
+	    var PATTERN_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return PatternValidator; }),
+	        multi: true
+	    };
+	    /**
+	     * A Directive that adds the `pattern` validator to any controls marked with the
+	     * `pattern` attribute, via the {@link NG_VALIDATORS} binding. Uses attribute value
+	     * as the regex to validate Control value against.  Follows pattern attribute
+	     * semantics; i.e. regex must match entire Control value.
+	     *
+	     * ### Example
+	     *
+	     * ```
+	     * <input [name]="fullName" pattern="[a-zA-Z ]*" ngModel>
+	     * ```
+	     * @stable
+	     */
+	    var PatternValidator = (function () {
+	        function PatternValidator() {
+	        }
+	        PatternValidator.prototype.ngOnChanges = function (changes) {
+	            if ('pattern' in changes) {
+	                this._createValidator();
+	                if (this._onChange)
+	                    this._onChange();
+	            }
+	        };
+	        PatternValidator.prototype.validate = function (c) { return this._validator(c); };
+	        PatternValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        PatternValidator.prototype._createValidator = function () { this._validator = Validators.pattern(this.pattern); };
+	        PatternValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[pattern][formControlName],[pattern][formControl],[pattern][ngModel]',
+	                        providers: [PATTERN_VALIDATOR],
+	                        host: { '[attr.pattern]': 'pattern ? pattern : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        PatternValidator.ctorParameters = [];
+	        PatternValidator.propDecorators = {
+	            'pattern': [{ type: _angular_core.Input },],
+	        };
+	        return PatternValidator;
+	    }());
+
+	    /**
+	     * @whatItDoes Creates an {@link AbstractControl} from a user-specified configuration.
+	     *
+	     * It is essentially syntactic sugar that shortens the `new FormGroup()`,
+	     * `new FormControl()`, and `new FormArray()` boilerplate that can build up in larger
+	     * forms.
+	     *
+	     * @howToUse
+	     *
+	     * To use, inject `FormBuilder` into your component class. You can then call its methods
+	     * directly.
+	     *
+	     * {@example forms/ts/formBuilder/form_builder_example.ts region='Component'}
+	     *
+	     *  * **npm package**: `@angular/forms`
+	     *
+	     *  * **NgModule**: {@link ReactiveFormsModule}
+	     *
+	     * @stable
+	     */
+	    var FormBuilder = (function () {
+	        function FormBuilder() {
+	        }
+	        /**
+	         * Construct a new {@link FormGroup} with the given map of configuration.
+	         * Valid keys for the `extra` parameter map are `validator` and `asyncValidator`.
+	         *
+	         * See the {@link FormGroup} constructor for more details.
+	         */
+	        FormBuilder.prototype.group = function (controlsConfig, extra) {
+	            if (extra === void 0) { extra = null; }
+	            var controls = this._reduceControls(controlsConfig);
+	            var validator = isPresent(extra) ? extra['validator'] : null;
+	            var asyncValidator = isPresent(extra) ? extra['asyncValidator'] : null;
+	            return new FormGroup(controls, validator, asyncValidator);
+	        };
+	        /**
+	         * Construct a new {@link FormControl} with the given `formState`,`validator`, and
+	         * `asyncValidator`.
+	         *
+	         * `formState` can either be a standalone value for the form control or an object
+	         * that contains both a value and a disabled status.
+	         *
+	         */
+	        FormBuilder.prototype.control = function (formState, validator, asyncValidator) {
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            return new FormControl(formState, validator, asyncValidator);
+	        };
+	        /**
+	         * Construct a {@link FormArray} from the given `controlsConfig` array of
+	         * configuration, with the given optional `validator` and `asyncValidator`.
+	         */
+	        FormBuilder.prototype.array = function (controlsConfig, validator, asyncValidator) {
+	            var _this = this;
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            var controls = controlsConfig.map(function (c) { return _this._createControl(c); });
+	            return new FormArray(controls, validator, asyncValidator);
+	        };
+	        /** @internal */
+	        FormBuilder.prototype._reduceControls = function (controlsConfig) {
+	            var _this = this;
+	            var controls = {};
+	            Object.keys(controlsConfig).forEach(function (controlName) {
+	                controls[controlName] = _this._createControl(controlsConfig[controlName]);
+	            });
+	            return controls;
+	        };
+	        /** @internal */
+	        FormBuilder.prototype._createControl = function (controlConfig) {
+	            if (controlConfig instanceof FormControl || controlConfig instanceof FormGroup ||
+	                controlConfig instanceof FormArray) {
+	                return controlConfig;
+	            }
+	            else if (Array.isArray(controlConfig)) {
+	                var value = controlConfig[0];
+	                var validator = controlConfig.length > 1 ? controlConfig[1] : null;
+	                var asyncValidator = controlConfig.length > 2 ? controlConfig[2] : null;
+	                return this.control(value, validator, asyncValidator);
+	            }
+	            else {
+	                return this.control(controlConfig);
+	            }
+	        };
+	        FormBuilder.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        FormBuilder.ctorParameters = [];
+	        return FormBuilder;
+	    }());
+
+	    var SHARED_FORM_DIRECTIVES = [
+	        NgSelectOption, NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor,
+	        RangeValueAccessor, CheckboxControlValueAccessor, SelectControlValueAccessor,
+	        SelectMultipleControlValueAccessor, RadioControlValueAccessor, NgControlStatus,
+	        NgControlStatusGroup, RequiredValidator, MinLengthValidator, MaxLengthValidator, PatternValidator
+	    ];
+	    var TEMPLATE_DRIVEN_DIRECTIVES = [NgModel, NgModelGroup, NgForm];
+	    var REACTIVE_DRIVEN_DIRECTIVES = [FormControlDirective, FormGroupDirective, FormControlName, FormGroupName, FormArrayName];
+	    /**
+	     * Internal module used for sharing directives between FormsModule and ReactiveFormsModule
+	     */
+	    var InternalFormsSharedModule = (function () {
+	        function InternalFormsSharedModule() {
+	        }
+	        InternalFormsSharedModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        declarations: SHARED_FORM_DIRECTIVES,
+	                        exports: SHARED_FORM_DIRECTIVES,
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        InternalFormsSharedModule.ctorParameters = [];
+	        return InternalFormsSharedModule;
+	    }());
+
+	    /**
+	     * The ng module for forms.
+	     * @stable
+	     */
+	    var FormsModule = (function () {
+	        function FormsModule() {
+	        }
+	        FormsModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        declarations: TEMPLATE_DRIVEN_DIRECTIVES,
+	                        providers: [RadioControlRegistry],
+	                        exports: [InternalFormsSharedModule, TEMPLATE_DRIVEN_DIRECTIVES]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        FormsModule.ctorParameters = [];
+	        return FormsModule;
+	    }());
+	    /**
+	     * The ng module for reactive forms.
+	     * @stable
+	     */
+	    var ReactiveFormsModule = (function () {
+	        function ReactiveFormsModule() {
+	        }
+	        ReactiveFormsModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        declarations: [REACTIVE_DRIVEN_DIRECTIVES],
+	                        providers: [FormBuilder, RadioControlRegistry],
+	                        exports: [InternalFormsSharedModule, REACTIVE_DRIVEN_DIRECTIVES]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        ReactiveFormsModule.ctorParameters = [];
+	        return ReactiveFormsModule;
+	    }());
+
+	    exports.AbstractControlDirective = AbstractControlDirective;
+	    exports.AbstractFormGroupDirective = AbstractFormGroupDirective;
+	    exports.CheckboxControlValueAccessor = CheckboxControlValueAccessor;
+	    exports.ControlContainer = ControlContainer;
+	    exports.NG_VALUE_ACCESSOR = NG_VALUE_ACCESSOR;
+	    exports.DefaultValueAccessor = DefaultValueAccessor;
+	    exports.NgControl = NgControl;
+	    exports.NgControlStatus = NgControlStatus;
+	    exports.NgControlStatusGroup = NgControlStatusGroup;
+	    exports.NgForm = NgForm;
+	    exports.NgModel = NgModel;
+	    exports.NgModelGroup = NgModelGroup;
+	    exports.RadioControlValueAccessor = RadioControlValueAccessor;
+	    exports.FormControlDirective = FormControlDirective;
+	    exports.FormControlName = FormControlName;
+	    exports.FormGroupDirective = FormGroupDirective;
+	    exports.FormArrayName = FormArrayName;
+	    exports.FormGroupName = FormGroupName;
+	    exports.NgSelectOption = NgSelectOption;
+	    exports.SelectControlValueAccessor = SelectControlValueAccessor;
+	    exports.SelectMultipleControlValueAccessor = SelectMultipleControlValueAccessor;
+	    exports.MaxLengthValidator = MaxLengthValidator;
+	    exports.MinLengthValidator = MinLengthValidator;
+	    exports.PatternValidator = PatternValidator;
+	    exports.RequiredValidator = RequiredValidator;
+	    exports.FormBuilder = FormBuilder;
+	    exports.AbstractControl = AbstractControl;
+	    exports.FormArray = FormArray;
+	    exports.FormControl = FormControl;
+	    exports.FormGroup = FormGroup;
+	    exports.NG_ASYNC_VALIDATORS = NG_ASYNC_VALIDATORS;
+	    exports.NG_VALIDATORS = NG_VALIDATORS;
+	    exports.Validators = Validators;
+	    exports.FormsModule = FormsModule;
+	    exports.ReactiveFormsModule = ReactiveFormsModule;
+
+	}));
+
+/***/ },
 /* 679 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.7 - 2016-04-22
+	 * http://hammerjs.github.io/
+	 *
+	 * Copyright (c) 2016 Jorik Tangelder;
+	 * Licensed under the MIT license */
+	(function(window, document, exportName, undefined) {
+	  'use strict';
+
+	var VENDOR_PREFIXES = ['', 'webkit', 'Moz', 'MS', 'ms', 'o'];
+	var TEST_ELEMENT = document.createElement('div');
+
+	var TYPE_FUNCTION = 'function';
+
+	var round = Math.round;
+	var abs = Math.abs;
+	var now = Date.now;
+
+	/**
+	 * set a timeout with a given scope
+	 * @param {Function} fn
+	 * @param {Number} timeout
+	 * @param {Object} context
+	 * @returns {number}
+	 */
+	function setTimeoutContext(fn, timeout, context) {
+	    return setTimeout(bindFn(fn, context), timeout);
+	}
+
+	/**
+	 * if the argument is an array, we want to execute the fn on each entry
+	 * if it aint an array we don't want to do a thing.
+	 * this is used by all the methods that accept a single and array argument.
+	 * @param {*|Array} arg
+	 * @param {String} fn
+	 * @param {Object} [context]
+	 * @returns {Boolean}
+	 */
+	function invokeArrayArg(arg, fn, context) {
+	    if (Array.isArray(arg)) {
+	        each(arg, context[fn], context);
+	        return true;
+	    }
+	    return false;
+	}
+
+	/**
+	 * walk objects and arrays
+	 * @param {Object} obj
+	 * @param {Function} iterator
+	 * @param {Object} context
+	 */
+	function each(obj, iterator, context) {
+	    var i;
+
+	    if (!obj) {
+	        return;
+	    }
+
+	    if (obj.forEach) {
+	        obj.forEach(iterator, context);
+	    } else if (obj.length !== undefined) {
+	        i = 0;
+	        while (i < obj.length) {
+	            iterator.call(context, obj[i], i, obj);
+	            i++;
+	        }
+	    } else {
+	        for (i in obj) {
+	            obj.hasOwnProperty(i) && iterator.call(context, obj[i], i, obj);
+	        }
+	    }
+	}
+
+	/**
+	 * wrap a method with a deprecation warning and stack trace
+	 * @param {Function} method
+	 * @param {String} name
+	 * @param {String} message
+	 * @returns {Function} A new function wrapping the supplied method.
+	 */
+	function deprecate(method, name, message) {
+	    var deprecationMessage = 'DEPRECATED METHOD: ' + name + '\n' + message + ' AT \n';
+	    return function() {
+	        var e = new Error('get-stack-trace');
+	        var stack = e && e.stack ? e.stack.replace(/^[^\(]+?[\n$]/gm, '')
+	            .replace(/^\s+at\s+/gm, '')
+	            .replace(/^Object.<anonymous>\s*\(/gm, '{anonymous}()@') : 'Unknown Stack Trace';
+
+	        var log = window.console && (window.console.warn || window.console.log);
+	        if (log) {
+	            log.call(window.console, deprecationMessage, stack);
+	        }
+	        return method.apply(this, arguments);
+	    };
+	}
+
+	/**
+	 * extend object.
+	 * means that properties in dest will be overwritten by the ones in src.
+	 * @param {Object} target
+	 * @param {...Object} objects_to_assign
+	 * @returns {Object} target
+	 */
+	var assign;
+	if (typeof Object.assign !== 'function') {
+	    assign = function assign(target) {
+	        if (target === undefined || target === null) {
+	            throw new TypeError('Cannot convert undefined or null to object');
+	        }
+
+	        var output = Object(target);
+	        for (var index = 1; index < arguments.length; index++) {
+	            var source = arguments[index];
+	            if (source !== undefined && source !== null) {
+	                for (var nextKey in source) {
+	                    if (source.hasOwnProperty(nextKey)) {
+	                        output[nextKey] = source[nextKey];
+	                    }
+	                }
+	            }
+	        }
+	        return output;
+	    };
+	} else {
+	    assign = Object.assign;
+	}
+
+	/**
+	 * extend object.
+	 * means that properties in dest will be overwritten by the ones in src.
+	 * @param {Object} dest
+	 * @param {Object} src
+	 * @param {Boolean} [merge=false]
+	 * @returns {Object} dest
+	 */
+	var extend = deprecate(function extend(dest, src, merge) {
+	    var keys = Object.keys(src);
+	    var i = 0;
+	    while (i < keys.length) {
+	        if (!merge || (merge && dest[keys[i]] === undefined)) {
+	            dest[keys[i]] = src[keys[i]];
+	        }
+	        i++;
+	    }
+	    return dest;
+	}, 'extend', 'Use `assign`.');
+
+	/**
+	 * merge the values from src in the dest.
+	 * means that properties that exist in dest will not be overwritten by src
+	 * @param {Object} dest
+	 * @param {Object} src
+	 * @returns {Object} dest
+	 */
+	var merge = deprecate(function merge(dest, src) {
+	    return extend(dest, src, true);
+	}, 'merge', 'Use `assign`.');
+
+	/**
+	 * simple class inheritance
+	 * @param {Function} child
+	 * @param {Function} base
+	 * @param {Object} [properties]
+	 */
+	function inherit(child, base, properties) {
+	    var baseP = base.prototype,
+	        childP;
+
+	    childP = child.prototype = Object.create(baseP);
+	    childP.constructor = child;
+	    childP._super = baseP;
+
+	    if (properties) {
+	        assign(childP, properties);
+	    }
+	}
+
+	/**
+	 * simple function bind
+	 * @param {Function} fn
+	 * @param {Object} context
+	 * @returns {Function}
+	 */
+	function bindFn(fn, context) {
+	    return function boundFn() {
+	        return fn.apply(context, arguments);
+	    };
+	}
+
+	/**
+	 * let a boolean value also be a function that must return a boolean
+	 * this first item in args will be used as the context
+	 * @param {Boolean|Function} val
+	 * @param {Array} [args]
+	 * @returns {Boolean}
+	 */
+	function boolOrFn(val, args) {
+	    if (typeof val == TYPE_FUNCTION) {
+	        return val.apply(args ? args[0] || undefined : undefined, args);
+	    }
+	    return val;
+	}
+
+	/**
+	 * use the val2 when val1 is undefined
+	 * @param {*} val1
+	 * @param {*} val2
+	 * @returns {*}
+	 */
+	function ifUndefined(val1, val2) {
+	    return (val1 === undefined) ? val2 : val1;
+	}
+
+	/**
+	 * addEventListener with multiple events at once
+	 * @param {EventTarget} target
+	 * @param {String} types
+	 * @param {Function} handler
+	 */
+	function addEventListeners(target, types, handler) {
+	    each(splitStr(types), function(type) {
+	        target.addEventListener(type, handler, false);
+	    });
+	}
+
+	/**
+	 * removeEventListener with multiple events at once
+	 * @param {EventTarget} target
+	 * @param {String} types
+	 * @param {Function} handler
+	 */
+	function removeEventListeners(target, types, handler) {
+	    each(splitStr(types), function(type) {
+	        target.removeEventListener(type, handler, false);
+	    });
+	}
+
+	/**
+	 * find if a node is in the given parent
+	 * @method hasParent
+	 * @param {HTMLElement} node
+	 * @param {HTMLElement} parent
+	 * @return {Boolean} found
+	 */
+	function hasParent(node, parent) {
+	    while (node) {
+	        if (node == parent) {
+	            return true;
+	        }
+	        node = node.parentNode;
+	    }
+	    return false;
+	}
+
+	/**
+	 * small indexOf wrapper
+	 * @param {String} str
+	 * @param {String} find
+	 * @returns {Boolean} found
+	 */
+	function inStr(str, find) {
+	    return str.indexOf(find) > -1;
+	}
+
+	/**
+	 * split string on whitespace
+	 * @param {String} str
+	 * @returns {Array} words
+	 */
+	function splitStr(str) {
+	    return str.trim().split(/\s+/g);
+	}
+
+	/**
+	 * find if a array contains the object using indexOf or a simple polyFill
+	 * @param {Array} src
+	 * @param {String} find
+	 * @param {String} [findByKey]
+	 * @return {Boolean|Number} false when not found, or the index
+	 */
+	function inArray(src, find, findByKey) {
+	    if (src.indexOf && !findByKey) {
+	        return src.indexOf(find);
+	    } else {
+	        var i = 0;
+	        while (i < src.length) {
+	            if ((findByKey && src[i][findByKey] == find) || (!findByKey && src[i] === find)) {
+	                return i;
+	            }
+	            i++;
+	        }
+	        return -1;
+	    }
+	}
+
+	/**
+	 * convert array-like objects to real arrays
+	 * @param {Object} obj
+	 * @returns {Array}
+	 */
+	function toArray(obj) {
+	    return Array.prototype.slice.call(obj, 0);
+	}
+
+	/**
+	 * unique array with objects based on a key (like 'id') or just by the array's value
+	 * @param {Array} src [{id:1},{id:2},{id:1}]
+	 * @param {String} [key]
+	 * @param {Boolean} [sort=False]
+	 * @returns {Array} [{id:1},{id:2}]
+	 */
+	function uniqueArray(src, key, sort) {
+	    var results = [];
+	    var values = [];
+	    var i = 0;
+
+	    while (i < src.length) {
+	        var val = key ? src[i][key] : src[i];
+	        if (inArray(values, val) < 0) {
+	            results.push(src[i]);
+	        }
+	        values[i] = val;
+	        i++;
+	    }
+
+	    if (sort) {
+	        if (!key) {
+	            results = results.sort();
+	        } else {
+	            results = results.sort(function sortUniqueArray(a, b) {
+	                return a[key] > b[key];
+	            });
+	        }
+	    }
+
+	    return results;
+	}
+
+	/**
+	 * get the prefixed property
+	 * @param {Object} obj
+	 * @param {String} property
+	 * @returns {String|Undefined} prefixed
+	 */
+	function prefixed(obj, property) {
+	    var prefix, prop;
+	    var camelProp = property[0].toUpperCase() + property.slice(1);
+
+	    var i = 0;
+	    while (i < VENDOR_PREFIXES.length) {
+	        prefix = VENDOR_PREFIXES[i];
+	        prop = (prefix) ? prefix + camelProp : property;
+
+	        if (prop in obj) {
+	            return prop;
+	        }
+	        i++;
+	    }
+	    return undefined;
+	}
+
+	/**
+	 * get a unique id
+	 * @returns {number} uniqueId
+	 */
+	var _uniqueId = 1;
+	function uniqueId() {
+	    return _uniqueId++;
+	}
+
+	/**
+	 * get the window object of an element
+	 * @param {HTMLElement} element
+	 * @returns {DocumentView|Window}
+	 */
+	function getWindowForElement(element) {
+	    var doc = element.ownerDocument || element;
+	    return (doc.defaultView || doc.parentWindow || window);
+	}
+
+	var MOBILE_REGEX = /mobile|tablet|ip(ad|hone|od)|android/i;
+
+	var SUPPORT_TOUCH = ('ontouchstart' in window);
+	var SUPPORT_POINTER_EVENTS = prefixed(window, 'PointerEvent') !== undefined;
+	var SUPPORT_ONLY_TOUCH = SUPPORT_TOUCH && MOBILE_REGEX.test(navigator.userAgent);
+
+	var INPUT_TYPE_TOUCH = 'touch';
+	var INPUT_TYPE_PEN = 'pen';
+	var INPUT_TYPE_MOUSE = 'mouse';
+	var INPUT_TYPE_KINECT = 'kinect';
+
+	var COMPUTE_INTERVAL = 25;
+
+	var INPUT_START = 1;
+	var INPUT_MOVE = 2;
+	var INPUT_END = 4;
+	var INPUT_CANCEL = 8;
+
+	var DIRECTION_NONE = 1;
+	var DIRECTION_LEFT = 2;
+	var DIRECTION_RIGHT = 4;
+	var DIRECTION_UP = 8;
+	var DIRECTION_DOWN = 16;
+
+	var DIRECTION_HORIZONTAL = DIRECTION_LEFT | DIRECTION_RIGHT;
+	var DIRECTION_VERTICAL = DIRECTION_UP | DIRECTION_DOWN;
+	var DIRECTION_ALL = DIRECTION_HORIZONTAL | DIRECTION_VERTICAL;
+
+	var PROPS_XY = ['x', 'y'];
+	var PROPS_CLIENT_XY = ['clientX', 'clientY'];
+
+	/**
+	 * create new input type manager
+	 * @param {Manager} manager
+	 * @param {Function} callback
+	 * @returns {Input}
+	 * @constructor
+	 */
+	function Input(manager, callback) {
+	    var self = this;
+	    this.manager = manager;
+	    this.callback = callback;
+	    this.element = manager.element;
+	    this.target = manager.options.inputTarget;
+
+	    // smaller wrapper around the handler, for the scope and the enabled state of the manager,
+	    // so when disabled the input events are completely bypassed.
+	    this.domHandler = function(ev) {
+	        if (boolOrFn(manager.options.enable, [manager])) {
+	            self.handler(ev);
+	        }
+	    };
+
+	    this.init();
+
+	}
+
+	Input.prototype = {
+	    /**
+	     * should handle the inputEvent data and trigger the callback
+	     * @virtual
+	     */
+	    handler: function() { },
+
+	    /**
+	     * bind the events
+	     */
+	    init: function() {
+	        this.evEl && addEventListeners(this.element, this.evEl, this.domHandler);
+	        this.evTarget && addEventListeners(this.target, this.evTarget, this.domHandler);
+	        this.evWin && addEventListeners(getWindowForElement(this.element), this.evWin, this.domHandler);
+	    },
+
+	    /**
+	     * unbind the events
+	     */
+	    destroy: function() {
+	        this.evEl && removeEventListeners(this.element, this.evEl, this.domHandler);
+	        this.evTarget && removeEventListeners(this.target, this.evTarget, this.domHandler);
+	        this.evWin && removeEventListeners(getWindowForElement(this.element), this.evWin, this.domHandler);
+	    }
+	};
+
+	/**
+	 * create new input type manager
+	 * called by the Manager constructor
+	 * @param {Hammer} manager
+	 * @returns {Input}
+	 */
+	function createInputInstance(manager) {
+	    var Type;
+	    var inputClass = manager.options.inputClass;
+
+	    if (inputClass) {
+	        Type = inputClass;
+	    } else if (SUPPORT_POINTER_EVENTS) {
+	        Type = PointerEventInput;
+	    } else if (SUPPORT_ONLY_TOUCH) {
+	        Type = TouchInput;
+	    } else if (!SUPPORT_TOUCH) {
+	        Type = MouseInput;
+	    } else {
+	        Type = TouchMouseInput;
+	    }
+	    return new (Type)(manager, inputHandler);
+	}
+
+	/**
+	 * handle input events
+	 * @param {Manager} manager
+	 * @param {String} eventType
+	 * @param {Object} input
+	 */
+	function inputHandler(manager, eventType, input) {
+	    var pointersLen = input.pointers.length;
+	    var changedPointersLen = input.changedPointers.length;
+	    var isFirst = (eventType & INPUT_START && (pointersLen - changedPointersLen === 0));
+	    var isFinal = (eventType & (INPUT_END | INPUT_CANCEL) && (pointersLen - changedPointersLen === 0));
+
+	    input.isFirst = !!isFirst;
+	    input.isFinal = !!isFinal;
+
+	    if (isFirst) {
+	        manager.session = {};
+	    }
+
+	    // source event is the normalized value of the domEvents
+	    // like 'touchstart, mouseup, pointerdown'
+	    input.eventType = eventType;
+
+	    // compute scale, rotation etc
+	    computeInputData(manager, input);
+
+	    // emit secret event
+	    manager.emit('hammer.input', input);
+
+	    manager.recognize(input);
+	    manager.session.prevInput = input;
+	}
+
+	/**
+	 * extend the data with some usable properties like scale, rotate, velocity etc
+	 * @param {Object} manager
+	 * @param {Object} input
+	 */
+	function computeInputData(manager, input) {
+	    var session = manager.session;
+	    var pointers = input.pointers;
+	    var pointersLength = pointers.length;
+
+	    // store the first input to calculate the distance and direction
+	    if (!session.firstInput) {
+	        session.firstInput = simpleCloneInputData(input);
+	    }
+
+	    // to compute scale and rotation we need to store the multiple touches
+	    if (pointersLength > 1 && !session.firstMultiple) {
+	        session.firstMultiple = simpleCloneInputData(input);
+	    } else if (pointersLength === 1) {
+	        session.firstMultiple = false;
+	    }
+
+	    var firstInput = session.firstInput;
+	    var firstMultiple = session.firstMultiple;
+	    var offsetCenter = firstMultiple ? firstMultiple.center : firstInput.center;
+
+	    var center = input.center = getCenter(pointers);
+	    input.timeStamp = now();
+	    input.deltaTime = input.timeStamp - firstInput.timeStamp;
+
+	    input.angle = getAngle(offsetCenter, center);
+	    input.distance = getDistance(offsetCenter, center);
+
+	    computeDeltaXY(session, input);
+	    input.offsetDirection = getDirection(input.deltaX, input.deltaY);
+
+	    var overallVelocity = getVelocity(input.deltaTime, input.deltaX, input.deltaY);
+	    input.overallVelocityX = overallVelocity.x;
+	    input.overallVelocityY = overallVelocity.y;
+	    input.overallVelocity = (abs(overallVelocity.x) > abs(overallVelocity.y)) ? overallVelocity.x : overallVelocity.y;
+
+	    input.scale = firstMultiple ? getScale(firstMultiple.pointers, pointers) : 1;
+	    input.rotation = firstMultiple ? getRotation(firstMultiple.pointers, pointers) : 0;
+
+	    input.maxPointers = !session.prevInput ? input.pointers.length : ((input.pointers.length >
+	        session.prevInput.maxPointers) ? input.pointers.length : session.prevInput.maxPointers);
+
+	    computeIntervalInputData(session, input);
+
+	    // find the correct target
+	    var target = manager.element;
+	    if (hasParent(input.srcEvent.target, target)) {
+	        target = input.srcEvent.target;
+	    }
+	    input.target = target;
+	}
+
+	function computeDeltaXY(session, input) {
+	    var center = input.center;
+	    var offset = session.offsetDelta || {};
+	    var prevDelta = session.prevDelta || {};
+	    var prevInput = session.prevInput || {};
+
+	    if (input.eventType === INPUT_START || prevInput.eventType === INPUT_END) {
+	        prevDelta = session.prevDelta = {
+	            x: prevInput.deltaX || 0,
+	            y: prevInput.deltaY || 0
+	        };
+
+	        offset = session.offsetDelta = {
+	            x: center.x,
+	            y: center.y
+	        };
+	    }
+
+	    input.deltaX = prevDelta.x + (center.x - offset.x);
+	    input.deltaY = prevDelta.y + (center.y - offset.y);
+	}
+
+	/**
+	 * velocity is calculated every x ms
+	 * @param {Object} session
+	 * @param {Object} input
+	 */
+	function computeIntervalInputData(session, input) {
+	    var last = session.lastInterval || input,
+	        deltaTime = input.timeStamp - last.timeStamp,
+	        velocity, velocityX, velocityY, direction;
+
+	    if (input.eventType != INPUT_CANCEL && (deltaTime > COMPUTE_INTERVAL || last.velocity === undefined)) {
+	        var deltaX = input.deltaX - last.deltaX;
+	        var deltaY = input.deltaY - last.deltaY;
+
+	        var v = getVelocity(deltaTime, deltaX, deltaY);
+	        velocityX = v.x;
+	        velocityY = v.y;
+	        velocity = (abs(v.x) > abs(v.y)) ? v.x : v.y;
+	        direction = getDirection(deltaX, deltaY);
+
+	        session.lastInterval = input;
+	    } else {
+	        // use latest velocity info if it doesn't overtake a minimum period
+	        velocity = last.velocity;
+	        velocityX = last.velocityX;
+	        velocityY = last.velocityY;
+	        direction = last.direction;
+	    }
+
+	    input.velocity = velocity;
+	    input.velocityX = velocityX;
+	    input.velocityY = velocityY;
+	    input.direction = direction;
+	}
+
+	/**
+	 * create a simple clone from the input used for storage of firstInput and firstMultiple
+	 * @param {Object} input
+	 * @returns {Object} clonedInputData
+	 */
+	function simpleCloneInputData(input) {
+	    // make a simple copy of the pointers because we will get a reference if we don't
+	    // we only need clientXY for the calculations
+	    var pointers = [];
+	    var i = 0;
+	    while (i < input.pointers.length) {
+	        pointers[i] = {
+	            clientX: round(input.pointers[i].clientX),
+	            clientY: round(input.pointers[i].clientY)
+	        };
+	        i++;
+	    }
+
+	    return {
+	        timeStamp: now(),
+	        pointers: pointers,
+	        center: getCenter(pointers),
+	        deltaX: input.deltaX,
+	        deltaY: input.deltaY
+	    };
+	}
+
+	/**
+	 * get the center of all the pointers
+	 * @param {Array} pointers
+	 * @return {Object} center contains `x` and `y` properties
+	 */
+	function getCenter(pointers) {
+	    var pointersLength = pointers.length;
+
+	    // no need to loop when only one touch
+	    if (pointersLength === 1) {
+	        return {
+	            x: round(pointers[0].clientX),
+	            y: round(pointers[0].clientY)
+	        };
+	    }
+
+	    var x = 0, y = 0, i = 0;
+	    while (i < pointersLength) {
+	        x += pointers[i].clientX;
+	        y += pointers[i].clientY;
+	        i++;
+	    }
+
+	    return {
+	        x: round(x / pointersLength),
+	        y: round(y / pointersLength)
+	    };
+	}
+
+	/**
+	 * calculate the velocity between two points. unit is in px per ms.
+	 * @param {Number} deltaTime
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Object} velocity `x` and `y`
+	 */
+	function getVelocity(deltaTime, x, y) {
+	    return {
+	        x: x / deltaTime || 0,
+	        y: y / deltaTime || 0
+	    };
+	}
+
+	/**
+	 * get the direction between two points
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Number} direction
+	 */
+	function getDirection(x, y) {
+	    if (x === y) {
+	        return DIRECTION_NONE;
+	    }
+
+	    if (abs(x) >= abs(y)) {
+	        return x < 0 ? DIRECTION_LEFT : DIRECTION_RIGHT;
+	    }
+	    return y < 0 ? DIRECTION_UP : DIRECTION_DOWN;
+	}
+
+	/**
+	 * calculate the absolute distance between two points
+	 * @param {Object} p1 {x, y}
+	 * @param {Object} p2 {x, y}
+	 * @param {Array} [props] containing x and y keys
+	 * @return {Number} distance
+	 */
+	function getDistance(p1, p2, props) {
+	    if (!props) {
+	        props = PROPS_XY;
+	    }
+	    var x = p2[props[0]] - p1[props[0]],
+	        y = p2[props[1]] - p1[props[1]];
+
+	    return Math.sqrt((x * x) + (y * y));
+	}
+
+	/**
+	 * calculate the angle between two coordinates
+	 * @param {Object} p1
+	 * @param {Object} p2
+	 * @param {Array} [props] containing x and y keys
+	 * @return {Number} angle
+	 */
+	function getAngle(p1, p2, props) {
+	    if (!props) {
+	        props = PROPS_XY;
+	    }
+	    var x = p2[props[0]] - p1[props[0]],
+	        y = p2[props[1]] - p1[props[1]];
+	    return Math.atan2(y, x) * 180 / Math.PI;
+	}
+
+	/**
+	 * calculate the rotation degrees between two pointersets
+	 * @param {Array} start array of pointers
+	 * @param {Array} end array of pointers
+	 * @return {Number} rotation
+	 */
+	function getRotation(start, end) {
+	    return getAngle(end[1], end[0], PROPS_CLIENT_XY) + getAngle(start[1], start[0], PROPS_CLIENT_XY);
+	}
+
+	/**
+	 * calculate the scale factor between two pointersets
+	 * no scale is 1, and goes down to 0 when pinched together, and bigger when pinched out
+	 * @param {Array} start array of pointers
+	 * @param {Array} end array of pointers
+	 * @return {Number} scale
+	 */
+	function getScale(start, end) {
+	    return getDistance(end[0], end[1], PROPS_CLIENT_XY) / getDistance(start[0], start[1], PROPS_CLIENT_XY);
+	}
+
+	var MOUSE_INPUT_MAP = {
+	    mousedown: INPUT_START,
+	    mousemove: INPUT_MOVE,
+	    mouseup: INPUT_END
+	};
+
+	var MOUSE_ELEMENT_EVENTS = 'mousedown';
+	var MOUSE_WINDOW_EVENTS = 'mousemove mouseup';
+
+	/**
+	 * Mouse events input
+	 * @constructor
+	 * @extends Input
+	 */
+	function MouseInput() {
+	    this.evEl = MOUSE_ELEMENT_EVENTS;
+	    this.evWin = MOUSE_WINDOW_EVENTS;
+
+	    this.pressed = false; // mousedown state
+
+	    Input.apply(this, arguments);
+	}
+
+	inherit(MouseInput, Input, {
+	    /**
+	     * handle mouse events
+	     * @param {Object} ev
+	     */
+	    handler: function MEhandler(ev) {
+	        var eventType = MOUSE_INPUT_MAP[ev.type];
+
+	        // on start we want to have the left mouse button down
+	        if (eventType & INPUT_START && ev.button === 0) {
+	            this.pressed = true;
+	        }
+
+	        if (eventType & INPUT_MOVE && ev.which !== 1) {
+	            eventType = INPUT_END;
+	        }
+
+	        // mouse must be down
+	        if (!this.pressed) {
+	            return;
+	        }
+
+	        if (eventType & INPUT_END) {
+	            this.pressed = false;
+	        }
+
+	        this.callback(this.manager, eventType, {
+	            pointers: [ev],
+	            changedPointers: [ev],
+	            pointerType: INPUT_TYPE_MOUSE,
+	            srcEvent: ev
+	        });
+	    }
+	});
+
+	var POINTER_INPUT_MAP = {
+	    pointerdown: INPUT_START,
+	    pointermove: INPUT_MOVE,
+	    pointerup: INPUT_END,
+	    pointercancel: INPUT_CANCEL,
+	    pointerout: INPUT_CANCEL
+	};
+
+	// in IE10 the pointer types is defined as an enum
+	var IE10_POINTER_TYPE_ENUM = {
+	    2: INPUT_TYPE_TOUCH,
+	    3: INPUT_TYPE_PEN,
+	    4: INPUT_TYPE_MOUSE,
+	    5: INPUT_TYPE_KINECT // see https://twitter.com/jacobrossi/status/480596438489890816
+	};
+
+	var POINTER_ELEMENT_EVENTS = 'pointerdown';
+	var POINTER_WINDOW_EVENTS = 'pointermove pointerup pointercancel';
+
+	// IE10 has prefixed support, and case-sensitive
+	if (window.MSPointerEvent && !window.PointerEvent) {
+	    POINTER_ELEMENT_EVENTS = 'MSPointerDown';
+	    POINTER_WINDOW_EVENTS = 'MSPointerMove MSPointerUp MSPointerCancel';
+	}
+
+	/**
+	 * Pointer events input
+	 * @constructor
+	 * @extends Input
+	 */
+	function PointerEventInput() {
+	    this.evEl = POINTER_ELEMENT_EVENTS;
+	    this.evWin = POINTER_WINDOW_EVENTS;
+
+	    Input.apply(this, arguments);
+
+	    this.store = (this.manager.session.pointerEvents = []);
+	}
+
+	inherit(PointerEventInput, Input, {
+	    /**
+	     * handle mouse events
+	     * @param {Object} ev
+	     */
+	    handler: function PEhandler(ev) {
+	        var store = this.store;
+	        var removePointer = false;
+
+	        var eventTypeNormalized = ev.type.toLowerCase().replace('ms', '');
+	        var eventType = POINTER_INPUT_MAP[eventTypeNormalized];
+	        var pointerType = IE10_POINTER_TYPE_ENUM[ev.pointerType] || ev.pointerType;
+
+	        var isTouch = (pointerType == INPUT_TYPE_TOUCH);
+
+	        // get index of the event in the store
+	        var storeIndex = inArray(store, ev.pointerId, 'pointerId');
+
+	        // start and mouse must be down
+	        if (eventType & INPUT_START && (ev.button === 0 || isTouch)) {
+	            if (storeIndex < 0) {
+	                store.push(ev);
+	                storeIndex = store.length - 1;
+	            }
+	        } else if (eventType & (INPUT_END | INPUT_CANCEL)) {
+	            removePointer = true;
+	        }
+
+	        // it not found, so the pointer hasn't been down (so it's probably a hover)
+	        if (storeIndex < 0) {
+	            return;
+	        }
+
+	        // update the event in the store
+	        store[storeIndex] = ev;
+
+	        this.callback(this.manager, eventType, {
+	            pointers: store,
+	            changedPointers: [ev],
+	            pointerType: pointerType,
+	            srcEvent: ev
+	        });
+
+	        if (removePointer) {
+	            // remove from the store
+	            store.splice(storeIndex, 1);
+	        }
+	    }
+	});
+
+	var SINGLE_TOUCH_INPUT_MAP = {
+	    touchstart: INPUT_START,
+	    touchmove: INPUT_MOVE,
+	    touchend: INPUT_END,
+	    touchcancel: INPUT_CANCEL
+	};
+
+	var SINGLE_TOUCH_TARGET_EVENTS = 'touchstart';
+	var SINGLE_TOUCH_WINDOW_EVENTS = 'touchstart touchmove touchend touchcancel';
+
+	/**
+	 * Touch events input
+	 * @constructor
+	 * @extends Input
+	 */
+	function SingleTouchInput() {
+	    this.evTarget = SINGLE_TOUCH_TARGET_EVENTS;
+	    this.evWin = SINGLE_TOUCH_WINDOW_EVENTS;
+	    this.started = false;
+
+	    Input.apply(this, arguments);
+	}
+
+	inherit(SingleTouchInput, Input, {
+	    handler: function TEhandler(ev) {
+	        var type = SINGLE_TOUCH_INPUT_MAP[ev.type];
+
+	        // should we handle the touch events?
+	        if (type === INPUT_START) {
+	            this.started = true;
+	        }
+
+	        if (!this.started) {
+	            return;
+	        }
+
+	        var touches = normalizeSingleTouches.call(this, ev, type);
+
+	        // when done, reset the started state
+	        if (type & (INPUT_END | INPUT_CANCEL) && touches[0].length - touches[1].length === 0) {
+	            this.started = false;
+	        }
+
+	        this.callback(this.manager, type, {
+	            pointers: touches[0],
+	            changedPointers: touches[1],
+	            pointerType: INPUT_TYPE_TOUCH,
+	            srcEvent: ev
+	        });
+	    }
+	});
+
+	/**
+	 * @this {TouchInput}
+	 * @param {Object} ev
+	 * @param {Number} type flag
+	 * @returns {undefined|Array} [all, changed]
+	 */
+	function normalizeSingleTouches(ev, type) {
+	    var all = toArray(ev.touches);
+	    var changed = toArray(ev.changedTouches);
+
+	    if (type & (INPUT_END | INPUT_CANCEL)) {
+	        all = uniqueArray(all.concat(changed), 'identifier', true);
+	    }
+
+	    return [all, changed];
+	}
+
+	var TOUCH_INPUT_MAP = {
+	    touchstart: INPUT_START,
+	    touchmove: INPUT_MOVE,
+	    touchend: INPUT_END,
+	    touchcancel: INPUT_CANCEL
+	};
+
+	var TOUCH_TARGET_EVENTS = 'touchstart touchmove touchend touchcancel';
+
+	/**
+	 * Multi-user touch events input
+	 * @constructor
+	 * @extends Input
+	 */
+	function TouchInput() {
+	    this.evTarget = TOUCH_TARGET_EVENTS;
+	    this.targetIds = {};
+
+	    Input.apply(this, arguments);
+	}
+
+	inherit(TouchInput, Input, {
+	    handler: function MTEhandler(ev) {
+	        var type = TOUCH_INPUT_MAP[ev.type];
+	        var touches = getTouches.call(this, ev, type);
+	        if (!touches) {
+	            return;
+	        }
+
+	        this.callback(this.manager, type, {
+	            pointers: touches[0],
+	            changedPointers: touches[1],
+	            pointerType: INPUT_TYPE_TOUCH,
+	            srcEvent: ev
+	        });
+	    }
+	});
+
+	/**
+	 * @this {TouchInput}
+	 * @param {Object} ev
+	 * @param {Number} type flag
+	 * @returns {undefined|Array} [all, changed]
+	 */
+	function getTouches(ev, type) {
+	    var allTouches = toArray(ev.touches);
+	    var targetIds = this.targetIds;
+
+	    // when there is only one touch, the process can be simplified
+	    if (type & (INPUT_START | INPUT_MOVE) && allTouches.length === 1) {
+	        targetIds[allTouches[0].identifier] = true;
+	        return [allTouches, allTouches];
+	    }
+
+	    var i,
+	        targetTouches,
+	        changedTouches = toArray(ev.changedTouches),
+	        changedTargetTouches = [],
+	        target = this.target;
+
+	    // get target touches from touches
+	    targetTouches = allTouches.filter(function(touch) {
+	        return hasParent(touch.target, target);
+	    });
+
+	    // collect touches
+	    if (type === INPUT_START) {
+	        i = 0;
+	        while (i < targetTouches.length) {
+	            targetIds[targetTouches[i].identifier] = true;
+	            i++;
+	        }
+	    }
+
+	    // filter changed touches to only contain touches that exist in the collected target ids
+	    i = 0;
+	    while (i < changedTouches.length) {
+	        if (targetIds[changedTouches[i].identifier]) {
+	            changedTargetTouches.push(changedTouches[i]);
+	        }
+
+	        // cleanup removed touches
+	        if (type & (INPUT_END | INPUT_CANCEL)) {
+	            delete targetIds[changedTouches[i].identifier];
+	        }
+	        i++;
+	    }
+
+	    if (!changedTargetTouches.length) {
+	        return;
+	    }
+
+	    return [
+	        // merge targetTouches with changedTargetTouches so it contains ALL touches, including 'end' and 'cancel'
+	        uniqueArray(targetTouches.concat(changedTargetTouches), 'identifier', true),
+	        changedTargetTouches
+	    ];
+	}
+
+	/**
+	 * Combined touch and mouse input
+	 *
+	 * Touch has a higher priority then mouse, and while touching no mouse events are allowed.
+	 * This because touch devices also emit mouse events while doing a touch.
+	 *
+	 * @constructor
+	 * @extends Input
+	 */
+
+	var DEDUP_TIMEOUT = 2500;
+	var DEDUP_DISTANCE = 25;
+
+	function TouchMouseInput() {
+	    Input.apply(this, arguments);
+
+	    var handler = bindFn(this.handler, this);
+	    this.touch = new TouchInput(this.manager, handler);
+	    this.mouse = new MouseInput(this.manager, handler);
+
+	    this.primaryTouch = null;
+	    this.lastTouches = [];
+	}
+
+	inherit(TouchMouseInput, Input, {
+	    /**
+	     * handle mouse and touch events
+	     * @param {Hammer} manager
+	     * @param {String} inputEvent
+	     * @param {Object} inputData
+	     */
+	    handler: function TMEhandler(manager, inputEvent, inputData) {
+	        var isTouch = (inputData.pointerType == INPUT_TYPE_TOUCH),
+	            isMouse = (inputData.pointerType == INPUT_TYPE_MOUSE);
+
+	        if (isMouse && inputData.sourceCapabilities && inputData.sourceCapabilities.firesTouchEvents) {
+	            return;
+	        }
+
+	        // when we're in a touch event, record touches to  de-dupe synthetic mouse event
+	        if (isTouch) {
+	            recordTouches.call(this, inputEvent, inputData);
+	        } else if (isMouse && isSyntheticEvent.call(this, inputData)) {
+	            return;
+	        }
+
+	        this.callback(manager, inputEvent, inputData);
+	    },
+
+	    /**
+	     * remove the event listeners
+	     */
+	    destroy: function destroy() {
+	        this.touch.destroy();
+	        this.mouse.destroy();
+	    }
+	});
+
+	function recordTouches(eventType, eventData) {
+	    if (eventType & INPUT_START) {
+	        this.primaryTouch = eventData.changedPointers[0].identifier;
+	        setLastTouch.call(this, eventData);
+	    } else if (eventType & (INPUT_END | INPUT_CANCEL)) {
+	        setLastTouch.call(this, eventData);
+	    }
+	}
+
+	function setLastTouch(eventData) {
+	    var touch = eventData.changedPointers[0];
+
+	    if (touch.identifier === this.primaryTouch) {
+	        var lastTouch = {x: touch.clientX, y: touch.clientY};
+	        this.lastTouches.push(lastTouch);
+	        var lts = this.lastTouches;
+	        var removeLastTouch = function() {
+	            var i = lts.indexOf(lastTouch);
+	            if (i > -1) {
+	                lts.splice(i, 1);
+	            }
+	        };
+	        setTimeout(removeLastTouch, DEDUP_TIMEOUT);
+	    }
+	}
+
+	function isSyntheticEvent(eventData) {
+	    var x = eventData.srcEvent.clientX, y = eventData.srcEvent.clientY;
+	    for (var i = 0; i < this.lastTouches.length; i++) {
+	        var t = this.lastTouches[i];
+	        var dx = Math.abs(x - t.x), dy = Math.abs(y - t.y);
+	        if (dx <= DEDUP_DISTANCE && dy <= DEDUP_DISTANCE) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
+	var PREFIXED_TOUCH_ACTION = prefixed(TEST_ELEMENT.style, 'touchAction');
+	var NATIVE_TOUCH_ACTION = PREFIXED_TOUCH_ACTION !== undefined;
+
+	// magical touchAction value
+	var TOUCH_ACTION_COMPUTE = 'compute';
+	var TOUCH_ACTION_AUTO = 'auto';
+	var TOUCH_ACTION_MANIPULATION = 'manipulation'; // not implemented
+	var TOUCH_ACTION_NONE = 'none';
+	var TOUCH_ACTION_PAN_X = 'pan-x';
+	var TOUCH_ACTION_PAN_Y = 'pan-y';
+	var TOUCH_ACTION_MAP = getTouchActionProps();
+
+	/**
+	 * Touch Action
+	 * sets the touchAction property or uses the js alternative
+	 * @param {Manager} manager
+	 * @param {String} value
+	 * @constructor
+	 */
+	function TouchAction(manager, value) {
+	    this.manager = manager;
+	    this.set(value);
+	}
+
+	TouchAction.prototype = {
+	    /**
+	     * set the touchAction value on the element or enable the polyfill
+	     * @param {String} value
+	     */
+	    set: function(value) {
+	        // find out the touch-action by the event handlers
+	        if (value == TOUCH_ACTION_COMPUTE) {
+	            value = this.compute();
+	        }
+
+	        if (NATIVE_TOUCH_ACTION && this.manager.element.style && TOUCH_ACTION_MAP[value]) {
+	            this.manager.element.style[PREFIXED_TOUCH_ACTION] = value;
+	        }
+	        this.actions = value.toLowerCase().trim();
+	    },
+
+	    /**
+	     * just re-set the touchAction value
+	     */
+	    update: function() {
+	        this.set(this.manager.options.touchAction);
+	    },
+
+	    /**
+	     * compute the value for the touchAction property based on the recognizer's settings
+	     * @returns {String} value
+	     */
+	    compute: function() {
+	        var actions = [];
+	        each(this.manager.recognizers, function(recognizer) {
+	            if (boolOrFn(recognizer.options.enable, [recognizer])) {
+	                actions = actions.concat(recognizer.getTouchAction());
+	            }
+	        });
+	        return cleanTouchActions(actions.join(' '));
+	    },
+
+	    /**
+	     * this method is called on each input cycle and provides the preventing of the browser behavior
+	     * @param {Object} input
+	     */
+	    preventDefaults: function(input) {
+	        var srcEvent = input.srcEvent;
+	        var direction = input.offsetDirection;
+
+	        // if the touch action did prevented once this session
+	        if (this.manager.session.prevented) {
+	            srcEvent.preventDefault();
+	            return;
+	        }
+
+	        var actions = this.actions;
+	        var hasNone = inStr(actions, TOUCH_ACTION_NONE) && !TOUCH_ACTION_MAP[TOUCH_ACTION_NONE];
+	        var hasPanY = inStr(actions, TOUCH_ACTION_PAN_Y) && !TOUCH_ACTION_MAP[TOUCH_ACTION_PAN_Y];
+	        var hasPanX = inStr(actions, TOUCH_ACTION_PAN_X) && !TOUCH_ACTION_MAP[TOUCH_ACTION_PAN_X];
+
+	        if (hasNone) {
+	            //do not prevent defaults if this is a tap gesture
+
+	            var isTapPointer = input.pointers.length === 1;
+	            var isTapMovement = input.distance < 2;
+	            var isTapTouchTime = input.deltaTime < 250;
+
+	            if (isTapPointer && isTapMovement && isTapTouchTime) {
+	                return;
+	            }
+	        }
+
+	        if (hasPanX && hasPanY) {
+	            // `pan-x pan-y` means browser handles all scrolling/panning, do not prevent
+	            return;
+	        }
+
+	        if (hasNone ||
+	            (hasPanY && direction & DIRECTION_HORIZONTAL) ||
+	            (hasPanX && direction & DIRECTION_VERTICAL)) {
+	            return this.preventSrc(srcEvent);
+	        }
+	    },
+
+	    /**
+	     * call preventDefault to prevent the browser's default behavior (scrolling in most cases)
+	     * @param {Object} srcEvent
+	     */
+	    preventSrc: function(srcEvent) {
+	        this.manager.session.prevented = true;
+	        srcEvent.preventDefault();
+	    }
+	};
+
+	/**
+	 * when the touchActions are collected they are not a valid value, so we need to clean things up. *
+	 * @param {String} actions
+	 * @returns {*}
+	 */
+	function cleanTouchActions(actions) {
+	    // none
+	    if (inStr(actions, TOUCH_ACTION_NONE)) {
+	        return TOUCH_ACTION_NONE;
+	    }
+
+	    var hasPanX = inStr(actions, TOUCH_ACTION_PAN_X);
+	    var hasPanY = inStr(actions, TOUCH_ACTION_PAN_Y);
+
+	    // if both pan-x and pan-y are set (different recognizers
+	    // for different directions, e.g. horizontal pan but vertical swipe?)
+	    // we need none (as otherwise with pan-x pan-y combined none of these
+	    // recognizers will work, since the browser would handle all panning
+	    if (hasPanX && hasPanY) {
+	        return TOUCH_ACTION_NONE;
+	    }
+
+	    // pan-x OR pan-y
+	    if (hasPanX || hasPanY) {
+	        return hasPanX ? TOUCH_ACTION_PAN_X : TOUCH_ACTION_PAN_Y;
+	    }
+
+	    // manipulation
+	    if (inStr(actions, TOUCH_ACTION_MANIPULATION)) {
+	        return TOUCH_ACTION_MANIPULATION;
+	    }
+
+	    return TOUCH_ACTION_AUTO;
+	}
+
+	function getTouchActionProps() {
+	    if (!NATIVE_TOUCH_ACTION) {
+	        return false;
+	    }
+	    var touchMap = {};
+	    var cssSupports = window.CSS && window.CSS.supports;
+	    ['auto', 'manipulation', 'pan-y', 'pan-x', 'pan-x pan-y', 'none'].forEach(function(val) {
+
+	        // If css.supports is not supported but there is native touch-action assume it supports
+	        // all values. This is the case for IE 10 and 11.
+	        touchMap[val] = cssSupports ? window.CSS.supports('touch-action', val) : true;
+	    });
+	    return touchMap;
+	}
+
+	/**
+	 * Recognizer flow explained; *
+	 * All recognizers have the initial state of POSSIBLE when a input session starts.
+	 * The definition of a input session is from the first input until the last input, with all it's movement in it. *
+	 * Example session for mouse-input: mousedown -> mousemove -> mouseup
+	 *
+	 * On each recognizing cycle (see Manager.recognize) the .recognize() method is executed
+	 * which determines with state it should be.
+	 *
+	 * If the recognizer has the state FAILED, CANCELLED or RECOGNIZED (equals ENDED), it is reset to
+	 * POSSIBLE to give it another change on the next cycle.
+	 *
+	 *               Possible
+	 *                  |
+	 *            +-----+---------------+
+	 *            |                     |
+	 *      +-----+-----+               |
+	 *      |           |               |
+	 *   Failed      Cancelled          |
+	 *                          +-------+------+
+	 *                          |              |
+	 *                      Recognized       Began
+	 *                                         |
+	 *                                      Changed
+	 *                                         |
+	 *                                  Ended/Recognized
+	 */
+	var STATE_POSSIBLE = 1;
+	var STATE_BEGAN = 2;
+	var STATE_CHANGED = 4;
+	var STATE_ENDED = 8;
+	var STATE_RECOGNIZED = STATE_ENDED;
+	var STATE_CANCELLED = 16;
+	var STATE_FAILED = 32;
+
+	/**
+	 * Recognizer
+	 * Every recognizer needs to extend from this class.
+	 * @constructor
+	 * @param {Object} options
+	 */
+	function Recognizer(options) {
+	    this.options = assign({}, this.defaults, options || {});
+
+	    this.id = uniqueId();
+
+	    this.manager = null;
+
+	    // default is enable true
+	    this.options.enable = ifUndefined(this.options.enable, true);
+
+	    this.state = STATE_POSSIBLE;
+
+	    this.simultaneous = {};
+	    this.requireFail = [];
+	}
+
+	Recognizer.prototype = {
+	    /**
+	     * @virtual
+	     * @type {Object}
+	     */
+	    defaults: {},
+
+	    /**
+	     * set options
+	     * @param {Object} options
+	     * @return {Recognizer}
+	     */
+	    set: function(options) {
+	        assign(this.options, options);
+
+	        // also update the touchAction, in case something changed about the directions/enabled state
+	        this.manager && this.manager.touchAction.update();
+	        return this;
+	    },
+
+	    /**
+	     * recognize simultaneous with an other recognizer.
+	     * @param {Recognizer} otherRecognizer
+	     * @returns {Recognizer} this
+	     */
+	    recognizeWith: function(otherRecognizer) {
+	        if (invokeArrayArg(otherRecognizer, 'recognizeWith', this)) {
+	            return this;
+	        }
+
+	        var simultaneous = this.simultaneous;
+	        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+	        if (!simultaneous[otherRecognizer.id]) {
+	            simultaneous[otherRecognizer.id] = otherRecognizer;
+	            otherRecognizer.recognizeWith(this);
+	        }
+	        return this;
+	    },
+
+	    /**
+	     * drop the simultaneous link. it doesnt remove the link on the other recognizer.
+	     * @param {Recognizer} otherRecognizer
+	     * @returns {Recognizer} this
+	     */
+	    dropRecognizeWith: function(otherRecognizer) {
+	        if (invokeArrayArg(otherRecognizer, 'dropRecognizeWith', this)) {
+	            return this;
+	        }
+
+	        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+	        delete this.simultaneous[otherRecognizer.id];
+	        return this;
+	    },
+
+	    /**
+	     * recognizer can only run when an other is failing
+	     * @param {Recognizer} otherRecognizer
+	     * @returns {Recognizer} this
+	     */
+	    requireFailure: function(otherRecognizer) {
+	        if (invokeArrayArg(otherRecognizer, 'requireFailure', this)) {
+	            return this;
+	        }
+
+	        var requireFail = this.requireFail;
+	        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+	        if (inArray(requireFail, otherRecognizer) === -1) {
+	            requireFail.push(otherRecognizer);
+	            otherRecognizer.requireFailure(this);
+	        }
+	        return this;
+	    },
+
+	    /**
+	     * drop the requireFailure link. it does not remove the link on the other recognizer.
+	     * @param {Recognizer} otherRecognizer
+	     * @returns {Recognizer} this
+	     */
+	    dropRequireFailure: function(otherRecognizer) {
+	        if (invokeArrayArg(otherRecognizer, 'dropRequireFailure', this)) {
+	            return this;
+	        }
+
+	        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+	        var index = inArray(this.requireFail, otherRecognizer);
+	        if (index > -1) {
+	            this.requireFail.splice(index, 1);
+	        }
+	        return this;
+	    },
+
+	    /**
+	     * has require failures boolean
+	     * @returns {boolean}
+	     */
+	    hasRequireFailures: function() {
+	        return this.requireFail.length > 0;
+	    },
+
+	    /**
+	     * if the recognizer can recognize simultaneous with an other recognizer
+	     * @param {Recognizer} otherRecognizer
+	     * @returns {Boolean}
+	     */
+	    canRecognizeWith: function(otherRecognizer) {
+	        return !!this.simultaneous[otherRecognizer.id];
+	    },
+
+	    /**
+	     * You should use `tryEmit` instead of `emit` directly to check
+	     * that all the needed recognizers has failed before emitting.
+	     * @param {Object} input
+	     */
+	    emit: function(input) {
+	        var self = this;
+	        var state = this.state;
+
+	        function emit(event) {
+	            self.manager.emit(event, input);
+	        }
+
+	        // 'panstart' and 'panmove'
+	        if (state < STATE_ENDED) {
+	            emit(self.options.event + stateStr(state));
+	        }
+
+	        emit(self.options.event); // simple 'eventName' events
+
+	        if (input.additionalEvent) { // additional event(panleft, panright, pinchin, pinchout...)
+	            emit(input.additionalEvent);
+	        }
+
+	        // panend and pancancel
+	        if (state >= STATE_ENDED) {
+	            emit(self.options.event + stateStr(state));
+	        }
+	    },
+
+	    /**
+	     * Check that all the require failure recognizers has failed,
+	     * if true, it emits a gesture event,
+	     * otherwise, setup the state to FAILED.
+	     * @param {Object} input
+	     */
+	    tryEmit: function(input) {
+	        if (this.canEmit()) {
+	            return this.emit(input);
+	        }
+	        // it's failing anyway
+	        this.state = STATE_FAILED;
+	    },
+
+	    /**
+	     * can we emit?
+	     * @returns {boolean}
+	     */
+	    canEmit: function() {
+	        var i = 0;
+	        while (i < this.requireFail.length) {
+	            if (!(this.requireFail[i].state & (STATE_FAILED | STATE_POSSIBLE))) {
+	                return false;
+	            }
+	            i++;
+	        }
+	        return true;
+	    },
+
+	    /**
+	     * update the recognizer
+	     * @param {Object} inputData
+	     */
+	    recognize: function(inputData) {
+	        // make a new copy of the inputData
+	        // so we can change the inputData without messing up the other recognizers
+	        var inputDataClone = assign({}, inputData);
+
+	        // is is enabled and allow recognizing?
+	        if (!boolOrFn(this.options.enable, [this, inputDataClone])) {
+	            this.reset();
+	            this.state = STATE_FAILED;
+	            return;
+	        }
+
+	        // reset when we've reached the end
+	        if (this.state & (STATE_RECOGNIZED | STATE_CANCELLED | STATE_FAILED)) {
+	            this.state = STATE_POSSIBLE;
+	        }
+
+	        this.state = this.process(inputDataClone);
+
+	        // the recognizer has recognized a gesture
+	        // so trigger an event
+	        if (this.state & (STATE_BEGAN | STATE_CHANGED | STATE_ENDED | STATE_CANCELLED)) {
+	            this.tryEmit(inputDataClone);
+	        }
+	    },
+
+	    /**
+	     * return the state of the recognizer
+	     * the actual recognizing happens in this method
+	     * @virtual
+	     * @param {Object} inputData
+	     * @returns {Const} STATE
+	     */
+	    process: function(inputData) { }, // jshint ignore:line
+
+	    /**
+	     * return the preferred touch-action
+	     * @virtual
+	     * @returns {Array}
+	     */
+	    getTouchAction: function() { },
+
+	    /**
+	     * called when the gesture isn't allowed to recognize
+	     * like when another is being recognized or it is disabled
+	     * @virtual
+	     */
+	    reset: function() { }
+	};
+
+	/**
+	 * get a usable string, used as event postfix
+	 * @param {Const} state
+	 * @returns {String} state
+	 */
+	function stateStr(state) {
+	    if (state & STATE_CANCELLED) {
+	        return 'cancel';
+	    } else if (state & STATE_ENDED) {
+	        return 'end';
+	    } else if (state & STATE_CHANGED) {
+	        return 'move';
+	    } else if (state & STATE_BEGAN) {
+	        return 'start';
+	    }
+	    return '';
+	}
+
+	/**
+	 * direction cons to string
+	 * @param {Const} direction
+	 * @returns {String}
+	 */
+	function directionStr(direction) {
+	    if (direction == DIRECTION_DOWN) {
+	        return 'down';
+	    } else if (direction == DIRECTION_UP) {
+	        return 'up';
+	    } else if (direction == DIRECTION_LEFT) {
+	        return 'left';
+	    } else if (direction == DIRECTION_RIGHT) {
+	        return 'right';
+	    }
+	    return '';
+	}
+
+	/**
+	 * get a recognizer by name if it is bound to a manager
+	 * @param {Recognizer|String} otherRecognizer
+	 * @param {Recognizer} recognizer
+	 * @returns {Recognizer}
+	 */
+	function getRecognizerByNameIfManager(otherRecognizer, recognizer) {
+	    var manager = recognizer.manager;
+	    if (manager) {
+	        return manager.get(otherRecognizer);
+	    }
+	    return otherRecognizer;
+	}
+
+	/**
+	 * This recognizer is just used as a base for the simple attribute recognizers.
+	 * @constructor
+	 * @extends Recognizer
+	 */
+	function AttrRecognizer() {
+	    Recognizer.apply(this, arguments);
+	}
+
+	inherit(AttrRecognizer, Recognizer, {
+	    /**
+	     * @namespace
+	     * @memberof AttrRecognizer
+	     */
+	    defaults: {
+	        /**
+	         * @type {Number}
+	         * @default 1
+	         */
+	        pointers: 1
+	    },
+
+	    /**
+	     * Used to check if it the recognizer receives valid input, like input.distance > 10.
+	     * @memberof AttrRecognizer
+	     * @param {Object} input
+	     * @returns {Boolean} recognized
+	     */
+	    attrTest: function(input) {
+	        var optionPointers = this.options.pointers;
+	        return optionPointers === 0 || input.pointers.length === optionPointers;
+	    },
+
+	    /**
+	     * Process the input and return the state for the recognizer
+	     * @memberof AttrRecognizer
+	     * @param {Object} input
+	     * @returns {*} State
+	     */
+	    process: function(input) {
+	        var state = this.state;
+	        var eventType = input.eventType;
+
+	        var isRecognized = state & (STATE_BEGAN | STATE_CHANGED);
+	        var isValid = this.attrTest(input);
+
+	        // on cancel input and we've recognized before, return STATE_CANCELLED
+	        if (isRecognized && (eventType & INPUT_CANCEL || !isValid)) {
+	            return state | STATE_CANCELLED;
+	        } else if (isRecognized || isValid) {
+	            if (eventType & INPUT_END) {
+	                return state | STATE_ENDED;
+	            } else if (!(state & STATE_BEGAN)) {
+	                return STATE_BEGAN;
+	            }
+	            return state | STATE_CHANGED;
+	        }
+	        return STATE_FAILED;
+	    }
+	});
+
+	/**
+	 * Pan
+	 * Recognized when the pointer is down and moved in the allowed direction.
+	 * @constructor
+	 * @extends AttrRecognizer
+	 */
+	function PanRecognizer() {
+	    AttrRecognizer.apply(this, arguments);
+
+	    this.pX = null;
+	    this.pY = null;
+	}
+
+	inherit(PanRecognizer, AttrRecognizer, {
+	    /**
+	     * @namespace
+	     * @memberof PanRecognizer
+	     */
+	    defaults: {
+	        event: 'pan',
+	        threshold: 10,
+	        pointers: 1,
+	        direction: DIRECTION_ALL
+	    },
+
+	    getTouchAction: function() {
+	        var direction = this.options.direction;
+	        var actions = [];
+	        if (direction & DIRECTION_HORIZONTAL) {
+	            actions.push(TOUCH_ACTION_PAN_Y);
+	        }
+	        if (direction & DIRECTION_VERTICAL) {
+	            actions.push(TOUCH_ACTION_PAN_X);
+	        }
+	        return actions;
+	    },
+
+	    directionTest: function(input) {
+	        var options = this.options;
+	        var hasMoved = true;
+	        var distance = input.distance;
+	        var direction = input.direction;
+	        var x = input.deltaX;
+	        var y = input.deltaY;
+
+	        // lock to axis?
+	        if (!(direction & options.direction)) {
+	            if (options.direction & DIRECTION_HORIZONTAL) {
+	                direction = (x === 0) ? DIRECTION_NONE : (x < 0) ? DIRECTION_LEFT : DIRECTION_RIGHT;
+	                hasMoved = x != this.pX;
+	                distance = Math.abs(input.deltaX);
+	            } else {
+	                direction = (y === 0) ? DIRECTION_NONE : (y < 0) ? DIRECTION_UP : DIRECTION_DOWN;
+	                hasMoved = y != this.pY;
+	                distance = Math.abs(input.deltaY);
+	            }
+	        }
+	        input.direction = direction;
+	        return hasMoved && distance > options.threshold && direction & options.direction;
+	    },
+
+	    attrTest: function(input) {
+	        return AttrRecognizer.prototype.attrTest.call(this, input) &&
+	            (this.state & STATE_BEGAN || (!(this.state & STATE_BEGAN) && this.directionTest(input)));
+	    },
+
+	    emit: function(input) {
+
+	        this.pX = input.deltaX;
+	        this.pY = input.deltaY;
+
+	        var direction = directionStr(input.direction);
+
+	        if (direction) {
+	            input.additionalEvent = this.options.event + direction;
+	        }
+	        this._super.emit.call(this, input);
+	    }
+	});
+
+	/**
+	 * Pinch
+	 * Recognized when two or more pointers are moving toward (zoom-in) or away from each other (zoom-out).
+	 * @constructor
+	 * @extends AttrRecognizer
+	 */
+	function PinchRecognizer() {
+	    AttrRecognizer.apply(this, arguments);
+	}
+
+	inherit(PinchRecognizer, AttrRecognizer, {
+	    /**
+	     * @namespace
+	     * @memberof PinchRecognizer
+	     */
+	    defaults: {
+	        event: 'pinch',
+	        threshold: 0,
+	        pointers: 2
+	    },
+
+	    getTouchAction: function() {
+	        return [TOUCH_ACTION_NONE];
+	    },
+
+	    attrTest: function(input) {
+	        return this._super.attrTest.call(this, input) &&
+	            (Math.abs(input.scale - 1) > this.options.threshold || this.state & STATE_BEGAN);
+	    },
+
+	    emit: function(input) {
+	        if (input.scale !== 1) {
+	            var inOut = input.scale < 1 ? 'in' : 'out';
+	            input.additionalEvent = this.options.event + inOut;
+	        }
+	        this._super.emit.call(this, input);
+	    }
+	});
+
+	/**
+	 * Press
+	 * Recognized when the pointer is down for x ms without any movement.
+	 * @constructor
+	 * @extends Recognizer
+	 */
+	function PressRecognizer() {
+	    Recognizer.apply(this, arguments);
+
+	    this._timer = null;
+	    this._input = null;
+	}
+
+	inherit(PressRecognizer, Recognizer, {
+	    /**
+	     * @namespace
+	     * @memberof PressRecognizer
+	     */
+	    defaults: {
+	        event: 'press',
+	        pointers: 1,
+	        time: 251, // minimal time of the pointer to be pressed
+	        threshold: 9 // a minimal movement is ok, but keep it low
+	    },
+
+	    getTouchAction: function() {
+	        return [TOUCH_ACTION_AUTO];
+	    },
+
+	    process: function(input) {
+	        var options = this.options;
+	        var validPointers = input.pointers.length === options.pointers;
+	        var validMovement = input.distance < options.threshold;
+	        var validTime = input.deltaTime > options.time;
+
+	        this._input = input;
+
+	        // we only allow little movement
+	        // and we've reached an end event, so a tap is possible
+	        if (!validMovement || !validPointers || (input.eventType & (INPUT_END | INPUT_CANCEL) && !validTime)) {
+	            this.reset();
+	        } else if (input.eventType & INPUT_START) {
+	            this.reset();
+	            this._timer = setTimeoutContext(function() {
+	                this.state = STATE_RECOGNIZED;
+	                this.tryEmit();
+	            }, options.time, this);
+	        } else if (input.eventType & INPUT_END) {
+	            return STATE_RECOGNIZED;
+	        }
+	        return STATE_FAILED;
+	    },
+
+	    reset: function() {
+	        clearTimeout(this._timer);
+	    },
+
+	    emit: function(input) {
+	        if (this.state !== STATE_RECOGNIZED) {
+	            return;
+	        }
+
+	        if (input && (input.eventType & INPUT_END)) {
+	            this.manager.emit(this.options.event + 'up', input);
+	        } else {
+	            this._input.timeStamp = now();
+	            this.manager.emit(this.options.event, this._input);
+	        }
+	    }
+	});
+
+	/**
+	 * Rotate
+	 * Recognized when two or more pointer are moving in a circular motion.
+	 * @constructor
+	 * @extends AttrRecognizer
+	 */
+	function RotateRecognizer() {
+	    AttrRecognizer.apply(this, arguments);
+	}
+
+	inherit(RotateRecognizer, AttrRecognizer, {
+	    /**
+	     * @namespace
+	     * @memberof RotateRecognizer
+	     */
+	    defaults: {
+	        event: 'rotate',
+	        threshold: 0,
+	        pointers: 2
+	    },
+
+	    getTouchAction: function() {
+	        return [TOUCH_ACTION_NONE];
+	    },
+
+	    attrTest: function(input) {
+	        return this._super.attrTest.call(this, input) &&
+	            (Math.abs(input.rotation) > this.options.threshold || this.state & STATE_BEGAN);
+	    }
+	});
+
+	/**
+	 * Swipe
+	 * Recognized when the pointer is moving fast (velocity), with enough distance in the allowed direction.
+	 * @constructor
+	 * @extends AttrRecognizer
+	 */
+	function SwipeRecognizer() {
+	    AttrRecognizer.apply(this, arguments);
+	}
+
+	inherit(SwipeRecognizer, AttrRecognizer, {
+	    /**
+	     * @namespace
+	     * @memberof SwipeRecognizer
+	     */
+	    defaults: {
+	        event: 'swipe',
+	        threshold: 10,
+	        velocity: 0.3,
+	        direction: DIRECTION_HORIZONTAL | DIRECTION_VERTICAL,
+	        pointers: 1
+	    },
+
+	    getTouchAction: function() {
+	        return PanRecognizer.prototype.getTouchAction.call(this);
+	    },
+
+	    attrTest: function(input) {
+	        var direction = this.options.direction;
+	        var velocity;
+
+	        if (direction & (DIRECTION_HORIZONTAL | DIRECTION_VERTICAL)) {
+	            velocity = input.overallVelocity;
+	        } else if (direction & DIRECTION_HORIZONTAL) {
+	            velocity = input.overallVelocityX;
+	        } else if (direction & DIRECTION_VERTICAL) {
+	            velocity = input.overallVelocityY;
+	        }
+
+	        return this._super.attrTest.call(this, input) &&
+	            direction & input.offsetDirection &&
+	            input.distance > this.options.threshold &&
+	            input.maxPointers == this.options.pointers &&
+	            abs(velocity) > this.options.velocity && input.eventType & INPUT_END;
+	    },
+
+	    emit: function(input) {
+	        var direction = directionStr(input.offsetDirection);
+	        if (direction) {
+	            this.manager.emit(this.options.event + direction, input);
+	        }
+
+	        this.manager.emit(this.options.event, input);
+	    }
+	});
+
+	/**
+	 * A tap is ecognized when the pointer is doing a small tap/click. Multiple taps are recognized if they occur
+	 * between the given interval and position. The delay option can be used to recognize multi-taps without firing
+	 * a single tap.
+	 *
+	 * The eventData from the emitted event contains the property `tapCount`, which contains the amount of
+	 * multi-taps being recognized.
+	 * @constructor
+	 * @extends Recognizer
+	 */
+	function TapRecognizer() {
+	    Recognizer.apply(this, arguments);
+
+	    // previous time and center,
+	    // used for tap counting
+	    this.pTime = false;
+	    this.pCenter = false;
+
+	    this._timer = null;
+	    this._input = null;
+	    this.count = 0;
+	}
+
+	inherit(TapRecognizer, Recognizer, {
+	    /**
+	     * @namespace
+	     * @memberof PinchRecognizer
+	     */
+	    defaults: {
+	        event: 'tap',
+	        pointers: 1,
+	        taps: 1,
+	        interval: 300, // max time between the multi-tap taps
+	        time: 250, // max time of the pointer to be down (like finger on the screen)
+	        threshold: 9, // a minimal movement is ok, but keep it low
+	        posThreshold: 10 // a multi-tap can be a bit off the initial position
+	    },
+
+	    getTouchAction: function() {
+	        return [TOUCH_ACTION_MANIPULATION];
+	    },
+
+	    process: function(input) {
+	        var options = this.options;
+
+	        var validPointers = input.pointers.length === options.pointers;
+	        var validMovement = input.distance < options.threshold;
+	        var validTouchTime = input.deltaTime < options.time;
+
+	        this.reset();
+
+	        if ((input.eventType & INPUT_START) && (this.count === 0)) {
+	            return this.failTimeout();
+	        }
+
+	        // we only allow little movement
+	        // and we've reached an end event, so a tap is possible
+	        if (validMovement && validTouchTime && validPointers) {
+	            if (input.eventType != INPUT_END) {
+	                return this.failTimeout();
+	            }
+
+	            var validInterval = this.pTime ? (input.timeStamp - this.pTime < options.interval) : true;
+	            var validMultiTap = !this.pCenter || getDistance(this.pCenter, input.center) < options.posThreshold;
+
+	            this.pTime = input.timeStamp;
+	            this.pCenter = input.center;
+
+	            if (!validMultiTap || !validInterval) {
+	                this.count = 1;
+	            } else {
+	                this.count += 1;
+	            }
+
+	            this._input = input;
+
+	            // if tap count matches we have recognized it,
+	            // else it has began recognizing...
+	            var tapCount = this.count % options.taps;
+	            if (tapCount === 0) {
+	                // no failing requirements, immediately trigger the tap event
+	                // or wait as long as the multitap interval to trigger
+	                if (!this.hasRequireFailures()) {
+	                    return STATE_RECOGNIZED;
+	                } else {
+	                    this._timer = setTimeoutContext(function() {
+	                        this.state = STATE_RECOGNIZED;
+	                        this.tryEmit();
+	                    }, options.interval, this);
+	                    return STATE_BEGAN;
+	                }
+	            }
+	        }
+	        return STATE_FAILED;
+	    },
+
+	    failTimeout: function() {
+	        this._timer = setTimeoutContext(function() {
+	            this.state = STATE_FAILED;
+	        }, this.options.interval, this);
+	        return STATE_FAILED;
+	    },
+
+	    reset: function() {
+	        clearTimeout(this._timer);
+	    },
+
+	    emit: function() {
+	        if (this.state == STATE_RECOGNIZED) {
+	            this._input.tapCount = this.count;
+	            this.manager.emit(this.options.event, this._input);
+	        }
+	    }
+	});
+
+	/**
+	 * Simple way to create a manager with a default set of recognizers.
+	 * @param {HTMLElement} element
+	 * @param {Object} [options]
+	 * @constructor
+	 */
+	function Hammer(element, options) {
+	    options = options || {};
+	    options.recognizers = ifUndefined(options.recognizers, Hammer.defaults.preset);
+	    return new Manager(element, options);
+	}
+
+	/**
+	 * @const {string}
+	 */
+	Hammer.VERSION = '2.0.7';
+
+	/**
+	 * default settings
+	 * @namespace
+	 */
+	Hammer.defaults = {
+	    /**
+	     * set if DOM events are being triggered.
+	     * But this is slower and unused by simple implementations, so disabled by default.
+	     * @type {Boolean}
+	     * @default false
+	     */
+	    domEvents: false,
+
+	    /**
+	     * The value for the touchAction property/fallback.
+	     * When set to `compute` it will magically set the correct value based on the added recognizers.
+	     * @type {String}
+	     * @default compute
+	     */
+	    touchAction: TOUCH_ACTION_COMPUTE,
+
+	    /**
+	     * @type {Boolean}
+	     * @default true
+	     */
+	    enable: true,
+
+	    /**
+	     * EXPERIMENTAL FEATURE -- can be removed/changed
+	     * Change the parent input target element.
+	     * If Null, then it is being set the to main element.
+	     * @type {Null|EventTarget}
+	     * @default null
+	     */
+	    inputTarget: null,
+
+	    /**
+	     * force an input class
+	     * @type {Null|Function}
+	     * @default null
+	     */
+	    inputClass: null,
+
+	    /**
+	     * Default recognizer setup when calling `Hammer()`
+	     * When creating a new Manager these will be skipped.
+	     * @type {Array}
+	     */
+	    preset: [
+	        // RecognizerClass, options, [recognizeWith, ...], [requireFailure, ...]
+	        [RotateRecognizer, {enable: false}],
+	        [PinchRecognizer, {enable: false}, ['rotate']],
+	        [SwipeRecognizer, {direction: DIRECTION_HORIZONTAL}],
+	        [PanRecognizer, {direction: DIRECTION_HORIZONTAL}, ['swipe']],
+	        [TapRecognizer],
+	        [TapRecognizer, {event: 'doubletap', taps: 2}, ['tap']],
+	        [PressRecognizer]
+	    ],
+
+	    /**
+	     * Some CSS properties can be used to improve the working of Hammer.
+	     * Add them to this method and they will be set when creating a new Manager.
+	     * @namespace
+	     */
+	    cssProps: {
+	        /**
+	         * Disables text selection to improve the dragging gesture. Mainly for desktop browsers.
+	         * @type {String}
+	         * @default 'none'
+	         */
+	        userSelect: 'none',
+
+	        /**
+	         * Disable the Windows Phone grippers when pressing an element.
+	         * @type {String}
+	         * @default 'none'
+	         */
+	        touchSelect: 'none',
+
+	        /**
+	         * Disables the default callout shown when you touch and hold a touch target.
+	         * On iOS, when you touch and hold a touch target such as a link, Safari displays
+	         * a callout containing information about the link. This property allows you to disable that callout.
+	         * @type {String}
+	         * @default 'none'
+	         */
+	        touchCallout: 'none',
+
+	        /**
+	         * Specifies whether zooming is enabled. Used by IE10>
+	         * @type {String}
+	         * @default 'none'
+	         */
+	        contentZooming: 'none',
+
+	        /**
+	         * Specifies that an entire element should be draggable instead of its contents. Mainly for desktop browsers.
+	         * @type {String}
+	         * @default 'none'
+	         */
+	        userDrag: 'none',
+
+	        /**
+	         * Overrides the highlight color shown when the user taps a link or a JavaScript
+	         * clickable element in iOS. This property obeys the alpha value, if specified.
+	         * @type {String}
+	         * @default 'rgba(0,0,0,0)'
+	         */
+	        tapHighlightColor: 'rgba(0,0,0,0)'
+	    }
+	};
+
+	var STOP = 1;
+	var FORCED_STOP = 2;
+
+	/**
+	 * Manager
+	 * @param {HTMLElement} element
+	 * @param {Object} [options]
+	 * @constructor
+	 */
+	function Manager(element, options) {
+	    this.options = assign({}, Hammer.defaults, options || {});
+
+	    this.options.inputTarget = this.options.inputTarget || element;
+
+	    this.handlers = {};
+	    this.session = {};
+	    this.recognizers = [];
+	    this.oldCssProps = {};
+
+	    this.element = element;
+	    this.input = createInputInstance(this);
+	    this.touchAction = new TouchAction(this, this.options.touchAction);
+
+	    toggleCssProps(this, true);
+
+	    each(this.options.recognizers, function(item) {
+	        var recognizer = this.add(new (item[0])(item[1]));
+	        item[2] && recognizer.recognizeWith(item[2]);
+	        item[3] && recognizer.requireFailure(item[3]);
+	    }, this);
+	}
+
+	Manager.prototype = {
+	    /**
+	     * set options
+	     * @param {Object} options
+	     * @returns {Manager}
+	     */
+	    set: function(options) {
+	        assign(this.options, options);
+
+	        // Options that need a little more setup
+	        if (options.touchAction) {
+	            this.touchAction.update();
+	        }
+	        if (options.inputTarget) {
+	            // Clean up existing event listeners and reinitialize
+	            this.input.destroy();
+	            this.input.target = options.inputTarget;
+	            this.input.init();
+	        }
+	        return this;
+	    },
+
+	    /**
+	     * stop recognizing for this session.
+	     * This session will be discarded, when a new [input]start event is fired.
+	     * When forced, the recognizer cycle is stopped immediately.
+	     * @param {Boolean} [force]
+	     */
+	    stop: function(force) {
+	        this.session.stopped = force ? FORCED_STOP : STOP;
+	    },
+
+	    /**
+	     * run the recognizers!
+	     * called by the inputHandler function on every movement of the pointers (touches)
+	     * it walks through all the recognizers and tries to detect the gesture that is being made
+	     * @param {Object} inputData
+	     */
+	    recognize: function(inputData) {
+	        var session = this.session;
+	        if (session.stopped) {
+	            return;
+	        }
+
+	        // run the touch-action polyfill
+	        this.touchAction.preventDefaults(inputData);
+
+	        var recognizer;
+	        var recognizers = this.recognizers;
+
+	        // this holds the recognizer that is being recognized.
+	        // so the recognizer's state needs to be BEGAN, CHANGED, ENDED or RECOGNIZED
+	        // if no recognizer is detecting a thing, it is set to `null`
+	        var curRecognizer = session.curRecognizer;
+
+	        // reset when the last recognizer is recognized
+	        // or when we're in a new session
+	        if (!curRecognizer || (curRecognizer && curRecognizer.state & STATE_RECOGNIZED)) {
+	            curRecognizer = session.curRecognizer = null;
+	        }
+
+	        var i = 0;
+	        while (i < recognizers.length) {
+	            recognizer = recognizers[i];
+
+	            // find out if we are allowed try to recognize the input for this one.
+	            // 1.   allow if the session is NOT forced stopped (see the .stop() method)
+	            // 2.   allow if we still haven't recognized a gesture in this session, or the this recognizer is the one
+	            //      that is being recognized.
+	            // 3.   allow if the recognizer is allowed to run simultaneous with the current recognized recognizer.
+	            //      this can be setup with the `recognizeWith()` method on the recognizer.
+	            if (session.stopped !== FORCED_STOP && ( // 1
+	                    !curRecognizer || recognizer == curRecognizer || // 2
+	                    recognizer.canRecognizeWith(curRecognizer))) { // 3
+	                recognizer.recognize(inputData);
+	            } else {
+	                recognizer.reset();
+	            }
+
+	            // if the recognizer has been recognizing the input as a valid gesture, we want to store this one as the
+	            // current active recognizer. but only if we don't already have an active recognizer
+	            if (!curRecognizer && recognizer.state & (STATE_BEGAN | STATE_CHANGED | STATE_ENDED)) {
+	                curRecognizer = session.curRecognizer = recognizer;
+	            }
+	            i++;
+	        }
+	    },
+
+	    /**
+	     * get a recognizer by its event name.
+	     * @param {Recognizer|String} recognizer
+	     * @returns {Recognizer|Null}
+	     */
+	    get: function(recognizer) {
+	        if (recognizer instanceof Recognizer) {
+	            return recognizer;
+	        }
+
+	        var recognizers = this.recognizers;
+	        for (var i = 0; i < recognizers.length; i++) {
+	            if (recognizers[i].options.event == recognizer) {
+	                return recognizers[i];
+	            }
+	        }
+	        return null;
+	    },
+
+	    /**
+	     * add a recognizer to the manager
+	     * existing recognizers with the same event name will be removed
+	     * @param {Recognizer} recognizer
+	     * @returns {Recognizer|Manager}
+	     */
+	    add: function(recognizer) {
+	        if (invokeArrayArg(recognizer, 'add', this)) {
+	            return this;
+	        }
+
+	        // remove existing
+	        var existing = this.get(recognizer.options.event);
+	        if (existing) {
+	            this.remove(existing);
+	        }
+
+	        this.recognizers.push(recognizer);
+	        recognizer.manager = this;
+
+	        this.touchAction.update();
+	        return recognizer;
+	    },
+
+	    /**
+	     * remove a recognizer by name or instance
+	     * @param {Recognizer|String} recognizer
+	     * @returns {Manager}
+	     */
+	    remove: function(recognizer) {
+	        if (invokeArrayArg(recognizer, 'remove', this)) {
+	            return this;
+	        }
+
+	        recognizer = this.get(recognizer);
+
+	        // let's make sure this recognizer exists
+	        if (recognizer) {
+	            var recognizers = this.recognizers;
+	            var index = inArray(recognizers, recognizer);
+
+	            if (index !== -1) {
+	                recognizers.splice(index, 1);
+	                this.touchAction.update();
+	            }
+	        }
+
+	        return this;
+	    },
+
+	    /**
+	     * bind event
+	     * @param {String} events
+	     * @param {Function} handler
+	     * @returns {EventEmitter} this
+	     */
+	    on: function(events, handler) {
+	        if (events === undefined) {
+	            return;
+	        }
+	        if (handler === undefined) {
+	            return;
+	        }
+
+	        var handlers = this.handlers;
+	        each(splitStr(events), function(event) {
+	            handlers[event] = handlers[event] || [];
+	            handlers[event].push(handler);
+	        });
+	        return this;
+	    },
+
+	    /**
+	     * unbind event, leave emit blank to remove all handlers
+	     * @param {String} events
+	     * @param {Function} [handler]
+	     * @returns {EventEmitter} this
+	     */
+	    off: function(events, handler) {
+	        if (events === undefined) {
+	            return;
+	        }
+
+	        var handlers = this.handlers;
+	        each(splitStr(events), function(event) {
+	            if (!handler) {
+	                delete handlers[event];
+	            } else {
+	                handlers[event] && handlers[event].splice(inArray(handlers[event], handler), 1);
+	            }
+	        });
+	        return this;
+	    },
+
+	    /**
+	     * emit event to the listeners
+	     * @param {String} event
+	     * @param {Object} data
+	     */
+	    emit: function(event, data) {
+	        // we also want to trigger dom events
+	        if (this.options.domEvents) {
+	            triggerDomEvent(event, data);
+	        }
+
+	        // no handlers, so skip it all
+	        var handlers = this.handlers[event] && this.handlers[event].slice();
+	        if (!handlers || !handlers.length) {
+	            return;
+	        }
+
+	        data.type = event;
+	        data.preventDefault = function() {
+	            data.srcEvent.preventDefault();
+	        };
+
+	        var i = 0;
+	        while (i < handlers.length) {
+	            handlers[i](data);
+	            i++;
+	        }
+	    },
+
+	    /**
+	     * destroy the manager and unbinds all events
+	     * it doesn't unbind dom events, that is the user own responsibility
+	     */
+	    destroy: function() {
+	        this.element && toggleCssProps(this, false);
+
+	        this.handlers = {};
+	        this.session = {};
+	        this.input.destroy();
+	        this.element = null;
+	    }
+	};
+
+	/**
+	 * add/remove the css properties as defined in manager.options.cssProps
+	 * @param {Manager} manager
+	 * @param {Boolean} add
+	 */
+	function toggleCssProps(manager, add) {
+	    var element = manager.element;
+	    if (!element.style) {
+	        return;
+	    }
+	    var prop;
+	    each(manager.options.cssProps, function(value, name) {
+	        prop = prefixed(element.style, name);
+	        if (add) {
+	            manager.oldCssProps[prop] = element.style[prop];
+	            element.style[prop] = value;
+	        } else {
+	            element.style[prop] = manager.oldCssProps[prop] || '';
+	        }
+	    });
+	    if (!add) {
+	        manager.oldCssProps = {};
+	    }
+	}
+
+	/**
+	 * trigger dom event
+	 * @param {String} event
+	 * @param {Object} data
+	 */
+	function triggerDomEvent(event, data) {
+	    var gestureEvent = document.createEvent('Event');
+	    gestureEvent.initEvent(event, true, true);
+	    gestureEvent.gesture = data;
+	    data.target.dispatchEvent(gestureEvent);
+	}
+
+	assign(Hammer, {
+	    INPUT_START: INPUT_START,
+	    INPUT_MOVE: INPUT_MOVE,
+	    INPUT_END: INPUT_END,
+	    INPUT_CANCEL: INPUT_CANCEL,
+
+	    STATE_POSSIBLE: STATE_POSSIBLE,
+	    STATE_BEGAN: STATE_BEGAN,
+	    STATE_CHANGED: STATE_CHANGED,
+	    STATE_ENDED: STATE_ENDED,
+	    STATE_RECOGNIZED: STATE_RECOGNIZED,
+	    STATE_CANCELLED: STATE_CANCELLED,
+	    STATE_FAILED: STATE_FAILED,
+
+	    DIRECTION_NONE: DIRECTION_NONE,
+	    DIRECTION_LEFT: DIRECTION_LEFT,
+	    DIRECTION_RIGHT: DIRECTION_RIGHT,
+	    DIRECTION_UP: DIRECTION_UP,
+	    DIRECTION_DOWN: DIRECTION_DOWN,
+	    DIRECTION_HORIZONTAL: DIRECTION_HORIZONTAL,
+	    DIRECTION_VERTICAL: DIRECTION_VERTICAL,
+	    DIRECTION_ALL: DIRECTION_ALL,
+
+	    Manager: Manager,
+	    Input: Input,
+	    TouchAction: TouchAction,
+
+	    TouchInput: TouchInput,
+	    MouseInput: MouseInput,
+	    PointerEventInput: PointerEventInput,
+	    TouchMouseInput: TouchMouseInput,
+	    SingleTouchInput: SingleTouchInput,
+
+	    Recognizer: Recognizer,
+	    AttrRecognizer: AttrRecognizer,
+	    Tap: TapRecognizer,
+	    Pan: PanRecognizer,
+	    Swipe: SwipeRecognizer,
+	    Pinch: PinchRecognizer,
+	    Rotate: RotateRecognizer,
+	    Press: PressRecognizer,
+
+	    on: addEventListeners,
+	    off: removeEventListeners,
+	    each: each,
+	    merge: merge,
+	    extend: extend,
+	    assign: assign,
+	    inherit: inherit,
+	    bindFn: bindFn,
+	    prefixed: prefixed
+	});
+
+	// this prevents errors when Hammer is loaded in the presence of an AMD
+	//  style loader but by script tag, not by the loader.
+	var freeGlobal = (typeof window !== 'undefined' ? window : (typeof self !== 'undefined' ? self : {})); // jshint ignore:line
+	freeGlobal.Hammer = Hammer;
+
+	if (true) {
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	        return Hammer;
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else if (typeof module != 'undefined' && module.exports) {
+	    module.exports = Hammer;
+	} else {
+	    window[exportName] = Hammer;
+	}
+
+	})(window, document, 'Hammer');
+
+
+/***/ },
+/* 680 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64562,49 +81571,49 @@
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// main modules
-	__export(__webpack_require__(680));
-	__export(__webpack_require__(695));
+	__export(__webpack_require__(681));
+	__export(__webpack_require__(696));
 	// Google Maps types
 	// core module
 	// we explicitly export the module here to prevent this Ionic 2 bug:
 	// http://stevemichelotti.com/integrate-angular-2-google-maps-into-ionic-2/
-	var core_module_1 = __webpack_require__(699);
+	var core_module_1 = __webpack_require__(700);
 	exports.AgmCoreModule = core_module_1.AgmCoreModule;
 	//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 680 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var google_map_1 = __webpack_require__(681);
-	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
-	var google_map_circle_1 = __webpack_require__(689);
-	exports.SebmGoogleMapCircle = google_map_circle_1.SebmGoogleMapCircle;
-	var google_map_info_window_1 = __webpack_require__(690);
-	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
-	var google_map_marker_1 = __webpack_require__(691);
-	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
-	var google_map_polygon_1 = __webpack_require__(692);
-	exports.SebmGoogleMapPolygon = google_map_polygon_1.SebmGoogleMapPolygon;
-	var google_map_polyline_1 = __webpack_require__(693);
-	exports.SebmGoogleMapPolyline = google_map_polyline_1.SebmGoogleMapPolyline;
-	var google_map_polyline_point_1 = __webpack_require__(694);
-	exports.SebmGoogleMapPolylinePoint = google_map_polyline_point_1.SebmGoogleMapPolylinePoint;
-	//# sourceMappingURL=directives.js.map
 
 /***/ },
 /* 681 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(682);
-	var circle_manager_1 = __webpack_require__(684);
-	var info_window_manager_1 = __webpack_require__(685);
-	var marker_manager_1 = __webpack_require__(686);
-	var polygon_manager_1 = __webpack_require__(687);
-	var polyline_manager_1 = __webpack_require__(688);
+	var google_map_1 = __webpack_require__(682);
+	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
+	var google_map_circle_1 = __webpack_require__(690);
+	exports.SebmGoogleMapCircle = google_map_circle_1.SebmGoogleMapCircle;
+	var google_map_info_window_1 = __webpack_require__(691);
+	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
+	var google_map_marker_1 = __webpack_require__(692);
+	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
+	var google_map_polygon_1 = __webpack_require__(693);
+	exports.SebmGoogleMapPolygon = google_map_polygon_1.SebmGoogleMapPolygon;
+	var google_map_polyline_1 = __webpack_require__(694);
+	exports.SebmGoogleMapPolyline = google_map_polyline_1.SebmGoogleMapPolyline;
+	var google_map_polyline_point_1 = __webpack_require__(695);
+	exports.SebmGoogleMapPolylinePoint = google_map_polyline_point_1.SebmGoogleMapPolylinePoint;
+	//# sourceMappingURL=directives.js.map
+
+/***/ },
+/* 682 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(322);
+	var google_maps_api_wrapper_1 = __webpack_require__(683);
+	var circle_manager_1 = __webpack_require__(685);
+	var info_window_manager_1 = __webpack_require__(686);
+	var marker_manager_1 = __webpack_require__(687);
+	var polygon_manager_1 = __webpack_require__(688);
+	var polyline_manager_1 = __webpack_require__(689);
 	/**
 	 * SebMGoogleMap renders a Google Map.
 	 * **Important note**: To be able see a map in the browser, you have to define a height for the CSS
@@ -64910,13 +81919,13 @@
 	//# sourceMappingURL=google-map.js.map
 
 /***/ },
-/* 682 */
+/* 683 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var Observable_1 = __webpack_require__(328);
-	var maps_api_loader_1 = __webpack_require__(683);
+	var core_1 = __webpack_require__(322);
+	var Observable_1 = __webpack_require__(324);
+	var maps_api_loader_1 = __webpack_require__(684);
 	/**
 	 * Wrapper class that handles the communication with the Google Maps Javascript
 	 * API v3
@@ -65036,11 +82045,11 @@
 	//# sourceMappingURL=google-maps-api-wrapper.js.map
 
 /***/ },
-/* 683 */
+/* 684 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
+	var core_1 = __webpack_require__(322);
 	var MapsAPILoader = (function () {
 	    function MapsAPILoader() {
 	    }
@@ -65055,13 +82064,13 @@
 	//# sourceMappingURL=maps-api-loader.js.map
 
 /***/ },
-/* 684 */
+/* 685 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var Observable_1 = __webpack_require__(328);
-	var google_maps_api_wrapper_1 = __webpack_require__(682);
+	var core_1 = __webpack_require__(322);
+	var Observable_1 = __webpack_require__(324);
+	var google_maps_api_wrapper_1 = __webpack_require__(683);
 	var CircleManager = (function () {
 	    function CircleManager(_apiWrapper, _zone) {
 	        this._apiWrapper = _apiWrapper;
@@ -65159,13 +82168,13 @@
 	//# sourceMappingURL=circle-manager.js.map
 
 /***/ },
-/* 685 */
+/* 686 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(682);
-	var marker_manager_1 = __webpack_require__(686);
+	var core_1 = __webpack_require__(322);
+	var google_maps_api_wrapper_1 = __webpack_require__(683);
+	var marker_manager_1 = __webpack_require__(687);
 	var InfoWindowManager = (function () {
 	    function InfoWindowManager(_mapsWrapper, _zone, _markerManager) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -65241,13 +82250,13 @@
 	//# sourceMappingURL=info-window-manager.js.map
 
 /***/ },
-/* 686 */
+/* 687 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var Observable_1 = __webpack_require__(328);
-	var google_maps_api_wrapper_1 = __webpack_require__(682);
+	var core_1 = __webpack_require__(322);
+	var Observable_1 = __webpack_require__(324);
+	var google_maps_api_wrapper_1 = __webpack_require__(683);
 	var MarkerManager = (function () {
 	    function MarkerManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -65330,13 +82339,13 @@
 	//# sourceMappingURL=marker-manager.js.map
 
 /***/ },
-/* 687 */
+/* 688 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var Observable_1 = __webpack_require__(328);
-	var google_maps_api_wrapper_1 = __webpack_require__(682);
+	var core_1 = __webpack_require__(322);
+	var Observable_1 = __webpack_require__(324);
+	var google_maps_api_wrapper_1 = __webpack_require__(683);
 	var PolygonManager = (function () {
 	    function PolygonManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -65406,13 +82415,13 @@
 	//# sourceMappingURL=polygon-manager.js.map
 
 /***/ },
-/* 688 */
+/* 689 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var Observable_1 = __webpack_require__(328);
-	var google_maps_api_wrapper_1 = __webpack_require__(682);
+	var core_1 = __webpack_require__(322);
+	var Observable_1 = __webpack_require__(324);
+	var google_maps_api_wrapper_1 = __webpack_require__(683);
 	var PolylineManager = (function () {
 	    function PolylineManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -65488,12 +82497,12 @@
 	//# sourceMappingURL=polyline-manager.js.map
 
 /***/ },
-/* 689 */
+/* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var circle_manager_1 = __webpack_require__(684);
+	var core_1 = __webpack_require__(322);
+	var circle_manager_1 = __webpack_require__(685);
 	var SebmGoogleMapCircle = (function () {
 	    function SebmGoogleMapCircle(_manager) {
 	        this._manager = _manager;
@@ -65690,12 +82699,12 @@
 	//# sourceMappingURL=google-map-circle.js.map
 
 /***/ },
-/* 690 */
+/* 691 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var info_window_manager_1 = __webpack_require__(685);
+	var core_1 = __webpack_require__(322);
+	var info_window_manager_1 = __webpack_require__(686);
 	var infoWindowId = 0;
 	/**
 	 * SebmGoogleMapInfoWindow renders a info window inside a {@link SebmGoogleMapMarker} or standalone.
@@ -65810,13 +82819,13 @@
 	//# sourceMappingURL=google-map-info-window.js.map
 
 /***/ },
-/* 691 */
+/* 692 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var marker_manager_1 = __webpack_require__(686);
-	var google_map_info_window_1 = __webpack_require__(690);
+	var core_1 = __webpack_require__(322);
+	var marker_manager_1 = __webpack_require__(687);
+	var google_map_info_window_1 = __webpack_require__(691);
 	var markerId = 0;
 	/**
 	 * SebmGoogleMapMarker renders a map marker inside a {@link SebmGoogleMap}.
@@ -65989,12 +82998,12 @@
 	//# sourceMappingURL=google-map-marker.js.map
 
 /***/ },
-/* 692 */
+/* 693 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var polygon_manager_1 = __webpack_require__(687);
+	var core_1 = __webpack_require__(322);
+	var polygon_manager_1 = __webpack_require__(688);
 	/**
 	 * SebmGoogleMapPolygon renders a polygon on a {@link SebmGoogleMap}
 	 *
@@ -66221,13 +83230,13 @@
 	//# sourceMappingURL=google-map-polygon.js.map
 
 /***/ },
-/* 693 */
+/* 694 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var polyline_manager_1 = __webpack_require__(688);
-	var google_map_polyline_point_1 = __webpack_require__(694);
+	var core_1 = __webpack_require__(322);
+	var polyline_manager_1 = __webpack_require__(689);
+	var google_map_polyline_point_1 = __webpack_require__(695);
 	var polylineId = 0;
 	/**
 	 * SebmGoogleMapPolyline renders a polyline on a {@link SebmGoogleMap}
@@ -66431,11 +83440,11 @@
 	//# sourceMappingURL=google-map-polyline.js.map
 
 /***/ },
-/* 694 */
+/* 695 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
+	var core_1 = __webpack_require__(322);
 	/**
 	 * SebmGoogleMapPolylinePoint represents one element of a polyline within a  {@link
 	 * SembGoogleMapPolyline}
@@ -66472,34 +83481,34 @@
 	//# sourceMappingURL=google-map-polyline-point.js.map
 
 /***/ },
-/* 695 */
+/* 696 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var google_maps_api_wrapper_1 = __webpack_require__(682);
+	var google_maps_api_wrapper_1 = __webpack_require__(683);
 	exports.GoogleMapsAPIWrapper = google_maps_api_wrapper_1.GoogleMapsAPIWrapper;
-	var circle_manager_1 = __webpack_require__(684);
+	var circle_manager_1 = __webpack_require__(685);
 	exports.CircleManager = circle_manager_1.CircleManager;
-	var info_window_manager_1 = __webpack_require__(685);
+	var info_window_manager_1 = __webpack_require__(686);
 	exports.InfoWindowManager = info_window_manager_1.InfoWindowManager;
-	var marker_manager_1 = __webpack_require__(686);
+	var marker_manager_1 = __webpack_require__(687);
 	exports.MarkerManager = marker_manager_1.MarkerManager;
-	var polygon_manager_1 = __webpack_require__(687);
+	var polygon_manager_1 = __webpack_require__(688);
 	exports.PolygonManager = polygon_manager_1.PolygonManager;
-	var polyline_manager_1 = __webpack_require__(688);
+	var polyline_manager_1 = __webpack_require__(689);
 	exports.PolylineManager = polyline_manager_1.PolylineManager;
-	var lazy_maps_api_loader_1 = __webpack_require__(696);
+	var lazy_maps_api_loader_1 = __webpack_require__(697);
 	exports.GoogleMapsScriptProtocol = lazy_maps_api_loader_1.GoogleMapsScriptProtocol;
 	exports.LAZY_MAPS_API_CONFIG = lazy_maps_api_loader_1.LAZY_MAPS_API_CONFIG;
 	exports.LazyMapsAPILoader = lazy_maps_api_loader_1.LazyMapsAPILoader;
-	var maps_api_loader_1 = __webpack_require__(683);
+	var maps_api_loader_1 = __webpack_require__(684);
 	exports.MapsAPILoader = maps_api_loader_1.MapsAPILoader;
-	var noop_maps_api_loader_1 = __webpack_require__(698);
+	var noop_maps_api_loader_1 = __webpack_require__(699);
 	exports.NoOpMapsAPILoader = noop_maps_api_loader_1.NoOpMapsAPILoader;
 	//# sourceMappingURL=services.js.map
 
 /***/ },
-/* 696 */
+/* 697 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -66508,9 +83517,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var core_1 = __webpack_require__(326);
-	var browser_globals_1 = __webpack_require__(697);
-	var maps_api_loader_1 = __webpack_require__(683);
+	var core_1 = __webpack_require__(322);
+	var browser_globals_1 = __webpack_require__(698);
+	var maps_api_loader_1 = __webpack_require__(684);
 	(function (GoogleMapsScriptProtocol) {
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTP"] = 1] = "HTTP";
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTPS"] = 2] = "HTTPS";
@@ -66607,7 +83616,7 @@
 	//# sourceMappingURL=lazy-maps-api-loader.js.map
 
 /***/ },
-/* 697 */
+/* 698 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -66629,7 +83638,7 @@
 	//# sourceMappingURL=browser-globals.js.map
 
 /***/ },
-/* 698 */
+/* 699 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -66654,22 +83663,22 @@
 	//# sourceMappingURL=noop-maps-api-loader.js.map
 
 /***/ },
-/* 699 */
+/* 700 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var core_1 = __webpack_require__(326);
-	var google_map_1 = __webpack_require__(681);
-	var google_map_circle_1 = __webpack_require__(689);
-	var google_map_info_window_1 = __webpack_require__(690);
-	var google_map_marker_1 = __webpack_require__(691);
-	var google_map_polygon_1 = __webpack_require__(692);
-	var google_map_polyline_1 = __webpack_require__(693);
-	var google_map_polyline_point_1 = __webpack_require__(694);
-	var lazy_maps_api_loader_1 = __webpack_require__(696);
-	var lazy_maps_api_loader_2 = __webpack_require__(696);
-	var maps_api_loader_1 = __webpack_require__(683);
-	var browser_globals_1 = __webpack_require__(697);
+	var core_1 = __webpack_require__(322);
+	var google_map_1 = __webpack_require__(682);
+	var google_map_circle_1 = __webpack_require__(690);
+	var google_map_info_window_1 = __webpack_require__(691);
+	var google_map_marker_1 = __webpack_require__(692);
+	var google_map_polygon_1 = __webpack_require__(693);
+	var google_map_polyline_1 = __webpack_require__(694);
+	var google_map_polyline_point_1 = __webpack_require__(695);
+	var lazy_maps_api_loader_1 = __webpack_require__(697);
+	var lazy_maps_api_loader_2 = __webpack_require__(697);
+	var maps_api_loader_1 = __webpack_require__(684);
+	var browser_globals_1 = __webpack_require__(698);
 	/**
 	 * @internal
 	 */
