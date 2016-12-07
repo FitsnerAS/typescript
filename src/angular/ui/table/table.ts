@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../../app.service';
 
 @Component({
@@ -30,13 +30,15 @@ import { DataService } from '../../app.service';
 
 export class CityTable implements OnInit {
     citiesArray: Array<CityInfo> = [];
+    @Input() coords: Coords;
 
     constructor(private dataService: DataService) { }
 
     ngOnInit() {
-
-        this.dataService.fetchData().subscribe(
-            data => this.citiesArray = data.list
+        this.dataService.fetchData(this.coords).subscribe(
+            (data: Array<CityInfo>) => {
+                this.citiesArray = data
+            }
         )
     }
 }
@@ -56,3 +58,7 @@ interface CityInfoWind {
     speed: number;
 }
 
+interface Coords {
+    latitude: number,
+    longitude: number
+}

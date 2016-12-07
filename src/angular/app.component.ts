@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { CityTable } from './ui';
 import { GoogleMap } from './ui';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Rx';
 import { DataService } from './app.service';
 
 @Component({
@@ -12,16 +10,23 @@ import { DataService } from './app.service';
         CityTable
     ],
     template: `
-    <city-table></city-table>
-    <google-map></google-map>
+    <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>
+    <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>
     `,
-     providers: [DataService]
+    providers: [DataService]
 })
 export class AppComponent {
-    constructor() {}
-    
+    promiseFlag: boolean = false;
+    coords: Coords;
+    constructor(private dataService: DataService) {
+        this.dataService.getCoords().then((data: Coords) => {
+            this.coords = data;
+            this.promiseFlag = true;
+        })
+    }
 }
 
-
-
-
+interface Coords {
+    latitude: number,
+    longitude: number
+}

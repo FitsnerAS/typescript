@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../app.service';
+import { Component, Input } from '@angular/core';
 @Component({
     selector: 'google-map',
     styles: [`
@@ -8,21 +7,19 @@ import { DataService } from '../../app.service';
 		}
 	`],
     template: `
-    <sebm-google-map [latitude]="lat" [longitude]="lng"></sebm-google-map>
-    `,
-    providers: [DataService]
+    <sebm-google-map [latitude]="coords.latitude" [longitude]="coords.longitude"></sebm-google-map>
+    `
 })
 
-export class GoogleMap implements OnInit {
-    lat: number;
-    lng: number;
+export class GoogleMap {
+    @Input() coords: Array<Coords>;
 
-    constructor(private dataService: DataService) {
-        this.lat = this.dataService.getLat();
-        this.lng = this.dataService.getLon();
-    }
-    ngOnInit() {
-    }
+    constructor() {}
+}
+
+interface Coords {
+    latitude: number,
+    longitude: number
 }
 
 
