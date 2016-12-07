@@ -12,7 +12,8 @@ import { Component, Input } from '@angular/core';
 })
 
 export class GoogleMap {
-    @Input() coords: Array<Coords>;
+    
+    @Input() coords:Coords;
 
     constructor() {}
 }
