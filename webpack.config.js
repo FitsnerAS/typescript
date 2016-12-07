@@ -15,15 +15,17 @@ module.exports = {
 //        },
         module: {
                 loaders: [
-
                         {
                                 test: /\.ts$/,
                                 loader: 'ts-loader'
                         },
-
                         {
                                 test: /\.css$/,
                                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+                        },
+                        {
+                                test: /\.scss$/,
+                                loaders: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
                         },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -36,7 +38,10 @@ module.exports = {
                 ]
         },
         resolve: {
-                extensions:['','.js','.ts']
+                alias: {
+                        jquery: "jquery/src/jquery"
+                },
+                extensions: ['', '.js', '.ts']
         },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),

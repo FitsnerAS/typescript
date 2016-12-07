@@ -1,3 +1,4 @@
+import jQuery from 'jquery';
 import 'core-js';
 import 'reflect-metadata';
 import 'zone.js/dist/zone';

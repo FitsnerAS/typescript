@@ -3,6 +3,11 @@ import { DataService } from '../../app.service';
 
 @Component({
     selector: 'city-table',
+    styles: [`
+        td{
+            cursor:pointer
+            }
+    `],
     template: `
     <table class="table table-model-2 table-hover">
         <thead>
@@ -15,8 +20,9 @@ import { DataService } from '../../app.service';
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor='let item of citiesArray;let i = index;'>
-                    <td>{{i}}</td>
+            <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>
+                    <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>
+                    <td *ngIf='l'>{{currentPage}}0</td>
                     <td>{{item.name}}</td>
                     <td>{{item.main.temp}}</td>
                     <td>{{item.main.pressure}}</td>
@@ -24,6 +30,7 @@ import { DataService } from '../../app.service';
             </tr>
         </tbody>
     </table>
+    <ngb-pagination [collectionSize]="cllectionSize" [(page)]="currentPage" size="sm"></ngb-pagination>
     `,
     providers: [DataService]
 })
@@ -31,13 +38,19 @@ import { DataService } from '../../app.service';
 export class CityTable implements OnInit {
     citiesArray: Array<CityInfo> = [];
     @Input() coords: Coords;
+    cllectionSize: number;
+    currentPage: number = 1;
 
     constructor(private dataService: DataService) { }
 
     ngOnInit() {
         this.dataService.fetchData(this.coords).subscribe(
             (data: Array<CityInfo>) => {
-                this.citiesArray = data
+                this.citiesArray = data;
+                this.cllectionSize = data.length;
+            },
+            error=>{
+                alert(error);
             }
         )
     }

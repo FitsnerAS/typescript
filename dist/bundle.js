@@ -45369,14 +45369,15 @@
 	var core_1 = __webpack_require__(322);
 	var platform_browser_1 = __webpack_require__(340);
 	var app_component_1 = __webpack_require__(343);
-	var ui_1 = __webpack_require__(344);
-	var ui_2 = __webpack_require__(344);
-	//import { MyHeader } from './ui';
+	var ui_1 = __webpack_require__(670);
+	var ui_2 = __webpack_require__(670);
+	var ui_3 = __webpack_require__(670);
 	var material_1 = __webpack_require__(677);
+	var ng_bootstrap_1 = __webpack_require__(679);
 	var forms_1 = __webpack_require__(678);
-	__webpack_require__(679);
-	var http_1 = __webpack_require__(348);
-	var core_2 = __webpack_require__(680);
+	__webpack_require__(680);
+	var http_1 = __webpack_require__(345);
+	var core_2 = __webpack_require__(681);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -45391,11 +45392,13 @@
 	                    apiKey: 'AIzaSyAaFWg1Jpix-Krmge62_UDT3Nuf_0Sht6Y'
 	                }),
 	                material_1.MaterialModule.forRoot(),
+	                ng_bootstrap_1.NgbModule.forRoot()
 	            ],
 	            declarations: [
 	                app_component_1.AppComponent,
 	                ui_1.CityTable,
 	                ui_2.GoogleMap,
+	                ui_3.MyHeader
 	            ],
 	            bootstrap: [app_component_1.AppComponent]
 	        }), 
@@ -45421,10 +45424,7 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(322);
-	var ui_1 = __webpack_require__(344);
-	var ui_2 = __webpack_require__(344);
-	var app_service_1 = __webpack_require__(347);
-	//import { MdButton } from '@angular/material/button';
+	var app_service_1 = __webpack_require__(344);
 	var AppComponent = (function () {
 	    function AppComponent(dataService) {
 	        var _this = this;
@@ -45438,13 +45438,9 @@
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            directives: [
-	                ui_2.GoogleMap,
-	                ui_1.CityTable,
+	            styles: ["\n             body{\n                background:#fafafa !important;\n             }\n             \n             .main-content{\n                margin-top:110px;\n                pading:20px;\n             }\n             \n        "
 	            ],
-	            styles: ["\n             .main-content{\n                margin-top:40px;\n                \n                pading:20px;\n             }\n        "
-	            ],
-	            template: "\n        <my-header></my-header>\n        <div class='container main-content'>\n            <md-card>\n                <div md-content flex layout-padding>\n                    <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>\n                    <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>\n                </div>\n            </md-card>\n        </div>\n    ",
+	            template: "\n        <my-header></my-header>\n        <div class='container main-content'>\n            <md-card style=\"background:#fff\">\n            <ngb-progressbar value=\"500\" type=\"info\"></ngb-progressbar>\n                \n                    \n                    <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>\n                    \n                    <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>\n                \n            </md-card>\n        </div>\n        \n    ",
 	            providers: [app_service_1.DataService]
 	        }), 
 	        __metadata('design:paramtypes', [app_service_1.DataService])
@@ -45459,28 +45455,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var table_1 = __webpack_require__(345);
-	exports.CityTable = table_1.CityTable;
-	var map_1 = __webpack_require__(673);
-	exports.GoogleMap = map_1.GoogleMap;
-	var header_1 = __webpack_require__(675);
-	exports.MyHeader = header_1.MyHeader;
-
-
-/***/ },
-/* 345 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var table_1 = __webpack_require__(346);
-	exports.CityTable = table_1.CityTable;
-
-
-/***/ },
-/* 346 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -45491,53 +45465,9 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(322);
-	var app_service_1 = __webpack_require__(347);
-	var CityTable = (function () {
-	    function CityTable(dataService) {
-	        this.dataService = dataService;
-	        this.citiesArray = [];
-	    }
-	    CityTable.prototype.ngOnInit = function () {
-	        var _this = this;
-	        this.dataService.fetchData(this.coords).subscribe(function (data) {
-	            _this.citiesArray = data;
-	        });
-	    };
-	    __decorate([
-	        core_1.Input(), 
-	        __metadata('design:type', Object)
-	    ], CityTable.prototype, "coords", void 0);
-	    CityTable = __decorate([
-	        core_1.Component({
-	            selector: 'city-table',
-	            template: "\n    <table class=\"table table-model-2 table-hover\">\n        <thead>\n            <tr>\n                <th>#</th>\n                <th>City</th>\n                <th>temperature</th>\n                <th>Pressure</th>\n                <th>Wind speed</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor='let item of citiesArray;let i = index;'>\n                    <td>{{i}}</td>\n                    <td>{{item.name}}</td>\n                    <td>{{item.main.temp}}</td>\n                    <td>{{item.main.pressure}}</td>\n                    <td>{{item.wind.speed}}</td>\n            </tr>\n        </tbody>\n    </table>\n    ",
-	            providers: [app_service_1.DataService]
-	        }), 
-	        __metadata('design:paramtypes', [app_service_1.DataService])
-	    ], CityTable);
-	    return CityTable;
-	}());
-	exports.CityTable = CityTable;
-
-
-/***/ },
-/* 347 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(322);
-	var http_1 = __webpack_require__(348);
-	__webpack_require__(349);
-	__webpack_require__(351);
+	var http_1 = __webpack_require__(345);
+	__webpack_require__(346);
+	__webpack_require__(348);
 	var DataService = (function () {
 	    function DataService(http) {
 	        this.http = http;
@@ -45574,7 +45504,7 @@
 
 
 /***/ },
-/* 348 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -47364,17 +47294,17 @@
 	}));
 
 /***/ },
-/* 349 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var map_1 = __webpack_require__(350);
+	var map_1 = __webpack_require__(347);
 	Observable_1.Observable.prototype.map = map_1.map;
 	//# sourceMappingURL=map.js.map
 
 /***/ },
-/* 350 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47466,7 +47396,7 @@
 	//# sourceMappingURL=map.js.map
 
 /***/ },
-/* 351 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47482,178 +47412,178 @@
 	exports.Observable = Observable_1.Observable;
 	// statics
 	/* tslint:disable:no-use-before-declare */
-	__webpack_require__(352);
+	__webpack_require__(349);
+	__webpack_require__(353);
 	__webpack_require__(356);
-	__webpack_require__(359);
-	__webpack_require__(371);
+	__webpack_require__(368);
+	__webpack_require__(372);
 	__webpack_require__(375);
-	__webpack_require__(378);
+	__webpack_require__(377);
 	__webpack_require__(380);
-	__webpack_require__(383);
+	__webpack_require__(388);
 	__webpack_require__(391);
 	__webpack_require__(394);
-	__webpack_require__(397);
-	__webpack_require__(399);
+	__webpack_require__(396);
+	__webpack_require__(398);
 	__webpack_require__(401);
-	__webpack_require__(404);
+	__webpack_require__(410);
 	__webpack_require__(413);
-	__webpack_require__(416);
-	__webpack_require__(418);
-	__webpack_require__(422);
-	__webpack_require__(424);
+	__webpack_require__(415);
+	__webpack_require__(419);
+	__webpack_require__(421);
+	__webpack_require__(423);
 	__webpack_require__(426);
 	__webpack_require__(429);
 	__webpack_require__(432);
 	__webpack_require__(435);
-	__webpack_require__(438);
-	__webpack_require__(442);
+	__webpack_require__(439);
 	//dom
+	__webpack_require__(442);
 	__webpack_require__(445);
-	__webpack_require__(448);
 	//operators
-	__webpack_require__(456);
-	__webpack_require__(458);
-	__webpack_require__(460);
-	__webpack_require__(462);
-	__webpack_require__(464);
-	__webpack_require__(466);
+	__webpack_require__(453);
+	__webpack_require__(455);
+	__webpack_require__(457);
+	__webpack_require__(459);
+	__webpack_require__(461);
+	__webpack_require__(463);
+	__webpack_require__(465);
+	__webpack_require__(467);
 	__webpack_require__(468);
-	__webpack_require__(470);
+	__webpack_require__(469);
 	__webpack_require__(471);
-	__webpack_require__(472);
 	__webpack_require__(474);
 	__webpack_require__(477);
-	__webpack_require__(480);
-	__webpack_require__(482);
-	__webpack_require__(484);
-	__webpack_require__(486);
-	__webpack_require__(488);
-	__webpack_require__(490);
-	__webpack_require__(492);
+	__webpack_require__(479);
+	__webpack_require__(481);
+	__webpack_require__(483);
+	__webpack_require__(485);
+	__webpack_require__(487);
+	__webpack_require__(489);
+	__webpack_require__(491);
 	__webpack_require__(494);
-	__webpack_require__(497);
-	__webpack_require__(499);
-	__webpack_require__(501);
-	__webpack_require__(503);
-	__webpack_require__(505);
-	__webpack_require__(507);
+	__webpack_require__(496);
+	__webpack_require__(498);
+	__webpack_require__(500);
+	__webpack_require__(502);
+	__webpack_require__(504);
+	__webpack_require__(506);
 	__webpack_require__(509);
-	__webpack_require__(512);
-	__webpack_require__(514);
-	__webpack_require__(516);
-	__webpack_require__(518);
+	__webpack_require__(511);
+	__webpack_require__(513);
+	__webpack_require__(515);
+	__webpack_require__(517);
 	__webpack_require__(520);
-	__webpack_require__(523);
-	__webpack_require__(528);
-	__webpack_require__(530);
-	__webpack_require__(532);
-	__webpack_require__(534);
-	__webpack_require__(536);
-	__webpack_require__(538);
-	__webpack_require__(540);
-	__webpack_require__(349);
-	__webpack_require__(542);
-	__webpack_require__(544);
+	__webpack_require__(525);
+	__webpack_require__(527);
+	__webpack_require__(529);
+	__webpack_require__(531);
+	__webpack_require__(533);
+	__webpack_require__(535);
+	__webpack_require__(537);
+	__webpack_require__(346);
+	__webpack_require__(539);
+	__webpack_require__(541);
+	__webpack_require__(543);
 	__webpack_require__(546);
+	__webpack_require__(547);
+	__webpack_require__(548);
 	__webpack_require__(549);
 	__webpack_require__(550);
-	__webpack_require__(551);
 	__webpack_require__(552);
-	__webpack_require__(553);
-	__webpack_require__(555);
+	__webpack_require__(554);
 	__webpack_require__(557);
-	__webpack_require__(560);
+	__webpack_require__(558);
+	__webpack_require__(559);
 	__webpack_require__(561);
-	__webpack_require__(562);
 	__webpack_require__(564);
-	__webpack_require__(567);
-	__webpack_require__(569);
+	__webpack_require__(566);
+	__webpack_require__(568);
 	__webpack_require__(571);
-	__webpack_require__(574);
+	__webpack_require__(573);
+	__webpack_require__(575);
 	__webpack_require__(576);
-	__webpack_require__(578);
+	__webpack_require__(577);
 	__webpack_require__(579);
-	__webpack_require__(580);
-	__webpack_require__(582);
-	__webpack_require__(584);
-	__webpack_require__(586);
-	__webpack_require__(588);
-	__webpack_require__(590);
-	__webpack_require__(592);
-	__webpack_require__(594);
-	__webpack_require__(596);
-	__webpack_require__(598);
-	__webpack_require__(600);
-	__webpack_require__(602);
-	__webpack_require__(604);
-	__webpack_require__(606);
-	__webpack_require__(608);
-	__webpack_require__(616);
-	__webpack_require__(618);
-	__webpack_require__(620);
-	__webpack_require__(622);
-	__webpack_require__(624);
-	__webpack_require__(626);
-	__webpack_require__(628);
-	__webpack_require__(630);
-	__webpack_require__(632);
-	__webpack_require__(634);
+	__webpack_require__(581);
+	__webpack_require__(583);
+	__webpack_require__(585);
+	__webpack_require__(587);
+	__webpack_require__(589);
+	__webpack_require__(591);
+	__webpack_require__(593);
+	__webpack_require__(595);
+	__webpack_require__(597);
+	__webpack_require__(599);
+	__webpack_require__(601);
+	__webpack_require__(603);
+	__webpack_require__(605);
+	__webpack_require__(613);
+	__webpack_require__(615);
+	__webpack_require__(617);
+	__webpack_require__(619);
+	__webpack_require__(621);
+	__webpack_require__(623);
+	__webpack_require__(625);
+	__webpack_require__(627);
+	__webpack_require__(629);
+	__webpack_require__(631);
+	__webpack_require__(633);
 	__webpack_require__(636);
-	__webpack_require__(639);
-	__webpack_require__(641);
-	__webpack_require__(643);
-	__webpack_require__(645);
-	__webpack_require__(647);
-	__webpack_require__(649);
-	__webpack_require__(651);
-	__webpack_require__(653);
-	__webpack_require__(655);
+	__webpack_require__(638);
+	__webpack_require__(640);
+	__webpack_require__(642);
+	__webpack_require__(644);
+	__webpack_require__(646);
+	__webpack_require__(648);
+	__webpack_require__(650);
+	__webpack_require__(652);
+	__webpack_require__(654);
+	__webpack_require__(656);
 	__webpack_require__(657);
-	__webpack_require__(659);
-	__webpack_require__(660);
 	/* tslint:disable:no-unused-variable */
 	var Subscription_1 = __webpack_require__(329);
 	exports.Subscription = Subscription_1.Subscription;
 	var Subscriber_1 = __webpack_require__(327);
 	exports.Subscriber = Subscriber_1.Subscriber;
-	var AsyncSubject_1 = __webpack_require__(355);
+	var AsyncSubject_1 = __webpack_require__(352);
 	exports.AsyncSubject = AsyncSubject_1.AsyncSubject;
-	var ReplaySubject_1 = __webpack_require__(451);
+	var ReplaySubject_1 = __webpack_require__(448);
 	exports.ReplaySubject = ReplaySubject_1.ReplaySubject;
-	var BehaviorSubject_1 = __webpack_require__(573);
+	var BehaviorSubject_1 = __webpack_require__(570);
 	exports.BehaviorSubject = BehaviorSubject_1.BehaviorSubject;
-	var ConnectableObservable_1 = __webpack_require__(559);
+	var ConnectableObservable_1 = __webpack_require__(556);
 	exports.ConnectableObservable = ConnectableObservable_1.ConnectableObservable;
-	var Notification_1 = __webpack_require__(390);
+	var Notification_1 = __webpack_require__(387);
 	exports.Notification = Notification_1.Notification;
-	var EmptyError_1 = __webpack_require__(522);
+	var EmptyError_1 = __webpack_require__(519);
 	exports.EmptyError = EmptyError_1.EmptyError;
-	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(508);
 	exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError_1.ArgumentOutOfRangeError;
 	var ObjectUnsubscribedError_1 = __webpack_require__(338);
 	exports.ObjectUnsubscribedError = ObjectUnsubscribedError_1.ObjectUnsubscribedError;
-	var TimeoutError_1 = __webpack_require__(638);
+	var TimeoutError_1 = __webpack_require__(635);
 	exports.TimeoutError = TimeoutError_1.TimeoutError;
 	var UnsubscriptionError_1 = __webpack_require__(334);
 	exports.UnsubscriptionError = UnsubscriptionError_1.UnsubscriptionError;
-	var timeInterval_1 = __webpack_require__(635);
+	var timeInterval_1 = __webpack_require__(632);
 	exports.TimeInterval = timeInterval_1.TimeInterval;
-	var timestamp_1 = __webpack_require__(642);
+	var timestamp_1 = __webpack_require__(639);
 	exports.Timestamp = timestamp_1.Timestamp;
-	var TestScheduler_1 = __webpack_require__(662);
+	var TestScheduler_1 = __webpack_require__(659);
 	exports.TestScheduler = TestScheduler_1.TestScheduler;
-	var VirtualTimeScheduler_1 = __webpack_require__(668);
+	var VirtualTimeScheduler_1 = __webpack_require__(665);
 	exports.VirtualTimeScheduler = VirtualTimeScheduler_1.VirtualTimeScheduler;
-	var AjaxObservable_1 = __webpack_require__(447);
+	var AjaxObservable_1 = __webpack_require__(444);
 	exports.AjaxResponse = AjaxObservable_1.AjaxResponse;
 	exports.AjaxError = AjaxObservable_1.AjaxError;
 	exports.AjaxTimeoutError = AjaxObservable_1.AjaxTimeoutError;
-	var asap_1 = __webpack_require__(611);
-	var async_1 = __webpack_require__(408);
-	var queue_1 = __webpack_require__(452);
-	var animationFrame_1 = __webpack_require__(669);
+	var asap_1 = __webpack_require__(608);
+	var async_1 = __webpack_require__(405);
+	var queue_1 = __webpack_require__(449);
+	var animationFrame_1 = __webpack_require__(666);
 	var rxSubscriber_1 = __webpack_require__(336);
-	var iterator_1 = __webpack_require__(369);
+	var iterator_1 = __webpack_require__(366);
 	var observable_1 = __webpack_require__(337);
 	/* tslint:enable:no-unused-variable */
 	/**
@@ -47698,26 +47628,26 @@
 	//# sourceMappingURL=Rx.js.map
 
 /***/ },
-/* 352 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var bindCallback_1 = __webpack_require__(353);
+	var bindCallback_1 = __webpack_require__(350);
 	Observable_1.Observable.bindCallback = bindCallback_1.bindCallback;
 	//# sourceMappingURL=bindCallback.js.map
 
 /***/ },
-/* 353 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var BoundCallbackObservable_1 = __webpack_require__(354);
+	var BoundCallbackObservable_1 = __webpack_require__(351);
 	exports.bindCallback = BoundCallbackObservable_1.BoundCallbackObservable.create;
 	//# sourceMappingURL=bindCallback.js.map
 
 /***/ },
-/* 354 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47729,7 +47659,7 @@
 	var Observable_1 = __webpack_require__(324);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var AsyncSubject_1 = __webpack_require__(355);
+	var AsyncSubject_1 = __webpack_require__(352);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -47886,7 +47816,7 @@
 	//# sourceMappingURL=BoundCallbackObservable.js.map
 
 /***/ },
-/* 355 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47939,26 +47869,26 @@
 	//# sourceMappingURL=AsyncSubject.js.map
 
 /***/ },
-/* 356 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var bindNodeCallback_1 = __webpack_require__(357);
+	var bindNodeCallback_1 = __webpack_require__(354);
 	Observable_1.Observable.bindNodeCallback = bindNodeCallback_1.bindNodeCallback;
 	//# sourceMappingURL=bindNodeCallback.js.map
 
 /***/ },
-/* 357 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var BoundNodeCallbackObservable_1 = __webpack_require__(358);
+	var BoundNodeCallbackObservable_1 = __webpack_require__(355);
 	exports.bindNodeCallback = BoundNodeCallbackObservable_1.BoundNodeCallbackObservable.create;
 	//# sourceMappingURL=bindNodeCallback.js.map
 
 /***/ },
-/* 358 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47970,7 +47900,7 @@
 	var Observable_1 = __webpack_require__(324);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var AsyncSubject_1 = __webpack_require__(355);
+	var AsyncSubject_1 = __webpack_require__(352);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -48139,24 +48069,24 @@
 	//# sourceMappingURL=BoundNodeCallbackObservable.js.map
 
 /***/ },
-/* 359 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var combineLatest_1 = __webpack_require__(360);
+	var combineLatest_1 = __webpack_require__(357);
 	Observable_1.Observable.combineLatest = combineLatest_1.combineLatest;
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 360 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isScheduler_1 = __webpack_require__(361);
+	var isScheduler_1 = __webpack_require__(358);
 	var isArray_1 = __webpack_require__(330);
-	var ArrayObservable_1 = __webpack_require__(362);
-	var combineLatest_1 = __webpack_require__(365);
+	var ArrayObservable_1 = __webpack_require__(359);
+	var combineLatest_1 = __webpack_require__(362);
 	/* tslint:enable:max-line-length */
 	/**
 	 * Combines multiple Observables to create an Observable whose values are
@@ -48225,7 +48155,7 @@
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 361 */
+/* 358 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -48236,7 +48166,7 @@
 	//# sourceMappingURL=isScheduler.js.map
 
 /***/ },
-/* 362 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48246,9 +48176,9 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var ScalarObservable_1 = __webpack_require__(363);
-	var EmptyObservable_1 = __webpack_require__(364);
-	var isScheduler_1 = __webpack_require__(361);
+	var ScalarObservable_1 = __webpack_require__(360);
+	var EmptyObservable_1 = __webpack_require__(361);
+	var isScheduler_1 = __webpack_require__(358);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -48363,7 +48293,7 @@
 	//# sourceMappingURL=ArrayObservable.js.map
 
 /***/ },
-/* 363 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48426,7 +48356,7 @@
 	//# sourceMappingURL=ScalarObservable.js.map
 
 /***/ },
-/* 364 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48506,7 +48436,7 @@
 	//# sourceMappingURL=EmptyObservable.js.map
 
 /***/ },
-/* 365 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48515,10 +48445,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var ArrayObservable_1 = __webpack_require__(362);
+	var ArrayObservable_1 = __webpack_require__(359);
 	var isArray_1 = __webpack_require__(330);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	var none = {};
 	/* tslint:disable:max-line-length */
 	/**
@@ -48658,7 +48588,7 @@
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 366 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48693,16 +48623,16 @@
 	//# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ },
-/* 367 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var root_1 = __webpack_require__(325);
 	var isArray_1 = __webpack_require__(330);
-	var isPromise_1 = __webpack_require__(368);
+	var isPromise_1 = __webpack_require__(365);
 	var Observable_1 = __webpack_require__(324);
-	var iterator_1 = __webpack_require__(369);
-	var InnerSubscriber_1 = __webpack_require__(370);
+	var iterator_1 = __webpack_require__(366);
+	var InnerSubscriber_1 = __webpack_require__(367);
 	var observable_1 = __webpack_require__(337);
 	function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
 	    var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
@@ -48772,7 +48702,7 @@
 	//# sourceMappingURL=subscribeToResult.js.map
 
 /***/ },
-/* 368 */
+/* 365 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -48783,7 +48713,7 @@
 	//# sourceMappingURL=isPromise.js.map
 
 /***/ },
-/* 369 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48822,7 +48752,7 @@
 	//# sourceMappingURL=iterator.js.map
 
 /***/ },
-/* 370 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48863,32 +48793,32 @@
 	//# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ },
-/* 371 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var concat_1 = __webpack_require__(372);
+	var concat_1 = __webpack_require__(369);
 	Observable_1.Observable.concat = concat_1.concat;
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 372 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var concat_1 = __webpack_require__(373);
+	var concat_1 = __webpack_require__(370);
 	exports.concat = concat_1.concatStatic;
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 373 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isScheduler_1 = __webpack_require__(361);
-	var ArrayObservable_1 = __webpack_require__(362);
-	var mergeAll_1 = __webpack_require__(374);
+	var isScheduler_1 = __webpack_require__(358);
+	var ArrayObservable_1 = __webpack_require__(359);
+	var mergeAll_1 = __webpack_require__(371);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Creates an output Observable which sequentially emits all values from every
@@ -48999,7 +48929,7 @@
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 374 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49008,8 +48938,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable which
 	 * concurrently delivers all values that are emitted on the inner Observables.
@@ -49115,26 +49045,26 @@
 	//# sourceMappingURL=mergeAll.js.map
 
 /***/ },
-/* 375 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var defer_1 = __webpack_require__(376);
+	var defer_1 = __webpack_require__(373);
 	Observable_1.Observable.defer = defer_1.defer;
 	//# sourceMappingURL=defer.js.map
 
 /***/ },
-/* 376 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var DeferObservable_1 = __webpack_require__(377);
+	var DeferObservable_1 = __webpack_require__(374);
 	exports.defer = DeferObservable_1.DeferObservable.create;
 	//# sourceMappingURL=defer.js.map
 
 /***/ },
-/* 377 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49144,8 +49074,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var OuterSubscriber_1 = __webpack_require__(363);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49232,45 +49162,45 @@
 	//# sourceMappingURL=DeferObservable.js.map
 
 /***/ },
-/* 378 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var empty_1 = __webpack_require__(379);
+	var empty_1 = __webpack_require__(376);
 	Observable_1.Observable.empty = empty_1.empty;
 	//# sourceMappingURL=empty.js.map
 
 /***/ },
-/* 379 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var EmptyObservable_1 = __webpack_require__(364);
+	var EmptyObservable_1 = __webpack_require__(361);
 	exports.empty = EmptyObservable_1.EmptyObservable.create;
 	//# sourceMappingURL=empty.js.map
 
 /***/ },
-/* 380 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var forkJoin_1 = __webpack_require__(381);
+	var forkJoin_1 = __webpack_require__(378);
 	Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
 	//# sourceMappingURL=forkJoin.js.map
 
 /***/ },
-/* 381 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ForkJoinObservable_1 = __webpack_require__(382);
+	var ForkJoinObservable_1 = __webpack_require__(379);
 	exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
 	//# sourceMappingURL=forkJoin.js.map
 
 /***/ },
-/* 382 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49280,10 +49210,10 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var EmptyObservable_1 = __webpack_require__(364);
+	var EmptyObservable_1 = __webpack_require__(361);
 	var isArray_1 = __webpack_require__(330);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var OuterSubscriber_1 = __webpack_require__(363);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49387,26 +49317,26 @@
 	//# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ },
-/* 383 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var from_1 = __webpack_require__(384);
+	var from_1 = __webpack_require__(381);
 	Observable_1.Observable.from = from_1.from;
 	//# sourceMappingURL=from.js.map
 
 /***/ },
-/* 384 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromObservable_1 = __webpack_require__(385);
+	var FromObservable_1 = __webpack_require__(382);
 	exports.from = FromObservable_1.FromObservable.create;
 	//# sourceMappingURL=from.js.map
 
 /***/ },
-/* 385 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49416,14 +49346,14 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var isArray_1 = __webpack_require__(330);
-	var isPromise_1 = __webpack_require__(368);
-	var PromiseObservable_1 = __webpack_require__(386);
-	var IteratorObservable_1 = __webpack_require__(387);
-	var ArrayObservable_1 = __webpack_require__(362);
-	var ArrayLikeObservable_1 = __webpack_require__(388);
-	var iterator_1 = __webpack_require__(369);
+	var isPromise_1 = __webpack_require__(365);
+	var PromiseObservable_1 = __webpack_require__(383);
+	var IteratorObservable_1 = __webpack_require__(384);
+	var ArrayObservable_1 = __webpack_require__(359);
+	var ArrayLikeObservable_1 = __webpack_require__(385);
+	var iterator_1 = __webpack_require__(366);
 	var Observable_1 = __webpack_require__(324);
-	var observeOn_1 = __webpack_require__(389);
+	var observeOn_1 = __webpack_require__(386);
 	var observable_1 = __webpack_require__(337);
 	var isArrayLike = (function (x) { return x && typeof x.length === 'number'; });
 	/**
@@ -49527,7 +49457,7 @@
 	//# sourceMappingURL=FromObservable.js.map
 
 /***/ },
-/* 386 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49653,7 +49583,7 @@
 	//# sourceMappingURL=PromiseObservable.js.map
 
 /***/ },
-/* 387 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49664,7 +49594,7 @@
 	};
 	var root_1 = __webpack_require__(325);
 	var Observable_1 = __webpack_require__(324);
-	var iterator_1 = __webpack_require__(369);
+	var iterator_1 = __webpack_require__(366);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49821,7 +49751,7 @@
 	//# sourceMappingURL=IteratorObservable.js.map
 
 /***/ },
-/* 388 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49831,8 +49761,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var ScalarObservable_1 = __webpack_require__(363);
-	var EmptyObservable_1 = __webpack_require__(364);
+	var ScalarObservable_1 = __webpack_require__(360);
+	var EmptyObservable_1 = __webpack_require__(361);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -49896,7 +49826,7 @@
 	//# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ },
-/* 389 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49906,7 +49836,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var Notification_1 = __webpack_require__(390);
+	var Notification_1 = __webpack_require__(387);
 	/**
 	 * @see {@link Notification}
 	 *
@@ -49976,7 +49906,7 @@
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 390 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50108,26 +50038,26 @@
 	//# sourceMappingURL=Notification.js.map
 
 /***/ },
-/* 391 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var fromEvent_1 = __webpack_require__(392);
+	var fromEvent_1 = __webpack_require__(389);
 	Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
 	//# sourceMappingURL=fromEvent.js.map
 
 /***/ },
-/* 392 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromEventObservable_1 = __webpack_require__(393);
+	var FromEventObservable_1 = __webpack_require__(390);
 	exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
 	//# sourceMappingURL=fromEvent.js.map
 
 /***/ },
-/* 393 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50267,26 +50197,26 @@
 	//# sourceMappingURL=FromEventObservable.js.map
 
 /***/ },
-/* 394 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var fromEventPattern_1 = __webpack_require__(395);
+	var fromEventPattern_1 = __webpack_require__(392);
 	Observable_1.Observable.fromEventPattern = fromEventPattern_1.fromEventPattern;
 	//# sourceMappingURL=fromEventPattern.js.map
 
 /***/ },
-/* 395 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromEventPatternObservable_1 = __webpack_require__(396);
+	var FromEventPatternObservable_1 = __webpack_require__(393);
 	exports.fromEventPattern = FromEventPatternObservable_1.FromEventPatternObservable.create;
 	//# sourceMappingURL=fromEventPattern.js.map
 
 /***/ },
-/* 396 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50399,36 +50329,36 @@
 	//# sourceMappingURL=FromEventPatternObservable.js.map
 
 /***/ },
-/* 397 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var fromPromise_1 = __webpack_require__(398);
+	var fromPromise_1 = __webpack_require__(395);
 	Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 398 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PromiseObservable_1 = __webpack_require__(386);
+	var PromiseObservable_1 = __webpack_require__(383);
 	exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 399 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var GenerateObservable_1 = __webpack_require__(400);
+	var GenerateObservable_1 = __webpack_require__(397);
 	Observable_1.Observable.generate = GenerateObservable_1.GenerateObservable.create;
 	//# sourceMappingURL=generate.js.map
 
 /***/ },
-/* 400 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50438,7 +50368,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var isScheduler_1 = __webpack_require__(361);
+	var isScheduler_1 = __webpack_require__(358);
 	var selfSelector = function (value) { return value; };
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
@@ -50568,26 +50498,26 @@
 	//# sourceMappingURL=GenerateObservable.js.map
 
 /***/ },
-/* 401 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var if_1 = __webpack_require__(402);
+	var if_1 = __webpack_require__(399);
 	Observable_1.Observable.if = if_1._if;
 	//# sourceMappingURL=if.js.map
 
 /***/ },
-/* 402 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var IfObservable_1 = __webpack_require__(403);
+	var IfObservable_1 = __webpack_require__(400);
 	exports._if = IfObservable_1.IfObservable.create;
 	//# sourceMappingURL=if.js.map
 
 /***/ },
-/* 403 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50597,8 +50527,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var OuterSubscriber_1 = __webpack_require__(363);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -50653,26 +50583,26 @@
 	//# sourceMappingURL=IfObservable.js.map
 
 /***/ },
-/* 404 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var interval_1 = __webpack_require__(405);
+	var interval_1 = __webpack_require__(402);
 	Observable_1.Observable.interval = interval_1.interval;
 	//# sourceMappingURL=interval.js.map
 
 /***/ },
-/* 405 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var IntervalObservable_1 = __webpack_require__(406);
+	var IntervalObservable_1 = __webpack_require__(403);
 	exports.interval = IntervalObservable_1.IntervalObservable.create;
 	//# sourceMappingURL=interval.js.map
 
 /***/ },
-/* 406 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50681,9 +50611,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isNumeric_1 = __webpack_require__(407);
+	var isNumeric_1 = __webpack_require__(404);
 	var Observable_1 = __webpack_require__(324);
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -50765,7 +50695,7 @@
 	//# sourceMappingURL=IntervalObservable.js.map
 
 /***/ },
-/* 407 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50782,17 +50712,17 @@
 	//# sourceMappingURL=isNumeric.js.map
 
 /***/ },
-/* 408 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AsyncAction_1 = __webpack_require__(409);
-	var AsyncScheduler_1 = __webpack_require__(411);
+	var AsyncAction_1 = __webpack_require__(406);
+	var AsyncScheduler_1 = __webpack_require__(408);
 	exports.async = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
 	//# sourceMappingURL=async.js.map
 
 /***/ },
-/* 409 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50802,7 +50732,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var root_1 = __webpack_require__(325);
-	var Action_1 = __webpack_require__(410);
+	var Action_1 = __webpack_require__(407);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -50939,7 +50869,7 @@
 	//# sourceMappingURL=AsyncAction.js.map
 
 /***/ },
-/* 410 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50988,7 +50918,7 @@
 	//# sourceMappingURL=Action.js.map
 
 /***/ },
-/* 411 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50997,7 +50927,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Scheduler_1 = __webpack_require__(412);
+	var Scheduler_1 = __webpack_require__(409);
 	var AsyncScheduler = (function (_super) {
 	    __extends(AsyncScheduler, _super);
 	    function AsyncScheduler() {
@@ -51044,7 +50974,7 @@
 	//# sourceMappingURL=AsyncScheduler.js.map
 
 /***/ },
-/* 412 */
+/* 409 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -51098,32 +51028,32 @@
 	//# sourceMappingURL=Scheduler.js.map
 
 /***/ },
-/* 413 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var merge_1 = __webpack_require__(414);
+	var merge_1 = __webpack_require__(411);
 	Observable_1.Observable.merge = merge_1.merge;
 	//# sourceMappingURL=merge.js.map
 
 /***/ },
-/* 414 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var merge_1 = __webpack_require__(415);
+	var merge_1 = __webpack_require__(412);
 	exports.merge = merge_1.mergeStatic;
 	//# sourceMappingURL=merge.js.map
 
 /***/ },
-/* 415 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(362);
-	var mergeAll_1 = __webpack_require__(374);
-	var isScheduler_1 = __webpack_require__(361);
+	var ArrayObservable_1 = __webpack_require__(359);
+	var mergeAll_1 = __webpack_require__(371);
+	var isScheduler_1 = __webpack_require__(358);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Creates an output Observable which concurrently emits all values from every
@@ -51251,17 +51181,17 @@
 	//# sourceMappingURL=merge.js.map
 
 /***/ },
-/* 416 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var race_1 = __webpack_require__(417);
+	var race_1 = __webpack_require__(414);
 	Observable_1.Observable.race = race_1.raceStatic;
 	//# sourceMappingURL=race.js.map
 
 /***/ },
-/* 417 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51271,9 +51201,9 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var isArray_1 = __webpack_require__(330);
-	var ArrayObservable_1 = __webpack_require__(362);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var ArrayObservable_1 = __webpack_require__(359);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that mirrors the first source Observable to emit an item
@@ -51377,26 +51307,26 @@
 	//# sourceMappingURL=race.js.map
 
 /***/ },
-/* 418 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var never_1 = __webpack_require__(419);
+	var never_1 = __webpack_require__(416);
 	Observable_1.Observable.never = never_1.never;
 	//# sourceMappingURL=never.js.map
 
 /***/ },
-/* 419 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var NeverObservable_1 = __webpack_require__(420);
+	var NeverObservable_1 = __webpack_require__(417);
 	exports.never = NeverObservable_1.NeverObservable.create;
 	//# sourceMappingURL=never.js.map
 
 /***/ },
-/* 420 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51406,7 +51336,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var noop_1 = __webpack_require__(421);
+	var noop_1 = __webpack_require__(418);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -51460,7 +51390,7 @@
 	//# sourceMappingURL=NeverObservable.js.map
 
 /***/ },
-/* 421 */
+/* 418 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -51470,36 +51400,36 @@
 	//# sourceMappingURL=noop.js.map
 
 /***/ },
-/* 422 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var of_1 = __webpack_require__(423);
+	var of_1 = __webpack_require__(420);
 	Observable_1.Observable.of = of_1.of;
 	//# sourceMappingURL=of.js.map
 
 /***/ },
-/* 423 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(362);
+	var ArrayObservable_1 = __webpack_require__(359);
 	exports.of = ArrayObservable_1.ArrayObservable.of;
 	//# sourceMappingURL=of.js.map
 
 /***/ },
-/* 424 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var onErrorResumeNext_1 = __webpack_require__(425);
+	var onErrorResumeNext_1 = __webpack_require__(422);
 	Observable_1.Observable.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNextStatic;
 	//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ },
-/* 425 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51508,10 +51438,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FromObservable_1 = __webpack_require__(385);
+	var FromObservable_1 = __webpack_require__(382);
 	var isArray_1 = __webpack_require__(330);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	function onErrorResumeNext() {
 	    var nextSources = [];
@@ -51580,26 +51510,26 @@
 	//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ },
-/* 426 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var pairs_1 = __webpack_require__(427);
+	var pairs_1 = __webpack_require__(424);
 	Observable_1.Observable.pairs = pairs_1.pairs;
 	//# sourceMappingURL=pairs.js.map
 
 /***/ },
-/* 427 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PairsObservable_1 = __webpack_require__(428);
+	var PairsObservable_1 = __webpack_require__(425);
 	exports.pairs = PairsObservable_1.PairsObservable.create;
 	//# sourceMappingURL=pairs.js.map
 
 /***/ },
-/* 428 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51689,26 +51619,26 @@
 	//# sourceMappingURL=PairsObservable.js.map
 
 /***/ },
-/* 429 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var range_1 = __webpack_require__(430);
+	var range_1 = __webpack_require__(427);
 	Observable_1.Observable.range = range_1.range;
 	//# sourceMappingURL=range.js.map
 
 /***/ },
-/* 430 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var RangeObservable_1 = __webpack_require__(431);
+	var RangeObservable_1 = __webpack_require__(428);
 	exports.range = RangeObservable_1.RangeObservable.create;
 	//# sourceMappingURL=range.js.map
 
 /***/ },
-/* 431 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51809,26 +51739,26 @@
 	//# sourceMappingURL=RangeObservable.js.map
 
 /***/ },
-/* 432 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var using_1 = __webpack_require__(433);
+	var using_1 = __webpack_require__(430);
 	Observable_1.Observable.using = using_1.using;
 	//# sourceMappingURL=using.js.map
 
 /***/ },
-/* 433 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var UsingObservable_1 = __webpack_require__(434);
+	var UsingObservable_1 = __webpack_require__(431);
 	exports.using = UsingObservable_1.UsingObservable.create;
 	//# sourceMappingURL=using.js.map
 
 /***/ },
-/* 434 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51838,8 +51768,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var OuterSubscriber_1 = __webpack_require__(363);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -51894,26 +51824,26 @@
 	//# sourceMappingURL=UsingObservable.js.map
 
 /***/ },
-/* 435 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var throw_1 = __webpack_require__(436);
+	var throw_1 = __webpack_require__(433);
 	Observable_1.Observable.throw = throw_1._throw;
 	//# sourceMappingURL=throw.js.map
 
 /***/ },
-/* 436 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ErrorObservable_1 = __webpack_require__(437);
+	var ErrorObservable_1 = __webpack_require__(434);
 	exports._throw = ErrorObservable_1.ErrorObservable.create;
 	//# sourceMappingURL=throw.js.map
 
 /***/ },
-/* 437 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52000,26 +51930,26 @@
 	//# sourceMappingURL=ErrorObservable.js.map
 
 /***/ },
-/* 438 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var timer_1 = __webpack_require__(439);
+	var timer_1 = __webpack_require__(436);
 	Observable_1.Observable.timer = timer_1.timer;
 	//# sourceMappingURL=timer.js.map
 
 /***/ },
-/* 439 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var TimerObservable_1 = __webpack_require__(440);
+	var TimerObservable_1 = __webpack_require__(437);
 	exports.timer = TimerObservable_1.TimerObservable.create;
 	//# sourceMappingURL=timer.js.map
 
 /***/ },
-/* 440 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52028,11 +51958,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isNumeric_1 = __webpack_require__(407);
+	var isNumeric_1 = __webpack_require__(404);
 	var Observable_1 = __webpack_require__(324);
-	var async_1 = __webpack_require__(408);
-	var isScheduler_1 = __webpack_require__(361);
-	var isDate_1 = __webpack_require__(441);
+	var async_1 = __webpack_require__(405);
+	var isScheduler_1 = __webpack_require__(358);
+	var isDate_1 = __webpack_require__(438);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -52131,7 +52061,7 @@
 	//# sourceMappingURL=TimerObservable.js.map
 
 /***/ },
-/* 441 */
+/* 438 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -52142,26 +52072,26 @@
 	//# sourceMappingURL=isDate.js.map
 
 /***/ },
-/* 442 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var zip_1 = __webpack_require__(443);
+	var zip_1 = __webpack_require__(440);
 	Observable_1.Observable.zip = zip_1.zip;
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 443 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var zip_1 = __webpack_require__(444);
+	var zip_1 = __webpack_require__(441);
 	exports.zip = zip_1.zipStatic;
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 444 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52170,12 +52100,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var ArrayObservable_1 = __webpack_require__(362);
+	var ArrayObservable_1 = __webpack_require__(359);
 	var isArray_1 = __webpack_require__(330);
 	var Subscriber_1 = __webpack_require__(327);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var iterator_1 = __webpack_require__(369);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var iterator_1 = __webpack_require__(366);
 	/* tslint:disable:max-line-length */
 	/**
 	 * @param observables
@@ -52417,26 +52347,26 @@
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 445 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var ajax_1 = __webpack_require__(446);
+	var ajax_1 = __webpack_require__(443);
 	Observable_1.Observable.ajax = ajax_1.ajax;
 	//# sourceMappingURL=ajax.js.map
 
 /***/ },
-/* 446 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AjaxObservable_1 = __webpack_require__(447);
+	var AjaxObservable_1 = __webpack_require__(444);
 	exports.ajax = AjaxObservable_1.AjaxObservable.create;
 	//# sourceMappingURL=ajax.js.map
 
 /***/ },
-/* 447 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52450,7 +52380,7 @@
 	var errorObject_1 = __webpack_require__(333);
 	var Observable_1 = __webpack_require__(324);
 	var Subscriber_1 = __webpack_require__(327);
-	var map_1 = __webpack_require__(350);
+	var map_1 = __webpack_require__(347);
 	function getCORSRequest() {
 	    if (root_1.root.XMLHttpRequest) {
 	        var xhr = new root_1.root.XMLHttpRequest();
@@ -52842,26 +52772,26 @@
 	//# sourceMappingURL=AjaxObservable.js.map
 
 /***/ },
-/* 448 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var webSocket_1 = __webpack_require__(449);
+	var webSocket_1 = __webpack_require__(446);
 	Observable_1.Observable.webSocket = webSocket_1.webSocket;
 	//# sourceMappingURL=webSocket.js.map
 
 /***/ },
-/* 449 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var WebSocketSubject_1 = __webpack_require__(450);
+	var WebSocketSubject_1 = __webpack_require__(447);
 	exports.webSocket = WebSocketSubject_1.WebSocketSubject.create;
 	//# sourceMappingURL=webSocket.js.map
 
 /***/ },
-/* 450 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52875,10 +52805,10 @@
 	var Observable_1 = __webpack_require__(324);
 	var Subscription_1 = __webpack_require__(329);
 	var root_1 = __webpack_require__(325);
-	var ReplaySubject_1 = __webpack_require__(451);
+	var ReplaySubject_1 = __webpack_require__(448);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var assign_1 = __webpack_require__(455);
+	var assign_1 = __webpack_require__(452);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -53082,7 +53012,7 @@
 	//# sourceMappingURL=WebSocketSubject.js.map
 
 /***/ },
-/* 451 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53092,9 +53022,9 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subject_1 = __webpack_require__(323);
-	var queue_1 = __webpack_require__(452);
+	var queue_1 = __webpack_require__(449);
 	var Subscription_1 = __webpack_require__(329);
-	var observeOn_1 = __webpack_require__(389);
+	var observeOn_1 = __webpack_require__(386);
 	var ObjectUnsubscribedError_1 = __webpack_require__(338);
 	var SubjectSubscription_1 = __webpack_require__(339);
 	/**
@@ -53189,17 +53119,17 @@
 	//# sourceMappingURL=ReplaySubject.js.map
 
 /***/ },
-/* 452 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var QueueAction_1 = __webpack_require__(453);
-	var QueueScheduler_1 = __webpack_require__(454);
+	var QueueAction_1 = __webpack_require__(450);
+	var QueueScheduler_1 = __webpack_require__(451);
 	exports.queue = new QueueScheduler_1.QueueScheduler(QueueAction_1.QueueAction);
 	//# sourceMappingURL=queue.js.map
 
 /***/ },
-/* 453 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53208,7 +53138,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncAction_1 = __webpack_require__(409);
+	var AsyncAction_1 = __webpack_require__(406);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -53253,7 +53183,7 @@
 	//# sourceMappingURL=QueueAction.js.map
 
 /***/ },
-/* 454 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53262,7 +53192,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncScheduler_1 = __webpack_require__(411);
+	var AsyncScheduler_1 = __webpack_require__(408);
 	var QueueScheduler = (function (_super) {
 	    __extends(QueueScheduler, _super);
 	    function QueueScheduler() {
@@ -53274,7 +53204,7 @@
 	//# sourceMappingURL=QueueScheduler.js.map
 
 /***/ },
-/* 455 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53305,17 +53235,17 @@
 	//# sourceMappingURL=assign.js.map
 
 /***/ },
-/* 456 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var buffer_1 = __webpack_require__(457);
+	var buffer_1 = __webpack_require__(454);
 	Observable_1.Observable.prototype.buffer = buffer_1.buffer;
 	//# sourceMappingURL=buffer.js.map
 
 /***/ },
-/* 457 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53324,8 +53254,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Buffers the source Observable values until `closingNotifier` emits.
 	 *
@@ -53396,17 +53326,17 @@
 	//# sourceMappingURL=buffer.js.map
 
 /***/ },
-/* 458 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var bufferCount_1 = __webpack_require__(459);
+	var bufferCount_1 = __webpack_require__(456);
 	Observable_1.Observable.prototype.bufferCount = bufferCount_1.bufferCount;
 	//# sourceMappingURL=bufferCount.js.map
 
 /***/ },
-/* 459 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53518,17 +53448,17 @@
 	//# sourceMappingURL=bufferCount.js.map
 
 /***/ },
-/* 460 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var bufferTime_1 = __webpack_require__(461);
+	var bufferTime_1 = __webpack_require__(458);
 	Observable_1.Observable.prototype.bufferTime = bufferTime_1.bufferTime;
 	//# sourceMappingURL=bufferTime.js.map
 
 /***/ },
-/* 461 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53537,9 +53467,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	var Subscriber_1 = __webpack_require__(327);
-	var isScheduler_1 = __webpack_require__(361);
+	var isScheduler_1 = __webpack_require__(358);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Buffers the source Observable values for a specific time period.
@@ -53732,17 +53662,17 @@
 	//# sourceMappingURL=bufferTime.js.map
 
 /***/ },
-/* 462 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var bufferToggle_1 = __webpack_require__(463);
+	var bufferToggle_1 = __webpack_require__(460);
 	Observable_1.Observable.prototype.bufferToggle = bufferToggle_1.bufferToggle;
 	//# sourceMappingURL=bufferToggle.js.map
 
 /***/ },
-/* 463 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53752,8 +53682,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscription_1 = __webpack_require__(329);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var OuterSubscriber_1 = __webpack_require__(363);
 	/**
 	 * Buffers the source Observable values starting from an emission from
 	 * `openings` and ending when the output of `closingSelector` emits.
@@ -53899,17 +53829,17 @@
 	//# sourceMappingURL=bufferToggle.js.map
 
 /***/ },
-/* 464 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var bufferWhen_1 = __webpack_require__(465);
+	var bufferWhen_1 = __webpack_require__(462);
 	Observable_1.Observable.prototype.bufferWhen = bufferWhen_1.bufferWhen;
 	//# sourceMappingURL=bufferWhen.js.map
 
 /***/ },
-/* 465 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53921,8 +53851,8 @@
 	var Subscription_1 = __webpack_require__(329);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Buffers the source Observable values, using a factory function of closing
 	 * Observables to determine when to close, emit, and reset the buffer.
@@ -54036,18 +53966,18 @@
 	//# sourceMappingURL=bufferWhen.js.map
 
 /***/ },
-/* 466 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var catch_1 = __webpack_require__(467);
+	var catch_1 = __webpack_require__(464);
 	Observable_1.Observable.prototype.catch = catch_1._catch;
 	Observable_1.Observable.prototype._catch = catch_1._catch;
 	//# sourceMappingURL=catch.js.map
 
 /***/ },
-/* 467 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54056,8 +53986,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Catches errors on the observable to be handled by returning a new observable or throwing an error.
 	 * @param {function} selector a function that takes as arguments `err`, which is the error, and `caught`, which
@@ -54118,21 +54048,21 @@
 	//# sourceMappingURL=catch.js.map
 
 /***/ },
-/* 468 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var combineAll_1 = __webpack_require__(469);
+	var combineAll_1 = __webpack_require__(466);
 	Observable_1.Observable.prototype.combineAll = combineAll_1.combineAll;
 	//# sourceMappingURL=combineAll.js.map
 
 /***/ },
-/* 469 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var combineLatest_1 = __webpack_require__(365);
+	var combineLatest_1 = __webpack_require__(362);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by waiting
 	 * for the outer Observable to complete, then applying {@link combineLatest}.
@@ -54180,41 +54110,41 @@
 	//# sourceMappingURL=combineAll.js.map
 
 /***/ },
-/* 470 */
+/* 467 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var combineLatest_1 = __webpack_require__(365);
+	var combineLatest_1 = __webpack_require__(362);
 	Observable_1.Observable.prototype.combineLatest = combineLatest_1.combineLatest;
 	//# sourceMappingURL=combineLatest.js.map
 
 /***/ },
-/* 471 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var concat_1 = __webpack_require__(373);
+	var concat_1 = __webpack_require__(370);
 	Observable_1.Observable.prototype.concat = concat_1.concat;
 	//# sourceMappingURL=concat.js.map
 
 /***/ },
-/* 472 */
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var concatAll_1 = __webpack_require__(473);
+	var concatAll_1 = __webpack_require__(470);
 	Observable_1.Observable.prototype.concatAll = concatAll_1.concatAll;
 	//# sourceMappingURL=concatAll.js.map
 
 /***/ },
-/* 473 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeAll_1 = __webpack_require__(374);
+	var mergeAll_1 = __webpack_require__(371);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by
@@ -54265,21 +54195,21 @@
 	//# sourceMappingURL=concatAll.js.map
 
 /***/ },
-/* 474 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var concatMap_1 = __webpack_require__(475);
+	var concatMap_1 = __webpack_require__(472);
 	Observable_1.Observable.prototype.concatMap = concatMap_1.concatMap;
 	//# sourceMappingURL=concatMap.js.map
 
 /***/ },
-/* 475 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeMap_1 = __webpack_require__(476);
+	var mergeMap_1 = __webpack_require__(473);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -54344,7 +54274,7 @@
 	//# sourceMappingURL=concatMap.js.map
 
 /***/ },
-/* 476 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54353,8 +54283,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var subscribeToResult_1 = __webpack_require__(367);
-	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var OuterSubscriber_1 = __webpack_require__(363);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -54511,21 +54441,21 @@
 	//# sourceMappingURL=mergeMap.js.map
 
 /***/ },
-/* 477 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var concatMapTo_1 = __webpack_require__(478);
+	var concatMapTo_1 = __webpack_require__(475);
 	Observable_1.Observable.prototype.concatMapTo = concatMapTo_1.concatMapTo;
 	//# sourceMappingURL=concatMapTo.js.map
 
 /***/ },
-/* 478 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeMapTo_1 = __webpack_require__(479);
+	var mergeMapTo_1 = __webpack_require__(476);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to the same Observable which is merged multiple
@@ -54584,7 +54514,7 @@
 	//# sourceMappingURL=concatMapTo.js.map
 
 /***/ },
-/* 479 */
+/* 476 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54593,8 +54523,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to the same Observable which is merged multiple
@@ -54744,17 +54674,17 @@
 	//# sourceMappingURL=mergeMapTo.js.map
 
 /***/ },
-/* 480 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var count_1 = __webpack_require__(481);
+	var count_1 = __webpack_require__(478);
 	Observable_1.Observable.prototype.count = count_1.count;
 	//# sourceMappingURL=count.js.map
 
 /***/ },
-/* 481 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54867,17 +54797,17 @@
 	//# sourceMappingURL=count.js.map
 
 /***/ },
-/* 482 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var dematerialize_1 = __webpack_require__(483);
+	var dematerialize_1 = __webpack_require__(480);
 	Observable_1.Observable.prototype.dematerialize = dematerialize_1.dematerialize;
 	//# sourceMappingURL=dematerialize.js.map
 
 /***/ },
-/* 483 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54952,17 +54882,17 @@
 	//# sourceMappingURL=dematerialize.js.map
 
 /***/ },
-/* 484 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var debounce_1 = __webpack_require__(485);
+	var debounce_1 = __webpack_require__(482);
 	Observable_1.Observable.prototype.debounce = debounce_1.debounce;
 	//# sourceMappingURL=debounce.js.map
 
 /***/ },
-/* 485 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54971,8 +54901,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Emits a value from the source Observable only after a particular time span
 	 * determined by another Observable has passed without another source emission.
@@ -55094,17 +55024,17 @@
 	//# sourceMappingURL=debounce.js.map
 
 /***/ },
-/* 486 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var debounceTime_1 = __webpack_require__(487);
+	var debounceTime_1 = __webpack_require__(484);
 	Observable_1.Observable.prototype.debounceTime = debounceTime_1.debounceTime;
 	//# sourceMappingURL=debounceTime.js.map
 
 /***/ },
-/* 487 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55114,7 +55044,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	/**
 	 * Emits a value from the source Observable only after a particular time span
 	 * has passed without another source emission.
@@ -55225,17 +55155,17 @@
 	//# sourceMappingURL=debounceTime.js.map
 
 /***/ },
-/* 488 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var defaultIfEmpty_1 = __webpack_require__(489);
+	var defaultIfEmpty_1 = __webpack_require__(486);
 	Observable_1.Observable.prototype.defaultIfEmpty = defaultIfEmpty_1.defaultIfEmpty;
 	//# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ },
-/* 489 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55317,17 +55247,17 @@
 	//# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ },
-/* 490 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var delay_1 = __webpack_require__(491);
+	var delay_1 = __webpack_require__(488);
 	Observable_1.Observable.prototype.delay = delay_1.delay;
 	//# sourceMappingURL=delay.js.map
 
 /***/ },
-/* 491 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55336,10 +55266,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(408);
-	var isDate_1 = __webpack_require__(441);
+	var async_1 = __webpack_require__(405);
+	var isDate_1 = __webpack_require__(438);
 	var Subscriber_1 = __webpack_require__(327);
-	var Notification_1 = __webpack_require__(390);
+	var Notification_1 = __webpack_require__(387);
 	/**
 	 * Delays the emission of items from the source Observable by a given timeout or
 	 * until a given Date.
@@ -55467,17 +55397,17 @@
 	//# sourceMappingURL=delay.js.map
 
 /***/ },
-/* 492 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var delayWhen_1 = __webpack_require__(493);
+	var delayWhen_1 = __webpack_require__(490);
 	Observable_1.Observable.prototype.delayWhen = delayWhen_1.delayWhen;
 	//# sourceMappingURL=delayWhen.js.map
 
 /***/ },
-/* 493 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55488,8 +55418,8 @@
 	};
 	var Subscriber_1 = __webpack_require__(327);
 	var Observable_1 = __webpack_require__(324);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Delays the emission of items from the source Observable by a given time span
 	 * determined by the emissions of another Observable.
@@ -55672,17 +55602,17 @@
 	//# sourceMappingURL=delayWhen.js.map
 
 /***/ },
-/* 494 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var distinct_1 = __webpack_require__(495);
+	var distinct_1 = __webpack_require__(492);
 	Observable_1.Observable.prototype.distinct = distinct_1.distinct;
 	//# sourceMappingURL=distinct.js.map
 
 /***/ },
-/* 495 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55691,9 +55621,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var Set_1 = __webpack_require__(496);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var Set_1 = __webpack_require__(493);
 	/**
 	 * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items.
 	 * If a keySelector function is provided, then it will project each value from the source observable into a new value that it will
@@ -55778,7 +55708,7 @@
 	//# sourceMappingURL=distinct.js.map
 
 /***/ },
-/* 496 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55816,17 +55746,17 @@
 	//# sourceMappingURL=Set.js.map
 
 /***/ },
-/* 497 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var distinctUntilChanged_1 = __webpack_require__(498);
+	var distinctUntilChanged_1 = __webpack_require__(495);
 	Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_1.distinctUntilChanged;
 	//# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ },
-/* 498 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -55909,21 +55839,21 @@
 	//# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ },
-/* 499 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var distinctUntilKeyChanged_1 = __webpack_require__(500);
+	var distinctUntilKeyChanged_1 = __webpack_require__(497);
 	Observable_1.Observable.prototype.distinctUntilKeyChanged = distinctUntilKeyChanged_1.distinctUntilKeyChanged;
 	//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 /***/ },
-/* 500 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var distinctUntilChanged_1 = __webpack_require__(498);
+	var distinctUntilChanged_1 = __webpack_require__(495);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item,
@@ -55948,18 +55878,18 @@
 	//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 /***/ },
-/* 501 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var do_1 = __webpack_require__(502);
+	var do_1 = __webpack_require__(499);
 	Observable_1.Observable.prototype.do = do_1._do;
 	Observable_1.Observable.prototype._do = do_1._do;
 	//# sourceMappingURL=do.js.map
 
 /***/ },
-/* 502 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56077,17 +56007,17 @@
 	//# sourceMappingURL=do.js.map
 
 /***/ },
-/* 503 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var exhaust_1 = __webpack_require__(504);
+	var exhaust_1 = __webpack_require__(501);
 	Observable_1.Observable.prototype.exhaust = exhaust_1.exhaust;
 	//# sourceMappingURL=exhaust.js.map
 
 /***/ },
-/* 504 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56096,8 +56026,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by dropping
 	 * inner Observables while the previous inner Observable has not yet completed.
@@ -56182,17 +56112,17 @@
 	//# sourceMappingURL=exhaust.js.map
 
 /***/ },
-/* 505 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var exhaustMap_1 = __webpack_require__(506);
+	var exhaustMap_1 = __webpack_require__(503);
 	Observable_1.Observable.prototype.exhaustMap = exhaustMap_1.exhaustMap;
 	//# sourceMappingURL=exhaustMap.js.map
 
 /***/ },
-/* 506 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56201,8 +56131,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -56335,17 +56265,17 @@
 	//# sourceMappingURL=exhaustMap.js.map
 
 /***/ },
-/* 507 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var expand_1 = __webpack_require__(508);
+	var expand_1 = __webpack_require__(505);
 	Observable_1.Observable.prototype.expand = expand_1.expand;
 	//# sourceMappingURL=expand.js.map
 
 /***/ },
-/* 508 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56356,8 +56286,8 @@
 	};
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Recursively projects each source value to an Observable which is merged in
@@ -56501,17 +56431,17 @@
 	//# sourceMappingURL=expand.js.map
 
 /***/ },
-/* 509 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var elementAt_1 = __webpack_require__(510);
+	var elementAt_1 = __webpack_require__(507);
 	Observable_1.Observable.prototype.elementAt = elementAt_1.elementAt;
 	//# sourceMappingURL=elementAt.js.map
 
 /***/ },
-/* 510 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56521,7 +56451,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(508);
 	/**
 	 * Emits the single value at the specified `index` in a sequence of emissions
 	 * from the source Observable.
@@ -56611,7 +56541,7 @@
 	//# sourceMappingURL=elementAt.js.map
 
 /***/ },
-/* 511 */
+/* 508 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -56644,17 +56574,17 @@
 	//# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ },
-/* 512 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var filter_1 = __webpack_require__(513);
+	var filter_1 = __webpack_require__(510);
 	Observable_1.Observable.prototype.filter = filter_1.filter;
 	//# sourceMappingURL=filter.js.map
 
 /***/ },
-/* 513 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56753,18 +56683,18 @@
 	//# sourceMappingURL=filter.js.map
 
 /***/ },
-/* 514 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var finally_1 = __webpack_require__(515);
+	var finally_1 = __webpack_require__(512);
 	Observable_1.Observable.prototype.finally = finally_1._finally;
 	Observable_1.Observable.prototype._finally = finally_1._finally;
 	//# sourceMappingURL=finally.js.map
 
 /***/ },
-/* 515 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56812,17 +56742,17 @@
 	//# sourceMappingURL=finally.js.map
 
 /***/ },
-/* 516 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var find_1 = __webpack_require__(517);
+	var find_1 = __webpack_require__(514);
 	Observable_1.Observable.prototype.find = find_1.find;
 	//# sourceMappingURL=find.js.map
 
 /***/ },
-/* 517 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56928,21 +56858,21 @@
 	//# sourceMappingURL=find.js.map
 
 /***/ },
-/* 518 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var findIndex_1 = __webpack_require__(519);
+	var findIndex_1 = __webpack_require__(516);
 	Observable_1.Observable.prototype.findIndex = findIndex_1.findIndex;
 	//# sourceMappingURL=findIndex.js.map
 
 /***/ },
-/* 519 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var find_1 = __webpack_require__(517);
+	var find_1 = __webpack_require__(514);
 	/**
 	 * Emits only the index of the first value emitted by the source Observable that
 	 * meets some condition.
@@ -56984,17 +56914,17 @@
 	//# sourceMappingURL=findIndex.js.map
 
 /***/ },
-/* 520 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var first_1 = __webpack_require__(521);
+	var first_1 = __webpack_require__(518);
 	Observable_1.Observable.prototype.first = first_1.first;
 	//# sourceMappingURL=first.js.map
 
 /***/ },
-/* 521 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57004,7 +56934,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var EmptyError_1 = __webpack_require__(522);
+	var EmptyError_1 = __webpack_require__(519);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Emits only the first value (or the first value that meets some condition)
@@ -57152,7 +57082,7 @@
 	//# sourceMappingURL=first.js.map
 
 /***/ },
-/* 522 */
+/* 519 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -57185,17 +57115,17 @@
 	//# sourceMappingURL=EmptyError.js.map
 
 /***/ },
-/* 523 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var groupBy_1 = __webpack_require__(524);
+	var groupBy_1 = __webpack_require__(521);
 	Observable_1.Observable.prototype.groupBy = groupBy_1.groupBy;
 	//# sourceMappingURL=groupBy.js.map
 
 /***/ },
-/* 524 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57208,8 +57138,8 @@
 	var Subscription_1 = __webpack_require__(329);
 	var Observable_1 = __webpack_require__(324);
 	var Subject_1 = __webpack_require__(323);
-	var Map_1 = __webpack_require__(525);
-	var FastMap_1 = __webpack_require__(527);
+	var Map_1 = __webpack_require__(522);
+	var FastMap_1 = __webpack_require__(524);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Groups the items emitted by an Observable according to a specified criterion,
@@ -57435,17 +57365,17 @@
 	//# sourceMappingURL=groupBy.js.map
 
 /***/ },
-/* 525 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var root_1 = __webpack_require__(325);
-	var MapPolyfill_1 = __webpack_require__(526);
+	var MapPolyfill_1 = __webpack_require__(523);
 	exports.Map = root_1.root.Map || (function () { return MapPolyfill_1.MapPolyfill; })();
 	//# sourceMappingURL=Map.js.map
 
 /***/ },
-/* 526 */
+/* 523 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -57497,7 +57427,7 @@
 	//# sourceMappingURL=MapPolyfill.js.map
 
 /***/ },
-/* 527 */
+/* 524 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -57533,17 +57463,17 @@
 	//# sourceMappingURL=FastMap.js.map
 
 /***/ },
-/* 528 */
+/* 525 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var ignoreElements_1 = __webpack_require__(529);
+	var ignoreElements_1 = __webpack_require__(526);
 	Observable_1.Observable.prototype.ignoreElements = ignoreElements_1.ignoreElements;
 	//# sourceMappingURL=ignoreElements.js.map
 
 /***/ },
-/* 529 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57553,7 +57483,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var noop_1 = __webpack_require__(421);
+	var noop_1 = __webpack_require__(418);
 	/**
 	 * Ignores all items emitted by the source Observable and only passes calls of `complete` or `error`.
 	 *
@@ -57595,17 +57525,17 @@
 	//# sourceMappingURL=ignoreElements.js.map
 
 /***/ },
-/* 530 */
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var isEmpty_1 = __webpack_require__(531);
+	var isEmpty_1 = __webpack_require__(528);
 	Observable_1.Observable.prototype.isEmpty = isEmpty_1.isEmpty;
 	//# sourceMappingURL=isEmpty.js.map
 
 /***/ },
-/* 531 */
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57662,17 +57592,17 @@
 	//# sourceMappingURL=isEmpty.js.map
 
 /***/ },
-/* 532 */
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var audit_1 = __webpack_require__(533);
+	var audit_1 = __webpack_require__(530);
 	Observable_1.Observable.prototype.audit = audit_1.audit;
 	//# sourceMappingURL=audit.js.map
 
 /***/ },
-/* 533 */
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57683,8 +57613,8 @@
 	};
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Ignores source values for a duration determined by another Observable, then
 	 * emits the most recent value from the source Observable, then repeats this
@@ -57787,17 +57717,17 @@
 	//# sourceMappingURL=audit.js.map
 
 /***/ },
-/* 534 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var auditTime_1 = __webpack_require__(535);
+	var auditTime_1 = __webpack_require__(532);
 	Observable_1.Observable.prototype.auditTime = auditTime_1.auditTime;
 	//# sourceMappingURL=auditTime.js.map
 
 /***/ },
-/* 535 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57806,7 +57736,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Ignores source values for `duration` milliseconds, then emits the most recent
@@ -57906,17 +57836,17 @@
 	//# sourceMappingURL=auditTime.js.map
 
 /***/ },
-/* 536 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var last_1 = __webpack_require__(537);
+	var last_1 = __webpack_require__(534);
 	Observable_1.Observable.prototype.last = last_1.last;
 	//# sourceMappingURL=last.js.map
 
 /***/ },
-/* 537 */
+/* 534 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57926,7 +57856,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var EmptyError_1 = __webpack_require__(522);
+	var EmptyError_1 = __webpack_require__(519);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits only the last item emitted by the source Observable.
@@ -58040,18 +57970,18 @@
 	//# sourceMappingURL=last.js.map
 
 /***/ },
-/* 538 */
+/* 535 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var let_1 = __webpack_require__(539);
+	var let_1 = __webpack_require__(536);
 	Observable_1.Observable.prototype.let = let_1.letProto;
 	Observable_1.Observable.prototype.letBind = let_1.letProto;
 	//# sourceMappingURL=let.js.map
 
 /***/ },
-/* 539 */
+/* 536 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -58068,17 +57998,17 @@
 	//# sourceMappingURL=let.js.map
 
 /***/ },
-/* 540 */
+/* 537 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var every_1 = __webpack_require__(541);
+	var every_1 = __webpack_require__(538);
 	Observable_1.Observable.prototype.every = every_1.every;
 	//# sourceMappingURL=every.js.map
 
 /***/ },
-/* 541 */
+/* 538 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58151,17 +58081,17 @@
 	//# sourceMappingURL=every.js.map
 
 /***/ },
-/* 542 */
+/* 539 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var mapTo_1 = __webpack_require__(543);
+	var mapTo_1 = __webpack_require__(540);
 	Observable_1.Observable.prototype.mapTo = mapTo_1.mapTo;
 	//# sourceMappingURL=mapTo.js.map
 
 /***/ },
-/* 543 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58229,17 +58159,17 @@
 	//# sourceMappingURL=mapTo.js.map
 
 /***/ },
-/* 544 */
+/* 541 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var materialize_1 = __webpack_require__(545);
+	var materialize_1 = __webpack_require__(542);
 	Observable_1.Observable.prototype.materialize = materialize_1.materialize;
 	//# sourceMappingURL=materialize.js.map
 
 /***/ },
-/* 545 */
+/* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58249,7 +58179,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var Notification_1 = __webpack_require__(390);
+	var Notification_1 = __webpack_require__(387);
 	/**
 	 * Represents all of the notifications from the source Observable as `next`
 	 * emissions marked with their original types within {@link Notification}
@@ -58327,21 +58257,21 @@
 	//# sourceMappingURL=materialize.js.map
 
 /***/ },
-/* 546 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var max_1 = __webpack_require__(547);
+	var max_1 = __webpack_require__(544);
 	Observable_1.Observable.prototype.max = max_1.max;
 	//# sourceMappingURL=max.js.map
 
 /***/ },
-/* 547 */
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var reduce_1 = __webpack_require__(548);
+	var reduce_1 = __webpack_require__(545);
 	/**
 	 * The Max operator operates on an Observable that emits numbers (or items that can be evaluated as numbers),
 	 * and when source Observable completes it emits a single item: the item with the largest number.
@@ -58364,7 +58294,7 @@
 	//# sourceMappingURL=max.js.map
 
 /***/ },
-/* 548 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58492,14 +58422,46 @@
 	//# sourceMappingURL=reduce.js.map
 
 /***/ },
+/* 546 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Observable_1 = __webpack_require__(324);
+	var merge_1 = __webpack_require__(412);
+	Observable_1.Observable.prototype.merge = merge_1.merge;
+	//# sourceMappingURL=merge.js.map
+
+/***/ },
+/* 547 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Observable_1 = __webpack_require__(324);
+	var mergeAll_1 = __webpack_require__(371);
+	Observable_1.Observable.prototype.mergeAll = mergeAll_1.mergeAll;
+	//# sourceMappingURL=mergeAll.js.map
+
+/***/ },
+/* 548 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Observable_1 = __webpack_require__(324);
+	var mergeMap_1 = __webpack_require__(473);
+	Observable_1.Observable.prototype.mergeMap = mergeMap_1.mergeMap;
+	Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
+	//# sourceMappingURL=mergeMap.js.map
+
+/***/ },
 /* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var merge_1 = __webpack_require__(415);
-	Observable_1.Observable.prototype.merge = merge_1.merge;
-	//# sourceMappingURL=merge.js.map
+	var mergeMapTo_1 = __webpack_require__(476);
+	Observable_1.Observable.prototype.flatMapTo = mergeMapTo_1.mergeMapTo;
+	Observable_1.Observable.prototype.mergeMapTo = mergeMapTo_1.mergeMapTo;
+	//# sourceMappingURL=mergeMapTo.js.map
 
 /***/ },
 /* 550 */
@@ -58507,44 +58469,12 @@
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var mergeAll_1 = __webpack_require__(374);
-	Observable_1.Observable.prototype.mergeAll = mergeAll_1.mergeAll;
-	//# sourceMappingURL=mergeAll.js.map
-
-/***/ },
-/* 551 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var Observable_1 = __webpack_require__(324);
-	var mergeMap_1 = __webpack_require__(476);
-	Observable_1.Observable.prototype.mergeMap = mergeMap_1.mergeMap;
-	Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
-	//# sourceMappingURL=mergeMap.js.map
-
-/***/ },
-/* 552 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var Observable_1 = __webpack_require__(324);
-	var mergeMapTo_1 = __webpack_require__(479);
-	Observable_1.Observable.prototype.flatMapTo = mergeMapTo_1.mergeMapTo;
-	Observable_1.Observable.prototype.mergeMapTo = mergeMapTo_1.mergeMapTo;
-	//# sourceMappingURL=mergeMapTo.js.map
-
-/***/ },
-/* 553 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var Observable_1 = __webpack_require__(324);
-	var mergeScan_1 = __webpack_require__(554);
+	var mergeScan_1 = __webpack_require__(551);
 	Observable_1.Observable.prototype.mergeScan = mergeScan_1.mergeScan;
 	//# sourceMappingURL=mergeScan.js.map
 
 /***/ },
-/* 554 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58555,8 +58485,8 @@
 	};
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var subscribeToResult_1 = __webpack_require__(367);
-	var OuterSubscriber_1 = __webpack_require__(366);
+	var subscribeToResult_1 = __webpack_require__(364);
+	var OuterSubscriber_1 = __webpack_require__(363);
 	/**
 	 * @param project
 	 * @param seed
@@ -58655,21 +58585,21 @@
 	//# sourceMappingURL=mergeScan.js.map
 
 /***/ },
-/* 555 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var min_1 = __webpack_require__(556);
+	var min_1 = __webpack_require__(553);
 	Observable_1.Observable.prototype.min = min_1.min;
 	//# sourceMappingURL=min.js.map
 
 /***/ },
-/* 556 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var reduce_1 = __webpack_require__(548);
+	var reduce_1 = __webpack_require__(545);
 	/**
 	 * The Min operator operates on an Observable that emits numbers (or items that can be evaluated as numbers),
 	 * and when source Observable completes it emits a single item: the item with the smallest number.
@@ -58691,21 +58621,21 @@
 	//# sourceMappingURL=min.js.map
 
 /***/ },
-/* 557 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var multicast_1 = __webpack_require__(558);
+	var multicast_1 = __webpack_require__(555);
 	Observable_1.Observable.prototype.multicast = multicast_1.multicast;
 	//# sourceMappingURL=multicast.js.map
 
 /***/ },
-/* 558 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ConnectableObservable_1 = __webpack_require__(559);
+	var ConnectableObservable_1 = __webpack_require__(556);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits the results of invoking a specified selector on items
@@ -58763,7 +58693,7 @@
 	//# sourceMappingURL=multicast.js.map
 
 /***/ },
-/* 559 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58930,37 +58860,37 @@
 	//# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ },
-/* 560 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var observeOn_1 = __webpack_require__(389);
+	var observeOn_1 = __webpack_require__(386);
 	Observable_1.Observable.prototype.observeOn = observeOn_1.observeOn;
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 561 */
+/* 558 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var onErrorResumeNext_1 = __webpack_require__(425);
+	var onErrorResumeNext_1 = __webpack_require__(422);
 	Observable_1.Observable.prototype.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNext;
 	//# sourceMappingURL=onErrorResumeNext.js.map
 
 /***/ },
-/* 562 */
+/* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var pairwise_1 = __webpack_require__(563);
+	var pairwise_1 = __webpack_require__(560);
 	Observable_1.Observable.prototype.pairwise = pairwise_1.pairwise;
 	//# sourceMappingURL=pairwise.js.map
 
 /***/ },
-/* 563 */
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59042,22 +58972,22 @@
 	//# sourceMappingURL=pairwise.js.map
 
 /***/ },
-/* 564 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var partition_1 = __webpack_require__(565);
+	var partition_1 = __webpack_require__(562);
 	Observable_1.Observable.prototype.partition = partition_1.partition;
 	//# sourceMappingURL=partition.js.map
 
 /***/ },
-/* 565 */
+/* 562 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var not_1 = __webpack_require__(566);
-	var filter_1 = __webpack_require__(513);
+	var not_1 = __webpack_require__(563);
+	var filter_1 = __webpack_require__(510);
 	/**
 	 * Splits the source Observable into two, one with values that satisfy a
 	 * predicate, and another with values that don't satisfy the predicate.
@@ -59109,7 +59039,7 @@
 	//# sourceMappingURL=partition.js.map
 
 /***/ },
-/* 566 */
+/* 563 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -59125,21 +59055,21 @@
 	//# sourceMappingURL=not.js.map
 
 /***/ },
-/* 567 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var pluck_1 = __webpack_require__(568);
+	var pluck_1 = __webpack_require__(565);
 	Observable_1.Observable.prototype.pluck = pluck_1.pluck;
 	//# sourceMappingURL=pluck.js.map
 
 /***/ },
-/* 568 */
+/* 565 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var map_1 = __webpack_require__(350);
+	var map_1 = __webpack_require__(347);
 	/**
 	 * Maps each source value (an object) to its specified nested property.
 	 *
@@ -59198,22 +59128,22 @@
 	//# sourceMappingURL=pluck.js.map
 
 /***/ },
-/* 569 */
+/* 566 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var publish_1 = __webpack_require__(570);
+	var publish_1 = __webpack_require__(567);
 	Observable_1.Observable.prototype.publish = publish_1.publish;
 	//# sourceMappingURL=publish.js.map
 
 /***/ },
-/* 570 */
+/* 567 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Subject_1 = __webpack_require__(323);
-	var multicast_1 = __webpack_require__(558);
+	var multicast_1 = __webpack_require__(555);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns a ConnectableObservable, which is a variety of Observable that waits until its connect method is called
@@ -59236,22 +59166,22 @@
 	//# sourceMappingURL=publish.js.map
 
 /***/ },
-/* 571 */
+/* 568 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var publishBehavior_1 = __webpack_require__(572);
+	var publishBehavior_1 = __webpack_require__(569);
 	Observable_1.Observable.prototype.publishBehavior = publishBehavior_1.publishBehavior;
 	//# sourceMappingURL=publishBehavior.js.map
 
 /***/ },
-/* 572 */
+/* 569 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var BehaviorSubject_1 = __webpack_require__(573);
-	var multicast_1 = __webpack_require__(558);
+	var BehaviorSubject_1 = __webpack_require__(570);
+	var multicast_1 = __webpack_require__(555);
 	/**
 	 * @param value
 	 * @return {ConnectableObservable<T>}
@@ -59265,7 +59195,7 @@
 	//# sourceMappingURL=publishBehavior.js.map
 
 /***/ },
-/* 573 */
+/* 570 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59319,22 +59249,22 @@
 	//# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ },
-/* 574 */
+/* 571 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var publishReplay_1 = __webpack_require__(575);
+	var publishReplay_1 = __webpack_require__(572);
 	Observable_1.Observable.prototype.publishReplay = publishReplay_1.publishReplay;
 	//# sourceMappingURL=publishReplay.js.map
 
 /***/ },
-/* 575 */
+/* 572 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ReplaySubject_1 = __webpack_require__(451);
-	var multicast_1 = __webpack_require__(558);
+	var ReplaySubject_1 = __webpack_require__(448);
+	var multicast_1 = __webpack_require__(555);
 	/**
 	 * @param bufferSize
 	 * @param windowTime
@@ -59352,22 +59282,22 @@
 	//# sourceMappingURL=publishReplay.js.map
 
 /***/ },
-/* 576 */
+/* 573 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var publishLast_1 = __webpack_require__(577);
+	var publishLast_1 = __webpack_require__(574);
 	Observable_1.Observable.prototype.publishLast = publishLast_1.publishLast;
 	//# sourceMappingURL=publishLast.js.map
 
 /***/ },
-/* 577 */
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AsyncSubject_1 = __webpack_require__(355);
-	var multicast_1 = __webpack_require__(558);
+	var AsyncSubject_1 = __webpack_require__(352);
+	var multicast_1 = __webpack_require__(555);
 	/**
 	 * @return {ConnectableObservable<T>}
 	 * @method publishLast
@@ -59380,37 +59310,37 @@
 	//# sourceMappingURL=publishLast.js.map
 
 /***/ },
-/* 578 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var race_1 = __webpack_require__(417);
+	var race_1 = __webpack_require__(414);
 	Observable_1.Observable.prototype.race = race_1.race;
 	//# sourceMappingURL=race.js.map
 
 /***/ },
-/* 579 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var reduce_1 = __webpack_require__(548);
+	var reduce_1 = __webpack_require__(545);
 	Observable_1.Observable.prototype.reduce = reduce_1.reduce;
 	//# sourceMappingURL=reduce.js.map
 
 /***/ },
-/* 580 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var repeat_1 = __webpack_require__(581);
+	var repeat_1 = __webpack_require__(578);
 	Observable_1.Observable.prototype.repeat = repeat_1.repeat;
 	//# sourceMappingURL=repeat.js.map
 
 /***/ },
-/* 581 */
+/* 578 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59420,7 +59350,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var EmptyObservable_1 = __webpack_require__(364);
+	var EmptyObservable_1 = __webpack_require__(361);
 	/**
 	 * Returns an Observable that repeats the stream of items emitted by the source Observable at most count times,
 	 * on a particular Scheduler.
@@ -59490,17 +59420,17 @@
 	//# sourceMappingURL=repeat.js.map
 
 /***/ },
-/* 582 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var repeatWhen_1 = __webpack_require__(583);
+	var repeatWhen_1 = __webpack_require__(580);
 	Observable_1.Observable.prototype.repeatWhen = repeatWhen_1.repeatWhen;
 	//# sourceMappingURL=repeatWhen.js.map
 
 /***/ },
-/* 583 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59512,8 +59442,8 @@
 	var Subject_1 = __webpack_require__(323);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Returns an Observable that emits the same values as the source observable with the exception of a `complete`.
 	 * A `complete` will cause the emission of the Throwable that cause the complete to the Observable returned from
@@ -59611,17 +59541,17 @@
 	//# sourceMappingURL=repeatWhen.js.map
 
 /***/ },
-/* 584 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var retry_1 = __webpack_require__(585);
+	var retry_1 = __webpack_require__(582);
 	Observable_1.Observable.prototype.retry = retry_1.retry;
 	//# sourceMappingURL=retry.js.map
 
 /***/ },
-/* 585 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59695,17 +59625,17 @@
 	//# sourceMappingURL=retry.js.map
 
 /***/ },
-/* 586 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var retryWhen_1 = __webpack_require__(587);
+	var retryWhen_1 = __webpack_require__(584);
 	Observable_1.Observable.prototype.retryWhen = retryWhen_1.retryWhen;
 	//# sourceMappingURL=retryWhen.js.map
 
 /***/ },
-/* 587 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59717,8 +59647,8 @@
 	var Subject_1 = __webpack_require__(323);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Returns an Observable that emits the same values as the source observable with the exception of an `error`.
 	 * An `error` will cause the emission of the Throwable that cause the error to the Observable returned from
@@ -59816,17 +59746,17 @@
 	//# sourceMappingURL=retryWhen.js.map
 
 /***/ },
-/* 588 */
+/* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var sample_1 = __webpack_require__(589);
+	var sample_1 = __webpack_require__(586);
 	Observable_1.Observable.prototype.sample = sample_1.sample;
 	//# sourceMappingURL=sample.js.map
 
 /***/ },
-/* 589 */
+/* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59835,8 +59765,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Emits the most recently emitted value from the source Observable whenever
 	 * another Observable, the `notifier`, emits.
@@ -59919,17 +59849,17 @@
 	//# sourceMappingURL=sample.js.map
 
 /***/ },
-/* 590 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var sampleTime_1 = __webpack_require__(591);
+	var sampleTime_1 = __webpack_require__(588);
 	Observable_1.Observable.prototype.sampleTime = sampleTime_1.sampleTime;
 	//# sourceMappingURL=sampleTime.js.map
 
 /***/ },
-/* 591 */
+/* 588 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59939,7 +59869,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	/**
 	 * Emits the most recently emitted value from the source Observable within
 	 * periodic time intervals.
@@ -60025,17 +59955,17 @@
 	//# sourceMappingURL=sampleTime.js.map
 
 /***/ },
-/* 592 */
+/* 589 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var scan_1 = __webpack_require__(593);
+	var scan_1 = __webpack_require__(590);
 	Observable_1.Observable.prototype.scan = scan_1.scan;
 	//# sourceMappingURL=scan.js.map
 
 /***/ },
-/* 593 */
+/* 590 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60159,17 +60089,17 @@
 	//# sourceMappingURL=scan.js.map
 
 /***/ },
-/* 594 */
+/* 591 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var sequenceEqual_1 = __webpack_require__(595);
+	var sequenceEqual_1 = __webpack_require__(592);
 	Observable_1.Observable.prototype.sequenceEqual = sequenceEqual_1.sequenceEqual;
 	//# sourceMappingURL=sequenceEqual.js.map
 
 /***/ },
-/* 595 */
+/* 592 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60338,21 +60268,21 @@
 	//# sourceMappingURL=sequenceEqual.js.map
 
 /***/ },
-/* 596 */
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var share_1 = __webpack_require__(597);
+	var share_1 = __webpack_require__(594);
 	Observable_1.Observable.prototype.share = share_1.share;
 	//# sourceMappingURL=share.js.map
 
 /***/ },
-/* 597 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var multicast_1 = __webpack_require__(558);
+	var multicast_1 = __webpack_require__(555);
 	var Subject_1 = __webpack_require__(323);
 	function shareSubjectFactory() {
 	    return new Subject_1.Subject();
@@ -60377,17 +60307,17 @@
 	//# sourceMappingURL=share.js.map
 
 /***/ },
-/* 598 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var single_1 = __webpack_require__(599);
+	var single_1 = __webpack_require__(596);
 	Observable_1.Observable.prototype.single = single_1.single;
 	//# sourceMappingURL=single.js.map
 
 /***/ },
-/* 599 */
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60397,7 +60327,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var EmptyError_1 = __webpack_require__(522);
+	var EmptyError_1 = __webpack_require__(519);
 	/**
 	 * Returns an Observable that emits the single item emitted by the source Observable that matches a specified
 	 * predicate, if that Observable emits one such item. If the source Observable emits more than one such item or no
@@ -60487,17 +60417,17 @@
 	//# sourceMappingURL=single.js.map
 
 /***/ },
-/* 600 */
+/* 597 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var skip_1 = __webpack_require__(601);
+	var skip_1 = __webpack_require__(598);
 	Observable_1.Observable.prototype.skip = skip_1.skip;
 	//# sourceMappingURL=skip.js.map
 
 /***/ },
-/* 601 */
+/* 598 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60553,17 +60483,17 @@
 	//# sourceMappingURL=skip.js.map
 
 /***/ },
-/* 602 */
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var skipUntil_1 = __webpack_require__(603);
+	var skipUntil_1 = __webpack_require__(600);
 	Observable_1.Observable.prototype.skipUntil = skipUntil_1.skipUntil;
 	//# sourceMappingURL=skipUntil.js.map
 
 /***/ },
-/* 603 */
+/* 600 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60572,8 +60502,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Returns an Observable that skips items emitted by the source Observable until a second Observable emits an item.
 	 *
@@ -60639,17 +60569,17 @@
 	//# sourceMappingURL=skipUntil.js.map
 
 /***/ },
-/* 604 */
+/* 601 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var skipWhile_1 = __webpack_require__(605);
+	var skipWhile_1 = __webpack_require__(602);
 	Observable_1.Observable.prototype.skipWhile = skipWhile_1.skipWhile;
 	//# sourceMappingURL=skipWhile.js.map
 
 /***/ },
-/* 605 */
+/* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60720,25 +60650,25 @@
 	//# sourceMappingURL=skipWhile.js.map
 
 /***/ },
-/* 606 */
+/* 603 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var startWith_1 = __webpack_require__(607);
+	var startWith_1 = __webpack_require__(604);
 	Observable_1.Observable.prototype.startWith = startWith_1.startWith;
 	//# sourceMappingURL=startWith.js.map
 
 /***/ },
-/* 607 */
+/* 604 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(362);
-	var ScalarObservable_1 = __webpack_require__(363);
-	var EmptyObservable_1 = __webpack_require__(364);
-	var concat_1 = __webpack_require__(373);
-	var isScheduler_1 = __webpack_require__(361);
+	var ArrayObservable_1 = __webpack_require__(359);
+	var ScalarObservable_1 = __webpack_require__(360);
+	var EmptyObservable_1 = __webpack_require__(361);
+	var concat_1 = __webpack_require__(370);
+	var isScheduler_1 = __webpack_require__(358);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Returns an Observable that emits the items in a specified Iterable before it begins to emit items emitted by the
@@ -60779,21 +60709,21 @@
 	//# sourceMappingURL=startWith.js.map
 
 /***/ },
-/* 608 */
+/* 605 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var subscribeOn_1 = __webpack_require__(609);
+	var subscribeOn_1 = __webpack_require__(606);
 	Observable_1.Observable.prototype.subscribeOn = subscribeOn_1.subscribeOn;
 	//# sourceMappingURL=subscribeOn.js.map
 
 /***/ },
-/* 609 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var SubscribeOnObservable_1 = __webpack_require__(610);
+	var SubscribeOnObservable_1 = __webpack_require__(607);
 	/**
 	 * Asynchronously subscribes Observers to this Observable on the specified Scheduler.
 	 *
@@ -60813,7 +60743,7 @@
 	//# sourceMappingURL=subscribeOn.js.map
 
 /***/ },
-/* 610 */
+/* 607 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60823,8 +60753,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var asap_1 = __webpack_require__(611);
-	var isNumeric_1 = __webpack_require__(407);
+	var asap_1 = __webpack_require__(608);
+	var isNumeric_1 = __webpack_require__(404);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -60869,17 +60799,17 @@
 	//# sourceMappingURL=SubscribeOnObservable.js.map
 
 /***/ },
-/* 611 */
+/* 608 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AsapAction_1 = __webpack_require__(612);
-	var AsapScheduler_1 = __webpack_require__(615);
+	var AsapAction_1 = __webpack_require__(609);
+	var AsapScheduler_1 = __webpack_require__(612);
 	exports.asap = new AsapScheduler_1.AsapScheduler(AsapAction_1.AsapAction);
 	//# sourceMappingURL=asap.js.map
 
 /***/ },
-/* 612 */
+/* 609 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -60888,8 +60818,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Immediate_1 = __webpack_require__(613);
-	var AsyncAction_1 = __webpack_require__(409);
+	var Immediate_1 = __webpack_require__(610);
+	var AsyncAction_1 = __webpack_require__(406);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -60939,7 +60869,7 @@
 	//# sourceMappingURL=AsapAction.js.map
 
 /***/ },
-/* 613 */
+/* 610 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(clearImmediate, setImmediate) {/**
@@ -61151,10 +61081,10 @@
 	exports.ImmediateDefinition = ImmediateDefinition;
 	exports.Immediate = new ImmediateDefinition(root_1.root);
 	//# sourceMappingURL=Immediate.js.map
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(614).clearImmediate, __webpack_require__(614).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(611).clearImmediate, __webpack_require__(611).setImmediate))
 
 /***/ },
-/* 614 */
+/* 611 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(310).nextTick;
@@ -61233,10 +61163,10 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(614).setImmediate, __webpack_require__(614).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(611).setImmediate, __webpack_require__(611).clearImmediate))
 
 /***/ },
-/* 615 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61245,7 +61175,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncScheduler_1 = __webpack_require__(411);
+	var AsyncScheduler_1 = __webpack_require__(408);
 	var AsapScheduler = (function (_super) {
 	    __extends(AsapScheduler, _super);
 	    function AsapScheduler() {
@@ -61278,18 +61208,18 @@
 	//# sourceMappingURL=AsapScheduler.js.map
 
 /***/ },
-/* 616 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var switch_1 = __webpack_require__(617);
+	var switch_1 = __webpack_require__(614);
 	Observable_1.Observable.prototype.switch = switch_1._switch;
 	Observable_1.Observable.prototype._switch = switch_1._switch;
 	//# sourceMappingURL=switch.js.map
 
 /***/ },
-/* 617 */
+/* 614 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61298,8 +61228,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by
 	 * subscribing to only the most recently emitted of those inner Observables.
@@ -61402,17 +61332,17 @@
 	//# sourceMappingURL=switch.js.map
 
 /***/ },
-/* 618 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var switchMap_1 = __webpack_require__(619);
+	var switchMap_1 = __webpack_require__(616);
 	Observable_1.Observable.prototype.switchMap = switchMap_1.switchMap;
 	//# sourceMappingURL=switchMap.js.map
 
 /***/ },
-/* 619 */
+/* 616 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61421,8 +61351,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to an Observable which is merged in the output
@@ -61557,17 +61487,17 @@
 	//# sourceMappingURL=switchMap.js.map
 
 /***/ },
-/* 620 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var switchMapTo_1 = __webpack_require__(621);
+	var switchMapTo_1 = __webpack_require__(618);
 	Observable_1.Observable.prototype.switchMapTo = switchMapTo_1.switchMapTo;
 	//# sourceMappingURL=switchMapTo.js.map
 
 /***/ },
-/* 621 */
+/* 618 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61576,8 +61506,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Projects each source value to the same Observable which is flattened multiple
@@ -61699,17 +61629,17 @@
 	//# sourceMappingURL=switchMapTo.js.map
 
 /***/ },
-/* 622 */
+/* 619 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var take_1 = __webpack_require__(623);
+	var take_1 = __webpack_require__(620);
 	Observable_1.Observable.prototype.take = take_1.take;
 	//# sourceMappingURL=take.js.map
 
 /***/ },
-/* 623 */
+/* 620 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61719,8 +61649,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
-	var EmptyObservable_1 = __webpack_require__(364);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(508);
+	var EmptyObservable_1 = __webpack_require__(361);
 	/**
 	 * Emits only the first `count` values emitted by the source Observable.
 	 *
@@ -61803,17 +61733,17 @@
 	//# sourceMappingURL=take.js.map
 
 /***/ },
-/* 624 */
+/* 621 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var takeLast_1 = __webpack_require__(625);
+	var takeLast_1 = __webpack_require__(622);
 	Observable_1.Observable.prototype.takeLast = takeLast_1.takeLast;
 	//# sourceMappingURL=takeLast.js.map
 
 /***/ },
-/* 625 */
+/* 622 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61823,8 +61753,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var ArgumentOutOfRangeError_1 = __webpack_require__(511);
-	var EmptyObservable_1 = __webpack_require__(364);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(508);
+	var EmptyObservable_1 = __webpack_require__(361);
 	/**
 	 * Emits only the last `count` values emitted by the source Observable.
 	 *
@@ -61925,17 +61855,17 @@
 	//# sourceMappingURL=takeLast.js.map
 
 /***/ },
-/* 626 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var takeUntil_1 = __webpack_require__(627);
+	var takeUntil_1 = __webpack_require__(624);
 	Observable_1.Observable.prototype.takeUntil = takeUntil_1.takeUntil;
 	//# sourceMappingURL=takeUntil.js.map
 
 /***/ },
-/* 627 */
+/* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61944,8 +61874,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Emits the values emitted by the source Observable until a `notifier`
 	 * Observable emits a value.
@@ -62015,17 +61945,17 @@
 	//# sourceMappingURL=takeUntil.js.map
 
 /***/ },
-/* 628 */
+/* 625 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var takeWhile_1 = __webpack_require__(629);
+	var takeWhile_1 = __webpack_require__(626);
 	Observable_1.Observable.prototype.takeWhile = takeWhile_1.takeWhile;
 	//# sourceMappingURL=takeWhile.js.map
 
 /***/ },
-/* 629 */
+/* 626 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62122,17 +62052,17 @@
 	//# sourceMappingURL=takeWhile.js.map
 
 /***/ },
-/* 630 */
+/* 627 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var throttle_1 = __webpack_require__(631);
+	var throttle_1 = __webpack_require__(628);
 	Observable_1.Observable.prototype.throttle = throttle_1.throttle;
 	//# sourceMappingURL=throttle.js.map
 
 /***/ },
-/* 631 */
+/* 628 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62141,8 +62071,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Emits a value from the source Observable, then ignores subsequent source
 	 * values for a duration determined by another Observable, then repeats this
@@ -62245,17 +62175,17 @@
 	//# sourceMappingURL=throttle.js.map
 
 /***/ },
-/* 632 */
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var throttleTime_1 = __webpack_require__(633);
+	var throttleTime_1 = __webpack_require__(630);
 	Observable_1.Observable.prototype.throttleTime = throttleTime_1.throttleTime;
 	//# sourceMappingURL=throttleTime.js.map
 
 /***/ },
-/* 633 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62265,7 +62195,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	/**
 	 * Emits a value from the source Observable, then ignores subsequent source
 	 * values for `duration` milliseconds, then repeats this process.
@@ -62355,17 +62285,17 @@
 	//# sourceMappingURL=throttleTime.js.map
 
 /***/ },
-/* 634 */
+/* 631 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var timeInterval_1 = __webpack_require__(635);
+	var timeInterval_1 = __webpack_require__(632);
 	Observable_1.Observable.prototype.timeInterval = timeInterval_1.timeInterval;
 	//# sourceMappingURL=timeInterval.js.map
 
 /***/ },
-/* 635 */
+/* 632 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62375,7 +62305,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	/**
 	 * @param scheduler
 	 * @return {Observable<TimeInterval<any>>|WebSocketSubject<T>|Observable<T>}
@@ -62429,17 +62359,17 @@
 	//# sourceMappingURL=timeInterval.js.map
 
 /***/ },
-/* 636 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var timeout_1 = __webpack_require__(637);
+	var timeout_1 = __webpack_require__(634);
 	Observable_1.Observable.prototype.timeout = timeout_1.timeout;
 	//# sourceMappingURL=timeout.js.map
 
 /***/ },
-/* 637 */
+/* 634 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62448,10 +62378,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(408);
-	var isDate_1 = __webpack_require__(441);
+	var async_1 = __webpack_require__(405);
+	var isDate_1 = __webpack_require__(438);
 	var Subscriber_1 = __webpack_require__(327);
-	var TimeoutError_1 = __webpack_require__(638);
+	var TimeoutError_1 = __webpack_require__(635);
 	/**
 	 * @param due
 	 * @param errorToSend
@@ -62548,7 +62478,7 @@
 	//# sourceMappingURL=timeout.js.map
 
 /***/ },
-/* 638 */
+/* 635 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -62578,17 +62508,17 @@
 	//# sourceMappingURL=TimeoutError.js.map
 
 /***/ },
-/* 639 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var timeoutWith_1 = __webpack_require__(640);
+	var timeoutWith_1 = __webpack_require__(637);
 	Observable_1.Observable.prototype.timeoutWith = timeoutWith_1.timeoutWith;
 	//# sourceMappingURL=timeoutWith.js.map
 
 /***/ },
-/* 640 */
+/* 637 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62597,10 +62527,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var async_1 = __webpack_require__(408);
-	var isDate_1 = __webpack_require__(441);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var async_1 = __webpack_require__(405);
+	var isDate_1 = __webpack_require__(438);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * @param due
@@ -62704,17 +62634,17 @@
 	//# sourceMappingURL=timeoutWith.js.map
 
 /***/ },
-/* 641 */
+/* 638 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var timestamp_1 = __webpack_require__(642);
+	var timestamp_1 = __webpack_require__(639);
 	Observable_1.Observable.prototype.timestamp = timestamp_1.timestamp;
 	//# sourceMappingURL=timestamp.js.map
 
 /***/ },
-/* 642 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62724,7 +62654,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(327);
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	/**
 	 * @param scheduler
 	 * @return {Observable<Timestamp<any>>|WebSocketSubject<T>|Observable<T>}
@@ -62769,17 +62699,17 @@
 	//# sourceMappingURL=timestamp.js.map
 
 /***/ },
-/* 643 */
+/* 640 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var toArray_1 = __webpack_require__(644);
+	var toArray_1 = __webpack_require__(641);
 	Observable_1.Observable.prototype.toArray = toArray_1.toArray;
 	//# sourceMappingURL=toArray.js.map
 
 /***/ },
-/* 644 */
+/* 641 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62829,17 +62759,17 @@
 	//# sourceMappingURL=toArray.js.map
 
 /***/ },
-/* 645 */
+/* 642 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var toPromise_1 = __webpack_require__(646);
+	var toPromise_1 = __webpack_require__(643);
 	Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
 	//# sourceMappingURL=toPromise.js.map
 
 /***/ },
-/* 646 */
+/* 643 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62873,17 +62803,17 @@
 	//# sourceMappingURL=toPromise.js.map
 
 /***/ },
-/* 647 */
+/* 644 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var window_1 = __webpack_require__(648);
+	var window_1 = __webpack_require__(645);
 	Observable_1.Observable.prototype.window = window_1.window;
 	//# sourceMappingURL=window.js.map
 
 /***/ },
-/* 648 */
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -62893,8 +62823,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subject_1 = __webpack_require__(323);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Branch out the source Observable values as a nested Observable whenever
 	 * `windowBoundaries` emits.
@@ -62998,17 +62928,17 @@
 	//# sourceMappingURL=window.js.map
 
 /***/ },
-/* 649 */
+/* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var windowCount_1 = __webpack_require__(650);
+	var windowCount_1 = __webpack_require__(647);
 	Observable_1.Observable.prototype.windowCount = windowCount_1.windowCount;
 	//# sourceMappingURL=windowCount.js.map
 
 /***/ },
-/* 650 */
+/* 647 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63144,17 +63074,17 @@
 	//# sourceMappingURL=windowCount.js.map
 
 /***/ },
-/* 651 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var windowTime_1 = __webpack_require__(652);
+	var windowTime_1 = __webpack_require__(649);
 	Observable_1.Observable.prototype.windowTime = windowTime_1.windowTime;
 	//# sourceMappingURL=windowTime.js.map
 
 /***/ },
-/* 652 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63164,7 +63094,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subject_1 = __webpack_require__(323);
-	var async_1 = __webpack_require__(408);
+	var async_1 = __webpack_require__(405);
 	var Subscriber_1 = __webpack_require__(327);
 	/**
 	 * Branch out the source Observable values as a nested Observable periodically
@@ -63328,17 +63258,17 @@
 	//# sourceMappingURL=windowTime.js.map
 
 /***/ },
-/* 653 */
+/* 650 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var windowToggle_1 = __webpack_require__(654);
+	var windowToggle_1 = __webpack_require__(651);
 	Observable_1.Observable.prototype.windowToggle = windowToggle_1.windowToggle;
 	//# sourceMappingURL=windowToggle.js.map
 
 /***/ },
-/* 654 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63351,8 +63281,8 @@
 	var Subscription_1 = __webpack_require__(329);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Branch out the source Observable values as a nested Observable starting from
 	 * an emission from `openings` and ending when the output of `closingSelector`
@@ -63523,17 +63453,17 @@
 	//# sourceMappingURL=windowToggle.js.map
 
 /***/ },
-/* 655 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var windowWhen_1 = __webpack_require__(656);
+	var windowWhen_1 = __webpack_require__(653);
 	Observable_1.Observable.prototype.windowWhen = windowWhen_1.windowWhen;
 	//# sourceMappingURL=windowWhen.js.map
 
 /***/ },
-/* 656 */
+/* 653 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63545,8 +63475,8 @@
 	var Subject_1 = __webpack_require__(323);
 	var tryCatch_1 = __webpack_require__(332);
 	var errorObject_1 = __webpack_require__(333);
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/**
 	 * Branch out the source Observable values as a nested Observable using a
 	 * factory function of closing Observables to determine when to start a new
@@ -63665,17 +63595,17 @@
 	//# sourceMappingURL=windowWhen.js.map
 
 /***/ },
-/* 657 */
+/* 654 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var withLatestFrom_1 = __webpack_require__(658);
+	var withLatestFrom_1 = __webpack_require__(655);
 	Observable_1.Observable.prototype.withLatestFrom = withLatestFrom_1.withLatestFrom;
 	//# sourceMappingURL=withLatestFrom.js.map
 
 /***/ },
-/* 658 */
+/* 655 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63684,8 +63614,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(366);
-	var subscribeToResult_1 = __webpack_require__(367);
+	var OuterSubscriber_1 = __webpack_require__(363);
+	var subscribeToResult_1 = __webpack_require__(364);
 	/* tslint:disable:max-line-length */
 	/**
 	 * Combines the source Observable with other Observables to create an Observable
@@ -63810,31 +63740,31 @@
 	//# sourceMappingURL=withLatestFrom.js.map
 
 /***/ },
-/* 659 */
+/* 656 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var zip_1 = __webpack_require__(444);
+	var zip_1 = __webpack_require__(441);
 	Observable_1.Observable.prototype.zip = zip_1.zipProto;
 	//# sourceMappingURL=zip.js.map
 
 /***/ },
-/* 660 */
+/* 657 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(324);
-	var zipAll_1 = __webpack_require__(661);
+	var zipAll_1 = __webpack_require__(658);
 	Observable_1.Observable.prototype.zipAll = zipAll_1.zipAll;
 	//# sourceMappingURL=zipAll.js.map
 
 /***/ },
-/* 661 */
+/* 658 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var zip_1 = __webpack_require__(444);
+	var zip_1 = __webpack_require__(441);
 	/**
 	 * @param project
 	 * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
@@ -63848,7 +63778,7 @@
 	//# sourceMappingURL=zipAll.js.map
 
 /***/ },
-/* 662 */
+/* 659 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63858,11 +63788,11 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(324);
-	var Notification_1 = __webpack_require__(390);
-	var ColdObservable_1 = __webpack_require__(663);
-	var HotObservable_1 = __webpack_require__(667);
-	var SubscriptionLog_1 = __webpack_require__(665);
-	var VirtualTimeScheduler_1 = __webpack_require__(668);
+	var Notification_1 = __webpack_require__(387);
+	var ColdObservable_1 = __webpack_require__(660);
+	var HotObservable_1 = __webpack_require__(664);
+	var SubscriptionLog_1 = __webpack_require__(662);
+	var VirtualTimeScheduler_1 = __webpack_require__(665);
 	var defaultMaxFrame = 750;
 	var TestScheduler = (function (_super) {
 	    __extends(TestScheduler, _super);
@@ -64076,7 +64006,7 @@
 	//# sourceMappingURL=TestScheduler.js.map
 
 /***/ },
-/* 663 */
+/* 660 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64087,8 +64017,8 @@
 	};
 	var Observable_1 = __webpack_require__(324);
 	var Subscription_1 = __webpack_require__(329);
-	var SubscriptionLoggable_1 = __webpack_require__(664);
-	var applyMixins_1 = __webpack_require__(666);
+	var SubscriptionLoggable_1 = __webpack_require__(661);
+	var applyMixins_1 = __webpack_require__(663);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -64127,11 +64057,11 @@
 	//# sourceMappingURL=ColdObservable.js.map
 
 /***/ },
-/* 664 */
+/* 661 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var SubscriptionLog_1 = __webpack_require__(665);
+	var SubscriptionLog_1 = __webpack_require__(662);
 	var SubscriptionLoggable = (function () {
 	    function SubscriptionLoggable() {
 	        this.subscriptions = [];
@@ -64151,7 +64081,7 @@
 	//# sourceMappingURL=SubscriptionLoggable.js.map
 
 /***/ },
-/* 665 */
+/* 662 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -64167,7 +64097,7 @@
 	//# sourceMappingURL=SubscriptionLog.js.map
 
 /***/ },
-/* 666 */
+/* 663 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -64185,7 +64115,7 @@
 	//# sourceMappingURL=applyMixins.js.map
 
 /***/ },
-/* 667 */
+/* 664 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64196,8 +64126,8 @@
 	};
 	var Subject_1 = __webpack_require__(323);
 	var Subscription_1 = __webpack_require__(329);
-	var SubscriptionLoggable_1 = __webpack_require__(664);
-	var applyMixins_1 = __webpack_require__(666);
+	var SubscriptionLoggable_1 = __webpack_require__(661);
+	var applyMixins_1 = __webpack_require__(663);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -64238,7 +64168,7 @@
 	//# sourceMappingURL=HotObservable.js.map
 
 /***/ },
-/* 668 */
+/* 665 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64247,8 +64177,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncAction_1 = __webpack_require__(409);
-	var AsyncScheduler_1 = __webpack_require__(411);
+	var AsyncAction_1 = __webpack_require__(406);
+	var AsyncScheduler_1 = __webpack_require__(408);
 	var VirtualTimeScheduler = (function (_super) {
 	    __extends(VirtualTimeScheduler, _super);
 	    function VirtualTimeScheduler(SchedulerAction, maxFrames) {
@@ -64341,17 +64271,17 @@
 	//# sourceMappingURL=VirtualTimeScheduler.js.map
 
 /***/ },
-/* 669 */
+/* 666 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AnimationFrameAction_1 = __webpack_require__(670);
-	var AnimationFrameScheduler_1 = __webpack_require__(672);
+	var AnimationFrameAction_1 = __webpack_require__(667);
+	var AnimationFrameScheduler_1 = __webpack_require__(669);
 	exports.animationFrame = new AnimationFrameScheduler_1.AnimationFrameScheduler(AnimationFrameAction_1.AnimationFrameAction);
 	//# sourceMappingURL=animationFrame.js.map
 
 /***/ },
-/* 670 */
+/* 667 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64360,8 +64290,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncAction_1 = __webpack_require__(409);
-	var AnimationFrame_1 = __webpack_require__(671);
+	var AsyncAction_1 = __webpack_require__(406);
+	var AnimationFrame_1 = __webpack_require__(668);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -64411,7 +64341,7 @@
 	//# sourceMappingURL=AnimationFrameAction.js.map
 
 /***/ },
-/* 671 */
+/* 668 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64450,7 +64380,7 @@
 	//# sourceMappingURL=AnimationFrame.js.map
 
 /***/ },
-/* 672 */
+/* 669 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64459,7 +64389,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var AsyncScheduler_1 = __webpack_require__(411);
+	var AsyncScheduler_1 = __webpack_require__(408);
 	var AnimationFrameScheduler = (function (_super) {
 	    __extends(AnimationFrameScheduler, _super);
 	    function AnimationFrameScheduler() {
@@ -64490,6 +64420,77 @@
 	}(AsyncScheduler_1.AsyncScheduler));
 	exports.AnimationFrameScheduler = AnimationFrameScheduler;
 	//# sourceMappingURL=AnimationFrameScheduler.js.map
+
+/***/ },
+/* 670 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var table_1 = __webpack_require__(671);
+	exports.CityTable = table_1.CityTable;
+	var map_1 = __webpack_require__(673);
+	exports.GoogleMap = map_1.GoogleMap;
+	var header_1 = __webpack_require__(675);
+	exports.MyHeader = header_1.MyHeader;
+
+
+/***/ },
+/* 671 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var table_1 = __webpack_require__(672);
+	exports.CityTable = table_1.CityTable;
+
+
+/***/ },
+/* 672 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(322);
+	var app_service_1 = __webpack_require__(344);
+	var CityTable = (function () {
+	    function CityTable(dataService) {
+	        this.dataService = dataService;
+	        this.citiesArray = [];
+	        this.currentPage = 1;
+	    }
+	    CityTable.prototype.ngOnInit = function () {
+	        var _this = this;
+	        this.dataService.fetchData(this.coords).subscribe(function (data) {
+	            _this.citiesArray = data;
+	            _this.cllectionSize = data.length;
+	        }, function (error) {
+	            alert(error);
+	        });
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], CityTable.prototype, "coords", void 0);
+	    CityTable = __decorate([
+	        core_1.Component({
+	            selector: 'city-table',
+	            styles: ["\n        td{\n            cursor:pointer\n            }\n    "],
+	            template: "\n    <table class=\"table table-model-2 table-hover\">\n        <thead>\n            <tr>\n                <th>#</th>\n                <th>City</th>\n                <th>temperature</th>\n                <th>Pressure</th>\n                <th>Wind speed</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>\n                    <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>\n                    <td *ngIf='l'>{{currentPage}}0</td>\n                    <td>{{item.name}}</td>\n                    <td>{{item.main.temp}}</td>\n                    <td>{{item.main.pressure}}</td>\n                    <td>{{item.wind.speed}}</td>\n            </tr>\n        </tbody>\n    </table>\n    <ngb-pagination [collectionSize]=\"cllectionSize\" [(page)]=\"currentPage\" size=\"sm\"></ngb-pagination>\n    ",
+	            providers: [app_service_1.DataService]
+	        }), 
+	        __metadata('design:paramtypes', [app_service_1.DataService])
+	    ], CityTable);
+	    return CityTable;
+	}());
+	exports.CityTable = CityTable;
+
 
 /***/ },
 /* 673 */
@@ -64561,13 +64562,12 @@
 	var core_1 = __webpack_require__(322);
 	var MyHeader = (function () {
 	    function MyHeader() {
-	        alert();
 	    }
 	    MyHeader = __decorate([
 	        core_1.Component({
 	            selector: 'my-header',
-	            styles: ["\n\t\t.header {\n\t\t\theight: 300px;\n\t\t}\n\t"],
-	            template: "\n    <div class='header'>!</div>\n    "
+	            styles: ["\n\t\t\n                .my-header {\n\t\t\tposition:absolute;\n                        height: 200px;\n                        top:0;\n                        left:0;\n                        right:0;\n                        background:#607D8B;\n                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);\n\t\t}\n                .angular-span{\n                    position:relative;\n                    font-size:26px;\n                    color:#fff;\n                    margin:30px;\n                    top:30px;\n                    font-family: Roboto, \"Helvetica Neue\", sans-serif;\n                }\n                \n\t"],
+	            template: "\n    <div class='my-header'>\n        <span class=\"angular-span\">Angular2</span>\n    </div>\n    \n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], MyHeader);
@@ -64581,7 +64581,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(322), __webpack_require__(323), __webpack_require__(340), __webpack_require__(678), __webpack_require__(324), __webpack_require__(341), __webpack_require__(348), __webpack_require__(380), __webpack_require__(422), __webpack_require__(349), __webpack_require__(512), __webpack_require__(501), __webpack_require__(596), __webpack_require__(514), __webpack_require__(466), __webpack_require__(520)) :
+	     true ? factory(exports, __webpack_require__(322), __webpack_require__(323), __webpack_require__(340), __webpack_require__(678), __webpack_require__(324), __webpack_require__(341), __webpack_require__(345), __webpack_require__(377), __webpack_require__(419), __webpack_require__(346), __webpack_require__(509), __webpack_require__(498), __webpack_require__(593), __webpack_require__(511), __webpack_require__(463), __webpack_require__(517)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Subject', '@angular/platform-browser', '@angular/forms', 'rxjs/Observable', '@angular/common', '@angular/http', 'rxjs/add/observable/forkJoin', 'rxjs/add/observable/of', 'rxjs/add/operator/map', 'rxjs/add/operator/filter', 'rxjs/add/operator/do', 'rxjs/add/operator/share', 'rxjs/add/operator/finally', 'rxjs/add/operator/catch', 'rxjs/add/operator/first'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.material = global.ng.material || {}),global.ng.core,global.Rx,global.ng.platformBrowser,global.ng.forms,global.Rx,global.ng.common,global.ng.http,global.Rx.Observable,global.Rx.Observable,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype));
 	}(this, (function (exports,_angular_core,rxjs_Subject,_angular_platformBrowser,_angular_forms,rxjs_Observable,_angular_common,_angular_http,rxjs_add_observable_forkJoin,rxjs_add_observable_of,rxjs_add_operator_map,rxjs_add_operator_filter,rxjs_add_operator_do,rxjs_add_operator_share,rxjs_add_operator_finally,rxjs_add_operator_catch,rxjs_add_operator_first) { 'use strict';
@@ -74449,7 +74449,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(322), __webpack_require__(646), __webpack_require__(323), __webpack_require__(324), __webpack_require__(398)) :
+	     true ? factory(exports, __webpack_require__(322), __webpack_require__(643), __webpack_require__(323), __webpack_require__(324), __webpack_require__(395)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/operator/toPromise', 'rxjs/Subject', 'rxjs/Observable', 'rxjs/observable/fromPromise'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.forms = global.ng.forms || {}),global.ng.core,global.Rx.Observable.prototype,global.Rx,global.Rx,global.Rx.Observable));
 	}(this, function (exports,_angular_core,rxjs_operator_toPromise,rxjs_Subject,rxjs_Observable,rxjs_observable_fromPromise) { 'use strict';
@@ -78917,6 +78917,5520 @@
 /* 679 */
 /***/ function(module, exports, __webpack_require__) {
 
+	(function webpackUniversalModuleDefinition(root, factory) {
+		if(true)
+			module.exports = factory(__webpack_require__(498), __webpack_require__(535), __webpack_require__(388), __webpack_require__(324), __webpack_require__(341), __webpack_require__(322), __webpack_require__(678));
+		else if(typeof define === 'function' && define.amd)
+			define(["rxjs/add/operator/do", "rxjs/add/operator/let", "rxjs/add/observable/fromEvent", "rxjs/Observable", "@angular/common", "@angular/core", "@angular/forms"], factory);
+		else if(typeof exports === 'object')
+			exports["ngb"] = factory(require("rxjs/add/operator/do"), require("rxjs/add/operator/let"), require("rxjs/add/observable/fromEvent"), require("rxjs/Observable"), require("@angular/common"), require("@angular/core"), require("@angular/forms"));
+		else
+			root["ngb"] = factory(root["Rx"]["Observable"]["prototype"], root["Rx"]["Observable"]["prototype"], root["Rx"]["Observable"], root["Rx"], root["ng"]["common"], root["ng"]["core"], root["ng"]["forms"]);
+	})(this, function(__WEBPACK_EXTERNAL_MODULE_72__, __WEBPACK_EXTERNAL_MODULE_73__, __WEBPACK_EXTERNAL_MODULE_74__, __WEBPACK_EXTERNAL_MODULE_75__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_5__) {
+	return /******/ (function(modules) { // webpackBootstrap
+	/******/ 	// The module cache
+	/******/ 	var installedModules = {};
+	/******/
+	/******/ 	// The require function
+	/******/ 	function __webpack_require__(moduleId) {
+	/******/
+	/******/ 		// Check if module is in cache
+	/******/ 		if(installedModules[moduleId])
+	/******/ 			return installedModules[moduleId].exports;
+	/******/
+	/******/ 		// Create a new module (and put it into the cache)
+	/******/ 		var module = installedModules[moduleId] = {
+	/******/ 			i: moduleId,
+	/******/ 			l: false,
+	/******/ 			exports: {}
+	/******/ 		};
+	/******/
+	/******/ 		// Execute the module function
+	/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+	/******/
+	/******/ 		// Flag the module as loaded
+	/******/ 		module.l = true;
+	/******/
+	/******/ 		// Return the exports of the module
+	/******/ 		return module.exports;
+	/******/ 	}
+	/******/
+	/******/
+	/******/ 	// expose the modules object (__webpack_modules__)
+	/******/ 	__webpack_require__.m = modules;
+	/******/
+	/******/ 	// expose the module cache
+	/******/ 	__webpack_require__.c = installedModules;
+	/******/
+	/******/ 	// identity function for calling harmory imports with the correct context
+	/******/ 	__webpack_require__.i = function(value) { return value; };
+	/******/
+	/******/ 	// define getter function for harmory exports
+	/******/ 	__webpack_require__.d = function(exports, name, getter) {
+	/******/ 		Object.defineProperty(exports, name, {
+	/******/ 			configurable: false,
+	/******/ 			enumerable: true,
+	/******/ 			get: getter
+	/******/ 		});
+	/******/ 	};
+	/******/
+	/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+	/******/ 	__webpack_require__.n = function(module) {
+	/******/ 		var getter = module && module.__esModule ?
+	/******/ 			function getDefault() { return module['default']; } :
+	/******/ 			function getModuleExports() { return module; };
+	/******/ 		__webpack_require__.d(getter, 'a', getter);
+	/******/ 		return getter;
+	/******/ 	};
+	/******/
+	/******/ 	// Object.prototype.hasOwnProperty.call
+	/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+	/******/
+	/******/ 	// __webpack_public_path__
+	/******/ 	__webpack_require__.p = "";
+	/******/
+	/******/ 	// Load entry module and return exports
+	/******/ 	return __webpack_require__(__webpack_require__.s = 76);
+	/******/ })
+	/************************************************************************/
+	/******/ ([
+	/* 0 */
+	/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+
+	/***/ },
+	/* 1 */
+	/***/ function(module, exports) {
+
+	"use strict";
+	"use strict";
+	function toInteger(value) {
+	    return parseInt("" + value, 10);
+	}
+	exports.toInteger = toInteger;
+	function toString(value) {
+	    return (value !== undefined && value !== null) ? "" + value : '';
+	}
+	exports.toString = toString;
+	function getValueInRange(value, max, min) {
+	    if (min === void 0) { min = 0; }
+	    return Math.max(Math.min(value, max), min);
+	}
+	exports.getValueInRange = getValueInRange;
+	function isString(value) {
+	    return typeof value === 'string';
+	}
+	exports.isString = isString;
+	function isNumber(value) {
+	    return !isNaN(toInteger(value));
+	}
+	exports.isNumber = isNumber;
+	function isDefined(value) {
+	    return value !== undefined && value !== null;
+	}
+	exports.isDefined = isDefined;
+	function padNumber(value) {
+	    if (isNumber(value)) {
+	        return ("0" + value).slice(-2);
+	    }
+	    else {
+	        return '';
+	    }
+	}
+	exports.padNumber = padNumber;
+	function regExpEscape(text) {
+	    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+	}
+	exports.regExpEscape = regExpEscape;
+	//# sourceMappingURL=util.js.map
+
+	/***/ },
+	/* 2 */
+	/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+	/***/ },
+	/* 3 */
+	/***/ function(module, exports) {
+
+	"use strict";
+	"use strict";
+	var NgbDate = (function () {
+	    function NgbDate(year, month, day) {
+	        this.year = year;
+	        this.month = month;
+	        this.day = day;
+	    }
+	    NgbDate.from = function (date) {
+	        return date ? new NgbDate(date.year, date.month, date.day ? date.day : 1) : null;
+	    };
+	    NgbDate.prototype.equals = function (other) {
+	        return other && this.year === other.year && this.month === other.month && this.day === other.day;
+	    };
+	    NgbDate.prototype.before = function (other) {
+	        if (!other) {
+	            return false;
+	        }
+	        if (this.year === other.year) {
+	            if (this.month === other.month) {
+	                return this.day === other.day ? false : this.day < other.day;
+	            }
+	            else {
+	                return this.month < other.month;
+	            }
+	        }
+	        else {
+	            return this.year < other.year;
+	        }
+	    };
+	    NgbDate.prototype.after = function (other) {
+	        if (!other) {
+	            return false;
+	        }
+	        if (this.year === other.year) {
+	            if (this.month === other.month) {
+	                return this.day === other.day ? false : this.day > other.day;
+	            }
+	            else {
+	                return this.month > other.month;
+	            }
+	        }
+	        else {
+	            return this.year > other.year;
+	        }
+	    };
+	    NgbDate.prototype.toString = function () { return this.year + "-" + this.month + "-" + this.day; };
+	    return NgbDate;
+	}());
+	exports.NgbDate = NgbDate;
+	//# sourceMappingURL=ngb-date.js.map
+
+	/***/ },
+	/* 4 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+	var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	/**
+	 * Type of the service supplying month and weekday names to to NgbDatepicker component.
+	 * See the i18n demo for how to extend this class and define a custom provider for i18n.
+	 */
+	var NgbDatepickerI18n = (function () {
+	    function NgbDatepickerI18n() {
+	    }
+	    NgbDatepickerI18n = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbDatepickerI18n);
+	    return NgbDatepickerI18n;
+	}());
+	exports.NgbDatepickerI18n = NgbDatepickerI18n;
+	var NgbDatepickerI18nDefault = (function (_super) {
+	    __extends(NgbDatepickerI18nDefault, _super);
+	    function NgbDatepickerI18nDefault() {
+	        _super.apply(this, arguments);
+	    }
+	    NgbDatepickerI18nDefault.prototype.getWeekdayName = function (weekday) { return WEEKDAYS[weekday - 1]; };
+	    NgbDatepickerI18nDefault.prototype.getMonthName = function (month) { return MONTHS[month - 1]; };
+	    NgbDatepickerI18nDefault = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbDatepickerI18nDefault);
+	    return NgbDatepickerI18nDefault;
+	}(NgbDatepickerI18n));
+	exports.NgbDatepickerI18nDefault = NgbDatepickerI18nDefault;
+	//# sourceMappingURL=datepicker-i18n.js.map
+
+	/***/ },
+	/* 5 */
+	/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
+
+	/***/ },
+	/* 6 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var ngb_date_1 = __webpack_require__(3);
+	var core_1 = __webpack_require__(0);
+	function fromJSDate(jsDate) {
+	    return new ngb_date_1.NgbDate(jsDate.getFullYear(), jsDate.getMonth() + 1, jsDate.getDate());
+	}
+	function toJSDate(date) {
+	    return new Date(date.year, date.month - 1, date.day);
+	}
+	var NgbCalendar = (function () {
+	    function NgbCalendar() {
+	    }
+	    NgbCalendar = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbCalendar);
+	    return NgbCalendar;
+	}());
+	exports.NgbCalendar = NgbCalendar;
+	var NgbCalendarGregorian = (function (_super) {
+	    __extends(NgbCalendarGregorian, _super);
+	    function NgbCalendarGregorian() {
+	        _super.apply(this, arguments);
+	    }
+	    NgbCalendarGregorian.prototype.getDaysPerWeek = function () { return 7; };
+	    NgbCalendarGregorian.prototype.getMonths = function () { return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; };
+	    NgbCalendarGregorian.prototype.getWeeksPerMonth = function () { return 6; };
+	    NgbCalendarGregorian.prototype.getNext = function (date, period, number) {
+	        if (period === void 0) { period = 'd'; }
+	        if (number === void 0) { number = 1; }
+	        var jsDate = toJSDate(date);
+	        switch (period) {
+	            case 'y':
+	                return new ngb_date_1.NgbDate(date.year + number, 1, 1);
+	            case 'm':
+	                jsDate = new Date(date.year, date.month + number - 1, 1);
+	                break;
+	            case 'd':
+	                jsDate.setDate(jsDate.getDate() + number);
+	                break;
+	            default:
+	                return date;
+	        }
+	        return fromJSDate(jsDate);
+	    };
+	    NgbCalendarGregorian.prototype.getPrev = function (date, period, number) {
+	        if (period === void 0) { period = 'd'; }
+	        if (number === void 0) { number = 1; }
+	        return this.getNext(date, period, -number);
+	    };
+	    NgbCalendarGregorian.prototype.getWeekday = function (date) {
+	        var jsDate = toJSDate(date);
+	        var day = jsDate.getDay();
+	        // in JS Date Sun=0, in ISO 8601 Sun=7
+	        return day === 0 ? 7 : day;
+	    };
+	    NgbCalendarGregorian.prototype.getWeekNumber = function (week, firstDayOfWeek) {
+	        // in JS Date Sun=0, in ISO 8601 Sun=7
+	        if (firstDayOfWeek === 7) {
+	            firstDayOfWeek = 0;
+	        }
+	        var thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
+	        var date = week[thursdayIndex];
+	        var jsDate = toJSDate(date);
+	        jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7)); // Thursday
+	        var time = jsDate.getTime();
+	        jsDate.setMonth(0); // Compare with Jan 1
+	        jsDate.setDate(1);
+	        return Math.floor(Math.round((time - jsDate.getTime()) / 86400000) / 7) + 1;
+	    };
+	    NgbCalendarGregorian.prototype.getToday = function () { return fromJSDate(new Date()); };
+	    NgbCalendarGregorian = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbCalendarGregorian);
+	    return NgbCalendarGregorian;
+	}(NgbCalendar));
+	exports.NgbCalendarGregorian = NgbCalendarGregorian;
+	//# sourceMappingURL=ngb-calendar.js.map
+
+	/***/ },
+	/* 7 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var core_1 = __webpack_require__(0);
+	var ContentRef = (function () {
+	    function ContentRef(nodes, viewRef, componentRef) {
+	        this.nodes = nodes;
+	        this.viewRef = viewRef;
+	        this.componentRef = componentRef;
+	    }
+	    return ContentRef;
+	}());
+	exports.ContentRef = ContentRef;
+	var PopupService = (function () {
+	    function PopupService(type, _injector, _viewContainerRef, _renderer, componentFactoryResolver) {
+	        this._injector = _injector;
+	        this._viewContainerRef = _viewContainerRef;
+	        this._renderer = _renderer;
+	        this._windowFactory = componentFactoryResolver.resolveComponentFactory(type);
+	    }
+	    PopupService.prototype.open = function (content) {
+	        if (!this._windowRef) {
+	            this._contentRef = this._getContentRef(content);
+	            this._windowRef =
+	                this._viewContainerRef.createComponent(this._windowFactory, 0, this._injector, this._contentRef.nodes);
+	        }
+	        return this._windowRef;
+	    };
+	    PopupService.prototype.close = function () {
+	        if (this._windowRef) {
+	            this._viewContainerRef.remove(this._viewContainerRef.indexOf(this._windowRef.hostView));
+	            this._windowRef = null;
+	            if (this._contentRef.viewRef) {
+	                this._viewContainerRef.remove(this._viewContainerRef.indexOf(this._contentRef.viewRef));
+	                this._contentRef = null;
+	            }
+	        }
+	    };
+	    PopupService.prototype._getContentRef = function (content) {
+	        if (!content) {
+	            return new ContentRef([]);
+	        }
+	        else if (content instanceof core_1.TemplateRef) {
+	            var viewRef = this._viewContainerRef.createEmbeddedView(content);
+	            return new ContentRef([viewRef.rootNodes], viewRef);
+	        }
+	        else {
+	            return new ContentRef([[this._renderer.createText(null, "" + content)]]);
+	        }
+	    };
+	    return PopupService;
+	}());
+	exports.PopupService = PopupService;
+	//# sourceMappingURL=popup.js.map
+
+	/***/ },
+	/* 8 */
+	/***/ function(module, exports) {
+
+	"use strict";
+	"use strict";
+	// previous version:
+	// https://github.com/angular-ui/bootstrap/blob/07c31d0731f7cb068a1932b8e01d2312b796b4ec/src/position/position.js
+	var Positioning = (function () {
+	    function Positioning() {
+	    }
+	    Positioning.prototype.getStyle = function (element, prop) { return window.getComputedStyle(element)[prop]; };
+	    Positioning.prototype.isStaticPositioned = function (element) {
+	        return (this.getStyle(element, 'position') || 'static') === 'static';
+	    };
+	    Positioning.prototype.offsetParent = function (element) {
+	        var offsetParentEl = element.offsetParent || document.documentElement;
+	        while (offsetParentEl && offsetParentEl !== document.documentElement && this.isStaticPositioned(offsetParentEl)) {
+	            offsetParentEl = offsetParentEl.offsetParent;
+	        }
+	        return offsetParentEl || document.documentElement;
+	    };
+	    Positioning.prototype.position = function (element, round) {
+	        if (round === void 0) { round = true; }
+	        var elPosition;
+	        var parentOffset = { width: 0, height: 0, top: 0, bottom: 0, left: 0, right: 0 };
+	        if (this.getStyle(element, 'position') === 'fixed') {
+	            elPosition = element.getBoundingClientRect();
+	        }
+	        else {
+	            var offsetParentEl = this.offsetParent(element);
+	            elPosition = this.offset(element, false);
+	            if (offsetParentEl !== document.documentElement) {
+	                parentOffset = this.offset(offsetParentEl, false);
+	            }
+	            parentOffset.top += offsetParentEl.clientTop;
+	            parentOffset.left += offsetParentEl.clientLeft;
+	        }
+	        elPosition.top -= parentOffset.top;
+	        elPosition.bottom -= parentOffset.top;
+	        elPosition.left -= parentOffset.left;
+	        elPosition.right -= parentOffset.left;
+	        if (round) {
+	            elPosition.top = Math.round(elPosition.top);
+	            elPosition.bottom = Math.round(elPosition.bottom);
+	            elPosition.left = Math.round(elPosition.left);
+	            elPosition.right = Math.round(elPosition.right);
+	        }
+	        return elPosition;
+	    };
+	    Positioning.prototype.offset = function (element, round) {
+	        if (round === void 0) { round = true; }
+	        var elBcr = element.getBoundingClientRect();
+	        var viewportOffset = {
+	            top: window.pageYOffset - document.documentElement.clientTop,
+	            left: window.pageXOffset - document.documentElement.clientLeft
+	        };
+	        var elOffset = {
+	            height: elBcr.height || element.offsetHeight,
+	            width: elBcr.width || element.offsetWidth,
+	            top: elBcr.top + viewportOffset.top,
+	            bottom: elBcr.bottom + viewportOffset.top,
+	            left: elBcr.left + viewportOffset.left,
+	            right: elBcr.right + viewportOffset.left
+	        };
+	        if (round) {
+	            elOffset.height = Math.round(elOffset.height);
+	            elOffset.width = Math.round(elOffset.width);
+	            elOffset.top = Math.round(elOffset.top);
+	            elOffset.bottom = Math.round(elOffset.bottom);
+	            elOffset.left = Math.round(elOffset.left);
+	            elOffset.right = Math.round(elOffset.right);
+	        }
+	        return elOffset;
+	    };
+	    Positioning.prototype.positionElements = function (hostElement, targetElement, placement, appendToBody) {
+	        var hostElPosition = appendToBody ? this.offset(hostElement, false) : this.position(hostElement, false);
+	        var shiftWidth = {
+	            left: hostElPosition.left,
+	            center: hostElPosition.left + hostElPosition.width / 2 - targetElement.offsetWidth / 2,
+	            right: hostElPosition.left + hostElPosition.width
+	        };
+	        var shiftHeight = {
+	            top: hostElPosition.top,
+	            center: hostElPosition.top + hostElPosition.height / 2 - targetElement.offsetHeight / 2,
+	            bottom: hostElPosition.top + hostElPosition.height
+	        };
+	        var targetElBCR = targetElement.getBoundingClientRect();
+	        var placementPrimary = placement.split('-')[0] || 'top';
+	        var placementSecondary = placement.split('-')[1] || 'center';
+	        var targetElPosition = {
+	            height: targetElBCR.height || targetElement.offsetHeight,
+	            width: targetElBCR.width || targetElement.offsetWidth,
+	            top: 0,
+	            bottom: targetElBCR.height || targetElement.offsetHeight,
+	            left: 0,
+	            right: targetElBCR.width || targetElement.offsetWidth
+	        };
+	        switch (placementPrimary) {
+	            case 'top':
+	                targetElPosition.top = hostElPosition.top - targetElement.offsetHeight;
+	                targetElPosition.bottom += hostElPosition.top - targetElement.offsetHeight;
+	                targetElPosition.left = shiftWidth[placementSecondary];
+	                targetElPosition.right += shiftWidth[placementSecondary];
+	                break;
+	            case 'bottom':
+	                targetElPosition.top = shiftHeight[placementPrimary];
+	                targetElPosition.bottom += shiftHeight[placementPrimary];
+	                targetElPosition.left = shiftWidth[placementSecondary];
+	                targetElPosition.right += shiftWidth[placementSecondary];
+	                break;
+	            case 'left':
+	                targetElPosition.top = shiftHeight[placementSecondary];
+	                targetElPosition.bottom += shiftHeight[placementSecondary];
+	                targetElPosition.left = hostElPosition.left - targetElement.offsetWidth;
+	                targetElPosition.right += hostElPosition.left - targetElement.offsetWidth;
+	                break;
+	            case 'right':
+	                targetElPosition.top = shiftHeight[placementSecondary];
+	                targetElPosition.bottom += shiftHeight[placementSecondary];
+	                targetElPosition.left = shiftWidth[placementPrimary];
+	                targetElPosition.right += shiftWidth[placementPrimary];
+	                break;
+	        }
+	        targetElPosition.top = Math.round(targetElPosition.top);
+	        targetElPosition.bottom = Math.round(targetElPosition.bottom);
+	        targetElPosition.left = Math.round(targetElPosition.left);
+	        targetElPosition.right = Math.round(targetElPosition.right);
+	        return targetElPosition;
+	    };
+	    return Positioning;
+	}());
+	exports.Positioning = Positioning;
+	var positionService = new Positioning();
+	function positionElements(hostElement, targetElement, placement, appendToBody) {
+	    var pos = positionService.positionElements(hostElement, targetElement, placement, appendToBody);
+	    targetElement.style.top = pos.top + "px";
+	    targetElement.style.left = pos.left + "px";
+	}
+	exports.positionElements = positionElements;
+	//# sourceMappingURL=positioning.js.map
+
+	/***/ },
+	/* 9 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var accordion_1 = __webpack_require__(42);
+	var accordion_config_1 = __webpack_require__(25);
+	var accordion_2 = __webpack_require__(42);
+	exports.NgbAccordion = accordion_2.NgbAccordion;
+	exports.NgbPanel = accordion_2.NgbPanel;
+	exports.NgbPanelTitle = accordion_2.NgbPanelTitle;
+	exports.NgbPanelContent = accordion_2.NgbPanelContent;
+	var accordion_config_2 = __webpack_require__(25);
+	exports.NgbAccordionConfig = accordion_config_2.NgbAccordionConfig;
+	var NGB_ACCORDION_DIRECTIVES = [accordion_1.NgbAccordion, accordion_1.NgbPanel, accordion_1.NgbPanelTitle, accordion_1.NgbPanelContent];
+	var NgbAccordionModule = (function () {
+	    function NgbAccordionModule() {
+	    }
+	    NgbAccordionModule.forRoot = function () { return { ngModule: NgbAccordionModule, providers: [accordion_config_1.NgbAccordionConfig] }; };
+	    NgbAccordionModule = __decorate([
+	        core_1.NgModule({ declarations: NGB_ACCORDION_DIRECTIVES, exports: NGB_ACCORDION_DIRECTIVES, imports: [common_1.CommonModule] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbAccordionModule);
+	    return NgbAccordionModule;
+	}());
+	exports.NgbAccordionModule = NgbAccordionModule;
+	//# sourceMappingURL=accordion.module.js.map
+
+	/***/ },
+	/* 10 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var alert_1 = __webpack_require__(43);
+	var alert_config_1 = __webpack_require__(26);
+	var alert_2 = __webpack_require__(43);
+	exports.NgbAlert = alert_2.NgbAlert;
+	var alert_config_2 = __webpack_require__(26);
+	exports.NgbAlertConfig = alert_config_2.NgbAlertConfig;
+	var NgbAlertModule = (function () {
+	    function NgbAlertModule() {
+	    }
+	    NgbAlertModule.forRoot = function () { return { ngModule: NgbAlertModule, providers: [alert_config_1.NgbAlertConfig] }; };
+	    NgbAlertModule = __decorate([
+	        core_1.NgModule({ declarations: [alert_1.NgbAlert], exports: [alert_1.NgbAlert], imports: [common_1.CommonModule], entryComponents: [alert_1.NgbAlert] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbAlertModule);
+	    return NgbAlertModule;
+	}());
+	exports.NgbAlertModule = NgbAlertModule;
+	//# sourceMappingURL=alert.module.js.map
+
+	/***/ },
+	/* 11 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var radio_1 = __webpack_require__(44);
+	var radio_2 = __webpack_require__(44);
+	exports.NgbRadio = radio_2.NgbRadio;
+	exports.NgbActiveLabel = radio_2.NgbActiveLabel;
+	exports.NgbRadioGroup = radio_2.NgbRadioGroup;
+	var NGB_RADIO_DIRECTIVES = [radio_1.NgbRadio, radio_1.NgbActiveLabel, radio_1.NgbRadioGroup];
+	var NgbButtonsModule = (function () {
+	    function NgbButtonsModule() {
+	    }
+	    NgbButtonsModule.forRoot = function () { return { ngModule: NgbButtonsModule, providers: [] }; };
+	    NgbButtonsModule = __decorate([
+	        core_1.NgModule({ declarations: NGB_RADIO_DIRECTIVES, exports: NGB_RADIO_DIRECTIVES }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbButtonsModule);
+	    return NgbButtonsModule;
+	}());
+	exports.NgbButtonsModule = NgbButtonsModule;
+	//# sourceMappingURL=radio.module.js.map
+
+	/***/ },
+	/* 12 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var carousel_1 = __webpack_require__(45);
+	var carousel_config_1 = __webpack_require__(27);
+	var carousel_2 = __webpack_require__(45);
+	exports.NgbCarousel = carousel_2.NgbCarousel;
+	exports.NgbSlide = carousel_2.NgbSlide;
+	var carousel_config_2 = __webpack_require__(27);
+	exports.NgbCarouselConfig = carousel_config_2.NgbCarouselConfig;
+	var NgbCarouselModule = (function () {
+	    function NgbCarouselModule() {
+	    }
+	    NgbCarouselModule.forRoot = function () { return { ngModule: NgbCarouselModule, providers: [carousel_config_1.NgbCarouselConfig] }; };
+	    NgbCarouselModule = __decorate([
+	        core_1.NgModule({ declarations: carousel_1.NGB_CAROUSEL_DIRECTIVES, exports: carousel_1.NGB_CAROUSEL_DIRECTIVES, imports: [common_1.CommonModule] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbCarouselModule);
+	    return NgbCarouselModule;
+	}());
+	exports.NgbCarouselModule = NgbCarouselModule;
+	//# sourceMappingURL=carousel.module.js.map
+
+	/***/ },
+	/* 13 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var collapse_1 = __webpack_require__(46);
+	var collapse_2 = __webpack_require__(46);
+	exports.NgbCollapse = collapse_2.NgbCollapse;
+	var NgbCollapseModule = (function () {
+	    function NgbCollapseModule() {
+	    }
+	    NgbCollapseModule.forRoot = function () { return { ngModule: NgbCollapseModule, providers: [] }; };
+	    NgbCollapseModule = __decorate([
+	        core_1.NgModule({ declarations: [collapse_1.NgbCollapse], exports: [collapse_1.NgbCollapse] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbCollapseModule);
+	    return NgbCollapseModule;
+	}());
+	exports.NgbCollapseModule = NgbCollapseModule;
+	//# sourceMappingURL=collapse.module.js.map
+
+	/***/ },
+	/* 14 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var datepicker_1 = __webpack_require__(29);
+	var datepicker_month_view_1 = __webpack_require__(49);
+	var datepicker_navigation_1 = __webpack_require__(51);
+	var datepicker_input_1 = __webpack_require__(48);
+	var forms_1 = __webpack_require__(5);
+	var datepicker_day_view_1 = __webpack_require__(47);
+	var datepicker_i18n_1 = __webpack_require__(4);
+	var ngb_calendar_1 = __webpack_require__(6);
+	var ngb_date_parser_formatter_1 = __webpack_require__(30);
+	var datepicker_service_1 = __webpack_require__(52);
+	var datepicker_navigation_select_1 = __webpack_require__(50);
+	var datepicker_config_1 = __webpack_require__(28);
+	var datepicker_2 = __webpack_require__(29);
+	exports.NgbDatepicker = datepicker_2.NgbDatepicker;
+	var datepicker_input_2 = __webpack_require__(48);
+	exports.NgbInputDatepicker = datepicker_input_2.NgbInputDatepicker;
+	var datepicker_month_view_2 = __webpack_require__(49);
+	exports.NgbDatepickerMonthView = datepicker_month_view_2.NgbDatepickerMonthView;
+	var datepicker_day_view_2 = __webpack_require__(47);
+	exports.NgbDatepickerDayView = datepicker_day_view_2.NgbDatepickerDayView;
+	var datepicker_navigation_2 = __webpack_require__(51);
+	exports.NgbDatepickerNavigation = datepicker_navigation_2.NgbDatepickerNavigation;
+	var datepicker_navigation_select_2 = __webpack_require__(50);
+	exports.NgbDatepickerNavigationSelect = datepicker_navigation_select_2.NgbDatepickerNavigationSelect;
+	var datepicker_config_2 = __webpack_require__(28);
+	exports.NgbDatepickerConfig = datepicker_config_2.NgbDatepickerConfig;
+	var datepicker_i18n_2 = __webpack_require__(4);
+	exports.NgbDatepickerI18n = datepicker_i18n_2.NgbDatepickerI18n;
+	var ngb_date_parser_formatter_2 = __webpack_require__(30);
+	exports.NgbDateParserFormatter = ngb_date_parser_formatter_2.NgbDateParserFormatter;
+	var NgbDatepickerModule = (function () {
+	    function NgbDatepickerModule() {
+	    }
+	    NgbDatepickerModule.forRoot = function () {
+	        return {
+	            ngModule: NgbDatepickerModule,
+	            providers: [
+	                { provide: ngb_calendar_1.NgbCalendar, useClass: ngb_calendar_1.NgbCalendarGregorian },
+	                { provide: datepicker_i18n_1.NgbDatepickerI18n, useClass: datepicker_i18n_1.NgbDatepickerI18nDefault },
+	                { provide: ngb_date_parser_formatter_1.NgbDateParserFormatter, useClass: ngb_date_parser_formatter_1.NgbDateISOParserFormatter }, datepicker_service_1.NgbDatepickerService,
+	                datepicker_config_1.NgbDatepickerConfig
+	            ]
+	        };
+	    };
+	    NgbDatepickerModule = __decorate([
+	        core_1.NgModule({
+	            declarations: [
+	                datepicker_1.NgbDatepicker, datepicker_month_view_1.NgbDatepickerMonthView, datepicker_navigation_1.NgbDatepickerNavigation, datepicker_navigation_select_1.NgbDatepickerNavigationSelect, datepicker_day_view_1.NgbDatepickerDayView,
+	                datepicker_input_1.NgbInputDatepicker
+	            ],
+	            exports: [datepicker_1.NgbDatepicker, datepicker_input_1.NgbInputDatepicker],
+	            imports: [common_1.CommonModule, forms_1.FormsModule],
+	            entryComponents: [datepicker_1.NgbDatepicker]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbDatepickerModule);
+	    return NgbDatepickerModule;
+	}());
+	exports.NgbDatepickerModule = NgbDatepickerModule;
+	//# sourceMappingURL=datepicker.module.js.map
+
+	/***/ },
+	/* 15 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var dropdown_1 = __webpack_require__(54);
+	var dropdown_config_1 = __webpack_require__(31);
+	var dropdown_2 = __webpack_require__(54);
+	exports.NgbDropdown = dropdown_2.NgbDropdown;
+	exports.NgbDropdownToggle = dropdown_2.NgbDropdownToggle;
+	var dropdown_config_2 = __webpack_require__(31);
+	exports.NgbDropdownConfig = dropdown_config_2.NgbDropdownConfig;
+	var NGB_DROPDOWN_DIRECTIVES = [dropdown_1.NgbDropdownToggle, dropdown_1.NgbDropdown];
+	var NgbDropdownModule = (function () {
+	    function NgbDropdownModule() {
+	    }
+	    NgbDropdownModule.forRoot = function () { return { ngModule: NgbDropdownModule, providers: [dropdown_config_1.NgbDropdownConfig] }; };
+	    NgbDropdownModule = __decorate([
+	        core_1.NgModule({ declarations: NGB_DROPDOWN_DIRECTIVES, exports: NGB_DROPDOWN_DIRECTIVES }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbDropdownModule);
+	    return NgbDropdownModule;
+	}());
+	exports.NgbDropdownModule = NgbDropdownModule;
+	//# sourceMappingURL=dropdown.module.js.map
+
+	/***/ },
+	/* 16 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var modal_container_1 = __webpack_require__(69);
+	var modal_backdrop_1 = __webpack_require__(55);
+	var modal_window_1 = __webpack_require__(58);
+	var modal_stack_1 = __webpack_require__(32);
+	var modal_1 = __webpack_require__(59);
+	var modal_2 = __webpack_require__(59);
+	exports.NgbModal = modal_2.NgbModal;
+	var modal_ref_1 = __webpack_require__(57);
+	exports.NgbModalRef = modal_ref_1.NgbModalRef;
+	exports.NgbActiveModal = modal_ref_1.NgbActiveModal;
+	var modal_dismiss_reasons_1 = __webpack_require__(56);
+	exports.ModalDismissReasons = modal_dismiss_reasons_1.ModalDismissReasons;
+	var NgbModalModule = (function () {
+	    function NgbModalModule() {
+	    }
+	    NgbModalModule.forRoot = function () { return { ngModule: NgbModalModule, providers: [modal_1.NgbModal, modal_stack_1.NgbModalStack] }; };
+	    NgbModalModule = __decorate([
+	        core_1.NgModule({
+	            declarations: [modal_container_1.NgbModalContainer, modal_backdrop_1.NgbModalBackdrop, modal_window_1.NgbModalWindow],
+	            entryComponents: [modal_backdrop_1.NgbModalBackdrop, modal_window_1.NgbModalWindow],
+	            providers: [modal_1.NgbModal],
+	            exports: [modal_container_1.NgbModalContainer]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbModalModule);
+	    return NgbModalModule;
+	}());
+	exports.NgbModalModule = NgbModalModule;
+	//# sourceMappingURL=modal.module.js.map
+
+	/***/ },
+	/* 17 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var pagination_1 = __webpack_require__(60);
+	var pagination_config_1 = __webpack_require__(33);
+	var pagination_2 = __webpack_require__(60);
+	exports.NgbPagination = pagination_2.NgbPagination;
+	var pagination_config_2 = __webpack_require__(33);
+	exports.NgbPaginationConfig = pagination_config_2.NgbPaginationConfig;
+	var NgbPaginationModule = (function () {
+	    function NgbPaginationModule() {
+	    }
+	    NgbPaginationModule.forRoot = function () { return { ngModule: NgbPaginationModule, providers: [pagination_config_1.NgbPaginationConfig] }; };
+	    NgbPaginationModule = __decorate([
+	        core_1.NgModule({ declarations: [pagination_1.NgbPagination], exports: [pagination_1.NgbPagination], imports: [common_1.CommonModule] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbPaginationModule);
+	    return NgbPaginationModule;
+	}());
+	exports.NgbPaginationModule = NgbPaginationModule;
+	//# sourceMappingURL=pagination.module.js.map
+
+	/***/ },
+	/* 18 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var popover_1 = __webpack_require__(61);
+	var popover_config_1 = __webpack_require__(34);
+	var popover_2 = __webpack_require__(61);
+	exports.NgbPopover = popover_2.NgbPopover;
+	var popover_config_2 = __webpack_require__(34);
+	exports.NgbPopoverConfig = popover_config_2.NgbPopoverConfig;
+	var NgbPopoverModule = (function () {
+	    function NgbPopoverModule() {
+	    }
+	    NgbPopoverModule.forRoot = function () { return { ngModule: NgbPopoverModule, providers: [popover_config_1.NgbPopoverConfig] }; };
+	    NgbPopoverModule = __decorate([
+	        core_1.NgModule({ declarations: [popover_1.NgbPopover, popover_1.NgbPopoverWindow], exports: [popover_1.NgbPopover], entryComponents: [popover_1.NgbPopoverWindow] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbPopoverModule);
+	    return NgbPopoverModule;
+	}());
+	exports.NgbPopoverModule = NgbPopoverModule;
+	//# sourceMappingURL=popover.module.js.map
+
+	/***/ },
+	/* 19 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var progressbar_1 = __webpack_require__(62);
+	var progressbar_config_1 = __webpack_require__(35);
+	var progressbar_2 = __webpack_require__(62);
+	exports.NgbProgressbar = progressbar_2.NgbProgressbar;
+	var progressbar_config_2 = __webpack_require__(35);
+	exports.NgbProgressbarConfig = progressbar_config_2.NgbProgressbarConfig;
+	var NgbProgressbarModule = (function () {
+	    function NgbProgressbarModule() {
+	    }
+	    NgbProgressbarModule.forRoot = function () { return { ngModule: NgbProgressbarModule, providers: [progressbar_config_1.NgbProgressbarConfig] }; };
+	    NgbProgressbarModule = __decorate([
+	        core_1.NgModule({ declarations: [progressbar_1.NgbProgressbar], exports: [progressbar_1.NgbProgressbar] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbProgressbarModule);
+	    return NgbProgressbarModule;
+	}());
+	exports.NgbProgressbarModule = NgbProgressbarModule;
+	//# sourceMappingURL=progressbar.module.js.map
+
+	/***/ },
+	/* 20 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var rating_config_1 = __webpack_require__(36);
+	var rating_1 = __webpack_require__(63);
+	var rating_2 = __webpack_require__(63);
+	exports.NgbRating = rating_2.NgbRating;
+	var rating_config_2 = __webpack_require__(36);
+	exports.NgbRatingConfig = rating_config_2.NgbRatingConfig;
+	var NgbRatingModule = (function () {
+	    function NgbRatingModule() {
+	    }
+	    NgbRatingModule.forRoot = function () { return { ngModule: NgbRatingModule, providers: [rating_config_1.NgbRatingConfig] }; };
+	    NgbRatingModule = __decorate([
+	        core_1.NgModule({ declarations: [rating_1.NgbRating], exports: [rating_1.NgbRating], imports: [common_1.CommonModule] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbRatingModule);
+	    return NgbRatingModule;
+	}());
+	exports.NgbRatingModule = NgbRatingModule;
+	//# sourceMappingURL=rating.module.js.map
+
+	/***/ },
+	/* 21 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var tabset_1 = __webpack_require__(64);
+	var tabset_config_1 = __webpack_require__(37);
+	var tabset_2 = __webpack_require__(64);
+	exports.NgbTabset = tabset_2.NgbTabset;
+	exports.NgbTab = tabset_2.NgbTab;
+	exports.NgbTabContent = tabset_2.NgbTabContent;
+	exports.NgbTabTitle = tabset_2.NgbTabTitle;
+	var tabset_config_2 = __webpack_require__(37);
+	exports.NgbTabsetConfig = tabset_config_2.NgbTabsetConfig;
+	var NGB_TABSET_DIRECTIVES = [tabset_1.NgbTabset, tabset_1.NgbTab, tabset_1.NgbTabContent, tabset_1.NgbTabTitle];
+	var NgbTabsetModule = (function () {
+	    function NgbTabsetModule() {
+	    }
+	    NgbTabsetModule.forRoot = function () { return { ngModule: NgbTabsetModule, providers: [tabset_config_1.NgbTabsetConfig] }; };
+	    NgbTabsetModule = __decorate([
+	        core_1.NgModule({ declarations: NGB_TABSET_DIRECTIVES, exports: NGB_TABSET_DIRECTIVES, imports: [common_1.CommonModule] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTabsetModule);
+	    return NgbTabsetModule;
+	}());
+	exports.NgbTabsetModule = NgbTabsetModule;
+	//# sourceMappingURL=tabset.module.js.map
+
+	/***/ },
+	/* 22 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var timepicker_1 = __webpack_require__(65);
+	var timepicker_config_1 = __webpack_require__(38);
+	var timepicker_2 = __webpack_require__(65);
+	exports.NgbTimepicker = timepicker_2.NgbTimepicker;
+	var timepicker_config_2 = __webpack_require__(38);
+	exports.NgbTimepickerConfig = timepicker_config_2.NgbTimepickerConfig;
+	var NgbTimepickerModule = (function () {
+	    function NgbTimepickerModule() {
+	    }
+	    NgbTimepickerModule.forRoot = function () { return { ngModule: NgbTimepickerModule, providers: [timepicker_config_1.NgbTimepickerConfig] }; };
+	    NgbTimepickerModule = __decorate([
+	        core_1.NgModule({ declarations: [timepicker_1.NgbTimepicker], exports: [timepicker_1.NgbTimepicker], imports: [common_1.CommonModule] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTimepickerModule);
+	    return NgbTimepickerModule;
+	}());
+	exports.NgbTimepickerModule = NgbTimepickerModule;
+	//# sourceMappingURL=timepicker.module.js.map
+
+	/***/ },
+	/* 23 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var tooltip_1 = __webpack_require__(66);
+	var tooltip_config_1 = __webpack_require__(39);
+	var tooltip_config_2 = __webpack_require__(39);
+	exports.NgbTooltipConfig = tooltip_config_2.NgbTooltipConfig;
+	var tooltip_2 = __webpack_require__(66);
+	exports.NgbTooltip = tooltip_2.NgbTooltip;
+	var NgbTooltipModule = (function () {
+	    function NgbTooltipModule() {
+	    }
+	    NgbTooltipModule.forRoot = function () { return { ngModule: NgbTooltipModule, providers: [tooltip_config_1.NgbTooltipConfig] }; };
+	    NgbTooltipModule = __decorate([
+	        core_1.NgModule({ declarations: [tooltip_1.NgbTooltip, tooltip_1.NgbTooltipWindow], exports: [tooltip_1.NgbTooltip], entryComponents: [tooltip_1.NgbTooltipWindow] }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTooltipModule);
+	    return NgbTooltipModule;
+	}());
+	exports.NgbTooltipModule = NgbTooltipModule;
+	//# sourceMappingURL=tooltip.module.js.map
+
+	/***/ },
+	/* 24 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var common_1 = __webpack_require__(2);
+	var highlight_1 = __webpack_require__(67);
+	var typeahead_window_1 = __webpack_require__(41);
+	var typeahead_1 = __webpack_require__(71);
+	var typeahead_config_1 = __webpack_require__(40);
+	var highlight_2 = __webpack_require__(67);
+	exports.NgbHighlight = highlight_2.NgbHighlight;
+	var typeahead_window_2 = __webpack_require__(41);
+	exports.NgbTypeaheadWindow = typeahead_window_2.NgbTypeaheadWindow;
+	var typeahead_config_2 = __webpack_require__(40);
+	exports.NgbTypeaheadConfig = typeahead_config_2.NgbTypeaheadConfig;
+	var NgbTypeaheadModule = (function () {
+	    function NgbTypeaheadModule() {
+	    }
+	    NgbTypeaheadModule.forRoot = function () { return { ngModule: NgbTypeaheadModule, providers: [typeahead_config_1.NgbTypeaheadConfig] }; };
+	    NgbTypeaheadModule = __decorate([
+	        core_1.NgModule({
+	            declarations: [typeahead_1.NgbTypeahead, highlight_1.NgbHighlight, typeahead_window_1.NgbTypeaheadWindow],
+	            exports: [typeahead_1.NgbTypeahead],
+	            imports: [common_1.CommonModule],
+	            entryComponents: [typeahead_window_1.NgbTypeaheadWindow]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTypeaheadModule);
+	    return NgbTypeaheadModule;
+	}());
+	exports.NgbTypeaheadModule = NgbTypeaheadModule;
+	//# sourceMappingURL=typeahead.module.js.map
+
+	/***/ },
+	/* 25 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbAccordion component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the accordions used in the application.
+	 */
+	var NgbAccordionConfig = (function () {
+	    function NgbAccordionConfig() {
+	        this.closeOthers = false;
+	    }
+	    NgbAccordionConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbAccordionConfig);
+	    return NgbAccordionConfig;
+	}());
+	exports.NgbAccordionConfig = NgbAccordionConfig;
+	//# sourceMappingURL=accordion-config.js.map
+
+	/***/ },
+	/* 26 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbAlert component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the alerts used in the application.
+	 */
+	var NgbAlertConfig = (function () {
+	    function NgbAlertConfig() {
+	        this.dismissible = true;
+	        this.type = 'warning';
+	    }
+	    NgbAlertConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbAlertConfig);
+	    return NgbAlertConfig;
+	}());
+	exports.NgbAlertConfig = NgbAlertConfig;
+	//# sourceMappingURL=alert-config.js.map
+
+	/***/ },
+	/* 27 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbCarousel component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the carousels used in the application.
+	 */
+	var NgbCarouselConfig = (function () {
+	    function NgbCarouselConfig() {
+	        this.interval = 5000;
+	        this.wrap = true;
+	        this.keyboard = true;
+	    }
+	    NgbCarouselConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbCarouselConfig);
+	    return NgbCarouselConfig;
+	}());
+	exports.NgbCarouselConfig = NgbCarouselConfig;
+	//# sourceMappingURL=carousel-config.js.map
+
+	/***/ },
+	/* 28 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbDatepicker component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the datepickers used in the application.
+	 */
+	var NgbDatepickerConfig = (function () {
+	    function NgbDatepickerConfig() {
+	        this.displayMonths = 1;
+	        this.firstDayOfWeek = 1;
+	        this.navigation = 'select';
+	        this.outsideDays = 'visible';
+	        this.showWeekdays = true;
+	        this.showWeekNumbers = false;
+	    }
+	    NgbDatepickerConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbDatepickerConfig);
+	    return NgbDatepickerConfig;
+	}());
+	exports.NgbDatepickerConfig = NgbDatepickerConfig;
+	//# sourceMappingURL=datepicker-config.js.map
+
+	/***/ },
+	/* 29 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var forms_1 = __webpack_require__(5);
+	var ngb_calendar_1 = __webpack_require__(6);
+	var ngb_date_1 = __webpack_require__(3);
+	var datepicker_service_1 = __webpack_require__(52);
+	var datepicker_view_model_1 = __webpack_require__(53);
+	var util_1 = __webpack_require__(1);
+	var datepicker_config_1 = __webpack_require__(28);
+	var datepicker_i18n_1 = __webpack_require__(4);
+	var NGB_DATEPICKER_VALUE_ACCESSOR = {
+	    provide: forms_1.NG_VALUE_ACCESSOR,
+	    useExisting: core_1.forwardRef(function () { return NgbDatepicker; }),
+	    multi: true
+	};
+	/**
+	 * A lightweight and highly configurable datepicker directive
+	 */
+	var NgbDatepicker = (function () {
+	    function NgbDatepicker(_service, _calendar, i18n, config) {
+	        this._service = _service;
+	        this._calendar = _calendar;
+	        this.i18n = i18n;
+	        this.months = [];
+	        /**
+	         * An event fired when navigation happens and currently displayed month changes.
+	         * See NgbDatepickerNavigateEvent for the payload info.
+	         */
+	        this.navigate = new core_1.EventEmitter();
+	        this.disabled = false;
+	        this.onChange = function (_) { };
+	        this.onTouched = function () { };
+	        this.dayTemplate = config.dayTemplate;
+	        this.displayMonths = config.displayMonths;
+	        this.firstDayOfWeek = config.firstDayOfWeek;
+	        this.markDisabled = config.markDisabled;
+	        this.minDate = config.minDate;
+	        this.maxDate = config.maxDate;
+	        this.navigation = config.navigation;
+	        this.outsideDays = config.outsideDays;
+	        this.showWeekdays = config.showWeekdays;
+	        this.showWeekNumbers = config.showWeekNumbers;
+	        this.startDate = config.startDate;
+	    }
+	    /**
+	     * Navigates current view to provided date.
+	     * With default calendar we use ISO 8601: 'month' is 1=Jan ... 12=Dec.
+	     * If nothing provided calendar will open current month.
+	     * Use 'startDate' input as an alternative
+	     */
+	    NgbDatepicker.prototype.navigateTo = function (date) {
+	        this._setViewWithinLimits(date ? ngb_date_1.NgbDate.from(date) : this._calendar.getToday());
+	        this._updateData();
+	    };
+	    NgbDatepicker.prototype.ngOnInit = function () {
+	        this._setDates();
+	        this.navigateTo(this.startDate);
+	    };
+	    NgbDatepicker.prototype.ngOnChanges = function (changes) {
+	        this._setDates();
+	        this._setViewWithinLimits(this.startDate ? ngb_date_1.NgbDate.from(this.startDate) : this._calendar.getToday());
+	        if (changes['displayMonths']) {
+	            this.displayMonths = util_1.toInteger(this.displayMonths);
+	        }
+	        // we have to force rebuild all months only if any of these inputs changes
+	        if (['startDate', 'minDate', 'maxDate', 'navigation', 'firstDayOfWeek', 'markDisabled', 'displayMonths'].some(function (input) { return !!changes[input]; })) {
+	            this._updateData(true);
+	        }
+	    };
+	    NgbDatepicker.prototype.onDateSelect = function (date) {
+	        this._setViewWithinLimits(date);
+	        this.onTouched();
+	        this.writeValue(date);
+	        this.onChange({ year: date.year, month: date.month, day: date.day });
+	        // switch current month
+	        if (this._date.month !== this.months[0].number && this.displayMonths === 1) {
+	            this._updateData();
+	        }
+	    };
+	    NgbDatepicker.prototype.onNavigateDateSelect = function (date) {
+	        this._setViewWithinLimits(date);
+	        this._updateData();
+	    };
+	    NgbDatepicker.prototype.onNavigateEvent = function (event) {
+	        switch (event) {
+	            case datepicker_view_model_1.NavigationEvent.PREV:
+	                this._setViewWithinLimits(this._calendar.getPrev(this.months[0].firstDate, 'm'));
+	                break;
+	            case datepicker_view_model_1.NavigationEvent.NEXT:
+	                this._setViewWithinLimits(this._calendar.getNext(this.months[0].firstDate, 'm'));
+	                break;
+	        }
+	        this._updateData();
+	    };
+	    NgbDatepicker.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+	    NgbDatepicker.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	    NgbDatepicker.prototype.writeValue = function (value) { this.model = value ? new ngb_date_1.NgbDate(value.year, value.month, value.day) : null; };
+	    NgbDatepicker.prototype.setDisabledState = function (isDisabled) { this.disabled = isDisabled; };
+	    NgbDatepicker.prototype._setDates = function () {
+	        this._maxDate = ngb_date_1.NgbDate.from(this.maxDate);
+	        this._minDate = ngb_date_1.NgbDate.from(this.minDate);
+	        this._date = this.startDate ? ngb_date_1.NgbDate.from(this.startDate) : this._calendar.getToday();
+	        if (!this._minDate) {
+	            this._minDate = this._calendar.getPrev(this._date, 'y', 10);
+	        }
+	        if (!this._maxDate) {
+	            this._maxDate = this._calendar.getNext(this._date, 'y', 11);
+	            this._maxDate = this._calendar.getPrev(this._maxDate);
+	        }
+	        if (this._minDate && this._maxDate && this._maxDate.before(this._minDate)) {
+	            throw new Error("'maxDate' " + this._maxDate + " should be greater than 'minDate' " + this._minDate);
+	        }
+	    };
+	    NgbDatepicker.prototype._setViewWithinLimits = function (date) {
+	        if (this._minDate && date.before(this._minDate)) {
+	            this._date = new ngb_date_1.NgbDate(this._minDate.year, this._minDate.month, 1);
+	        }
+	        else if (this._maxDate && date.after(this._maxDate)) {
+	            this._date = new ngb_date_1.NgbDate(this._maxDate.year, this._maxDate.month, 1);
+	        }
+	        else {
+	            this._date = new ngb_date_1.NgbDate(date.year, date.month, 1);
+	        }
+	    };
+	    NgbDatepicker.prototype._updateData = function (force) {
+	        if (force === void 0) { force = false; }
+	        var newMonths = [];
+	        var _loop_1 = function(i) {
+	            var newDate_1 = this_1._calendar.getNext(this_1._date, 'm', i);
+	            var index = this_1.months.findIndex(function (month) { return month.firstDate.equals(newDate_1); });
+	            if (force || index === -1) {
+	                newMonths.push(this_1._service.generateMonthViewModel(newDate_1, this_1._minDate, this_1._maxDate, util_1.toInteger(this_1.firstDayOfWeek), this_1.markDisabled));
+	            }
+	            else {
+	                newMonths.push(this_1.months[index]);
+	            }
+	        };
+	        var this_1 = this;
+	        for (var i = 0; i < this.displayMonths; i++) {
+	            _loop_1(i);
+	        }
+	        var newDate = newMonths[0].firstDate;
+	        var oldDate = this.months[0] ? this.months[0].firstDate : null;
+	        this.months = newMonths;
+	        // emitting navigation event if the first month changes
+	        if (!newDate.equals(oldDate)) {
+	            this.navigate.emit({
+	                current: oldDate ? { year: oldDate.year, month: oldDate.month } : null,
+	                next: { year: newDate.year, month: newDate.month }
+	            });
+	        }
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', core_1.TemplateRef)
+	    ], NgbDatepicker.prototype, "dayTemplate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbDatepicker.prototype, "displayMonths", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbDatepicker.prototype, "firstDayOfWeek", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Function)
+	    ], NgbDatepicker.prototype, "markDisabled", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepicker.prototype, "minDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepicker.prototype, "maxDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepicker.prototype, "navigation", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepicker.prototype, "outsideDays", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepicker.prototype, "showWeekdays", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepicker.prototype, "showWeekNumbers", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepicker.prototype, "startDate", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepicker.prototype, "navigate", void 0);
+	    NgbDatepicker = __decorate([
+	        core_1.Component({
+	            exportAs: 'ngbDatepicker',
+	            selector: 'ngb-datepicker',
+	            host: { 'class': 'd-inline-block' },
+	            styles: ["\n    .month:first-child {\n      padding-left: 0 !important;\n    }\n  "],
+	            template: "\n    <template #dt let-date=\"date\" let-currentMonth=\"currentMonth\" let-selected=\"selected\" let-disabled=\"disabled\">\n       <div ngbDatepickerDayView [date]=\"date\" [currentMonth]=\"currentMonth\" [selected]=\"selected\" [disabled]=\"disabled\"></div>\n    </template>\n\n    <ngb-datepicker-navigation *ngIf=\"navigation !== 'none'\"\n      [date]=\"months[0]?.firstDate\"\n      [minDate]=\"_minDate\"\n      [maxDate]=\"_maxDate\"\n      [disabled]=\"disabled\"\n      [showWeekNumbers]=\"showWeekNumbers\"\n      [showSelect]=\"navigation === 'select'\"\n      (navigate)=\"onNavigateEvent($event)\"\n      (select)=\"onNavigateDateSelect($event)\">\n    </ngb-datepicker-navigation>\n\n    <table>\n      <tr *ngIf=\"navigation !== 'select' || displayMonths > 1\">\n        <td *ngFor=\"let month of months\" class=\"text-xs-center font-weight-bold\">\n          {{ i18n.getMonthName(month.number) }} {{ month.year }}\n        </td>\n      </tr>\n      <tr>\n        <td *ngFor=\"let month of months\" class=\"pl-1 month\">\n          <ngb-datepicker-month-view\n            [month]=\"month\"\n            [selectedDate]=\"model\"\n            [dayTemplate]=\"dayTemplate || dt\"\n            [showWeekdays]=\"showWeekdays\"\n            [showWeekNumbers]=\"showWeekNumbers\"\n            [disabled]=\"disabled\"\n            [outsideDays]=\"displayMonths === 1 ? outsideDays : 'hidden'\"\n            (select)=\"onDateSelect($event)\">\n          </ngb-datepicker-month-view>\n        </td>\n      </tr>\n    </table>\n  ",
+	            providers: [NGB_DATEPICKER_VALUE_ACCESSOR]
+	        }), 
+	        __metadata('design:paramtypes', [datepicker_service_1.NgbDatepickerService, ngb_calendar_1.NgbCalendar, datepicker_i18n_1.NgbDatepickerI18n, datepicker_config_1.NgbDatepickerConfig])
+	    ], NgbDatepicker);
+	    return NgbDatepicker;
+	}());
+	exports.NgbDatepicker = NgbDatepicker;
+	//# sourceMappingURL=datepicker.js.map
+
+	/***/ },
+	/* 30 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var util_1 = __webpack_require__(1);
+	/**
+	 * Abstract type serving as a DI token for the service parsing and formatting dates for the NgbInputDatepicker
+	 * directive. A default implementation using the ISO 8601 format is provided, but you can provide another implementation
+	 * to use an alternative format.
+	 */
+	var NgbDateParserFormatter = (function () {
+	    function NgbDateParserFormatter() {
+	    }
+	    return NgbDateParserFormatter;
+	}());
+	exports.NgbDateParserFormatter = NgbDateParserFormatter;
+	var NgbDateISOParserFormatter = (function (_super) {
+	    __extends(NgbDateISOParserFormatter, _super);
+	    function NgbDateISOParserFormatter() {
+	        _super.apply(this, arguments);
+	    }
+	    NgbDateISOParserFormatter.prototype.parse = function (value) {
+	        if (value) {
+	            var dateParts = value.trim().split('-');
+	            if (dateParts.length === 1 && util_1.isNumber(dateParts[0])) {
+	                return { year: util_1.toInteger(dateParts[0]), month: null, day: null };
+	            }
+	            else if (dateParts.length === 2 && util_1.isNumber(dateParts[0]) && util_1.isNumber(dateParts[1])) {
+	                return { year: util_1.toInteger(dateParts[0]), month: util_1.toInteger(dateParts[1]), day: null };
+	            }
+	            else if (dateParts.length === 3 && util_1.isNumber(dateParts[0]) && util_1.isNumber(dateParts[1]) && util_1.isNumber(dateParts[2])) {
+	                return { year: util_1.toInteger(dateParts[0]), month: util_1.toInteger(dateParts[1]), day: util_1.toInteger(dateParts[2]) };
+	            }
+	        }
+	        return null;
+	    };
+	    NgbDateISOParserFormatter.prototype.format = function (date) {
+	        return date ?
+	            date.year + "-" + (util_1.isNumber(date.month) ? util_1.padNumber(date.month) : '') + "-" + (util_1.isNumber(date.day) ? util_1.padNumber(date.day) : '') :
+	            '';
+	    };
+	    return NgbDateISOParserFormatter;
+	}(NgbDateParserFormatter));
+	exports.NgbDateISOParserFormatter = NgbDateISOParserFormatter;
+	//# sourceMappingURL=ngb-date-parser-formatter.js.map
+
+	/***/ },
+	/* 31 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbDropdown directive.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the dropdowns used in the application.
+	 */
+	var NgbDropdownConfig = (function () {
+	    function NgbDropdownConfig() {
+	        this.up = false;
+	        this.autoClose = true;
+	    }
+	    NgbDropdownConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbDropdownConfig);
+	    return NgbDropdownConfig;
+	}());
+	exports.NgbDropdownConfig = NgbDropdownConfig;
+	//# sourceMappingURL=dropdown-config.js.map
+
+	/***/ },
+	/* 32 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var NgbModalStack = (function () {
+	    function NgbModalStack() {
+	    }
+	    NgbModalStack.prototype.open = function (moduleCFR, contentInjector, content, options) {
+	        if (options === void 0) { options = {}; }
+	        if (!this.modalContainer) {
+	            throw new Error('Missing modal container, add <template ngbModalContainer></template> to one of your application templates.');
+	        }
+	        return this.modalContainer.open(moduleCFR, contentInjector, content, options);
+	    };
+	    NgbModalStack.prototype.registerContainer = function (modalContainer) { this.modalContainer = modalContainer; };
+	    NgbModalStack = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbModalStack);
+	    return NgbModalStack;
+	}());
+	exports.NgbModalStack = NgbModalStack;
+	//# sourceMappingURL=modal-stack.js.map
+
+	/***/ },
+	/* 33 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbPagination component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the paginations used in the application.
+	 */
+	var NgbPaginationConfig = (function () {
+	    function NgbPaginationConfig() {
+	        this.boundaryLinks = false;
+	        this.directionLinks = true;
+	        this.ellipses = true;
+	        this.maxSize = 0;
+	        this.pageSize = 10;
+	        this.rotate = false;
+	    }
+	    NgbPaginationConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbPaginationConfig);
+	    return NgbPaginationConfig;
+	}());
+	exports.NgbPaginationConfig = NgbPaginationConfig;
+	//# sourceMappingURL=pagination-config.js.map
+
+	/***/ },
+	/* 34 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbPopover directive.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the popovers used in the application.
+	 */
+	var NgbPopoverConfig = (function () {
+	    function NgbPopoverConfig() {
+	        this.placement = 'top';
+	        this.triggers = 'click';
+	    }
+	    NgbPopoverConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbPopoverConfig);
+	    return NgbPopoverConfig;
+	}());
+	exports.NgbPopoverConfig = NgbPopoverConfig;
+	//# sourceMappingURL=popover-config.js.map
+
+	/***/ },
+	/* 35 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbProgressbar component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the progress bars used in the application.
+	 */
+	var NgbProgressbarConfig = (function () {
+	    function NgbProgressbarConfig() {
+	        this.max = 100;
+	        this.animated = false;
+	        this.striped = false;
+	    }
+	    NgbProgressbarConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbProgressbarConfig);
+	    return NgbProgressbarConfig;
+	}());
+	exports.NgbProgressbarConfig = NgbProgressbarConfig;
+	//# sourceMappingURL=progressbar-config.js.map
+
+	/***/ },
+	/* 36 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbRating component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the ratings used in the application.
+	 */
+	var NgbRatingConfig = (function () {
+	    function NgbRatingConfig() {
+	        this.max = 10;
+	        this.readonly = false;
+	    }
+	    NgbRatingConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbRatingConfig);
+	    return NgbRatingConfig;
+	}());
+	exports.NgbRatingConfig = NgbRatingConfig;
+	//# sourceMappingURL=rating-config.js.map
+
+	/***/ },
+	/* 37 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbTabset component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the tabsets used in the application.
+	 */
+	var NgbTabsetConfig = (function () {
+	    function NgbTabsetConfig() {
+	        this.type = 'tabs';
+	    }
+	    NgbTabsetConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTabsetConfig);
+	    return NgbTabsetConfig;
+	}());
+	exports.NgbTabsetConfig = NgbTabsetConfig;
+	//# sourceMappingURL=tabset-config.js.map
+
+	/***/ },
+	/* 38 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbTimepicker component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the timepickers used in the application.
+	 */
+	var NgbTimepickerConfig = (function () {
+	    function NgbTimepickerConfig() {
+	        this.meridian = false;
+	        this.spinners = true;
+	        this.seconds = false;
+	        this.hourStep = 1;
+	        this.minuteStep = 1;
+	        this.secondStep = 1;
+	        this.disabled = false;
+	        this.readonlyInputs = false;
+	    }
+	    NgbTimepickerConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTimepickerConfig);
+	    return NgbTimepickerConfig;
+	}());
+	exports.NgbTimepickerConfig = NgbTimepickerConfig;
+	//# sourceMappingURL=timepicker-config.js.map
+
+	/***/ },
+	/* 39 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbTooltip directive.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the tooltips used in the application.
+	 */
+	var NgbTooltipConfig = (function () {
+	    function NgbTooltipConfig() {
+	        this.placement = 'top';
+	        this.triggers = 'hover';
+	    }
+	    NgbTooltipConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTooltipConfig);
+	    return NgbTooltipConfig;
+	}());
+	exports.NgbTooltipConfig = NgbTooltipConfig;
+	//# sourceMappingURL=tooltip-config.js.map
+
+	/***/ },
+	/* 40 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * Configuration service for the NgbTypeahead component.
+	 * You can inject this service, typically in your root component, and customize the values of its properties in
+	 * order to provide default values for all the typeaheads used in the application.
+	 */
+	var NgbTypeaheadConfig = (function () {
+	    function NgbTypeaheadConfig() {
+	        this.editable = true;
+	        this.focusFirst = true;
+	        this.showHint = false;
+	    }
+	    NgbTypeaheadConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTypeaheadConfig);
+	    return NgbTypeaheadConfig;
+	}());
+	exports.NgbTypeaheadConfig = NgbTypeaheadConfig;
+	//# sourceMappingURL=typeahead-config.js.map
+
+	/***/ },
+	/* 41 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var util_1 = __webpack_require__(1);
+	var NgbTypeaheadWindow = (function () {
+	    function NgbTypeaheadWindow() {
+	        this.activeIdx = 0;
+	        /**
+	         * Flag indicating if the first row should be active initially
+	         */
+	        this.focusFirst = true;
+	        /**
+	         * A function used to format a given result before display. This function should return a formatted string without any
+	         * HTML markup
+	         */
+	        this.formatter = util_1.toString;
+	        /**
+	         * Event raised when user selects a particular result row
+	         */
+	        this.selectEvent = new core_1.EventEmitter();
+	    }
+	    NgbTypeaheadWindow.prototype.getActive = function () { return this.results[this.activeIdx]; };
+	    NgbTypeaheadWindow.prototype.markActive = function (activeIdx) { this.activeIdx = activeIdx; };
+	    NgbTypeaheadWindow.prototype.next = function () {
+	        if (this.activeIdx === this.results.length - 1) {
+	            this.activeIdx = this.focusFirst ? (this.activeIdx + 1) % this.results.length : -1;
+	        }
+	        else {
+	            this.activeIdx++;
+	        }
+	    };
+	    NgbTypeaheadWindow.prototype.prev = function () {
+	        if (this.activeIdx < 0) {
+	            this.activeIdx = this.results.length - 1;
+	        }
+	        else if (this.activeIdx === 0) {
+	            this.activeIdx = this.focusFirst ? this.results.length - 1 : -1;
+	        }
+	        else {
+	            this.activeIdx--;
+	        }
+	    };
+	    NgbTypeaheadWindow.prototype.select = function (item) { this.selectEvent.emit(item); };
+	    NgbTypeaheadWindow.prototype.ngOnInit = function () { this.activeIdx = this.focusFirst ? 0 : -1; };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbTypeaheadWindow.prototype, "focusFirst", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbTypeaheadWindow.prototype, "results", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbTypeaheadWindow.prototype, "term", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbTypeaheadWindow.prototype, "formatter", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', core_1.TemplateRef)
+	    ], NgbTypeaheadWindow.prototype, "resultTemplate", void 0);
+	    __decorate([
+	        core_1.Output('select'), 
+	        __metadata('design:type', Object)
+	    ], NgbTypeaheadWindow.prototype, "selectEvent", void 0);
+	    NgbTypeaheadWindow = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-typeahead-window',
+	            exportAs: 'ngbTypeaheadWindow',
+	            host: { 'class': 'dropdown-menu', 'style': 'display: block' },
+	            template: "\n    <template #rt let-result=\"result\" let-term=\"term\" let-formatter=\"formatter\">\n      <ngb-highlight [result]=\"formatter(result)\" [term]=\"term\"></ngb-highlight>\n    </template>\n    <template ngFor [ngForOf]=\"results\" let-result let-idx=\"index\">\n      <button type=\"button\" class=\"dropdown-item\" [class.active]=\"idx === activeIdx\" \n        (mouseenter)=\"markActive(idx)\" \n        (click)=\"select(result)\">\n          <template [ngTemplateOutlet]=\"resultTemplate || rt\" \n          [ngOutletContext]=\"{result: result, term: term, formatter: formatter}\"></template>\n      </button>\n    </template>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTypeaheadWindow);
+	    return NgbTypeaheadWindow;
+	}());
+	exports.NgbTypeaheadWindow = NgbTypeaheadWindow;
+	//# sourceMappingURL=typeahead-window.js.map
+
+	/***/ },
+	/* 42 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var util_1 = __webpack_require__(1);
+	var accordion_config_1 = __webpack_require__(25);
+	var nextId = 0;
+	/**
+	 * This directive should be used to wrap accordion panel titles that need to contain HTML markup or other directives.
+	 */
+	var NgbPanelTitle = (function () {
+	    function NgbPanelTitle(templateRef) {
+	        this.templateRef = templateRef;
+	    }
+	    NgbPanelTitle = __decorate([
+	        core_1.Directive({ selector: 'template[ngbPanelTitle]' }), 
+	        __metadata('design:paramtypes', [core_1.TemplateRef])
+	    ], NgbPanelTitle);
+	    return NgbPanelTitle;
+	}());
+	exports.NgbPanelTitle = NgbPanelTitle;
+	/**
+	 * This directive must be used to wrap accordion panel content.
+	 */
+	var NgbPanelContent = (function () {
+	    function NgbPanelContent(templateRef) {
+	        this.templateRef = templateRef;
+	    }
+	    NgbPanelContent = __decorate([
+	        core_1.Directive({ selector: 'template[ngbPanelContent]' }), 
+	        __metadata('design:paramtypes', [core_1.TemplateRef])
+	    ], NgbPanelContent);
+	    return NgbPanelContent;
+	}());
+	exports.NgbPanelContent = NgbPanelContent;
+	/**
+	 * The NgbPanel directive represents an in individual panel with the title and collapsible
+	 * content
+	 */
+	var NgbPanel = (function () {
+	    function NgbPanel() {
+	        /**
+	         *  A flag determining whether the panel is disabled or not.
+	         *  When disabled, the panel cannot be toggled.
+	         */
+	        this.disabled = false;
+	        /**
+	         *  An optional id for the panel. The id should be unique.
+	         *  If not provided, it will be auto-generated.
+	         */
+	        this.id = "ngb-panel-" + nextId++;
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbPanel.prototype, "disabled", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbPanel.prototype, "id", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbPanel.prototype, "title", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbPanel.prototype, "type", void 0);
+	    __decorate([
+	        core_1.ContentChild(NgbPanelContent), 
+	        __metadata('design:type', NgbPanelContent)
+	    ], NgbPanel.prototype, "contentTpl", void 0);
+	    __decorate([
+	        core_1.ContentChild(NgbPanelTitle), 
+	        __metadata('design:type', NgbPanelTitle)
+	    ], NgbPanel.prototype, "titleTpl", void 0);
+	    NgbPanel = __decorate([
+	        core_1.Directive({ selector: 'ngb-panel' }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbPanel);
+	    return NgbPanel;
+	}());
+	exports.NgbPanel = NgbPanel;
+	/**
+	 * The NgbAccordion directive is a collection of panels.
+	 * It can assure that only panel can be opened at a time.
+	 */
+	var NgbAccordion = (function () {
+	    function NgbAccordion(config) {
+	        /**
+	         * An array or comma separated strings of panel identifiers that should be opened
+	         */
+	        this.activeIds = [];
+	        /**
+	         * A panel change event fired right before the panel toggle happens. See NgbPanelChangeEvent for payload details
+	         */
+	        this.panelChange = new core_1.EventEmitter();
+	        /**
+	         * A map that stores each panel state
+	         */
+	        this._states = new Map();
+	        /**
+	         * A map that stores references to all panels
+	         */
+	        this._panelRefs = new Map();
+	        this.type = config.type;
+	        this.closeOtherPanels = config.closeOthers;
+	    }
+	    /**
+	     * Programmatically toggle a panel with a given id.
+	     */
+	    NgbAccordion.prototype.toggle = function (panelId) {
+	        var panel = this._panelRefs.get(panelId);
+	        if (panel && !panel.disabled) {
+	            var nextState = !this._states.get(panelId);
+	            var defaultPrevented_1 = false;
+	            this.panelChange.emit({ panelId: panelId, nextState: nextState, preventDefault: function () { defaultPrevented_1 = true; } });
+	            if (!defaultPrevented_1) {
+	                this._states.set(panelId, nextState);
+	                if (this.closeOtherPanels) {
+	                    this._closeOthers(panelId);
+	                }
+	                this._updateActiveIds();
+	            }
+	        }
+	    };
+	    NgbAccordion.prototype.ngAfterContentChecked = function () {
+	        // active id updates
+	        if (util_1.isString(this.activeIds)) {
+	            this.activeIds = this.activeIds.split(/\s*,\s*/);
+	        }
+	        this._updateStates();
+	        // closeOthers updates
+	        if (this.activeIds.length > 1 && this.closeOtherPanels) {
+	            this._closeOthers(this.activeIds[0]);
+	            this._updateActiveIds();
+	        }
+	    };
+	    /**
+	     * @internal
+	     */
+	    NgbAccordion.prototype.isOpen = function (panelId) { return this._states.get(panelId); };
+	    NgbAccordion.prototype._closeOthers = function (panelId) {
+	        var _this = this;
+	        this._states.forEach(function (state, id) {
+	            if (id !== panelId) {
+	                _this._states.set(id, false);
+	            }
+	        });
+	    };
+	    NgbAccordion.prototype._updateActiveIds = function () {
+	        var _this = this;
+	        this.activeIds =
+	            this.panels.toArray().filter(function (panel) { return _this.isOpen(panel.id) && !panel.disabled; }).map(function (panel) { return panel.id; });
+	    };
+	    NgbAccordion.prototype._updateStates = function () {
+	        var _this = this;
+	        this._states.clear();
+	        this._panelRefs.clear();
+	        this.panels.toArray().forEach(function (panel) {
+	            _this._states.set(panel.id, _this.activeIds.indexOf(panel.id) > -1 && !panel.disabled);
+	            _this._panelRefs.set(panel.id, panel);
+	        });
+	    };
+	    __decorate([
+	        core_1.ContentChildren(NgbPanel), 
+	        __metadata('design:type', core_1.QueryList)
+	    ], NgbAccordion.prototype, "panels", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbAccordion.prototype, "activeIds", void 0);
+	    __decorate([
+	        core_1.Input('closeOthers'), 
+	        __metadata('design:type', Boolean)
+	    ], NgbAccordion.prototype, "closeOtherPanels", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbAccordion.prototype, "type", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbAccordion.prototype, "panelChange", void 0);
+	    NgbAccordion = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-accordion',
+	            exportAs: 'ngbAccordion',
+	            host: { 'role': 'tablist', '[attr.aria-multiselectable]': '!closeOtherPanels' },
+	            template: "\n  <div class=\"card\">\n    <template ngFor let-panel [ngForOf]=\"panels\">\n      <div role=\"tab\" id=\"{{panel.id}}-header\" \n        [class]=\"'card-header ' + (panel.type ? 'card-'+panel.type: type ? 'card-'+type : '')\" [class.active]=\"isOpen(panel.id)\">\n        <a href (click)=\"!!toggle(panel.id)\" [class.text-muted]=\"panel.disabled\" \n          [attr.aria-expanded]=\"isOpen(panel.id)\" [attr.aria-controls]=\"panel.id\">\n          {{panel.title}}<template [ngTemplateOutlet]=\"panel.titleTpl?.templateRef\"></template>\n        </a>\n      </div>\n      <div id=\"{{panel.id}}\" role=\"tabpanel\" [attr.aria-labelledby]=\"panel.id + '-header'\" class=\"card-block\" *ngIf=\"isOpen(panel.id)\">\n        <template [ngTemplateOutlet]=\"panel.contentTpl.templateRef\"></template>\n      </div>\n    </template>\n  </div>\n"
+	        }), 
+	        __metadata('design:paramtypes', [accordion_config_1.NgbAccordionConfig])
+	    ], NgbAccordion);
+	    return NgbAccordion;
+	}());
+	exports.NgbAccordion = NgbAccordion;
+	//# sourceMappingURL=accordion.js.map
+
+	/***/ },
+	/* 43 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var alert_config_1 = __webpack_require__(26);
+	/**
+	 * Alerts can be used to provide feedback messages.
+	 */
+	var NgbAlert = (function () {
+	    function NgbAlert(config) {
+	        /**
+	         * An event emitted when the close button is clicked. This event has no payload. Only relevant for dismissible alerts.
+	         */
+	        this.close = new core_1.EventEmitter();
+	        this.dismissible = config.dismissible;
+	        this.type = config.type;
+	    }
+	    NgbAlert.prototype.closeHandler = function () { this.close.emit(null); };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbAlert.prototype, "dismissible", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbAlert.prototype, "type", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbAlert.prototype, "close", void 0);
+	    NgbAlert = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-alert',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            template: "\n    <div [class]=\"'alert alert-' + type\" role=\"alert\">\n      <button *ngIf=\"dismissible\" type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeHandler()\">\n            <span aria-hidden=\"true\">&times;</span>\n      </button>\n      <ng-content></ng-content>\n    </div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [alert_config_1.NgbAlertConfig])
+	    ], NgbAlert);
+	    return NgbAlert;
+	}());
+	exports.NgbAlert = NgbAlert;
+	//# sourceMappingURL=alert.js.map
+
+	/***/ },
+	/* 44 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	var core_1 = __webpack_require__(0);
+	var forms_1 = __webpack_require__(5);
+	var NGB_RADIO_VALUE_ACCESSOR = {
+	    provide: forms_1.NG_VALUE_ACCESSOR,
+	    useExisting: core_1.forwardRef(function () { return NgbRadioGroup; }),
+	    multi: true
+	};
+	/**
+	 * Easily create Bootstrap-style radio buttons. A value of a selected button is bound to a variable
+	 * specified via ngModel.
+	 */
+	var NgbRadioGroup = (function () {
+	    function NgbRadioGroup() {
+	        this._radios = new Set();
+	        this._value = null;
+	        this.onChange = function (_) { };
+	        this.onTouched = function () { };
+	    }
+	    NgbRadioGroup.prototype.onRadioChange = function (radio) {
+	        this.writeValue(radio.value);
+	        this.onChange(radio.value);
+	    };
+	    NgbRadioGroup.prototype.onRadioValueUpdate = function () { this._updateRadios(); };
+	    NgbRadioGroup.prototype.register = function (radio) { this._radios.add(radio); };
+	    NgbRadioGroup.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+	    NgbRadioGroup.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	    NgbRadioGroup.prototype.setDisabledState = function (isDisabled) {
+	        this._disabled = isDisabled;
+	        this._updateRadios();
+	    };
+	    NgbRadioGroup.prototype.unregister = function (radio) { this._radios.delete(radio); };
+	    NgbRadioGroup.prototype.writeValue = function (value) {
+	        this._value = value;
+	        this._updateRadios();
+	    };
+	    NgbRadioGroup.prototype._updateRadios = function () {
+	        var _this = this;
+	        this._radios.forEach(function (radio) { return radio.update(_this._value, _this._disabled); });
+	    };
+	    NgbRadioGroup = __decorate([
+	        core_1.Directive({
+	            selector: '[ngbRadioGroup]',
+	            host: { 'data-toggle': 'buttons', 'class': 'btn-group' },
+	            providers: [NGB_RADIO_VALUE_ACCESSOR]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbRadioGroup);
+	    return NgbRadioGroup;
+	}());
+	exports.NgbRadioGroup = NgbRadioGroup;
+	var NgbActiveLabel = (function () {
+	    function NgbActiveLabel(_renderer, _elRef) {
+	        this._renderer = _renderer;
+	        this._elRef = _elRef;
+	    }
+	    Object.defineProperty(NgbActiveLabel.prototype, "active", {
+	        set: function (isActive) { this._renderer.setElementClass(this._elRef.nativeElement, 'active', isActive); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(NgbActiveLabel.prototype, "disabled", {
+	        set: function (isDisabled) {
+	            this._renderer.setElementClass(this._elRef.nativeElement, 'disabled', isDisabled);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(NgbActiveLabel.prototype, "focused", {
+	        set: function (isFocused) { this._renderer.setElementClass(this._elRef.nativeElement, 'focus', isFocused); },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    NgbActiveLabel = __decorate([
+	        core_1.Directive({ selector: 'label.btn' }), 
+	        __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
+	    ], NgbActiveLabel);
+	    return NgbActiveLabel;
+	}());
+	exports.NgbActiveLabel = NgbActiveLabel;
+	/**
+	 * Marks an input of type "radio" as part of the NgbRadioGroup.
+	 */
+	var NgbRadio = (function () {
+	    function NgbRadio(_group, _label, _renderer, _element) {
+	        this._group = _group;
+	        this._label = _label;
+	        this._renderer = _renderer;
+	        this._element = _element;
+	        this._value = null;
+	        if (this._group) {
+	            this._group.register(this);
+	        }
+	    }
+	    Object.defineProperty(NgbRadio.prototype, "value", {
+	        get: function () { return this._value; },
+	        /**
+	         * You can specify model value of a given radio by binding to the value property.
+	        */
+	        set: function (value) {
+	            this._value = value;
+	            var stringValue = value ? value.toString() : '';
+	            this._renderer.setElementProperty(this._element.nativeElement, 'value', stringValue);
+	            if (this._group) {
+	                this._group.onRadioValueUpdate();
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(NgbRadio.prototype, "checked", {
+	        get: function () { return this._checked; },
+	        set: function (value) {
+	            this._checked = this._element.nativeElement.hasAttribute('checked') ? true : value;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(NgbRadio.prototype, "disabled", {
+	        get: function () { return this._disabled; },
+	        set: function (value) {
+	            this._disabled = this._element.nativeElement.hasAttribute('disabled') ? true : value;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(NgbRadio.prototype, "focused", {
+	        set: function (isFocused) {
+	            if (this._label) {
+	                this._label.focused = isFocused;
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    NgbRadio.prototype.ngOnDestroy = function () {
+	        if (this._group) {
+	            this._group.unregister(this);
+	        }
+	    };
+	    NgbRadio.prototype.onChange = function () {
+	        if (this._group) {
+	            this._group.onRadioChange(this);
+	        }
+	    };
+	    NgbRadio.prototype.update = function (value, isDisabled) {
+	        this._checked = (this.value === value && value !== null);
+	        this._disabled = isDisabled;
+	        this._label.active = this._checked;
+	        this._label.disabled = this._disabled;
+	    };
+	    __decorate([
+	        core_1.Input('value'), 
+	        __metadata('design:type', Object), 
+	        __metadata('design:paramtypes', [Object])
+	    ], NgbRadio.prototype, "value", null);
+	    __decorate([
+	        core_1.Input('checked'), 
+	        __metadata('design:type', Object), 
+	        __metadata('design:paramtypes', [Object])
+	    ], NgbRadio.prototype, "checked", null);
+	    __decorate([
+	        core_1.Input('disabled'), 
+	        __metadata('design:type', Object), 
+	        __metadata('design:paramtypes', [Object])
+	    ], NgbRadio.prototype, "disabled", null);
+	    NgbRadio = __decorate([
+	        core_1.Directive({
+	            selector: 'input[type=radio]',
+	            host: {
+	                '[checked]': 'checked',
+	                '[disabled]': 'disabled',
+	                '(change)': 'onChange()',
+	                '(focus)': 'focused = true',
+	                '(blur)': 'focused = false'
+	            }
+	        }),
+	        __param(0, core_1.Optional()),
+	        __param(1, core_1.Optional()), 
+	        __metadata('design:paramtypes', [NgbRadioGroup, NgbActiveLabel, core_1.Renderer, core_1.ElementRef])
+	    ], NgbRadio);
+	    return NgbRadio;
+	}());
+	exports.NgbRadio = NgbRadio;
+	//# sourceMappingURL=radio.js.map
+
+	/***/ },
+	/* 45 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var carousel_config_1 = __webpack_require__(27);
+	var nextId = 0;
+	/**
+	 * Represents an individual slide to be used within a carousel.
+	 */
+	var NgbSlide = (function () {
+	    function NgbSlide(tplRef) {
+	        this.tplRef = tplRef;
+	        /**
+	         * Unique slide identifier. Must be unique for the entire document for proper accessibility support.
+	         * Will be auto-generated if not provided.
+	         */
+	        this.id = "ngb-slide-" + nextId++;
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbSlide.prototype, "id", void 0);
+	    NgbSlide = __decorate([
+	        core_1.Directive({ selector: 'template[ngbSlide]' }), 
+	        __metadata('design:paramtypes', [core_1.TemplateRef])
+	    ], NgbSlide);
+	    return NgbSlide;
+	}());
+	exports.NgbSlide = NgbSlide;
+	/**
+	 * Directive to easily create carousels based on Bootstrap's markup.
+	 */
+	var NgbCarousel = (function () {
+	    function NgbCarousel(config) {
+	        this.interval = config.interval;
+	        this.wrap = config.wrap;
+	        this.keyboard = config.keyboard;
+	    }
+	    NgbCarousel.prototype.ngAfterContentChecked = function () {
+	        var activeSlide = this._getSlideById(this.activeId);
+	        this.activeId = activeSlide ? activeSlide.id : (this.slides.length ? this.slides.first.id : null);
+	    };
+	    NgbCarousel.prototype.ngOnInit = function () { this._startTimer(); };
+	    NgbCarousel.prototype.ngOnDestroy = function () { clearInterval(this._slideChangeInterval); };
+	    /**
+	     * Navigate to a slide with the specified identifier.
+	     */
+	    NgbCarousel.prototype.select = function (slideId) {
+	        this.cycleToSelected(slideId);
+	        this._restartTimer();
+	    };
+	    /**
+	     * Navigate to the next slide.
+	     */
+	    NgbCarousel.prototype.prev = function () {
+	        this.cycleToPrev();
+	        this._restartTimer();
+	    };
+	    /**
+	     * Navigate to the next slide.
+	     */
+	    NgbCarousel.prototype.next = function () {
+	        this.cycleToNext();
+	        this._restartTimer();
+	    };
+	    /**
+	     * Stops the carousel from cycling through items.
+	     */
+	    NgbCarousel.prototype.pause = function () { this._stopTimer(); };
+	    /**
+	     * Restarts cycling through the carousel slides from left to right.
+	     */
+	    NgbCarousel.prototype.cycle = function () { this._startTimer(); };
+	    NgbCarousel.prototype.cycleToNext = function () { this.cycleToSelected(this._getNextSlide(this.activeId)); };
+	    NgbCarousel.prototype.cycleToPrev = function () { this.cycleToSelected(this._getPrevSlide(this.activeId)); };
+	    NgbCarousel.prototype.cycleToSelected = function (slideIdx) {
+	        var selectedSlide = this._getSlideById(slideIdx);
+	        if (selectedSlide) {
+	            this.activeId = selectedSlide.id;
+	        }
+	    };
+	    NgbCarousel.prototype.keyPrev = function () {
+	        if (this.keyboard) {
+	            this.prev();
+	        }
+	    };
+	    NgbCarousel.prototype.keyNext = function () {
+	        if (this.keyboard) {
+	            this.next();
+	        }
+	    };
+	    NgbCarousel.prototype._restartTimer = function () {
+	        this._stopTimer();
+	        this._startTimer();
+	    };
+	    NgbCarousel.prototype._startTimer = function () {
+	        var _this = this;
+	        if (this.interval > 0) {
+	            this._slideChangeInterval = setInterval(function () { _this.cycleToNext(); }, this.interval);
+	        }
+	    };
+	    NgbCarousel.prototype._stopTimer = function () { clearInterval(this._slideChangeInterval); };
+	    NgbCarousel.prototype._getSlideById = function (slideId) {
+	        var slideWithId = this.slides.filter(function (slide) { return slide.id === slideId; });
+	        return slideWithId.length ? slideWithId[0] : null;
+	    };
+	    NgbCarousel.prototype._getSlideIdxById = function (slideId) {
+	        return this.slides.toArray().indexOf(this._getSlideById(slideId));
+	    };
+	    NgbCarousel.prototype._getNextSlide = function (currentSlideId) {
+	        var slideArr = this.slides.toArray();
+	        var currentSlideIdx = this._getSlideIdxById(currentSlideId);
+	        var isLastSlide = currentSlideIdx === slideArr.length - 1;
+	        return isLastSlide ? (this.wrap ? slideArr[0].id : slideArr[slideArr.length - 1].id) :
+	            slideArr[currentSlideIdx + 1].id;
+	    };
+	    NgbCarousel.prototype._getPrevSlide = function (currentSlideId) {
+	        var slideArr = this.slides.toArray();
+	        var currentSlideIdx = this._getSlideIdxById(currentSlideId);
+	        var isFirstSlide = currentSlideIdx === 0;
+	        return isFirstSlide ? (this.wrap ? slideArr[slideArr.length - 1].id : slideArr[0].id) :
+	            slideArr[currentSlideIdx - 1].id;
+	    };
+	    __decorate([
+	        core_1.ContentChildren(NgbSlide), 
+	        __metadata('design:type', core_1.QueryList)
+	    ], NgbCarousel.prototype, "slides", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbCarousel.prototype, "interval", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbCarousel.prototype, "wrap", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbCarousel.prototype, "keyboard", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbCarousel.prototype, "activeId", void 0);
+	    NgbCarousel = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-carousel',
+	            exportAs: 'ngbCarousel',
+	            host: {
+	                'class': 'carousel slide',
+	                '[style.display]': '"block"',
+	                'tabIndex': '0',
+	                '(mouseenter)': 'pause()',
+	                '(mouseleave)': 'cycle()',
+	                '(keydown.arrowLeft)': 'keyPrev()',
+	                '(keydown.arrowRight)': 'keyNext()'
+	            },
+	            template: "\n    <ol class=\"carousel-indicators\">\n      <li *ngFor=\"let slide of slides\" [id]=\"slide.id\" [class.active]=\"slide.id === activeId\" (click)=\"cycleToSelected(slide.id)\"></li>\n    </ol>\n    <div class=\"carousel-inner\" role=\"listbox\">\n      <div *ngFor=\"let slide of slides\" class=\"carousel-item\" [class.active]=\"slide.id === activeId\">\n        <template [ngTemplateOutlet]=\"slide.tplRef\"></template>\n      </div>\n    </div>\n    <a class=\"left carousel-control\" role=\"button\" (click)=\"cycleToPrev()\">\n      <span class=\"icon-prev\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"right carousel-control\" role=\"button\" (click)=\"cycleToNext()\">\n      <span class=\"icon-next\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [carousel_config_1.NgbCarouselConfig])
+	    ], NgbCarousel);
+	    return NgbCarousel;
+	}());
+	exports.NgbCarousel = NgbCarousel;
+	exports.NGB_CAROUSEL_DIRECTIVES = [NgbCarousel, NgbSlide];
+	//# sourceMappingURL=carousel.js.map
+
+	/***/ },
+	/* 46 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	/**
+	 * The NgbCollapse directive provides a simple way to hide and show an element with animations.
+	 */
+	var NgbCollapse = (function () {
+	    function NgbCollapse() {
+	        /**
+	         * A flag indicating collapsed (true) or open (false) state.
+	         */
+	        this.collapsed = false;
+	    }
+	    __decorate([
+	        core_1.Input('ngbCollapse'), 
+	        __metadata('design:type', Object)
+	    ], NgbCollapse.prototype, "collapsed", void 0);
+	    NgbCollapse = __decorate([
+	        core_1.Directive({
+	            selector: '[ngbCollapse]',
+	            exportAs: 'ngbCollapse',
+	            host: { '[class.collapse]': 'true', '[class.in]': '!collapsed', '[attr.aria-expanded]': '!collapsed' }
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbCollapse);
+	    return NgbCollapse;
+	}());
+	exports.NgbCollapse = NgbCollapse;
+	//# sourceMappingURL=collapse.js.map
+
+	/***/ },
+	/* 47 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var NgbDatepickerDayView = (function () {
+	    function NgbDatepickerDayView() {
+	    }
+	    NgbDatepickerDayView.prototype.isMuted = function () { return !this.selected && (this.date.month !== this.currentMonth || this.disabled); };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbDatepickerDayView.prototype, "currentMonth", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerDayView.prototype, "date", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepickerDayView.prototype, "disabled", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepickerDayView.prototype, "selected", void 0);
+	    NgbDatepickerDayView = __decorate([
+	        core_1.Component({
+	            selector: '[ngbDatepickerDayView]',
+	            styles: ["\n    :host {      \n      text-align: center;\n      padding: 0.185rem 0.25rem;      \n      border-radius: 0.25rem;\n    }\n  "],
+	            host: {
+	                '[class.bg-primary]': 'selected',
+	                '[class.text-white]': 'selected',
+	                '[class.text-muted]': 'isMuted()',
+	                '[class.btn-secondary]': '!disabled'
+	            },
+	            template: "{{ date.day }}"
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbDatepickerDayView);
+	    return NgbDatepickerDayView;
+	}());
+	exports.NgbDatepickerDayView = NgbDatepickerDayView;
+	//# sourceMappingURL=datepicker-day-view.js.map
+
+	/***/ },
+	/* 48 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var forms_1 = __webpack_require__(5);
+	var ngb_date_1 = __webpack_require__(3);
+	var datepicker_1 = __webpack_require__(29);
+	var ngb_date_parser_formatter_1 = __webpack_require__(30);
+	var positioning_1 = __webpack_require__(8);
+	var NGB_DATEPICKER_VALUE_ACCESSOR = {
+	    provide: forms_1.NG_VALUE_ACCESSOR,
+	    useExisting: core_1.forwardRef(function () { return NgbInputDatepicker; }),
+	    multi: true
+	};
+	/**
+	 * A directive that makes it possible to have datepickers on input fields.
+	 * Manages integration with the input field itself (data entry) and ngModel (validation etc.).
+	 */
+	var NgbInputDatepicker = (function () {
+	    function NgbInputDatepicker(_parserFormatter, _elRef, _vcRef, _renderer, _cfr, ngZone) {
+	        var _this = this;
+	        this._parserFormatter = _parserFormatter;
+	        this._elRef = _elRef;
+	        this._vcRef = _vcRef;
+	        this._renderer = _renderer;
+	        this._cfr = _cfr;
+	        this._cRef = null;
+	        /**
+	         * An event fired when navigation happens and currently displayed month changes.
+	         * See NgbDatepickerNavigateEvent for the payload info.
+	         */
+	        this.navigate = new core_1.EventEmitter();
+	        this._onChange = function (_) { };
+	        this._onTouched = function () { };
+	        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+	            if (_this._cRef) {
+	                positioning_1.positionElements(_this._elRef.nativeElement, _this._cRef.location.nativeElement, 'bottom-left');
+	            }
+	        });
+	    }
+	    NgbInputDatepicker.prototype.registerOnChange = function (fn) { this._onChange = fn; };
+	    NgbInputDatepicker.prototype.registerOnTouched = function (fn) { this._onTouched = fn; };
+	    NgbInputDatepicker.prototype.writeValue = function (value) {
+	        this._model = value ? new ngb_date_1.NgbDate(value.year, value.month, value.day) : null;
+	        this._writeModelValue(this._model);
+	    };
+	    NgbInputDatepicker.prototype.setDisabledState = function (isDisabled) {
+	        this._renderer.setElementProperty(this._elRef.nativeElement, 'disabled', isDisabled);
+	        if (this.isOpen()) {
+	            this._cRef.instance.setDisabledState(isDisabled);
+	        }
+	    };
+	    NgbInputDatepicker.prototype.manualDateChange = function (value) {
+	        this._model = ngb_date_1.NgbDate.from(this._parserFormatter.parse(value));
+	        this._onChange(this._model ? { year: this._model.year, month: this._model.month, day: this._model.day } : null);
+	        this._writeModelValue(this._model);
+	    };
+	    NgbInputDatepicker.prototype.isOpen = function () { return !!this._cRef; };
+	    /**
+	     * Opens the datepicker with the selected date indicated by the ngModel value.
+	     */
+	    NgbInputDatepicker.prototype.open = function () {
+	        var _this = this;
+	        if (!this.isOpen()) {
+	            var cf = this._cfr.resolveComponentFactory(datepicker_1.NgbDatepicker);
+	            this._cRef = this._vcRef.createComponent(cf);
+	            this._applyPopupStyling(this._cRef.location.nativeElement);
+	            this._cRef.instance.writeValue(this._model);
+	            this._applyDatepickerInputs(this._cRef.instance);
+	            this._subscribeForDatepickerOutputs(this._cRef.instance);
+	            this._cRef.instance.ngOnInit();
+	            // date selection event handling
+	            this._cRef.instance.registerOnChange(function (selectedDate) {
+	                _this.writeValue(selectedDate);
+	                _this._onChange(selectedDate);
+	                _this.close();
+	            });
+	        }
+	    };
+	    /**
+	     * Closes the datepicker popup.
+	     */
+	    NgbInputDatepicker.prototype.close = function () {
+	        if (this.isOpen()) {
+	            this._vcRef.remove(this._vcRef.indexOf(this._cRef.hostView));
+	            this._cRef = null;
+	        }
+	    };
+	    /**
+	     * Toggles the datepicker popup (opens when closed and closes when opened).
+	     */
+	    NgbInputDatepicker.prototype.toggle = function () {
+	        if (this.isOpen()) {
+	            this.close();
+	        }
+	        else {
+	            this.open();
+	        }
+	    };
+	    /**
+	     * Navigates current view to provided date.
+	     * With default calendar we use ISO 8601: 'month' is 1=Jan ... 12=Dec.
+	     * If nothing provided calendar will open current month.
+	     * Use 'startDate' input as an alternative
+	     */
+	    NgbInputDatepicker.prototype.navigateTo = function (date) {
+	        if (this.isOpen()) {
+	            this._cRef.instance.navigateTo(date);
+	        }
+	    };
+	    NgbInputDatepicker.prototype.onBlur = function () { this._onTouched(); };
+	    NgbInputDatepicker.prototype._applyDatepickerInputs = function (datepickerInstance) {
+	        var _this = this;
+	        ['dayTemplate', 'displayMonths', 'firstDayOfWeek', 'markDisabled', 'minDate', 'maxDate', 'navigation',
+	            'outsideDays', 'showNavigation', 'showWeekdays', 'showWeekNumbers']
+	            .forEach(function (optionName) {
+	            if (_this[optionName] !== undefined) {
+	                datepickerInstance[optionName] = _this[optionName];
+	            }
+	        });
+	        datepickerInstance.startDate = this.startDate || this._model;
+	    };
+	    NgbInputDatepicker.prototype._applyPopupStyling = function (nativeElement) {
+	        this._renderer.setElementClass(nativeElement, 'dropdown-menu', true);
+	        this._renderer.setElementStyle(nativeElement, 'display', 'block');
+	        this._renderer.setElementStyle(nativeElement, 'padding', '0.40rem');
+	    };
+	    NgbInputDatepicker.prototype._subscribeForDatepickerOutputs = function (datepickerInstance) {
+	        var _this = this;
+	        datepickerInstance.navigate.subscribe(function (date) { return _this.navigate.emit(date); });
+	    };
+	    NgbInputDatepicker.prototype._writeModelValue = function (model) {
+	        this._renderer.setElementProperty(this._elRef.nativeElement, 'value', this._parserFormatter.format(model));
+	        if (this.isOpen()) {
+	            this._cRef.instance.writeValue(model);
+	            this._onTouched();
+	        }
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', core_1.TemplateRef)
+	    ], NgbInputDatepicker.prototype, "dayTemplate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbInputDatepicker.prototype, "displayMonths", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbInputDatepicker.prototype, "firstDayOfWeek", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Function)
+	    ], NgbInputDatepicker.prototype, "markDisabled", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbInputDatepicker.prototype, "minDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbInputDatepicker.prototype, "maxDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbInputDatepicker.prototype, "navigation", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbInputDatepicker.prototype, "outsideDays", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbInputDatepicker.prototype, "showWeekdays", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbInputDatepicker.prototype, "showWeekNumbers", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbInputDatepicker.prototype, "startDate", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbInputDatepicker.prototype, "navigate", void 0);
+	    NgbInputDatepicker = __decorate([
+	        core_1.Directive({
+	            selector: 'input[ngbDatepicker]',
+	            exportAs: 'ngbDatepicker',
+	            host: { '(change)': 'manualDateChange($event.target.value)', '(keyup.esc)': 'close()', '(blur)': 'onBlur()' },
+	            providers: [NGB_DATEPICKER_VALUE_ACCESSOR]
+	        }), 
+	        __metadata('design:paramtypes', [ngb_date_parser_formatter_1.NgbDateParserFormatter, core_1.ElementRef, core_1.ViewContainerRef, core_1.Renderer, core_1.ComponentFactoryResolver, core_1.NgZone])
+	    ], NgbInputDatepicker);
+	    return NgbInputDatepicker;
+	}());
+	exports.NgbInputDatepicker = NgbInputDatepicker;
+	//# sourceMappingURL=datepicker-input.js.map
+
+	/***/ },
+	/* 49 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var ngb_date_1 = __webpack_require__(3);
+	var datepicker_i18n_1 = __webpack_require__(4);
+	var NgbDatepickerMonthView = (function () {
+	    function NgbDatepickerMonthView(i18n) {
+	        this.i18n = i18n;
+	        this.select = new core_1.EventEmitter();
+	    }
+	    NgbDatepickerMonthView.prototype.doSelect = function (day) {
+	        if (!this.isDisabled(day) && !this.isCollapsed(day) && !this.isHidden(day)) {
+	            this.select.emit(ngb_date_1.NgbDate.from(day.date));
+	        }
+	    };
+	    NgbDatepickerMonthView.prototype.isDisabled = function (day) { return this.disabled || day.disabled; };
+	    NgbDatepickerMonthView.prototype.isSelected = function (date) { return this.selectedDate && this.selectedDate.equals(date); };
+	    NgbDatepickerMonthView.prototype.isCollapsed = function (day) { return this.outsideDays === 'collapsed' && this.month.number !== day.date.month; };
+	    NgbDatepickerMonthView.prototype.isHidden = function (day) { return this.outsideDays === 'hidden' && this.month.number !== day.date.month; };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', core_1.TemplateRef)
+	    ], NgbDatepickerMonthView.prototype, "dayTemplate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepickerMonthView.prototype, "disabled", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerMonthView.prototype, "month", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerMonthView.prototype, "outsideDays", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', ngb_date_1.NgbDate)
+	    ], NgbDatepickerMonthView.prototype, "selectedDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerMonthView.prototype, "showWeekdays", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerMonthView.prototype, "showWeekNumbers", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerMonthView.prototype, "select", void 0);
+	    NgbDatepickerMonthView = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-datepicker-month-view',
+	            styles: ["\n    .weekday {\n    }\n    .weeknumber {\n    }\n    .day {\n      padding: 0;\n      height: 100%;\n      cursor: pointer;\n    }\n    .day.disabled, .day.hidden, .day.collapsed {\n      cursor: default;\n    }\n    :host/deep/.day.collapsed > * {\n      display: none;\n    }\n    :host/deep/.day.hidden > * {\n      visibility: hidden;\n    }\n  "],
+	            template: "\n    <table>\n      <tr *ngIf=\"showWeekdays\">\n        <td *ngIf=\"showWeekNumbers\"></td>\n        <td *ngFor=\"let w of month.weekdays\" class=\"weekday text-xs-center font-weight-bold\">{{ i18n.getWeekdayName(w) }}</td>\n      </tr>\n      <tr *ngFor=\"let week of month.weeks\">\n        <td *ngIf=\"showWeekNumbers\" class=\"weeknumber small text-xs-center\">{{ week.number }}</td>\n        <td *ngFor=\"let day of week.days\" (click)=\"doSelect(day)\" class=\"day\" [class.disabled]=\"isDisabled(day)\"\n        [class.collapsed]=\"isCollapsed(day)\" [class.hidden]=\"isHidden(day)\">\n            <template [ngTemplateOutlet]=\"dayTemplate\"\n            [ngOutletContext]=\"{date: {year: day.date.year, month: day.date.month, day: day.date.day},\n              currentMonth: month.number,\n              disabled: isDisabled(day),\n              selected: isSelected(day.date)}\">\n            </template>\n        </td>\n      </tr>\n    </table>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [datepicker_i18n_1.NgbDatepickerI18n])
+	    ], NgbDatepickerMonthView);
+	    return NgbDatepickerMonthView;
+	}());
+	exports.NgbDatepickerMonthView = NgbDatepickerMonthView;
+	//# sourceMappingURL=datepicker-month-view.js.map
+
+	/***/ },
+	/* 50 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var ngb_date_1 = __webpack_require__(3);
+	var util_1 = __webpack_require__(1);
+	var datepicker_i18n_1 = __webpack_require__(4);
+	var ngb_calendar_1 = __webpack_require__(6);
+	var NgbDatepickerNavigationSelect = (function () {
+	    function NgbDatepickerNavigationSelect(i18n, calendar) {
+	        this.i18n = i18n;
+	        this.calendar = calendar;
+	        this.years = [];
+	        this.select = new core_1.EventEmitter();
+	        this.months = calendar.getMonths();
+	    }
+	    NgbDatepickerNavigationSelect.prototype.ngOnChanges = function (changes) {
+	        if (changes['maxDate'] || changes['minDate']) {
+	            this._generateYears();
+	            this._generateMonths();
+	        }
+	        if (changes['date'] && changes['date'].currentValue.year !== changes['date'].previousValue.year) {
+	            this._generateMonths();
+	        }
+	    };
+	    NgbDatepickerNavigationSelect.prototype.changeMonth = function (month) { this.select.emit(new ngb_date_1.NgbDate(this.date.year, util_1.toInteger(month), 1)); };
+	    NgbDatepickerNavigationSelect.prototype.changeYear = function (year) { this.select.emit(new ngb_date_1.NgbDate(util_1.toInteger(year), this.date.month, 1)); };
+	    NgbDatepickerNavigationSelect.prototype._generateMonths = function () {
+	        var _this = this;
+	        this.months = this.calendar.getMonths();
+	        if (this.date.year === this.minDate.year) {
+	            var index = this.months.findIndex(function (month) { return month === _this.minDate.month; });
+	            this.months = this.months.slice(index);
+	        }
+	        if (this.date.year === this.maxDate.year) {
+	            var index = this.months.findIndex(function (month) { return month === _this.maxDate.month; });
+	            this.months = this.months.slice(0, index + 1);
+	        }
+	    };
+	    NgbDatepickerNavigationSelect.prototype._generateYears = function () {
+	        var _this = this;
+	        this.years = Array.from({ length: this.maxDate.year - this.minDate.year + 1 }, function (e, i) { return _this.minDate.year + i; });
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', ngb_date_1.NgbDate)
+	    ], NgbDatepickerNavigationSelect.prototype, "date", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepickerNavigationSelect.prototype, "disabled", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', ngb_date_1.NgbDate)
+	    ], NgbDatepickerNavigationSelect.prototype, "maxDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', ngb_date_1.NgbDate)
+	    ], NgbDatepickerNavigationSelect.prototype, "minDate", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerNavigationSelect.prototype, "select", void 0);
+	    NgbDatepickerNavigationSelect = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-datepicker-navigation-select',
+	            styles: ["\n    select {\n      /* to align with btn-sm */\n      padding: 0.25rem 0.5rem;\n      font-size: 0.875rem;      \n      line-height: 1.25;\n      /* to cancel the custom height set by custom-select */\n      height: inherit;\n      width: 50%;\n    }\n  "],
+	            template: "\n    <select [disabled]=\"disabled\" class=\"custom-select d-inline-block\" [value]=\"date.month\" (change)=\"changeMonth($event.target.value)\">\n      <option *ngFor=\"let m of months\" [value]=\"m\">{{ i18n.getMonthName(m) }}</option>\n    </select>" +
+	                "<select [disabled]=\"disabled\" class=\"custom-select d-inline-block\" [value]=\"date.year\" (change)=\"changeYear($event.target.value)\">\n      <option *ngFor=\"let y of years\" [value]=\"y\">{{ y }}</option>\n    </select> \n  " // template needs to be formatted in a certain way so we don't add empty text nodes
+	        }), 
+	        __metadata('design:paramtypes', [datepicker_i18n_1.NgbDatepickerI18n, ngb_calendar_1.NgbCalendar])
+	    ], NgbDatepickerNavigationSelect);
+	    return NgbDatepickerNavigationSelect;
+	}());
+	exports.NgbDatepickerNavigationSelect = NgbDatepickerNavigationSelect;
+	//# sourceMappingURL=datepicker-navigation-select.js.map
+
+	/***/ },
+	/* 51 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var datepicker_view_model_1 = __webpack_require__(53);
+	var ngb_date_1 = __webpack_require__(3);
+	var datepicker_i18n_1 = __webpack_require__(4);
+	var ngb_calendar_1 = __webpack_require__(6);
+	var NgbDatepickerNavigation = (function () {
+	    function NgbDatepickerNavigation(i18n, _calendar) {
+	        this.i18n = i18n;
+	        this._calendar = _calendar;
+	        this.navigation = datepicker_view_model_1.NavigationEvent;
+	        this.navigate = new core_1.EventEmitter();
+	        this.select = new core_1.EventEmitter();
+	    }
+	    NgbDatepickerNavigation.prototype.doNavigate = function (event) { this.navigate.emit(event); };
+	    NgbDatepickerNavigation.prototype.nextDisabled = function () {
+	        return this.disabled || (this.maxDate && this._calendar.getNext(this.date, 'm').after(this.maxDate));
+	    };
+	    NgbDatepickerNavigation.prototype.prevDisabled = function () {
+	        var prevDate = this._calendar.getPrev(this.date, 'm');
+	        return this.disabled || (this.minDate && prevDate.year <= this.minDate.year && prevDate.month < this.minDate.month);
+	    };
+	    NgbDatepickerNavigation.prototype.selectDate = function (date) { this.select.emit(date); };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', ngb_date_1.NgbDate)
+	    ], NgbDatepickerNavigation.prototype, "date", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepickerNavigation.prototype, "disabled", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', ngb_date_1.NgbDate)
+	    ], NgbDatepickerNavigation.prototype, "maxDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', ngb_date_1.NgbDate)
+	    ], NgbDatepickerNavigation.prototype, "minDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepickerNavigation.prototype, "showSelect", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDatepickerNavigation.prototype, "showWeekNumbers", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerNavigation.prototype, "navigate", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbDatepickerNavigation.prototype, "select", void 0);
+	    NgbDatepickerNavigation = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-datepicker-navigation',
+	            styles: ["\n    .collapsed {\n        margin-bottom: -1.7rem;\n    }\n  "],
+	            template: "\n    <table class=\"w-100\" [class.collapsed]=\"!showSelect\">\n      <tr>\n        <td class=\"text-sm-left\">\n          <button type=\"button\" (click)=\"doNavigate(navigation.PREV)\" class=\"btn btn-sm btn-secondary btn-inline\" \n            [disabled]=\"prevDisabled()\">&lt;</button>\n        </td>\n        \n        <td *ngIf=\"showSelect\">\n          <ngb-datepicker-navigation-select\n            [date]=\"date\"\n            [minDate]=\"minDate\"\n            [maxDate]=\"maxDate\"\n            [disabled] = \"disabled\"\n            (select)=\"selectDate($event)\">\n          </ngb-datepicker-navigation-select>\n        </td>        \n        \n        <div class=\"text-sm-right\">\n          <button type=\"button\" (click)=\"doNavigate(navigation.NEXT)\" class=\"next btn btn-sm btn-secondary btn-inline\" \n            [disabled]=\"nextDisabled()\">&gt;</button>\n        </div>\n      </tr>\n    </table>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [datepicker_i18n_1.NgbDatepickerI18n, ngb_calendar_1.NgbCalendar])
+	    ], NgbDatepickerNavigation);
+	    return NgbDatepickerNavigation;
+	}());
+	exports.NgbDatepickerNavigation = NgbDatepickerNavigation;
+	//# sourceMappingURL=datepicker-navigation.js.map
+
+	/***/ },
+	/* 52 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var ngb_calendar_1 = __webpack_require__(6);
+	var ngb_date_1 = __webpack_require__(3);
+	var core_1 = __webpack_require__(0);
+	var NgbDatepickerService = (function () {
+	    function NgbDatepickerService(_calendar) {
+	        this._calendar = _calendar;
+	    }
+	    NgbDatepickerService.prototype.generateMonthViewModel = function (date, minDate, maxDate, firstDayOfWeek, markDisabled) {
+	        var month = { firstDate: null, number: date.month, year: date.year, weeks: [], weekdays: [] };
+	        date = this._getFirstViewDate(date, firstDayOfWeek);
+	        // month has weeks
+	        for (var w = 0; w < this._calendar.getWeeksPerMonth(); w++) {
+	            var days = [];
+	            // week has days
+	            for (var d = 0; d < this._calendar.getDaysPerWeek(); d++) {
+	                if (w === 0) {
+	                    month.weekdays.push(this._calendar.getWeekday(date));
+	                }
+	                var newDate = new ngb_date_1.NgbDate(date.year, date.month, date.day);
+	                var disabled = (minDate && newDate.before(minDate)) || (maxDate && newDate.after(maxDate));
+	                if (!disabled && markDisabled) {
+	                    disabled = markDisabled(newDate, { month: month.number, year: month.year });
+	                }
+	                // saving first date of the month
+	                if (month.firstDate === null && date.month === month.number) {
+	                    month.firstDate = newDate;
+	                }
+	                days.push({ date: newDate, disabled: disabled });
+	                date = this._calendar.getNext(date);
+	            }
+	            month.weeks.push({ number: this._calendar.getWeekNumber(days.map(function (day) { return ngb_date_1.NgbDate.from(day.date); }), firstDayOfWeek), days: days });
+	        }
+	        return month;
+	    };
+	    NgbDatepickerService.prototype._getFirstViewDate = function (date, firstDayOfWeek) {
+	        var _this = this;
+	        var currentMonth = date.month;
+	        var today = new ngb_date_1.NgbDate(date.year, date.month, date.day);
+	        var yesterday = this._calendar.getPrev(today);
+	        var firstDayOfCurrentMonthIsAlsoFirstDayOfWeek = function () { return today.month !== yesterday.month && firstDayOfWeek === _this._calendar.getWeekday(today); };
+	        var reachedTheFirstDayOfTheLastWeekOfPreviousMonth = function () { return today.month !== currentMonth && firstDayOfWeek === _this._calendar.getWeekday(today); };
+	        // going back in time
+	        while (!reachedTheFirstDayOfTheLastWeekOfPreviousMonth() && !firstDayOfCurrentMonthIsAlsoFirstDayOfWeek()) {
+	            today = new ngb_date_1.NgbDate(yesterday.year, yesterday.month, yesterday.day);
+	            yesterday = this._calendar.getPrev(yesterday);
+	        }
+	        return today;
+	    };
+	    NgbDatepickerService = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [ngb_calendar_1.NgbCalendar])
+	    ], NgbDatepickerService);
+	    return NgbDatepickerService;
+	}());
+	exports.NgbDatepickerService = NgbDatepickerService;
+	//# sourceMappingURL=datepicker-service.js.map
+
+	/***/ },
+	/* 53 */
+	/***/ function(module, exports) {
+
+	"use strict";
+	"use strict";
+	(function (NavigationEvent) {
+	    NavigationEvent[NavigationEvent["PREV"] = 0] = "PREV";
+	    NavigationEvent[NavigationEvent["NEXT"] = 1] = "NEXT";
+	})(exports.NavigationEvent || (exports.NavigationEvent = {}));
+	var NavigationEvent = exports.NavigationEvent;
+	//# sourceMappingURL=datepicker-view-model.js.map
+
+	/***/ },
+	/* 54 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var dropdown_config_1 = __webpack_require__(31);
+	/**
+	 * Transforms a node into a dropdown.
+	 */
+	var NgbDropdown = (function () {
+	    function NgbDropdown(config) {
+	        /**
+	         *  Defines whether or not the dropdown-menu is open initially.
+	         */
+	        this._open = false;
+	        /**
+	         *  An event fired when the dropdown is opened or closed.
+	         *  Event's payload equals whether dropdown is open.
+	         */
+	        this.openChange = new core_1.EventEmitter();
+	        this.up = config.up;
+	        this.autoClose = config.autoClose;
+	    }
+	    /**
+	     * Checks if the dropdown menu is open or not.
+	     */
+	    NgbDropdown.prototype.isOpen = function () { return this._open; };
+	    /**
+	     * Opens the dropdown menu of a given navbar or tabbed navigation.
+	     */
+	    NgbDropdown.prototype.open = function () {
+	        if (!this._open) {
+	            this._open = true;
+	            this.openChange.emit(true);
+	        }
+	    };
+	    /**
+	     * Closes the dropdown menu of a given navbar or tabbed navigation.
+	     */
+	    NgbDropdown.prototype.close = function () {
+	        if (this._open) {
+	            this._open = false;
+	            this.openChange.emit(false);
+	        }
+	    };
+	    /**
+	     * Toggles the dropdown menu of a given navbar or tabbed navigation.
+	     */
+	    NgbDropdown.prototype.toggle = function () {
+	        if (this.isOpen()) {
+	            this.close();
+	        }
+	        else {
+	            this.open();
+	        }
+	    };
+	    NgbDropdown.prototype.closeFromOutsideClick = function ($event) {
+	        if (this.autoClose && !this._isEventFromToggle($event)) {
+	            this.close();
+	        }
+	    };
+	    NgbDropdown.prototype.closeFromOutsideEsc = function () {
+	        if (this.autoClose) {
+	            this.close();
+	        }
+	    };
+	    Object.defineProperty(NgbDropdown.prototype, "toggleElement", {
+	        /**
+	         * @internal
+	         */
+	        set: function (toggleElement) { this._toggleElement = toggleElement; },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    NgbDropdown.prototype._isEventFromToggle = function ($event) { return !!this._toggleElement && this._toggleElement.contains($event.target); };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDropdown.prototype, "up", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbDropdown.prototype, "autoClose", void 0);
+	    __decorate([
+	        core_1.Input('open'), 
+	        __metadata('design:type', Object)
+	    ], NgbDropdown.prototype, "_open", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbDropdown.prototype, "openChange", void 0);
+	    NgbDropdown = __decorate([
+	        core_1.Directive({
+	            selector: '[ngbDropdown]',
+	            exportAs: 'ngbDropdown',
+	            host: {
+	                '[class.dropdown]': '!up',
+	                '[class.dropup]': 'up',
+	                '[class.open]': 'isOpen()',
+	                '(keyup.esc)': 'closeFromOutsideEsc()',
+	                '(document:click)': 'closeFromOutsideClick($event)'
+	            }
+	        }), 
+	        __metadata('design:paramtypes', [dropdown_config_1.NgbDropdownConfig])
+	    ], NgbDropdown);
+	    return NgbDropdown;
+	}());
+	exports.NgbDropdown = NgbDropdown;
+	/**
+	 * Allows the dropdown to be toggled via click. This directive is optional.
+	 */
+	var NgbDropdownToggle = (function () {
+	    function NgbDropdownToggle(dropdown, elementRef) {
+	        this.dropdown = dropdown;
+	        dropdown.toggleElement = elementRef.nativeElement;
+	    }
+	    NgbDropdownToggle.prototype.toggleOpen = function () { this.dropdown.toggle(); };
+	    NgbDropdownToggle = __decorate([
+	        core_1.Directive({
+	            selector: '[ngbDropdownToggle]',
+	            host: {
+	                'class': 'dropdown-toggle',
+	                'aria-haspopup': 'true',
+	                '[attr.aria-expanded]': 'dropdown.isOpen()',
+	                '(click)': 'toggleOpen()'
+	            }
+	        }), 
+	        __metadata('design:paramtypes', [NgbDropdown, core_1.ElementRef])
+	    ], NgbDropdownToggle);
+	    return NgbDropdownToggle;
+	}());
+	exports.NgbDropdownToggle = NgbDropdownToggle;
+	//# sourceMappingURL=dropdown.js.map
+
+	/***/ },
+	/* 55 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var NgbModalBackdrop = (function () {
+	    function NgbModalBackdrop() {
+	    }
+	    NgbModalBackdrop = __decorate([
+	        core_1.Component({ selector: 'ngb-modal-backdrop', template: '', host: { 'class': 'modal-backdrop fade in' } }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbModalBackdrop);
+	    return NgbModalBackdrop;
+	}());
+	exports.NgbModalBackdrop = NgbModalBackdrop;
+	//# sourceMappingURL=modal-backdrop.js.map
+
+	/***/ },
+	/* 56 */
+	/***/ function(module, exports) {
+
+	"use strict";
+	"use strict";
+	(function (ModalDismissReasons) {
+	    ModalDismissReasons[ModalDismissReasons["BACKDROP_CLICK"] = 0] = "BACKDROP_CLICK";
+	    ModalDismissReasons[ModalDismissReasons["ESC"] = 1] = "ESC";
+	})(exports.ModalDismissReasons || (exports.ModalDismissReasons = {}));
+	var ModalDismissReasons = exports.ModalDismissReasons;
+	//# sourceMappingURL=modal-dismiss-reasons.js.map
+
+	/***/ },
+	/* 57 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var popup_1 = __webpack_require__(7);
+	/**
+	 * A reference to an active (currently opened) modal. Instances of this class
+	 * can be injected into components passed as modal content.
+	 */
+	var NgbActiveModal = (function () {
+	    function NgbActiveModal() {
+	    }
+	    /**
+	     * Can be used to close a modal, passing an optional result.
+	     */
+	    NgbActiveModal.prototype.close = function (result) { };
+	    /**
+	     * Can be used to dismiss a modal, passing an optional reason.
+	     */
+	    NgbActiveModal.prototype.dismiss = function (reason) { };
+	    NgbActiveModal = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbActiveModal);
+	    return NgbActiveModal;
+	}());
+	exports.NgbActiveModal = NgbActiveModal;
+	/**
+	 * A reference to a newly opened modal.
+	 */
+	var NgbModalRef = (function () {
+	    function NgbModalRef(_viewContainerRef, _windowCmptRef, _contentRef, _backdropCmptRef) {
+	        var _this = this;
+	        this._viewContainerRef = _viewContainerRef;
+	        this._windowCmptRef = _windowCmptRef;
+	        this._contentRef = _contentRef;
+	        this._backdropCmptRef = _backdropCmptRef;
+	        _windowCmptRef.instance.dismissEvent.subscribe(function (reason) { _this.dismiss(reason); });
+	        this.result = new Promise(function (resolve, reject) {
+	            _this._resolve = resolve;
+	            _this._reject = reject;
+	        });
+	        this.result.then(null, function () { });
+	    }
+	    Object.defineProperty(NgbModalRef.prototype, "componentInstance", {
+	        /**
+	         * The instance of component used as modal's content.
+	         * Undefined when a TemplateRef is used as modal's content.
+	         */
+	        get: function () {
+	            if (this._contentRef.componentRef) {
+	                return this._contentRef.componentRef.instance;
+	            }
+	        },
+	        // only needed to keep TS1.8 compatibility
+	        set: function (instance) { },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Can be used to close a modal, passing an optional result.
+	     */
+	    NgbModalRef.prototype.close = function (result) {
+	        if (this._windowCmptRef) {
+	            this._resolve(result);
+	            this._removeModalElements();
+	        }
+	    };
+	    /**
+	     * Can be used to dismiss a modal, passing an optional reason.
+	     */
+	    NgbModalRef.prototype.dismiss = function (reason) {
+	        if (this._windowCmptRef) {
+	            this._reject(reason);
+	            this._removeModalElements();
+	        }
+	    };
+	    NgbModalRef.prototype._removeModalElements = function () {
+	        this._viewContainerRef.remove(this._viewContainerRef.indexOf(this._windowCmptRef.hostView));
+	        if (this._backdropCmptRef) {
+	            this._viewContainerRef.remove(this._viewContainerRef.indexOf(this._backdropCmptRef.hostView));
+	        }
+	        if (this._contentRef && this._contentRef.viewRef) {
+	            this._viewContainerRef.remove(this._viewContainerRef.indexOf(this._contentRef.viewRef));
+	        }
+	        this._windowCmptRef = null;
+	        this._backdropCmptRef = null;
+	        this._contentRef = null;
+	    };
+	    NgbModalRef = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [core_1.ViewContainerRef, core_1.ComponentRef, popup_1.ContentRef, core_1.ComponentRef])
+	    ], NgbModalRef);
+	    return NgbModalRef;
+	}());
+	exports.NgbModalRef = NgbModalRef;
+	//# sourceMappingURL=modal-ref.js.map
+
+	/***/ },
+	/* 58 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var modal_dismiss_reasons_1 = __webpack_require__(56);
+	var NgbModalWindow = (function () {
+	    function NgbModalWindow(_elRef, _renderer) {
+	        this._elRef = _elRef;
+	        this._renderer = _renderer;
+	        this.backdrop = true;
+	        this.keyboard = true;
+	        this.dismissEvent = new core_1.EventEmitter();
+	    }
+	    NgbModalWindow.prototype.backdropClick = function ($event) {
+	        if (this.backdrop === true && this._elRef.nativeElement === $event.target) {
+	            this.dismiss(modal_dismiss_reasons_1.ModalDismissReasons.BACKDROP_CLICK);
+	        }
+	    };
+	    NgbModalWindow.prototype.escKey = function ($event) {
+	        if (this.keyboard && !$event.defaultPrevented) {
+	            this.dismiss(modal_dismiss_reasons_1.ModalDismissReasons.ESC);
+	        }
+	    };
+	    NgbModalWindow.prototype.dismiss = function (reason) { this.dismissEvent.emit(reason); };
+	    NgbModalWindow.prototype.ngOnInit = function () {
+	        this._elWithFocus = document.activeElement;
+	        this._renderer.setElementClass(document.body, 'modal-open', true);
+	    };
+	    NgbModalWindow.prototype.ngAfterViewInit = function () {
+	        if (!this._elRef.nativeElement.contains(document.activeElement)) {
+	            this._renderer.invokeElementMethod(this._elRef.nativeElement, 'focus', []);
+	        }
+	    };
+	    NgbModalWindow.prototype.ngOnDestroy = function () {
+	        if (this._elWithFocus && document.body.contains(this._elWithFocus)) {
+	            this._renderer.invokeElementMethod(this._elWithFocus, 'focus', []);
+	        }
+	        else {
+	            this._renderer.invokeElementMethod(document.body, 'focus', []);
+	        }
+	        this._elWithFocus = null;
+	        this._renderer.setElementClass(document.body, 'modal-open', false);
+	    };
+	    __decorate([
+	        // element that is focused prior to modal opening
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbModalWindow.prototype, "backdrop", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbModalWindow.prototype, "keyboard", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbModalWindow.prototype, "size", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbModalWindow.prototype, "windowClass", void 0);
+	    __decorate([
+	        core_1.Output('dismiss'), 
+	        __metadata('design:type', Object)
+	    ], NgbModalWindow.prototype, "dismissEvent", void 0);
+	    NgbModalWindow = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-modal-window',
+	            host: {
+	                '[class]': '"modal fade in" + (windowClass ? " " + windowClass : "")',
+	                'role': 'dialog',
+	                'tabindex': '-1',
+	                'style': 'display: block;',
+	                '(keyup.esc)': 'escKey($event)',
+	                '(click)': 'backdropClick($event)'
+	            },
+	            template: "\n    <div [class]=\"'modal-dialog' + (size ? ' modal-' + size : '')\" role=\"document\">\n        <div class=\"modal-content\"><ng-content></ng-content></div>\n    </div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+	    ], NgbModalWindow);
+	    return NgbModalWindow;
+	}());
+	exports.NgbModalWindow = NgbModalWindow;
+	//# sourceMappingURL=modal-window.js.map
+
+	/***/ },
+	/* 59 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var modal_stack_1 = __webpack_require__(32);
+	/**
+	 * A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument to
+	 * the "open" method!
+	 */
+	var NgbModal = (function () {
+	    function NgbModal(_moduleCFR, _injector, _modalStack) {
+	        this._moduleCFR = _moduleCFR;
+	        this._injector = _injector;
+	        this._modalStack = _modalStack;
+	    }
+	    /**
+	     * Opens a new modal window with the specified content and using supplied options. Content can be provided
+	     * as a TemplateRef or a component type. If you pass a component type as content than instances of those
+	     * components can be injected with an instance of the NgbActiveModal class. You can use methods on the
+	     * NgbActiveModal class to close / dismiss modals from "inside" of a component.
+	     */
+	    NgbModal.prototype.open = function (content, options) {
+	        if (options === void 0) { options = {}; }
+	        return this._modalStack.open(this._moduleCFR, this._injector, content, options);
+	    };
+	    NgbModal = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [core_1.ComponentFactoryResolver, core_1.Injector, modal_stack_1.NgbModalStack])
+	    ], NgbModal);
+	    return NgbModal;
+	}());
+	exports.NgbModal = NgbModal;
+	//# sourceMappingURL=modal.js.map
+
+	/***/ },
+	/* 60 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var util_1 = __webpack_require__(1);
+	var pagination_config_1 = __webpack_require__(33);
+	/**
+	 * A directive that will take care of visualising a pagination bar and enable / disable buttons correctly!
+	 */
+	var NgbPagination = (function () {
+	    function NgbPagination(config) {
+	        this.pageCount = 0;
+	        this.pages = [];
+	        /**
+	         *  Current page.
+	         */
+	        this.page = 0;
+	        /**
+	         *  An event fired when the page is changed.
+	         *  Event's payload equals to the newly selected page.
+	         */
+	        this.pageChange = new core_1.EventEmitter(true);
+	        this.boundaryLinks = config.boundaryLinks;
+	        this.directionLinks = config.directionLinks;
+	        this.ellipses = config.ellipses;
+	        this.maxSize = config.maxSize;
+	        this.pageSize = config.pageSize;
+	        this.rotate = config.rotate;
+	        this.size = config.size;
+	    }
+	    NgbPagination.prototype.hasPrevious = function () { return this.page > 1; };
+	    NgbPagination.prototype.hasNext = function () { return this.page < this.pageCount; };
+	    NgbPagination.prototype.selectPage = function (pageNumber) { this._updatePages(pageNumber); };
+	    NgbPagination.prototype.ngOnChanges = function (changes) { this._updatePages(this.page); };
+	    /**
+	     * @internal
+	     */
+	    NgbPagination.prototype.isEllipsis = function (pageNumber) { return pageNumber === -1; };
+	    /**
+	     * Appends ellipses and first/last page number to the displayed pages
+	     */
+	    NgbPagination.prototype._applyEllipses = function (start, end) {
+	        if (this.ellipses) {
+	            if (start > 0) {
+	                this.pages.unshift(-1);
+	                this.pages.unshift(1);
+	            }
+	            if (end < this.pageCount) {
+	                this.pages.push(-1);
+	                this.pages.push(this.pageCount);
+	            }
+	        }
+	    };
+	    /**
+	     * Rotates page numbers based on maxSize items visible.
+	     * Currently selected page stays in the middle:
+	     *
+	     * Ex. for selected page = 6:
+	     * [5,*6*,7] for maxSize = 3
+	     * [4,5,*6*,7] for maxSize = 4
+	     */
+	    NgbPagination.prototype._applyRotation = function () {
+	        var start = 0;
+	        var end = this.pageCount;
+	        var leftOffset = Math.floor(this.maxSize / 2);
+	        var rightOffset = this.maxSize % 2 === 0 ? leftOffset - 1 : leftOffset;
+	        if (this.page <= leftOffset) {
+	            // very beginning, no rotation -> [0..maxSize]
+	            end = this.maxSize;
+	        }
+	        else if (this.pageCount - this.page < leftOffset) {
+	            // very end, no rotation -> [len-maxSize..len]
+	            start = this.pageCount - this.maxSize;
+	        }
+	        else {
+	            // rotate
+	            start = this.page - leftOffset - 1;
+	            end = this.page + rightOffset;
+	        }
+	        return [start, end];
+	    };
+	    /**
+	     * Paginates page numbers based on maxSize items per page
+	     */
+	    NgbPagination.prototype._applyPagination = function () {
+	        var page = Math.ceil(this.page / this.maxSize) - 1;
+	        var start = page * this.maxSize;
+	        var end = start + this.maxSize;
+	        return [start, end];
+	    };
+	    NgbPagination.prototype._setPageInRange = function (newPageNo) {
+	        var prevPageNo = this.page;
+	        this.page = util_1.getValueInRange(newPageNo, this.pageCount, 1);
+	        if (this.page !== prevPageNo) {
+	            this.pageChange.emit(this.page);
+	        }
+	    };
+	    NgbPagination.prototype._updatePages = function (newPage) {
+	        this.pageCount = Math.ceil(this.collectionSize / this.pageSize);
+	        if (!util_1.isNumber(this.pageCount)) {
+	            this.pageCount = 0;
+	        }
+	        // fill-in model needed to render pages
+	        this.pages.length = 0;
+	        for (var i = 1; i <= this.pageCount; i++) {
+	            this.pages.push(i);
+	        }
+	        // set page within 1..max range
+	        this._setPageInRange(newPage);
+	        // apply maxSize if necessary
+	        if (this.maxSize > 0 && this.pageCount > this.maxSize) {
+	            var start = 0;
+	            var end = this.pageCount;
+	            // either paginating or rotating page numbers
+	            if (this.rotate) {
+	                _a = this._applyRotation(), start = _a[0], end = _a[1];
+	            }
+	            else {
+	                _b = this._applyPagination(), start = _b[0], end = _b[1];
+	            }
+	            this.pages = this.pages.slice(start, end);
+	            // adding ellipses
+	            this._applyEllipses(start, end);
+	        }
+	        var _a, _b;
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbPagination.prototype, "boundaryLinks", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbPagination.prototype, "directionLinks", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbPagination.prototype, "ellipses", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbPagination.prototype, "rotate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbPagination.prototype, "collectionSize", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbPagination.prototype, "maxSize", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbPagination.prototype, "page", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbPagination.prototype, "pageSize", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbPagination.prototype, "pageChange", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbPagination.prototype, "size", void 0);
+	    NgbPagination = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-pagination',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            template: "\n    <nav>\n      <ul [class]=\"'pagination' + (size ? ' pagination-' + size : '')\">\n        <li *ngIf=\"boundaryLinks\" class=\"page-item\" [class.disabled]=\"!hasPrevious()\">\n          <a aria-label=\"First\" class=\"page-link\" href (click)=\"!!selectPage(1)\">\n            <span aria-hidden=\"true\">&laquo;&laquo;</span>\n            <span class=\"sr-only\">First</span>\n          </a>                \n        </li>\n      \n        <li *ngIf=\"directionLinks\" class=\"page-item\" [class.disabled]=\"!hasPrevious()\">\n          <a aria-label=\"Previous\" class=\"page-link\" href (click)=\"!!selectPage(page-1)\">\n            <span aria-hidden=\"true\">&laquo;</span>\n            <span class=\"sr-only\">Previous</span>\n          </a>\n        </li>\n\n        <li *ngFor=\"let pageNumber of pages\" class=\"page-item\" [class.active]=\"pageNumber === page\" \n          [class.disabled]=\"isEllipsis(pageNumber)\">\n          <a *ngIf=\"isEllipsis(pageNumber)\" class=\"page-link\">...</a>\n          <a *ngIf=\"!isEllipsis(pageNumber)\" class=\"page-link\" href (click)=\"!!selectPage(pageNumber)\">{{pageNumber}}</a>\n        </li>\n\n        <li *ngIf=\"directionLinks\" class=\"page-item\" [class.disabled]=\"!hasNext()\">\n          <a aria-label=\"Next\" class=\"page-link\" href (click)=\"!!selectPage(page+1)\">\n            <span aria-hidden=\"true\">&raquo;</span>\n            <span class=\"sr-only\">Next</span>\n          </a>\n        </li>\n        \n        <li *ngIf=\"boundaryLinks\" class=\"page-item\" [class.disabled]=\"!hasNext()\">\n          <a aria-label=\"Last\" class=\"page-link\" href (click)=\"!!selectPage(pageCount)\">\n            <span aria-hidden=\"true\">&raquo;&raquo;</span>\n            <span class=\"sr-only\">Last</span>\n          </a>                \n        </li>        \n      </ul>\n    </nav>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [pagination_config_1.NgbPaginationConfig])
+	    ], NgbPagination);
+	    return NgbPagination;
+	}());
+	exports.NgbPagination = NgbPagination;
+	//# sourceMappingURL=pagination.js.map
+
+	/***/ },
+	/* 61 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var triggers_1 = __webpack_require__(68);
+	var positioning_1 = __webpack_require__(8);
+	var popup_1 = __webpack_require__(7);
+	var popover_config_1 = __webpack_require__(34);
+	var NgbPopoverWindow = (function () {
+	    function NgbPopoverWindow() {
+	        this.placement = 'top';
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbPopoverWindow.prototype, "placement", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbPopoverWindow.prototype, "title", void 0);
+	    NgbPopoverWindow = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-popover-window',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            host: { '[class]': '"popover in popover-" + placement', 'role': 'tooltip' },
+	            // TODO remove the div.popover-arrow, which is there only to maintain compatibility with bootstrap alpha.4
+	            template: "\n    <div class=\"popover-arrow\"></div>\n    <h3 class=\"popover-title\">{{title}}</h3><div class=\"popover-content\"><ng-content></ng-content></div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbPopoverWindow);
+	    return NgbPopoverWindow;
+	}());
+	exports.NgbPopoverWindow = NgbPopoverWindow;
+	/**
+	 * A lightweight, extensible directive for fancy popover creation.
+	 */
+	var NgbPopover = (function () {
+	    function NgbPopover(_elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
+	        var _this = this;
+	        this._elementRef = _elementRef;
+	        this._renderer = _renderer;
+	        /**
+	         * Emits an event when the popover is shown
+	         */
+	        this.shown = new core_1.EventEmitter();
+	        /**
+	         * Emits an event when the popover is hidden
+	         */
+	        this.hidden = new core_1.EventEmitter();
+	        this.placement = config.placement;
+	        this.triggers = config.triggers;
+	        this.container = config.container;
+	        this._popupService = new popup_1.PopupService(NgbPopoverWindow, injector, viewContainerRef, _renderer, componentFactoryResolver);
+	        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+	            if (_this._windowRef) {
+	                positioning_1.positionElements(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, _this.placement, _this.container === 'body');
+	            }
+	        });
+	    }
+	    /**
+	     * Opens an element’s popover. This is considered a “manual” triggering of the popover.
+	     */
+	    NgbPopover.prototype.open = function () {
+	        if (!this._windowRef) {
+	            this._windowRef = this._popupService.open(this.ngbPopover);
+	            this._windowRef.instance.placement = this.placement;
+	            this._windowRef.instance.title = this.popoverTitle;
+	            if (this.container === 'body') {
+	                window.document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
+	            }
+	            // we need to manually invoke change detection since events registered via
+	            // Renderer::listen() are not picked up by change detection with the OnPush strategy
+	            this._windowRef.changeDetectorRef.markForCheck();
+	            this.shown.emit();
+	        }
+	    };
+	    /**
+	     * Closes an element’s popover. This is considered a “manual” triggering of the popover.
+	     */
+	    NgbPopover.prototype.close = function () {
+	        if (this._windowRef) {
+	            this._popupService.close();
+	            this._windowRef = null;
+	            this.hidden.emit();
+	        }
+	    };
+	    /**
+	     * Toggles an element’s popover. This is considered a “manual” triggering of the popover.
+	     */
+	    NgbPopover.prototype.toggle = function () {
+	        if (this._windowRef) {
+	            this.close();
+	        }
+	        else {
+	            this.open();
+	        }
+	    };
+	    /**
+	     * Returns whether or not the popover is currently being shown
+	     */
+	    NgbPopover.prototype.isOpen = function () { return this._windowRef != null; };
+	    NgbPopover.prototype.ngOnInit = function () {
+	        this._unregisterListenersFn = triggers_1.listenToTriggers(this._renderer, this._elementRef.nativeElement, this.triggers, this.open.bind(this), this.close.bind(this), this.toggle.bind(this));
+	    };
+	    NgbPopover.prototype.ngOnDestroy = function () {
+	        this.close();
+	        this._unregisterListenersFn();
+	        this._zoneSubscription.unsubscribe();
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbPopover.prototype, "ngbPopover", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbPopover.prototype, "popoverTitle", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbPopover.prototype, "placement", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbPopover.prototype, "triggers", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbPopover.prototype, "container", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbPopover.prototype, "shown", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbPopover.prototype, "hidden", void 0);
+	    NgbPopover = __decorate([
+	        core_1.Directive({ selector: '[ngbPopover]', exportAs: 'ngbPopover' }), 
+	        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, core_1.Injector, core_1.ComponentFactoryResolver, core_1.ViewContainerRef, popover_config_1.NgbPopoverConfig, core_1.NgZone])
+	    ], NgbPopover);
+	    return NgbPopover;
+	}());
+	exports.NgbPopover = NgbPopover;
+	//# sourceMappingURL=popover.js.map
+
+	/***/ },
+	/* 62 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var util_1 = __webpack_require__(1);
+	var progressbar_config_1 = __webpack_require__(35);
+	/**
+	 * Directive that can be used to provide feedback on the progress of a workflow or an action.
+	 */
+	var NgbProgressbar = (function () {
+	    function NgbProgressbar(config) {
+	        /**
+	         * Current value to be displayed in the progressbar. Should be smaller or equal to "max" value.
+	         */
+	        this.value = 0;
+	        this.max = config.max;
+	        this.animated = config.animated;
+	        this.striped = config.striped;
+	        this.type = config.type;
+	    }
+	    NgbProgressbar.prototype.getValue = function () { return util_1.getValueInRange(this.value, this.max); };
+	    NgbProgressbar.prototype.getPercentValue = function () { return 100 * this.getValue() / this.max; };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbProgressbar.prototype, "max", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbProgressbar.prototype, "animated", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbProgressbar.prototype, "striped", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbProgressbar.prototype, "type", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbProgressbar.prototype, "value", void 0);
+	    NgbProgressbar = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-progressbar',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            template: "\n    <progress class=\"progress{{type ? ' progress-' + type : ''}}{{animated ? ' progress-animated' : ''}}{{striped ? \n    ' progress-striped' : ''}}\" \n      [max]=\"max\" [value]=\"getValue()\">\n      <div class=\"progress\">\n        <span class=\"progress-bar\" [style.width.%]=\"getPercentValue()\"><ng-content></ng-content></span>\n      </div>\n    </progress>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [progressbar_config_1.NgbProgressbarConfig])
+	    ], NgbProgressbar);
+	    return NgbProgressbar;
+	}());
+	exports.NgbProgressbar = NgbProgressbar;
+	//# sourceMappingURL=progressbar.js.map
+
+	/***/ },
+	/* 63 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var rating_config_1 = __webpack_require__(36);
+	var util_1 = __webpack_require__(1);
+	var Key;
+	(function (Key) {
+	    Key[Key["End"] = 35] = "End";
+	    Key[Key["Home"] = 36] = "Home";
+	    Key[Key["ArrowLeft"] = 37] = "ArrowLeft";
+	    Key[Key["ArrowUp"] = 38] = "ArrowUp";
+	    Key[Key["ArrowRight"] = 39] = "ArrowRight";
+	    Key[Key["ArrowDown"] = 40] = "ArrowDown";
+	})(Key || (Key = {}));
+	/**
+	 * Rating directive that will take care of visualising a star rating bar.
+	 */
+	var NgbRating = (function () {
+	    function NgbRating(config) {
+	        this.range = [];
+	        /**
+	         * An event fired when a user is hovering over a given rating.
+	         * Event's payload equals to the rating being hovered over.
+	         */
+	        this.hover = new core_1.EventEmitter();
+	        /**
+	         * An event fired when a user stops hovering over a given rating.
+	         * Event's payload equals to the rating of the last item being hovered over.
+	         */
+	        this.leave = new core_1.EventEmitter();
+	        /**
+	         * An event fired when a user selects a new rating.
+	         * Event's payload equals to the newly selected rating.
+	         */
+	        this.rateChange = new core_1.EventEmitter();
+	        this.max = config.max;
+	        this.readonly = config.readonly;
+	    }
+	    NgbRating.prototype.ariaValueText = function () { return this.rate + " out of " + this.max; };
+	    NgbRating.prototype.enter = function (value) {
+	        if (!this.readonly) {
+	            this.rate = value;
+	        }
+	        this.hover.emit(value);
+	    };
+	    NgbRating.prototype.handleKeyDown = function (event) {
+	        if (Key[util_1.toString(event.which)]) {
+	            event.preventDefault();
+	            switch (event.which) {
+	                case Key.ArrowDown:
+	                case Key.ArrowLeft:
+	                    this.update(this.rate - 1);
+	                    break;
+	                case Key.ArrowUp:
+	                case Key.ArrowRight:
+	                    this.update(this.rate + 1);
+	                    break;
+	                case Key.Home:
+	                    this.update(0);
+	                    break;
+	                case Key.End:
+	                    this.update(this.max);
+	                    break;
+	            }
+	        }
+	    };
+	    NgbRating.prototype.getFillValue = function (index) {
+	        var diff = this.rate - index;
+	        if (diff >= 1) {
+	            return 100;
+	        }
+	        if (diff < 1 && diff > 0) {
+	            return Number.parseInt((diff * 100).toFixed(2));
+	        }
+	        return 0;
+	    };
+	    NgbRating.prototype.ngOnChanges = function (changes) {
+	        if (changes['rate']) {
+	            this._oldRate = this.rate;
+	        }
+	    };
+	    NgbRating.prototype.ngOnInit = function () { this.range = Array.from({ length: this.max }, function (v, k) { return k + 1; }); };
+	    NgbRating.prototype.reset = function () {
+	        this.leave.emit(this.rate);
+	        this.rate = this._oldRate;
+	    };
+	    NgbRating.prototype.update = function (value) {
+	        if (!this.readonly) {
+	            var newRate = util_1.getValueInRange(value, this.max, 0);
+	            if (this._oldRate !== newRate) {
+	                this._oldRate = newRate;
+	                this.rate = newRate;
+	                this.rateChange.emit(newRate);
+	            }
+	        }
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbRating.prototype, "max", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbRating.prototype, "rate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbRating.prototype, "readonly", void 0);
+	    __decorate([
+	        core_1.Input(),
+	        core_1.ContentChild(core_1.TemplateRef), 
+	        __metadata('design:type', core_1.TemplateRef)
+	    ], NgbRating.prototype, "starTemplate", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbRating.prototype, "hover", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbRating.prototype, "leave", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbRating.prototype, "rateChange", void 0);
+	    NgbRating = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-rating',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            host: { '(keydown)': 'handleKeyDown($event)' },
+	            template: "\n    <template #t let-fill=\"fill\">{{ fill === 100 ? '&#9733;' : '&#9734;' }}</template>\n    <span tabindex=\"0\" (mouseleave)=\"reset()\" role=\"slider\" aria-valuemin=\"0\"\n      [attr.aria-valuemax]=\"max\" [attr.aria-valuenow]=\"rate\" [attr.aria-valuetext]=\"ariaValueText()\">\n      <template ngFor [ngForOf]=\"range\" let-index=\"index\">\n        <span class=\"sr-only\">({{ index < rate ? '*' : ' ' }})</span>\n        <span (mouseenter)=\"enter(index + 1)\" (click)=\"update(index + 1)\" \n        [style.cursor]=\"readonly ? 'default' : 'pointer'\">\n          <template [ngTemplateOutlet]=\"starTemplate || t\" [ngOutletContext]=\"{fill: getFillValue(index)}\"></template>\n        </span>\n      </template>\n    </span>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [rating_config_1.NgbRatingConfig])
+	    ], NgbRating);
+	    return NgbRating;
+	}());
+	exports.NgbRating = NgbRating;
+	//# sourceMappingURL=rating.js.map
+
+	/***/ },
+	/* 64 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var tabset_config_1 = __webpack_require__(37);
+	var nextId = 0;
+	/**
+	 * This directive should be used to wrap tab titles that need to contain HTML markup or other directives.
+	 */
+	var NgbTabTitle = (function () {
+	    function NgbTabTitle(templateRef) {
+	        this.templateRef = templateRef;
+	    }
+	    NgbTabTitle = __decorate([
+	        core_1.Directive({ selector: 'template[ngbTabTitle]' }), 
+	        __metadata('design:paramtypes', [core_1.TemplateRef])
+	    ], NgbTabTitle);
+	    return NgbTabTitle;
+	}());
+	exports.NgbTabTitle = NgbTabTitle;
+	/**
+	 * This directive must be used to wrap content to be displayed in a tab.
+	 */
+	var NgbTabContent = (function () {
+	    function NgbTabContent(templateRef) {
+	        this.templateRef = templateRef;
+	    }
+	    NgbTabContent = __decorate([
+	        core_1.Directive({ selector: 'template[ngbTabContent]' }), 
+	        __metadata('design:paramtypes', [core_1.TemplateRef])
+	    ], NgbTabContent);
+	    return NgbTabContent;
+	}());
+	exports.NgbTabContent = NgbTabContent;
+	/**
+	 * A directive representing an individual tab.
+	 */
+	var NgbTab = (function () {
+	    function NgbTab() {
+	        /**
+	         * Unique tab identifier. Must be unique for the entire document for proper accessibility support.
+	         */
+	        this.id = "ngb-tab-" + nextId++;
+	        /**
+	         * Allows toggling disabled state of a given state. Disabled tabs can't be selected.
+	         */
+	        this.disabled = false;
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbTab.prototype, "id", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbTab.prototype, "title", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbTab.prototype, "disabled", void 0);
+	    __decorate([
+	        core_1.ContentChild(NgbTabContent), 
+	        __metadata('design:type', NgbTabContent)
+	    ], NgbTab.prototype, "contentTpl", void 0);
+	    __decorate([
+	        core_1.ContentChild(NgbTabTitle), 
+	        __metadata('design:type', NgbTabTitle)
+	    ], NgbTab.prototype, "titleTpl", void 0);
+	    NgbTab = __decorate([
+	        core_1.Directive({ selector: 'ngb-tab' }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTab);
+	    return NgbTab;
+	}());
+	exports.NgbTab = NgbTab;
+	/**
+	 * A component that makes it easy to create tabbed interface.
+	 */
+	var NgbTabset = (function () {
+	    function NgbTabset(config) {
+	        /**
+	         * A tab change event fired right before the tab selection happens. See NgbTabChangeEvent for payload details
+	         */
+	        this.tabChange = new core_1.EventEmitter();
+	        this.type = config.type;
+	    }
+	    /**
+	     * Selects the tab with the given id and shows its associated pane.
+	     * Any other tab that was previously selected becomes unselected and its associated pane is hidden.
+	     */
+	    NgbTabset.prototype.select = function (tabId) {
+	        var selectedTab = this._getTabById(tabId);
+	        if (selectedTab && !selectedTab.disabled && this.activeId !== selectedTab.id) {
+	            var defaultPrevented_1 = false;
+	            this.tabChange.emit({ activeId: this.activeId, nextId: selectedTab.id, preventDefault: function () { defaultPrevented_1 = true; } });
+	            if (!defaultPrevented_1) {
+	                this.activeId = selectedTab.id;
+	            }
+	        }
+	    };
+	    NgbTabset.prototype.ngAfterContentChecked = function () {
+	        // auto-correct activeId that might have been set incorrectly as input
+	        var activeTab = this._getTabById(this.activeId);
+	        this.activeId = activeTab ? activeTab.id : (this.tabs.length ? this.tabs.first.id : null);
+	    };
+	    NgbTabset.prototype._getTabById = function (id) {
+	        var tabsWithId = this.tabs.filter(function (tab) { return tab.id === id; });
+	        return tabsWithId.length ? tabsWithId[0] : null;
+	    };
+	    __decorate([
+	        core_1.ContentChildren(NgbTab), 
+	        __metadata('design:type', core_1.QueryList)
+	    ], NgbTabset.prototype, "tabs", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbTabset.prototype, "activeId", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbTabset.prototype, "type", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbTabset.prototype, "tabChange", void 0);
+	    NgbTabset = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-tabset',
+	            exportAs: 'ngbTabset',
+	            template: "\n    <ul [class]=\"'nav nav-' + type\" role=\"tablist\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a [id]=\"tab.id\" class=\"nav-link\" [class.active]=\"tab.id === activeId\" [class.disabled]=\"tab.disabled\" \n          href (click)=\"!!select(tab.id)\">\n          {{tab.title}}<template [ngTemplateOutlet]=\"tab.titleTpl?.templateRef\"></template>\n        </a>\n      </li>\n    </ul>\n    <div class=\"tab-content\">\n      <template ngFor let-tab [ngForOf]=\"tabs\">\n        <div class=\"tab-pane active\" *ngIf=\"tab.id === activeId\" role=\"tabpanel\" [attr.aria-labelledby]=\"tab.id\">\n          <template [ngTemplateOutlet]=\"tab.contentTpl.templateRef\"></template>\n        </div>\n      </template>\n    </div>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [tabset_config_1.NgbTabsetConfig])
+	    ], NgbTabset);
+	    return NgbTabset;
+	}());
+	exports.NgbTabset = NgbTabset;
+	//# sourceMappingURL=tabset.js.map
+
+	/***/ },
+	/* 65 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var forms_1 = __webpack_require__(5);
+	var util_1 = __webpack_require__(1);
+	var ngb_time_1 = __webpack_require__(70);
+	var timepicker_config_1 = __webpack_require__(38);
+	var NGB_TIMEPICKER_VALUE_ACCESSOR = {
+	    provide: forms_1.NG_VALUE_ACCESSOR,
+	    useExisting: core_1.forwardRef(function () { return NgbTimepicker; }),
+	    multi: true
+	};
+	/**
+	 * A lightweight & configurable timepicker directive.
+	 */
+	var NgbTimepicker = (function () {
+	    function NgbTimepicker(config) {
+	        this.onChange = function (_) { };
+	        this.onTouched = function () { };
+	        this.meridian = config.meridian;
+	        this.spinners = config.spinners;
+	        this.seconds = config.seconds;
+	        this.hourStep = config.hourStep;
+	        this.minuteStep = config.minuteStep;
+	        this.secondStep = config.secondStep;
+	        this.disabled = config.disabled;
+	        this.readonlyInputs = config.readonlyInputs;
+	    }
+	    NgbTimepicker.prototype.writeValue = function (value) {
+	        this.model = value ? new ngb_time_1.NgbTime(value.hour, value.minute, value.second) : new ngb_time_1.NgbTime();
+	        if (!this.seconds && (!value || !util_1.isNumber(value.second))) {
+	            this.model.second = 0;
+	        }
+	    };
+	    NgbTimepicker.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+	    NgbTimepicker.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	    NgbTimepicker.prototype.setDisabledState = function (isDisabled) { this.disabled = isDisabled; };
+	    NgbTimepicker.prototype.changeHour = function (step) {
+	        this.model.changeHour(step);
+	        this.propagateModelChange();
+	    };
+	    NgbTimepicker.prototype.changeMinute = function (step) {
+	        this.model.changeMinute(step);
+	        this.propagateModelChange();
+	    };
+	    NgbTimepicker.prototype.changeSecond = function (step) {
+	        this.model.changeSecond(step);
+	        this.propagateModelChange();
+	    };
+	    NgbTimepicker.prototype.updateHour = function (newVal) {
+	        this.model.updateHour(util_1.toInteger(newVal));
+	        this.propagateModelChange();
+	    };
+	    NgbTimepicker.prototype.updateMinute = function (newVal) {
+	        this.model.updateMinute(util_1.toInteger(newVal));
+	        this.propagateModelChange();
+	    };
+	    NgbTimepicker.prototype.updateSecond = function (newVal) {
+	        this.model.updateSecond(util_1.toInteger(newVal));
+	        this.propagateModelChange();
+	    };
+	    NgbTimepicker.prototype.toggleMeridian = function () {
+	        if (this.meridian) {
+	            this.changeHour(12);
+	        }
+	    };
+	    NgbTimepicker.prototype.formatHour = function (value) {
+	        if (util_1.isNumber(value)) {
+	            if (this.meridian) {
+	                return util_1.padNumber(value % 12 === 0 ? 12 : value % 12);
+	            }
+	            else {
+	                return util_1.padNumber(value % 24);
+	            }
+	        }
+	        else {
+	            return util_1.padNumber(NaN);
+	        }
+	    };
+	    NgbTimepicker.prototype.formatMinSec = function (value) { return util_1.padNumber(value); };
+	    NgbTimepicker.prototype.ngOnChanges = function (changes) {
+	        if (changes['seconds'] && !this.seconds && this.model && !util_1.isNumber(this.model.second)) {
+	            this.model.second = 0;
+	            this.propagateModelChange(false);
+	        }
+	    };
+	    NgbTimepicker.prototype.propagateModelChange = function (touched) {
+	        if (touched === void 0) { touched = true; }
+	        if (touched) {
+	            this.onTouched();
+	        }
+	        if (this.model.isValid(this.seconds)) {
+	            this.onChange({ hour: this.model.hour, minute: this.model.minute, second: this.model.second });
+	        }
+	        else {
+	            this.onChange(null);
+	        }
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbTimepicker.prototype, "meridian", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbTimepicker.prototype, "spinners", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbTimepicker.prototype, "seconds", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbTimepicker.prototype, "hourStep", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbTimepicker.prototype, "minuteStep", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], NgbTimepicker.prototype, "secondStep", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbTimepicker.prototype, "readonlyInputs", void 0);
+	    NgbTimepicker = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-timepicker',
+	            styles: ["\n    .chevron::before {\n      border-style: solid;\n      border-width: 0.29em 0.29em 0 0;\n      content: '';\n      display: inline-block;\n      height: 0.69em;\n      left: 0.05em;\n      position: relative;\n      top: 0.15em;\n      transform: rotate(-45deg);\n      -webkit-transform: rotate(-45deg);\n      -ms-transform: rotate(-45deg);\n      vertical-align: middle;\n      width: 0.71em;\n    }\n    \n    .chevron.bottom:before {\n      top: -.3em;\n      -webkit-transform: rotate(135deg);\n      -ms-transform: rotate(135deg);\n      transform: rotate(135deg);\n    }\n    \n    .btn-link {\n      outline: 0;\n    }\n\n    .btn-link.disabled {\n      cursor: not-allowed;\n      opacity: .65;\n    }\n  "],
+	            template: "\n     <fieldset [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n      <table>\n        <tr *ngIf=\"spinners\">\n          <td class=\"text-xs-center\">\n            <button type=\"button\" class=\"btn-link\" (click)=\"changeHour(hourStep)\"\n              [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n              <span class=\"chevron\"></span>\n            </button>\n          </td>\n          <td>&nbsp;</td>\n          <td class=\"text-xs-center\">\n            <button type=\"button\" class=\"btn-link\" (click)=\"changeMinute(minuteStep)\"\n              [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n                <span class=\"chevron\"></span>\n            </button>\n          </td>\n          <template [ngIf]=\"seconds\">\n            <td>&nbsp;</td>\n            <td class=\"text-xs-center\">\n              <button type=\"button\" class=\"btn-link\" (click)=\"changeSecond(secondStep)\"\n                [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n                <span class=\"chevron\"></span>\n              </button>\n            </td>\n          </template>\n          <template [ngIf]=\"meridian\">\n            <td>&nbsp;</td>\n            <td>&nbsp;</td>\n          </template>\n        </tr>\n        <tr>\n          <td>\n            <input type=\"text\" class=\"form-control\" maxlength=\"2\" size=\"2\" placeholder=\"HH\"\n              [value]=\"formatHour(model?.hour)\" (change)=\"updateHour($event.target.value)\" \n              [readonly]=\"readonlyInputs\" [disabled]=\"disabled\">\n          </td>\n          <td>&nbsp;:&nbsp;</td>\n          <td>\n            <input type=\"text\" class=\"form-control\" maxlength=\"2\" size=\"2\" placeholder=\"MM\"\n              [value]=\"formatMinSec(model?.minute)\" (change)=\"updateMinute($event.target.value)\" \n              [readonly]=\"readonlyInputs\" [disabled]=\"disabled\">\n          </td>\n          <template [ngIf]=\"seconds\">\n            <td>&nbsp;:&nbsp;</td>\n            <input type=\"text\" class=\"form-control\" maxlength=\"2\" size=\"2\" placeholder=\"SS\"\n              [value]=\"formatMinSec(model?.second)\" (change)=\"updateSecond($event.target.value)\" \n              [readonly]=\"readonlyInputs\" [disabled]=\"disabled\">\n          </template>\n          <template [ngIf]=\"meridian\">\n            <td>&nbsp;&nbsp;</td>\n            <td>\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"toggleMeridian()\">{{model.hour >= 12 ? 'PM' : 'AM'}}</button>\n            </td>\n          </template>\n        </tr>\n        <tr *ngIf=\"spinners\">\n          <td class=\"text-xs-center\">\n            <button type=\"button\" class=\"btn-link\" (click)=\"changeHour(-hourStep)\" \n              [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n              <span class=\"chevron bottom\"></span>\n            </button>\n          </td>\n          <td>&nbsp;</td>\n          <td class=\"text-xs-center\">\n            <button type=\"button\" class=\"btn-link\" (click)=\"changeMinute(-minuteStep)\"\n              [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n              <span class=\"chevron bottom\"></span>\n            </button>\n          </td>\n          <template [ngIf]=\"seconds\">\n            <td>&nbsp;</td>\n            <td class=\"text-xs-center\">\n              <button type=\"button\" class=\"btn-link\" (click)=\"changeSecond(-secondStep)\"\n                [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n                <span class=\"chevron bottom\"></span>\n              </button>\n            </td>\n          </template>\n          <template [ngIf]=\"meridian\">\n            <td>&nbsp;</td>\n            <td>&nbsp;</td>\n          </template>\n        </tr>\n      </table>\n    </fieldset>\n  ",
+	            providers: [NGB_TIMEPICKER_VALUE_ACCESSOR]
+	        }), 
+	        __metadata('design:paramtypes', [timepicker_config_1.NgbTimepickerConfig])
+	    ], NgbTimepicker);
+	    return NgbTimepicker;
+	}());
+	exports.NgbTimepicker = NgbTimepicker;
+	//# sourceMappingURL=timepicker.js.map
+
+	/***/ },
+	/* 66 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var triggers_1 = __webpack_require__(68);
+	var positioning_1 = __webpack_require__(8);
+	var popup_1 = __webpack_require__(7);
+	var tooltip_config_1 = __webpack_require__(39);
+	var NgbTooltipWindow = (function () {
+	    function NgbTooltipWindow() {
+	        this.placement = 'top';
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbTooltipWindow.prototype, "placement", void 0);
+	    NgbTooltipWindow = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-tooltip-window',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            host: { '[class]': '"tooltip in tooltip-" + placement', 'role': 'tooltip' },
+	            // TODO remove the div.tooltip-arrow, which is there only to maintain compatibility with bootstrap alpha.4
+	            template: "\n    <div class=\"tooltip-arrow\"></div>\n    <div class=\"tooltip-inner\"><ng-content></ng-content></div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbTooltipWindow);
+	    return NgbTooltipWindow;
+	}());
+	exports.NgbTooltipWindow = NgbTooltipWindow;
+	/**
+	 * A lightweight, extensible directive for fancy tooltip creation.
+	 */
+	var NgbTooltip = (function () {
+	    function NgbTooltip(_elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
+	        var _this = this;
+	        this._elementRef = _elementRef;
+	        this._renderer = _renderer;
+	        /**
+	       * Emits an event when the tooltip is shown
+	       */
+	        this.shown = new core_1.EventEmitter();
+	        /**
+	         * Emits an event when the tooltip is hidden
+	         */
+	        this.hidden = new core_1.EventEmitter();
+	        this.placement = config.placement;
+	        this.triggers = config.triggers;
+	        this.container = config.container;
+	        this._popupService = new popup_1.PopupService(NgbTooltipWindow, injector, viewContainerRef, _renderer, componentFactoryResolver);
+	        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+	            if (_this._windowRef) {
+	                positioning_1.positionElements(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, _this.placement, _this.container === 'body');
+	            }
+	        });
+	    }
+	    Object.defineProperty(NgbTooltip.prototype, "ngbTooltip", {
+	        get: function () { return this._ngbTooltip; },
+	        /**
+	         * Content to be displayed as tooltip. If falsy, the tooltip won't open.
+	         */
+	        set: function (value) {
+	            this._ngbTooltip = value;
+	            if (!value && this._windowRef) {
+	                this.close();
+	            }
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Opens an element’s tooltip. This is considered a “manual” triggering of the tooltip.
+	     */
+	    NgbTooltip.prototype.open = function () {
+	        if (!this._windowRef && this._ngbTooltip) {
+	            this._windowRef = this._popupService.open(this._ngbTooltip);
+	            this._windowRef.instance.placement = this.placement;
+	            if (this.container === 'body') {
+	                window.document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
+	            }
+	            // we need to manually invoke change detection since events registered via
+	            // Renderer::listen() - to be determined if this is a bug in the Angular 2
+	            this._windowRef.changeDetectorRef.markForCheck();
+	            this.shown.emit();
+	        }
+	    };
+	    /**
+	     * Closes an element’s tooltip. This is considered a “manual” triggering of the tooltip.
+	     */
+	    NgbTooltip.prototype.close = function () {
+	        if (this._windowRef != null) {
+	            this._popupService.close();
+	            this._windowRef = null;
+	            this.hidden.emit();
+	        }
+	    };
+	    /**
+	     * Toggles an element’s tooltip. This is considered a “manual” triggering of the tooltip.
+	     */
+	    NgbTooltip.prototype.toggle = function () {
+	        if (this._windowRef) {
+	            this.close();
+	        }
+	        else {
+	            this.open();
+	        }
+	    };
+	    /**
+	     * Returns whether or not the tooltip is currently being shown
+	     */
+	    NgbTooltip.prototype.isOpen = function () { return this._windowRef != null; };
+	    NgbTooltip.prototype.ngOnInit = function () {
+	        this._unregisterListenersFn = triggers_1.listenToTriggers(this._renderer, this._elementRef.nativeElement, this.triggers, this.open.bind(this), this.close.bind(this), this.toggle.bind(this));
+	    };
+	    NgbTooltip.prototype.ngOnDestroy = function () {
+	        this.close();
+	        this._unregisterListenersFn();
+	        this._zoneSubscription.unsubscribe();
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbTooltip.prototype, "placement", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbTooltip.prototype, "triggers", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbTooltip.prototype, "container", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbTooltip.prototype, "shown", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbTooltip.prototype, "hidden", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object), 
+	        __metadata('design:paramtypes', [Object])
+	    ], NgbTooltip.prototype, "ngbTooltip", null);
+	    NgbTooltip = __decorate([
+	        core_1.Directive({ selector: '[ngbTooltip]', exportAs: 'ngbTooltip' }), 
+	        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, core_1.Injector, core_1.ComponentFactoryResolver, core_1.ViewContainerRef, tooltip_config_1.NgbTooltipConfig, core_1.NgZone])
+	    ], NgbTooltip);
+	    return NgbTooltip;
+	}());
+	exports.NgbTooltip = NgbTooltip;
+	//# sourceMappingURL=tooltip.js.map
+
+	/***/ },
+	/* 67 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var util_1 = __webpack_require__(1);
+	var NgbHighlight = (function () {
+	    function NgbHighlight() {
+	        this.highlightClass = 'ngb-highlight';
+	    }
+	    NgbHighlight.prototype.ngOnChanges = function (changes) {
+	        var resultStr = util_1.toString(this.result);
+	        var resultLC = resultStr.toLowerCase();
+	        var termLC = util_1.toString(this.term).toLowerCase();
+	        var currentIdx = 0;
+	        if (termLC.length > 0) {
+	            this.parts = resultLC.split(new RegExp("(" + util_1.regExpEscape(termLC) + ")")).map(function (part) {
+	                var originalPart = resultStr.substr(currentIdx, part.length);
+	                currentIdx += part.length;
+	                return originalPart;
+	            });
+	        }
+	        else {
+	            this.parts = [resultStr];
+	        }
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], NgbHighlight.prototype, "highlightClass", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbHighlight.prototype, "result", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], NgbHighlight.prototype, "term", void 0);
+	    NgbHighlight = __decorate([
+	        core_1.Component({
+	            selector: 'ngb-highlight',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            template: "<template ngFor [ngForOf]=\"parts\" let-part let-isOdd=\"odd\">" +
+	                "<span *ngIf=\"isOdd\" class=\"{{highlightClass}}\">{{part}}</span><template [ngIf]=\"!isOdd\">{{part}}</template>" +
+	                "</template>",
+	            styles: ["\n    .ngb-highlight {\n      font-weight: bold;\n    }\n  "]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbHighlight);
+	    return NgbHighlight;
+	}());
+	exports.NgbHighlight = NgbHighlight;
+	//# sourceMappingURL=highlight.js.map
+
+	/***/ },
+	/* 68 */
+	/***/ function(module, exports) {
+
+	"use strict";
+	"use strict";
+	var Trigger = (function () {
+	    function Trigger(open, close) {
+	        this.open = open;
+	        this.close = close;
+	        if (!close) {
+	            this.close = open;
+	        }
+	    }
+	    Trigger.prototype.isManual = function () { return this.open === 'manual' || this.close === 'manual'; };
+	    return Trigger;
+	}());
+	exports.Trigger = Trigger;
+	var DEFAULT_ALIASES = {
+	    hover: ['mouseenter', 'mouseleave']
+	};
+	function parseTriggers(triggers, aliases) {
+	    if (aliases === void 0) { aliases = DEFAULT_ALIASES; }
+	    var trimmedTriggers = (triggers || '').trim();
+	    if (trimmedTriggers.length === 0) {
+	        return [];
+	    }
+	    var parsedTriggers = trimmedTriggers.split(/\s+/).map(function (trigger) { return trigger.split(':'); }).map(function (triggerPair) {
+	        var alias = aliases[triggerPair[0]] || triggerPair;
+	        return new Trigger(alias[0], alias[1]);
+	    });
+	    var manualTriggers = parsedTriggers.filter(function (triggerPair) { return triggerPair.isManual(); });
+	    if (manualTriggers.length > 1) {
+	        throw 'Triggers parse error: only one manual trigger is allowed';
+	    }
+	    if (manualTriggers.length === 1 && parsedTriggers.length > 1) {
+	        throw 'Triggers parse error: manual trigger can\'t be mixed with other triggers';
+	    }
+	    return parsedTriggers;
+	}
+	exports.parseTriggers = parseTriggers;
+	var noopFn = function () { };
+	function listenToTriggers(renderer, nativeElement, triggers, openFn, closeFn, toggleFn) {
+	    var parsedTriggers = parseTriggers(triggers);
+	    var listeners = [];
+	    if (parsedTriggers.length === 1 && parsedTriggers[0].isManual()) {
+	        return noopFn;
+	    }
+	    parsedTriggers.forEach(function (trigger) {
+	        if (trigger.open === trigger.close) {
+	            listeners.push(renderer.listen(nativeElement, trigger.open, toggleFn));
+	        }
+	        else {
+	            listeners.push(renderer.listen(nativeElement, trigger.open, openFn), renderer.listen(nativeElement, trigger.close, closeFn));
+	        }
+	    });
+	    return function () { listeners.forEach(function (unsubscribeFn) { return unsubscribeFn(); }); };
+	}
+	exports.listenToTriggers = listenToTriggers;
+	//# sourceMappingURL=triggers.js.map
+
+	/***/ },
+	/* 69 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var util_1 = __webpack_require__(1);
+	var popup_1 = __webpack_require__(7);
+	var modal_backdrop_1 = __webpack_require__(55);
+	var modal_window_1 = __webpack_require__(58);
+	var modal_stack_1 = __webpack_require__(32);
+	var modal_ref_1 = __webpack_require__(57);
+	var NgbModalContainer = (function () {
+	    function NgbModalContainer(_injector, _renderer, _viewContainerRef, _componentFactoryResolver, ngbModalStack) {
+	        this._injector = _injector;
+	        this._renderer = _renderer;
+	        this._viewContainerRef = _viewContainerRef;
+	        this._componentFactoryResolver = _componentFactoryResolver;
+	        this._backdropFactory = _componentFactoryResolver.resolveComponentFactory(modal_backdrop_1.NgbModalBackdrop);
+	        this._windowFactory = _componentFactoryResolver.resolveComponentFactory(modal_window_1.NgbModalWindow);
+	        ngbModalStack.registerContainer(this);
+	    }
+	    NgbModalContainer.prototype.open = function (moduleCFR, contentInjector, content, options) {
+	        var activeModal = new modal_ref_1.NgbActiveModal();
+	        var contentRef = this._getContentRef(moduleCFR, contentInjector, content, activeModal);
+	        var windowCmptRef;
+	        var backdropCmptRef;
+	        var ngbModalRef;
+	        if (options.backdrop !== false) {
+	            backdropCmptRef = this._viewContainerRef.createComponent(this._backdropFactory, 0, this._injector);
+	        }
+	        windowCmptRef = this._viewContainerRef.createComponent(this._windowFactory, this._viewContainerRef.length - 1, this._injector, contentRef.nodes);
+	        ngbModalRef = new modal_ref_1.NgbModalRef(this._viewContainerRef, windowCmptRef, contentRef, backdropCmptRef);
+	        activeModal.close = function (result) { ngbModalRef.close(result); };
+	        activeModal.dismiss = function (reason) { ngbModalRef.dismiss(reason); };
+	        this._applyWindowOptions(windowCmptRef.instance, options);
+	        return ngbModalRef;
+	    };
+	    NgbModalContainer.prototype._applyWindowOptions = function (windowInstance, options) {
+	        ['backdrop', 'keyboard', 'size', 'windowClass'].forEach(function (optionName) {
+	            if (util_1.isDefined(options[optionName])) {
+	                windowInstance[optionName] = options[optionName];
+	            }
+	        });
+	    };
+	    NgbModalContainer.prototype._getContentRef = function (moduleCFR, contentInjector, content, context) {
+	        if (!content) {
+	            return new popup_1.ContentRef([]);
+	        }
+	        else if (content instanceof core_1.TemplateRef) {
+	            var viewRef = this._viewContainerRef.createEmbeddedView(content, context);
+	            return new popup_1.ContentRef([viewRef.rootNodes], viewRef);
+	        }
+	        else if (util_1.isString(content)) {
+	            return new popup_1.ContentRef([[this._renderer.createText(null, "" + content)]]);
+	        }
+	        else {
+	            var contentCmptFactory = moduleCFR.resolveComponentFactory(content);
+	            var modalContentInjector = core_1.ReflectiveInjector.resolveAndCreate([{ provide: modal_ref_1.NgbActiveModal, useValue: context }], contentInjector);
+	            var componentRef = this._viewContainerRef.createComponent(contentCmptFactory, 0, modalContentInjector);
+	            return new popup_1.ContentRef([[componentRef.location.nativeElement]], componentRef.hostView, componentRef);
+	        }
+	    };
+	    NgbModalContainer = __decorate([
+	        core_1.Directive({ selector: 'template[ngbModalContainer]' }), 
+	        __metadata('design:paramtypes', [core_1.Injector, core_1.Renderer, core_1.ViewContainerRef, core_1.ComponentFactoryResolver, modal_stack_1.NgbModalStack])
+	    ], NgbModalContainer);
+	    return NgbModalContainer;
+	}());
+	exports.NgbModalContainer = NgbModalContainer;
+	//# sourceMappingURL=modal-container.js.map
+
+	/***/ },
+	/* 70 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var util_1 = __webpack_require__(1);
+	var NgbTime = (function () {
+	    function NgbTime(hour, minute, second) {
+	        this.hour = util_1.toInteger(hour);
+	        this.minute = util_1.toInteger(minute);
+	        this.second = util_1.toInteger(second);
+	    }
+	    NgbTime.prototype.changeHour = function (step) {
+	        if (step === void 0) { step = 1; }
+	        this.updateHour((isNaN(this.hour) ? 0 : this.hour) + step);
+	    };
+	    NgbTime.prototype.updateHour = function (hour) {
+	        if (util_1.isNumber(hour)) {
+	            this.hour = (hour < 0 ? 24 + hour : hour) % 24;
+	        }
+	        else {
+	            this.hour = NaN;
+	        }
+	    };
+	    NgbTime.prototype.changeMinute = function (step) {
+	        if (step === void 0) { step = 1; }
+	        this.updateMinute((isNaN(this.minute) ? 0 : this.minute) + step);
+	    };
+	    NgbTime.prototype.updateMinute = function (minute) {
+	        if (util_1.isNumber(minute)) {
+	            this.minute = minute % 60 < 0 ? 60 + minute % 60 : minute % 60;
+	            this.changeHour(Math.floor(minute / 60));
+	        }
+	        else {
+	            this.minute = NaN;
+	        }
+	    };
+	    NgbTime.prototype.changeSecond = function (step) {
+	        if (step === void 0) { step = 1; }
+	        this.updateSecond((isNaN(this.second) ? 0 : this.second) + step);
+	    };
+	    NgbTime.prototype.updateSecond = function (second) {
+	        if (util_1.isNumber(second)) {
+	            this.second = second < 0 ? 60 + second % 60 : second % 60;
+	            this.changeMinute(Math.floor(second / 60));
+	        }
+	        else {
+	            this.second = NaN;
+	        }
+	    };
+	    NgbTime.prototype.isValid = function (checkSecs) {
+	        if (checkSecs === void 0) { checkSecs = true; }
+	        return util_1.isNumber(this.hour) && util_1.isNumber(this.minute) && (checkSecs ? util_1.isNumber(this.second) : true);
+	    };
+	    NgbTime.prototype.toString = function () { return (this.hour || 0) + ":" + (this.minute || 0) + ":" + (this.second || 0); };
+	    return NgbTime;
+	}());
+	exports.NgbTime = NgbTime;
+	//# sourceMappingURL=ngb-time.js.map
+
+	/***/ },
+	/* 71 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var forms_1 = __webpack_require__(5);
+	var Observable_1 = __webpack_require__(75);
+	__webpack_require__(74);
+	__webpack_require__(72);
+	__webpack_require__(73);
+	var positioning_1 = __webpack_require__(8);
+	var typeahead_window_1 = __webpack_require__(41);
+	var popup_1 = __webpack_require__(7);
+	var util_1 = __webpack_require__(1);
+	var typeahead_config_1 = __webpack_require__(40);
+	var Key;
+	(function (Key) {
+	    Key[Key["Tab"] = 9] = "Tab";
+	    Key[Key["Enter"] = 13] = "Enter";
+	    Key[Key["Escape"] = 27] = "Escape";
+	    Key[Key["ArrowUp"] = 38] = "ArrowUp";
+	    Key[Key["ArrowDown"] = 40] = "ArrowDown";
+	})(Key || (Key = {}));
+	var NGB_TYPEAHEAD_VALUE_ACCESSOR = {
+	    provide: forms_1.NG_VALUE_ACCESSOR,
+	    useExisting: core_1.forwardRef(function () { return NgbTypeahead; }),
+	    multi: true
+	};
+	/**
+	 * NgbTypeahead directive provides a simple way of creating powerful typeaheads from any text input
+	 */
+	var NgbTypeahead = (function () {
+	    function NgbTypeahead(_elementRef, _viewContainerRef, _renderer, _injector, componentFactoryResolver, config, ngZone) {
+	        var _this = this;
+	        this._elementRef = _elementRef;
+	        this._viewContainerRef = _viewContainerRef;
+	        this._renderer = _renderer;
+	        this._injector = _injector;
+	        /**
+	         * An event emitted when a match is selected. Event payload is of type NgbTypeaheadSelectItemEvent.
+	         */
+	        this.selectItem = new core_1.EventEmitter();
+	        this._onTouched = function () { };
+	        this._onChange = function (_) { };
+	        this.editable = config.editable;
+	        this.focusFirst = config.focusFirst;
+	        this.showHint = config.showHint;
+	        this._valueChanges = Observable_1.Observable.fromEvent(_elementRef.nativeElement, 'input', function ($event) { return $event.target.value; });
+	        this._popupService = new popup_1.PopupService(typeahead_window_1.NgbTypeaheadWindow, _injector, _viewContainerRef, _renderer, componentFactoryResolver);
+	        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+	            if (_this._windowRef) {
+	                positioning_1.positionElements(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, 'bottom-left');
+	            }
+	        });
+	    }
+	    NgbTypeahead.prototype.ngOnInit = function () {
+	        var _this = this;
+	        this._subscription = this._subscribeToUserInput(this._valueChanges
+	            .do(function (value) {
+	            _this._userInput = value;
+	            if (_this.editable) {
+	                _this._onChange(value);
+	            }
+	        })
+	            .let(this.ngbTypeahead)
+	            .do(function (_) {
+	            if (!_this.editable) {
+	                _this._onChange(undefined);
+	            }
+	        }));
+	    };
+	    NgbTypeahead.prototype.ngOnDestroy = function () {
+	        this._unsubscribeFromUserInput();
+	        this._zoneSubscription.unsubscribe();
+	    };
+	    NgbTypeahead.prototype.registerOnChange = function (fn) { this._onChange = fn; };
+	    NgbTypeahead.prototype.registerOnTouched = function (fn) { this._onTouched = fn; };
+	    NgbTypeahead.prototype.writeValue = function (value) { this._writeInputValue(this._formatItemForInput(value)); };
+	    NgbTypeahead.prototype.setDisabledState = function (isDisabled) {
+	        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	    };
+	    NgbTypeahead.prototype.dismissPopup = function () {
+	        if (this.isPopupOpen()) {
+	            this._closePopup();
+	            this._writeInputValue(this._userInput);
+	        }
+	    };
+	    NgbTypeahead.prototype.isPopupOpen = function () { return this._windowRef != null; };
+	    NgbTypeahead.prototype.handleBlur = function () { this._onTouched(); };
+	    NgbTypeahead.prototype.handleKeyDown = function (event) {
+	        if (!this._windowRef) {
+	            return;
+	        }
+	        if (Key[util_1.toString(event.which)]) {
+	            switch (event.which) {
+	                case Key.ArrowDown:
+	                    event.preventDefault();
+	                    this._windowRef.instance.next();
+	                    this._showHint();
+	                    break;
+	                case Key.ArrowUp:
+	                    event.preventDefault();
+	                    this._windowRef.instance.prev();
+	                    this._showHint();
+	                    break;
+	                case Key.Enter:
+	                case Key.Tab:
+	                    var result = this._windowRef.instance.getActive();
+	                    if (util_1.isDefined(result)) {
+	                        event.preventDefault();
+	                        event.stopPropagation();
+	                        this._selectResult(result);
+	                    }
+	                    this._closePopup();
+	                    break;
+	                case Key.Escape:
+	                    event.preventDefault();
+	                    this.dismissPopup();
+	                    break;
+	            }
+	        }
+	    };
+	    NgbTypeahead.prototype._openPopup = function () {
+	        var _this = this;
+	        if (!this._windowRef) {
+	            this._windowRef = this._popupService.open();
+	            this._windowRef.instance.selectEvent.subscribe(function (result) { return _this._selectResultClosePopup(result); });
+	        }
+	    };
+	    NgbTypeahead.prototype._closePopup = function () {
+	        this._popupService.close();
+	        this._windowRef = null;
+	    };
+	    NgbTypeahead.prototype._selectResult = function (result) {
+	        var defaultPrevented = false;
+	        this.selectItem.emit({ item: result, preventDefault: function () { defaultPrevented = true; } });
+	        if (!defaultPrevented) {
+	            this.writeValue(result);
+	            this._onChange(result);
+	        }
+	    };
+	    NgbTypeahead.prototype._selectResultClosePopup = function (result) {
+	        this._selectResult(result);
+	        this._closePopup();
+	    };
+	    NgbTypeahead.prototype._showHint = function () {
+	        if (this.showHint) {
+	            var userInputLowerCase = this._userInput.toLowerCase();
+	            var formattedVal = this._formatItemForInput(this._windowRef.instance.getActive());
+	            if (userInputLowerCase === formattedVal.substr(0, this._userInput.length).toLowerCase()) {
+	                this._writeInputValue(this._userInput + formattedVal.substr(this._userInput.length));
+	                this._renderer.invokeElementMethod(this._elementRef.nativeElement, 'setSelectionRange', [this._userInput.length, formattedVal.length]);
+	            }
+	            else {
+	                this.writeValue(this._windowRef.instance.getActive());
+	            }
+	        }
+	    };
+	    NgbTypeahead.prototype._formatItemForInput = function (item) {
+	        return item && this.inputFormatter ? this.inputFormatter(item) : util_1.toString(item);
+	    };
+	    NgbTypeahead.prototype._writeInputValue = function (value) {
+	        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', value);
+	    };
+	    NgbTypeahead.prototype._subscribeToUserInput = function (userInput$) {
+	        var _this = this;
+	        return userInput$.subscribe(function (results) {
+	            if (!results || results.length === 0) {
+	                _this._closePopup();
+	            }
+	            else {
+	                _this._openPopup();
+	                _this._windowRef.instance.focusFirst = _this.focusFirst;
+	                _this._windowRef.instance.results = results;
+	                _this._windowRef.instance.term = _this._elementRef.nativeElement.value;
+	                if (_this.resultFormatter) {
+	                    _this._windowRef.instance.formatter = _this.resultFormatter;
+	                }
+	                if (_this.resultTemplate) {
+	                    _this._windowRef.instance.resultTemplate = _this.resultTemplate;
+	                }
+	                _this._showHint();
+	                // The observable stream we are subscribing to might have async steps
+	                // and if a component containing typeahead is using the OnPush strategy
+	                // the change detection turn wouldn't be invoked automatically.
+	                _this._windowRef.changeDetectorRef.detectChanges();
+	            }
+	        });
+	    };
+	    NgbTypeahead.prototype._unsubscribeFromUserInput = function () {
+	        if (this._subscription) {
+	            this._subscription.unsubscribe();
+	        }
+	        this._subscription = null;
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbTypeahead.prototype, "editable", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbTypeahead.prototype, "focusFirst", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Function)
+	    ], NgbTypeahead.prototype, "inputFormatter", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Function)
+	    ], NgbTypeahead.prototype, "ngbTypeahead", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Function)
+	    ], NgbTypeahead.prototype, "resultFormatter", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', core_1.TemplateRef)
+	    ], NgbTypeahead.prototype, "resultTemplate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], NgbTypeahead.prototype, "showHint", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], NgbTypeahead.prototype, "selectItem", void 0);
+	    NgbTypeahead = __decorate([
+	        core_1.Directive({
+	            selector: 'input[ngbTypeahead]',
+	            host: {
+	                '(blur)': 'handleBlur()',
+	                '[class.open]': 'isPopupOpen()',
+	                '(document:click)': 'dismissPopup()',
+	                '(keydown)': 'handleKeyDown($event)',
+	                'autocomplete': 'off',
+	                'autocapitalize': 'off',
+	                'autocorrect': 'off'
+	            },
+	            providers: [NGB_TYPEAHEAD_VALUE_ACCESSOR]
+	        }), 
+	        __metadata('design:paramtypes', [core_1.ElementRef, core_1.ViewContainerRef, core_1.Renderer, core_1.Injector, core_1.ComponentFactoryResolver, typeahead_config_1.NgbTypeaheadConfig, core_1.NgZone])
+	    ], NgbTypeahead);
+	    return NgbTypeahead;
+	}());
+	exports.NgbTypeahead = NgbTypeahead;
+	//# sourceMappingURL=typeahead.js.map
+
+	/***/ },
+	/* 72 */
+	/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_72__;
+
+	/***/ },
+	/* 73 */
+	/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_73__;
+
+	/***/ },
+	/* 74 */
+	/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_74__;
+
+	/***/ },
+	/* 75 */
+	/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_75__;
+
+	/***/ },
+	/* 76 */
+	/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(0);
+	var accordion_module_1 = __webpack_require__(9);
+	var alert_module_1 = __webpack_require__(10);
+	var radio_module_1 = __webpack_require__(11);
+	var carousel_module_1 = __webpack_require__(12);
+	var collapse_module_1 = __webpack_require__(13);
+	var datepicker_module_1 = __webpack_require__(14);
+	var dropdown_module_1 = __webpack_require__(15);
+	var modal_module_1 = __webpack_require__(16);
+	var pagination_module_1 = __webpack_require__(17);
+	var popover_module_1 = __webpack_require__(18);
+	var progressbar_module_1 = __webpack_require__(19);
+	var rating_module_1 = __webpack_require__(20);
+	var tabset_module_1 = __webpack_require__(21);
+	var timepicker_module_1 = __webpack_require__(22);
+	var tooltip_module_1 = __webpack_require__(23);
+	var typeahead_module_1 = __webpack_require__(24);
+	var accordion_module_2 = __webpack_require__(9);
+	exports.NgbAccordionModule = accordion_module_2.NgbAccordionModule;
+	exports.NgbAccordionConfig = accordion_module_2.NgbAccordionConfig;
+	var alert_module_2 = __webpack_require__(10);
+	exports.NgbAlertModule = alert_module_2.NgbAlertModule;
+	exports.NgbAlertConfig = alert_module_2.NgbAlertConfig;
+	var radio_module_2 = __webpack_require__(11);
+	exports.NgbButtonsModule = radio_module_2.NgbButtonsModule;
+	var carousel_module_2 = __webpack_require__(12);
+	exports.NgbCarouselModule = carousel_module_2.NgbCarouselModule;
+	exports.NgbCarouselConfig = carousel_module_2.NgbCarouselConfig;
+	var collapse_module_2 = __webpack_require__(13);
+	exports.NgbCollapseModule = collapse_module_2.NgbCollapseModule;
+	var datepicker_module_2 = __webpack_require__(14);
+	exports.NgbDatepickerModule = datepicker_module_2.NgbDatepickerModule;
+	exports.NgbDatepickerI18n = datepicker_module_2.NgbDatepickerI18n;
+	exports.NgbDatepickerConfig = datepicker_module_2.NgbDatepickerConfig;
+	exports.NgbDateParserFormatter = datepicker_module_2.NgbDateParserFormatter;
+	var dropdown_module_2 = __webpack_require__(15);
+	exports.NgbDropdownModule = dropdown_module_2.NgbDropdownModule;
+	exports.NgbDropdownConfig = dropdown_module_2.NgbDropdownConfig;
+	var modal_module_2 = __webpack_require__(16);
+	exports.NgbModalModule = modal_module_2.NgbModalModule;
+	exports.NgbModal = modal_module_2.NgbModal;
+	exports.NgbActiveModal = modal_module_2.NgbActiveModal;
+	exports.NgbModalRef = modal_module_2.NgbModalRef;
+	exports.ModalDismissReasons = modal_module_2.ModalDismissReasons;
+	var pagination_module_2 = __webpack_require__(17);
+	exports.NgbPaginationModule = pagination_module_2.NgbPaginationModule;
+	exports.NgbPaginationConfig = pagination_module_2.NgbPaginationConfig;
+	var popover_module_2 = __webpack_require__(18);
+	exports.NgbPopoverModule = popover_module_2.NgbPopoverModule;
+	exports.NgbPopoverConfig = popover_module_2.NgbPopoverConfig;
+	var progressbar_module_2 = __webpack_require__(19);
+	exports.NgbProgressbarModule = progressbar_module_2.NgbProgressbarModule;
+	exports.NgbProgressbarConfig = progressbar_module_2.NgbProgressbarConfig;
+	var rating_module_2 = __webpack_require__(20);
+	exports.NgbRatingModule = rating_module_2.NgbRatingModule;
+	exports.NgbRatingConfig = rating_module_2.NgbRatingConfig;
+	var tabset_module_2 = __webpack_require__(21);
+	exports.NgbTabsetModule = tabset_module_2.NgbTabsetModule;
+	exports.NgbTabsetConfig = tabset_module_2.NgbTabsetConfig;
+	var timepicker_module_2 = __webpack_require__(22);
+	exports.NgbTimepickerModule = timepicker_module_2.NgbTimepickerModule;
+	exports.NgbTimepickerConfig = timepicker_module_2.NgbTimepickerConfig;
+	var tooltip_module_2 = __webpack_require__(23);
+	exports.NgbTooltipModule = tooltip_module_2.NgbTooltipModule;
+	exports.NgbTooltipConfig = tooltip_module_2.NgbTooltipConfig;
+	var typeahead_module_2 = __webpack_require__(24);
+	exports.NgbTypeaheadModule = typeahead_module_2.NgbTypeaheadModule;
+	exports.NgbTypeaheadConfig = typeahead_module_2.NgbTypeaheadConfig;
+	var NGB_MODULES = [
+	    accordion_module_1.NgbAccordionModule, alert_module_1.NgbAlertModule, radio_module_1.NgbButtonsModule, carousel_module_1.NgbCarouselModule, collapse_module_1.NgbCollapseModule, datepicker_module_1.NgbDatepickerModule,
+	    dropdown_module_1.NgbDropdownModule, modal_module_1.NgbModalModule, pagination_module_1.NgbPaginationModule, popover_module_1.NgbPopoverModule, progressbar_module_1.NgbProgressbarModule, rating_module_1.NgbRatingModule,
+	    tabset_module_1.NgbTabsetModule, timepicker_module_1.NgbTimepickerModule, tooltip_module_1.NgbTooltipModule, typeahead_module_1.NgbTypeaheadModule
+	];
+	var NgbRootModule = (function () {
+	    function NgbRootModule() {
+	    }
+	    NgbRootModule = __decorate([
+	        core_1.NgModule({
+	            imports: [
+	                alert_module_1.NgbAlertModule.forRoot(), radio_module_1.NgbButtonsModule.forRoot(), collapse_module_1.NgbCollapseModule.forRoot(), progressbar_module_1.NgbProgressbarModule.forRoot(),
+	                tooltip_module_1.NgbTooltipModule.forRoot(), typeahead_module_1.NgbTypeaheadModule.forRoot(), accordion_module_1.NgbAccordionModule.forRoot(), carousel_module_1.NgbCarouselModule.forRoot(),
+	                datepicker_module_1.NgbDatepickerModule.forRoot(), dropdown_module_1.NgbDropdownModule.forRoot(), modal_module_1.NgbModalModule.forRoot(), pagination_module_1.NgbPaginationModule.forRoot(),
+	                popover_module_1.NgbPopoverModule.forRoot(), progressbar_module_1.NgbProgressbarModule.forRoot(), rating_module_1.NgbRatingModule.forRoot(), tabset_module_1.NgbTabsetModule.forRoot(),
+	                timepicker_module_1.NgbTimepickerModule.forRoot(), tooltip_module_1.NgbTooltipModule.forRoot()
+	            ],
+	            exports: NGB_MODULES
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbRootModule);
+	    return NgbRootModule;
+	}());
+	exports.NgbRootModule = NgbRootModule;
+	var NgbModule = (function () {
+	    function NgbModule() {
+	    }
+	    NgbModule.forRoot = function () { return { ngModule: NgbRootModule }; };
+	    NgbModule = __decorate([
+	        core_1.NgModule({ imports: NGB_MODULES, exports: NGB_MODULES }), 
+	        __metadata('design:paramtypes', [])
+	    ], NgbModule);
+	    return NgbModule;
+	}());
+	exports.NgbModule = NgbModule;
+	//# sourceMappingURL=index.js.map
+
+	/***/ }
+	/******/ ]);
+	});
+	//# sourceMappingURL=ng-bootstrap.js.map
+
+/***/ },
+/* 680 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.7 - 2016-04-22
 	 * http://hammerjs.github.io/
 	 *
@@ -81563,7 +87077,7 @@
 
 
 /***/ },
-/* 680 */
+/* 681 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -81571,49 +87085,49 @@
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// main modules
-	__export(__webpack_require__(681));
-	__export(__webpack_require__(696));
+	__export(__webpack_require__(682));
+	__export(__webpack_require__(697));
 	// Google Maps types
 	// core module
 	// we explicitly export the module here to prevent this Ionic 2 bug:
 	// http://stevemichelotti.com/integrate-angular-2-google-maps-into-ionic-2/
-	var core_module_1 = __webpack_require__(700);
+	var core_module_1 = __webpack_require__(701);
 	exports.AgmCoreModule = core_module_1.AgmCoreModule;
 	//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 681 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var google_map_1 = __webpack_require__(682);
-	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
-	var google_map_circle_1 = __webpack_require__(690);
-	exports.SebmGoogleMapCircle = google_map_circle_1.SebmGoogleMapCircle;
-	var google_map_info_window_1 = __webpack_require__(691);
-	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
-	var google_map_marker_1 = __webpack_require__(692);
-	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
-	var google_map_polygon_1 = __webpack_require__(693);
-	exports.SebmGoogleMapPolygon = google_map_polygon_1.SebmGoogleMapPolygon;
-	var google_map_polyline_1 = __webpack_require__(694);
-	exports.SebmGoogleMapPolyline = google_map_polyline_1.SebmGoogleMapPolyline;
-	var google_map_polyline_point_1 = __webpack_require__(695);
-	exports.SebmGoogleMapPolylinePoint = google_map_polyline_point_1.SebmGoogleMapPolylinePoint;
-	//# sourceMappingURL=directives.js.map
 
 /***/ },
 /* 682 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+	var google_map_1 = __webpack_require__(683);
+	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
+	var google_map_circle_1 = __webpack_require__(691);
+	exports.SebmGoogleMapCircle = google_map_circle_1.SebmGoogleMapCircle;
+	var google_map_info_window_1 = __webpack_require__(692);
+	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
+	var google_map_marker_1 = __webpack_require__(693);
+	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
+	var google_map_polygon_1 = __webpack_require__(694);
+	exports.SebmGoogleMapPolygon = google_map_polygon_1.SebmGoogleMapPolygon;
+	var google_map_polyline_1 = __webpack_require__(695);
+	exports.SebmGoogleMapPolyline = google_map_polyline_1.SebmGoogleMapPolyline;
+	var google_map_polyline_point_1 = __webpack_require__(696);
+	exports.SebmGoogleMapPolylinePoint = google_map_polyline_point_1.SebmGoogleMapPolylinePoint;
+	//# sourceMappingURL=directives.js.map
+
+/***/ },
+/* 683 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
 	var core_1 = __webpack_require__(322);
-	var google_maps_api_wrapper_1 = __webpack_require__(683);
-	var circle_manager_1 = __webpack_require__(685);
-	var info_window_manager_1 = __webpack_require__(686);
-	var marker_manager_1 = __webpack_require__(687);
-	var polygon_manager_1 = __webpack_require__(688);
-	var polyline_manager_1 = __webpack_require__(689);
+	var google_maps_api_wrapper_1 = __webpack_require__(684);
+	var circle_manager_1 = __webpack_require__(686);
+	var info_window_manager_1 = __webpack_require__(687);
+	var marker_manager_1 = __webpack_require__(688);
+	var polygon_manager_1 = __webpack_require__(689);
+	var polyline_manager_1 = __webpack_require__(690);
 	/**
 	 * SebMGoogleMap renders a Google Map.
 	 * **Important note**: To be able see a map in the browser, you have to define a height for the CSS
@@ -81919,13 +87433,13 @@
 	//# sourceMappingURL=google-map.js.map
 
 /***/ },
-/* 683 */
+/* 684 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
 	var Observable_1 = __webpack_require__(324);
-	var maps_api_loader_1 = __webpack_require__(684);
+	var maps_api_loader_1 = __webpack_require__(685);
 	/**
 	 * Wrapper class that handles the communication with the Google Maps Javascript
 	 * API v3
@@ -82045,7 +87559,7 @@
 	//# sourceMappingURL=google-maps-api-wrapper.js.map
 
 /***/ },
-/* 684 */
+/* 685 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -82064,13 +87578,13 @@
 	//# sourceMappingURL=maps-api-loader.js.map
 
 /***/ },
-/* 685 */
+/* 686 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
 	var Observable_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(683);
+	var google_maps_api_wrapper_1 = __webpack_require__(684);
 	var CircleManager = (function () {
 	    function CircleManager(_apiWrapper, _zone) {
 	        this._apiWrapper = _apiWrapper;
@@ -82168,13 +87682,13 @@
 	//# sourceMappingURL=circle-manager.js.map
 
 /***/ },
-/* 686 */
+/* 687 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
-	var google_maps_api_wrapper_1 = __webpack_require__(683);
-	var marker_manager_1 = __webpack_require__(687);
+	var google_maps_api_wrapper_1 = __webpack_require__(684);
+	var marker_manager_1 = __webpack_require__(688);
 	var InfoWindowManager = (function () {
 	    function InfoWindowManager(_mapsWrapper, _zone, _markerManager) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -82250,13 +87764,13 @@
 	//# sourceMappingURL=info-window-manager.js.map
 
 /***/ },
-/* 687 */
+/* 688 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
 	var Observable_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(683);
+	var google_maps_api_wrapper_1 = __webpack_require__(684);
 	var MarkerManager = (function () {
 	    function MarkerManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -82339,13 +87853,13 @@
 	//# sourceMappingURL=marker-manager.js.map
 
 /***/ },
-/* 688 */
+/* 689 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
 	var Observable_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(683);
+	var google_maps_api_wrapper_1 = __webpack_require__(684);
 	var PolygonManager = (function () {
 	    function PolygonManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -82415,13 +87929,13 @@
 	//# sourceMappingURL=polygon-manager.js.map
 
 /***/ },
-/* 689 */
+/* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
 	var Observable_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(683);
+	var google_maps_api_wrapper_1 = __webpack_require__(684);
 	var PolylineManager = (function () {
 	    function PolylineManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -82497,12 +88011,12 @@
 	//# sourceMappingURL=polyline-manager.js.map
 
 /***/ },
-/* 690 */
+/* 691 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
-	var circle_manager_1 = __webpack_require__(685);
+	var circle_manager_1 = __webpack_require__(686);
 	var SebmGoogleMapCircle = (function () {
 	    function SebmGoogleMapCircle(_manager) {
 	        this._manager = _manager;
@@ -82699,12 +88213,12 @@
 	//# sourceMappingURL=google-map-circle.js.map
 
 /***/ },
-/* 691 */
+/* 692 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
-	var info_window_manager_1 = __webpack_require__(686);
+	var info_window_manager_1 = __webpack_require__(687);
 	var infoWindowId = 0;
 	/**
 	 * SebmGoogleMapInfoWindow renders a info window inside a {@link SebmGoogleMapMarker} or standalone.
@@ -82819,13 +88333,13 @@
 	//# sourceMappingURL=google-map-info-window.js.map
 
 /***/ },
-/* 692 */
+/* 693 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
-	var marker_manager_1 = __webpack_require__(687);
-	var google_map_info_window_1 = __webpack_require__(691);
+	var marker_manager_1 = __webpack_require__(688);
+	var google_map_info_window_1 = __webpack_require__(692);
 	var markerId = 0;
 	/**
 	 * SebmGoogleMapMarker renders a map marker inside a {@link SebmGoogleMap}.
@@ -82998,12 +88512,12 @@
 	//# sourceMappingURL=google-map-marker.js.map
 
 /***/ },
-/* 693 */
+/* 694 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
-	var polygon_manager_1 = __webpack_require__(688);
+	var polygon_manager_1 = __webpack_require__(689);
 	/**
 	 * SebmGoogleMapPolygon renders a polygon on a {@link SebmGoogleMap}
 	 *
@@ -83230,13 +88744,13 @@
 	//# sourceMappingURL=google-map-polygon.js.map
 
 /***/ },
-/* 694 */
+/* 695 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
-	var polyline_manager_1 = __webpack_require__(689);
-	var google_map_polyline_point_1 = __webpack_require__(695);
+	var polyline_manager_1 = __webpack_require__(690);
+	var google_map_polyline_point_1 = __webpack_require__(696);
 	var polylineId = 0;
 	/**
 	 * SebmGoogleMapPolyline renders a polyline on a {@link SebmGoogleMap}
@@ -83440,7 +88954,7 @@
 	//# sourceMappingURL=google-map-polyline.js.map
 
 /***/ },
-/* 695 */
+/* 696 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -83481,34 +88995,34 @@
 	//# sourceMappingURL=google-map-polyline-point.js.map
 
 /***/ },
-/* 696 */
+/* 697 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var google_maps_api_wrapper_1 = __webpack_require__(683);
+	var google_maps_api_wrapper_1 = __webpack_require__(684);
 	exports.GoogleMapsAPIWrapper = google_maps_api_wrapper_1.GoogleMapsAPIWrapper;
-	var circle_manager_1 = __webpack_require__(685);
+	var circle_manager_1 = __webpack_require__(686);
 	exports.CircleManager = circle_manager_1.CircleManager;
-	var info_window_manager_1 = __webpack_require__(686);
+	var info_window_manager_1 = __webpack_require__(687);
 	exports.InfoWindowManager = info_window_manager_1.InfoWindowManager;
-	var marker_manager_1 = __webpack_require__(687);
+	var marker_manager_1 = __webpack_require__(688);
 	exports.MarkerManager = marker_manager_1.MarkerManager;
-	var polygon_manager_1 = __webpack_require__(688);
+	var polygon_manager_1 = __webpack_require__(689);
 	exports.PolygonManager = polygon_manager_1.PolygonManager;
-	var polyline_manager_1 = __webpack_require__(689);
+	var polyline_manager_1 = __webpack_require__(690);
 	exports.PolylineManager = polyline_manager_1.PolylineManager;
-	var lazy_maps_api_loader_1 = __webpack_require__(697);
+	var lazy_maps_api_loader_1 = __webpack_require__(698);
 	exports.GoogleMapsScriptProtocol = lazy_maps_api_loader_1.GoogleMapsScriptProtocol;
 	exports.LAZY_MAPS_API_CONFIG = lazy_maps_api_loader_1.LAZY_MAPS_API_CONFIG;
 	exports.LazyMapsAPILoader = lazy_maps_api_loader_1.LazyMapsAPILoader;
-	var maps_api_loader_1 = __webpack_require__(684);
+	var maps_api_loader_1 = __webpack_require__(685);
 	exports.MapsAPILoader = maps_api_loader_1.MapsAPILoader;
-	var noop_maps_api_loader_1 = __webpack_require__(699);
+	var noop_maps_api_loader_1 = __webpack_require__(700);
 	exports.NoOpMapsAPILoader = noop_maps_api_loader_1.NoOpMapsAPILoader;
 	//# sourceMappingURL=services.js.map
 
 /***/ },
-/* 697 */
+/* 698 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -83518,8 +89032,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var core_1 = __webpack_require__(322);
-	var browser_globals_1 = __webpack_require__(698);
-	var maps_api_loader_1 = __webpack_require__(684);
+	var browser_globals_1 = __webpack_require__(699);
+	var maps_api_loader_1 = __webpack_require__(685);
 	(function (GoogleMapsScriptProtocol) {
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTP"] = 1] = "HTTP";
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTPS"] = 2] = "HTTPS";
@@ -83616,7 +89130,7 @@
 	//# sourceMappingURL=lazy-maps-api-loader.js.map
 
 /***/ },
-/* 698 */
+/* 699 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -83638,7 +89152,7 @@
 	//# sourceMappingURL=browser-globals.js.map
 
 /***/ },
-/* 699 */
+/* 700 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -83663,22 +89177,22 @@
 	//# sourceMappingURL=noop-maps-api-loader.js.map
 
 /***/ },
-/* 700 */
+/* 701 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(322);
-	var google_map_1 = __webpack_require__(682);
-	var google_map_circle_1 = __webpack_require__(690);
-	var google_map_info_window_1 = __webpack_require__(691);
-	var google_map_marker_1 = __webpack_require__(692);
-	var google_map_polygon_1 = __webpack_require__(693);
-	var google_map_polyline_1 = __webpack_require__(694);
-	var google_map_polyline_point_1 = __webpack_require__(695);
-	var lazy_maps_api_loader_1 = __webpack_require__(697);
-	var lazy_maps_api_loader_2 = __webpack_require__(697);
-	var maps_api_loader_1 = __webpack_require__(684);
-	var browser_globals_1 = __webpack_require__(698);
+	var google_map_1 = __webpack_require__(683);
+	var google_map_circle_1 = __webpack_require__(691);
+	var google_map_info_window_1 = __webpack_require__(692);
+	var google_map_marker_1 = __webpack_require__(693);
+	var google_map_polygon_1 = __webpack_require__(694);
+	var google_map_polyline_1 = __webpack_require__(695);
+	var google_map_polyline_point_1 = __webpack_require__(696);
+	var lazy_maps_api_loader_1 = __webpack_require__(698);
+	var lazy_maps_api_loader_2 = __webpack_require__(698);
+	var maps_api_loader_1 = __webpack_require__(685);
+	var browser_globals_1 = __webpack_require__(699);
 	/**
 	 * @internal
 	 */

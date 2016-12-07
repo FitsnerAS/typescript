@@ -1,28 +1,35 @@
 import { Component } from '@angular/core';
 import { DataService } from './app.service';
-//import { MdButton } from '@angular/material/button';
 
 @Component({
     selector: 'my-app',
    
     styles:[`
+             body{
+                background:#fafafa !important;
+             }
+             
              .main-content{
                 margin-top:110px;
-                
                 pading:20px;
              }
+             
         `
     ],
     template: `
         <my-header></my-header>
         <div class='container main-content'>
             <md-card style="background:#fff">
-                <div md-content flex layout-padding>
+            <ngb-progressbar value="500" type="info"></ngb-progressbar>
+                
+                    
                     <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>
+                    
                     <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>
-                </div>
+                
             </md-card>
         </div>
+        
     `,
     providers: [DataService]
 })
