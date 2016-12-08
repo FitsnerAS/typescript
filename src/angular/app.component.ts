@@ -4,17 +4,15 @@ import { DataService } from './app.service';
 @Component({
     selector: 'my-app',
     styles: [`
-            body{
-                background:#fafafa !important;
-            }
-
+            
             .main-content{
-                margin-top:110px;
+                margin-top:90px;
                 margin-bottom:20px;
                 padding:20px;
             }
     `],
     template: `
+    
         <my-header></my-header>
         <div class='container main-content'>
             <md-card style="background:#fff">
