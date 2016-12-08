@@ -8,11 +8,6 @@ module.exports = {
                 path: __dirname + '/dist',
                 filename: 'bundle.js'
         },
-//        devServer: {
-//                host: 'localhost',
-//                port: 3000,
-//                contentBase: __dirname + '/dist'
-//        },
         module: {
                 loaders: [
                         {
@@ -20,12 +15,8 @@ module.exports = {
                                 loader: 'ts-loader'
                         },
                         {
-                                test: /\.css$/,
-                                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-                        },
-                        {
-                                test: /\.scss$/,
-                                loaders: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
+                                test: /\.(css|scss)$/,
+                                loader: ExtractTextPlugin.extract("style-loader", "css-loader","sass-loader")
                         },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -38,10 +29,8 @@ module.exports = {
                 ]
         },
         resolve: {
-                alias: {
-                        jquery: "jquery/src/jquery"
-                },
-                extensions: ['', '.js', '.ts']
+                
+                extensions: ['', '.js', '.ts','.scss']
         },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),

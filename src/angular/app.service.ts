@@ -1,15 +1,25 @@
-import { Injectable} from '@angular/core';
-import { Http} from '@angular/http';
+import { Injectable, Component } from '@angular/core';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
+import { MdDialog, MdDialogRef } from '@angular/material'
+
+interface Coords {
+    latitude: number,
+    longitude: number
+}
 
 @Injectable()
+
 export class DataService {
+    dialogRef: MdDialogRef<ModalError>;
+
     dataUrl(coords: Coords) {
         return 'http://api.openweathermap.org/data/2.5/find?&lat=' + coords.latitude
             + '&lon=' + coords.longitude + '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
     }
-    constructor(private http: Http) {}
+
+    constructor(private http: Http, public dialog: MdDialog) { }
 
     fetchData(coords: Coords) {
         return this.http.get(this.dataUrl(coords)).map(
@@ -31,10 +41,30 @@ export class DataService {
             };
         });
     }
+
+    errorHandler() {
+
+        this.dialogRef = this.dialog.open(ModalError, {
+            disableClose: false
+        });
+
+        this.dialogRef.afterClosed().subscribe(result => {
+            this.dialogRef = null;
+            location.reload();
+        });
+    }
 }
 
-interface Coords {
-    latitude: number,
-    longitude: number
+@Component({
+    selector: 'modal',
+    template: `
+        <h2>Error</h2>
+        <p>Bad conection with weather API</p>
+        <p>Please restart APP</p>
+        <button md-raised-button (click)="dialogRef.close('yes')">OK</button>
+  `
+})
+export class ModalError {
+    constructor(public dialogRef: MdDialogRef<ModalError>) { }
 }
 

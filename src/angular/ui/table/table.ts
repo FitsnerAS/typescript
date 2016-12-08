@@ -4,8 +4,11 @@ import { DataService } from '../../app.service';
 @Component({
     selector: 'city-table',
     styles: [`
-        td{
-            cursor:pointer
+             td{
+                cursor:pointer
+            }
+            .my-progress{
+                margin:0 auto
             }
     `],
     template: `
@@ -30,6 +33,9 @@ import { DataService } from '../../app.service';
             </tr>
         </tbody>
     </table>
+    <div layout="row" layout-sm="column" layout-align="space-around">
+    <md-progress-circle *ngIf="!promiseFlag" mode="indeterminate" class="md-warn my-progress" color="warn" md-diameter="70"></md-progress-circle>
+    </div>
     <ngb-pagination [collectionSize]="cllectionSize" [(page)]="currentPage" size="sm"></ngb-pagination>
     `,
     providers: [DataService]
@@ -40,17 +46,19 @@ export class CityTable implements OnInit {
     @Input() coords: Coords;
     cllectionSize: number;
     currentPage: number = 1;
+    promiseFlag:boolean = false;
 
     constructor(private dataService: DataService) { }
-
+    
     ngOnInit() {
         this.dataService.fetchData(this.coords).subscribe(
             (data: Array<CityInfo>) => {
                 this.citiesArray = data;
                 this.cllectionSize = data.length;
+                this.promiseFlag = true;
             },
             error=>{
-                alert(error);
+                this.dataService.errorHandler()
             }
         )
     }

@@ -5,12 +5,12 @@ import { CityTable } from './ui';
 import { GoogleMap } from './ui';
 import { MyHeader } from './ui';
 import { MaterialModule } from '@angular/material';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-
+import { ModalError } from './app.service';
 
 
 @NgModule({
@@ -29,8 +29,13 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         AppComponent,
         CityTable,
         GoogleMap,
-        MyHeader
+        MyHeader,
+        ModalError
     ],
+    entryComponents: [
+        ModalError
+    ],
+
     bootstrap: [AppComponent]
 })
 export class AppModule { }

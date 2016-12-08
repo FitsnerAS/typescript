@@ -51,6 +51,7 @@
 	__webpack_require__(311);
 	var platform_browser_dynamic_1 = __webpack_require__(320);
 	var app_module_1 = __webpack_require__(342);
+	__webpack_require__(702);
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
@@ -45369,15 +45370,16 @@
 	var core_1 = __webpack_require__(322);
 	var platform_browser_1 = __webpack_require__(340);
 	var app_component_1 = __webpack_require__(343);
-	var ui_1 = __webpack_require__(670);
-	var ui_2 = __webpack_require__(670);
-	var ui_3 = __webpack_require__(670);
-	var material_1 = __webpack_require__(677);
+	var ui_1 = __webpack_require__(672);
+	var ui_2 = __webpack_require__(672);
+	var ui_3 = __webpack_require__(672);
+	var material_1 = __webpack_require__(670);
 	var ng_bootstrap_1 = __webpack_require__(679);
-	var forms_1 = __webpack_require__(678);
+	var forms_1 = __webpack_require__(671);
 	__webpack_require__(680);
 	var http_1 = __webpack_require__(345);
 	var core_2 = __webpack_require__(681);
+	var app_service_1 = __webpack_require__(344);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -45398,7 +45400,8 @@
 	                app_component_1.AppComponent,
 	                ui_1.CityTable,
 	                ui_2.GoogleMap,
-	                ui_3.MyHeader
+	                ui_3.MyHeader,
+	                app_service_1.Modal
 	            ],
 	            bootstrap: [app_component_1.AppComponent]
 	        }), 
@@ -45438,9 +45441,8 @@
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            styles: ["\n             body{\n                background:#fafafa !important;\n             }\n             \n             .main-content{\n                margin-top:110px;\n                pading:20px;\n             }\n             \n        "
-	            ],
-	            template: "\n        <my-header></my-header>\n        <div class='container main-content'>\n            <md-card style=\"background:#fff\">\n            <ngb-progressbar value=\"500\" type=\"info\"></ngb-progressbar>\n                \n                    \n                    <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>\n                    \n                    <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>\n                \n            </md-card>\n        </div>\n        \n    ",
+	            styles: ["\n            body{\n                background:#fafafa !important;\n            }\n\n            .main-content{\n                margin-top:110px;\n                margin-bottom:20px;\n                padding:20px;\n            }\n    "],
+	            template: "\n        <my-header></my-header>\n        <div class='container main-content'>\n            <md-card style=\"background:#fff\">\n                    <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>\n                    <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>\n            </md-card>\n            <button md-raised-button>RAISED</button>\n        </div>\n        \n    ",
 	            providers: [app_service_1.DataService]
 	        }), 
 	        __metadata('design:paramtypes', [app_service_1.DataService])
@@ -45468,9 +45470,11 @@
 	var http_1 = __webpack_require__(345);
 	__webpack_require__(346);
 	__webpack_require__(348);
+	var material_1 = __webpack_require__(670);
 	var DataService = (function () {
-	    function DataService(http) {
+	    function DataService(http, dialog) {
 	        this.http = http;
+	        this.dialog = dialog;
 	    }
 	    DataService.prototype.dataUrl = function (coords) {
 	        return 'http://api.openweathermap.org/data/2.5/find?&lat=' + coords.latitude
@@ -45494,13 +45498,35 @@
 	            ;
 	        });
 	    };
+	    DataService.prototype.errorHandler = function () {
+	        var _this = this;
+	        this.dialogRef = this.dialog.open(Modal, {});
+	        this.dialogRef.afterClosed().subscribe(function (result) {
+	            console.log('result: ' + result);
+	            _this.dialogRef = null;
+	        });
+	    };
 	    DataService = __decorate([
 	        core_1.Injectable(), 
-	        __metadata('design:paramtypes', [http_1.Http])
+	        __metadata('design:paramtypes', [http_1.Http, material_1.MdDialog])
 	    ], DataService);
 	    return DataService;
 	}());
 	exports.DataService = DataService;
+	var Modal = (function () {
+	    function Modal(dialogRef) {
+	        this.dialogRef = dialogRef;
+	    }
+	    Modal = __decorate([
+	        core_1.Component({
+	            selector: 'modal',
+	            template: "\n  <button md-raised-button click)=\"dialogRef.close()>RAISED</button>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [material_1.MdDialogRef])
+	    ], Modal);
+	    return Modal;
+	}());
+	exports.Modal = Modal;
 
 
 /***/ },
@@ -64425,163 +64451,8 @@
 /* 670 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	var table_1 = __webpack_require__(671);
-	exports.CityTable = table_1.CityTable;
-	var map_1 = __webpack_require__(673);
-	exports.GoogleMap = map_1.GoogleMap;
-	var header_1 = __webpack_require__(675);
-	exports.MyHeader = header_1.MyHeader;
-
-
-/***/ },
-/* 671 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var table_1 = __webpack_require__(672);
-	exports.CityTable = table_1.CityTable;
-
-
-/***/ },
-/* 672 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(322);
-	var app_service_1 = __webpack_require__(344);
-	var CityTable = (function () {
-	    function CityTable(dataService) {
-	        this.dataService = dataService;
-	        this.citiesArray = [];
-	        this.currentPage = 1;
-	    }
-	    CityTable.prototype.ngOnInit = function () {
-	        var _this = this;
-	        this.dataService.fetchData(this.coords).subscribe(function (data) {
-	            _this.citiesArray = data;
-	            _this.cllectionSize = data.length;
-	        }, function (error) {
-	            alert(error);
-	        });
-	    };
-	    __decorate([
-	        core_1.Input(), 
-	        __metadata('design:type', Object)
-	    ], CityTable.prototype, "coords", void 0);
-	    CityTable = __decorate([
-	        core_1.Component({
-	            selector: 'city-table',
-	            styles: ["\n        td{\n            cursor:pointer\n            }\n    "],
-	            template: "\n    <table class=\"table table-model-2 table-hover\">\n        <thead>\n            <tr>\n                <th>#</th>\n                <th>City</th>\n                <th>temperature</th>\n                <th>Pressure</th>\n                <th>Wind speed</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>\n                    <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>\n                    <td *ngIf='l'>{{currentPage}}0</td>\n                    <td>{{item.name}}</td>\n                    <td>{{item.main.temp}}</td>\n                    <td>{{item.main.pressure}}</td>\n                    <td>{{item.wind.speed}}</td>\n            </tr>\n        </tbody>\n    </table>\n    <ngb-pagination [collectionSize]=\"cllectionSize\" [(page)]=\"currentPage\" size=\"sm\"></ngb-pagination>\n    ",
-	            providers: [app_service_1.DataService]
-	        }), 
-	        __metadata('design:paramtypes', [app_service_1.DataService])
-	    ], CityTable);
-	    return CityTable;
-	}());
-	exports.CityTable = CityTable;
-
-
-/***/ },
-/* 673 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var map_1 = __webpack_require__(674);
-	exports.GoogleMap = map_1.GoogleMap;
-
-
-/***/ },
-/* 674 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(322);
-	var GoogleMap = (function () {
-	    function GoogleMap() {
-	    }
-	    __decorate([
-	        core_1.Input(), 
-	        __metadata('design:type', Object)
-	    ], GoogleMap.prototype, "coords", void 0);
-	    GoogleMap = __decorate([
-	        core_1.Component({
-	            selector: 'google-map',
-	            styles: ["\n\t\t.sebm-google-map-container {\n\t\t\theight: 300px;\n\t\t}\n\t"],
-	            template: "\n    <sebm-google-map [latitude]=\"coords.latitude\" [longitude]=\"coords.longitude\"></sebm-google-map>\n    "
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], GoogleMap);
-	    return GoogleMap;
-	}());
-	exports.GoogleMap = GoogleMap;
-
-
-/***/ },
-/* 675 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var header_1 = __webpack_require__(676);
-	exports.MyHeader = header_1.MyHeader;
-
-
-/***/ },
-/* 676 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(322);
-	var MyHeader = (function () {
-	    function MyHeader() {
-	    }
-	    MyHeader = __decorate([
-	        core_1.Component({
-	            selector: 'my-header',
-	            styles: ["\n\t\t\n                .my-header {\n\t\t\tposition:absolute;\n                        height: 200px;\n                        top:0;\n                        left:0;\n                        right:0;\n                        background:#607D8B;\n                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);\n\t\t}\n                .angular-span{\n                    position:relative;\n                    font-size:26px;\n                    color:#fff;\n                    margin:30px;\n                    top:30px;\n                    font-family: Roboto, \"Helvetica Neue\", sans-serif;\n                }\n                \n\t"],
-	            template: "\n    <div class='my-header'>\n        <span class=\"angular-span\">Angular2</span>\n    </div>\n    \n    "
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], MyHeader);
-	    return MyHeader;
-	}());
-	exports.MyHeader = MyHeader;
-
-
-/***/ },
-/* 677 */
-/***/ function(module, exports, __webpack_require__) {
-
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(322), __webpack_require__(323), __webpack_require__(340), __webpack_require__(678), __webpack_require__(324), __webpack_require__(341), __webpack_require__(345), __webpack_require__(377), __webpack_require__(419), __webpack_require__(346), __webpack_require__(509), __webpack_require__(498), __webpack_require__(593), __webpack_require__(511), __webpack_require__(463), __webpack_require__(517)) :
+	     true ? factory(exports, __webpack_require__(322), __webpack_require__(323), __webpack_require__(340), __webpack_require__(671), __webpack_require__(324), __webpack_require__(341), __webpack_require__(345), __webpack_require__(377), __webpack_require__(419), __webpack_require__(346), __webpack_require__(509), __webpack_require__(498), __webpack_require__(593), __webpack_require__(511), __webpack_require__(463), __webpack_require__(517)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Subject', '@angular/platform-browser', '@angular/forms', 'rxjs/Observable', '@angular/common', '@angular/http', 'rxjs/add/observable/forkJoin', 'rxjs/add/observable/of', 'rxjs/add/operator/map', 'rxjs/add/operator/filter', 'rxjs/add/operator/do', 'rxjs/add/operator/share', 'rxjs/add/operator/finally', 'rxjs/add/operator/catch', 'rxjs/add/operator/first'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.material = global.ng.material || {}),global.ng.core,global.Rx,global.ng.platformBrowser,global.ng.forms,global.Rx,global.ng.common,global.ng.http,global.Rx.Observable,global.Rx.Observable,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype));
 	}(this, (function (exports,_angular_core,rxjs_Subject,_angular_platformBrowser,_angular_forms,rxjs_Observable,_angular_common,_angular_http,rxjs_add_observable_forkJoin,rxjs_add_observable_of,rxjs_add_operator_map,rxjs_add_operator_filter,rxjs_add_operator_do,rxjs_add_operator_share,rxjs_add_operator_finally,rxjs_add_operator_catch,rxjs_add_operator_first) { 'use strict';
@@ -74440,7 +74311,7 @@
 
 
 /***/ },
-/* 678 */
+/* 671 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -78914,12 +78785,170 @@
 	}));
 
 /***/ },
+/* 672 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var table_1 = __webpack_require__(673);
+	exports.CityTable = table_1.CityTable;
+	var map_1 = __webpack_require__(675);
+	exports.GoogleMap = map_1.GoogleMap;
+	var header_1 = __webpack_require__(677);
+	exports.MyHeader = header_1.MyHeader;
+
+
+/***/ },
+/* 673 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var table_1 = __webpack_require__(674);
+	exports.CityTable = table_1.CityTable;
+
+
+/***/ },
+/* 674 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(322);
+	var app_service_1 = __webpack_require__(344);
+	var CityTable = (function () {
+	    function CityTable(dataService) {
+	        this.dataService = dataService;
+	        this.citiesArray = [];
+	        this.currentPage = 1;
+	        this.promiseFlag = false;
+	    }
+	    CityTable.prototype.ngOnInit = function () {
+	        var _this = this;
+	        this.dataService.fetchData(this.coords).subscribe(function (data) {
+	            _this.citiesArray = data;
+	            _this.cllectionSize = data.length;
+	            _this.promiseFlag = true;
+	            _this.dataService.errorHandler();
+	        }, function (error) {
+	            _this.dataService.errorHandler();
+	        });
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], CityTable.prototype, "coords", void 0);
+	    CityTable = __decorate([
+	        core_1.Component({
+	            selector: 'city-table',
+	            styles: ["\n             td{\n                cursor:pointer\n            }\n            .my-progress{\n                margin:0 auto\n            }\n    "],
+	            template: "\n    <table class=\"table table-model-2 table-hover\">\n        <thead>\n            <tr>\n                <th>#</th>\n                <th>City</th>\n                <th>temperature</th>\n                <th>Pressure</th>\n                <th>Wind speed</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>\n                    <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>\n                    <td *ngIf='l'>{{currentPage}}0</td>\n                    <td>{{item.name}}</td>\n                    <td>{{item.main.temp}}</td>\n                    <td>{{item.main.pressure}}</td>\n                    <td>{{item.wind.speed}}</td>\n            </tr>\n        </tbody>\n    </table>\n    <div layout=\"row\" layout-sm=\"column\" layout-align=\"space-around\">\n    <md-progress-circle *ngIf=\"!promiseFlag\" mode=\"indeterminate\" class=\"md-warn my-progress\" color=\"warn\" md-diameter=\"70\"></md-progress-circle>\n    </div>\n    <ngb-pagination [collectionSize]=\"cllectionSize\" [(page)]=\"currentPage\" size=\"sm\"></ngb-pagination>\n    ",
+	            providers: [app_service_1.DataService]
+	        }), 
+	        __metadata('design:paramtypes', [app_service_1.DataService])
+	    ], CityTable);
+	    return CityTable;
+	}());
+	exports.CityTable = CityTable;
+
+
+/***/ },
+/* 675 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var map_1 = __webpack_require__(676);
+	exports.GoogleMap = map_1.GoogleMap;
+
+
+/***/ },
+/* 676 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(322);
+	var GoogleMap = (function () {
+	    function GoogleMap() {
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], GoogleMap.prototype, "coords", void 0);
+	    GoogleMap = __decorate([
+	        core_1.Component({
+	            selector: 'google-map',
+	            styles: ["\n\t\t.sebm-google-map-container {\n\t\t\theight: 300px;\n\t\t}\n\t"],
+	            template: "\n    <sebm-google-map [latitude]=\"coords.latitude\" [longitude]=\"coords.longitude\"></sebm-google-map>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], GoogleMap);
+	    return GoogleMap;
+	}());
+	exports.GoogleMap = GoogleMap;
+
+
+/***/ },
+/* 677 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var header_1 = __webpack_require__(678);
+	exports.MyHeader = header_1.MyHeader;
+
+
+/***/ },
+/* 678 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(322);
+	var MyHeader = (function () {
+	    function MyHeader() {
+	    }
+	    MyHeader = __decorate([
+	        core_1.Component({
+	            selector: 'my-header',
+	            styles: ["\n\t\t\n                .my-header {\n\t\t\tposition:absolute;\n                        height: 200px;\n                        top:0;\n                        left:0;\n                        right:0;\n                        background:#607D8B;\n                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);\n\t\t}\n                .angular-span{\n                    position:relative;\n                    font-size:26px;\n                    color:#fff;\n                    margin:30px;\n                    top:30px;\n                    font-family: Roboto, \"Helvetica Neue\", sans-serif;\n                }\n                \n\t"],
+	            template: "\n    <div class='my-header'>\n        <span class=\"angular-span\">Angular2</span>\n    </div>\n    \n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], MyHeader);
+	    return MyHeader;
+	}());
+	exports.MyHeader = MyHeader;
+
+
+/***/ },
 /* 679 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
 		if(true)
-			module.exports = factory(__webpack_require__(498), __webpack_require__(535), __webpack_require__(388), __webpack_require__(324), __webpack_require__(341), __webpack_require__(322), __webpack_require__(678));
+			module.exports = factory(__webpack_require__(498), __webpack_require__(535), __webpack_require__(388), __webpack_require__(324), __webpack_require__(341), __webpack_require__(322), __webpack_require__(671));
 		else if(typeof define === 'function' && define.amd)
 			define(["rxjs/add/operator/do", "rxjs/add/operator/let", "rxjs/add/observable/fromEvent", "rxjs/Observable", "@angular/common", "@angular/core", "@angular/forms"], factory);
 		else if(typeof exports === 'object')
@@ -89232,6 +89261,12 @@
 	}());
 	exports.AgmCoreModule = AgmCoreModule;
 	//# sourceMappingURL=core-module.js.map
+
+/***/ },
+/* 702 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
