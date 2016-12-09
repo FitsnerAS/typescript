@@ -12,6 +12,7 @@ import { DataService } from '../../app.service';
             }
     `],
     template: `
+    
     <table class="table table-model-2 table-hover">
         <thead>
             <tr>

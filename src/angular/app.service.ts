@@ -49,8 +49,11 @@ export class DataService {
         });
 
         this.dialogRef.afterClosed().subscribe(result => {
+            console.log(result)
+            if(result==='yes'){
+                location.reload();
+            }
             this.dialogRef = null;
-            location.reload();
         });
     }
 }
@@ -62,6 +65,7 @@ export class DataService {
         <p>Bad conection with weather API</p>
         <p>Please restart APP</p>
         <button md-raised-button (click)="dialogRef.close('yes')">OK</button>
+        <button md-raised-button (click)="dialogRef.close('no')">No</button>
   `
 })
 export class ModalError {
