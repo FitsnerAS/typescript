@@ -18,12 +18,23 @@ export class DataService {
         return 'http://api.openweathermap.org/data/2.5/find?&lat=' + coords.latitude
             + '&lon=' + coords.longitude + '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
     }
+    cityInfoUrl(cityName: string) {
+        return 'http://api.openweathermap.org/data/2.5/weather?q='
+            + cityName + '&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
+    }
 
     constructor(private http: Http, public dialog: MdDialog) { }
 
     fetchData(coords: Coords) {
         return this.http.get(this.dataUrl(coords)).map(
             response => response.json().list
+        )
+    }
+    fetchCityInfo(city:string) {
+        return this.http.get(this.cityInfoUrl(city)).map(
+            response => {response.json()
+            console.log(response,'@@@@@@11111')
+            }
         )
     }
 
@@ -50,7 +61,7 @@ export class DataService {
 
         this.dialogRef.afterClosed().subscribe(result => {
             console.log(result)
-            if(result==='yes'){
+            if (result === 'yes') {
                 location.reload();
             }
             this.dialogRef = null;

@@ -5,6 +5,7 @@ import { CityTable } from './ui';
 import { GoogleMap } from './ui';
 import { MyHeader } from './ui';
 import { MyFooter } from './ui';
+import { CityInfoPipe } from './Pipes';
 import { MaterialModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -24,15 +25,18 @@ import { ModalError } from './app.service';
             apiKey: 'AIzaSyAaFWg1Jpix-Krmge62_UDT3Nuf_0Sht6Y'
         }),
         MaterialModule.forRoot(),
-        NgbModule.forRoot()
+        NgbModule.forRoot(),
+        
     ],
     declarations: [
+        
         AppComponent,
         CityTable,
         GoogleMap,
         MyHeader,
         ModalError,
-        MyFooter
+        MyFooter,
+        CityInfoPipe
     ],
     entryComponents: [
         ModalError

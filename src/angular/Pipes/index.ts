@@ -1,0 +1,3 @@
+export { CityInfoPipe  } from './cityInfoPipe';
+
+

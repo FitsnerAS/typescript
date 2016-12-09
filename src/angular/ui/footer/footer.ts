@@ -3,9 +3,21 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-footer',
     styles: [`
+		
+                .my-footer {
+            
+
+                        height: 40px;
+                        background:#455A64;
+                        
+		}
+                .angular-span{
+                 }
+                
 	`],
     template: `
-    <hr>
+    <footer class="page-footer my-footer">
+    </footer>
     `
 })
 

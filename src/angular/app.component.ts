@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './app.service';
+import { CityInfoPipe } from './Pipes';
 
 @Component({
     selector: 'my-app',
@@ -26,33 +27,37 @@ import { DataService } from './app.service';
         <my-header></my-header>
         <div class='container main-content'>
         <md-card class="demo-card demo-basic">
-            <md-toolbar color="#90A4AE" >Basic</md-toolbar>
+                <md-input placeholder="Type city" [(ngModel)]="city" style="width: 50%; margin-right:20px;"></md-input>
+                <button md-raised-button color="" (click)='getCityInfo(city)'>Submit</button>
+            {{city|cityInfoPipe}}
+            <md-toolbar color="" >Table</md-toolbar>
             <md-card-content>
-                <form>
-
-                    <md-input placeholder="First name" style="width: 50%"></md-input>
-      
-                </form>
-            
-        
-                    <city-table [coords]='coords' *ngIf='promiseFlag'></city-table>
+                
+                    <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>
                     </md-card-content>
-                    <google-map [coords]='coords' *ngIf='promiseFlag'></google-map>
+                    <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>
             </md-card>
         </div>
         
         <my-footer></my-footer>
     `,
-    providers: [DataService]
+    providers: [DataService,CityInfoPipe],
 })
 export class AppComponent {
-    promiseFlag: boolean = false;
+    locationLoaded: boolean = false;
     coords: Coords;
-    constructor(private dataService: DataService) {
+    city:string;
+    
+    
+    getCityInfo(city:string){
+        
+    };
+    
+    constructor(private dataService: DataService,private v:CityInfoPipe) {
         this.dataService.getCoords().then((data: Coords) => {
             this.coords = data;
 
-            this.promiseFlag = true;
+            this.locationLoaded = true;
         })
     }
 }
@@ -60,4 +65,20 @@ export class AppComponent {
 interface Coords {
     latitude: number,
     longitude: number
+}
+
+
+interface CityInfo {
+    name: string;
+    main: CityInfoMain;
+    wind: CityInfoWind;
+}
+
+interface CityInfoMain {
+    temp: number;
+    pressure: number;
+}
+
+interface CityInfoWind {
+    speed: number;
 }
