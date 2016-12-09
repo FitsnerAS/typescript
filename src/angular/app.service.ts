@@ -30,12 +30,12 @@ export class DataService {
             response => response.json().list
         )
     }
-    fetchCityInfo(city:string) {
-        return this.http.get(this.cityInfoUrl(city)).map(
-            response => {response.json()
-            console.log(response,'@@@@@@11111')
-            }
-        )
+    
+    fetchCityInfo(city: string) {
+        return fetch(this.cityInfoUrl(city)).then(
+            response => {
+                return response.json()
+            })
     }
 
     getCoords() {

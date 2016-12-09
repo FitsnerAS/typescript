@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-header',
     styles: [`
-		
                 .my-header {
 			position:absolute;
                         height: 200px;
@@ -21,7 +20,6 @@ import { Component } from '@angular/core';
                     top:30px;
                     font-family: Roboto, "Helvetica Neue", sans-serif;
                 }
-                
 	`],
     template: `
     <div class='my-header'>
@@ -33,7 +31,6 @@ import { Component } from '@angular/core';
 
 export class MyHeader {
     constructor(){
-        
     }
 }
 

@@ -4,7 +4,7 @@ import { DataService } from '../../app.service';
 @Component({
     selector: 'city-table',
     styles: [`
-             td{
+            td{
                 cursor:pointer
             }
             .my-progress{
