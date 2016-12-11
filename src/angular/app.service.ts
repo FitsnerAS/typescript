@@ -32,7 +32,10 @@ export class DataService {
     }
     
     fetchCityInfo(city: string) {
-        return fetch(this.cityInfoUrl(city)).then(
+        return fetch(this.cityInfoUrl(city),{
+            method: 'GET',
+//            headers: {'Cache-Control': 'max-age=86400'}
+        }).then(
             response => {
                 return response.json()
             })
