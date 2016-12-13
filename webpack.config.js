@@ -12,19 +12,21 @@ module.exports = {
                 loaders: [
                         {
                                 test: /\.ts$/,
-                                loaders: ['ts-loader','angular2-template-loader']
+                                loaders: ['ts-loader', 'angular2-template-loader']
                         },
                         {
                                 test: /\.html$/,
                                 loader: "html"
                         },
                         {
-                                test:/\.html$/,
-                                loader:"html"
+                                test: /\.(css|scss)$/,
+                                exclude: /app\\.+\.css$/,
+                                loader: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
                         },
                         {
-                                test: /\.(css|scss)$/,
-                                loader: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
+                                test: /app\\.+\.css$/,
+                                exclude: /node_modules/,
+                                loader: 'raw' 
                         },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
