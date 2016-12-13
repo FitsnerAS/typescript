@@ -19,6 +19,10 @@ module.exports = {
                                 loader: "html"
                         },
                         {
+                                test:/\.html$/,
+                                loader:"html"
+                        },
+                        {
                                 test: /\.(css|scss)$/,
                                 loader: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
                         },

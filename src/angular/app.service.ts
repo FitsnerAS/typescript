@@ -2,7 +2,7 @@ import { Injectable, Component } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
-import { MdDialog, MdDialogRef } from '@angular/material'
+import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
 
 interface Coords {
     latitude: number,
@@ -23,18 +23,18 @@ export class DataService {
             + cityName + '&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
     }
 
-    constructor(private http: Http, public dialog: MdDialog) { }
+    constructor(private http: Http, public dialog: MdDialog, public snackBar: MdSnackBar) { }
 
     fetchData(coords: Coords) {
         return this.http.get(this.dataUrl(coords)).map(
             response => response.json().list
         )
     }
-    
+
     fetchCityInfo(city: string) {
-        return fetch(this.cityInfoUrl(city),{
+        return fetch(this.cityInfoUrl(city), {
             method: 'GET',
-//            headers: {'Cache-Control': 'max-age=86400'}
+            //            headers: {'Cache-Control': 'max-age=86400'}
         }).then(
             response => {
                 return response.json()
@@ -42,18 +42,21 @@ export class DataService {
     }
 
     getCoords() {
+
         return new Promise(function(resolve, reject) {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
+                navigator.geolocation.getCurrentPosition(position => {
                     resolve(position.coords);
-                }, function() {
-                    resolve({
-                        latitude: 53.904539799999995,
-                        longitude: 27.5615244
-                    });
+                }, error => {
+                    console.log(error)
+                    reject(error.message);
                 });
             };
         });
+    }
+
+    failedAttempt(error: string) {
+        this.snackBar.open(error, 'Try Again');
     }
 
     errorHandler() {
@@ -71,6 +74,7 @@ export class DataService {
         });
     }
 }
+
 
 @Component({
     selector: 'modal',
