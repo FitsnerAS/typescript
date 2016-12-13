@@ -15,6 +15,10 @@ module.exports = {
                                 loader: 'ts-loader'
                         },
                         {
+                                test:/\.html$/,
+                                loader:"html"
+                        },
+                        {
                                 test: /\.(css|scss)$/,
                                 loader: ExtractTextPlugin.extract("style-loader", "css-loader","sass-loader")
                         },
@@ -30,7 +34,7 @@ module.exports = {
         },
         resolve: {
                 
-                extensions: ['', '.js', '.ts','.scss']
+                extensions: ['', '.js', '.ts','.scss','.html']
         },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),

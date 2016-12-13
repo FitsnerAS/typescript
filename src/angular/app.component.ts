@@ -3,6 +3,7 @@ import { DataService } from './app.service';
 import { CityInfoPipe } from './Pipes';
 
 @Component({
+   
     selector: 'my-app',
     styles: [`
             .main-content{
@@ -38,7 +39,11 @@ export class AppComponent {
         this.dataService.getCoords().then((data: Coords) => {
             this.coords = data;
             this.locationLoaded = true;
-        })
+            this.locationLoaded = true; 
+        },(error: string) => {
+                this.dataService.failedAttempt(error);
+            }
+        )
     }
 }
 
