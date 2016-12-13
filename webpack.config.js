@@ -12,11 +12,15 @@ module.exports = {
                 loaders: [
                         {
                                 test: /\.ts$/,
-                                loader: 'ts-loader'
+                                loaders: ['ts-loader','angular2-template-loader']
+                        },
+                        {
+                                test: /\.html$/,
+                                loader: "html"
                         },
                         {
                                 test: /\.(css|scss)$/,
-                                loader: ExtractTextPlugin.extract("style-loader", "css-loader","sass-loader")
+                                loader: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
                         },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -29,8 +33,8 @@ module.exports = {
                 ]
         },
         resolve: {
-                
-                extensions: ['', '.js', '.ts','.scss']
+
+                extensions: ['', '.js', '.ts']
         },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),
