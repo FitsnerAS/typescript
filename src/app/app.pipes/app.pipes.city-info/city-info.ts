@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DataService } from '../../app.services';
-
+import { CityInfo } from '../../app.interfaces/';
 
 @Pipe({ name: 'cityInfoPipe' })
 
@@ -43,17 +43,3 @@ export class CityInfoPipe implements PipeTransform {
     }
 }
 
-interface CityInfo {
-    name: string;
-    main: CityInfoMain;
-    wind: CityInfoWind;
-}
-
-interface CityInfoMain {
-    temp: number;
-    pressure: number;
-}
-
-interface CityInfoWind {
-    speed: number;
-}

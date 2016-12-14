@@ -3,15 +3,12 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
-
-interface Coords {
-    latitude: number,
-    longitude: number
-}
+import { Coords } from '../../app.interfaces';
 
 @Injectable()
 
 export class DataService {
+
     dialogRef: MdDialogRef<ModalError>;
 
     dataUrl(coords: Coords) {
@@ -34,7 +31,6 @@ export class DataService {
     fetchCityInfo(city: string) {
         return fetch(this.cityInfoUrl(city), {
             method: 'GET',
-            //            headers: {'Cache-Control': 'max-age=86400'}
         }).then(
             response => {
                 return response.json()
@@ -75,7 +71,6 @@ export class DataService {
     }
 }
 
-
 @Component({
     selector: 'modal',
     template: `
@@ -86,6 +81,7 @@ export class DataService {
         <button md-raised-button (click)="dialogRef.close('no')">No</button>
   `
 })
+
 export class ModalError {
     constructor(public dialogRef: MdDialogRef<ModalError>) { }
 }

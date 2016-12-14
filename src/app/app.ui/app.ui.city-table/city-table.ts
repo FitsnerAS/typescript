@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../../app.services';
+import { CityInfo } from '../../app.interfaces/';
+import { Coords } from '../../app.interfaces/';
 
 @Component({
     selector: 'city-table',
@@ -31,22 +33,3 @@ export class CityTable implements OnInit {
     }
 }
 
-interface CityInfo {
-    name: string;
-    main: CityInfoMain;
-    wind: CityInfoWind;
-}
-
-interface CityInfoMain {
-    temp: number;
-    pressure: number;
-}
-
-interface CityInfoWind {
-    speed: number;
-}
-
-interface Coords {
-    latitude: number,
-    longitude: number
-}
