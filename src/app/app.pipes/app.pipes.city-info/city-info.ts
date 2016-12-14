@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DataService } from '../../app.service';
+import { DataService } from '../../app.services';
 
 
 @Pipe({ name: 'cityInfoPipe' })

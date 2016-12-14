@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-import { ModalError } from './app.service';
+import { ModalError } from './app.services';
 
 
 @NgModule({

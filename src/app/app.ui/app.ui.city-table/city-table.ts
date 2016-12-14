@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DataService } from '../../app.service';
+import { DataService } from '../../app.services';
 
 @Component({
     selector: 'city-table',
-    templateUrl: './table.html',
-    styleUrls: ['./table.css'],
+    templateUrl: './city-table.html',
+    styleUrls: ['./city-table.css'],
     providers: [DataService]
 })
 
