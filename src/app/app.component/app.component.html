@@ -2,8 +2,26 @@
 <div class='container main-content'>
     <md-card class="demo-card demo-basic">
         <md-input placeholder="Type city" [(ngModel)]="city" style="width: 50%; margin-right:20px;"></md-input>
-        <button md-raised-button color="" (click)='getCityInfo(city)'>Submit</button>
-        <div [innerHTML]="city|cityInfoPipe|async"></div>
+        <button md-raised-button color="" (click)='getCurrentCityInfo(city)'>Submit</button>
+<!--        <table class="table table-model-2 table-hover" *ngIf="cityInfo">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>temperature</th>
+                    <th>Pressure</th>
+                    <th>Wind speed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{cityInfo.name}}</td>
+                    <td>{{cityInfo.main.temp}}</td>
+                    <td>{{cityInfo.main.pressure}}</td>
+                    <td>{{cityInfo.wind.speed}}</td>
+                </tr>
+            </tbody>
+        </table>-->
+        <!--<div>!{{cityInfo|cityInfoPipe|json}}!</div>-->
         <md-toolbar color="" >Table</md-toolbar>
         <md-card-content>
             <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>

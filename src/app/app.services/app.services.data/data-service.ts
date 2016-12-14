@@ -29,12 +29,11 @@ export class DataService {
     }
 
     fetchCityInfo(city: string) {
-        return fetch(this.cityInfoUrl(city), {
+        return this.http.get(this.cityInfoUrl(city), {
             method: 'GET',
-        }).then(
-            response => {
-                return response.json()
-            })
+        }).map(
+            response => response.json()
+            )
     }
 
     getCoords() {
