@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { CityTable } from './ui';
-import { GoogleMap } from './ui';
-import { MyHeader } from './ui';
-import { MyFooter } from './ui';
-import { CityInfoPipe } from './Pipes';
+import { CityTable } from './app.ui';
+import { GoogleMap } from './app.ui';
+import { MyHeader } from './app.ui';
+import { MyFooter } from './app.ui';
+import { CityInfoPipe } from './app.pipes';
 import { MaterialModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';

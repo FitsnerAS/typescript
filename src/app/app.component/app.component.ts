@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../app.service';
-import { CityInfoPipe } from '../Pipes';
+import { CityInfoPipe } from '../app.pipes';
 
 @Component({
    
