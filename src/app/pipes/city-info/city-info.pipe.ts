@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DataService } from '../../app.services';
-import { CityInfo } from '../../app.interfaces/';
-import { CityInfoArray } from '../../app.interfaces/';
+import { DataService } from '../../services';
+import { CityInfo, CityInfoArray } from '../../interfaces';
 
 
 @Pipe({
@@ -45,7 +44,7 @@ export class CityInfoPipe implements PipeTransform {
                         })
                         return result
                     },
-                    error => {
+                    (error:String) => {
                         this.dataService.errorHandler()
                     }
                 )

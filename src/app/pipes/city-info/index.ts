@@ -1,3 +1,3 @@
-export { CityInfoPipe  } from './city-info';
+export { CityInfoPipe  } from './city-info.pipe';
 
 

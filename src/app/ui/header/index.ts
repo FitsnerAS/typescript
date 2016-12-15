@@ -1,2 +1,2 @@
-export { MyHeader } from './header';
+export { MyHeader } from './header.component';
 

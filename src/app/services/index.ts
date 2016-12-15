@@ -1,2 +1,2 @@
-export { DataService  } from './app.services.data';
-export { ModalError } from './app.services.data';
+export { DataService  } from './data-service';
+export { ModalError } from './data-service';

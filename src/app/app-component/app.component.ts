@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService } from '../app.services';
-import { CityInfoPipe } from '../app.pipes';
-import { Coords } from '../app.interfaces/';
+import { DataService } from '../services';
+import { CityInfoPipe } from '../pipes';
+import { Coords } from '../interfaces';
 
 @Component({
 

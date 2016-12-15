@@ -1,4 +1,4 @@
-import { CityInfo } from '../app.interfaces/'
+import { CityInfo } from '../interfaces'
 
 export interface CityInfoArray {
     cityInfo: CityInfo,

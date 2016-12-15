@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
-import { Coords } from '../../app.interfaces';
+import { Coords } from '../../interfaces';
 
 @Injectable()
 

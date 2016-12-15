@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DataService } from '../../app.services';
-import { CityInfo } from '../../app.interfaces/';
-import { Coords } from '../../app.interfaces/';
+import { DataService } from '../../services';
+import { CityInfo } from '../../interfaces';
+import { Coords } from '../../interfaces';
 
 @Component({
     selector: 'city-table',
