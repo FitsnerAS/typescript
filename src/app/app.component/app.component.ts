@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { DataService } from '../app.services';
 import { CityInfoPipe } from '../app.pipes';
 import { Coords } from '../app.interfaces/';
-import { CityInfo } from '../app.interfaces';
 
 @Component({
 
@@ -18,9 +17,9 @@ export class AppComponent {
     city: string;
     cityInfo: string = '';
 
-//    getCurrentCityInfo() {
-//        this.cityInfo = this.city;
-//    }
+    getCurrentCityInfo() {
+        this.cityInfo = this.city;
+    }
 
     constructor(private dataService: DataService) {
         this.dataService.getCoords().then((data: Coords) => {

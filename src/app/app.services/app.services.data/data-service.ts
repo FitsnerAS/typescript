@@ -17,7 +17,7 @@ export class DataService {
     }
     cityInfoUrl(cityName: string) {
         return 'http://api.openweathermap.org/data/2.5/weather?q='
-            + cityName + '&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
+            + cityName + '&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
     }
 
     constructor(private http: Http, public dialog: MdDialog, public snackBar: MdSnackBar) { }
@@ -29,11 +29,10 @@ export class DataService {
     }
 
     fetchCityInfo(city: string) {
-        return this.http.get(this.cityInfoUrl(city), {
-            method: 'GET',
-        }).map(
-            response => response.json()
-            )
+        return fetch(this.cityInfoUrl(city)).then(
+            response => {
+                return response.json()
+            })
     }
 
     getCoords() {
