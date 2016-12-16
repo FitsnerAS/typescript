@@ -1,4 +1,4 @@
-<table class="table table-model-2 table-hover">
+<table class="table table-model-2">
     <thead>
         <tr>
             <th>#</th>
@@ -6,16 +6,26 @@
             <th>temperature</th>
             <th>Pressure</th>
             <th>Wind speed</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>
             <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>
             <td *ngIf='l'>{{currentPage}}0</td>
-            <td>{{item.name}}</td>
+            <td>
+                <i class="glyphicon glyphicon-bookmark favorite-icon"
+                   [ngClass]="{'favorite-icon-active': item.favorite}"
+                   (click)=addToFavorite(item)></i> 
+                {{ item.name}}
+            </td>
             <td>{{item.main.temp}}</td>
             <td>{{item.main.pressure}}</td>
             <td>{{item.wind.speed}}</td>
+            <td>
+                <button md-button color="primary">Edit</button>
+                <button md-button color="warn" (click)='deleteCity(item.id)'>Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>

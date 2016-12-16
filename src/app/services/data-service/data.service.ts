@@ -52,6 +52,10 @@ export class DataService {
     failedAttempt(error: string) {
         this.snackBar.open(error, 'Try Again');
     }
+    
+    Sucess(succes: string) {
+        this.snackBar.open(succes, 'Ok!');
+    }
 
     errorHandler() {
 
