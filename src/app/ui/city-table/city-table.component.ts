@@ -55,7 +55,6 @@ export class CityTable implements OnInit {
             this.cityDataLoaded = false;
             this.getCitiesArray();
         }, 10000);
-
     }
 }
 
