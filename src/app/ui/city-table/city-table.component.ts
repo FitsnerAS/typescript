@@ -19,7 +19,6 @@ export class CityTable implements OnInit {
     cityDataLoaded: boolean = false;
 
     constructor(private dataService: DataService, private ref: ChangeDetectorRef) {
-
     }
 
     addToFavorite(item: CityInfo) {
@@ -31,7 +30,6 @@ export class CityTable implements OnInit {
             if (cityInfoId === item.id) this.dataService.Sucess('City is deleted');
             return cityInfoId !== item.id;
         })
-
     }
 
     getCitiesArray() {
