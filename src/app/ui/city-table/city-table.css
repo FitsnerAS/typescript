@@ -4,3 +4,16 @@ td{
 .my-progress{
     margin:0 auto
 }
+
+.favorite-icon{
+    color: #eceff1;
+    margin-right: 5px;
+}
+
+.favorite-icon-active{
+    color:gold;
+}
+
+.favorite-icon:hover{
+    color:gold;
+}

@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 @Component({
     selector: 'google-map',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [`
 		.sebm-google-map-container {
 			height: 300px;
