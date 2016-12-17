@@ -7,7 +7,7 @@ import { Coords } from '../interfaces';
 
     selector: 'my-app',
     styleUrls: ['./app.component.css'],
-    templateUrl: './app.component.html',
+    templateUrl:'./app.component.html',
     providers: [DataService],
 })
 

@@ -45369,18 +45369,18 @@
 	var core_1 = __webpack_require__(324);
 	var platform_browser_1 = __webpack_require__(342);
 	var app_component_1 = __webpack_require__(345);
-	var app_ui_1 = __webpack_require__(679);
-	var app_ui_2 = __webpack_require__(679);
-	var app_ui_3 = __webpack_require__(679);
-	var app_ui_4 = __webpack_require__(679);
-	var app_pipes_1 = __webpack_require__(694);
+	var ui_1 = __webpack_require__(679);
+	var ui_2 = __webpack_require__(679);
+	var ui_3 = __webpack_require__(679);
+	var ui_4 = __webpack_require__(679);
+	var pipes_1 = __webpack_require__(690);
 	var material_1 = __webpack_require__(675);
-	var ng_bootstrap_1 = __webpack_require__(697);
+	var ng_bootstrap_1 = __webpack_require__(693);
 	var forms_1 = __webpack_require__(676);
-	__webpack_require__(698);
+	__webpack_require__(694);
 	var http_1 = __webpack_require__(350);
-	var core_2 = __webpack_require__(699);
-	var app_services_1 = __webpack_require__(347);
+	var core_2 = __webpack_require__(695);
+	var services_1 = __webpack_require__(347);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -45399,15 +45399,15 @@
 	            ],
 	            declarations: [
 	                app_component_1.AppComponent,
-	                app_ui_1.CityTable,
-	                app_ui_2.GoogleMap,
-	                app_ui_3.MyHeader,
-	                app_services_1.ModalError,
-	                app_ui_4.MyFooter,
-	                app_pipes_1.CityInfoPipe
+	                ui_1.CityTable,
+	                ui_2.GoogleMap,
+	                ui_3.MyHeader,
+	                services_1.ModalError,
+	                ui_4.MyFooter,
+	                pipes_1.CityInfoPipe
 	            ],
 	            entryComponents: [
-	                app_services_1.ModalError
+	                services_1.ModalError
 	            ],
 	            bootstrap: [app_component_1.AppComponent]
 	        }), 
@@ -45442,7 +45442,7 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(324);
-	var app_services_1 = __webpack_require__(347);
+	var services_1 = __webpack_require__(347);
 	var AppComponent = (function () {
 	    function AppComponent(dataService) {
 	        var _this = this;
@@ -45457,17 +45457,17 @@
 	            _this.dataService.failedAttempt(error);
 	        });
 	    }
-	    AppComponent.prototype.getCurrentCityInfo = function (city) {
-	        this.cityInfo = city;
+	    AppComponent.prototype.getCurrentCityInfo = function () {
+	        this.cityInfo = this.city;
 	    };
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
 	            styles: [__webpack_require__(677)],
 	            template: __webpack_require__(678),
-	            providers: [app_services_1.DataService],
+	            providers: [services_1.DataService],
 	        }), 
-	        __metadata('design:paramtypes', [app_services_1.DataService])
+	        __metadata('design:paramtypes', [services_1.DataService])
 	    ], AppComponent);
 	    return AppComponent;
 	}());
@@ -45479,10 +45479,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var app_services_data_1 = __webpack_require__(348);
-	exports.DataService = app_services_data_1.DataService;
-	var app_services_data_2 = __webpack_require__(348);
-	exports.ModalError = app_services_data_2.ModalError;
+	var data_service_1 = __webpack_require__(348);
+	exports.DataService = data_service_1.DataService;
+	var data_service_2 = __webpack_require__(348);
+	exports.ModalError = data_service_2.ModalError;
 
 
 /***/ },
@@ -45527,15 +45527,15 @@
 	    };
 	    DataService.prototype.cityInfoUrl = function (cityName) {
 	        return 'http://api.openweathermap.org/data/2.5/weather?q='
-	            + cityName + '&APPID=1a014cc9a9db908fdb5647f07bc8e0e6';
+	            + cityName + '&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6';
 	    };
 	    DataService.prototype.fetchData = function (coords) {
 	        return this.http.get(this.dataUrl(coords)).map(function (response) { return response.json().list; });
 	    };
 	    DataService.prototype.fetchCityInfo = function (city) {
-	        return this.http.get(this.cityInfoUrl(city), {
-	            method: 'GET',
-	        }).map(function (response) { return response.json(); });
+	        return fetch(this.cityInfoUrl(city)).then(function (response) {
+	            return response.json();
+	        });
 	    };
 	    DataService.prototype.getCoords = function () {
 	        return new Promise(function (resolve, reject) {
@@ -45552,6 +45552,9 @@
 	    };
 	    DataService.prototype.failedAttempt = function (error) {
 	        this.snackBar.open(error, 'Try Again');
+	    };
+	    DataService.prototype.Sucess = function (succes) {
+	        this.snackBar.open(succes, 'Ok!');
 	    };
 	    DataService.prototype.errorHandler = function () {
 	        var _this = this;
@@ -78846,29 +78849,37 @@
 
 /***/ },
 /* 677 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = ".main-content{\n    margin-top:90px;\n    margin-bottom:20px;\n}\n"
+	
+	        var result = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/raw-loader/index.js!./app.component.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	        if (typeof result === "string") {
+	            module.exports = result;
+	        } else {
+	            module.exports = result.toString();
+	        }
+	    
 
 /***/ },
 /* 678 */
 /***/ function(module, exports) {
 
-	module.exports = "<my-header></my-header>\n<div class='container main-content'>\n    <md-card class=\"demo-card demo-basic\">\n        <md-input placeholder=\"Type city\" [(ngModel)]=\"city\" style=\"width: 50%; margin-right:20px;\"></md-input>\n        <button md-raised-button color=\"\" (click)='getCurrentCityInfo(city)'>Submit</button>\n        <table class=\"table table-model-2 table-hover\" *ngIf=\"cityInfo\">\n            <thead>\n                <tr>\n                    <th>City</th>\n                    <th>temperature</th>\n                    <th>Pressure</th>\n                    <th>Wind speed</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr>\n                    <td>{{cityInfo.name}}</td>\n                    <td>{{cityInfo.main.temp}}</td>\n                    <td>{{cityInfo.main.pressure}}</td>\n                    <td>{{cityInfo.wind.speed}}</td>\n                </tr>\n            </tbody>\n        </table>\n        <div>!{{cityInfo|cityInfoPipe|json}}!</div>\n        <md-toolbar color=\"\" >Table</md-toolbar>\n        <md-card-content>\n            <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>\n        </md-card-content>\n        <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>\n    </md-card>\n</div>\n<my-footer></my-footer>";
+	module.exports = "<my-header></my-header>\r\n<div class='container main-content'>\r\n    <md-card class=\"demo-card demo-basic\">\r\n        <md-input placeholder=\"Type city\" [(ngModel)]=\"city\" style=\"width: 50%; margin-right:20px;\"></md-input>\r\n        <button md-raised-button color=\"\" (click)='getCurrentCityInfo(city)'>Submit</button>\r\n        <table class=\"table table-model-2 table-hover\" *ngIf=\"cityInfo\">\r\n            <thead>\r\n                <tr>\r\n                    <th>City</th>\r\n                    <th>temperature</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                \r\n                <tr >\r\n                    <td>{{cityInfo}}</td>\r\n                    <td>{{(cityInfo|cityInfoPipe|async)?.main.temp}}</td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n        \r\n        \r\n        <md-toolbar color=\"\" >Table</md-toolbar>\r\n        <md-card-content>\r\n            <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>\r\n        </md-card-content>\r\n        <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>\r\n    </md-card>\r\n</div>\r\n<my-footer></my-footer>";
 
 /***/ },
 /* 679 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var app_ui_city_table_1 = __webpack_require__(680);
-	exports.CityTable = app_ui_city_table_1.CityTable;
-	var app_ui_map_1 = __webpack_require__(684);
-	exports.GoogleMap = app_ui_map_1.GoogleMap;
-	var app_ui_header_1 = __webpack_require__(686);
-	exports.MyHeader = app_ui_header_1.MyHeader;
-	var app_ui_footer_1 = __webpack_require__(690);
-	exports.MyFooter = app_ui_footer_1.MyFooter;
+	var city_table_1 = __webpack_require__(680);
+	exports.CityTable = city_table_1.CityTable;
+	var map_1 = __webpack_require__(684);
+	exports.GoogleMap = map_1.GoogleMap;
+	var header_1 = __webpack_require__(686);
+	exports.MyHeader = header_1.MyHeader;
+	var footer_1 = __webpack_require__(688);
+	exports.MyFooter = footer_1.MyFooter;
 
 
 /***/ },
@@ -78876,8 +78887,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var city_table_1 = __webpack_require__(681);
-	exports.CityTable = city_table_1.CityTable;
+	var city_table_component_1 = __webpack_require__(681);
+	exports.CityTable = city_table_component_1.CityTable;
 
 
 /***/ },
@@ -78895,23 +78906,45 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(324);
-	var app_services_1 = __webpack_require__(347);
+	var services_1 = __webpack_require__(347);
 	var CityTable = (function () {
-	    function CityTable(dataService) {
+	    function CityTable(dataService, ref) {
 	        this.dataService = dataService;
+	        this.ref = ref;
 	        this.citiesArray = [];
 	        this.currentPage = 1;
 	        this.cityDataLoaded = false;
 	    }
-	    CityTable.prototype.ngOnInit = function () {
+	    CityTable.prototype.addToFavorite = function (item) {
+	        item.favorite = true;
+	    };
+	    CityTable.prototype.deleteCity = function (cityInfoId) {
+	        var _this = this;
+	        this.citiesArray = this.citiesArray.filter(function (item) {
+	            if (cityInfoId === item.id)
+	                _this.dataService.Sucess('City is deleted');
+	            return cityInfoId !== item.id;
+	        });
+	    };
+	    CityTable.prototype.getCitiesArray = function () {
 	        var _this = this;
 	        this.dataService.fetchData(this.coords).subscribe(function (data) {
 	            _this.citiesArray = data;
 	            _this.cllectionSize = data.length;
 	            _this.cityDataLoaded = true;
+	            _this.ref.markForCheck();
 	        }, function (error) {
 	            _this.dataService.errorHandler();
 	        });
+	        this.ref.markForCheck();
+	    };
+	    CityTable.prototype.ngOnInit = function () {
+	        var _this = this;
+	        this.getCitiesArray();
+	        setInterval(function () {
+	            _this.cityDataLoaded = false;
+	            _this.getCitiesArray();
+	        }, 10000);
 	    };
 	    __decorate([
 	        core_1.Input(), 
@@ -78921,10 +78954,11 @@
 	        core_1.Component({
 	            selector: 'city-table',
 	            template: __webpack_require__(682),
-	            styles: [__webpack_require__(683)],
-	            providers: [app_services_1.DataService]
+	            styles: __webpack_require__(683),
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+	            providers: [services_1.DataService]
 	        }), 
-	        __metadata('design:paramtypes', [app_services_1.DataService])
+	        __metadata('design:paramtypes', [services_1.DataService, core_1.ChangeDetectorRef])
 	    ], CityTable);
 	    return CityTable;
 	}());
@@ -78935,21 +78969,29 @@
 /* 682 */
 /***/ function(module, exports) {
 
-	module.exports = "<table class=\"table table-model-2 table-hover\">\r\n    <thead>\r\n        <tr>\r\n            <th>#</th>\r\n            <th>City</th>\r\n            <th>temperature</th>\r\n            <th>Pressure</th>\r\n            <th>Wind speed</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>\r\n            <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>\r\n            <td *ngIf='l'>{{currentPage}}0</td>\r\n            <td>{{item.name}}</td>\r\n            <td>{{item.main.temp}}</td>\r\n            <td>{{item.main.pressure}}</td>\r\n            <td>{{item.wind.speed}}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<div layout=\"row\" layout-sm=\"column\" layout-align=\"space-around\">\r\n    <md-progress-circle *ngIf=\"!cityDataLoaded\" mode=\"indeterminate\" class=\"md-warn my-progress\" color=\"warn\" md-diameter=\"70\"></md-progress-circle>\r\n</div>\r\n<ngb-pagination [collectionSize]=\"cllectionSize\" [(page)]=\"currentPage\" size=\"sm\"></ngb-pagination>\r\n";
+	module.exports = "<table class=\"table table-model-2\">\r\n    <thead>\r\n        <tr>\r\n            <th>#</th>\r\n            <th>City</th>\r\n            <th>temperature</th>\r\n            <th>Pressure</th>\r\n            <th>Wind speed</th>\r\n            <th>Action</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>\r\n            <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>\r\n            <td *ngIf='l'>{{currentPage}}0</td>\r\n            <td>\r\n                <i class=\"glyphicon glyphicon-bookmark favorite-icon\"\r\n                   [ngClass]=\"{'favorite-icon-active': item.favorite}\"\r\n                   (click)=addToFavorite(item)></i> \r\n                {{ item.name}}\r\n            </td>\r\n            <td>{{item.main.temp}}</td>\r\n            <td>{{item.main.pressure}}</td>\r\n            <td>{{item.wind.speed}}</td>\r\n            <td>\r\n                <button md-button color=\"primary\">Edit</button>\r\n                <button md-button color=\"warn\" (click)='deleteCity(item.id)'>Delete</button>\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<div layout=\"row\" layout-sm=\"column\" layout-align=\"space-around\">\r\n    <md-progress-circle *ngIf=\"!cityDataLoaded\" mode=\"indeterminate\" class=\"md-warn my-progress\" color=\"warn\" md-diameter=\"70\"></md-progress-circle>\r\n</div>\r\n<ngb-pagination [collectionSize]=\"cllectionSize\" [(page)]=\"currentPage\" size=\"sm\"></ngb-pagination>\r\n";
 
 /***/ },
 /* 683 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "td{\r\n    cursor:pointer\r\n}\r\n.my-progress{\r\n    margin:0 auto\r\n}\r\n"
+	
+	        var result = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../../node_modules/raw-loader/index.js!./city-table.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	        if (typeof result === "string") {
+	            module.exports = result;
+	        } else {
+	            module.exports = result.toString();
+	        }
+	    
 
 /***/ },
 /* 684 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var map_1 = __webpack_require__(685);
-	exports.GoogleMap = map_1.GoogleMap;
+	var map_component_1 = __webpack_require__(685);
+	exports.GoogleMap = map_component_1.GoogleMap;
 
 
 /***/ },
@@ -78977,6 +79019,7 @@
 	    GoogleMap = __decorate([
 	        core_1.Component({
 	            selector: 'google-map',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	            styles: ["\n\t\t.sebm-google-map-container {\n\t\t\theight: 300px;\n\t\t}\n\t"],
 	            template: "\n    <sebm-google-map [latitude]=\"coords.latitude\" [longitude]=\"coords.longitude\"></sebm-google-map>\n    "
 	        }), 
@@ -78992,8 +79035,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var header_1 = __webpack_require__(687);
-	exports.MyHeader = header_1.MyHeader;
+	var header_component_1 = __webpack_require__(687);
+	exports.MyHeader = header_component_1.MyHeader;
 
 
 /***/ },
@@ -79017,8 +79060,9 @@
 	    MyHeader = __decorate([
 	        core_1.Component({
 	            selector: 'my-header',
-	            styles: [__webpack_require__(688)],
-	            template: __webpack_require__(689)
+	            styleUrls: ['./header.css'],
+	            templateUrl: './header.html',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], MyHeader);
@@ -79029,27 +79073,15 @@
 
 /***/ },
 /* 688 */
-/***/ function(module, exports) {
-
-	module.exports = ".my-header {\n    position:absolute;\n    height: 200px;\n    top:0;\n    left:0;\n    right:0;\n    background:#607D8B;\n    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);\n    font-family: Roboto, \"Helvetica Neue\", sans-serif;\n\n}\n\n.angular-span{\n    position:absolute;\n    font-size:26px;\n    color:#fff;\n    margin:30px;\n    top:0;\n    left:0;\n\n}\n\n.nav-ul{\n    margin-left:20%;\n    list-style:none;\n    font-size:16px;\n}\n\n.nav-ul a{\n    color:white;\n\n}\n\n.nav-li{\n    float:left;\n    margin-left:30px;\n}"
-
-/***/ },
-/* 689 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class='my-header'>\n    <nav>\n        <ul class=\"nav-ul\">\n            <li class=\"nav-li\"><a href=\"#\">Home</a></li>\n            <li class=\"nav-li\"><a href=\"#\">Contact</a></li>\n            <li class=\"nav-li\"><a href=\"#\">FAQ</a></li>\n        </ul>\n    </nav>\n    <span class=\"angular-span\">Angular2</span>\n\n</div>";
-
-/***/ },
-/* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var footer_1 = __webpack_require__(691);
-	exports.MyFooter = footer_1.MyFooter;
+	var footer_component_1 = __webpack_require__(689);
+	exports.MyFooter = footer_component_1.MyFooter;
 
 
 /***/ },
-/* 691 */
+/* 689 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -79069,8 +79101,9 @@
 	    MyFooter = __decorate([
 	        core_1.Component({
 	            selector: 'my-footer',
-	            styles: [__webpack_require__(692)],
-	            template: __webpack_require__(693)
+	            styleUrls: ['./footer.css'],
+	            templateUrl: './footer.html',
+	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], MyFooter);
@@ -79080,37 +79113,25 @@
 
 
 /***/ },
-/* 692 */
-/***/ function(module, exports) {
-
-	module.exports = ".my-footer {\n    height: 40px;\n    background:#455A64;\n}\n\n"
-
-/***/ },
-/* 693 */
-/***/ function(module, exports) {
-
-	module.exports = "<footer class=\"page-footer my-footer\">\n</footer>\n";
-
-/***/ },
-/* 694 */
+/* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var app_pipes_city_info_1 = __webpack_require__(695);
-	exports.CityInfoPipe = app_pipes_city_info_1.CityInfoPipe;
-
-
-/***/ },
-/* 695 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var city_info_1 = __webpack_require__(696);
+	var city_info_1 = __webpack_require__(691);
 	exports.CityInfoPipe = city_info_1.CityInfoPipe;
 
 
 /***/ },
-/* 696 */
+/* 691 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var city_info_pipe_1 = __webpack_require__(692);
+	exports.CityInfoPipe = city_info_pipe_1.CityInfoPipe;
+
+
+/***/ },
+/* 692 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -79124,36 +79145,52 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(324);
-	var app_services_1 = __webpack_require__(347);
+	var services_1 = __webpack_require__(347);
 	var CityInfoPipe = (function () {
 	    function CityInfoPipe(dataService) {
 	        this.dataService = dataService;
+	        this.cityInfoArray = [];
 	        this.cityInfo = null;
-	        this.value = '';
 	    }
 	    CityInfoPipe.prototype.transform = function (value) {
 	        var _this = this;
-	        this.cityInfo = null;
-	        this.value = value;
-	        if (value === undefined || value === '') {
+	        if (value === undefined || value === '' || typeof value !== 'string') {
 	            return null;
 	        }
 	        else {
-	            this.dataService.fetchCityInfo(value).subscribe(function (result) {
-	                _this.cityInfo = result;
-	            }, function (error) {
-	                _this.dataService.errorHandler();
+	            value = value.toLowerCase();
+	            this.cityInfo = null;
+	            this.cityInfoArray.forEach(function (item) {
+	                if (item.city === value && (item.date + 3600000) > new Date().getTime()) {
+	                    _this.cityInfo = item.cityInfo;
+	                }
 	            });
+	            if (this.cityInfo === null) {
+	                return this.dataService.fetchCityInfo(value).then(function (result) {
+	                    console.log('from http', result);
+	                    _this.cityInfoArray.push({
+	                        cityInfo: result,
+	                        date: new Date().getTime(),
+	                        city: value
+	                    });
+	                    return result;
+	                }, function (error) {
+	                    _this.dataService.errorHandler();
+	                });
+	            }
+	            else {
+	                return new Promise(function (resolve, reject) {
+	                    console.log("from cache", _this.cityInfo);
+	                    resolve(_this.cityInfo);
+	                });
+	            }
 	        }
-	        console.log(this.cityInfo);
-	        return this.cityInfo;
 	    };
 	    CityInfoPipe = __decorate([
 	        core_1.Pipe({
 	            name: 'cityInfoPipe',
-	            pure: false
 	        }), 
-	        __metadata('design:paramtypes', [app_services_1.DataService])
+	        __metadata('design:paramtypes', [services_1.DataService])
 	    ], CityInfoPipe);
 	    return CityInfoPipe;
 	}());
@@ -79161,7 +79198,7 @@
 
 
 /***/ },
-/* 697 */
+/* 693 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -84675,7 +84712,7 @@
 	//# sourceMappingURL=ng-bootstrap.js.map
 
 /***/ },
-/* 698 */
+/* 694 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.7 - 2016-04-22
@@ -87324,7 +87361,7 @@
 
 
 /***/ },
-/* 699 */
+/* 695 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -87332,49 +87369,49 @@
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// main modules
-	__export(__webpack_require__(700));
-	__export(__webpack_require__(715));
+	__export(__webpack_require__(696));
+	__export(__webpack_require__(711));
 	// Google Maps types
 	// core module
 	// we explicitly export the module here to prevent this Ionic 2 bug:
 	// http://stevemichelotti.com/integrate-angular-2-google-maps-into-ionic-2/
-	var core_module_1 = __webpack_require__(719);
+	var core_module_1 = __webpack_require__(715);
 	exports.AgmCoreModule = core_module_1.AgmCoreModule;
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 700 */
+/* 696 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var google_map_1 = __webpack_require__(701);
+	var google_map_1 = __webpack_require__(697);
 	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
-	var google_map_circle_1 = __webpack_require__(709);
+	var google_map_circle_1 = __webpack_require__(705);
 	exports.SebmGoogleMapCircle = google_map_circle_1.SebmGoogleMapCircle;
-	var google_map_info_window_1 = __webpack_require__(710);
+	var google_map_info_window_1 = __webpack_require__(706);
 	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
-	var google_map_marker_1 = __webpack_require__(711);
+	var google_map_marker_1 = __webpack_require__(707);
 	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
-	var google_map_polygon_1 = __webpack_require__(712);
+	var google_map_polygon_1 = __webpack_require__(708);
 	exports.SebmGoogleMapPolygon = google_map_polygon_1.SebmGoogleMapPolygon;
-	var google_map_polyline_1 = __webpack_require__(713);
+	var google_map_polyline_1 = __webpack_require__(709);
 	exports.SebmGoogleMapPolyline = google_map_polyline_1.SebmGoogleMapPolyline;
-	var google_map_polyline_point_1 = __webpack_require__(714);
+	var google_map_polyline_point_1 = __webpack_require__(710);
 	exports.SebmGoogleMapPolylinePoint = google_map_polyline_point_1.SebmGoogleMapPolylinePoint;
 	//# sourceMappingURL=directives.js.map
 
 /***/ },
-/* 701 */
+/* 697 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(702);
-	var circle_manager_1 = __webpack_require__(704);
-	var info_window_manager_1 = __webpack_require__(705);
-	var marker_manager_1 = __webpack_require__(706);
-	var polygon_manager_1 = __webpack_require__(707);
-	var polyline_manager_1 = __webpack_require__(708);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
+	var circle_manager_1 = __webpack_require__(700);
+	var info_window_manager_1 = __webpack_require__(701);
+	var marker_manager_1 = __webpack_require__(702);
+	var polygon_manager_1 = __webpack_require__(703);
+	var polyline_manager_1 = __webpack_require__(704);
 	/**
 	 * SebMGoogleMap renders a Google Map.
 	 * **Important note**: To be able see a map in the browser, you have to define a height for the CSS
@@ -87680,13 +87717,13 @@
 	//# sourceMappingURL=google-map.js.map
 
 /***/ },
-/* 702 */
+/* 698 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var maps_api_loader_1 = __webpack_require__(703);
+	var maps_api_loader_1 = __webpack_require__(699);
 	/**
 	 * Wrapper class that handles the communication with the Google Maps Javascript
 	 * API v3
@@ -87806,7 +87843,7 @@
 	//# sourceMappingURL=google-maps-api-wrapper.js.map
 
 /***/ },
-/* 703 */
+/* 699 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -87825,13 +87862,13 @@
 	//# sourceMappingURL=maps-api-loader.js.map
 
 /***/ },
-/* 704 */
+/* 700 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(702);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var CircleManager = (function () {
 	    function CircleManager(_apiWrapper, _zone) {
 	        this._apiWrapper = _apiWrapper;
@@ -87929,13 +87966,13 @@
 	//# sourceMappingURL=circle-manager.js.map
 
 /***/ },
-/* 705 */
+/* 701 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(702);
-	var marker_manager_1 = __webpack_require__(706);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
+	var marker_manager_1 = __webpack_require__(702);
 	var InfoWindowManager = (function () {
 	    function InfoWindowManager(_mapsWrapper, _zone, _markerManager) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88011,13 +88048,13 @@
 	//# sourceMappingURL=info-window-manager.js.map
 
 /***/ },
-/* 706 */
+/* 702 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(702);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var MarkerManager = (function () {
 	    function MarkerManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88100,13 +88137,13 @@
 	//# sourceMappingURL=marker-manager.js.map
 
 /***/ },
-/* 707 */
+/* 703 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(702);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var PolygonManager = (function () {
 	    function PolygonManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88176,13 +88213,13 @@
 	//# sourceMappingURL=polygon-manager.js.map
 
 /***/ },
-/* 708 */
+/* 704 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(702);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var PolylineManager = (function () {
 	    function PolylineManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88258,12 +88295,12 @@
 	//# sourceMappingURL=polyline-manager.js.map
 
 /***/ },
-/* 709 */
+/* 705 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var circle_manager_1 = __webpack_require__(704);
+	var circle_manager_1 = __webpack_require__(700);
 	var SebmGoogleMapCircle = (function () {
 	    function SebmGoogleMapCircle(_manager) {
 	        this._manager = _manager;
@@ -88460,12 +88497,12 @@
 	//# sourceMappingURL=google-map-circle.js.map
 
 /***/ },
-/* 710 */
+/* 706 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var info_window_manager_1 = __webpack_require__(705);
+	var info_window_manager_1 = __webpack_require__(701);
 	var infoWindowId = 0;
 	/**
 	 * SebmGoogleMapInfoWindow renders a info window inside a {@link SebmGoogleMapMarker} or standalone.
@@ -88580,13 +88617,13 @@
 	//# sourceMappingURL=google-map-info-window.js.map
 
 /***/ },
-/* 711 */
+/* 707 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var marker_manager_1 = __webpack_require__(706);
-	var google_map_info_window_1 = __webpack_require__(710);
+	var marker_manager_1 = __webpack_require__(702);
+	var google_map_info_window_1 = __webpack_require__(706);
 	var markerId = 0;
 	/**
 	 * SebmGoogleMapMarker renders a map marker inside a {@link SebmGoogleMap}.
@@ -88759,12 +88796,12 @@
 	//# sourceMappingURL=google-map-marker.js.map
 
 /***/ },
-/* 712 */
+/* 708 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var polygon_manager_1 = __webpack_require__(707);
+	var polygon_manager_1 = __webpack_require__(703);
 	/**
 	 * SebmGoogleMapPolygon renders a polygon on a {@link SebmGoogleMap}
 	 *
@@ -88991,13 +89028,13 @@
 	//# sourceMappingURL=google-map-polygon.js.map
 
 /***/ },
-/* 713 */
+/* 709 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var polyline_manager_1 = __webpack_require__(708);
-	var google_map_polyline_point_1 = __webpack_require__(714);
+	var polyline_manager_1 = __webpack_require__(704);
+	var google_map_polyline_point_1 = __webpack_require__(710);
 	var polylineId = 0;
 	/**
 	 * SebmGoogleMapPolyline renders a polyline on a {@link SebmGoogleMap}
@@ -89201,7 +89238,7 @@
 	//# sourceMappingURL=google-map-polyline.js.map
 
 /***/ },
-/* 714 */
+/* 710 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -89242,34 +89279,34 @@
 	//# sourceMappingURL=google-map-polyline-point.js.map
 
 /***/ },
-/* 715 */
+/* 711 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var google_maps_api_wrapper_1 = __webpack_require__(702);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	exports.GoogleMapsAPIWrapper = google_maps_api_wrapper_1.GoogleMapsAPIWrapper;
-	var circle_manager_1 = __webpack_require__(704);
+	var circle_manager_1 = __webpack_require__(700);
 	exports.CircleManager = circle_manager_1.CircleManager;
-	var info_window_manager_1 = __webpack_require__(705);
+	var info_window_manager_1 = __webpack_require__(701);
 	exports.InfoWindowManager = info_window_manager_1.InfoWindowManager;
-	var marker_manager_1 = __webpack_require__(706);
+	var marker_manager_1 = __webpack_require__(702);
 	exports.MarkerManager = marker_manager_1.MarkerManager;
-	var polygon_manager_1 = __webpack_require__(707);
+	var polygon_manager_1 = __webpack_require__(703);
 	exports.PolygonManager = polygon_manager_1.PolygonManager;
-	var polyline_manager_1 = __webpack_require__(708);
+	var polyline_manager_1 = __webpack_require__(704);
 	exports.PolylineManager = polyline_manager_1.PolylineManager;
-	var lazy_maps_api_loader_1 = __webpack_require__(716);
+	var lazy_maps_api_loader_1 = __webpack_require__(712);
 	exports.GoogleMapsScriptProtocol = lazy_maps_api_loader_1.GoogleMapsScriptProtocol;
 	exports.LAZY_MAPS_API_CONFIG = lazy_maps_api_loader_1.LAZY_MAPS_API_CONFIG;
 	exports.LazyMapsAPILoader = lazy_maps_api_loader_1.LazyMapsAPILoader;
-	var maps_api_loader_1 = __webpack_require__(703);
+	var maps_api_loader_1 = __webpack_require__(699);
 	exports.MapsAPILoader = maps_api_loader_1.MapsAPILoader;
-	var noop_maps_api_loader_1 = __webpack_require__(718);
+	var noop_maps_api_loader_1 = __webpack_require__(714);
 	exports.NoOpMapsAPILoader = noop_maps_api_loader_1.NoOpMapsAPILoader;
 	//# sourceMappingURL=services.js.map
 
 /***/ },
-/* 716 */
+/* 712 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -89279,8 +89316,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var core_1 = __webpack_require__(324);
-	var browser_globals_1 = __webpack_require__(717);
-	var maps_api_loader_1 = __webpack_require__(703);
+	var browser_globals_1 = __webpack_require__(713);
+	var maps_api_loader_1 = __webpack_require__(699);
 	(function (GoogleMapsScriptProtocol) {
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTP"] = 1] = "HTTP";
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTPS"] = 2] = "HTTPS";
@@ -89377,7 +89414,7 @@
 	//# sourceMappingURL=lazy-maps-api-loader.js.map
 
 /***/ },
-/* 717 */
+/* 713 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -89399,7 +89436,7 @@
 	//# sourceMappingURL=browser-globals.js.map
 
 /***/ },
-/* 718 */
+/* 714 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -89424,22 +89461,22 @@
 	//# sourceMappingURL=noop-maps-api-loader.js.map
 
 /***/ },
-/* 719 */
+/* 715 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var google_map_1 = __webpack_require__(701);
-	var google_map_circle_1 = __webpack_require__(709);
-	var google_map_info_window_1 = __webpack_require__(710);
-	var google_map_marker_1 = __webpack_require__(711);
-	var google_map_polygon_1 = __webpack_require__(712);
-	var google_map_polyline_1 = __webpack_require__(713);
-	var google_map_polyline_point_1 = __webpack_require__(714);
-	var lazy_maps_api_loader_1 = __webpack_require__(716);
-	var lazy_maps_api_loader_2 = __webpack_require__(716);
-	var maps_api_loader_1 = __webpack_require__(703);
-	var browser_globals_1 = __webpack_require__(717);
+	var google_map_1 = __webpack_require__(697);
+	var google_map_circle_1 = __webpack_require__(705);
+	var google_map_info_window_1 = __webpack_require__(706);
+	var google_map_marker_1 = __webpack_require__(707);
+	var google_map_polygon_1 = __webpack_require__(708);
+	var google_map_polyline_1 = __webpack_require__(709);
+	var google_map_polyline_point_1 = __webpack_require__(710);
+	var lazy_maps_api_loader_1 = __webpack_require__(712);
+	var lazy_maps_api_loader_2 = __webpack_require__(712);
+	var maps_api_loader_1 = __webpack_require__(699);
+	var browser_globals_1 = __webpack_require__(713);
 	/**
 	 * @internal
 	 */
