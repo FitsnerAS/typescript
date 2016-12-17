@@ -1,7 +1,7 @@
 {
-  "name": "shopsCat",
+  "name": "Angular 2",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "app/index.js",
   "repository": "https://github.com/FitsnerAS/shopsCat",
   "license": "MIT",
