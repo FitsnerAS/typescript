@@ -6,7 +6,27 @@ import { Coords } from '../../interfaces';
 @Component({
     selector: 'city-table',
     template: require('./city-table.html'),
-    styles: [require('./city-table.css').toString()],
+    styles: [`
+        td{
+    cursor:pointer
+}
+.my-progress{
+    margin:0 auto
+}
+
+.favorite-icon{
+    color: #eceff1;
+    margin-right: 5px;
+}
+
+.favorite-icon-active{
+    color:gold;
+}
+
+.favorite-icon:hover{
+    color:gold;
+}
+    `],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [DataService]
 })

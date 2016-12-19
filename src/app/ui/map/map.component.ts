@@ -1,5 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-@Component({
+import { Coords } from '../../interfaces';
+    @Component({
     selector: 'google-map',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [`
@@ -18,11 +19,3 @@ export class GoogleMap {
 
     constructor() {}
 }
-
-interface Coords {
-    latitude: number,
-    longitude: number
-}
-
-
-

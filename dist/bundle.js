@@ -10385,62 +10385,7 @@
 
 /***/ },
 /* 312 */,
-/* 313 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
+/* 313 */,
 /* 314 */,
 /* 315 */,
 /* 316 */,
@@ -45424,17 +45369,17 @@
 	var core_1 = __webpack_require__(324);
 	var platform_browser_1 = __webpack_require__(342);
 	var app_component_1 = __webpack_require__(345);
-	var ui_1 = __webpack_require__(680);
-	var ui_2 = __webpack_require__(680);
-	var ui_3 = __webpack_require__(680);
-	var ui_4 = __webpack_require__(680);
-	var pipes_1 = __webpack_require__(698);
+	var ui_1 = __webpack_require__(678);
+	var ui_2 = __webpack_require__(678);
+	var ui_3 = __webpack_require__(678);
+	var ui_4 = __webpack_require__(678);
+	var pipes_1 = __webpack_require__(690);
 	var material_1 = __webpack_require__(675);
-	var ng_bootstrap_1 = __webpack_require__(701);
+	var ng_bootstrap_1 = __webpack_require__(693);
 	var forms_1 = __webpack_require__(676);
-	__webpack_require__(702);
+	__webpack_require__(694);
 	var http_1 = __webpack_require__(350);
-	var core_2 = __webpack_require__(703);
+	var core_2 = __webpack_require__(695);
 	var services_1 = __webpack_require__(347);
 	var AppModule = (function () {
 	    function AppModule() {
@@ -45518,8 +45463,8 @@
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            styles: [__webpack_require__(677).toString()],
-	            template: __webpack_require__(679),
+	            styles: [__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"app.component.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).toString()],
+	            template: __webpack_require__(677),
 	            providers: [services_1.DataService],
 	        }), 
 	        __metadata('design:paramtypes', [services_1.DataService])
@@ -78904,67 +78849,36 @@
 
 /***/ },
 /* 677 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// css-to-string-loader: transforms styles from css-loader to a string output
-
-	// Get the styles
-	var styles = __webpack_require__(678);
-
-	if (typeof styles === 'string') {
-	  // Return an existing string
-	  module.exports = styles;
-	} else {
-	  // Call the custom toString method from css-loader module
-	  module.exports = styles.toString();
-	}
+	module.exports = "<my-header></my-header>\r\n<div class='container main-content'>\r\n    <md-card class=\"demo-card demo-basic\">\r\n        <md-input placeholder=\"Type city\" [(ngModel)]=\"city\" style=\"width: 50%; margin-right:20px;\"></md-input>\r\n        <button md-raised-button color=\"\" (click)='getCurrentCityInfo(city)'>Submit</button>\r\n        <table class=\"table table-model-2 table-hover\" *ngIf=\"cityInfo\">\r\n            <thead>\r\n                <tr>\r\n                    <th>City</th>\r\n                    <th>temperature</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                \r\n                <tr >\r\n                    <td>{{cityInfo}}</td>\r\n                    <td>{{(cityInfo|cityInfoPipe|async)?.main.temp}}</td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n        \r\n        \r\n        <md-toolbar color=\"\" >Table</md-toolbar>\r\n        <md-card-content>\r\n            <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>\r\n        </md-card-content>\r\n        <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>\r\n    </md-card>\r\n</div>\r\n<my-footer></my-footer>";
 
 /***/ },
 /* 678 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".main-content{\r\n    margin-top:90px;\r\n    margin-bottom:20px;\r\n}\r\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 679 */
-/***/ function(module, exports) {
-
-	module.exports = "<my-header></my-header>\r\n<div class='container main-content'>\r\n    <md-card class=\"demo-card demo-basic\">\r\n        <md-input placeholder=\"Type city\" [(ngModel)]=\"city\" style=\"width: 50%; margin-right:20px;\"></md-input>\r\n        <button md-raised-button color=\"primary\" (click)='getCurrentCityInfo(city)'>Submit</button>\r\n        <table class=\"table table-model-2 table-hover\" *ngIf=\"cityInfo\">\r\n            <thead>\r\n                <tr>\r\n                    <th>City</th>\r\n                    <th>temperature</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                \r\n                <tr >\r\n                    <td>{{cityInfo}}</td>\r\n                    <td>{{(cityInfo|cityInfoPipe|async)?.main.temp}}</td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n        \r\n        \r\n        <md-toolbar color=\"\" >Table</md-toolbar>\r\n        <md-card-content>\r\n            <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>\r\n        </md-card-content>\r\n        <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>\r\n    </md-card>\r\n</div>\r\n<my-footer></my-footer>";
-
-/***/ },
-/* 680 */
-/***/ function(module, exports, __webpack_require__) {
-
 	"use strict";
-	var city_table_1 = __webpack_require__(681);
+	var city_table_1 = __webpack_require__(679);
 	exports.CityTable = city_table_1.CityTable;
-	var map_1 = __webpack_require__(686);
+	var map_1 = __webpack_require__(682);
 	exports.GoogleMap = map_1.GoogleMap;
-	var header_1 = __webpack_require__(688);
+	var header_1 = __webpack_require__(684);
 	exports.MyHeader = header_1.MyHeader;
-	var footer_1 = __webpack_require__(693);
+	var footer_1 = __webpack_require__(687);
 	exports.MyFooter = footer_1.MyFooter;
 
 
 /***/ },
-/* 681 */
+/* 679 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var city_table_component_1 = __webpack_require__(682);
+	var city_table_component_1 = __webpack_require__(680);
 	exports.CityTable = city_table_component_1.CityTable;
 
 
 /***/ },
-/* 682 */
+/* 680 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -79025,8 +78939,8 @@
 	    CityTable = __decorate([
 	        core_1.Component({
 	            selector: 'city-table',
-	            template: __webpack_require__(683),
-	            styles: [__webpack_require__(684).toString()],
+	            template: __webpack_require__(681),
+	            styles: [__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"city-table.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).toString()],
 	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	            providers: [services_1.DataService]
 	        }), 
@@ -79038,53 +78952,22 @@
 
 
 /***/ },
-/* 683 */
+/* 681 */
 /***/ function(module, exports) {
 
 	module.exports = "<table class=\"table table-model-2\">\r\n    <thead>\r\n        <tr>\r\n            <th>#</th>\r\n            <th>City</th>\r\n            <th>temperature</th>\r\n            <th>Pressure</th>\r\n            <th>Wind speed</th>\r\n            <th>Action</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor='let item of citiesArray | slice:(currentPage-1)*10:(currentPage*10);let i = index;let l = last'>\r\n            <td *ngIf='!l'>{{currentPage-1}}{{i+1}}</td>\r\n            <td *ngIf='l'>{{currentPage}}0</td>\r\n            <td>\r\n                <i class=\"glyphicon glyphicon-bookmark favorite-icon\"\r\n                   [ngClass]=\"{'favorite-icon-active': item.favorite}\"\r\n                   (click)=addToFavorite(item)></i> \r\n                {{ item.name}}\r\n            </td>\r\n            <td>{{item.main.temp}}</td>\r\n            <td>{{item.main.pressure}}</td>\r\n            <td>{{item.wind.speed}}</td>\r\n            <td>\r\n                <button md-button color=\"primary\">Edit</button>\r\n                <button md-button color=\"warn\" (click)='deleteCity(item.id)'>Delete</button>\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<div layout=\"row\" layout-sm=\"column\" layout-align=\"space-around\">\r\n    <md-progress-circle *ngIf=\"!cityDataLoaded\" mode=\"indeterminate\" class=\"md-warn my-progress\" color=\"warn\" md-diameter=\"70\"></md-progress-circle>\r\n</div>\r\n<ngb-pagination [collectionSize]=\"cllectionSize\" [(page)]=\"currentPage\" size=\"sm\"></ngb-pagination>\r\n";
 
 /***/ },
-/* 684 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// css-to-string-loader: transforms styles from css-loader to a string output
-
-	// Get the styles
-	var styles = __webpack_require__(685);
-
-	if (typeof styles === 'string') {
-	  // Return an existing string
-	  module.exports = styles;
-	} else {
-	  // Call the custom toString method from css-loader module
-	  module.exports = styles.toString();
-	}
-
-/***/ },
-/* 685 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "td{\r\n    cursor:pointer\r\n}\r\n.my-progress{\r\n    margin:0 auto\r\n}\r\n\r\n.favorite-icon{\r\n    color: #eceff1;\r\n    margin-right: 5px;\r\n}\r\n\r\n.favorite-icon-active{\r\n    color:gold;\r\n}\r\n\r\n.favorite-icon:hover{\r\n    color:gold;\r\n}", ""]);
-
-	// exports
-
-
-/***/ },
-/* 686 */
+/* 682 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var map_component_1 = __webpack_require__(687);
+	var map_component_1 = __webpack_require__(683);
 	exports.GoogleMap = map_component_1.GoogleMap;
 
 
 /***/ },
-/* 687 */
+/* 683 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -79120,16 +79003,16 @@
 
 
 /***/ },
-/* 688 */
+/* 684 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var header_component_1 = __webpack_require__(689);
+	var header_component_1 = __webpack_require__(685);
 	exports.MyHeader = header_component_1.MyHeader;
 
 
 /***/ },
-/* 689 */
+/* 685 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -79149,8 +79032,8 @@
 	    MyHeader = __decorate([
 	        core_1.Component({
 	            selector: 'my-header',
-	            styles: [__webpack_require__(690).toString()],
-	            template: __webpack_require__(692),
+	            styles: [__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"header.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).toString()],
+	            template: __webpack_require__(686),
 	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -79161,53 +79044,22 @@
 
 
 /***/ },
-/* 690 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// css-to-string-loader: transforms styles from css-loader to a string output
-
-	// Get the styles
-	var styles = __webpack_require__(691);
-
-	if (typeof styles === 'string') {
-	  // Return an existing string
-	  module.exports = styles;
-	} else {
-	  // Call the custom toString method from css-loader module
-	  module.exports = styles.toString();
-	}
-
-/***/ },
-/* 691 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".my-header {\r\n    position:absolute;\r\n    height: 200px;\r\n    top:0;\r\n    left:0;\r\n    right:0;\r\n    background:#607D8B;\r\n    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);\r\n    font-family: Roboto, \"Helvetica Neue\", sans-serif;\r\n\r\n}\r\n\r\n.angular-span{\r\n    position:absolute;\r\n    font-size:26px;\r\n    color:#fff;\r\n    margin:30px;\r\n    top:0;\r\n    left:0;\r\n\r\n}\r\n\r\n.nav-ul{\r\n    margin-left:20%;\r\n    list-style:none;\r\n    font-size:16px;\r\n}\r\n\r\n.nav-ul a{\r\n    color:white;\r\n\r\n}\r\n\r\n.nav-li{\r\n    float:left;\r\n    margin-left:30px;\r\n}", ""]);
-
-	// exports
-
-
-/***/ },
-/* 692 */
+/* 686 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class='my-header'>\r\n    <nav>\r\n        <ul class=\"nav-ul\">\r\n            <li class=\"nav-li\"><a href=\"#\">Home</a></li>\r\n            <li class=\"nav-li\"><a href=\"#\">Contact</a></li>\r\n            <li class=\"nav-li\"><a href=\"#\">FAQ</a></li>\r\n        </ul>\r\n    </nav>\r\n    <span class=\"angular-span\">Angular2</span>\r\n\r\n</div>";
 
 /***/ },
-/* 693 */
+/* 687 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var footer_component_1 = __webpack_require__(694);
+	var footer_component_1 = __webpack_require__(688);
 	exports.MyFooter = footer_component_1.MyFooter;
 
 
 /***/ },
-/* 694 */
+/* 688 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -79227,8 +79079,8 @@
 	    MyFooter = __decorate([
 	        core_1.Component({
 	            selector: 'my-footer',
-	            styles: [__webpack_require__(695).toString()],
-	            template: __webpack_require__(697),
+	            styles: [__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"footer.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).toString()],
+	            template: __webpack_require__(689),
 	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -79239,62 +79091,31 @@
 
 
 /***/ },
-/* 695 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// css-to-string-loader: transforms styles from css-loader to a string output
-
-	// Get the styles
-	var styles = __webpack_require__(696);
-
-	if (typeof styles === 'string') {
-	  // Return an existing string
-	  module.exports = styles;
-	} else {
-	  // Call the custom toString method from css-loader module
-	  module.exports = styles.toString();
-	}
-
-/***/ },
-/* 696 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".my-footer {\r\n    height: 40px;\r\n    background:#455A64;\r\n}\r\n\r\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 697 */
+/* 689 */
 /***/ function(module, exports) {
 
 	module.exports = "<footer class=\"page-footer my-footer\">\r\n</footer>\r\n";
 
 /***/ },
-/* 698 */
+/* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var city_info_1 = __webpack_require__(699);
+	var city_info_1 = __webpack_require__(691);
 	exports.CityInfoPipe = city_info_1.CityInfoPipe;
 
 
 /***/ },
-/* 699 */
+/* 691 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var city_info_pipe_1 = __webpack_require__(700);
+	var city_info_pipe_1 = __webpack_require__(692);
 	exports.CityInfoPipe = city_info_pipe_1.CityInfoPipe;
 
 
 /***/ },
-/* 700 */
+/* 692 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -79361,7 +79182,7 @@
 
 
 /***/ },
-/* 701 */
+/* 693 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -84875,7 +84696,7 @@
 	//# sourceMappingURL=ng-bootstrap.js.map
 
 /***/ },
-/* 702 */
+/* 694 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.7 - 2016-04-22
@@ -87524,7 +87345,7 @@
 
 
 /***/ },
-/* 703 */
+/* 695 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -87532,49 +87353,49 @@
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// main modules
-	__export(__webpack_require__(704));
-	__export(__webpack_require__(719));
+	__export(__webpack_require__(696));
+	__export(__webpack_require__(711));
 	// Google Maps types
 	// core module
 	// we explicitly export the module here to prevent this Ionic 2 bug:
 	// http://stevemichelotti.com/integrate-angular-2-google-maps-into-ionic-2/
-	var core_module_1 = __webpack_require__(723);
+	var core_module_1 = __webpack_require__(715);
 	exports.AgmCoreModule = core_module_1.AgmCoreModule;
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 704 */
+/* 696 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var google_map_1 = __webpack_require__(705);
+	var google_map_1 = __webpack_require__(697);
 	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
-	var google_map_circle_1 = __webpack_require__(713);
+	var google_map_circle_1 = __webpack_require__(705);
 	exports.SebmGoogleMapCircle = google_map_circle_1.SebmGoogleMapCircle;
-	var google_map_info_window_1 = __webpack_require__(714);
+	var google_map_info_window_1 = __webpack_require__(706);
 	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
-	var google_map_marker_1 = __webpack_require__(715);
+	var google_map_marker_1 = __webpack_require__(707);
 	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
-	var google_map_polygon_1 = __webpack_require__(716);
+	var google_map_polygon_1 = __webpack_require__(708);
 	exports.SebmGoogleMapPolygon = google_map_polygon_1.SebmGoogleMapPolygon;
-	var google_map_polyline_1 = __webpack_require__(717);
+	var google_map_polyline_1 = __webpack_require__(709);
 	exports.SebmGoogleMapPolyline = google_map_polyline_1.SebmGoogleMapPolyline;
-	var google_map_polyline_point_1 = __webpack_require__(718);
+	var google_map_polyline_point_1 = __webpack_require__(710);
 	exports.SebmGoogleMapPolylinePoint = google_map_polyline_point_1.SebmGoogleMapPolylinePoint;
 	//# sourceMappingURL=directives.js.map
 
 /***/ },
-/* 705 */
+/* 697 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(706);
-	var circle_manager_1 = __webpack_require__(708);
-	var info_window_manager_1 = __webpack_require__(709);
-	var marker_manager_1 = __webpack_require__(710);
-	var polygon_manager_1 = __webpack_require__(711);
-	var polyline_manager_1 = __webpack_require__(712);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
+	var circle_manager_1 = __webpack_require__(700);
+	var info_window_manager_1 = __webpack_require__(701);
+	var marker_manager_1 = __webpack_require__(702);
+	var polygon_manager_1 = __webpack_require__(703);
+	var polyline_manager_1 = __webpack_require__(704);
 	/**
 	 * SebMGoogleMap renders a Google Map.
 	 * **Important note**: To be able see a map in the browser, you have to define a height for the CSS
@@ -87880,13 +87701,13 @@
 	//# sourceMappingURL=google-map.js.map
 
 /***/ },
-/* 706 */
+/* 698 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var maps_api_loader_1 = __webpack_require__(707);
+	var maps_api_loader_1 = __webpack_require__(699);
 	/**
 	 * Wrapper class that handles the communication with the Google Maps Javascript
 	 * API v3
@@ -88006,7 +87827,7 @@
 	//# sourceMappingURL=google-maps-api-wrapper.js.map
 
 /***/ },
-/* 707 */
+/* 699 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -88025,13 +87846,13 @@
 	//# sourceMappingURL=maps-api-loader.js.map
 
 /***/ },
-/* 708 */
+/* 700 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(706);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var CircleManager = (function () {
 	    function CircleManager(_apiWrapper, _zone) {
 	        this._apiWrapper = _apiWrapper;
@@ -88129,13 +87950,13 @@
 	//# sourceMappingURL=circle-manager.js.map
 
 /***/ },
-/* 709 */
+/* 701 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var google_maps_api_wrapper_1 = __webpack_require__(706);
-	var marker_manager_1 = __webpack_require__(710);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
+	var marker_manager_1 = __webpack_require__(702);
 	var InfoWindowManager = (function () {
 	    function InfoWindowManager(_mapsWrapper, _zone, _markerManager) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88211,13 +88032,13 @@
 	//# sourceMappingURL=info-window-manager.js.map
 
 /***/ },
-/* 710 */
+/* 702 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(706);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var MarkerManager = (function () {
 	    function MarkerManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88300,13 +88121,13 @@
 	//# sourceMappingURL=marker-manager.js.map
 
 /***/ },
-/* 711 */
+/* 703 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(706);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var PolygonManager = (function () {
 	    function PolygonManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88376,13 +88197,13 @@
 	//# sourceMappingURL=polygon-manager.js.map
 
 /***/ },
-/* 712 */
+/* 704 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
 	var Observable_1 = __webpack_require__(326);
-	var google_maps_api_wrapper_1 = __webpack_require__(706);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	var PolylineManager = (function () {
 	    function PolylineManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -88458,12 +88279,12 @@
 	//# sourceMappingURL=polyline-manager.js.map
 
 /***/ },
-/* 713 */
+/* 705 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var circle_manager_1 = __webpack_require__(708);
+	var circle_manager_1 = __webpack_require__(700);
 	var SebmGoogleMapCircle = (function () {
 	    function SebmGoogleMapCircle(_manager) {
 	        this._manager = _manager;
@@ -88660,12 +88481,12 @@
 	//# sourceMappingURL=google-map-circle.js.map
 
 /***/ },
-/* 714 */
+/* 706 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var info_window_manager_1 = __webpack_require__(709);
+	var info_window_manager_1 = __webpack_require__(701);
 	var infoWindowId = 0;
 	/**
 	 * SebmGoogleMapInfoWindow renders a info window inside a {@link SebmGoogleMapMarker} or standalone.
@@ -88780,13 +88601,13 @@
 	//# sourceMappingURL=google-map-info-window.js.map
 
 /***/ },
-/* 715 */
+/* 707 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var marker_manager_1 = __webpack_require__(710);
-	var google_map_info_window_1 = __webpack_require__(714);
+	var marker_manager_1 = __webpack_require__(702);
+	var google_map_info_window_1 = __webpack_require__(706);
 	var markerId = 0;
 	/**
 	 * SebmGoogleMapMarker renders a map marker inside a {@link SebmGoogleMap}.
@@ -88959,12 +88780,12 @@
 	//# sourceMappingURL=google-map-marker.js.map
 
 /***/ },
-/* 716 */
+/* 708 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var polygon_manager_1 = __webpack_require__(711);
+	var polygon_manager_1 = __webpack_require__(703);
 	/**
 	 * SebmGoogleMapPolygon renders a polygon on a {@link SebmGoogleMap}
 	 *
@@ -89191,13 +89012,13 @@
 	//# sourceMappingURL=google-map-polygon.js.map
 
 /***/ },
-/* 717 */
+/* 709 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var polyline_manager_1 = __webpack_require__(712);
-	var google_map_polyline_point_1 = __webpack_require__(718);
+	var polyline_manager_1 = __webpack_require__(704);
+	var google_map_polyline_point_1 = __webpack_require__(710);
 	var polylineId = 0;
 	/**
 	 * SebmGoogleMapPolyline renders a polyline on a {@link SebmGoogleMap}
@@ -89401,7 +89222,7 @@
 	//# sourceMappingURL=google-map-polyline.js.map
 
 /***/ },
-/* 718 */
+/* 710 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -89442,34 +89263,34 @@
 	//# sourceMappingURL=google-map-polyline-point.js.map
 
 /***/ },
-/* 719 */
+/* 711 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var google_maps_api_wrapper_1 = __webpack_require__(706);
+	var google_maps_api_wrapper_1 = __webpack_require__(698);
 	exports.GoogleMapsAPIWrapper = google_maps_api_wrapper_1.GoogleMapsAPIWrapper;
-	var circle_manager_1 = __webpack_require__(708);
+	var circle_manager_1 = __webpack_require__(700);
 	exports.CircleManager = circle_manager_1.CircleManager;
-	var info_window_manager_1 = __webpack_require__(709);
+	var info_window_manager_1 = __webpack_require__(701);
 	exports.InfoWindowManager = info_window_manager_1.InfoWindowManager;
-	var marker_manager_1 = __webpack_require__(710);
+	var marker_manager_1 = __webpack_require__(702);
 	exports.MarkerManager = marker_manager_1.MarkerManager;
-	var polygon_manager_1 = __webpack_require__(711);
+	var polygon_manager_1 = __webpack_require__(703);
 	exports.PolygonManager = polygon_manager_1.PolygonManager;
-	var polyline_manager_1 = __webpack_require__(712);
+	var polyline_manager_1 = __webpack_require__(704);
 	exports.PolylineManager = polyline_manager_1.PolylineManager;
-	var lazy_maps_api_loader_1 = __webpack_require__(720);
+	var lazy_maps_api_loader_1 = __webpack_require__(712);
 	exports.GoogleMapsScriptProtocol = lazy_maps_api_loader_1.GoogleMapsScriptProtocol;
 	exports.LAZY_MAPS_API_CONFIG = lazy_maps_api_loader_1.LAZY_MAPS_API_CONFIG;
 	exports.LazyMapsAPILoader = lazy_maps_api_loader_1.LazyMapsAPILoader;
-	var maps_api_loader_1 = __webpack_require__(707);
+	var maps_api_loader_1 = __webpack_require__(699);
 	exports.MapsAPILoader = maps_api_loader_1.MapsAPILoader;
-	var noop_maps_api_loader_1 = __webpack_require__(722);
+	var noop_maps_api_loader_1 = __webpack_require__(714);
 	exports.NoOpMapsAPILoader = noop_maps_api_loader_1.NoOpMapsAPILoader;
 	//# sourceMappingURL=services.js.map
 
 /***/ },
-/* 720 */
+/* 712 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -89479,8 +89300,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var core_1 = __webpack_require__(324);
-	var browser_globals_1 = __webpack_require__(721);
-	var maps_api_loader_1 = __webpack_require__(707);
+	var browser_globals_1 = __webpack_require__(713);
+	var maps_api_loader_1 = __webpack_require__(699);
 	(function (GoogleMapsScriptProtocol) {
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTP"] = 1] = "HTTP";
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTPS"] = 2] = "HTTPS";
@@ -89577,7 +89398,7 @@
 	//# sourceMappingURL=lazy-maps-api-loader.js.map
 
 /***/ },
-/* 721 */
+/* 713 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -89599,7 +89420,7 @@
 	//# sourceMappingURL=browser-globals.js.map
 
 /***/ },
-/* 722 */
+/* 714 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -89624,22 +89445,22 @@
 	//# sourceMappingURL=noop-maps-api-loader.js.map
 
 /***/ },
-/* 723 */
+/* 715 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(324);
-	var google_map_1 = __webpack_require__(705);
-	var google_map_circle_1 = __webpack_require__(713);
-	var google_map_info_window_1 = __webpack_require__(714);
-	var google_map_marker_1 = __webpack_require__(715);
-	var google_map_polygon_1 = __webpack_require__(716);
-	var google_map_polyline_1 = __webpack_require__(717);
-	var google_map_polyline_point_1 = __webpack_require__(718);
-	var lazy_maps_api_loader_1 = __webpack_require__(720);
-	var lazy_maps_api_loader_2 = __webpack_require__(720);
-	var maps_api_loader_1 = __webpack_require__(707);
-	var browser_globals_1 = __webpack_require__(721);
+	var google_map_1 = __webpack_require__(697);
+	var google_map_circle_1 = __webpack_require__(705);
+	var google_map_info_window_1 = __webpack_require__(706);
+	var google_map_marker_1 = __webpack_require__(707);
+	var google_map_polygon_1 = __webpack_require__(708);
+	var google_map_polyline_1 = __webpack_require__(709);
+	var google_map_polyline_point_1 = __webpack_require__(710);
+	var lazy_maps_api_loader_1 = __webpack_require__(712);
+	var lazy_maps_api_loader_2 = __webpack_require__(712);
+	var maps_api_loader_1 = __webpack_require__(699);
+	var browser_globals_1 = __webpack_require__(713);
 	/**
 	 * @internal
 	 */
