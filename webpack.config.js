@@ -27,7 +27,7 @@ module.exports = {
 //                        },
                         {
                                 test: /\.(css|scss)$/,
-                                exclude: /app\\.+\.css$/,
+//                                exclude: /app\\.+\.css$/,
                                 loader: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
                         },
 //                        {
