@@ -6,8 +6,8 @@ import { Coords } from '../interfaces';
 @Component({
 
     selector: 'my-app',
-    styleUrls: ['./app.component.css'],
-    templateUrl: './app.component.html',
+    styles: [require('./app.component.css')],
+    template: require('./app.component.html'),
     providers: [DataService],
 })
 

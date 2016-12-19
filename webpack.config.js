@@ -1,8 +1,9 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var path = require('path');
 module.exports = {
-        context: __dirname + '/src',
+        context: path.join(__dirname, 'src'),
         entry: './index.ts',
         output: {
                 path: __dirname + '/dist',
@@ -12,7 +13,7 @@ module.exports = {
                 loaders: [
                         {
                                 test: /\.ts$/,
-                                loaders: ['ts-loader', 'angular2-template-loader']
+                                loaders: ['ts-loader']
                         },
                         {
                                 test: /\.html$/,
@@ -25,8 +26,7 @@ module.exports = {
                         },
                         {
                                 test: /app\\.+\.css$/,
-                                exclude: /node_modules/,
-                                loader: 'raw' 
+                                loaders:['to-string-loader', 'css','sass']  
                         },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -40,7 +40,7 @@ module.exports = {
         },
         resolve: {
 
-                extensions: ['', '.js', '.ts']
+                extensions: ['', '.ts', '.js' ]
         },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),

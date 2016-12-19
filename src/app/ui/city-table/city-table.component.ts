@@ -5,8 +5,8 @@ import { Coords } from '../../interfaces';
 
 @Component({
     selector: 'city-table',
-    templateUrl: './city-table.html',
-    styleUrls: ['./city-table.css'],
+    template: require('./city-table.html'),
+    styles: [require('./city-table.css')],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [DataService]
 })
