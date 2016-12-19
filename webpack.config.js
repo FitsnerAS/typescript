@@ -13,21 +13,27 @@ module.exports = {
                 loaders: [
                         {
                                 test: /\.ts$/,
-                                loaders: ['ts-loader']
+                                loaders: ['ts-loader', 'angular2-template-loader?keepUrl=true'],
+                                exclude: [/\.(spec|e2e)\.ts$/]
                         },
                         {
-                                test: /\.html$/,
-                                loader: "html"
+                                test: /\.(html|css)$/,
+                                loader: 'raw-loader',
+                                exclude: /\.async\.(html|css)$/
                         },
+//                        {
+//                                test: /\.html$/,
+//                                loader: "html"
+//                        },
                         {
                                 test: /\.(css|scss)$/,
                                 exclude: /app\\.+\.css$/,
                                 loader: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
                         },
-                        {
-                                test: /app\\.+\.css$/,
-                                loaders:['to-string-loader', 'css','sass']  
-                        },
+//                        {
+//                                test: /app\\.+\.css$/,
+//                                loaders: ['to-string-loader', 'css']
+//                        },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                                 loader: "url-loader?limit=10000&minetype=application/font-woff&name=fonts/[name].[ext]"
@@ -40,7 +46,7 @@ module.exports = {
         },
         resolve: {
 
-                extensions: ['', '.ts', '.js' ]
+                extensions: ['', '.ts', '.js']
         },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),
