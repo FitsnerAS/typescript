@@ -32,7 +32,7 @@ module.exports = {
                         },
                         {
                                 test: /app\\.+\.css$/,
-                                loaders: ['to-string-loader', 'css']
+                                loaders: ['css-to-string-loader', 'css']
                         },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

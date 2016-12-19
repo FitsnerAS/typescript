@@ -78906,15 +78906,18 @@
 /* 677 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	        var result = __webpack_require__(678);
+	// css-to-string-loader: transforms styles from css-loader to a string output
 
-	        if (typeof result === "string") {
-	            module.exports = result;
-	        } else {
-	            module.exports = result.toString();
-	        }
-	    
+	// Get the styles
+	var styles = __webpack_require__(678);
+
+	if (typeof styles === 'string') {
+	  // Return an existing string
+	  module.exports = styles;
+	} else {
+	  // Call the custom toString method from css-loader module
+	  module.exports = styles.toString();
+	}
 
 /***/ },
 /* 678 */
@@ -79044,15 +79047,18 @@
 /* 684 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	        var result = __webpack_require__(685);
+	// css-to-string-loader: transforms styles from css-loader to a string output
 
-	        if (typeof result === "string") {
-	            module.exports = result;
-	        } else {
-	            module.exports = result.toString();
-	        }
-	    
+	// Get the styles
+	var styles = __webpack_require__(685);
+
+	if (typeof styles === 'string') {
+	  // Return an existing string
+	  module.exports = styles;
+	} else {
+	  // Call the custom toString method from css-loader module
+	  module.exports = styles.toString();
+	}
 
 /***/ },
 /* 685 */
@@ -79158,15 +79164,18 @@
 /* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	        var result = __webpack_require__(691);
+	// css-to-string-loader: transforms styles from css-loader to a string output
 
-	        if (typeof result === "string") {
-	            module.exports = result;
-	        } else {
-	            module.exports = result.toString();
-	        }
-	    
+	// Get the styles
+	var styles = __webpack_require__(691);
+
+	if (typeof styles === 'string') {
+	  // Return an existing string
+	  module.exports = styles;
+	} else {
+	  // Call the custom toString method from css-loader module
+	  module.exports = styles.toString();
+	}
 
 /***/ },
 /* 691 */
@@ -79233,15 +79242,18 @@
 /* 695 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	        var result = __webpack_require__(696);
+	// css-to-string-loader: transforms styles from css-loader to a string output
 
-	        if (typeof result === "string") {
-	            module.exports = result;
-	        } else {
-	            module.exports = result.toString();
-	        }
-	    
+	// Get the styles
+	var styles = __webpack_require__(696);
+
+	if (typeof styles === 'string') {
+	  // Return an existing string
+	  module.exports = styles;
+	} else {
+	  // Call the custom toString method from css-loader module
+	  module.exports = styles.toString();
+	}
 
 /***/ },
 /* 696 */
