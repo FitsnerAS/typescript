@@ -2,7 +2,7 @@
 <div class='container main-content'>
     <md-card class="demo-card demo-basic">
         <md-input placeholder="Type city" [(ngModel)]="city" style="width: 50%; margin-right:20px;"></md-input>
-        <button md-raised-button color="" (click)='getCurrentCityInfo(city)'>Submit</button>
+        <button md-raised-button color="primary" (click)='getCurrentCityInfo(city)'>Submit</button>
         <table class="table table-model-2 table-hover" *ngIf="cityInfo">
             <thead>
                 <tr>
