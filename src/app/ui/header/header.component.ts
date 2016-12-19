@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'my-header',
-    styles: [require('./header.css')],
+    styles: [require('./header.css').toString()],
     template:require('./header.html'),
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

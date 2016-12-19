@@ -6,7 +6,7 @@ import { Coords } from '../../interfaces';
 @Component({
     selector: 'city-table',
     template: require('./city-table.html'),
-    styles: [require('./city-table.css')],
+    styles: [require('./city-table.css').toString()],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [DataService]
 })

@@ -45518,7 +45518,7 @@
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            styles: [__webpack_require__(677)],
+	            styles: [__webpack_require__(677).toString()],
 	            template: __webpack_require__(679),
 	            providers: [services_1.DataService],
 	        }), 
@@ -79026,7 +79026,7 @@
 	        core_1.Component({
 	            selector: 'city-table',
 	            template: __webpack_require__(683),
-	            styles: [__webpack_require__(684)],
+	            styles: [__webpack_require__(684).toString()],
 	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	            providers: [services_1.DataService]
 	        }), 
@@ -79149,7 +79149,7 @@
 	    MyHeader = __decorate([
 	        core_1.Component({
 	            selector: 'my-header',
-	            styles: [__webpack_require__(690)],
+	            styles: [__webpack_require__(690).toString()],
 	            template: __webpack_require__(692),
 	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	        }), 
@@ -79227,7 +79227,7 @@
 	    MyFooter = __decorate([
 	        core_1.Component({
 	            selector: 'my-footer',
-	            styles: [__webpack_require__(695)],
+	            styles: [__webpack_require__(695).toString()],
 	            template: __webpack_require__(697),
 	            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
 	        }), 
