@@ -23,7 +23,6 @@
             <td>{{item.main.pressure}}</td>
             <td>{{item.wind.speed}}</td>
             <td>
-                <button md-button color="primary">Edit</button>
                 <button md-button color="warn" (click)='deleteCity(item.id)'>Delete</button>
             </td>
         </tr>
@@ -32,4 +31,4 @@
 <div layout="row" layout-sm="column" layout-align="space-around">
     <md-progress-circle *ngIf="!cityDataLoaded" mode="indeterminate" class="md-warn my-progress" color="warn" md-diameter="70"></md-progress-circle>
 </div>
-<ngb-pagination [collectionSize]="cllectionSize" [(page)]="currentPage" size="sm"></ngb-pagination>
+<ngb-pagination [collectionSize]="collectionSize" [(page)]="currentPage" size="sm"></ngb-pagination>
