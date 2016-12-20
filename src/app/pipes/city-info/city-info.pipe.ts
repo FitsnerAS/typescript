@@ -4,8 +4,7 @@ import { CityInfo, CityInfoArray } from '../../interfaces';
 
 
 @Pipe({
-    name: 'cityInfoPipe',
-
+    name: 'sgCityInfoPipe'
 })
 
 export class CityInfoPipe implements PipeTransform {
@@ -26,7 +25,6 @@ export class CityInfoPipe implements PipeTransform {
             this.cityInfo = null;
 
             this.cityInfoArray.forEach(item => {
-
                 if (item.city === value && (item.date + 3600000) > new Date().getTime()) {
 
                     this.cityInfo = item.cityInfo;
@@ -44,7 +42,7 @@ export class CityInfoPipe implements PipeTransform {
                         })
                         return result
                     },
-                    (error:String) => {
+                    (error: String) => {
                         this.dataService.errorHandler()
                     }
                 )

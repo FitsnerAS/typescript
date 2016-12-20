@@ -9,7 +9,7 @@ import { Coords } from '../../interfaces';
 
 export class DataService {
 
-    dialogRef: MdDialogRef<ModalError>;
+    dialogRef: MdDialogRef<ModalErrorComponent>;
 
     dataUrl(coords: Coords) {
         return 'http://api.openweathermap.org/data/2.5/find?&lat=' + coords.latitude
@@ -52,24 +52,23 @@ export class DataService {
     failedAttempt(error: string) {
         this.snackBar.open(error, 'Try Again');
     }
-    
     Sucess(succes: string) {
         this.snackBar.open(succes, 'Ok!');
     }
 
     errorHandler() {
 
-        this.dialogRef = this.dialog.open(ModalError, {
-            disableClose: false
-        });
-
-        this.dialogRef.afterClosed().subscribe(result => {
-            console.log(result)
-            if (result === 'yes') {
-                location.reload();
-            }
-            this.dialogRef = null;
-        });
+        //        this.dialogRef = this.dialog.open(ModalErrorComponent, {
+        //            disableClose: false
+        //        });
+        //
+        //        this.dialogRef.afterClosed().subscribe(result => {
+        //            console.log(result)
+        //            if (result === 'yes') {
+        //                location.reload();
+        //            }
+        //            this.dialogRef = null;
+        //        });
     }
 }
 
@@ -84,7 +83,7 @@ export class DataService {
   `
 })
 
-export class ModalError {
-    constructor(public dialogRef: MdDialogRef<ModalError>) { }
+export class ModalErrorComponent {
+    constructor(public dialogRef: MdDialogRef<ModalErrorComponent>) { }
 }
 

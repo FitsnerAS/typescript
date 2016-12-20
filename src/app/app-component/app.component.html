@@ -14,7 +14,7 @@
                 
                 <tr >
                     <td>{{cityInfo}}</td>
-                    <td>{{(cityInfo|cityInfoPipe|async)?.main.temp}}</td>
+                    <td>{{(cityInfo|sgCityInfoPipe|async)?.main.temp}}</td>
                 </tr>
             </tbody>
         </table>

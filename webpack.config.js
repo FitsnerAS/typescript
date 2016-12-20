@@ -27,19 +27,10 @@ module.exports = {
                                 loader: 'raw-loader',
                                 exclude: /\.async\.(html|css)$/
                         },
-//                        {
-//                                test: /\.html$/,
-//                                loader: "html"
-//                        },
                         {
                                 test: /\.(css|scss)$/,
-//                                exclude: /app\\.+\.css$/,
                                 loader: ExtractTextPlugin.extract("style-loader", "css-loader", "sass-loader")
                         },
-//                        {
-//                                test: /app\\.+\.css$/,
-//                                loaders: ['to-string-loader', 'css']
-//                        },
                         {
                                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                                 loader: "url-loader?limit=10000&minetype=application/font-woff&name=fonts/[name].[ext]"

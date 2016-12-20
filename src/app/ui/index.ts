@@ -1,5 +1,5 @@
-export { CityTable } from './city-table';
-export { GoogleMap } from './map';
-export { MyHeader } from './header';
-export { MyFooter } from './footer';
+export { CityTableComponent } from './city-table';
+export { GoogleMapComponent } from './map';
+export { MyHeaderComponent } from './header';
+export { MyFooterComponent } from './footer';
 

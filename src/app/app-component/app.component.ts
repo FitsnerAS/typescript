@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services';
 import { CityInfoPipe } from '../pipes';
-import { Coords } from '../interfaces';
+import { Coords, CityInfo } from '../interfaces';
+
 
 @Component({
 
@@ -14,8 +15,8 @@ import { Coords } from '../interfaces';
 export class AppComponent {
     locationLoaded: boolean = false;
     coords: Coords;
-    city: string;
-    cityInfo: string = '';
+    city: String = null;
+    cityInfo: String = null;
 
     getCurrentCityInfo() {
         this.cityInfo = this.city;

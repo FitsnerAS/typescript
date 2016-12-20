@@ -1,6 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Coords } from '../../interfaces';
-    @Component({
+
+@Component({
     selector: 'google-map',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [`
@@ -13,9 +14,8 @@ import { Coords } from '../../interfaces';
     `
 })
 
-export class GoogleMap {
-    
-    @Input() coords:Coords;
+export class GoogleMapComponent {
+    @Input() coords: Coords;
 
-    constructor() {}
+    constructor() { }
 }

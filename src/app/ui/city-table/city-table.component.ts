@@ -1,4 +1,10 @@
-import { Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import {
+    Component,
+    Input,
+    OnInit,
+    ChangeDetectorRef,
+    ChangeDetectionStrategy
+} from '@angular/core';
 import { DataService } from '../../services';
 import { CityInfo } from '../../interfaces';
 import { Coords } from '../../interfaces';
@@ -11,32 +17,53 @@ import { Coords } from '../../interfaces';
     providers: [DataService]
 })
 
-export class CityTable implements OnInit {
+export class CityTableComponent implements OnInit {
     citiesArray: Array<CityInfo> = [];
     @Input() coords: Coords;
-    cllectionSize: number;
+    collectionSize: number;
     currentPage: number = 1;
     cityDataLoaded: boolean = false;
 
-    constructor(private dataService: DataService, private ref: ChangeDetectorRef) {
+    constructor(
+        private dataService: DataService,
+        private ref: ChangeDetectorRef
+    ) { }
+
+    removeFavorite() {
+        this.citiesArray.forEach(item => {
+            if (item.favorite) {
+                item.favorite = !item.favorite;
+            }
+        })
     }
 
     addToFavorite(item: CityInfo) {
-        item.favorite = true;
+
+        if (item.favorite) {
+            this.removeFavorite()
+        } else {
+            this.removeFavorite();
+            item.favorite = true;
+        }
     }
 
     deleteCity(cityInfoId: number) {
+
         this.citiesArray = this.citiesArray.filter((item: CityInfo) => {
-            if (cityInfoId === item.id) this.dataService.Sucess('City is deleted');
+            if (cityInfoId === item.id) {
+                this.dataService.Sucess('City is deleted');
+            }
             return cityInfoId !== item.id;
         })
+
+        this.collectionSize = this.citiesArray.length;
     }
 
     getCitiesArray() {
         this.dataService.fetchData(this.coords).subscribe(
             (data: Array<CityInfo>) => {
                 this.citiesArray = data;
-                this.cllectionSize = data.length;
+                this.collectionSize = data.length;
                 this.cityDataLoaded = true;
                 this.ref.markForCheck();
             },
@@ -47,12 +74,17 @@ export class CityTable implements OnInit {
         this.ref.markForCheck();
     }
 
-    ngOnInit() {
+    updateCityInfo() {
         this.getCitiesArray()
-        setInterval(() => {
+        setTimeout(() => {
             this.cityDataLoaded = false;
             this.getCitiesArray();
-        }, 10000);
+            setTimeout(this.updateCityInfo(), 15000);
+        }, 15000);
+    }
+
+    ngOnInit() {
+        this.updateCityInfo()
     }
 }
 

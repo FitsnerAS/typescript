@@ -1,1 +1,1 @@
-export { CityTable } from './city-table.component'
+export { CityTableComponent } from './city-table.component'

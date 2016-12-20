@@ -1,1 +1,1 @@
-export { GoogleMap } from './map.component';
+export { GoogleMapComponent } from './map.component';

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app-component';
-import { CityTable } from './ui';
-import { GoogleMap } from './ui';
-import { MyHeader } from './ui';
-import { MyFooter } from './ui';
+import { CityTableComponent } from './ui';
+import { GoogleMapComponent } from './ui';
+import { MyHeaderComponent } from './ui';
+import { MyFooterComponent } from './ui';
 import { CityInfoPipe } from './pipes';
 import { MaterialModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-import { ModalError } from './services';
+import { ModalErrorComponent } from './services';
 
 
 @NgModule({
@@ -26,20 +26,18 @@ import { ModalError } from './services';
         }),
         MaterialModule.forRoot(),
         NgbModule.forRoot(),
-        
     ],
     declarations: [
-        
         AppComponent,
-        CityTable,
-        GoogleMap,
-        MyHeader,
-        ModalError,
-        MyFooter,
+        CityTableComponent,
+        GoogleMapComponent,
+        MyHeaderComponent,
+        ModalErrorComponent,
+        MyFooterComponent,
         CityInfoPipe
     ],
     entryComponents: [
-        ModalError
+        ModalErrorComponent
     ],
 
     bootstrap: [AppComponent]
