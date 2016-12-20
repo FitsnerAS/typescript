@@ -13,6 +13,7 @@ import 'hammerjs';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { ModalErrorComponent } from './services';
+import { CityColorDirective } from './directives';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ModalErrorComponent } from './services';
         MyHeaderComponent,
         ModalErrorComponent,
         MyFooterComponent,
-        CityInfoPipe
+        CityInfoPipe,
+        CityColorDirective
     ],
     entryComponents: [
         ModalErrorComponent
