@@ -10,6 +10,12 @@ module.exports = {
                 filename: 'bundle.js'
         },
         module: {
+                preLoaders: [
+                        {
+                                test: /\.ts$/,
+                                loader: 'tslint-loader'
+                        }
+                ],
                 loaders: [
                         {
                                 test: /\.ts$/,
