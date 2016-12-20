@@ -469,3 +469,66 @@ md-toolbar {
   background: rgba(97, 97, 97, 0.9); }
 
 /*# sourceMappingURL=indigo-pink.css.map */
+.main-content{
+    margin-top:90px;
+    margin-bottom:20px;
+}
+td{
+    cursor:pointer
+}
+.my-progress{
+    margin:0 auto
+}
+
+.favorite-icon{
+    color: #eceff1;
+    margin-right: 5px;
+}
+
+.favorite-icon-active{
+    color:gold;
+}
+
+.favorite-icon:hover{
+    color:gold;
+}.my-header {
+    position:absolute;
+    height: 200px;
+    top:0;
+    left:0;
+    right:0;
+    background:#607D8B;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}
+
+.angular-span{
+    position:absolute;
+    font-size:26px;
+    color:#fff;
+    margin:30px;
+    top:0;
+    left:0;
+
+}
+
+.nav-ul{
+    margin-left:20%;
+    list-style:none;
+    font-size:16px;
+}
+
+.nav-ul a{
+    color:white;
+
+}
+
+.nav-li{
+    float:left;
+    margin-left:30px;
+}.my-footer {
+    height: 40px;
+    background:#455A64;
+}
+

@@ -24,7 +24,8 @@
   },
   "scripts": {
     "serve": "webpack-dev-server --inline",
-    "build": "webpack --progress"
+    "build": "webpack --progress",
+    "tslint": "tslint -c tslint.json **/*.ts"
   },
   "dependencies": {
     "@angular/common": "2.2.3",

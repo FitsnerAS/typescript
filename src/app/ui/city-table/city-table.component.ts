@@ -5,28 +5,8 @@ import { Coords } from '../../interfaces';
 
 @Component({
     selector: 'city-table',
-    template: require('./city-table.html'),
-    styles: [`
-        td{
-    cursor:pointer
-}
-.my-progress{
-    margin:0 auto
-}
-
-.favorite-icon{
-    color: #eceff1;
-    margin-right: 5px;
-}
-
-.favorite-icon-active{
-    color:gold;
-}
-
-.favorite-icon:hover{
-    color:gold;
-}
-    `],
+    templateUrl: './city-table.html',
+    styleUrls: ['./city-table.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [DataService]
 })
