@@ -14,6 +14,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { ModalErrorComponent } from './services';
 import { CityColorDirective } from './directives';
+import { WindDirectDirective } from './directives';
+
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { CityColorDirective } from './directives';
         ModalErrorComponent,
         MyFooterComponent,
         CityInfoPipe,
-        CityColorDirective
+        CityColorDirective,
+        WindDirectDirective
     ],
     entryComponents: [
         ModalErrorComponent

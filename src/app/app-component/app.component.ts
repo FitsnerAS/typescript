@@ -3,7 +3,6 @@ import { DataService } from '../services';
 import { CityInfoPipe } from '../pipes';
 import { Coords, CityInfo } from '../interfaces';
 
-
 @Component({
 
     selector: 'my-app',

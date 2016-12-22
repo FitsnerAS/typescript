@@ -31,7 +31,6 @@ export class CityColorDirective implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.cityColor)
         this.el.nativeElement.style.backgroundColor = this.getBgColor();
     }
 }
