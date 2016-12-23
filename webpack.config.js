@@ -2,8 +2,9 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var path = require('path');
+require('es6-promise').polyfill();
 module.exports = {
-        context: path.join(__dirname, 'src'),
+        context: path.resolve(__dirname, "src"),
         entry: './index.ts',
         output: {
                 path: __dirname + '/dist',
@@ -41,9 +42,10 @@ module.exports = {
                         }
                 ]
         },
+        
         resolve: {
 
-                extensions: ['', '.ts', '.js']
+                extensions: ['', '.ts', '.js', '.css', 'scss']
         },
         plugins: [
                 new ExtractTextPlugin("bundle.css"),

@@ -16,8 +16,6 @@ import { ModalErrorComponent } from './services';
 import { CityColorDirective } from './directives';
 import { WindDirectDirective } from './directives';
 
-
-
 @NgModule({
     imports: [
         BrowserModule,
@@ -47,4 +45,5 @@ import { WindDirectDirective } from './directives';
 
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }

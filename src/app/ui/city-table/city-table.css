@@ -1,6 +1,4 @@
-td{
-    cursor:pointer
-}
+
 .my-progress{
     margin:0 auto
 }
@@ -8,6 +6,11 @@ td{
 .favorite-icon{
     color: #eceff1;
     margin-right: 5px;
+    cursor: pointer;
+}
+
+.city-name-span{
+    cursor: pointer;
 }
 
 .favorite-icon-active{

@@ -9,7 +9,6 @@ import { CityInfo, CityInfoArray } from '../../interfaces';
 
 export class CityInfoPipe implements PipeTransform {
     cityInfoArray: Array<CityInfoArray> = [];
-
     cityInfo: CityInfo = null;
 
     constructor(private dataService: DataService) { }
