@@ -15,7 +15,7 @@ export class CityInfoPipe implements PipeTransform {
 
     transform(value: string): Promise<CityInfo> {
 
-        if (value === undefined || value === '' || typeof value !== 'string') {
+        if (value === '' || typeof value !== 'string') {
             return null;
         } else {
 

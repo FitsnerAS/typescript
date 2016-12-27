@@ -23,8 +23,8 @@ export class DataService {
     constructor(private http: Http, public dialog: MdDialog, public snackBar: MdSnackBar) { }
 
     fetchData(coords: Coords) {
-        return this.http.get(this.dataUrl(coords)).map(
-            response => response.json().list
+        return fetch(this.dataUrl(coords)).then(
+            response => response.json()
         )
     }
 

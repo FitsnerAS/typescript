@@ -6,6 +6,7 @@ import { GoogleMapComponent } from './ui';
 import { MyHeaderComponent } from './ui';
 import { MyFooterComponent } from './ui';
 import { CityInfoPipe } from './pipes';
+import { AllCityInfoPipe } from './pipes';
 import { MaterialModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -36,6 +37,7 @@ import { WindDirectDirective } from './directives';
         ModalErrorComponent,
         MyFooterComponent,
         CityInfoPipe,
+        AllCityInfoPipe,
         CityColorDirective,
         WindDirectDirective
     ],
