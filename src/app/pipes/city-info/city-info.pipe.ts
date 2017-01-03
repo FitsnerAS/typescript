@@ -2,21 +2,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DataService } from '../../services';
 import { CityInfo, CityInfoArray } from '../../interfaces';
 
-
 @Pipe({
     name: 'sgCityInfoPipe'
 })
 
 export class CityInfoPipe implements PipeTransform {
     cityInfoArray: Array<CityInfoArray> = [];
-
     cityInfo: CityInfo = null;
 
     constructor(private dataService: DataService) { }
 
     transform(value: string): Promise<CityInfo> {
 
-        if (value === undefined || value === '' || typeof value !== 'string') {
+        if (value === '' || typeof value !== 'string') {
             return null;
         } else {
 
@@ -42,8 +40,8 @@ export class CityInfoPipe implements PipeTransform {
                         })
                         return result
                     },
-                    (error: String) => {
-                        this.dataService.errorHandler()
+                    (error: string) => {
+                        this.dataService.failedAttempt(error)
                     }
                 )
             } else {

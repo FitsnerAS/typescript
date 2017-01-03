@@ -68,7 +68,7 @@ export class CityTableComponent implements OnInit {
                 this.ref.markForCheck();
             },
             error => {
-                this.dataService.errorHandler()
+                this.dataService.failedAttempt(error)
             }
         )
         this.ref.markForCheck();

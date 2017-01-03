@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-import { ModalErrorComponent } from './services';
-
+import { CityColorDirective } from './directives';
+import { WindDirectDirective } from './directives';
 
 @NgModule({
     imports: [
@@ -32,14 +32,13 @@ import { ModalErrorComponent } from './services';
         CityTableComponent,
         GoogleMapComponent,
         MyHeaderComponent,
-        ModalErrorComponent,
         MyFooterComponent,
-        CityInfoPipe
-    ],
-    entryComponents: [
-        ModalErrorComponent
+        CityInfoPipe,
+        CityColorDirective,
+        WindDirectDirective
     ],
 
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }

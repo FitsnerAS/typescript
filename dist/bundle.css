@@ -473,9 +473,7 @@ md-toolbar {
     margin-top:90px;
     margin-bottom:20px;
 }
-td{
-    cursor:pointer
-}
+
 .my-progress{
     margin:0 auto
 }
@@ -483,6 +481,11 @@ td{
 .favorite-icon{
     color: #eceff1;
     margin-right: 5px;
+    cursor: pointer;
+}
+
+.city-name-span{
+    cursor: pointer;
 }
 
 .favorite-icon-active{
@@ -491,6 +494,10 @@ td{
 
 .favorite-icon:hover{
     color:gold;
+}
+
+.wind-direct{
+    margin-left: 10px;
 }.my-header {
     position:absolute;
     height: 200px;

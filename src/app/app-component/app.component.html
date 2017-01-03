@@ -1,8 +1,12 @@
 <my-header></my-header>
 <div class='container main-content'>
     <md-card class="demo-card demo-basic">
-        <md-input placeholder="Type city" [(ngModel)]="city" style="width: 50%; margin-right:20px;"></md-input>
-        <button md-raised-button color="" (click)='getCurrentCityInfo(city)'>Submit</button>
+        <md-input placeholder="Type city" 
+                  (keyup.enter)='getCurrentCityInfo(city)'
+                  [(ngModel)]="city" style="width: 50%; margin-right:20px;">
+        </md-input>
+        <button md-raised-button color="" (click)='getCurrentCityInfo(city)'>
+            Submit</button>
         <table class="table table-model-2 table-hover" *ngIf="cityInfo">
             <thead>
                 <tr>
@@ -11,15 +15,14 @@
                 </tr>
             </thead>
             <tbody>
-                
+
                 <tr >
-                    <td>{{cityInfo}}</td>
+                    <td>{{cityInfo}}</td>                   
                     <td>{{(cityInfo|sgCityInfoPipe|async)?.main.temp}}</td>
                 </tr>
             </tbody>
         </table>
-        
-        
+
         <md-toolbar color="" >Table</md-toolbar>
         <md-card-content>
             <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>
