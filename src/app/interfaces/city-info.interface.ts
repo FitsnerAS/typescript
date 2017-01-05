@@ -2,8 +2,8 @@ export interface CityInfo {
     name: string;
     main: CityInfoMain;
     wind: CityInfoWind;
-    favorite:boolean;
-    id:number;
+    favorite: boolean;
+    id: number;
 }
 
 export interface CityInfoMain {

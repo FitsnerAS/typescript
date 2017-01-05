@@ -27,28 +27,28 @@ export class CityInfoPipe implements PipeTransform {
 
                     this.cityInfo = item.cityInfo;
                 }
-            })
+            });
 
             if (this.cityInfo === null) {
                 return this.dataService.fetchCityInfo(value).then(
                     (result: CityInfo) => {
-                        console.log('from http', result)
+                        console.log('from http', result);
                         this.cityInfoArray.push({
                             cityInfo: result,
                             date: new Date().getTime(),
                             city: value
-                        })
-                        return result
+                        });
+                        return result;
                     },
                     (error: string) => {
-                        this.dataService.failedAttempt(error)
+                        this.dataService.failedAttempt(error);
                     }
-                )
+                );
             } else {
                 return new Promise((resolve, reject) => {
-                    console.log("from cache", this.cityInfo)
+                    console.log("from cache", this.cityInfo);
                     resolve(this.cityInfo);
-                })
+                });
             }
         }
     }

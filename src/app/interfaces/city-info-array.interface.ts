@@ -1,9 +1,9 @@
-import { CityInfo } from '../interfaces'
+import { CityInfo } from '../interfaces';
 
 export interface CityInfoArray {
-    cityInfo: CityInfo,
-    date: number,
-    city: String
+    cityInfo: CityInfo;
+    date: number;
+    city: String;
 }
 
 

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services';
-import { CityInfoPipe } from '../pipes';
-import { Coords, CityInfo } from '../interfaces';
+import { Coords } from '../interfaces';
 
 @Component({
 
@@ -28,7 +27,7 @@ export class AppComponent {
             this.locationLoaded = true;
         }, (error: string) => {
             this.dataService.failedAttempt(error);
-        })
+        });
     }
 }
 

@@ -10,13 +10,15 @@ import { Coords } from '../../interfaces';
 export class DataService {
 
     dataUrl(coords: Coords) {
-        return 'http://api.openweathermap.org/data/2.5/find?&lat=' + coords.latitude
-            + '&lon=' + coords.longitude + '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
+        return 'http://api.openweathermap.org/data/2.5/find?&lat=' +
+            coords.latitude +
+            '&lon=' + coords.longitude +
+            '&cnt=50&lang=Ru_ru&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6';
     }
 
     cityInfoUrl(cityName: string) {
         return 'http://api.openweathermap.org/data/2.5/weather?q='
-            + cityName + '&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6'
+            + cityName + '&units=metric&APPID=1a014cc9a9db908fdb5647f07bc8e0e6';
     }
 
     constructor(private http: Http, public snackBar: MdSnackBar) { }
@@ -24,14 +26,14 @@ export class DataService {
     fetchData(coords: Coords) {
         return this.http.get(this.dataUrl(coords)).map(
             response => response.json().list
-        )
+        );
     }
 
     fetchCityInfo(city: string) {
         return fetch(this.cityInfoUrl(city)).then(
             response => {
-                return response.json()
-            })
+                return response.json();
+            });
     }
 
     getCoords() {
@@ -41,7 +43,7 @@ export class DataService {
                 navigator.geolocation.getCurrentPosition(position => {
                     resolve(position.coords);
                 }, error => {
-                    console.log(error)
+                    console.log(error);
                     reject(error.message);
                 });
             };

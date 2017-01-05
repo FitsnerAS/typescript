@@ -5,6 +5,7 @@ import { CityTableComponent } from './ui';
 import { GoogleMapComponent } from './ui';
 import { MyHeaderComponent } from './ui';
 import { MyFooterComponent } from './ui';
+import { ProfilingComponent } from './ui';
 import { CityInfoPipe } from './pipes';
 import { MaterialModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,6 +15,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { CityColorDirective } from './directives';
 import { WindDirectDirective } from './directives';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @NgModule({
     imports: [
@@ -26,6 +28,7 @@ import { WindDirectDirective } from './directives';
         }),
         MaterialModule.forRoot(),
         NgbModule.forRoot(),
+        ChartsModule
     ],
     declarations: [
         AppComponent,
@@ -33,6 +36,7 @@ import { WindDirectDirective } from './directives';
         GoogleMapComponent,
         MyHeaderComponent,
         MyFooterComponent,
+        ProfilingComponent,
         CityInfoPipe,
         CityColorDirective,
         WindDirectDirective

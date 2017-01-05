@@ -26,21 +26,21 @@ export class CityTableComponent implements OnInit {
 
     constructor(
         private dataService: DataService,
-        private ref: ChangeDetectorRef
-    ) { }
+        private ref: ChangeDetectorRef,
+    ) {}
 
     removeFavorite() {
         this.citiesArray.forEach(item => {
             if (item.favorite) {
                 item.favorite = !item.favorite;
             }
-        })
+        });
     }
 
     addToFavorite(item: CityInfo) {
 
         if (item.favorite) {
-            this.removeFavorite()
+            this.removeFavorite();
         } else {
             this.removeFavorite();
             item.favorite = true;
@@ -54,7 +54,7 @@ export class CityTableComponent implements OnInit {
                 this.dataService.Sucess('City is deleted');
             }
             return cityInfoId !== item.id;
-        })
+        });
 
         this.collectionSize = this.citiesArray.length;
     }
@@ -68,23 +68,20 @@ export class CityTableComponent implements OnInit {
                 this.ref.markForCheck();
             },
             error => {
-                this.dataService.failedAttempt(error)
+                this.dataService.failedAttempt(error);
             }
-        )
-        this.ref.markForCheck();
+        );
     }
 
     updateCityInfo() {
-        this.getCitiesArray()
-        setTimeout(() => {
+        this.getCitiesArray();
+        setInterval(() => {
             this.cityDataLoaded = false;
             this.getCitiesArray();
-            setTimeout(this.updateCityInfo(), 15000);
-        }, 15000);
+        }, 5000);
     }
 
     ngOnInit() {
-        this.updateCityInfo()
+        this.updateCityInfo();
     }
 }
-

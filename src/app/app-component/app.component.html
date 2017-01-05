@@ -26,6 +26,7 @@
         <md-toolbar color="" >Table</md-toolbar>
         <md-card-content>
             <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>
+            <zone-profiling-chart></zone-profiling-chart>
         </md-card-content>
         <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>
     </md-card>
