@@ -6,6 +6,8 @@ import { GoogleMapComponent } from './ui';
 import { MyHeaderComponent } from './ui';
 import { MyFooterComponent } from './ui';
 import { ProfilingComponent } from './ui';
+import { CityInfoComponent } from './ui';
+import { WeatheIconsComponent } from './ui';
 import { CityInfoPipe } from './pipes';
 import { MaterialModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +18,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { CityColorDirective } from './directives';
 import { WindDirectDirective } from './directives';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 
 @NgModule({
     imports: [
@@ -37,6 +40,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
         MyHeaderComponent,
         MyFooterComponent,
         ProfilingComponent,
+        CityInfoComponent,
+        WeatheIconsComponent,
         CityInfoPipe,
         CityColorDirective,
         WindDirectDirective

@@ -1,36 +1,38 @@
 import {
     Component,
     ChangeDetectorRef,
-    ChangeDetectionStrategy,
+        ChangeDetectionStrategy,
     NgZone,
 } from '@angular/core';
 
 @Component({
     selector: 'zone-profiling-chart',
     templateUrl: './zone-profiling.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
+        changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class ProfilingComponent {
     start: number;
     end: number;
-
+    difference: number;
     constructor(
         private ref: ChangeDetectorRef,
         private ngZone: NgZone
     ) {
         this.ngZone.onStable.subscribe(() => {
-            //            console.log(' change detection tree gets stable in: ', new Date - this.time);
-            this.end = new Date().getMilliseconds();
-            if (this.end - this.start) {
+
+            this.end = performance.now();
+            this.difference = this.end - this.start;
+            if (this.difference > 0) {
                 this.lineChartData[0].data.unshift(this.end - this.start);
                 this.lineChartData = this.lineChartData.slice();
             }
         });
 
         this.ngZone.onUnstable.subscribe(() => {
-            this.start = new Date().getMilliseconds();
+            this.start = performance.now();;
         });
+        
         setInterval(() => {
             this.ref.markForCheck();
         }, 500);

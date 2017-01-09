@@ -3,7 +3,7 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 @Directive({ selector: '[cityColor]' })
 export class CityColorDirective implements OnInit {
 
-    getBgColor(): String {
+    getBgColor(): string {
 
         switch (true) {
             case (this.cityColor >= 30): return '#F57C00';

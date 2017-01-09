@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services';
-import { Coords } from '../interfaces';
+import{ Coordinats } from '../interfaces';
 
 @Component({
 
@@ -12,16 +12,10 @@ import { Coords } from '../interfaces';
 
 export class AppComponent {
     locationLoaded: boolean = false;
-    coords: Coords;
-    city: String = null;
-    cityInfo: String = null;
-
-    getCurrentCityInfo() {
-        this.cityInfo = this.city;
-    }
+    coords: Coordinats;
 
     constructor(private dataService: DataService) {
-        this.dataService.getCoords().then((data: Coords) => {
+        this.dataService.getCoords().then((data: Coordinats) => {
             this.coords = data;
             this.locationLoaded = true;
             this.locationLoaded = true;

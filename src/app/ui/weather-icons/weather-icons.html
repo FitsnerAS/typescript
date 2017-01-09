@@ -1,0 +1,8 @@
+<span [ngSwitch]="weather">
+    <i class="wi wi-day-sunny text-primary" *ngSwitchCase="'Clear'"></i>
+    <i class="wi wi-day-cloudy " *ngSwitchCase="'Clouds'"></i>
+    <i class="wi wi-fog" *ngSwitchCase="'Mist'"></i>
+    <i class="wi wi-snow" *ngSwitchCase="'Snow'"></i>
+    <i class="wi wi-rain" *ngSwitchCase="'Rain'"></i>
+    <i class="wi wi-strong-wind" *ngSwitchCase="'Wind'"></i>
+</span>

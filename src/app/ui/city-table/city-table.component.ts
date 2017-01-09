@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { DataService } from '../../services';
 import { CityInfo } from '../../interfaces';
-import { Coords } from '../../interfaces';
+import { Coordinats } from '../../interfaces';
 
 @Component({
     selector: 'city-table',
@@ -19,7 +19,7 @@ import { Coords } from '../../interfaces';
 
 export class CityTableComponent implements OnInit {
     citiesArray: Array<CityInfo> = [];
-    @Input() coords: Coords;
+    @Input() coords: Coordinats;
     collectionSize: number;
     currentPage: number = 1;
     cityDataLoaded: boolean = false;
@@ -75,10 +75,11 @@ export class CityTableComponent implements OnInit {
 
     updateCityInfo() {
         this.getCitiesArray();
-        setInterval(() => {
-            this.cityDataLoaded = false;
-            this.getCitiesArray();
-        }, 5000);
+        
+//        setInterval(() => {
+//            this.cityDataLoaded = false;
+//            this.getCitiesArray();
+//        }, 5000);
     }
 
     ngOnInit() {

@@ -22,13 +22,18 @@
                    [ngbTooltip]="tipContent"
                    >
             </i> 
+            <weather-icons [weather]='item.weather[0].main'></weather-icons>    
+           
             <span class="city-name-span" (click)=addToFavorite(item)>{{ item.name}}</span>
+
         </td>
-        <td><label class="label label-primary"[cityColor]="item.main.temp"> {{item.main.temp}} </label></td>
+        <td><label class="label label-primary" [cityColor]="item.main.temp"> {{item.main.temp}} </label>
+
+        </td>
         <td>{{item.main.pressure}}</td>
         <td>
             {{item.wind.speed}}
-            <i class="glyphicon glyphicon-arrow-up text-muted wind-direct" [windDirect]="item.wind.deg"></i>
+            <i class="glyphicon glyphicon-arrow-down text-muted wind-direct" [windDirect]="item.wind.deg"></i>
         </td>
         <td>
             <button md-button color="warn" (click)='deleteCity(item.id)'>Delete</button>

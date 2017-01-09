@@ -3,13 +3,13 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 import { MdSnackBar } from '@angular/material';
-import { Coords } from '../../interfaces';
+import{ Coordinats } from '../../interfaces';
 
 @Injectable()
 
 export class DataService {
 
-    dataUrl(coords: Coords) {
+    dataUrl(coords: Coordinats) {
         return 'http://api.openweathermap.org/data/2.5/find?&lat=' +
             coords.latitude +
             '&lon=' + coords.longitude +
@@ -23,7 +23,7 @@ export class DataService {
 
     constructor(private http: Http, public snackBar: MdSnackBar) { }
 
-    fetchData(coords: Coords) {
+    fetchData(coords: Coordinats) {
         return this.http.get(this.dataUrl(coords)).map(
             response => response.json().list
         );

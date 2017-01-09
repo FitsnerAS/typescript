@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { Coords } from '../../interfaces';
+import{ Coordinats } from '../../interfaces';
 
 @Component({
     selector: 'google-map',
@@ -15,7 +15,7 @@ import { Coords } from '../../interfaces';
 })
 
 export class GoogleMapComponent {
-    @Input() coords: Coords;
+    @Input() coords: Coordinats;
 
     constructor() { }
 }
