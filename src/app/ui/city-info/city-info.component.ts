@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../../services';
 import { CityInfo } from '../../interfaces';
 
@@ -11,7 +11,7 @@ export class CityInfoComponent {
     city: string = null;
     cityInfo: string = null;
     cityInfoArray: CityInfo;
-//    @Output() cityInfoEvent = new EventEmitter();
+    @Output() cityInfoEvent = new EventEmitter();
 
 
     constructor(private dataService: DataService) { }
@@ -19,6 +19,7 @@ export class CityInfoComponent {
     addCity() {
         this.dataService.fetchCityInfo(this.city).then((data: CityInfo) => {
             console.log(data)
+            this.cityInfoEvent.emit(data)
         })
     }
 

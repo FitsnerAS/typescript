@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services';
-import{ Coordinats } from '../interfaces';
+import { Coordinats, CityInfo } from '../interfaces';
 
 @Component({
 
@@ -13,15 +13,19 @@ import{ Coordinats } from '../interfaces';
 export class AppComponent {
     locationLoaded: boolean = false;
     coords: Coordinats;
+    newCity: CityInfo;
 
     constructor(private dataService: DataService) {
         this.dataService.getCoords().then((data: Coordinats) => {
             this.coords = data;
             this.locationLoaded = true;
-            this.locationLoaded = true;
         }, (error: string) => {
             this.dataService.failedAttempt(error);
         });
+    }
+
+    cityInfoEventHandler(event: CityInfo) {
+        this.newCity = event;
     }
 }
 

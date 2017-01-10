@@ -3,7 +3,9 @@ import {
     Input,
     OnInit,
     ChangeDetectorRef,
-    ChangeDetectionStrategy
+    ChangeDetectionStrategy,
+    OnChanges,
+    SimpleChange
 } from '@angular/core';
 import { DataService } from '../../services';
 import { CityInfo } from '../../interfaces';
@@ -17,9 +19,10 @@ import { Coordinats } from '../../interfaces';
     providers: [DataService]
 })
 
-export class CityTableComponent implements OnInit {
+export class CityTableComponent implements OnInit, OnChanges {
     citiesArray: Array<CityInfo> = [];
     @Input() coords: Coordinats;
+    @Input() newCity: CityInfo;
     collectionSize: number;
     currentPage: number = 1;
     cityDataLoaded: boolean = false;
@@ -27,7 +30,7 @@ export class CityTableComponent implements OnInit {
     constructor(
         private dataService: DataService,
         private ref: ChangeDetectorRef,
-    ) {}
+    ) { }
 
     removeFavorite() {
         this.citiesArray.forEach(item => {
@@ -75,14 +78,19 @@ export class CityTableComponent implements OnInit {
 
     updateCityInfo() {
         this.getCitiesArray();
-        
-//        setInterval(() => {
-//            this.cityDataLoaded = false;
-//            this.getCitiesArray();
-//        }, 5000);
+        setInterval(() => {
+            this.cityDataLoaded = false;
+            this.getCitiesArray();
+        }, 10000);
     }
 
     ngOnInit() {
         this.updateCityInfo();
+    }
+
+    ngOnChanges(changes: { [newCity: Array<CityInfo>]: SimpleChange }) {
+        if (changes.newCity.currentValue) {
+            this.citiesArray.unshift(changes.newCity.currentValue)
+        }
     }
 }
