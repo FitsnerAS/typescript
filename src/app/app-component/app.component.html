@@ -2,11 +2,11 @@
 <div class='container main-content' >
     <md-card class="demo-card demo-basic">
 
-        <city-info (cityInfoEvent)="cityInfoEventHandler($event)"></city-info>
+        <city-info></city-info>
 
         <md-toolbar color="" >Table</md-toolbar>
         <md-card-content>
-            <city-table [coords]='coords' *ngIf='locationLoaded' [newCity]='newCity'></city-table>
+            <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>
             <zone-profiling-chart></zone-profiling-chart>
         </md-card-content>
         <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>

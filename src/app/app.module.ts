@@ -18,7 +18,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { CityColorDirective } from './directives';
 import { WindDirectDirective } from './directives';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-
+import { DataService } from './services';
+import { EventService } from './services';
 
 @NgModule({
     imports: [
@@ -46,6 +47,10 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
         CityColorDirective,
         WindDirectDirective
     ],
+    providers: [
+        DataService,
+        EventService
+        ],
 
     bootstrap: [AppComponent]
 })

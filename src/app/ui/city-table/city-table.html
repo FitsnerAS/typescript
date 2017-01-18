@@ -19,8 +19,7 @@
                    [ngClass]="{'favorite-icon-active': item.favorite}"
                    (click)=addToFavorite(item)
                    placement="top" ngbTooltip="Tooltip on top"
-                   [ngbTooltip]="tipContent"
-                   >
+                   [ngbTooltip]="tipContent">
             </i> 
             <weather-icons [weather]='item.weather[0].main'></weather-icons>    
            

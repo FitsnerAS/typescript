@@ -7,7 +7,7 @@ import {
     OnChanges,
     SimpleChange
 } from '@angular/core';
-import { DataService } from '../../services';
+import { DataService, EventService } from '../../services';
 import { CityInfo } from '../../interfaces';
 import { Coordinats } from '../../interfaces';
 
@@ -15,14 +15,14 @@ import { Coordinats } from '../../interfaces';
     selector: 'city-table',
     templateUrl: './city-table.html',
     styleUrls: ['./city-table.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [DataService]
+    //    changeDetection: ChangeDetectionStrategy.OnPush,
+//    providers: [DataService, EventService]
 })
 
-export class CityTableComponent implements OnInit, OnChanges {
+export class CityTableComponent implements OnInit {
     citiesArray: Array<CityInfo> = [];
     @Input() coords: Coordinats;
-    @Input() newCity: CityInfo;
+    //    @Input() newCity: CityInfo;
     collectionSize: number;
     currentPage: number = 1;
     cityDataLoaded: boolean = false;
@@ -30,7 +30,16 @@ export class CityTableComponent implements OnInit, OnChanges {
     constructor(
         private dataService: DataService,
         private ref: ChangeDetectorRef,
-    ) { }
+        private eventService: EventService
+    ) {
+        this.eventService.newCityEvent$.subscribe((value: CityInfo) => {
+            console.log(value, '@@@@@@@@@@@@@')
+            if(value){
+                this.citiesArray.unshift(value);
+            }
+            
+        })
+    }
 
     removeFavorite() {
         this.citiesArray.forEach(item => {
@@ -67,7 +76,7 @@ export class CityTableComponent implements OnInit, OnChanges {
             (data: Array<CityInfo>) => {
                 this.citiesArray = data;
                 this.collectionSize = data.length;
-                this.cityDataLoaded = true;
+                this.cityDataLoaded = true; console.log(data)
                 this.ref.markForCheck();
             },
             error => {
@@ -86,11 +95,6 @@ export class CityTableComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         this.updateCityInfo();
-    }
 
-    ngOnChanges(changes: { [newCity: Array<CityInfo>]: SimpleChange }) {
-        if (changes.newCity.currentValue) {
-            this.citiesArray.unshift(changes.newCity.currentValue)
-        }
     }
 }

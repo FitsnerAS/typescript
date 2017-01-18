@@ -13,7 +13,6 @@ import { Coordinats, CityInfo } from '../interfaces';
 export class AppComponent {
     locationLoaded: boolean = false;
     coords: Coordinats;
-    newCity: CityInfo;
 
     constructor(private dataService: DataService) {
         this.dataService.getCoords().then((data: Coordinats) => {
@@ -22,10 +21,6 @@ export class AppComponent {
         }, (error: string) => {
             this.dataService.failedAttempt(error);
         });
-    }
-
-    cityInfoEventHandler(event: CityInfo) {
-        this.newCity = event;
     }
 }
 
