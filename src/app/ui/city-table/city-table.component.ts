@@ -4,8 +4,6 @@ import {
     OnInit,
     ChangeDetectorRef,
     ChangeDetectionStrategy,
-    OnChanges,
-    SimpleChange
 } from '@angular/core';
 import { DataService, EventService } from '../../services';
 import { CityInfo } from '../../interfaces';
@@ -15,14 +13,12 @@ import { Coordinats } from '../../interfaces';
     selector: 'city-table',
     templateUrl: './city-table.html',
     styleUrls: ['./city-table.css'],
-    //    changeDetection: ChangeDetectionStrategy.OnPush,
-//    providers: [DataService, EventService]
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CityTableComponent implements OnInit {
     citiesArray: Array<CityInfo> = [];
     @Input() coords: Coordinats;
-    //    @Input() newCity: CityInfo;
     collectionSize: number;
     currentPage: number = 1;
     cityDataLoaded: boolean = false;
@@ -33,11 +29,10 @@ export class CityTableComponent implements OnInit {
         private eventService: EventService
     ) {
         this.eventService.newCityEvent$.subscribe((value: CityInfo) => {
-            console.log(value, '@@@@@@@@@@@@@')
-            if(value){
+            if (value) {
                 this.citiesArray.unshift(value);
+                ref.markForCheck();
             }
-            
         })
     }
 
@@ -76,7 +71,7 @@ export class CityTableComponent implements OnInit {
             (data: Array<CityInfo>) => {
                 this.citiesArray = data;
                 this.collectionSize = data.length;
-                this.cityDataLoaded = true; console.log(data)
+                this.cityDataLoaded = true;
                 this.ref.markForCheck();
             },
             error => {
@@ -95,6 +90,5 @@ export class CityTableComponent implements OnInit {
 
     ngOnInit() {
         this.updateCityInfo();
-
     }
 }
