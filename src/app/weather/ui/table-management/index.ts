@@ -1,0 +1,1 @@
+export { TableManagementComponent } from './table-management.component';

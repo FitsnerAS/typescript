@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { EventService } from '../../services';
-
 import { Coordinats } from '../../interfaces';
 
 @Component({

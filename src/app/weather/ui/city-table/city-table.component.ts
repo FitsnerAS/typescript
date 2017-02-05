@@ -5,9 +5,9 @@ import {
     ChangeDetectorRef,
     ChangeDetectionStrategy,
 } from '@angular/core';
-import { DataService, EventService } from '../../../services';
-import { CityInfo } from '../../../interfaces';
-import { Coordinats } from '../../../interfaces';
+import {DataService, EventService} from '../../../services';
+import {CityInfo} from '../../../interfaces';
+import {Coordinats} from '../../../interfaces';
 
 @Component({
     selector: 'city-table',
@@ -23,21 +23,12 @@ export class CityTableComponent implements OnInit {
     currentPage: number = 1;
     cityDataLoaded: boolean = false;
 
-    constructor(
-        private dataService: DataService,
-        private ref: ChangeDetectorRef,
-        private eventService: EventService
-    ) {
+    constructor(private dataService: DataService,
+                private ref: ChangeDetectorRef,
+                private eventService: EventService) {
         this.eventService.newCityEvent$.subscribe((value: CityInfo) => {
             if (value) {
                 this.citiesArray.unshift(value);
-                ref.markForCheck();
-            }
-        });
-
-        this.eventService.locationEvent$.subscribe((value: Coordinats) => {
-            if (value) {
-                this.coords = value;
                 ref.markForCheck();
             }
         });
