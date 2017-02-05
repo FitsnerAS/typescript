@@ -1,0 +1,18 @@
+<span [ngSwitch]="weather">
+    <i class="wi wi-day-sunny text-primary" *ngSwitchCase="'Clear'" 
+       placement="top" ngbTooltip="Clear"></i>
+    <i class="wi wi-day-cloudy " *ngSwitchCase="'Clouds'"
+       placement="top" ngbTooltip="Clouds"></i>
+    <i class="wi wi-fog" *ngSwitchCase="'Mist'"
+       placement="top" ngbTooltip="Mist"></i>
+    <i class="wi wi-snow" *ngSwitchCase="'Snow'"
+       placement="top" ngbTooltip="Snow"></i>
+    <i class="wi wi-rain" *ngSwitchCase="'Rain'"
+       placement="top" ngbTooltip="Rain"></i>
+    <i class="wi wi-strong-wind" *ngSwitchCase="'Wind'"
+       placement="top" ngbTooltip="Wind"></i>
+    <i class="wi wi-smoke" *ngSwitchCase="'Smoke'"
+       placement="top" ngbTooltip="Smoke"></i>
+    <i class="wi wi-fog" *ngSwitchCase="'Fog'"
+       placement="top" ngbTooltip="Fog"></i>
+</span>

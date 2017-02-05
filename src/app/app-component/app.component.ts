@@ -1,26 +1,20 @@
 import { Component } from '@angular/core';
-import { DataService } from '../services';
-import { Coordinats, CityInfo } from '../interfaces';
+import { DataService, EventService } from '../services';
+import { Coordinats } from '../interfaces';
 
 @Component({
-
     selector: 'my-app',
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
-    providers: [DataService],
 })
 
 export class AppComponent {
-    locationLoaded: boolean = false;
-    coords: Coordinats;
 
-    constructor(private dataService: DataService) {
+    constructor(private dataService: DataService, private eventService: EventService) {
         this.dataService.getCoords().then((data: Coordinats) => {
-            this.coords = data;
-            this.locationLoaded = true;
+            this.eventService.triggerlocationEvent(data)
         }, (error: string) => {
             this.dataService.failedAttempt(error);
         });
     }
 }
-

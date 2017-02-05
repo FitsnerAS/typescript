@@ -1,15 +1,18 @@
 <my-header></my-header>
+
 <div class='container main-content' >
     <md-card class="demo-card demo-basic">
-
-        <city-info></city-info>
-
-        <md-toolbar color="" >Table</md-toolbar>
         <md-card-content>
-            <city-table [coords]='coords' *ngIf='locationLoaded'></city-table>
-            <zone-profiling-chart></zone-profiling-chart>
+
+            <weather></weather>
+
         </md-card-content>
-        <google-map [coords]='coords' *ngIf='locationLoaded'></google-map>
+
+        <zone-profiling-chart></zone-profiling-chart>
+
+        <google-map></google-map>
+<!--[coords]='coords' *ngIf='locationLoaded'-->
     </md-card>
 </div>
+
 <my-footer></my-footer>
